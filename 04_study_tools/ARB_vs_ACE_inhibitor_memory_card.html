@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARB vs ACE阻害薬 暗記カード</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #333;
+            max-width: 375px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        
+        .card-header {
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+        }
+        
+        .ace-header {
+            background: #e74c3c;
+        }
+        
+        .arb-header {
+            background: #3498db;
+        }
+        
+        .vs-header {
+            background: #2c3e50;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        /* 赤シート対応 - 重要な暗記ポイントを赤文字に */
+        .memorize {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .comparison-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .comparison-table td {
+            font-size: 15px;
+        }
+        
+        .memory-hook {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .key-point {
+            background: #e8f5e9;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .key-point-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 5px;
+        }
+        
+        .quick-review {
+            background: #f3e5f5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .review-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #6a1b9a;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .review-list {
+            list-style: none;
+        }
+        
+        .review-list li {
+            padding: 8px 0;
+            font-size: 15px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .review-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .icon {
+            display: inline-block;
+            width: 20px;
+            text-align: center;
+            margin-right: 5px;
+        }
+        
+        /* 印刷対応 */
+        @media print {
+            body {
+                max-width: 100%;
+                padding: 0;
+                background: white;
+            }
+            
+            .card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            
+            .memorize {
+                color: #ff0000 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+        
+        /* タブレット・PC対応 */
+        @media (min-width: 768px) {
+            body {
+                max-width: 600px;
+                padding: 20px;
+            }
+            
+            .card-content {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- タイトルカード -->
+    <div class="card">
+        <div class="card-header vs-header">
+            🆚 ARB vs ACE阻害薬 - 3つの決定的違い
+        </div>
+        <div class="card-content">
+            <div class="memory-hook">
+                💡 覚え方：「<span class="memorize">ACE（エース）は咳（K）</span>が出る」
+            </div>
+        </div>
+    </div>
+
+    <!-- 違い1：空咳 -->
+    <div class="card">
+        <div class="card-header ace-header">
+            違い① 空咳（からせき）
+        </div>
+        <div class="card-content">
+            <table class="comparison-table">
+                <tr>
+                    <th>薬剤</th>
+                    <th>空咳発生率</th>
+                    <th>理由</th>
+                </tr>
+                <tr>
+                    <td>ACE阻害薬</td>
+                    <td><span class="memorize">10-20%</span></td>
+                    <td>ブラジキニン<span class="memorize">蓄積</span></td>
+                </tr>
+                <tr>
+                    <td>ARB</td>
+                    <td><span class="memorize">0%</span></td>
+                    <td>ブラジキニン<span class="memorize">影響なし</span></td>
+                </tr>
+            </table>
+            
+            <div class="key-point">
+                <div class="key-point-title">🔑 暗記ポイント</div>
+                ACE阻害薬 → <span class="memorize">ACE（キニナーゼII）を阻害</span> → ブラジキニン分解できない → <span class="memorize">気管支刺激で咳</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 違い2：ブラジキニン -->
+    <div class="card">
+        <div class="card-header arb-header">
+            違い② ブラジキニン系への影響
+        </div>
+        <div class="card-content">
+            <table class="comparison-table">
+                <tr>
+                    <th>薬剤</th>
+                    <th>作用点</th>
+                    <th>ブラジキニン</th>
+                </tr>
+                <tr>
+                    <td>ACE阻害薬</td>
+                    <td><span class="memorize">酵素を阻害</span></td>
+                    <td><span class="memorize">蓄積する</span></td>
+                </tr>
+                <tr>
+                    <td>ARB</td>
+                    <td><span class="memorize">受容体を遮断</span></td>
+                    <td><span class="memorize">変化なし</span></td>
+                </tr>
+            </table>
+            
+            <div class="memory-hook">
+                💡 覚え方：「ARBは<span class="memorize">受容体（Receptor）をBlock</span>」
+            </div>
+        </div>
+    </div>
+
+    <!-- 違い3：高カリウム血症 -->
+    <div class="card">
+        <div class="card-header vs-header">
+            違い③ 高カリウム血症リスク
+        </div>
+        <div class="card-content">
+            <table class="comparison-table">
+                <tr>
+                    <th>薬剤</th>
+                    <th>高K血症リスク</th>
+                    <th>特徴</th>
+                </tr>
+                <tr>
+                    <td>ACE阻害薬</td>
+                    <td><span class="memorize">あり</span></td>
+                    <td>やや<span class="memorize">高い</span></td>
+                </tr>
+                <tr>
+                    <td>ARB</td>
+                    <td><span class="memorize">あり</span></td>
+                    <td>やや<span class="memorize">低い</span></td>
+                </tr>
+            </table>
+            
+            <div class="key-point">
+                <div class="key-point-title">⚠️ 共通の注意点</div>
+                両方とも<span class="memorize">アルドステロン分泌↓</span> → K排泄↓ → <span class="memorize">高K血症</span>の可能性
+            </div>
+        </div>
+    </div>
+
+    <!-- 1分間クイックレビュー -->
+    <div class="card">
+        <div class="card-header vs-header">
+            ⏱️ 1分間クイックレビュー
+        </div>
+        <div class="card-content">
+            <div class="quick-review">
+                <div class="review-title">小テスト直前チェック！</div>
+                <ul class="review-list">
+                    <li>
+                        <span class="icon">①</span>
+                        空咳：ACE阻害薬 <span class="memorize">20%</span> vs ARB <span class="memorize">0%</span>
+                    </li>
+                    <li>
+                        <span class="icon">②</span>
+                        理由：ACEは<span class="memorize">ブラジキニン蓄積</span>、ARBは<span class="memorize">影響なし</span>
+                    </li>
+                    <li>
+                        <span class="icon">③</span>
+                        作用点：ACEは<span class="memorize">酵素阻害</span>、ARBは<span class="memorize">受容体遮断</span>
+                    </li>
+                    <li>
+                        <span class="icon">④</span>
+                        高K血症：<span class="memorize">両方あり</span>（ARBがやや低い）
+                    </li>
+                    <li>
+                        <span class="icon">⑤</span>
+                        覚え方：「<span class="memorize">ACE（エース）は咳（K）が出る</span>」
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="memory-hook" style="text-align: center; margin-top: 20px;">
+                🎯 最重要：<span class="memorize">空咳はACE阻害薬だけ！</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 追加：代表的な薬剤名 -->
+    <div class="card">
+        <div class="card-header vs-header">
+            💊 代表的な薬剤名（小テスト頻出）
+        </div>
+        <div class="card-content">
+            <table class="comparison-table">
+                <tr>
+                    <th>分類</th>
+                    <th>一般名</th>
+                    <th>商品名</th>
+                </tr>
+                <tr>
+                    <td rowspan="3">ACE阻害薬</td>
+                    <td><span class="memorize">エナラプリル</span></td>
+                    <td>レニベース</td>
+                </tr>
+                <tr>
+                    <td><span class="memorize">リシノプリル</span></td>
+                    <td>ゼストリル</td>
+                </tr>
+                <tr>
+                    <td><span class="memorize">ペリンドプリル</span></td>
+                    <td>コバシル</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">ARB</td>
+                    <td><span class="memorize">ロサルタン</span></td>
+                    <td>ニューロタン</td>
+                </tr>
+                <tr>
+                    <td><span class="memorize">カンデサルタン</span></td>
+                    <td>ブロプレス</td>
+                </tr>
+                <tr>
+                    <td><span class="memorize">テルミサルタン</span></td>
+                    <td>ミカルディス</td>
+                </tr>
+            </table>
+            
+            <div class="memory-hook">
+                💡 語尾チェック：ACE阻害薬は「<span class="memorize">〜プリル</span>」、ARBは「<span class="memorize">〜サルタン</span>」
+            </div>
+        </div>
+    </div>
+</body>
+</html>

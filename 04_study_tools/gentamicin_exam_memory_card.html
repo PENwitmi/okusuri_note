@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゲンタマイシン国試暗記カード - 出題第3位（24回）</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #333;
+            max-width: 375px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        
+        .card-header {
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+        }
+        
+        .toxicity-header {
+            background: #e74c3c;
+        }
+        
+        .tdm-header {
+            background: #9b59b6;
+        }
+        
+        .interaction-header {
+            background: #e67e22;
+        }
+        
+        .exam-header {
+            background: #2c3e50;
+        }
+        
+        .calc-header {
+            background: #27ae60;
+        }
+        
+        .trap-header {
+            background: #c0392b;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        /* 赤シート対応 - 重要な暗記ポイントを赤文字に */
+        .memorize {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .data-table th,
+        .data-table td {
+            padding: 12px 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .data-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .data-table td {
+            font-size: 15px;
+        }
+        
+        .memory-hook {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .warning-box {
+            background: #ffe0e0;
+            border-left: 4px solid #e74c3c;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .success-box {
+            background: #e8f5e9;
+            border-left: 4px solid #27ae60;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .exam-pattern {
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .exam-pattern-title {
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 5px;
+        }
+        
+        .quick-review {
+            background: #f3e5f5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .review-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #6a1b9a;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .formula-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        .icon {
+            display: inline-block;
+            width: 20px;
+            text-align: center;
+            margin-right: 5px;
+        }
+        
+        .visual-memory {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .trap-box {
+            background: #ffebee;
+            border: 2px solid #ef5350;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .trap-title {
+            color: #c62828;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        /* 印刷対応 */
+        @media print {
+            body {
+                max-width: 100%;
+                padding: 0;
+                background: white;
+            }
+            
+            .card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            
+            .memorize {
+                color: #ff0000 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+        
+        /* タブレット・PC対応 */
+        @media (min-width: 768px) {
+            body {
+                max-width: 600px;
+                padding: 20px;
+            }
+            
+            .card-content {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- タイトルカード -->
+    <div class="card">
+        <div class="card-header exam-header">
+            🏆 ゲンタマイシン - 国試出題第3位（24回）
+        </div>
+        <div class="card-content">
+            <div class="memory-hook">
+                💡 アミノグリコシド系の代表格！
+            </div>
+            <div class="success-box">
+                ✅ グラム陰性菌に強い：<span class="memorize">緑膿菌にも有効</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3つの毒性（ゲンタ3毒） -->
+    <div class="card">
+        <div class="card-header toxicity-header">
+            ☠️ ゲンタ3毒 - 必ず覚える！
+        </div>
+        <div class="card-content">
+            <div class="visual-memory">
+                <span class="memorize">腎</span>・<span class="memorize">耳</span>・<span class="memorize">神経筋</span>
+            </div>
+            
+            <div class="memory-hook">
+                💡 語呂：「<span class="memorize">ゲンタ3毒（じん・みみ・しんけい）</span>」
+            </div>
+            
+            <table class="data-table">
+                <tr>
+                    <th>毒性</th>
+                    <th>症状・機序</th>
+                    <th>危険因子</th>
+                </tr>
+                <tr>
+                    <td><span class="memorize">腎毒性</span></td>
+                    <td>近位尿細管障害<br><span class="memorize">非乏尿性</span>腎不全</td>
+                    <td><span class="memorize">バンコマイシン併用</span><br>ループ利尿薬</td>
+                </tr>
+                <tr>
+                    <td><span class="memorize">聴器毒性</span></td>
+                    <td><span class="memorize">第8脳神経</span>障害<br>不可逆的</td>
+                    <td><span class="memorize">ループ利尿薬併用</span><br>高用量・長期</td>
+                </tr>
+                <tr>
+                    <td><span class="memorize">神経筋遮断</span></td>
+                    <td>Ca²⁺拮抗作用<br>呼吸筋麻痺リスク</td>
+                    <td><span class="memorize">筋弛緩薬併用</span><br>重症筋無力症</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- TDM関連 -->
+    <div class="card">
+        <div class="card-header tdm-header">
+            📊 TDM - 血中濃度の暗記ポイント
+        </div>
+        <div class="card-content">
+            <table class="data-table">
+                <tr>
+                    <th>測定項目</th>
+                    <th>目標値</th>
+                    <th>覚え方</th>
+                </tr>
+                <tr>
+                    <td>ピーク値</td>
+                    <td><span class="memorize">5-10 μg/mL</span></td>
+                    <td>「<span class="memorize">ゴー（5）トゥ（10）</span>ピーク」</td>
+                </tr>
+                <tr>
+                    <td>トラフ値</td>
+                    <td><span class="memorize">&lt;2 μg/mL</span></td>
+                    <td>「トラフは<span class="memorize">ニ（2）</span>未満」</td>
+                </tr>
+            </table>
+            
+            <div class="success-box">
+                💊 投与法の変遷：<span class="memorize">1日1回投与</span>が主流<br>
+                理由：<span class="memorize">PAE（Post-Antibiotic Effect）</span>を活用
+            </div>
+            
+            <div class="memory-hook">
+                💡 採血タイミング：ピークは投与<span class="memorize">30分後</span>、トラフは<span class="memorize">次回投与直前</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 相互作用・禁忌 -->
+    <div class="card">
+        <div class="card-header interaction-header">
+            ⚠️ 危険な相互作用・禁忌
+        </div>
+        <div class="card-content">
+            <table class="data-table">
+                <tr>
+                    <th>併用薬/状態</th>
+                    <th>リスク</th>
+                    <th>機序・対応</th>
+                </tr>
+                <tr>
+                    <td><span class="memorize">ループ利尿薬</span></td>
+                    <td>腎・聴毒性<span class="memorize">増強</span></td>
+                    <td>相加的毒性</td>
+                </tr>
+                <tr>
+                    <td><span class="memorize">筋弛緩薬</span></td>
+                    <td>作用<span class="memorize">増強</span></td>
+                    <td>神経筋遮断の相加</td>
+                </tr>
+                <tr>
+                    <td><span class="memorize">バンコマイシン</span></td>
+                    <td>腎毒性<span class="memorize">増強</span></td>
+                    <td>相加的腎毒性</td>
+                </tr>
+            </table>
+            
+            <div class="warning-box">
+                🚫 絶対禁忌：<span class="memorize">妊婦</span>（胎児第8脳神経障害）<br>
+                慎重投与：<span class="memorize">重症筋無力症</span>（症状悪化）
+            </div>
+        </div>
+    </div>
+
+    <!-- 国試頻出パターン -->
+    <div class="card">
+        <div class="card-header exam-header">
+            📝 国試頻出パターンTOP5
+        </div>
+        <div class="card-content">
+            <div class="exam-pattern">
+                <div class="exam-pattern-title">パターン1：TDM関連</div>
+                「ピーク値<span class="memorize">5-10μg/mL</span>、トラフ値<span class="memorize">&lt;2μg/mL</span>の抗菌薬は？」<br>
+                「<span class="memorize">1日1回投与</span>が推奨されるアミノグリコシドは？」
+            </div>
+            
+            <div class="exam-pattern">
+                <div class="exam-pattern-title">パターン2：毒性</div>
+                「<span class="memorize">第8脳神経障害</span>を起こす抗菌薬は？」<br>
+                「<span class="memorize">非乏尿性</span>腎不全を起こすのは？」
+            </div>
+            
+            <div class="exam-pattern">
+                <div class="exam-pattern-title">パターン3：相互作用</div>
+                「<span class="memorize">筋弛緩薬</span>の作用を増強する抗菌薬は？」<br>
+                「フロセミドと併用で聴器毒性が増強するのは？」
+            </div>
+            
+            <div class="exam-pattern">
+                <div class="exam-pattern-title">パターン4：適応菌種</div>
+                「<span class="memorize">緑膿菌</span>に有効なアミノグリコシドは？」<br>
+                「グラム<span class="memorize">陰性菌</span>に強い抗菌薬群は？」
+            </div>
+            
+            <div class="exam-pattern">
+                <div class="exam-pattern-title">パターン5：妊婦への投与</div>
+                「妊婦に<span class="memorize">禁忌</span>の理由は<span class="memorize">胎児第8脳神経障害</span>」
+            </div>
+        </div>
+    </div>
+
+    <!-- 計算問題対策 -->
+    <div class="card">
+        <div class="card-header calc-header">
+            🧮 計算問題対策
+        </div>
+        <div class="card-content">
+            <div class="formula-box">
+                【基本投与量】
+                通常：<span class="memorize">3-5 mg/kg/日</span>
+                重症感染：<span class="memorize">5-7 mg/kg/日</span>
+                
+                【1日1回投与の場合】
+                5-7 mg/kg を<span class="memorize">1日1回</span>
+                
+                【腎機能低下時】
+                CLcr 50-80：<span class="memorize">24-36時間</span>ごと
+                CLcr 10-50：<span class="memorize">48時間</span>ごと
+                CLcr &lt;10：<span class="memorize">72時間</span>ごと
+            </div>
+            
+            <div class="exam-pattern">
+                <div class="exam-pattern-title">例題：体重60kg、CLcr 40mL/min</div>
+                投与量：60kg × <span class="memorize">5mg/kg</span> = <span class="memorize">300mg</span><br>
+                投与間隔：CLcr 40なので<span class="memorize">48時間</span>ごと
+            </div>
+        </div>
+    </div>
+
+    <!-- 引っ掛けポイント -->
+    <div class="card">
+        <div class="card-header trap-header">
+            🪤 国試引っ掛けポイント集
+        </div>
+        <div class="card-content">
+            <div class="trap-box">
+                <div class="trap-title">引っ掛け①：聴器毒性の可逆性</div>
+                ❌ 聴器毒性は可逆的 → <span class="memorize">不可逆的</span>が正解！<br>
+                ⭕ 腎毒性は可逆的（機能回復可能）
+            </div>
+            
+            <div class="trap-box">
+                <div class="trap-title">引っ掛け②：腎不全のタイプ</div>
+                ❌ 乏尿性腎不全 → <span class="memorize">非乏尿性</span>が正解！<br>
+                ⭕ 尿量は保たれるが腎機能低下
+            </div>
+            
+            <div class="trap-box">
+                <div class="trap-title">引っ掛け③：投与回数</div>
+                ❌ 1日3回分割投与が基本 → <span class="memorize">1日1回</span>が現在の主流！<br>
+                ⭕ PAEを活用した投与法
+            </div>
+            
+            <div class="trap-box">
+                <div class="trap-title">引っ掛け④：有効菌種</div>
+                ❌ グラム陽性菌に第一選択 → <span class="memorize">グラム陰性菌</span>が正解！<br>
+                ⭕ 特に緑膿菌に有効
+            </div>
+        </div>
+    </div>
+
+    <!-- 30秒クイックレビュー -->
+    <div class="card">
+        <div class="card-header exam-header">
+            ⏱️ 30秒クイックレビュー
+        </div>
+        <div class="card-content">
+            <div class="quick-review">
+                <div class="review-title">最短合格チェックリスト</div>
+                <div style="font-size: 16px; line-height: 2;">
+                    <span class="icon">①</span>3毒性：<span class="memorize">腎・耳・神経筋</span><br>
+                    <span class="icon">②</span>ピーク：<span class="memorize">5-10</span>、トラフ：<span class="memorize">&lt;2 μg/mL</span><br>
+                    <span class="icon">③</span>投与法：<span class="memorize">1日1回</span>（PAE活用）<br>
+                    <span class="icon">④</span>併用注意：<span class="memorize">ループ利尿薬</span>（毒性増強）<br>
+                    <span class="icon">⑤</span>筋弛緩薬：作用<span class="memorize">増強</span><br>
+                    <span class="icon">⑥</span>妊婦：<span class="memorize">禁忌</span>（胎児第8脳神経）<br>
+                    <span class="icon">⑦</span>腎不全：<span class="memorize">非乏尿性</span><br>
+                    <span class="icon">⑧</span>適応：<span class="memorize">グラム陰性菌</span>、緑膿菌
+                </div>
+            </div>
+            
+            <div class="memory-hook" style="text-align: center; margin-top: 20px; font-size: 20px;">
+                🎯 <span class="memorize">ゲンタ3毒（じん・みみ・しんけい）</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
