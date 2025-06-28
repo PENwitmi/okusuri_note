@@ -1,0 +1,1034 @@
+/*
+ * PharmaDex - Differentiation Table CSS
+ * 薬剤使い分けテーブル専用スタイルシート
+ * Version: 1.0.0
+ * 最終更新: 2025年6月28日
+ * 
+ * 「なぜこの薬を選ぶか」の最終解答CSS実現
+ * 処方選択マトリックスの視覚的革命
+ */
+
+/* ========================================
+   使い分けページ基盤設定
+======================================== */
+
+.differentiation-page {
+    padding-top: var(--spacing-xl);
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-secondary) 100%);
+    min-height: 100vh;
+}
+
+.differentiation-page .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-base);
+}
+
+/* ========================================
+   使い分けヘッダーセクション
+======================================== */
+
+.differentiation-header {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-dark) 100%);
+    color: white;
+    padding: var(--spacing-2xl);
+    border-radius: 20px;
+    margin-bottom: var(--spacing-2xl);
+    box-shadow: var(--shadow-heavy);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.differentiation-header::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.differentiation-header > * {
+    position: relative;
+    z-index: 1;
+}
+
+.differentiation-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-base);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.differentiation-subtitle {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.quick-summary-text {
+    background: rgba(255, 255, 255, 0.15);
+    padding: var(--spacing-lg);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    font-size: var(--font-size-lg);
+    line-height: 1.7;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================
+   30秒サマリーセクション
+======================================== */
+
+.summary-section {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    border: 3px solid #ffc107;
+    border-radius: 15px;
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+    box-shadow: var(--shadow-medium);
+    position: relative;
+}
+
+.summary-section::before {
+    content: '⚡ 30秒サマリー';
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: #ffc107;
+    color: #333;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: var(--font-size-base);
+    font-weight: bold;
+}
+
+.summary-content {
+    margin-top: var(--spacing-base);
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    color: #333;
+}
+
+.summary-content strong {
+    color: #c0392b;
+    font-weight: 700;
+}
+
+/* ========================================
+   選択フローチャート
+======================================== */
+
+.selection-flow {
+    background: var(--bg-card);
+    padding: var(--spacing-2xl);
+    border-radius: 15px;
+    margin: var(--spacing-xl) 0;
+    box-shadow: var(--shadow-light);
+    border: 2px solid var(--border-light);
+}
+
+.selection-flow h3 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    font-size: var(--font-size-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.flow-chart {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flow-step {
+    background: var(--bg-light);
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    border-left: 5px solid var(--secondary-color);
+    position: relative;
+    transition: var(--transition-base);
+}
+
+.flow-step:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-medium);
+}
+
+.flow-step::after {
+    content: '↓';
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--font-size-2xl);
+    color: var(--secondary-color);
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.flow-step:last-child::after {
+    display: none;
+}
+
+.flow-condition {
+    background: var(--secondary-color);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-base);
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.flow-result {
+    font-size: var(--font-size-lg);
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.flow-reasoning {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-top: var(--spacing-xs);
+}
+
+/* ========================================
+   使い分けマトリックステーブル
+======================================== */
+
+.differentiation-matrix {
+    background: var(--bg-card);
+    padding: var(--spacing-2xl);
+    border-radius: 15px;
+    margin: var(--spacing-xl) 0;
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+}
+
+.differentiation-matrix h3 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    font-size: var(--font-size-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.matrix-container {
+    overflow-x: auto;
+    margin: var(--spacing-lg) 0;
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+}
+
+.matrix-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 800px; /* 横スクロール最小幅 */
+}
+
+.matrix-table th {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: var(--spacing-base) var(--spacing-sm);
+    text-align: center;
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.matrix-table th:first-child {
+    text-align: left;
+    min-width: 200px;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-dark) 100%);
+}
+
+.matrix-table td {
+    padding: var(--spacing-base);
+    border-bottom: 1px solid var(--border-light);
+    border-right: 1px solid var(--border-light);
+    transition: all var(--transition-fast);
+    position: relative;
+}
+
+.matrix-table td:first-child {
+    background: var(--bg-light);
+    font-weight: 600;
+    color: var(--text-primary);
+    border-right: 2px solid var(--secondary-color);
+    min-width: 200px;
+}
+
+.matrix-table tbody tr:hover {
+    background: rgba(42, 82, 152, 0.05);
+}
+
+.matrix-table tbody tr:hover td {
+    transform: scale(1.02);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 推奨度バッジシステム */
+.recommendation-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 15px;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition-fast);
+    cursor: pointer;
+    margin-bottom: var(--spacing-xs);
+    width: 100%;
+    justify-content: center;
+}
+
+.recommendation-badge:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-medium);
+}
+
+.recommendation-badge.grade-a {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-dark) 100%);
+    border: 2px solid var(--secondary-color);
+}
+
+.recommendation-badge.grade-b {
+    background: linear-gradient(135deg, var(--warning-color) 0%, #e67e22 100%);
+    border: 2px solid var(--warning-color);
+}
+
+.recommendation-badge.grade-c {
+    background: linear-gradient(135deg, var(--info-color) 0%, #2980b9 100%);
+    border: 2px solid var(--info-color);
+}
+
+.recommendation-badge.not-recommended {
+    background: linear-gradient(135deg, var(--text-muted) 0%, #7f8c8d 100%);
+    border: 2px solid var(--text-muted);
+}
+
+.recommendation-badge.avoid {
+    background: linear-gradient(135deg, var(--accent-color) 0%, #c0392b 100%);
+    border: 2px solid var(--accent-color);
+}
+
+.badge-icon {
+    font-size: var(--font-size-base);
+}
+
+.badge-text {
+    font-weight: 700;
+}
+
+.evidence-level {
+    font-size: var(--font-size-xs);
+    opacity: 0.9;
+    font-style: italic;
+    display: block;
+    margin-top: var(--spacing-xs);
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+/* マトリックスセルの特殊スタイル */
+.matrix-cell-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    min-height: 60px;
+    justify-content: center;
+}
+
+.drug-choice {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+    text-align: center;
+}
+
+.choice-reasoning {
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+/* ========================================
+   処方例セクション
+======================================== */
+
+.prescription-examples {
+    background: var(--bg-card);
+    padding: var(--spacing-2xl);
+    border-radius: 15px;
+    margin: var(--spacing-xl) 0;
+    box-shadow: var(--shadow-light);
+}
+
+.prescription-examples h3 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    font-size: var(--font-size-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.examples-grid {
+    display: grid;
+    gap: var(--spacing-xl);
+}
+
+.prescription-example {
+    background: var(--bg-light);
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    border-left: 5px solid;
+    transition: var(--transition-base);
+    position: relative;
+}
+
+.prescription-example:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-medium);
+}
+
+.example-diabetes {
+    border-left-color: var(--secondary-color);
+}
+
+.example-elderly {
+    border-left-color: #9b59b6;
+}
+
+.example-comorbid {
+    border-left-color: var(--warning-color);
+}
+
+.example-standard {
+    border-left-color: var(--info-color);
+}
+
+.example-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-base);
+    border-bottom: 2px solid var(--border-light);
+}
+
+.example-icon {
+    font-size: var(--font-size-2xl);
+}
+
+.example-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.prescription-box {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: 10px;
+    border: 2px solid var(--border-light);
+    margin: var(--spacing-base) 0;
+    font-family: 'Courier New', monospace;
+    position: relative;
+}
+
+.prescription-box::before {
+    content: '💊 処方';
+    position: absolute;
+    top: -12px;
+    left: 15px;
+    background: white;
+    color: var(--primary-color);
+    padding: 0 10px;
+    font-size: var(--font-size-sm);
+    font-weight: bold;
+    font-family: var(--font-family);
+}
+
+.prescription-drug {
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.prescription-details {
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.reasoning-box {
+    background: rgba(39, 174, 96, 0.1);
+    border-left: 4px solid var(--secondary-color);
+    padding: var(--spacing-base);
+    border-radius: 0 8px 8px 0;
+    margin: var(--spacing-base) 0;
+}
+
+.reasoning-title {
+    font-weight: 600;
+    color: var(--secondary-dark);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.reasoning-text {
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+}
+
+.attention-box {
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid var(--warning-color);
+    padding: var(--spacing-base);
+    border-radius: 0 8px 8px 0;
+    margin: var(--spacing-base) 0;
+}
+
+.attention-title {
+    font-weight: 600;
+    color: #e67e22;
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.attention-text {
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+}
+
+/* ========================================
+   覚え方のコツセクション
+======================================== */
+
+.memory-tips {
+    background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+    border: 3px solid var(--secondary-color);
+    border-radius: 15px;
+    padding: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+    box-shadow: var(--shadow-medium);
+}
+
+.memory-tips h3 {
+    color: var(--secondary-dark);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.tips-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.memory-tip {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    border-left: 4px solid var(--secondary-color);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition-base);
+}
+
+.memory-tip:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.tip-phrase {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--secondary-dark);
+    margin-bottom: var(--spacing-base);
+    text-align: center;
+    background: rgba(39, 174, 96, 0.1);
+    padding: var(--spacing-sm);
+    border-radius: 20px;
+}
+
+.tip-explanation {
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.tip-example {
+    background: var(--bg-light);
+    padding: var(--spacing-sm);
+    border-radius: 8px;
+    margin-top: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* ========================================
+   よくある間違いセクション
+======================================== */
+
+.common-mistakes {
+    background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+    border: 3px solid var(--accent-color);
+    border-radius: 15px;
+    padding: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+    box-shadow: var(--shadow-medium);
+}
+
+.common-mistakes h3 {
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.mistakes-list {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.mistake-item {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-color);
+    box-shadow: var(--shadow-light);
+}
+
+.mistake-wrong {
+    background: rgba(231, 76, 60, 0.1);
+    padding: var(--spacing-base);
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-color);
+    margin-bottom: var(--spacing-base);
+}
+
+.mistake-wrong-label {
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.mistake-right {
+    background: rgba(39, 174, 96, 0.1);
+    padding: var(--spacing-base);
+    border-radius: 8px;
+    border-left: 3px solid var(--secondary-color);
+}
+
+.mistake-right-label {
+    font-weight: 700;
+    color: var(--secondary-dark);
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+/* ========================================
+   エビデンス情報セクション
+======================================== */
+
+.evidence-section {
+    background: var(--bg-card);
+    padding: var(--spacing-2xl);
+    border-radius: 15px;
+    margin: var(--spacing-xl) 0;
+    box-shadow: var(--shadow-light);
+}
+
+.evidence-section h3 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    font-size: var(--font-size-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.evidence-card {
+    background: var(--bg-light);
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    border: 2px solid var(--border-light);
+    transition: var(--transition-base);
+}
+
+.evidence-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--primary-color);
+}
+
+.evidence-trial {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-base);
+    text-align: center;
+    background: white;
+    padding: var(--spacing-sm);
+    border-radius: 8px;
+}
+
+.evidence-details {
+    margin-bottom: var(--spacing-lg);
+}
+
+.evidence-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.evidence-detail:last-child {
+    border-bottom: none;
+}
+
+.evidence-metric {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.evidence-result {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.evidence-conclusion {
+    background: white;
+    padding: var(--spacing-base);
+    border-radius: 8px;
+    font-size: var(--font-size-sm);
+    font-style: italic;
+    color: var(--text-secondary);
+    text-align: center;
+    border-left: 3px solid var(--primary-color);
+}
+
+/* ========================================
+   レスポンシブ対応
+======================================== */
+
+@media (max-width: 1024px) {
+    .matrix-container {
+        margin: 0 -var(--spacing-base);
+        border-radius: 0;
+    }
+    
+    .differentiation-matrix {
+        margin-left: -var(--spacing-base);
+        margin-right: -var(--spacing-base);
+        border-radius: 0;
+    }
+    
+    .examples-grid {
+        gap: var(--spacing-lg);
+    }
+    
+    .evidence-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .differentiation-page .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .differentiation-header {
+        padding: var(--spacing-lg);
+    }
+    
+    .differentiation-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .matrix-table {
+        min-width: 600px;
+    }
+    
+    .matrix-table th,
+    .matrix-table td {
+        padding: var(--spacing-sm);
+        font-size: var(--font-size-sm);
+    }
+    
+    .matrix-table th:first-child,
+    .matrix-table td:first-child {
+        min-width: 150px;
+    }
+    
+    .recommendation-badge {
+        padding: var(--spacing-xs);
+        font-size: var(--font-size-xs);
+    }
+    
+    .flow-chart {
+        gap: var(--spacing-base);
+    }
+    
+    .flow-step {
+        padding: var(--spacing-base);
+    }
+    
+    .prescription-example {
+        padding: var(--spacing-base);
+    }
+    
+    .memory-tips,
+    .common-mistakes {
+        padding: var(--spacing-base);
+    }
+}
+
+@media (max-width: 480px) {
+    .differentiation-header {
+        padding: var(--spacing-base);
+    }
+    
+    .differentiation-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .matrix-table {
+        min-width: 500px;
+    }
+    
+    .matrix-table th,
+    .matrix-table td {
+        padding: var(--spacing-xs);
+    }
+    
+    .matrix-table th:first-child,
+    .matrix-table td:first-child {
+        min-width: 120px;
+        font-size: var(--font-size-xs);
+    }
+    
+    .recommendation-badge {
+        margin-bottom: var(--spacing-xs);
+        padding: 2px var(--spacing-xs);
+    }
+    
+    .badge-text {
+        font-size: var(--font-size-xs);
+    }
+    
+    .matrix-cell-content {
+        min-height: 50px;
+    }
+    
+    .flow-step::after {
+        bottom: -20px;
+        font-size: var(--font-size-xl);
+    }
+    
+    .quick-summary-text {
+        font-size: var(--font-size-base);
+        padding: var(--spacing-base);
+    }
+}
+
+/* ========================================
+   印刷対応
+======================================== */
+
+@media print {
+    .differentiation-page {
+        background: white;
+    }
+    
+    .differentiation-header {
+        background: white;
+        color: black;
+        border: 2px solid #333;
+    }
+    
+    .prescription-example,
+    .memory-tip,
+    .mistake-item,
+    .evidence-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .matrix-table {
+        border: 2px solid #333;
+    }
+    
+    .matrix-table th {
+        background: #f0f0f0 !important;
+        color: #333 !important;
+    }
+    
+    .recommendation-badge {
+        background: #333 !important;
+        color: white !important;
+    }
+    
+    .flow-step::after {
+        color: #333;
+    }
+}
+
+/* ========================================
+   アクセシビリティ対応
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* フォーカス表示の改善 */
+.matrix-table td:focus,
+.recommendation-badge:focus,
+.prescription-example:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* 高コントラストモード対応 */
+@media (prefers-contrast: high) {
+    .differentiation-header {
+        background: #000;
+        color: #fff;
+    }
+    
+    .matrix-table th {
+        background: #000 !important;
+        color: #fff !important;
+    }
+    
+    .prescription-example,
+    .memory-tip,
+    .evidence-card {
+        border-width: 3px;
+    }
+    
+    .recommendation-badge {
+        border-width: 3px;
+    }
+    
+    .summary-section,
+    .memory-tips,
+    .common-mistakes {
+        border-width: 4px;
+    }
+}
+
+/* ========================================
+   インタラクティブ要素
+======================================== */
+
+/* ハイライト連動システム */
+.matrix-table tbody tr:hover td {
+    background: rgba(42, 82, 152, 0.1) !important;
+}
+
+.matrix-table td:hover {
+    background: rgba(42, 82, 152, 0.2) !important;
+    cursor: pointer;
+}
+
+/* ツールチップ風情報表示 */
+.recommendation-badge[data-tooltip] {
+    position: relative;
+}
+
+.recommendation-badge[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 6px;
+    font-size: var(--font-size-xs);
+    white-space: nowrap;
+    z-index: 100;
+    box-shadow: var(--shadow-medium);
+}
+
+.recommendation-badge[data-tooltip]:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #333;
+    z-index: 100;
+}

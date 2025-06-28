@@ -1,0 +1,1063 @@
+/*
+ * PharmaDex - Category Comparison CSS
+ * 薬効群比較ページ専用スタイルシート
+ * Version: 1.0.0
+ * 最終更新: 2025年6月28日
+ * 
+ * 「なぜ似た薬が複数存在するのか」への視覚的回答実現
+ * ARBペア比較から全薬効群展開可能な統一デザインシステム
+ */
+
+/* ========================================
+   薬効群比較ページ基盤設定
+======================================== */
+
+.category-comparison {
+    padding-top: var(--spacing-xl);
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-secondary) 100%);
+    min-height: 100vh;
+}
+
+.category-comparison .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-base);
+}
+
+/* ========================================
+   比較ヘッダーセクション
+======================================== */
+
+.comparison-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: var(--spacing-2xl);
+    border-radius: 20px;
+    margin-bottom: var(--spacing-2xl);
+    box-shadow: var(--shadow-heavy);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.comparison-header::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -15%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.comparison-header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -15%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.comparison-header > * {
+    position: relative;
+    z-index: 1;
+}
+
+.comparison-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-base);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.comparison-subtitle {
+    font-size: var(--font-size-xl);
+    opacity: 0.9;
+    margin-bottom: var(--spacing-lg);
+    font-weight: 300;
+}
+
+.comparison-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.comparison-stat {
+    text-align: center;
+    padding: var(--spacing-base);
+}
+
+.stat-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    opacity: 0.8;
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-value {
+    display: block;
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   薬剤ペア比較グリッド
+======================================== */
+
+.drug-pair-comparison {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.pair-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.pair-title {
+    font-size: var(--font-size-3xl);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-base);
+}
+
+.vs-indicator {
+    background: var(--accent-color);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-base);
+    border-radius: 25px;
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-medium);
+}
+
+.pair-description {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* 薬剤比較カード */
+.drug-comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+    margin: var(--spacing-2xl) 0;
+}
+
+.drug-comparison-card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-medium);
+    border: 3px solid transparent;
+    transition: var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.drug-comparison-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    border-radius: 20px 20px 0 0;
+}
+
+.drug-comparison-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-heavy);
+}
+
+/* ARB特化スタイル */
+.arb-telmisartan {
+    border-color: var(--primary-color);
+}
+
+.arb-telmisartan::before {
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+}
+
+.arb-losartan {
+    border-color: #e67e22;
+}
+
+.arb-losartan::before {
+    background: linear-gradient(90deg, #e67e22, #f39c12);
+}
+
+/* β遮断薬特化スタイル */
+.beta-bisoprolol {
+    border-color: #9b59b6;
+}
+
+.beta-bisoprolol::before {
+    background: linear-gradient(90deg, #9b59b6, #8e44ad);
+}
+
+.beta-carvedilol {
+    border-color: #27ae60;
+}
+
+.beta-carvedilol::before {
+    background: linear-gradient(90deg, #27ae60, #2ecc71);
+}
+
+/* 薬剤カードヘッダー */
+.drug-card-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--border-light);
+}
+
+.drug-card-name {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+}
+
+.drug-card-brand {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-base);
+    font-style: italic;
+}
+
+.drug-card-class {
+    background: var(--primary-color);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-base);
+    border-radius: 20px;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    display: inline-block;
+}
+
+.arb-losartan .drug-card-class {
+    background: #e67e22;
+}
+
+.beta-bisoprolol .drug-card-class {
+    background: #9b59b6;
+}
+
+.beta-carvedilol .drug-card-class {
+    background: #27ae60;
+}
+
+/* 中央比較インジケーター */
+.comparison-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+}
+
+.comparison-vs {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent-color) 0%, #c0392b 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    font-weight: 900;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-heavy);
+    position: relative;
+    animation: pulse-vs 3s infinite;
+}
+
+@keyframes pulse-vs {
+    0%, 100% { transform: scale(1); box-shadow: 0 8px 16px rgba(231, 76, 60, 0.3); }
+    50% { transform: scale(1.1); box-shadow: 0 12px 24px rgba(231, 76, 60, 0.5); }
+}
+
+/* ========================================
+   半減期比較バー
+======================================== */
+
+.half-life-comparison {
+    margin: var(--spacing-xl) 0;
+}
+
+.half-life-comparison h3 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-xl);
+}
+
+.half-life-bars {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.half-life-item {
+    background: var(--bg-light);
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    border-left: 5px solid;
+}
+
+.half-life-item.telmisartan {
+    border-left-color: var(--primary-color);
+}
+
+.half-life-item.losartan {
+    border-left-color: #e67e22;
+}
+
+.half-life-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-base);
+}
+
+.half-life-drug {
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+}
+
+.half-life-value {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.half-life-bar {
+    height: 40px;
+    border-radius: 20px;
+    position: relative;
+    background: var(--bg-secondary);
+    overflow: hidden;
+    margin-bottom: var(--spacing-base);
+}
+
+.half-life-fill {
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    transition: width 2s ease-in-out;
+}
+
+.half-life-fill.telmisartan-fill {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    width: 100%; /* 24時間 = 100% */
+    animation: glow-telmisartan 2s infinite alternate;
+}
+
+.half-life-fill.losartan-fill {
+    background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+    width: 50%; /* 12時間 = 50% */
+}
+
+@keyframes glow-telmisartan {
+    0% { box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.2); }
+    100% { box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.4), 0 0 20px rgba(42, 82, 152, 0.3); }
+}
+
+.half-life-benefit {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* ========================================
+   特殊効果比較
+======================================== */
+
+.special-effects-comparison {
+    background: var(--bg-card);
+    padding: var(--spacing-2xl);
+    border-radius: 15px;
+    margin: var(--spacing-xl) 0;
+    box-shadow: var(--shadow-light);
+}
+
+.special-effects-comparison h3 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xl);
+    font-size: var(--font-size-xl);
+}
+
+.effects-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.effect-card {
+    text-align: center;
+    padding: var(--spacing-xl);
+    border-radius: 15px;
+    border: 3px solid;
+    background: white;
+    transition: var(--transition-base);
+}
+
+.effect-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.effect-telmisartan {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
+.effect-losartan {
+    border-color: #e67e22;
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+}
+
+.effect-icon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-base);
+    display: block;
+}
+
+.effect-name {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-base);
+    color: var(--text-primary);
+}
+
+.effect-description {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-base);
+}
+
+.effect-mechanism {
+    background: rgba(255, 255, 255, 0.8);
+    padding: var(--spacing-base);
+    border-radius: 10px;
+    font-size: var(--font-size-sm);
+    font-style: italic;
+    color: var(--text-light);
+}
+
+.effects-vs {
+    width: 60px;
+    height: 60px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    box-shadow: var(--shadow-medium);
+}
+
+/* ========================================
+   市場シェア円グラフ
+======================================== */
+
+.market-share-comparison {
+    background: var(--bg-card);
+    padding: var(--spacing-2xl);
+    border-radius: 15px;
+    margin: var(--spacing-xl) 0;
+    box-shadow: var(--shadow-light);
+}
+
+.market-share-comparison h3 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xl);
+    font-size: var(--font-size-xl);
+}
+
+.market-share-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.market-share-item {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: var(--bg-light);
+    border-radius: 12px;
+    border: 2px solid;
+    transition: var(--transition-base);
+}
+
+.market-share-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.market-share-item.telmisartan-share {
+    border-color: var(--primary-color);
+}
+
+.market-share-item.losartan-share {
+    border-color: #e67e22;
+}
+
+.share-chart {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto var(--spacing-base);
+    position: relative;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--primary-color) 0deg 90deg,
+        var(--bg-secondary) 90deg 360deg
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.share-chart.losartan-chart {
+    background: conic-gradient(
+        #e67e22 0deg 72deg,
+        var(--bg-secondary) 72deg 360deg
+    );
+}
+
+.share-percentage {
+    font-size: var(--font-size-2xl);
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.share-label {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.share-context {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* ========================================
+   適応症差別化マトリックス
+======================================== */
+
+.indication-matrix {
+    background: var(--bg-card);
+    padding: var(--spacing-2xl);
+    border-radius: 15px;
+    margin: var(--spacing-xl) 0;
+    box-shadow: var(--shadow-light);
+}
+
+.indication-matrix h3 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xl);
+    font-size: var(--font-size-xl);
+}
+
+.matrix-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    gap: 2px;
+    background: var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-lg);
+}
+
+.matrix-header {
+    background: var(--primary-color);
+    color: white;
+    padding: var(--spacing-base);
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.matrix-row-header {
+    background: var(--bg-light);
+    padding: var(--spacing-base);
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+}
+
+.matrix-cell {
+    background: white;
+    padding: var(--spacing-base);
+    text-align: center;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.matrix-cell:hover {
+    background: var(--bg-light);
+    transform: scale(1.02);
+}
+
+.recommendation-level {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 15px;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.first-choice {
+    background: var(--secondary-color);
+}
+
+.second-choice {
+    background: var(--warning-color);
+}
+
+.not-recommended {
+    background: var(--text-muted);
+}
+
+.matrix-note {
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    margin-top: var(--spacing-xs);
+}
+
+/* ========================================
+   処方選択ガイド
+======================================== */
+
+.prescription-selection-guide {
+    background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
+    padding: var(--spacing-2xl);
+    border-radius: 15px;
+    margin: var(--spacing-xl) 0;
+    border: 2px solid var(--primary-color);
+    box-shadow: var(--shadow-medium);
+}
+
+.prescription-selection-guide h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xl);
+    font-size: var(--font-size-xl);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.selection-scenarios {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.selection-scenario {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    border-left: 5px solid;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition-base);
+}
+
+.selection-scenario:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-medium);
+}
+
+.scenario-diabetes {
+    border-left-color: var(--primary-color);
+}
+
+.scenario-gout {
+    border-left-color: #e67e22;
+}
+
+.scenario-elderly {
+    border-left-color: #9b59b6;
+}
+
+.scenario-heart-failure {
+    border-left-color: var(--secondary-color);
+}
+
+.scenario-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-base);
+}
+
+.scenario-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.scenario-recommendation {
+    background: var(--bg-light);
+    padding: var(--spacing-base);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-base);
+    border-left: 3px solid var(--secondary-color);
+}
+
+.recommended-drug {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.scenario-reasoning {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ========================================
+   エビデンス比較
+======================================== */
+
+.evidence-comparison {
+    background: var(--bg-card);
+    padding: var(--spacing-2xl);
+    border-radius: 15px;
+    margin: var(--spacing-xl) 0;
+    box-shadow: var(--shadow-light);
+}
+
+.evidence-comparison h3 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xl);
+    font-size: var(--font-size-xl);
+}
+
+.evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.evidence-card {
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    border: 2px solid;
+    transition: var(--transition-base);
+}
+
+.evidence-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.evidence-telmisartan {
+    border-color: var(--primary-color);
+}
+
+.evidence-losartan {
+    border-color: #e67e22;
+}
+
+.evidence-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-base);
+    border-bottom: 2px solid var(--border-light);
+}
+
+.evidence-drug {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.evidence-trial {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.evidence-details {
+    margin-bottom: var(--spacing-lg);
+}
+
+.evidence-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.evidence-item:last-child {
+    border-bottom: none;
+}
+
+.evidence-metric {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.evidence-result {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.evidence-conclusion {
+    background: var(--bg-light);
+    padding: var(--spacing-base);
+    border-radius: 8px;
+    font-size: var(--font-size-sm);
+    font-style: italic;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+/* ========================================
+   レスポンシブ対応
+======================================== */
+
+@media (max-width: 1024px) {
+    .drug-comparison-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .comparison-center {
+        order: -1;
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .comparison-vs {
+        width: 60px;
+        height: 60px;
+        font-size: var(--font-size-lg);
+    }
+    
+    .matrix-grid {
+        grid-template-columns: 150px 1fr 1fr;
+    }
+    
+    .effects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .effects-vs {
+        order: -1;
+        margin-bottom: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .category-comparison .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .comparison-header {
+        padding: var(--spacing-lg);
+    }
+    
+    .comparison-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .comparison-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .pair-title {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .drug-comparison-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .matrix-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .matrix-header:first-child {
+        display: none;
+    }
+    
+    .matrix-row-header {
+        background: var(--primary-color);
+        color: white;
+        text-align: center;
+        font-weight: 700;
+    }
+    
+    .evidence-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .market-share-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .comparison-header {
+        padding: var(--spacing-base);
+    }
+    
+    .comparison-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .comparison-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .drug-comparison-card {
+        padding: var(--spacing-base);
+    }
+    
+    .drug-card-name {
+        font-size: var(--font-size-xl);
+    }
+    
+    .half-life-bars {
+        gap: var(--spacing-base);
+    }
+    
+    .half-life-item {
+        padding: var(--spacing-base);
+    }
+    
+    .share-chart {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .share-percentage {
+        font-size: var(--font-size-xl);
+    }
+}
+
+/* ========================================
+   印刷対応
+======================================== */
+
+@media print {
+    .category-comparison {
+        background: white;
+    }
+    
+    .comparison-header {
+        background: white;
+        color: black;
+        border: 2px solid #333;
+    }
+    
+    .drug-comparison-card,
+    .evidence-card,
+    .effect-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .comparison-vs,
+    .effects-vs {
+        background: #333;
+    }
+    
+    .half-life-fill {
+        background: #333 !important;
+    }
+}
+
+/* ========================================
+   アクセシビリティ対応
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* フォーカス表示の改善 */
+.matrix-cell:focus,
+.selection-scenario:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* 高コントラストモード対応 */
+@media (prefers-contrast: high) {
+    .comparison-header {
+        background: #000;
+        color: #fff;
+    }
+    
+    .drug-comparison-card,
+    .evidence-card {
+        border-width: 4px;
+    }
+    
+    .recommendation-level {
+        border: 2px solid #000;
+    }
+    
+    .half-life-fill {
+        border: 2px solid #000;
+    }
+}

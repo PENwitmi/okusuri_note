@@ -1,0 +1,252 @@
+{
+  "project": {
+    "name": "PharmaDx",
+    "version": "1.0.0",
+    "description": "薬学生のための薬剤図鑑 - Phase 1: 20薬剤実装",
+    "strategy": "既存の高品質コンテンツを最大化"
+  },
+  
+  "phase1Drugs": [
+    "カンデサルタン", "テルミサルタン",
+    "エソメプラゾール", "ランソプラゾール", 
+    "ロスバスタチン", "アトルバスタチン",
+    "エンパグリフロジン", "ダパグリフロジン",
+    "カルベジロール", "ビソプロロール",
+    "エナラプリル", "ペリンドプリル",
+    "セルトラリン", "エスシタロプラム",
+    "フロセミド", "スピロノラクトン",
+    "ジゴキシン", "バンコマイシン",
+    "ワルファリン", "メトホルミン"
+  ],
+
+  "drugGroups": {
+    "ARB": ["カンデサルタン", "テルミサルタン"],
+    "PPI": ["エソメプラゾール", "ランソプラゾール"],
+    "スタチン": ["ロスバスタチン", "アトルバスタチン"],
+    "SGLT2阻害薬": ["エンパグリフロジン", "ダパグリフロジン"],
+    "β遮断薬": ["カルベジロール", "ビソプロロール"],
+    "ACE阻害薬": ["エナラプリル", "ペリンドプリル"],
+    "SSRI": ["セルトラリン", "エスシタロプラム"],
+    "利尿薬": ["フロセミド", "スピロノラクトン"],
+    "その他": ["ジゴキシン", "バンコマイシン", "ワルファリン", "メトホルミン"]
+  },
+
+  "drugInfo": {
+    "カンデサルタン": {
+      "category": "ARB",
+      "description": "T/P比優秀、脳保護作用",
+      "features": ["高血圧", "脳梗塞予防"],
+      "quality": "A",
+      "conversionStatus": "immediate"
+    },
+    "テルミサルタン": {
+      "category": "ARB", 
+      "description": "半減期最長、PPAR-γ活性",
+      "features": ["糖尿病", "長時間作用"],
+      "quality": "A",
+      "conversionStatus": "immediate"
+    },
+    "エソメプラゾール": {
+      "category": "PPI",
+      "description": "オメプラゾールS体、強力",
+      "features": ["重症GERD", "夜間逆流"],
+      "quality": "A", 
+      "conversionStatus": "immediate"
+    },
+    "ランソプラゾール": {
+      "category": "PPI",
+      "description": "日本シェア1位、OD錠",
+      "features": ["NSAIDs予防", "小児適応"],
+      "quality": "A",
+      "conversionStatus": "immediate"
+    },
+    "ロスバスタチン": {
+      "category": "スタチン",
+      "description": "最強LDL低下、腎排泄",
+      "features": ["高LDL", "CKD"],
+      "quality": "A",
+      "conversionStatus": "immediate"
+    },
+    "アトルバスタチン": {
+      "category": "スタチン",
+      "description": "世界最多処方、バランス型",
+      "features": ["標準治療", "多面的効果"],
+      "quality": "A", 
+      "conversionStatus": "immediate"
+    },
+    "エンパグリフロジン": {
+      "category": "SGLT2阻害薬",
+      "description": "心不全予防、腎保護",
+      "features": ["心血管保護", "体重減少"],
+      "quality": "A",
+      "conversionStatus": "immediate"
+    },
+    "ダパグリフロジン": {
+      "category": "SGLT2阻害薬", 
+      "description": "世界初SGLT2阻害薬",
+      "features": ["糖尿病", "慢性腎不全"],
+      "quality": "A",
+      "conversionStatus": "immediate"
+    },
+    "カルベジロール": {
+      "category": "β遮断薬",
+      "description": "α1遮断も有、心不全適応",
+      "features": ["心不全", "高血圧"],
+      "quality": "B",
+      "conversionStatus": "enhance"
+    },
+    "ビソプロロール": {
+      "category": "β遮断薬",
+      "description": "β1選択性、長時間作用",
+      "features": ["虚血性心疾患", "心房細動"],
+      "quality": "B",
+      "conversionStatus": "enhance"
+    },
+    "エナラプリル": {
+      "category": "ACE阻害薬",
+      "description": "古典的ACE阻害薬、安価",
+      "features": ["高血圧", "心不全"],
+      "quality": "A",
+      "conversionStatus": "immediate"
+    },
+    "ペリンドプリル": {
+      "category": "ACE阻害薬",
+      "description": "組織ACE阻害強、脳保護",
+      "features": ["脳梗塞予防", "冠動脈疾患"],
+      "quality": "A",
+      "conversionStatus": "immediate"
+    },
+    "セルトラリン": {
+      "category": "SSRI",
+      "description": "バランス型SSRI、安全性高",
+      "features": ["うつ病", "パニック障害"],
+      "quality": "B",
+      "conversionStatus": "enhance"
+    },
+    "エスシタロプラム": {
+      "category": "SSRI",
+      "description": "最も選択的、効果確実",
+      "features": ["うつ病", "全般性不安障害"],
+      "quality": "B", 
+      "conversionStatus": "enhance"
+    },
+    "フロセミド": {
+      "category": "利尿薬",
+      "description": "ループ利尿薬、強力",
+      "features": ["心不全", "浮腫"],
+      "quality": "B",
+      "conversionStatus": "enhance"
+    },
+    "スピロノラクトン": {
+      "category": "利尿薬",
+      "description": "K保持性、抗アルドステロン",
+      "features": ["心不全", "高血圧"],
+      "quality": "B",
+      "conversionStatus": "enhance"
+    },
+    "ジゴキシン": {
+      "category": "その他",
+      "description": "古典的強心薬、TDM必須",
+      "features": ["心房細動", "心不全"],
+      "quality": "A",
+      "conversionStatus": "immediate"
+    },
+    "バンコマイシン": {
+      "category": "その他", 
+      "description": "MRSA治療薬、TDM必須",
+      "features": ["MRSA", "TDM"],
+      "quality": "A",
+      "conversionStatus": "immediate"
+    },
+    "ワルファリン": {
+      "category": "その他",
+      "description": "古典的抗凝固薬、PT-INR",
+      "features": ["心房細動", "血栓予防"],
+      "quality": "C",
+      "conversionStatus": "create"
+    },
+    "メトホルミン": {
+      "category": "その他",
+      "description": "糖尿病第一選択薬",
+      "features": ["2型糖尿病", "体重中性"],
+      "quality": "C", 
+      "conversionStatus": "create"
+    }
+  },
+
+  "qualityStandards": {
+    "A": {
+      "score": 4.8,
+      "requirements": ["5分サマリー", "詳細解説", "処方実態分析", "使い分けマトリックス", "フローチャート"],
+      "action": "品質保持+視覚化強化"
+    },
+    "B": {
+      "score": 4.0,
+      "requirements": ["5分サマリー", "基本情報", "部分的分析"],
+      "action": "ARBモデル準拠で拡充"
+    },
+    "C": {
+      "score": 3.0,
+      "requirements": ["基本情報のみ"],
+      "action": "最高品質基準で新規作成"
+    }
+  },
+
+  "contentMapping": {
+    "drugGroups": {
+      "ARB": "02_drug_database/cardiovascular/ARB_evolution_model.md",
+      "PPI": "02_drug_database/gastrointestinal/PPI_evolution_model.md", 
+      "スタチン": "02_drug_database/cardiovascular/statin_evolution_model.md",
+      "SGLT2阻害薬": "02_drug_database/endocrine/SGLT2_prescription_reality.md",
+      "β遮断薬": "02_drug_database/cardiovascular/beta_blocker_evolution_model.md",
+      "ACE阻害薬": "02_drug_database/cardiovascular/ACE_inhibitor_evolution_model.md",
+      "SSRI": "02_drug_database/psychiatry/SSRI_evolution_model.md",
+      "利尿薬": "02_drug_database/cardiovascular/diuretics_evolution_model.md"
+    },
+    "htmlCards": {
+      "ジゴキシン": "04_study_tools/digoxin_kokushi_card.html",
+      "バンコマイシン": "04_study_tools/vancomycin_exam_memory_card.html"
+    },
+    "stories": {
+      "ペニシリン": "01_stories/01_penicillin/01_penicillin_story_pure.md",
+      "アスピリン": "01_stories/02_aspirin/02_aspirin_story_pure.md",
+      "インスリン": "01_stories/03_insulin/03_insulin_story_pure.md"
+    }
+  },
+
+  "storyDrugMapping": {
+    "01_penicillin_story_pure": ["その他"],
+    "02_aspirin_story_pure": ["その他"],
+    "03_insulin_story_pure": ["その他"],
+    "03_hypertension": ["ARB", "ACE阻害薬", "β遮断薬", "利尿薬"]
+  },
+
+  "outputStructure": {
+    "website": {
+      "index.html": "メインランディングページ",
+      "groups/": "薬効群詳細ページ",
+      "drugs/": "個別薬剤ページ", 
+      "stories/": "感動ストーリーページ",
+      "css/": "統一スタイルシート",
+      "js/": "インタラクティブ機能",
+      "data/": "構造化データ（JSON）"
+    }
+  },
+
+  "seoSettings": {
+    "siteName": "PharmaDx - 薬剤図鑑",
+    "description": "薬学生のための薬剤学習プラットフォーム。20の重要薬剤、薬効群比較、感動ストーリーで薬学を深く理解",
+    "keywords": ["薬学", "薬剤", "国試", "暗記", "使い分け", "ARB", "PPI", "スタチン"],
+    "author": "PharmaDx Team",
+    "language": "ja"
+  },
+
+  "conversionSettings": {
+    "preserveMarkdownStructure": true,
+    "generateInteractiveElements": true,
+    "createCrossReferences": true,
+    "optimizeForMobile": true,
+    "enableSearch": true,
+    "includeAccessibility": true
+  }
+}
