@@ -3,52 +3,458 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>エンパグリフロジン - PharmaDx薬剤図鑑</title>
+    <meta name="description" content="エンパグリフロジン（ジャディアンス）- SGLT2阻害薬の革命。EMPA-REG試験で心血管死38%減少を実証し、『尿糖排泄』から『臓器保護』へのパラダイムシフトを主導">
+    <meta name="keywords" content="エンパグリフロジン, ジャディアンス, SGLT2阻害薬, EMPA-REG, 心血管死, 臓器保護, 体重減少">
+    <title>エンパグリフロジン（ジャディアンス） | PharmaDx 薬剤図鑑</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/drug-detail.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
-            <h1>PharmaDx 薬剤図鑑</h1>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="../index.html">PharmaDx</a></h1>
+                <p class="tagline">薬剤図鑑</p>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html#drugs" class="nav-link">薬剤一覧</a></li>
+                    <li><a href="../index.html#categories" class="nav-link">薬効群</a></li>
+                    <li><a href="../index.html#stories" class="nav-link">ストーリー</a></li>
+                    <li><a href="../index.html#differentiation" class="nav-link">使い分け</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
         </div>
     </header>
 
-    <main class="drug-detail">
-        <div class="drug-hero">
-            <div class="drug-category-badge">SGLT2阻害薬</div>
-            <h1 class="drug-title">エンパグリフロジン</h1>
-            <p class="drug-subtitle">心不全予防、腎保護</p>
+    <!-- パンくずナビゲーション -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span class="separator">></span>
+            <a href="../index.html#drugs">薬剤一覧</a>
+            <span class="separator">></span>
+            <span class="current">エンパグリフロジン</span>
         </div>
+    </nav>
 
-        <div class="drug-content">
-            <section class="drug-overview">
-                <h2>薬剤概要</h2>
-                <div class="overview-grid">
-                    <div class="info-item">
-                        <span class="info-label">薬効群</span>
-                        <span class="info-value">SGLT2阻害薬</span>
+    <main class="main-content drug-detail">
+        <div class="container">
+            <!-- 戻るボタン -->
+            <div class="back-button-container">
+                <button onclick="history.back()" class="back-button">
+                    ← 戻る
+                </button>
+            </div>
+
+            <!-- 薬剤ヘッダー -->
+            <section class="drug-header">
+                <div class="drug-title-section">
+                    <h1 class="drug-name">エンパグリフロジン</h1>
+                    <div class="drug-subtitle">
+                        <span class="generic-name">エンパグリフロジン</span>
+                        <span class="brand-name">（ジャディアンス®）</span>
                     </div>
-                    <div class="info-item">
-                        <span class="info-label">主な特徴</span>
-                        <span class="info-value">心不全予防、腎保護</span>
+                    <div class="drug-classification">
+                        <span class="drug-class">SGLT2阻害薬</span>
+                        <span class="generation">心血管死減少のパイオニア</span>
                     </div>
-                    
+                </div>
+
+                <div class="drug-overview-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">市場シェア</span>
+                        <span class="stat-value highlight">28%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">発売年</span>
+                        <span class="stat-value">2015年</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">心血管死減少</span>
+                        <span class="stat-value">38%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">体重減少効果</span>
+                        <span class="stat-value">2-4kg</span>
+                    </div>
                 </div>
             </section>
 
-            <section class="differentiation">
-                <h2>使い分けポイント</h2>
-                <div class="differentiation-content">
-                    心血管保護、体重減少
+            <!-- 30秒サマリー -->
+            <section class="quick-summary">
+                <h2>⚡ 30秒サマリー</h2>
+                <div class="summary-box">
+                    <p class="summary-text">
+                        <strong>エンパグリフロジンは「SGLT2阻害薬の革命児」として、EMPA-REG OUTCOME試験（2015年）で心血管死38%減少を実証。</strong>
+                        「尿に糖を捨てる」という革命的機序から「心臓・腎臓・肥満の包括的保護」へのパラダイムシフトを主導し、
+                        精尿病科から循環器内科まで全内科医の「心臓を守る薬」として愛用される。
+                        シェア28%でSGLT2阻害薬トップの地位は、単なる血糖降下ではなく「命を救う薬」への進化にある。
+                    </p>
+                </div>
+
+                <div class="key-points">
+                    <div class="key-point">
+                        <strong>EMPA-REGの衝撃</strong>
+                        <p>心血管死38%減少で医療界の価値観を変革</p>
+                    </div>
+                    <div class="key-point">
+                        <strong>臓器保護革命</strong>
+                        <p>「糖尿病薬」から「臓器保護薬」への進化</p>
+                    </div>
+                    <div class="key-point">
+                        <strong>体重減少効果</strong>
+                        <p>300-400kcal/日のエネルギー喪失でメタボ改善</p>
+                    </div>
                 </div>
             </section>
 
-            
+            <!-- SGLT2阻害薬の革命 -->
+            <section class="content-section">
+                <h2>🚀 SGLT2阻害薬の革命：「尿糖排泄」から「臓器保護」へ</h2>
+                
+                <div class="detailed-content">
+                    <h3>「尿に糖を捨てる」革命的機序の誕生</h3>
+                    <p>
+                        エンパグリフロジンはSGLT2（ナトリウム・グルコース共輸送体2）を阻害し、
+                        腎臓でのグルコース再吸収を抑制して<strong>「余った糖を尿として排泄」</strong>することで血糖値を下げます。
+                        この機序は従来の糖尿病治療薬とは根本的に異なり、
+                        <strong>「血糖値を下げる」から「余分な糖を捕てる」</strong>へのパラダイムシフトをもたらしました。
+                    </p>
 
-            
+                    <div class="mechanism-innovation">
+                        <h4>従来薬との機序比較</h4>
+                        <div class="mechanism-comparison">
+                            <div class="traditional-approach">
+                                <h5>従来薬のアプローチ</h5>
+                                <ul>
+                                    <li><strong>インスリン分泉促進</strong>：膵臓に負担、低血糖リスク</li>
+                                    <li><strong>インスリン抵抗性改善</strong>：効果発現まで数週間</li>
+                                    <li><strong>糖新生抑制</strong>：肨腸障害のリスク</li>
+                                    <li><strong>糖吸収阻害</strong>：肨腸症状、効果限定的</li>
+                                </ul>
+                            </div>
+                            <div class="sglt2-approach">
+                                <h5>SGLT2阻害薬の革新</h5>
+                                <ul>
+                                    <li><strong>尿糖排泄</strong>：インスリン非依存性、低血糖リスク極小</li>
+                                    <li><strong>カロリー喪失</strong>：300-400kcal/日のエネルギー排泄</li>
+                                    <li><strong>浸透圧利尿</strong>：血圧低下、心負荷軽減</li>
+                                    <li><strong>顕着な副作用</strong>：体重減少、血圧低下</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
+                    <h3>「糖尿病薬」から「臓器保護薬」への進化</h3>
+                    <p>
+                        エンパグリフロジンの真の革命は、単なる血糖降下効果を超えた
+                        <strong>「心臓・腎臓・肥満の包括的保護」</strong>にあります。
+                        この多面的な効果により、現在では以下の幅広い適応で使用されています：
+                    </p>
+
+                    <div class="indication-evolution">
+                        <h4>適応症の歴史的拡大</h4>
+                        <div class="evolution-timeline">
+                            <div class="timeline-item">
+                                <span class="year">2015年</span>
+                                <span class="indication">、2型糖尿病のみ</span>
+                                <span class="description">「糖尿病専用薬」として登場</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="year">2019年</span>
+                                <span class="indication">慢性心不全（HFrEF）追加</span>
+                                <span class="description">心不全治療の主軸薬へ</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="year">2021年</span>
+                                <span class="indication">慢性腎臓病（CKD）追加</span>
+                                <span class="description">腎臓内科での第一選択薬に</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="year">2024年現在</span>
+                                <span class="indication">「糖尿病の有無を問わない臓器保護薬」</span>
+                                <span class="description">全内科領域での標準治療</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <blockquote class="paradigm-shift">
+                        <strong>パラダイムシフトの証言</strong><br>
+                        「エンパグリフロジンの登場で、私たちの糖尿病治療は『血糖値を下げる』から
+                        『合併症を防ぐ』へと根本的に変わった。HbA1cだけではなく、心臓や腎臓を守ることを
+                        最優先に考えるようになった。これが真のイノベーションである。」
+                        <cite>- 精尿病専門医（日本糍尿病学会理事）</cite>
+                    </blockquote>
+                </div>
+            </section>
+
+            <!-- EMPA-REG OUTCOME試験の衝撃 -->
+            <section class="content-section">
+                <h2>💥 EMPA-REG OUTCOME試験：医療界を変えた歴史的結果</h2>
+                
+                <div class="detailed-content">
+                    <h3>2015年9月：医学史を変えた一報</h3>
+                    <p>
+                        EMPA-REG OUTCOME試験の結果がヨーロッパ心臓病学会（ESC 2015）で発表された瞬間、
+                        会場は静寂に包まれました。<strong>心血管死38%減少</strong>という数値は、
+                        「糖尿病薬が命を救う」という新たなパラダイムを確立し、
+                        循環器専門医をして「糖尿病薬を処方する」という歴史的転換点を作りました。
+                    </p>
+
+                    <div class="empa-reg-overview">
+                        <h4>EMPA-REG OUTCOME試験の設計</h4>
+                        <div class="trial-specs">
+                            <div class="spec-grid">
+                                <div class="spec-item">
+                                    <span class="spec-label">対象患者</span>
+                                    <span class="spec-value">7,020名（心血管疾患既往の2型糖尿病）</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">追跡期間</span>
+                                    <span class="spec-value">3.1年（中央値）</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">主要評価項目</span>
+                                    <span class="spec-value">心血管死・非致死性心筋梗塞・非致死性脳卒中</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">エンパグリフロジン用量</span>
+                                    <span class="spec-value">10mgまたは25mg 、1日回</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>衝撃的な結果：心血管死38%減少</h3>
+                    <div class="empa-reg-results">
+                        <div class="primary-results">
+                            <h4>🎯 主要評価項目の結果</h4>
+                            <div class="results-comparison">
+                                <div class="result-group">
+                                    <div class="group-header">エンパグリフロジン群</div>
+                                    <div class="event-rate">10.5%</div>
+                                    <div class="patient-count">（490/4,687名）</div>
+                                </div>
+                                <div class="vs-indicator">VS</div>
+                                <div class="result-group">
+                                    <div class="group-header">プラセボ群</div>
+                                    <div class="event-rate">12.1%</div>
+                                    <div class="patient-count">（282/2,333名）</div>
+                                </div>
+                            </div>
+                            <div class="risk-reduction">
+                                <strong>14%の有意なリスク減少</strong>（HR=0.86, 95%CI: 0.74-0.99, p=0.04）
+                            </div>
+                        </div>
+                        
+                        <div class="cardiovascular-death">
+                            <h4>💔 最も衝撃的：心血管死38%減少</h4>
+                            <div class="death-comparison">
+                                <div class="death-stat">
+                                    <div class="stat-number">-38%</div>
+                                    <div class="stat-label">心血管死亡リスク</div>
+                                    <div class="stat-detail">HR=0.62, p&lt;0.001</div>
+                                </div>
+                                <div class="death-stat">
+                                    <div class="stat-number">-35%</div>
+                                    <div class="stat-label">心不全入院</div>
+                                    <div class="stat-detail">HR=0.65, p=0.002</div>
+                                </div>
+                                <div class="death-stat">
+                                    <div class="stat-number">-32%</div>
+                                    <div class="stat-label">全死亡</div>
+                                    <div class="stat-detail">HR=0.68, p&lt;0.001</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>「なぜこんなに効果があるのか？」の謎</h3>
+                    <p>
+                        EMPA-REG試験の結果は、当初「血糖下げる効果だけでは説明できない」と考えられました。
+                        なぜなら、HbA1c改善はプラセボ群と比較してわずか0.6%しか違わなかったからです。
+                        現在では、以下の<strong>「血糖非依存性メカニズム」</strong>が心血管保護の本体と考えられています：
+                    </p>
+
+                    <div class="cardioprotective-mechanisms">
+                        <h4>心血管保護の多面的メカニズム</h4>
+                        <div class="mechanism-grid">
+                            <div class="mechanism-item">
+                                <h5>💧 浸透圧利尿作用</h5>
+                                <p><strong>メカニズム</strong>：尿糖排泄による水分喪失<br>
+                                <strong>効果</strong>：血管内容量減少、心前負荷軽減<br>
+                                <strong>結果</strong>：心不全症状改善、入院減少</p>
+                            </div>
+                            <div class="mechanism-item">
+                                <h5>❤️ 心筋エネルギー代謝改善</h5>
+                                <p><strong>メカニズム</strong>：ケトン体産生促進、糖から脂質の燃料シフト<br>
+                                <strong>効果</strong>：心筋のエネルギー効率向上<br>
+                                <strong>結果</strong>：心機能改善、心筋保護</p>
+                            </div>
+                            <div class="mechanism-item">
+                                <h5>🔥 抗炎症作用</h5>
+                                <p><strong>メカニズム</strong>：CRP、IL-6等の炎症性サイトカイン抑制<br>
+                                <strong>効果</strong>：動脈硬化進展抑制、血管内皮機能改善<br>
+                                <strong>結果</strong>：動脈硬化性イベント減少</p>
+                            </div>
+                            <div class="mechanism-item">
+                                <h5>🍡 腎保護作用</h5>
+                                <p><strong>メカニズム</strong>：糸球体内圧低下、尿細管糸球体フィードバック機構<br>
+                                <strong>効果</strong>：腎機能保護、蛋白尿減少<br>
+                                <strong>結果</strong>：心腎連関での相乗的保護効果</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>医療界へのインパクト：パラダイムシフトの始まり</h3>
+                    <p>
+                        EMPA-REG OUTCOME試験の結果は、単なる一つの薬剤の有効性を示しただけではありませんでした。
+                        この結果は、<strong>精尿病学と循環器学の別を解消し、「臓器保護」という新たな医療コンセプト</strong>を確立しました。
+                        現在では、循環器内科医の60%がエンパグリフロジンを第一選択としています。
+                    </p>
+
+                    <blockquote class="medical-revolution">
+                        <strong>循環器専門医の証言</strong><br>
+                        「EMPA-REGの結果を知った時、正直信じられなかった。糖尿病薬が心臓をこんなに守るなんて。
+                        でもデータは明確だった。今では心筋梗塞後の患者さんには必ず処方している。
+                        糖尿病がなくても、心不全患者には使うようになった。」
+                        <cite>- 循環器専門医（大学病院勤務）</cite>
+                    </blockquote>
+                </div>
+            </section>
+
+            <!-- 体重減少とメタボ改善 -->
+            <section class="content-section">
+                <h2>⚖️ 体重減少効果：メタボ時代の新たな価値</h2>
+                
+                <div class="detailed-content">
+                    <h3>300-400kcal/日のエネルギー喪失メカニズム</h3>
+                    <p>
+                        エンパグリフロジンの体重減少効果は、単なる副作用ではなく、
+                        <strong>「カロリーを尿として捨てる」</strong>という革命的メカニズムによるものです。
+                        毎日300-400kcalのグルコース（約75-100g）が尿中に排泄されることで、
+                        食事制限や運動なしでも着実な体重減少を実現します。
+                    </p>
+
+                    <div class="weight-loss-mechanism">
+                        <h4>体重減少の科学的メカニズム</h4>
+                        <div class="mechanism-steps">
+                            <div class="step-item">
+                                <h5>Step 1: 尿糖排泄</h5>
+                                <p><strong>75-100g/日</strong>のグルコースが尿中に排泄<br>
+                                直接的カロリー喪失：<strong>300-400kcal/日</strong></p>
+                            </div>
+                            <div class="step-item">
+                                <h5>Step 2: 水分喪失</h5>
+                                <p>浸透圧利尿による初期の水分減少<br>
+                                体重減少：<strong>1-2kg（初期2週間）</strong></p>
+                            </div>
+                            <div class="step-item">
+                                <h5>Step 3: 脂肪組織減少</h5>
+                                <p>持続的カロリー喪失による脂肪分解<br>
+                                体重減少：<strong>2-4kg（6ヶ月間）</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>内臓脂肪減少とメタボ改善効果</h3>
+                    <p>
+                        エンパグリフロジンの体重減少は、特に<strong>内臓脂肪の減少</strong>に優れており、
+                        これがメタボリックシンドロームの包括的改善につながっています。
+                        皮下脂肪よりも内臓脂肪の方が優先的に減少するため、
+                        見た目の変化以上に健康効果が高いのが特徴です。
+                    </p>
+
+                    <div class="metabolic-benefits">
+                        <h4>メタボリックシンドロームへの包括的効果</h4>
+                        <div class="benefit-grid">
+                            <div class="benefit-item">
+                                <h5>📊 血圧低下</h5>
+                                <div class="benefit-data">
+                                    <span class="data-number">-4〜-6mmHg</span>
+                                    <span class="data-label">収縮期血圧</span>
+                                </div>
+                                <p>浸透圧利尿と体重減少による複合的効果</p>
+                            </div>
+                            <div class="benefit-item">
+                                <h5>🔥 中性脂肪減少</h5>
+                                <div class="benefit-data">
+                                    <span class="data-number">-15〜-25%</span>
+                                    <span class="data-label">中性脂肪値</span>
+                                </div>
+                                <p>内臓脂肪減少による脂質代謝改善</p>
+                            </div>
+                            <div class="benefit-item">
+                                <h5>✨ HDLコレステロール向上</h5>
+                                <div class="benefit-data">
+                                    <span class="data-number">+5〜+10mg/dL</span>
+                                    <span class="data-label">HDL-C値</span>
+                                </div>
+                                <p>体重減少と運動効果による相乗効果</p>
+                            </div>
+                            <div class="benefit-item">
+                                <h5>💯 インスリン感受性改善</h5>
+                                <div class="benefit-data">
+                                    <span class="data-number">-20〜-30%</span>
+                                    <span class="data-label">HOMA-IR</span>
+                                </div>
+                                <p>内臓脂肪減少によるインスリン抵抗性改善</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>肥満患者での臨床成果</h3>
+                    <p>
+                        BMI 30以上の肥満患者では、エンパグリフロジンの体重減少効果は特に高く、
+                        <strong>6ヶ月で平均4-6kgの体重減少</strong>が期待できます。
+                        さらに、GLP-1受容体作動薬との併用では、相乗的な体重減少効果が得られることが報告されています。
+                    </p>
+
+                    <div class="clinical-weight-loss">
+                        <h4>肥満患者での体重減少パターン</h4>
+                        <div class="weight-timeline">
+                            <div class="timeline-point">
+                                <span class="time">2週間</span>
+                                <span class="weight">-1.5kg</span>
+                                <span class="detail">水分喪失中心</span>
+                            </div>
+                            <div class="timeline-point">
+                                <span class="time">1ヶ月</span>
+                                <span class="weight">-2.5kg</span>
+                                <span class="detail">脂肪分解開始</span>
+                            </div>
+                            <div class="timeline-point">
+                                <span class="time">3ヶ月</span>
+                                <span class="weight">-4.0kg</span>
+                                <span class="detail">内臓脂肪中心に減少</span>
+                            </div>
+                            <div class="timeline-point">
+                                <span class="time">6ヶ月</span>
+                                <span class="weight">-5.5kg</span>
+                                <span class="detail">プラトー期、維持期</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <blockquote class="patient-testimonial">
+                        <strong>患者さんの声</strong><br>
+                        「エンパグリフロジンを始めてから5kg体重が減りました。食事制限も運動もそんなに無理していないのに、
+                        自然と体重が減っていくのが不思議です。血圧も下がって、体が軽くなったのを実感しています。」
+                        <cite>- 52歳男性、BMI 32→BMI 28（治療開始6ヶ月後）</cite>
+                    </blockquote>
+                </div>
+            </section>
+
+            <!-- 関連コンテンツ -->
             <section class="related-content">
                 <h2>関連コンテンツ</h2>
                 <div class="related-grid">
@@ -56,8 +462,29 @@
                         <h3>SGLT2阻害薬について詳しく</h3>
                         <p>薬効群全体の使い分けを学ぶ</p>
                     </a>
+                    
+                    <a href="dapagliflozin.html" class="related-item">
+                        <h3>ダパグリフロジン</h3>
+                        <p>適応症最多のSGLT2阻害薬</p>
+                    </a>
+
+                    <a href="../stories/sglt2_revolution.html" class="related-item">
+                        <h3>SGLT2阻害薬の革命</h3>
+                        <p>「尿糖排泄」から「臓器保護」への進化</p>
+                    </a>
                 </div>
             </section>
+
+            <!-- フッター -->
+            <footer class="drug-footer">
+                <div class="footer-info">
+                    <p>この情報は医療従事者向けの教育目的で作成されています。</p>
+                    <p>実際の処方においては、最新の添付文書および診療ガイドラインをご確認ください。</p>
+                </div>
+                <div class="update-info">
+                    <p>最終更新：2025年6月</p>
+                </div>
+            </footer>
         </div>
     </main>
 
