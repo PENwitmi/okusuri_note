@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PharmaDex - 薬学生のための薬剤図鑑。21の重要薬剤、薬効群比較、感動ストーリーで薬学を深く理解">
+    <meta name="keywords" content="薬学, 薬剤, 国試, 暗記, 使い分け, ARB, PPI, スタチン">
+    <title>PharmaDex - 薬剤図鑑 | 薬学生のための学習プラットフォーム</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/interactive.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="index.html">PharmaDex</a></h1>
+                <p class="tagline">薬剤図鑑</p>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#drugs" class="nav-link">薬剤一覧</a></li>
+                    <li><a href="#categories" class="nav-link">薬効群</a></li>
+                    <li><a href="#stories" class="nav-link">ストーリー</a></li>
+                    <li><a href="#differentiation" class="nav-link">使い分け</a></li>
+                </ul>
+            </nav>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="薬剤名を検索..." class="search-input">
+                <button class="search-btn" onclick="performSearch()">
+                    <span class="search-icon">🔍</span>
+                </button>
+            </div>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        <!-- ヒーローセクション -->
+        <section class="hero">
+            <div class="hero-container">
+                <h2 class="hero-title">薬学生のための<br>薬剤学習プラットフォーム</h2>
+                <p class="hero-description">
+                    「なぜ似た薬が複数存在するのか？」への明確な回答。<br>
+                    24の重要薬剤から始める、実践的な薬学学習。
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">24</span>
+                        <span class="stat-label">重要薬剤</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">7</span>
+                        <span class="stat-label">薬効群</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10</span>
+                        <span class="stat-label">感動ストーリー</span>
+                    </div>
+                </div>
+                <a href="#drugs" class="cta-button">今すぐ学習を始める</a>
+            </div>
+        </section>
+
+        <!-- 重要薬剤20選 -->
+        <section id="drugs" class="drugs-section">
+            <div class="section-container">
+                <h2 class="section-title">Phase 1対象薬剤（24選）</h2>
+                <p class="section-description">
+                    臨床で最も重要な24薬剤を厳選。各薬剤の使い分けポイントと臨床価値を詳しく解説。
+                </p>
+                
+                <div class="drugs-grid">
+                    <!-- ARB -->
+                    <div class="drug-card" data-category="arb">
+                        <div class="drug-category">ARB</div>
+                        <h3 class="drug-name">カンデサルタン</h3>
+                        <p class="drug-description">T/P比優秀、脳保護作用</p>
+                        <div class="drug-features">
+                            <span class="feature">高血圧</span>
+                            <span class="feature">脳梗塞予防</span>
+                        </div>
+                        <a href="generated/drugs/カンデサルタン.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <div class="drug-card" data-category="arb">
+                        <div class="drug-category">ARB</div>
+                        <h3 class="drug-name">テルミサルタン</h3>
+                        <p class="drug-description">半減期最長、PPAR-γ活性</p>
+                        <div class="drug-features">
+                            <span class="feature">糖尿病</span>
+                            <span class="feature">長時間作用</span>
+                        </div>
+                        <a href="generated/drugs/テルミサルタン.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <div class="drug-card" data-category="arb">
+                        <div class="drug-category">ARB</div>
+                        <h3 class="drug-name">ロサルタン</h3>
+                        <p class="drug-description">世界初ARB、尿酸排泄促進</p>
+                        <div class="drug-features">
+                            <span class="feature">高血圧</span>
+                            <span class="feature">痛風合併</span>
+                        </div>
+                        <a href="generated/drugs/ロサルタン.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <!-- PPI -->
+                    <div class="drug-card" data-category="ppi">
+                        <div class="drug-category">PPI</div>
+                        <h3 class="drug-name">エソメプラゾール</h3>
+                        <p class="drug-description">CYP2C19影響最小</p>
+                        <div class="drug-features">
+                            <span class="feature">胃潰瘍</span>
+                            <span class="feature">安定効果</span>
+                        </div>
+                        <a href="generated/drugs/エソメプラゾール.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <div class="drug-card" data-category="ppi">
+                        <div class="drug-category">PPI</div>
+                        <h3 class="drug-name">ランソプラゾール</h3>
+                        <p class="drug-description">歴史あるスタンダード</p>
+                        <div class="drug-features">
+                            <span class="feature">胃潰瘍</span>
+                            <span class="feature">H.pylori</span>
+                        </div>
+                        <a href="generated/drugs/ランソプラゾール.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <div class="drug-card" data-category="ppi">
+                        <div class="drug-category">PPI</div>
+                        <h3 class="drug-name">オメプラゾール</h3>
+                        <p class="drug-description">世界初PPI、革命的制酸薬</p>
+                        <div class="drug-features">
+                            <span class="feature">逆流性食道炎</span>
+                            <span class="feature">CYP2C19</span>
+                        </div>
+                        <a href="generated/drugs/オメプラゾール.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <!-- スタチン -->
+                    <div class="drug-card" data-category="statin">
+                        <div class="drug-category">スタチン</div>
+                        <h3 class="drug-name">ロスバスタチン</h3>
+                        <p class="drug-description">最強スタチン、腎排泄</p>
+                        <div class="drug-features">
+                            <span class="feature">高LDL</span>
+                            <span class="feature">強力</span>
+                        </div>
+                        <a href="generated/drugs/ロスバスタチン.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <div class="drug-card" data-category="statin">
+                        <div class="drug-category">スタチン</div>
+                        <h3 class="drug-name">アトルバスタチン</h3>
+                        <p class="drug-description">プラーク安定化、脂溶性</p>
+                        <div class="drug-features">
+                            <span class="feature">冠動脈疾患</span>
+                            <span class="feature">プレイオトロピック</span>
+                        </div>
+                        <a href="generated/drugs/アトルバスタチン.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <!-- SGLT2阻害薬 -->
+                    <div class="drug-card" data-category="sglt2">
+                        <div class="drug-category">SGLT2阻害薬</div>
+                        <h3 class="drug-name">エンパグリフロジン</h3>
+                        <p class="drug-description">心不全適応、EMPA-REG</p>
+                        <div class="drug-features">
+                            <span class="feature">心不全</span>
+                            <span class="feature">糖尿病</span>
+                        </div>
+                        <a href="generated/drugs/エンパグリフロジン.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <div class="drug-card" data-category="sglt2">
+                        <div class="drug-category">SGLT2阻害薬</div>
+                        <h3 class="drug-name">ダパグリフロジン</h3>
+                        <p class="drug-description">CKD適応、DAPA-CKD</p>
+                        <div class="drug-features">
+                            <span class="feature">CKD</span>
+                            <span class="feature">腎保護</span>
+                        </div>
+                        <a href="generated/drugs/ダパグリフロジン.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <!-- β遮断薬 -->
+                    <div class="drug-card" data-category="beta-blocker">
+                        <div class="drug-category">β遮断薬</div>
+                        <h3 class="drug-name">カルベジロール</h3>
+                        <p class="drug-description">α遮断作用併用、心不全</p>
+                        <div class="drug-features">
+                            <span class="feature">心不全</span>
+                            <span class="feature">血管拡張</span>
+                        </div>
+                        <a href="generated/drugs/カルベジロール.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <div class="drug-card" data-category="beta-blocker">
+                        <div class="drug-category">β遮断薬</div>
+                        <h3 class="drug-name">ビソプロロール</h3>
+                        <p class="drug-description">β1選択性、長時間作用</p>
+                        <div class="drug-features">
+                            <span class="feature">高血圧</span>
+                            <span class="feature">選択性</span>
+                        </div>
+                        <a href="generated/drugs/ビソプロロール.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <!-- ACE阻害薬 -->
+                    <div class="drug-card" data-category="ace">
+                        <div class="drug-category">ACE阻害薬</div>
+                        <h3 class="drug-name">エナラプリル</h3>
+                        <p class="drug-description">心不全エビデンス豊富</p>
+                        <div class="drug-features">
+                            <span class="feature">心不全</span>
+                            <span class="feature">腎保護</span>
+                        </div>
+                        <a href="generated/drugs/エナラプリル.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <div class="drug-card" data-category="ace">
+                        <div class="drug-category">ACE阻害薬</div>
+                        <h3 class="drug-name">ペリンドプリル</h3>
+                        <p class="drug-description">EUROPA試験、冠動脈保護</p>
+                        <div class="drug-features">
+                            <span class="feature">冠動脈疾患</span>
+                            <span class="feature">血管保護</span>
+                        </div>
+                        <a href="generated/drugs/ペリンドプリル.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <!-- SSRI -->
+                    <div class="drug-card" data-category="ssri">
+                        <div class="drug-category">SSRI</div>
+                        <h3 class="drug-name">セルトラリン</h3>
+                        <p class="drug-description">副作用バランス良好</p>
+                        <div class="drug-features">
+                            <span class="feature">うつ病</span>
+                            <span class="feature">不安障害</span>
+                        </div>
+                        <a href="generated/drugs/セルトラリン.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <div class="drug-card" data-category="ssri">
+                        <div class="drug-category">SSRI</div>
+                        <h3 class="drug-name">エスシタロプラム</h3>
+                        <p class="drug-description">選択性最高、効果発現早い</p>
+                        <div class="drug-features">
+                            <span class="feature">うつ病</span>
+                            <span class="feature">速効性</span>
+                        </div>
+                        <a href="generated/drugs/エスシタロプラム.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <!-- 利尿薬 -->
+                    <div class="drug-card" data-category="diuretic">
+                        <div class="drug-category">利尿薬</div>
+                        <h3 class="drug-name">フロセミド</h3>
+                        <p class="drug-description">ループ利尿薬、急性心不全</p>
+                        <div class="drug-features">
+                            <span class="feature">心不全</span>
+                            <span class="feature">浮腫</span>
+                        </div>
+                        <a href="generated/drugs/フロセミド.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <div class="drug-card" data-category="diuretic">
+                        <div class="drug-category">利尿薬</div>
+                        <h3 class="drug-name">スピロノラクトン</h3>
+                        <p class="drug-description">K保持性、慢性心不全</p>
+                        <div class="drug-features">
+                            <span class="feature">心不全</span>
+                            <span class="feature">K保持</span>
+                        </div>
+                        <a href="generated/drugs/スピロノラクトン.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <div class="drug-card" data-category="mra">
+                        <div class="drug-category">MRA</div>
+                        <h3 class="drug-name">エサキセレノン</h3>
+                        <p class="drug-description">最新世代MRA、副作用克服</p>
+                        <div class="drug-features">
+                            <span class="feature">心不全</span>
+                            <span class="feature">CKD</span>
+                        </div>
+                        <a href="#" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <!-- ARNi -->
+                    <div class="drug-card revolutionary" data-category="arni">
+                        <div class="drug-category">ARNi</div>
+                        <h3 class="drug-name">サクビトリル/バルサルタン</h3>
+                        <p class="drug-description">世界初ARNi、心不全革命</p>
+                        <div class="drug-features">
+                            <span class="feature">HFrEF</span>
+                            <span class="feature">PARADIGM-HF</span>
+                        </div>
+                        <a href="#" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <!-- その他重要薬 -->
+                    <div class="drug-card" data-category="other">
+                        <div class="drug-category">強心薬</div>
+                        <h3 class="drug-name">ジゴキシン</h3>
+                        <p class="drug-description">国試頻出、TDM必須</p>
+                        <div class="drug-features">
+                            <span class="feature">心不全</span>
+                            <span class="feature">TDM</span>
+                        </div>
+                        <a href="generated/drugs/ジゴキシン.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <div class="drug-card" data-category="other">
+                        <div class="drug-category">抗生物質</div>
+                        <h3 class="drug-name">バンコマイシン</h3>
+                        <p class="drug-description">MRSA治療薬、TDM必須</p>
+                        <div class="drug-features">
+                            <span class="feature">MRSA</span>
+                            <span class="feature">TDM</span>
+                        </div>
+                        <a href="generated/drugs/バンコマイシン.html" class="drug-link">詳細を見る</a>
+                    </div>
+
+                    <div class="drug-card" data-category="other">
+                        <div class="drug-category">抗凝固薬</div>
+                        <h3 class="drug-name">ワルファリン</h3>
+                        <p class="drug-description">相互作用多数、PT-INR</p>
+                        <div class="drug-features">
+                            <span class="feature">血栓予防</span>
+                            <span class="feature">相互作用</span>
+                        </div>
+                        <span class="drug-status">準備中</span>
+                    </div>
+
+                    <div class="drug-card" data-category="other">
+                        <div class="drug-category">糖尿病薬</div>
+                        <h3 class="drug-name">メトホルミン</h3>
+                        <p class="drug-description">第一選択薬、ビグアナイド</p>
+                        <div class="drug-features">
+                            <span class="feature">2型糖尿病</span>
+                            <span class="feature">第一選択</span>
+                        </div>
+                        <span class="drug-status">準備中</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 薬効群別ナビゲーション -->
+        <section id="categories" class="categories-section">
+            <div class="section-container">
+                <h2 class="section-title">薬効群別ガイド</h2>
+                <p class="section-description">
+                    同じ薬効群内での使い分けポイントを詳しく解説。「なぜ似た薬が複数あるのか」がわかります。
+                </p>
+                
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <div class="category-icon">🫀</div>
+                        <h3 class="category-title">循環器オーケストラガイド</h3>
+                        <p class="category-description">音楽理論で理解する循環器薬の完全統合ガイド。新時代楽器（エサキセレノン・ARNi）も登場</p>
+                        <div class="category-drugs">9薬剤</div>
+                        <a href="data/cardiovascular-orchestra.html" class="category-link">オーケストラを聴く</a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">🧬</div>
+                        <h3 class="category-title">消化器系薬剤</h3>
+                        <p class="category-description">PPI薬剤のCYP2C19による効果の違い</p>
+                        <div class="category-drugs">2薬剤</div>
+                        <a href="data/categories/gastrointestinal.html" class="category-link">使い分けを学ぶ</a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">🫁</div>
+                        <h3 class="category-title">脂質異常症薬</h3>
+                        <p class="category-description">ストロング vs スタンダードスタチンの選択基準</p>
+                        <div class="category-drugs">2薬剤</div>
+                        <a href="data/categories/lipid.html" class="category-link">使い分けを学ぶ</a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">🧠</div>
+                        <h3 class="category-title">精神神経系薬</h3>
+                        <p class="category-description">SSRI薬剤の副作用プロファイル比較</p>
+                        <div class="category-drugs">2薬剤</div>
+                        <a href="data/categories/psychotropic.html" class="category-link">使い分けを学ぶ</a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">🍯</div>
+                        <h3 class="category-title">糖尿病薬</h3>
+                        <p class="category-description">SGLT2阻害薬の適応別使い分け（心不全 vs CKD）</p>
+                        <div class="category-drugs">2薬剤</div>
+                        <a href="data/categories/diabetes.html" class="category-link">使い分けを学ぶ</a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">💧</div>
+                        <h3 class="category-title">利尿薬</h3>
+                        <p class="category-description">急性 vs 慢性心不全での利尿薬選択</p>
+                        <div class="category-drugs">2薬剤</div>
+                        <a href="data/categories/diuretic.html" class="category-link">使い分けを学ぶ</a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">⚕️</div>
+                        <h3 class="category-title">その他重要薬</h3>
+                        <p class="category-description">TDM対象薬、相互作用要注意薬の実践ポイント</p>
+                        <div class="category-drugs">4薬剤</div>
+                        <a href="data/categories/others.html" class="category-link">使い分けを学ぶ</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10大ストーリー -->
+        <section id="stories" class="stories-section">
+            <div class="section-container">
+                <h2 class="section-title">薬学史 10大ストーリー</h2>
+                <p class="section-description">
+                    感動的な発見物語から、薬剤への理解と愛着を深めましょう。歴史を知ることで薬学がもっと好きになります。
+                </p>
+                
+                <div class="stories-grid">
+                    <div class="story-card">
+                        <div class="story-image">🧪</div>
+                        <h3 class="story-title">ペニシリンの奇跡</h3>
+                        <p class="story-description">フレミングの偶然の発見が、どのように数億人の命を救ったのか</p>
+                        <div class="story-meta">
+                            <span class="story-year">1928年</span>
+                            <span class="story-impact">感染症治療革命</span>
+                        </div>
+                        <a href="data/stories/penicillin.html" class="story-link">ストーリーを読む</a>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">💉</div>
+                        <h3 class="story-title">インスリンの光と影</h3>
+                        <p class="story-description">糖尿病患者に希望をもたらした治療薬の発見と商業化の裏側</p>
+                        <div class="story-meta">
+                            <span class="story-year">1921年</span>
+                            <span class="story-impact">糖尿病治療革命</span>
+                        </div>
+                        <a href="data/stories/insulin.html" class="story-link">ストーリーを読む</a>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">🫀</div>
+                        <h3 class="story-title">高血圧治療への挑戦</h3>
+                        <p class="story-description">サイレントキラーとの戦い - ACE阻害薬からARBへの進化</p>
+                        <div class="story-meta">
+                            <span class="story-year">1977年</span>
+                            <span class="story-impact">心血管疾患予防</span>
+                        </div>
+                        <a href="data/stories/hypertension.html" class="story-link">ストーリーを読む</a>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">🛡️</div>
+                        <h3 class="story-title">バンコマイシンの最後の砦</h3>
+                        <p class="story-description">MRSA出現で注目された「最終兵器」の光と影</p>
+                        <div class="story-meta">
+                            <span class="story-year">1958年</span>
+                            <span class="story-impact">耐性菌対策</span>
+                        </div>
+                        <a href="data/stories/vancomycin.html" class="story-link">ストーリーを読む</a>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">💊</div>
+                        <h3 class="story-title">アスピリンの奇跡</h3>
+                        <p class="story-description">解熱鎮痛薬から心筋梗塞予防薬へ - 100年の進化</p>
+                        <div class="story-meta">
+                            <span class="story-year">1897年</span>
+                            <span class="story-impact">心血管疾患予防</span>
+                        </div>
+                        <a href="data/stories/aspirin.html" class="story-link">ストーリーを読む</a>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">🎯</div>
+                        <h3 class="story-title">がん治療薬の夜明け</h3>
+                        <p class="story-description">化学療法から分子標的薬へ - がん治療の劇的進歩</p>
+                        <div class="story-meta">
+                            <span class="story-year">1940年</span>
+                            <span class="story-impact">がん治療革命</span>
+                        </div>
+                        <a href="data/stories/anticancer.html" class="story-link">ストーリーを読む</a>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">🧠</div>
+                        <h3 class="story-title">精神科薬の光と影</h3>
+                        <p class="story-description">精神医学を変えた薬剤の発見と社会への影響</p>
+                        <div class="story-meta">
+                            <span class="story-year">1950年</span>
+                            <span class="story-impact">精神医学革命</span>
+                        </div>
+                        <a href="data/stories/psychotropic.html" class="story-link">ストーリーを読む</a>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">💉</div>
+                        <h3 class="story-title">ワクチンの奇跡</h3>
+                        <p class="story-description">天然痘撲滅からCOVID-19まで - 予防医学の勝利</p>
+                        <div class="story-meta">
+                            <span class="story-year">1796年</span>
+                            <span class="story-impact">感染症予防</span>
+                        </div>
+                        <a href="data/stories/vaccine.html" class="story-link">ストーリーを読む</a>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">🦠</div>
+                        <h3 class="story-title">耐性菌との攻防</h3>
+                        <p class="story-description">抗生物質と耐性菌のいたちごっこ - 終わりなき戦い</p>
+                        <div class="story-meta">
+                            <span class="story-year">1940年</span>
+                            <span class="story-impact">AMR対策</span>
+                        </div>
+                        <a href="data/stories/resistance.html" class="story-link">ストーリーを読む</a>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">🧬</div>
+                        <h3 class="story-title">個別化医療の始まり</h3>
+                        <p class="story-description">遺伝子解析から始まる、一人ひとりに最適な治療</p>
+                        <div class="story-meta">
+                            <span class="story-year">2003年</span>
+                            <span class="story-impact">精密医療</span>
+                        </div>
+                        <a href="data/stories/personalized.html" class="story-link">ストーリーを読む</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 薬剤使い分けの極意 -->
+        <section id="differentiation" class="differentiation-section">
+            <div class="section-container">
+                <h2 class="section-title">薬剤使い分けの極意</h2>
+                <p class="section-description">
+                    同効薬の使い分けで迷わない！実臨床で重要な判断ポイントを10項目で完全攻略。
+                </p>
+                
+                <div class="differentiation-grid">
+                    <div class="diff-card">
+                        <div class="diff-number">01</div>
+                        <h3 class="diff-title">SGLT2阻害薬の適応別使い分け</h3>
+                        <p class="diff-description">心不全にはエンパグリフロジン、CKDにはダパグリフロジン</p>
+                        <div class="diff-drugs">エンパグリフロジン vs ダパグリフロジン</div>
+                        <a href="data/differentiation/sglt2.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+
+                    <div class="diff-card">
+                        <div class="diff-number">02</div>
+                        <h3 class="diff-title">スタチンの強度別使い分け</h3>
+                        <p class="diff-description">冠動脈疾患にはストロング、予防にはスタンダード</p>
+                        <div class="diff-drugs">ロスバスタチン vs アトルバスタチン</div>
+                        <a href="data/differentiation/statin.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+
+                    <div class="diff-card">
+                        <div class="diff-number">03</div>
+                        <h3 class="diff-title">PPIの代謝特性による選択</h3>
+                        <p class="diff-description">CYP2C19 PMにはエソメプラゾール一択</p>
+                        <div class="diff-drugs">エソメプラゾール vs ランソプラゾール</div>
+                        <a href="data/differentiation/ppi.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+
+                    <div class="diff-card">
+                        <div class="diff-number">04</div>
+                        <h3 class="diff-title">β遮断薬の選択性による使い分け</h3>
+                        <p class="diff-description">心不全にはカルベジロール、高血圧にはビソプロロール</p>
+                        <div class="diff-drugs">カルベジロール vs ビソプロロール</div>
+                        <a href="data/differentiation/beta_blocker.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+
+                    <div class="diff-card">
+                        <div class="diff-number">05</div>
+                        <h3 class="diff-title">ARBの臓器保護作用別選択</h3>
+                        <p class="diff-description">脳保護作用重視ならカンデサルタン</p>
+                        <div class="diff-drugs">カンデサルタン vs テルミサルタン</div>
+                        <a href="data/differentiation/arb.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+
+                    <div class="diff-card">
+                        <div class="diff-number">06</div>
+                        <h3 class="diff-title">利尿薬の病期別使い分け</h3>
+                        <p class="diff-description">急性期はフロセミド、慢性期はスピロノラクトン</p>
+                        <div class="diff-drugs">フロセミド vs スピロノラクトン</div>
+                        <a href="data/differentiation/diuretic.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+
+                    <div class="diff-card">
+                        <div class="diff-number">07</div>
+                        <h3 class="diff-title">SSRIの副作用プロファイル比較</h3>
+                        <p class="diff-description">初回治療にはエスシタロプラム</p>
+                        <div class="diff-drugs">セルトラリン vs エスシタロプラム</div>
+                        <a href="data/differentiation/ssri.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+
+                    <div class="diff-card">
+                        <div class="diff-number">08</div>
+                        <h3 class="diff-title">ACE阻害薬のエビデンス別選択</h3>
+                        <p class="diff-description">心不全にはエナラプリル、冠動脈疾患にはペリンドプリル</p>
+                        <div class="diff-drugs">エナラプリル vs ペリンドプリル</div>
+                        <a href="data/differentiation/ace.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+
+                    <div class="diff-card">
+                        <div class="diff-number">09</div>
+                        <h3 class="diff-title">TDM対象薬の管理ポイント</h3>
+                        <p class="diff-description">ジゴキシンは効果、バンコマイシンは副作用重視</p>
+                        <div class="diff-drugs">ジゴキシン vs バンコマイシン</div>
+                        <a href="data/differentiation/tdm.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+
+                    <div class="diff-card">
+                        <div class="diff-number">10</div>
+                        <h3 class="diff-title">抗凝固薬の選択基準</h3>
+                        <p class="diff-description">ワルファリンの適応と相互作用管理</p>
+                        <div class="diff-drugs">ワルファリン vs DOAC</div>
+                        <a href="data/differentiation/anticoagulant.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">PharmaDex</h3>
+                    <p class="footer-description">
+                        薬学生のための実践的学習プラットフォーム。<br>
+                        「なぜ似た薬が複数存在するのか」への明確な回答を提供します。
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">学習コンテンツ</h4>
+                    <ul class="footer-links">
+                        <li><a href="#drugs">24重要薬剤</a></li>
+                        <li><a href="#categories">薬効群ガイド</a></li>
+                        <li><a href="#stories">10大ストーリー</a></li>
+                        <li><a href="#differentiation">使い分けの極意</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">薬効群別</h4>
+                    <ul class="footer-links">
+                        <li><a href="data/cardiovascular-orchestra.html">循環器オーケストラガイド</a></li>
+                        <li><a href="data/categories/gastrointestinal.html">消化器系薬剤</a></li>
+                        <li><a href="data/categories/lipid.html">脂質異常症薬</a></li>
+                        <li><a href="data/categories/diabetes.html">糖尿病薬</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Phase 1情報</h4>
+                    <div class="footer-stats">
+                        <div class="footer-stat">
+                            <span class="stat-value">24</span>
+                            <span class="stat-label">薬剤</span>
+                        </div>
+                        <div class="footer-stat">
+                            <span class="stat-value">7</span>
+                            <span class="stat-label">薬効群</span>
+                        </div>
+                        <div class="footer-stat">
+                            <span class="stat-value">10</span>
+                            <span class="stat-label">ストーリー</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; 2025 PharmaDex. Phase 1 ベータ版 - 薬学生応援プロジェクト
+                </p>
+                <p class="version">
+                    Version 1.0.0 | 最終更新: 2025年6月28日
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

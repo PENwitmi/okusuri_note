@@ -716,7 +716,7 @@ class PharmaDxConverter {
     }
 
     saveHtmlFile(fileName, content) {
-        const outputDir = '../docs/generated';
+        const outputDir = '../docs';
         if (!fs.existsSync(outputDir)) {
             fs.mkdirSync(outputDir, { recursive: true });
         }
