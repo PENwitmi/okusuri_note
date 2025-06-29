@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="循環器系薬剤オーケストラガイド - 新時代楽器の登場。エサキセレノンとサクビトリルバルサルタンによる心不全治療革命を音楽理論で理解">
+    <meta name="keywords" content="循環器薬, オーケストラ, エサキセレノン, サクビトリルバルサルタン, 心不全, MRA, ARNi">
+    <title>循環器オーケストラ：新時代楽器の登場 | PharmaDex</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/drug-detail.css">
+    <style>
+        .orchestra-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .orchestra-title {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .orchestra-subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .new-era-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .instrument-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+        }
+        
+        .instrument-name {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .instrument-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .evolution-timeline {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .before-card, .after-card {
+            padding: 25px;
+            border-radius: 10px;
+        }
+        
+        .before-card {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+        
+        .after-card {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+        
+        .mermaid-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .clinical-value {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .value-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .before-after {
+                grid-template-columns: 1fr;
+            }
+            
+            .orchestra-title {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="../index.html">PharmaDex</a></h1>
+                <p class="tagline">薬剤図鑑</p>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html#drugs" class="nav-link">薬剤一覧</a></li>
+                    <li><a href="../index.html#categories" class="nav-link">薬効群</a></li>
+                    <li><a href="../index.html#stories" class="nav-link">ストーリー</a></li>
+                    <li><a href="../index.html#differentiation" class="nav-link">使い分け</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- パンくずナビゲーション -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span class="separator">></span>
+            <a href="../index.html#categories">薬効群</a>
+            <span class="separator">></span>
+            <span class="current">循環器オーケストラ</span>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- 戻るボタン -->
+            <div class="back-button-container">
+                <button onclick="history.back()" class="back-button">
+                    ← 戻る
+                </button>
+            </div>
+
+            <!-- ヒーローセクション -->
+            <section class="orchestra-hero">
+                <h1 class="orchestra-title">🎼 循環器系薬剤オーケストラ</h1>
+                <p class="orchestra-subtitle">
+                    新時代楽器の登場 - エサキセレノンとサクビトリルバルサルタンによる治療革命
+                </p>
+            </section>
+
+            <!-- 新時代オーケストラの概要 -->
+            <section class="new-era-section">
+                <h2>🌟 21世紀オーケストラの革新</h2>
+                <p>従来のオーケストラに、革新的な楽器が加わりました。これらの「新時代楽器」は、従来楽器の限界を突破し、これまで不可能だった音色と効果を実現します。</p>
+                
+                <div class="value-grid">
+                    <div class="value-item">
+                        <h4>🎯 副作用の克服</h4>
+                        <p>20年以上の課題だった副作用を技術革新で解決</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>⚡ 治療効果の向上</h4>
+                        <p>従来薬を上回る臨床アウトカムの実現</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>🎼 オーケストラの進化</h4>
+                        <p>新楽器により表現できる音楽の幅が劇的に拡大</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 新時代楽器詳細 -->
+            <section>
+                <h2>🎵 新時代楽器の詳細解説</h2>
+
+                <!-- エサキセレノン -->
+                <div class="instrument-card">
+                    <h3 class="instrument-name">🥁 エサキセレノン：改良版ティンパニ</h3>
+                    <p class="instrument-description">
+                        従来のティンパニ（スピロノラクトン）の課題を完全に克服した革新的な打楽器。
+                        純粋で雑音のない低音を奏でることができます。
+                    </p>
+                    
+                    <div class="before-after">
+                        <div class="before-card">
+                            <h4>🔴 従来ティンパニの問題点</h4>
+                            <ul>
+                                <li>音質の不純さ（女性化乳房・月経不順）</li>
+                                <li>演奏者への負担（性ホルモン受容体誤作用）</li>
+                                <li>継続困難（副作用による演奏中断）</li>
+                            </ul>
+                        </div>
+                        <div class="after-card">
+                            <h4>✨ 改良版ティンパニの革新</h4>
+                            <ul>
+                                <li>純粋な打撃音（MRA選択的作用）</li>
+                                <li>雑音除去技術（性ホルモン関連副作用なし）</li>
+                                <li>安定したパフォーマンス（CYP3A4代謝）</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="clinical-value">
+                        <h4>🎯 臨床での音楽効果</h4>
+                        <ul>
+                            <li><strong>音色</strong>：深く、純粋で、雑音のない低音</li>
+                            <li><strong>役割</strong>：心不全・CKD患者での確実な体液調節</li>
+                            <li><strong>特殊技法</strong>：従来不可能だった長期連続演奏</li>
+                        </ul>
+                    </div>
+                    
+                    <p><a href="drugs/esaxerenone.html" class="drug-link">エサキセレノンの詳細を見る →</a></p>
+                </div>
+
+                <!-- サクビトリルバルサルタン -->
+                <div class="instrument-card">
+                    <h3 class="instrument-name">⚡ サクビトリルバルサルタン：ハイブリッド楽器（ARNi）</h3>
+                    <p class="instrument-description">
+                        楽器工学の革命により誕生した、従来の概念を超越したハイブリッド楽器。
+                        ARB機能とNEP阻害機能を併せ持つ画期的な設計です。
+                    </p>
+                    
+                    <div class="mermaid-container">
+                        <h4>🎵 デュアル機能システム</h4>
+                        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
+                            <p><strong>ARB機能</strong>（従来の弦楽器技術）</p>
+                            <p>+</p>
+                            <p><strong>NEP阻害機能</strong>（新開発の増幅技術）</p>
+                            <p>→ BNP/ANP系活性化による新音域</p>
+                        </div>
+                    </div>
+                    
+                    <div class="clinical-value">
+                        <h4>🎼 演奏効果（PARADIGM-HF試験結果）</h4>
+                        <div class="value-grid">
+                            <div class="value-item">
+                                <h5>死亡率減少</h5>
+                                <p><strong>20%</strong>の改善</p>
+                            </div>
+                            <div class="value-item">
+                                <h5>心不全入院</h5>
+                                <p><strong>34%</strong>の減少</p>
+                            </div>
+                            <div class="value-item">
+                                <h5>患者QOL</h5>
+                                <p><strong>著明</strong>な改善</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #e3f2fd; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        <h4>🎭 オーケストラでの位置づけ</h4>
+                        <ul>
+                            <li><strong>楽器種別</strong>：エレクトロニック・ハイブリッド楽器</li>
+                            <li><strong>音域</strong>：従来ARBを超越した新次元</li>
+                            <li><strong>演奏法</strong>：心不全における革命的アプローチ</li>
+                        </ul>
+                    </div>
+                    
+                    <p><a href="drugs/sacubitril_valsartan.html" class="drug-link">サクビトリルバルサルタンの詳細を見る →</a></p>
+                </div>
+            </section>
+
+            <!-- 進化の軌跡 -->
+            <section class="evolution-timeline">
+                <h2>📈 オーケストラ進化の軌跡</h2>
+                
+                <div class="before-after">
+                    <div class="before-card">
+                        <h3>🎼 従来オーケストラ編成（2010年代）</h3>
+                        <h4>クラシック編成</h4>
+                        <ul>
+                            <li>第1バイオリン：ACE阻害薬（エナラプリル）</li>
+                            <li>打楽器：従来ティンパニ（スピロノラクトン）</li>
+                            <li>金管楽器：利尿薬（フロセミド）</li>
+                        </ul>
+                        
+                        <h4>🔊 演奏上の制約</h4>
+                        <ul>
+                            <li>女性化乳房による演奏者交代頻発</li>
+                            <li>限定的な心不全改善効果</li>
+                            <li>副作用による演奏中断リスク</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="after-card">
+                        <h3>🎼 新時代オーケストラ編成（2020年代）</h3>
+                        <h4>革新編成</h4>
+                        <ul>
+                            <li>ハイブリッド楽器：サクビトリルバルサルタン</li>
+                            <li>改良版ティンパニ：エサキセレノン</li>
+                            <li>金管楽器：利尿薬（変更なし）</li>
+                        </ul>
+                        
+                        <h4>🔊 革命的演奏効果</h4>
+                        <ul>
+                            <li>副作用による中断ゼロ</li>
+                            <li>患者アウトカム劇的向上</li>
+                            <li>演奏者・聴衆双方の満足度最大化</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 新時代オーケストラの処方設計 -->
+            <section>
+                <h2>🎯 新時代オーケストラの処方設計</h2>
+                
+                <div class="instrument-card">
+                    <h3>🎵 三重奏：新時代心不全治療</h3>
+                    <p><strong>エサキセレノン + サクビトリルバルサルタン + β遮断薬</strong></p>
+                    
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                        <h4>🎵 第1楽章：導入期（慎重なチューニング）</h4>
+                        <ul>
+                            <li>サクビトリルバルサルタン低用量開始</li>
+                            <li>エサキセレノン安全性確認</li>
+                            <li>β遮断薬現状維持</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #e8f5e8; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                        <h4>🎵 第2楽章：調整期（ハーモニー構築）</h4>
+                        <ul>
+                            <li>各薬剤の相互作用確認</li>
+                            <li>電解質バランス監視</li>
+                            <li>血圧・心拍数調整</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #fff3e0; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                        <h4>🎵 第3楽章：完成期（最適化達成）</h4>
+                        <ul>
+                            <li>目標用量達成</li>
+                            <li>副作用なし確認</li>
+                            <li>患者QOL最大化</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 患者背景別楽器編成 -->
+            <section>
+                <h2>🎭 患者背景別楽器編成ガイド</h2>
+                
+                <div class="value-grid">
+                    <div class="instrument-card">
+                        <h3>【若年心不全患者（&lt;65歳）】</h3>
+                        <h4>🎼 積極的革新編成</h4>
+                        <ul>
+                            <li>サクビトリルバルサルタン（主旋律）</li>
+                            <li>エサキセレノン（リズム）</li>
+                            <li>カルベジロール（調和）</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="instrument-card">
+                        <h3>【高齢心不全患者（≥75歳）】</h3>
+                        <h4>🎼 慎重バランス編成</h4>
+                        <ul>
+                            <li>低用量サクビトリルバルサルタン</li>
+                            <li>従来MRA（コスト考慮）</li>
+                            <li>低用量β遮断薬</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="instrument-card">
+                        <h3>【CKD合併心不全】</h3>
+                        <h4>🎼 腎保護重視編成</h4>
+                        <ul>
+                            <li>サクビトリルバルサルタン（腎保護）</li>
+                            <li>エサキセレノン（電解質管理）</li>
+                            <li>ループ利尿薬（体液管理）</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 教育的価値 -->
+            <section class="clinical-value">
+                <h2>📚 新時代オーケストラの教育的価値</h2>
+                
+                <div class="value-grid">
+                    <div class="value-item">
+                        <h4>🎼 音楽メタファーの効果</h4>
+                        <p>複雑な薬理学的相互作用を直感的に理解できる革新的学習法</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>📈 薬学進歩の可視化</h4>
+                        <p>1960年代から2020年代までの60年間の薬学進歩を体感</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>⚡ 実践的価値</h4>
+                        <p>薬局実習での相互作用チェック、モニタリング技術の習得</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>🌟 未来への架け橋</h4>
+                        <p>次世代医療技術への理解促進と学習意欲の向上</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 関連リンク -->
+            <section class="related-links">
+                <h2>🔗 関連コンテンツ</h2>
+                <div class="links-grid">
+                    <a href="categories/cardiovascular.html" class="related-link">
+                        <span class="link-title">循環器系薬効群</span>
+                        <span class="link-desc">ARB、ACE阻害薬、β遮断薬の詳細比較</span>
+                    </a>
+                    <a href="drugs/esaxerenone.html" class="related-link">
+                        <span class="link-title">エサキセレノン詳細</span>
+                        <span class="link-desc">最新世代MRAの完全解説</span>
+                    </a>
+                    <a href="drugs/sacubitril_valsartan.html" class="related-link">
+                        <span class="link-title">サクビトリルバルサルタン</span>
+                        <span class="link-desc">世界初ARNiの革命的機序</span>
+                    </a>
+                    <a href="stories/hypertension.html" class="related-link">
+                        <span class="link-title">高血圧治療の歴史</span>
+                        <span class="link-desc">循環器薬開発の感動ストーリー</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PharmaDex</h3>
+                    <p>薬学生のための薬剤図鑑</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>コンテンツ</h4>
+                    <ul>
+                        <li><a href="../index.html#drugs">薬剤一覧</a></li>
+                        <li><a href="../index.html#categories">薬効群</a></li>
+                        <li><a href="../index.html#stories">ストーリー</a></li>
+                        <li><a href="../index.html#differentiation">使い分け</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>新時代楽器</h4>
+                    <ul>
+                        <li><a href="drugs/esaxerenone.html">エサキセレノン</a></li>
+                        <li><a href="drugs/sacubitril_valsartan.html">サクビトリルバルサルタン</a></li>
+                        <li><a href="categories/cardiovascular.html">循環器系薬剤</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 PharmaDex. 新時代循環器オーケストラガイド</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // モバイルメニューのトグル
+        function toggleMobileMenu() {
+            const nav = document.querySelector('.main-nav');
+            nav.classList.toggle('mobile-active');
+        }
+
+        // スムーズスクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
