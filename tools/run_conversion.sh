@@ -34,21 +34,21 @@ if [ ! -d "node_modules" ]; then
     echo "✅ パッケージインストール完了"
 fi
 
-# 出力ディレクトリの準備
+# 出力ディレクトリの準備（新構造対応）
 echo "📁 出力ディレクトリ準備中..."
-mkdir -p website/generated
-mkdir -p website/generated/drugs
-mkdir -p website/generated/groups  
-mkdir -p website/generated/stories
-mkdir -p website/generated/css
-mkdir -p website/generated/js
-mkdir -p website/generated/data
+mkdir -p ../docs/generated
+mkdir -p ../docs/generated/drugs
+mkdir -p ../docs/generated/groups  
+mkdir -p ../docs/generated/stories
+mkdir -p ../docs/generated/css
+mkdir -p ../docs/generated/js
+mkdir -p ../docs/generated/data
 
 # 既存ファイルのバックアップ
-if [ -d "website/generated" ] && [ "$(ls -A website/generated)" ]; then
-    backup_dir="website/backup_$(date +%Y%m%d_%H%M%S)"
+if [ -d "../docs/generated" ] && [ "$(ls -A ../docs/generated)" ]; then
+    backup_dir="../docs/backup_$(date +%Y%m%d_%H%M%S)"
     echo "💾 既存ファイルを ${backup_dir} にバックアップ..."
-    cp -r website/generated "$backup_dir"
+    cp -r ../docs/generated "$backup_dir"
 fi
 
 # 変換実行
@@ -67,10 +67,10 @@ if [ $? -eq 0 ]; then
     echo "🎉 変換完了！"
     echo "=================================================="
     
-    # 生成ファイル数のカウント
-    drug_files=$(find website/generated/drugs -name "*.html" 2>/dev/null | wc -l)
-    group_files=$(find website/generated/groups -name "*.html" 2>/dev/null | wc -l)
-    total_files=$(find website/generated -name "*.html" 2>/dev/null | wc -l)
+    # 生成ファイル数のカウント（新構造対応）
+    drug_files=$(find ../docs/generated/drugs -name "*.html" 2>/dev/null | wc -l)
+    group_files=$(find ../docs/generated/groups -name "*.html" 2>/dev/null | wc -l)
+    total_files=$(find ../docs/generated -name "*.html" 2>/dev/null | wc -l)
     
     echo "📊 生成統計:"
     echo "   個別薬剤ページ: ${drug_files}ファイル"
@@ -79,22 +79,22 @@ if [ $? -eq 0 ]; then
     echo ""
     
     # ファイルサイズ確認
-    total_size=$(du -sh website/generated 2>/dev/null | cut -f1)
+    total_size=$(du -sh ../docs/generated 2>/dev/null | cut -f1)
     echo "   生成サイズ: ${total_size}"
     echo ""
     
     echo "🌐 プレビュー方法:"
-    echo "   cd website/generated"
+    echo "   cd docs/generated"
     echo "   python -m http.server 8000"
     echo "   ブラウザで http://localhost:8000 を開く"
     echo ""
     
     echo "📋 生成ファイル一覧:"
-    echo "   メインページ: website/generated/index.html"
-    if [ -d "website/generated/drugs" ]; then
-        echo "   薬剤ページ: website/generated/drugs/"
-        ls website/generated/drugs/*.html 2>/dev/null | head -5 | sed 's/^/     /'
-        remaining=$(( $(ls website/generated/drugs/*.html 2>/dev/null | wc -l) - 5 ))
+    echo "   メインページ: docs/generated/index.html"
+    if [ -d "../docs/generated/drugs" ]; then
+        echo "   薬剤ページ: docs/generated/drugs/"
+        ls ../docs/generated/drugs/*.html 2>/dev/null | head -5 | sed 's/^/     /'
+        remaining=$(( $(ls ../docs/generated/drugs/*.html 2>/dev/null | wc -l) - 5 ))
         if [ $remaining -gt 0 ]; then
             echo "     ... 他${remaining}ファイル"
         fi

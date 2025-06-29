@@ -1,52 +1,78 @@
-# pharma_dex ドキュメント構成
+# PharmaDx プロジェクトドキュメント
 
-このディレクトリには、pharma_dexプロジェクトの各種ドキュメントが整理されています。
+**整理日**: 2025-06-29  
+**構造**: 論理的・フラット化構造  
+**目的**: プロジェクト関連文書の効率的管理
 
-## ディレクトリ構成
+## 📁 ディレクトリ構造
 
-### project_management/ - プロジェクト管理
-現在進行中のプロジェクト管理に関するドキュメント
+### `/reference/` - 参照資料
+#### `content-index/`
+- **DRUG_CONTENT_INDEX.md** - 53ファイルの完全インデックス
 
-#### progress/ - 進捗管理
-- **PROGRESS_TRACKER.md** - 詳細な進捗管理（作業開始・完了記録）
-- **PROGRESS.md** - 簡易的な進捗状況
+#### `analysis-reports/`
+- **EXISTING_CONTENT_ANALYSIS_REPORT.md** - 既存コンテンツ分析レポート
+- **DOCUMENTATION_CONSISTENCY_CHECKLIST.md** - ドキュメント整合性確保記録
 
-#### planning/ - 計画・設計
-- **WEBSITE_DESIGN_PREPARATION_2025-06-28.md** - Webサイト設計準備
-- **STORY_STRATEGY.md** - ストーリー戦略
-- **TASK_MANAGEMENT_RULES.md** - タスク管理ルール
+### `/architecture/` - システム設計
+- **CONTENT_SEPARATION_ARCHITECTURE.md** - コンテンツ分離アーキテクチャ設計書
 
-### research/ - 調査・研究成果
-プロジェクトで得られた知見や研究成果
+### `/guides/` - 開発ガイド
+- **PHASE2_DEVELOPMENT_WORKFLOW.md** - Phase 2後の開発ワークフロー
 
-#### prescription_culture/ - 処方文化研究
-- **PRESCRIPTION_CULTURE_5_LAWS.md** - 処方文化の5大法則（重要な研究成果）
+### `/planning/` - 企画・計画
+- **PHASE2_MAJOR_RESTRUCTURE_PLAN.md** - Phase 2大規模再構築計画
+- **CONTENT_LIST_DESIGN_PLAN.md** - コンテンツリスト設計計画
+- **DRUG_SELECTION_CRITERIA.md** - 個別薬剤選定基準
+- **DRUG_CATEGORY_MASTER_LIST.md** - 薬効群マスターリスト
+- **CONTENT_QUALITY_STANDARDS.md** - 品質基準
+- **CROSS_REFERENCE_DESIGN_PHILOSOPHY.md** - クロスリファレンス設計思想
+- その他企画関連文書
 
-#### drug_analysis/ - 薬剤分析
-（今後、薬剤分析に関する研究成果を格納予定）
+### `/progress/` - 進捗管理
+- **PROGRESS.md** - プロジェクト進捗
+- **PROGRESS_TRACKER.md** - 進捗トラッカー
 
-### archive/ - アーカイブ
-過去のドキュメント（参考用）
+### `/archive/` - アーカイブ
+- **evaluations/** - 過去の品質評価
+- **game_concept/** - 旧ゲームコンセプト（参考資料）
+- **sessions/** - CEO-Manager協働セッション記録
+- **research/** - リサーチ資料
+- **development-logs/** - 開発ログ（旧docs/dev_logs/から移動）
 
-#### game_concept/ - ゲーミフィケーション時代
-- **PROJECT_STATUS.md** - 旧プロジェクト状況
-- **03_game_system/** - ゲームシステム関連資料
+## 🎯 改善点
 
-#### sessions/ - 過去のセッション記録
-- **CEO_MANAGER_SESSION_20250627.md** - CEO×Manager協働思考セッション
-- **DEEP_THINKING_LOG.md** - 深い思考ログ
+### ✅ 解決された問題
+1. **深いネスト構造の解消** - project_management/planning/ → planning/
+2. **ルートディレクトリの整理** - 散乱ファイルを適切な場所に移動
+3. **論理的分類** - 目的別の明確な分類
+4. **フラット化** - 必要以上の階層を削減
 
-#### evaluations/ - 過去の評価
-- **QUALITY_EVALUATION_*.md** - 各種品質評価レポート
+### 📋 ディレクトリ選択指針
+- **reference**: 調べ物・参照用
+- **architecture**: システム設計・構造
+- **guides**: 開発・運用手順
+- **planning**: 企画・戦略・計画
+- **progress**: 進捗・状況報告
+- **archive**: 過去資料・参考文書
 
-## ドキュメント利用ガイド
+## 🔗 主要ドキュメントへのクイックアクセス
 
-### 現在の開発で参照すべきドキュメント
-1. **project_management/planning/** - 現在のWebサイト開発計画
-2. **research/prescription_culture/** - コンテンツの価値を理解するための研究成果
+### 現在の状況を知りたい場合
+- `reference/analysis-reports/EXISTING_CONTENT_ANALYSIS_REPORT.md`
+- `progress/PROGRESS.md`
 
-### 過去の資料として参照
-- **archive/** - ゲーミフィケーション時代の構想や過去の評価
+### 開発を始めたい場合
+- `guides/PHASE2_DEVELOPMENT_WORKFLOW.md`
+- `architecture/CONTENT_SEPARATION_ARCHITECTURE.md`
 
-## 更新履歴
-- 2025-06-28: ドキュメント構成を整理、docs/ディレクトリを作成
+### 企画・計画を確認したい場合
+- `planning/PHASE2_MAJOR_RESTRUCTURE_PLAN.md`
+- `planning/CONTENT_LIST_DESIGN_PLAN.md`
+
+### コンテンツを探したい場合
+- `reference/content-index/DRUG_CONTENT_INDEX.md`
+
+---
+
+**この整理により、プロジェクトドキュメントがより使いやすく、メンテナンスしやすくなりました。**

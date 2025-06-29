@@ -194,30 +194,30 @@
 
   "contentMapping": {
     "drugGroups": {
-      "ARB": "02_drug_database/cardiovascular/ARB_evolution_model.md",
-      "PPI": "02_drug_database/gastrointestinal/PPI_evolution_model.md", 
-      "スタチン": "02_drug_database/cardiovascular/statin_evolution_model.md",
-      "SGLT2阻害薬": "02_drug_database/endocrine/SGLT2_prescription_reality.md",
-      "β遮断薬": "02_drug_database/cardiovascular/beta_blocker_evolution_model.md",
-      "ACE阻害薬": "02_drug_database/cardiovascular/ACE_inhibitor_evolution_model.md",
-      "SSRI": "02_drug_database/psychiatry/SSRI_evolution_model.md",
-      "利尿薬": "02_drug_database/cardiovascular/diuretics_evolution_model.md"
+      "ARB": "content/drug_database/cardiovascular/ARB_evolution_model.md",
+      "PPI": "content/drug_database/gastrointestinal/PPI_evolution_model.md", 
+      "スタチン": "content/drug_database/lipid/statin_evolution_model.md",
+      "SGLT2阻害薬": "content/drug_database/diabetes/SGLT2_prescription_reality.md",
+      "β遮断薬": "content/drug_database/cardiovascular/beta_blocker_evolution_model.md",
+      "ACE阻害薬": "content/drug_database/cardiovascular/ACE_inhibitor_evolution_model.md",
+      "SSRI": "content/drug_database/psychotropic/SSRI_evolution_model.md",
+      "利尿薬": "content/drug_database/cardiovascular/diuretics_evolution_model.md"
     },
     "htmlCards": {
-      "ジゴキシン": "04_study_tools/digoxin_kokushi_card.html",
-      "バンコマイシン": "04_study_tools/vancomycin_exam_memory_card.html"
+      "ジゴキシン": "content/study_tools/digoxin_kokushi_card.html",
+      "バンコマイシン": "content/study_tools/vancomycin_exam_memory_card.html"
     },
     "stories": {
-      "ペニシリン": "01_stories/01_penicillin/01_penicillin_story_pure.md",
-      "アスピリン": "01_stories/02_aspirin/02_aspirin_story_pure.md",
-      "インスリン": "01_stories/03_insulin/03_insulin_story_pure.md"
+      "ペニシリン": "content/stories/01_penicillin/01_penicillin_story_pure.md",
+      "アスピリン": "content/stories/05_aspirin/05_aspirin_chronicles.md",
+      "インスリン": "content/stories/02_insulin/02_insulin_story_pure.md"
     }
   },
 
   "storyDrugMapping": {
     "01_penicillin_story_pure": ["その他"],
-    "02_aspirin_story_pure": ["その他"],
-    "03_insulin_story_pure": ["その他"],
+    "05_aspirin_chronicles": ["その他"],
+    "02_insulin_story_pure": ["その他"],
     "03_hypertension": ["ARB", "ACE阻害薬", "β遮断薬", "利尿薬"]
   },
 

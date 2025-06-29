@@ -60,7 +60,7 @@ class PharmaDxConverter {
         console.log('📊 既存コンテンツ分析中...');
         
         // 薬効群モデル解析
-        const drugGroupFiles = this.getFiles('./02_drug_database', '.md');
+        const drugGroupFiles = this.getFiles('../content/drug_database', '.md');
         for (const file of drugGroupFiles) {
             const content = fs.readFileSync(file, 'utf8');
             const analysis = this.analyzeDrugGroupContent(content, file);
@@ -69,7 +69,7 @@ class PharmaDxConverter {
         }
 
         // HTMLカード解析
-        const htmlCardFiles = this.getFiles('./04_study_tools', '.html');
+        const htmlCardFiles = this.getFiles('../content/study_tools', '.html');
         for (const file of htmlCardFiles) {
             const content = fs.readFileSync(file, 'utf8');
             const analysis = this.analyzeHtmlCard(content, file);
@@ -77,7 +77,7 @@ class PharmaDxConverter {
         }
 
         // ストーリー解析
-        const storyFiles = this.getFiles('./01_stories', '.md');
+        const storyFiles = this.getFiles('../content/stories', '.md');
         for (const file of storyFiles) {
             const content = fs.readFileSync(file, 'utf8');
             const analysis = this.analyzeStory(content, file);
@@ -262,11 +262,14 @@ class PharmaDxConverter {
         
         // 5分サマリーの特別処理
         renderer.heading = (text, level) => {
-            if (text.includes('5分サマリー')) {
+            // marked.js の新バージョン対応: text が文字列でない場合の処理
+            const textStr = typeof text === 'string' ? text : (text?.text || String(text));
+            
+            if (textStr.includes('5分サマリー')) {
                 return `<section class="summary-section">
-                    <h${level} class="summary-title">${text}</h${level}>`;
+                    <h${level} class="summary-title">${textStr}</h${level}>`;
             }
-            return `<h${level} class="section-heading" id="${this.slugify(text)}">${text}</h${level}>`;
+            return `<h${level} class="section-heading" id="${this.slugify(textStr)}">${textStr}</h${level}>`;
         };
         
         // テーブルの拡張
@@ -281,12 +284,16 @@ class PharmaDxConverter {
         
         // コードブロックの処理（フローチャート等）
         renderer.code = (code, language) => {
-            if (language === 'mermaid' || code.includes('→')) {
+            // marked.js の新バージョン対応: code が文字列でない場合の処理
+            const codeStr = typeof code === 'string' ? code : (code?.text || String(code));
+            const langStr = typeof language === 'string' ? language : (language?.text || String(language || ''));
+            
+            if (langStr === 'mermaid' || codeStr.includes('→')) {
                 return `<div class="flowchart-container">
-                    <pre class="flowchart">${code}</pre>
+                    <pre class="flowchart">${codeStr}</pre>
                 </div>`;
             }
-            return `<pre class="code-block"><code>${code}</code></pre>`;
+            return `<pre class="code-block"><code>${codeStr}</code></pre>`;
         };
         
         return marked(markdown, { renderer });
@@ -529,7 +536,7 @@ class PharmaDxConverter {
      * メインインデックスページの更新
      */
     async updateMainIndex() {
-        const existingIndex = fs.readFileSync('./website/index.html', 'utf8');
+        const existingIndex = fs.readFileSync('../docs/index.html', 'utf8');
         
         // 薬剤カードセクションを動的生成に更新
         const updatedIndex = existingIndex.replace(
@@ -612,7 +619,7 @@ class PharmaDxConverter {
     }
 
     saveHtmlFile(fileName, content) {
-        const outputDir = './website/generated';
+        const outputDir = '../docs/generated';
         if (!fs.existsSync(outputDir)) {
             fs.mkdirSync(outputDir, { recursive: true });
         }
