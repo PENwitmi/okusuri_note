@@ -159,9 +159,16 @@
 3. 発見した問題を即座に報告
 4. telmisartan.htmlの検証に進む
 
-## 📊 修正進捗更新
-- escitalopram.html: 部分的に修正中（100行目まで完了、122行目以降は作業中）🔄
-- esomeprazole.html: 修正作業開始 🔄
+## 📊 修正進捗更新（2025-06-29 21:00）
+### Markdown混入問題：100%解決 ✅
+- escitalopram.html: 完全修正済み ✅
+- esomeprazole.html: 完全修正済み ✅
+- lansoprazole.html: 完全修正済み ✅
+- sertraline.html: 完全修正済み ✅
+
+### コンテンツ実装：作業中 🔄
+- candesartan.html: ARB_evolution_model.mdから実装中
+- telmisartan.html: ARB_evolution_model.mdから実装中
 
 ---
 **更新履歴**
