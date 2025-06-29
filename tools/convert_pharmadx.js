@@ -372,32 +372,108 @@ class PharmaDxConverter {
      * 薬剤データの抽出
      */
     extractDrugData(content, drugName) {
-        // 表から薬剤データを抽出
-        const tableRegex = /\|(.*?)\|(.*?)\|(.*?)\|(.*?)\|(.*?)\|/g;
-        let match;
-        let drugData = null;
+        let drugData = {
+            name: drugName,
+            generation: '',
+            feature: '',
+            differentiationPoint: '',
+            detailedDescription: '',
+            clinicalUse: '',
+            sideEffects: ''
+        };
         
-        while ((match = tableRegex.exec(content)) !== null) {
-            if (match[1].includes(drugName)) {
-                drugData = {
-                    name: drugName,
-                    generation: match[2].trim(),
-                    feature: match[3].trim(),
-                    cyp2c19Effect: match[4] ? match[4].trim() : '',
-                    differentiationPoint: match[5] ? match[5].trim() : match[3].trim()
-                };
-                break;
+        // 1. 表から薬剤データを抽出（より柔軟な正規表現）
+        const lines = content.split('\n');
+        let inTable = false;
+        let tableData = [];
+        
+        for (const line of lines) {
+            // 薬剤名の部分一致検索（ブランド名付きにも対応）
+            if (line.includes('|') && line.includes(drugName)) {
+                const cells = line.split('|').map(cell => cell.trim()).filter(cell => cell);
+                // テーブルヘッダーをスキップ
+                if (cells.length >= 3 && !cells[0].includes('薬剤名')) {
+                    // 最初のセルが薬剤名を含む場合
+                    if (cells[0].includes(drugName)) {
+                        drugData.generation = cells[1] || '';
+                        drugData.feature = cells[2] || '';
+                        drugData.differentiationPoint = cells[3] || cells[2] || '';
+                        break;
+                    }
+                }
             }
         }
         
-        // 詳細情報の抽出
-        if (drugData) {
-            drugData.detailedDescription = this.extractDetailedDescription(content, drugName);
-            drugData.clinicalUse = this.extractClinicalUse(content, drugName);
-            drugData.sideEffects = this.extractSideEffects(content, drugName);
+        // 2. config.jsonからの補完情報
+        const configInfo = config.drugInfo[drugName];
+        if (configInfo) {
+            if (!drugData.feature) {
+                drugData.feature = configInfo.description;
+            }
+            if (!drugData.differentiationPoint) {
+                drugData.differentiationPoint = configInfo.features.join('、');
+            }
         }
         
-        return drugData || { name: drugName, generation: '未分類', feature: '情報準備中' };
+        // 3. 薬剤別セクションから詳細情報を抽出
+        const drugSectionRegex = new RegExp(`###.*?${drugName}.*?\\n([\\s\\S]*?)(?=###|##|$)`, 'i');
+        const drugSectionMatch = content.match(drugSectionRegex);
+        
+        if (drugSectionMatch) {
+            const sectionContent = drugSectionMatch[1];
+            
+            // 特徴の抽出
+            const featureMatch = sectionContent.match(/特徴[:：](.*?)(?=\n|$)/);
+            if (featureMatch && !drugData.feature) {
+                drugData.feature = featureMatch[1].trim();
+            }
+            
+            // 独自性の抽出
+            const uniqueMatch = sectionContent.match(/独自性[:：]([\s\S]*?)(?=課題|現在の位置|$)/s);
+            if (uniqueMatch) {
+                drugData.detailedDescription = uniqueMatch[1].trim()
+                    .split('\n')
+                    .filter(line => line.trim() && line.trim() !== '-')
+                    .map(line => line.replace(/^[-・]\s*/, ''))
+                    .join('<br>\n');
+            }
+        }
+        
+        // 4. 臨床使い分けマトリックスから情報抽出
+        const clinicalMatrixSection = content.match(/##.*?臨床使い分けマトリックス[\s\S]*?(?=##|$)/);
+        if (clinicalMatrixSection) {
+            const matrixContent = clinicalMatrixSection[0];
+            const matrixLines = matrixContent.split('\n');
+            
+            for (const line of matrixLines) {
+                if (line.includes('|') && line.includes(drugName)) {
+                    const cells = line.split('|').map(cell => cell.trim()).filter(cell => cell);
+                    if (cells.length >= 3 && !cells[0].includes('患者背景')) {
+                        // 推奨ARBが薬剤名を含む場合
+                        if (cells[1].includes(drugName)) {
+                            drugData.clinicalUse = `推奨患者：${cells[0]}、理由：${cells[2]}`;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        
+        // 5. 副作用・注意点の抽出
+        drugData.sideEffects = this.extractSideEffects(content, drugName);
+        
+        // 6. 最終的なフォールバック
+        if (!drugData.generation) {
+            drugData.generation = '第2世代'; // デフォルト値
+        }
+        if (!drugData.feature) {
+            drugData.feature = '詳細情報は薬効群ページをご覧ください';
+        }
+        if (!drugData.differentiationPoint) {
+            drugData.differentiationPoint = drugData.feature;
+        }
+        
+        return drugData;
     }
 
     /**
@@ -614,7 +690,25 @@ class PharmaDxConverter {
     }
 
     extractDrugGroupFromFileName(fileName) {
-        return fileName.replace('_evolution_model', '').replace('_prescription_reality', '').toUpperCase();
+        // ファイル名から薬効群名を抽出
+        const baseName = fileName
+            .replace('_evolution_model', '')
+            .replace('_prescription_reality', '')
+            .replace('_model', '');
+        
+        // 特殊なケースの処理（config.jsonのキーに合わせる）
+        const mappings = {
+            'statin': 'スタチン',
+            'diuretics': '利尿薬',
+            'beta_blocker': 'β遮断薬',
+            'ACE_inhibitor': 'ACE阻害薬',
+            'SGLT2': 'SGLT2阻害薬',
+            'PPI': 'PPI',
+            'ARB': 'ARB',
+            'SSRI': 'SSRI'
+        };
+        
+        return mappings[baseName] || baseName.toUpperCase();
     }
 
     slugify(text) {
@@ -647,7 +741,34 @@ class PharmaDxConverter {
     }
 
     getDrugsInGroup(groupName) {
-        return config.drugGroups[groupName] || [];
+        // groupNameから薬効群名を抽出（evolution_model等の接尾辞を除去）
+        const cleanGroupName = groupName
+            .replace('_evolution_model', '')
+            .replace('_prescription_reality', '')
+            .replace('_', ' ');
+        
+        // 大文字変換せずに、config.jsonのキーと照合
+        const possibleKeys = [
+            groupName,
+            cleanGroupName,
+            cleanGroupName.toUpperCase(),
+            cleanGroupName.replace(' ', '_'),
+            // 特殊なケースの処理
+            cleanGroupName === 'statin' ? 'スタチン' : cleanGroupName,
+            cleanGroupName === 'diuretics' ? '利尿薬' : cleanGroupName,
+            cleanGroupName === 'beta blocker' ? 'β遮断薬' : cleanGroupName,
+            cleanGroupName === 'ACE inhibitor' ? 'ACE阻害薬' : cleanGroupName
+        ];
+        
+        for (const key of possibleKeys) {
+            if (config.drugGroups[key]) {
+                return config.drugGroups[key];
+            }
+        }
+        
+        // デバッグ情報
+        console.log(`⚠️ 薬効群 "${groupName}" の薬剤リストが見つかりません`);
+        return [];
     }
 
     generateRelatedStoriesSection(drugGroup) {
