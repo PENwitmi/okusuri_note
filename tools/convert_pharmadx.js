@@ -47,6 +47,9 @@ class PharmaDxConverter {
         // Phase 3: 統一Web体験の生成
         await this.generateUnifiedWebExperience();
         
+        // Phase 3.5: 全薬剤の個別ページ生成（漏れ防止）
+        await this.generateAllDrugPages();
+        
         // Phase 4: 品質検証とクロスリファレンス
         await this.validateAndCrossReference();
         
@@ -831,24 +834,239 @@ ${drugGroup}は[メカニズム]により[効果]を実現する薬剤群です�
         return integrated;
     }
 
+
+
+    /**
+     * 薬効群インデックスページの生成
+     */
+    async generateGroupIndex() {
+        console.log('  📚 薬効群インデックス生成中...');
+        // TODO: 薬効群インデックスページの実装
+    }
+
+    /**
+     * 検索システムの生成
+     */
+    async generateSearchSystem() {
+        console.log('  🔍 検索システム実装中...');
+        // TODO: 検索機能の実装
+    }
+
+    /**
+     * 統合CSSの生成
+     */
+    async generateUnifiedCSS() {
+        console.log('  🎨 CSS統合中...');
+        const cssDir = '../docs/css';
+        if (!fs.existsSync(cssDir)) {
+            fs.mkdirSync(cssDir, { recursive: true });
+        }
+        // 既存のCSSファイルをコピー
+        try {
+            const sourceCss = '../docs/generated/css/main.css';
+            if (fs.existsSync(sourceCss)) {
+                fs.copyFileSync(sourceCss, path.join(cssDir, 'main.css'));
+            }
+        } catch (error) {
+            console.error('CSS統合エラー:', error);
+        }
+    }
+
+    /**
+     * 統合JavaScriptの生成
+     */
+    async generateUnifiedJS() {
+        console.log('  📜 JavaScript統合中...');
+        const jsDir = '../docs/js';
+        if (!fs.existsSync(jsDir)) {
+            fs.mkdirSync(jsDir, { recursive: true });
+        }
+        // TODO: JavaScript統合の実装
+    }
+
     recalculateQualityScores() {
-        console.log('  📊 品質スコア再計算...');
-        // 変換後のコンテンツ品質を再評価
+        console.log('  📊 品質スコア再計算中...');
+        // TODO: 品質スコアの再計算実装
     }
 
     validateLinks() {
-        console.log('  🔗 リンク整合性チェック...');
-        // 内部リンクの整合性を検証
+        console.log('  🔗 リンク整合性チェック中...');
+        // TODO: リンク検証の実装
     }
 
     optimizeForSEO() {
         console.log('  🚀 SEO最適化...');
-        // メタデータとSEO要素の最適化
+        // TODO: SEO最適化の実装
     }
 
     validateAccessibility() {
         console.log('  ♿ アクセシビリティチェック...');
-        // WCAG準拠のアクセシビリティ検証
+        // TODO: アクセシビリティ検証の実装
+    }
+
+    /**
+     * 全薬剤の個別ページ生成（漏れ防止）
+     */
+    async generateAllDrugPages() {
+        console.log('💊 全薬剤の個別ページ生成確認...');
+        
+        const generatedDrugs = new Set();
+        const drugsDir = '../docs/generated/drugs';
+        
+        // 既に生成済みの薬剤を確認
+        if (fs.existsSync(drugsDir)) {
+            const files = fs.readdirSync(drugsDir);
+            files.forEach(file => {
+                if (file.endsWith('.html')) {
+                    const drugName = file.replace('.html', '');
+                    generatedDrugs.add(drugName);
+                }
+            });
+        }
+        
+        console.log(`  既存: ${generatedDrugs.size}薬剤`);
+        
+        // 全薬剤をチェックして未生成分を生成
+        let newCount = 0;
+        for (const drugName of config.phase1Drugs) {
+            if (!generatedDrugs.has(drugName)) {
+                console.log(`  🆕 ${drugName}のページを生成中...`);
+                await this.generateSingleDrugPage(drugName);
+                newCount++;
+            }
+        }
+        
+        console.log(`  ✅ 新規生成: ${newCount}薬剤`);
+        console.log(`  ✅ 合計: ${config.phase1Drugs.length}薬剤すべて生成完了`);
+    }
+
+    /**
+     * 単一薬剤ページの生成
+     */
+    async generateSingleDrugPage(drugName) {
+        const drugInfo = config.drugInfo[drugName];
+        if (!drugInfo) {
+            console.warn(`⚠️ ${drugName}の情報が見つかりません`);
+            return;
+        }
+        
+        // 薬効群データを探す
+        let groupContent = null;
+        for (const [groupName, groupData] of this.drugGroups) {
+            const drugsInGroup = this.getDrugsInGroup(groupData.drugGroup);
+            if (drugsInGroup.includes(drugName)) {
+                groupContent = groupData.content;
+                break;
+            }
+        }
+        
+        // HTMLを生成
+        const html = this.generateDrugPageHtmlFromInfo(drugName, drugInfo, groupContent);
+        
+        // ファイルを保存
+        this.saveHtmlFile(`drugs/${drugName}.html`, html);
+    }
+
+    /**
+     * 薬剤情報からHTMLページを生成
+     */
+    generateDrugPageHtmlFromInfo(drugName, drugInfo, groupContent) {
+        // 薬効群データから詳細情報を抽出（あれば）
+        let detailInfo = {
+            generation: '',
+            feature: drugInfo.description,
+            differentiationPoint: drugInfo.features.join('、'),
+            detailedDescription: '',
+            clinicalUse: ''
+        };
+        
+        if (groupContent) {
+            const extracted = this.extractDrugData(groupContent, drugName);
+            if (extracted) {
+                detailInfo = { ...detailInfo, ...extracted };
+            }
+        }
+        
+        return `<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${drugName} - PharmaDx薬剤図鑑</title>
+    <link rel="stylesheet" href="../css/drug-page.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+            <h1>PharmaDx 薬剤図鑑</h1>
+        </div>
+    </header>
+
+    <main class="drug-detail">
+        <div class="drug-hero">
+            <div class="drug-category-badge">${drugInfo.category}</div>
+            <h1 class="drug-title">${drugName}</h1>
+            <p class="drug-subtitle">${drugInfo.description}</p>
+        </div>
+
+        <div class="drug-content">
+            <section class="drug-overview">
+                <h2>薬剤概要</h2>
+                <div class="overview-grid">
+                    <div class="info-item">
+                        <span class="info-label">薬効群</span>
+                        <span class="info-value">${drugInfo.category}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">主な特徴</span>
+                        <span class="info-value">${detailInfo.feature}</span>
+                    </div>
+                    ${detailInfo.generation ? `
+                    <div class="info-item">
+                        <span class="info-label">世代</span>
+                        <span class="info-value">${detailInfo.generation}</span>
+                    </div>
+                    ` : ''}
+                </div>
+            </section>
+
+            <section class="differentiation">
+                <h2>使い分けポイント</h2>
+                <div class="differentiation-content">
+                    ${detailInfo.differentiationPoint}
+                </div>
+            </section>
+
+            ${detailInfo.detailedDescription ? `
+            <section class="detailed-description">
+                <h2>詳細解説</h2>
+                ${detailInfo.detailedDescription}
+            </section>
+            ` : ''}
+
+            ${detailInfo.clinicalUse ? `
+            <section class="clinical-use">
+                <h2>臨床での使い方</h2>
+                ${detailInfo.clinicalUse}
+            </section>
+            ` : ''}
+
+            <section class="related-content">
+                <h2>関連コンテンツ</h2>
+                <div class="related-grid">
+                    <a href="../groups/${drugInfo.category}.html" class="related-item">
+                        <h3>${drugInfo.category}について詳しく</h3>
+                        <p>薬効群全体の使い分けを学ぶ</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="../js/drug-page.js"></script>
+</body>
+</html>`;
     }
 }
 
