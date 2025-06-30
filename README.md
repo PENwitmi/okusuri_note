@@ -6,21 +6,23 @@
 
 🔗 **公開サイト**: https://penwitmi.github.io/pharm_dex
 
-### 🏗️ アーキテクチャ設計：コンテンツ分離型
+### 🏗️ アーキテクチャ設計：HTML First（2025-06-30より）
 
-PharmaDxは**関心の分離 (Separation of Concerns)** を核心とする設計を採用しています。
+PharmaDxは**品質優先・価値最大化**を核心とする新設計を採用しています。
 
 ```
-content/          ←→          docs/
-(コンテンツ原稿)    ｜変換｜    (公開サイト)
-専門知識の蓄積      tools/     ユーザー体験
+HTML直接編集（最優先）
+    ↓
+docs/generated/    →    GitHub Pages
+(高品質HTML)           (感動的な体験)
 ```
 
-- **content/**: 薬学知識の蓄積・編集（Markdown/HTML形式）
-- **tools/**: 自動変換・ビルドプロセス（Node.js）
-- **docs/**: 公開サイト（GitHub Pages自動デプロイ）
+- **HTML直接編集**: 500行以上の充実したコンテンツ作成（第一優先）
+- **docs/**: 高品質HTMLを直接配置・公開（GitHub Pages）
+- **content/**: 下書き・メモ・構想用（補助的役割）
+- **tools/**: 必要時のみ使用（補助ツール）
 
-この設計により、薬学的正確性とユーザー体験を独立して最適化できます。
+この設計により、医師の証言、歴史的ストーリー、視覚的階層など、PharmaDxの核心価値「感動的で教育的」なコンテンツを最大限に表現できます。
 
 **⚠️ 重要**: `docs/`は公開コンテンツ専用ディレクトリです。内部文書・開発ログ・バックアップファイル等は配置厳禁（全世界に公開されます）。
 
@@ -95,11 +97,11 @@ pharma_dex/
 └── CLAUDE.md                       # プロジェクト詳細仕様
 ```
 
-### 🔄 開発フロー（新構造）
+### 🔄 開発フロー（HTML First）
 
-1. **コンテンツ編集**: `content/` 内のMarkdown/HTMLファイルを編集
-2. **ビルド実行**: `cd tools && ./build.sh` で統合ビルド
-3. **確認・デプロイ**: `docs/` 内の生成ファイルを確認
+1. **リサーチ・構想**: 医学的情報とストーリー要素を収集
+2. **HTML直接作成**: 500行以上の充実したコンテンツを作成
+3. **品質確認・デプロイ**: 感動的要素と視覚的魅力を確認して公開
 
 ### ⚡ クイックスタート
 
@@ -107,39 +109,36 @@ pharma_dex/
 # プロジェクトディレクトリに移動
 cd /Users/nishimototakashi/claude\ code/ai-team/code/pharma_dex
 
-# 統合ビルド実行
-cd tools
-./build.sh
+# 高品質HTMLテンプレートから開始
+cp templates/drug-detail-premium.html docs/generated/drugs/NEW_drug.html
+
+# HTMLを直接編集（500行以上、医師の証言、感動的ストーリー含む）
+# VS Code等のエディタで編集
 
 # ローカル確認
-cd ../docs
+cd docs
 python -m http.server 8000
-# ブラウザで http://localhost:8000 を開く
+# ブラウザで http://localhost:8000/generated/drugs/NEW_drug.html を確認
 ```
 
-### 📝 開発ワークフロー
+### 📝 開発ワークフロー（詳細）
 
-1. **コンテンツ編集**
-   ```bash
-   # 薬効群モデルの追加・修正
-   content/drug_database/cardiovascular/NEW_drug_model.md
-   
-   # ストーリーの追加・修正
-   content/stories/NEW_story.md
-   ```
+1. **準備とリサーチ**（2時間）
+   - 医学的情報収集（添付文書、ガイドライン、臨床試験）
+   - ストーリー要素収集（開発秘話、医師の証言）
+   - 競合薬剤との差別化ポイント整理
 
-2. **ビルド実行**
-   ```bash
-   cd tools
-   ./build.sh    # 統合ビルド
-   ```
+2. **HTML直接作成**（3-4時間）
+   - テンプレートから開始
+   - 500行以上の充実したコンテンツ作成
+   - 感動的要素（証言、歴史、視覚的階層）の追加
 
-3. **確認・デプロイ**
-   ```bash
-   cd ../docs
-   python -m http.server 8000    # ローカル確認
-   # GitHub Pagesに自動デプロイ
-   ```
+3. **品質チェック・配置**（30分）
+   - 必須要素の確認（感動度、視覚的魅力）
+   - `docs/generated/drugs/` に配置
+   - GitHub Pages自動デプロイ
+
+**詳細ガイド**: `project-docs/2025-06-30-html-first-architecture/HTML_DIRECT_EDITING_WORKFLOW.md` 参照
 
 ## 🚀 特徴的な価値
 
