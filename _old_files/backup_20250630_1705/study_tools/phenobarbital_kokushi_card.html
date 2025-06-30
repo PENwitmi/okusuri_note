@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【国試頻出第6位】フェノバルビタール完全攻略カード</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', sans-serif;
+            background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .header-banner {
+            background: #ff4757;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 0 0 10px 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: #ff4757;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 22px;
+            color: #2c3e50;
+            margin: 25px 0 15px 0;
+            border-bottom: 3px solid #ff6348;
+            padding-bottom: 8px;
+        }
+        
+        .enzyme-induction {
+            background: #fff5e6;
+            border: 3px solid #ff9a56;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .enzyme-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff6348;
+            margin-bottom: 15px;
+        }
+        
+        .cyp-list {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .cyp-item {
+            background: #ff6348;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .goro {
+            background: #e8f8f5;
+            border: 3px solid #00b894;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 22px;
+            text-align: center;
+            font-weight: bold;
+            color: #00b894;
+        }
+        
+        .drug-interaction {
+            background: #ffe0e0;
+            border: 2px solid #ff4757;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .interaction-item {
+            display: flex;
+            align-items: center;
+            margin: 12px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .danger-icon {
+            font-size: 28px;
+            margin-right: 15px;
+            width: 40px;
+            text-align: center;
+        }
+        
+        .blood-level {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .level-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff6348;
+            margin: 10px 0;
+        }
+        
+        .half-life {
+            background: #d1ecf1;
+            border: 2px solid #17a2b8;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #0c5460;
+        }
+        
+        .side-effects {
+            background: #f8f9fa;
+            border: 2px solid #6c757d;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .side-effect-item {
+            margin: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 17px;
+        }
+        
+        .side-effect-item:before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+            font-size: 20px;
+        }
+        
+        .quick-review {
+            background: #28a745;
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+        }
+        
+        .quick-review h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .review-item {
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .review-item:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        .trick-pattern {
+            background: #343a40;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .trick-item {
+            margin: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 17px;
+        }
+        
+        .trick-item:before {
+            content: "💡";
+            position: absolute;
+            left: 0;
+            font-size: 20px;
+        }
+        
+        .important-box {
+            background: #ffeb3b;
+            border: 3px solid #f57c00;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #e65100;
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+            h1 {
+                font-size: 22px;
+            }
+            .enzyme-title {
+                font-size: 20px;
+            }
+            .cyp-list {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .level-value {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-banner">
+        🏆 国試頻出第6位！18回出題！バルビツール酸系の代表 🏆
+    </div>
+    
+    <div class="card">
+        <h1>💊 フェノバルビタール完全攻略</h1>
+        <p style="text-align: center; font-size: 18px; color: #ff4757; font-weight: bold; margin-bottom: 20px;">
+            酵素誘導の王様 | 効果減弱に要注意！
+        </p>
+        
+        <div class="enzyme-induction">
+            <div class="enzyme-title">🔥 酵素誘導の王様 🔥</div>
+            <div class="cyp-list">
+                <div class="cyp-item">CYP3A4</div>
+                <div class="cyp-item">CYP2C9</div>
+                <div class="cyp-item">CYP2C19</div>
+            </div>
+        </div>
+        
+        <div class="goro">
+            🍴 「フェノバルは薬を食べる」（代謝促進）
+        </div>
+        
+        <h2>⚡ 併用薬の効果減弱リスト（超重要！）</h2>
+        <div class="drug-interaction">
+            <div class="interaction-item">
+                <span class="danger-icon">🚨</span>
+                <span>経口避妊薬 → 避妊失敗！妊娠リスク！</span>
+            </div>
+            <div class="interaction-item">
+                <span class="danger-icon">💊</span>
+                <span>ワルファリン → 抗凝固作用↓ 血栓リスク</span>
+            </div>
+            <div class="interaction-item">
+                <span class="danger-icon">💉</span>
+                <span>ステロイド → 抗炎症作用↓</span>
+            </div>
+            <div class="interaction-item">
+                <span class="danger-icon">🧠</span>
+                <span>他の抗てんかん薬 → 血中濃度↓</span>
+            </div>
+            <div class="interaction-item">
+                <span class="danger-icon">🫀</span>
+                <span>ジギタリス → 強心作用↓</span>
+            </div>
+        </div>
+        
+        <div class="important-box">
+            ⚠️ 経口避妊薬との併用は特に注意！
+            別の避妊法を併用するよう指導必須！
+        </div>
+        
+        <h2>🧠 てんかん治療での位置づけ</h2>
+        <div class="blood-level">
+            <div>治療血中濃度</div>
+            <div class="level-value">10 〜 40 μg/mL</div>
+            <div style="color: #6c757d; font-size: 16px;">第二選択薬（副作用多いため）</div>
+        </div>
+        
+        <div class="half-life">
+            💊 半減期：80〜120時間（3〜5日！超長い！）
+        </div>
+        
+        <div class="goro">
+            📅 「フェノバルは野原（80）から人に（120）」
+        </div>
+        
+        <h2>⚠️ 特徴的副作用</h2>
+        <div class="side-effects">
+            <div class="side-effect-item">
+                <strong>眠気・ふらつき</strong>（バルビツール酸系共通）
+            </div>
+            <div class="side-effect-item">
+                <strong>依存性</strong>（向精神薬・第三種）
+            </div>
+            <div class="side-effect-item">
+                <strong>Stevens-Johnson症候群</strong>（重篤な皮膚症状）
+            </div>
+            <div class="side-effect-item">
+                <strong>巨赤芽球性貧血</strong>（葉酸欠乏）
+            </div>
+            <div class="side-effect-item">
+                <strong>骨軟化症</strong>（ビタミンD代謝異常）
+            </div>
+        </div>
+        
+        <h2>🎯 国試での引っ掛けパターン</h2>
+        <div class="trick-pattern">
+            <div class="trick-item">
+                酵素誘導 vs 酵素阻害を混同させる問題
+            </div>
+            <div class="trick-item">
+                経口避妊薬との相互作用を問う問題（効果↓）
+            </div>
+            <div class="trick-item">
+                半減期の長さ（3-5日）に関する計算問題
+            </div>
+            <div class="trick-item">
+                第一選択 vs 第二選択を問う問題
+            </div>
+            <div class="trick-item">
+                依存性の有無（ある！規制医薬品）
+            </div>
+        </div>
+        
+        <div class="quick-review">
+            <h3>⚡ 30秒クイックレビュー ⚡</h3>
+            <div class="review-item">酵素誘導の王様（CYP3A4/2C9/2C19）</div>
+            <div class="review-item">「フェノバルは薬を食べる」</div>
+            <div class="review-item">経口避妊薬の効果↓（妊娠注意！）</div>
+            <div class="review-item">血中濃度：10-40 μg/mL</div>
+            <div class="review-item">半減期：80-120時間（超長い！）</div>
+            <div class="review-item">第二選択薬（副作用多い）</div>
+            <div class="review-item">依存性あり（規制医薬品）</div>
+        </div>
+        
+        <h2>📝 効果が減弱する薬剤一覧</h2>
+        <div style="background: #f8f9fa; border: 2px solid #dee2e6; border-radius: 10px; padding: 20px; margin: 20px 0;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 16px;">
+                <div>• 経口避妊薬 ⚠️</div>
+                <div>• ワルファリン</div>
+                <div>• プレドニゾロン</div>
+                <div>• デキサメタゾン</div>
+                <div>• ジギタリス製剤</div>
+                <div>• テオフィリン</div>
+                <div>• シクロスポリン</div>
+                <div>• タクロリムス</div>
+                <div>• フェニトイン</div>
+                <div>• カルバマゼピン</div>
+                <div>• バルプロ酸</div>
+                <div>• ラモトリギン</div>
+            </div>
+        </div>
+        
+        <div style="background: #dc3545; color: white; padding: 20px; border-radius: 10px; text-align: center; margin: 25px 0;">
+            <h3 style="font-size: 22px; margin-bottom: 10px;">🎯 国試で絶対覚える3つ！</h3>
+            <p style="font-size: 20px; margin: 10px 0;">1️⃣ 酵素誘導で併用薬の効果↓</p>
+            <p style="font-size: 20px; margin: 10px 0;">2️⃣ 経口避妊薬は効かなくなる！</p>
+            <p style="font-size: 20px; margin: 10px 0;">3️⃣ 半減期80-120時間（超長い）</p>
+        </div>
+    </div>
+    
+    <div style="text-align: center; color: white; margin: 20px 0;">
+        <p>💪 酵素誘導の王様を完全制覇！</p>
+        <p style="font-size: 12px;">PharmaDex 薬学生応援ツール</p>
+    </div>
+</body>
+</html>

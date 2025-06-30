@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>インスリン - 血糖値劇的変化ビジュアル</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', -apple-system, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            max-width: 1200px;
+            width: 90%;
+        }
+        
+        .title {
+            font-size: 48px;
+            font-weight: 900;
+            text-align: center;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subtitle {
+            font-size: 24px;
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 600px;
+            margin-bottom: 40px;
+        }
+        
+        .before-after-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .status-card {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .status-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .status-card.before {
+            border: 3px solid #e74c3c;
+        }
+        
+        .status-card.after {
+            border: 3px solid #2ecc71;
+        }
+        
+        .status-label {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .before .status-label {
+            color: #e74c3c;
+        }
+        
+        .after .status-label {
+            color: #2ecc71;
+        }
+        
+        .glucose-value {
+            font-size: 72px;
+            font-weight: 900;
+            margin: 20px 0;
+        }
+        
+        .unit {
+            font-size: 24px;
+            color: #666;
+        }
+        
+        .status-description {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .danger-zone {
+            background: rgba(231, 76, 60, 0.1);
+            color: #c0392b;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        
+        .safe-zone {
+            background: rgba(46, 204, 113, 0.1);
+            color: #27ae60;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .stat-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: #2a5298;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .animation-indicator {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 10px;
+            height: 10px;
+            background: #2ecc71;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        .arrow-indicator {
+            font-size: 60px;
+            color: #2a5298;
+            text-align: center;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="animation-indicator"></div>
+        <h1 class="title">インスリン治療の革命的効果</h1>
+        <p class="subtitle">1型糖尿病患者の血糖値変化（治療前後）</p>
+        
+        <div class="before-after-container">
+            <div class="status-card before">
+                <div class="status-label">治療前</div>
+                <div class="glucose-value">520</div>
+                <div class="unit">mg/dL</div>
+                <div class="status-description">
+                    糖尿病性ケトアシドーシス状態<br>
+                    意識障害・昏睡のリスク
+                </div>
+                <div class="danger-zone">
+                    ⚠️ 生命の危機
+                </div>
+            </div>
+            
+            <div class="arrow-indicator">→</div>
+            
+            <div class="status-card after">
+                <div class="status-label">治療後</div>
+                <div class="glucose-value">120</div>
+                <div class="unit">mg/dL</div>
+                <div class="status-description">
+                    正常範囲内<br>
+                    安定した血糖コントロール
+                </div>
+                <div class="safe-zone">
+                    ✓ 健康的な生活が可能
+                </div>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <canvas id="glucoseChart"></canvas>
+        </div>
+        
+        <div class="impact-stats">
+            <div class="stat-card">
+                <div class="stat-number">76.7%</div>
+                <div class="stat-label">血糖値低下率</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1921年</div>
+                <div class="stat-label">インスリン発見年</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1億人+</div>
+                <div class="stat-label">世界の救われた命</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // グラフデータ
+        const ctx = document.getElementById('glucoseChart').getContext('2d');
+        
+        const data = {
+            labels: ['診断時', 'インスリン投与開始', '2時間後', '6時間後', '12時間後', '24時間後', '1週間後', '1ヶ月後'],
+            datasets: [{
+                label: '血糖値 (mg/dL)',
+                data: [520, 450, 380, 280, 200, 150, 130, 120],
+                borderColor: '#2a5298',
+                backgroundColor: 'rgba(42, 82, 152, 0.1)',
+                borderWidth: 4,
+                pointRadius: 8,
+                pointBackgroundColor: '#fff',
+                pointBorderColor: '#2a5298',
+                pointBorderWidth: 3,
+                tension: 0.4
+            }, {
+                label: '正常範囲上限',
+                data: [140, 140, 140, 140, 140, 140, 140, 140],
+                borderColor: '#2ecc71',
+                borderWidth: 2,
+                borderDash: [10, 5],
+                pointRadius: 0,
+                fill: false
+            }, {
+                label: '危険域',
+                data: [400, 400, 400, 400, 400, 400, 400, 400],
+                borderColor: '#e74c3c',
+                borderWidth: 2,
+                borderDash: [10, 5],
+                pointRadius: 0,
+                fill: false
+            }]
+        };
+        
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: {
+                                size: 16,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'インスリン治療による血糖値の劇的改善',
+                        font: {
+                            size: 24,
+                            weight: 'bold'
+                        },
+                        padding: 20
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        titleFont: {
+                            size: 18
+                        },
+                        bodyFont: {
+                            size: 16
+                        },
+                        padding: 15,
+                        displayColors: false,
+                        callbacks: {
+                            label: function(context) {
+                                if (context.datasetIndex === 0) {
+                                    return '血糖値: ' + context.parsed.y + ' mg/dL';
+                                }
+                                return context.dataset.label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 600,
+                        ticks: {
+                            font: {
+                                size: 14
+                            },
+                            callback: function(value) {
+                                return value + ' mg/dL';
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 14
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    }
+                },
+                animation: {
+                    duration: 2000,
+                    easing: 'easeInOutQuart'
+                }
+            }
+        };
+        
+        const chart = new Chart(ctx, config);
+        
+        // アニメーション効果
+        setTimeout(() => {
+            const beforeCard = document.querySelector('.status-card.before');
+            const afterCard = document.querySelector('.status-card.after');
+            
+            beforeCard.style.animation = 'fadeIn 1s ease-in';
+            afterCard.style.animation = 'fadeIn 1s ease-in 0.5s';
+        }, 500);
+    </script>
+</body>
+</html>

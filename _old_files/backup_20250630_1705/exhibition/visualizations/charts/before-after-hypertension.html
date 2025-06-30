@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>降圧薬 - 併用療法の圧倒的効果</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', -apple-system, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            max-width: 1400px;
+            width: 90%;
+        }
+        
+        .title {
+            font-size: 48px;
+            font-weight: 900;
+            text-align: center;
+            color: #5a2c81;
+            margin-bottom: 20px;
+        }
+        
+        .subtitle {
+            font-size: 24px;
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .therapy-section {
+            text-align: center;
+        }
+        
+        .therapy-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        
+        .single-therapy .therapy-title {
+            color: #e67e22;
+        }
+        
+        .combination-therapy .therapy-title {
+            color: #27ae60;
+        }
+        
+        .donut-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 30px;
+        }
+        
+        .success-rate {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            font-weight: 900;
+            text-align: center;
+        }
+        
+        .single-therapy .success-rate {
+            color: #e67e22;
+        }
+        
+        .combination-therapy .success-rate {
+            color: #27ae60;
+        }
+        
+        .rate-label {
+            font-size: 16px;
+            color: #666;
+            font-weight: normal;
+        }
+        
+        .bp-values {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .bp-display {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .bp-label {
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .medication-list {
+            text-align: left;
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .medication-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        
+        .med-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .ace-icon { background: #3498db; }
+        .arb-icon { background: #9b59b6; }
+        .ccb-icon { background: #e74c3c; }
+        .diuretic-icon { background: #1abc9c; }
+        
+        .impact-section {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        
+        .impact-title {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            color: #5a2c81;
+            margin-bottom: 30px;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .impact-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .impact-number {
+            font-size: 36px;
+            font-weight: 900;
+            color: #5a2c81;
+        }
+        
+        .impact-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .chart-container {
+            margin-top: 40px;
+            height: 400px;
+        }
+        
+        .improvement-arrow {
+            font-size: 60px;
+            color: #27ae60;
+            text-align: center;
+            margin: 20px 0;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">降圧薬治療の進化</h1>
+        <p class="subtitle">単剤療法から併用療法への革命的改善</p>
+        
+        <div class="comparison-grid">
+            <div class="therapy-section single-therapy">
+                <h2 class="therapy-title">単剤療法</h2>
+                <div class="donut-container">
+                    <canvas id="singleTherapyChart"></canvas>
+                    <div class="success-rate">
+                        35%<br>
+                        <span class="rate-label">達成率</span>
+                    </div>
+                </div>
+                <div class="bp-values">
+                    <div class="bp-label">平均血圧</div>
+                    <div class="bp-display">156/98 mmHg</div>
+                    <div style="color: #e74c3c; font-weight: bold;">目標未達成</div>
+                </div>
+                <div class="medication-list">
+                    <div class="medication-item">
+                        <div class="med-icon ace-icon">A</div>
+                        <span>ACE阻害薬のみ</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="therapy-section combination-therapy">
+                <h2 class="therapy-title">併用療法</h2>
+                <div class="donut-container">
+                    <canvas id="combinationTherapyChart"></canvas>
+                    <div class="success-rate">
+                        75%<br>
+                        <span class="rate-label">達成率</span>
+                    </div>
+                </div>
+                <div class="bp-values">
+                    <div class="bp-label">平均血圧</div>
+                    <div class="bp-display">128/78 mmHg</div>
+                    <div style="color: #27ae60; font-weight: bold;">目標達成！</div>
+                </div>
+                <div class="medication-list">
+                    <div class="medication-item">
+                        <div class="med-icon arb-icon">A</div>
+                        <span>ARB（アンジオテンシン受容体拮抗薬）</span>
+                    </div>
+                    <div class="medication-item">
+                        <div class="med-icon ccb-icon">C</div>
+                        <span>Ca拮抗薬</span>
+                    </div>
+                    <div class="medication-item">
+                        <div class="med-icon diuretic-icon">D</div>
+                        <span>利尿薬</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="improvement-arrow">⬆️</div>
+        
+        <div class="impact-section">
+            <h3 class="impact-title">併用療法がもたらす圧倒的な成果</h3>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">2.1倍</div>
+                    <div class="impact-label">目標達成率の向上</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">40%</div>
+                    <div class="impact-label">脳卒中リスク低減</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">25%</div>
+                    <div class="impact-label">心筋梗塞リスク低減</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">50%</div>
+                    <div class="impact-label">心不全リスク低減</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <canvas id="progressChart"></canvas>
+        </div>
+    </div>
+    
+    <script>
+        // 単剤療法ドーナツチャート
+        const singleCtx = document.getElementById('singleTherapyChart').getContext('2d');
+        new Chart(singleCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['目標達成', '目標未達成'],
+                datasets: [{
+                    data: [35, 65],
+                    backgroundColor: ['#e67e22', '#ecf0f1'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: false }
+                },
+                cutout: '70%'
+            }
+        });
+        
+        // 併用療法ドーナツチャート
+        const combiCtx = document.getElementById('combinationTherapyChart').getContext('2d');
+        new Chart(combiCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['目標達成', '目標未達成'],
+                datasets: [{
+                    data: [75, 25],
+                    backgroundColor: ['#27ae60', '#ecf0f1'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: false }
+                },
+                cutout: '70%'
+            }
+        });
+        
+        // 進展グラフ
+        const progressCtx = document.getElementById('progressChart').getContext('2d');
+        new Chart(progressCtx, {
+            type: 'bar',
+            data: {
+                labels: ['1980年代', '1990年代', '2000年代', '2010年代', '2020年代'],
+                datasets: [{
+                    label: '単剤療法',
+                    data: [25, 30, 33, 35, 35],
+                    backgroundColor: 'rgba(230, 126, 34, 0.7)',
+                    borderColor: '#e67e22',
+                    borderWidth: 2
+                }, {
+                    label: '2剤併用',
+                    data: [0, 15, 35, 50, 55],
+                    backgroundColor: 'rgba(52, 152, 219, 0.7)',
+                    borderColor: '#3498db',
+                    borderWidth: 2
+                }, {
+                    label: '3剤併用',
+                    data: [0, 0, 10, 40, 75],
+                    backgroundColor: 'rgba(39, 174, 96, 0.7)',
+                    borderColor: '#27ae60',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: '降圧目標達成率の歴史的推移',
+                        font: { size: 24, weight: 'bold' }
+                    },
+                    legend: {
+                        position: 'top',
+                        labels: { font: { size: 16 } }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            callback: value => value + '%',
+                            font: { size: 14 }
+                        },
+                        title: {
+                            display: true,
+                            text: '目標血圧達成率',
+                            font: { size: 16 }
+                        }
+                    },
+                    x: {
+                        ticks: { font: { size: 14 } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

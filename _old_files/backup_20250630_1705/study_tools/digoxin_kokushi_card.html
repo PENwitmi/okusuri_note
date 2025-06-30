@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【国試頻出第4位】ジゴキシン完全攻略カード</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', sans-serif;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .emergency-header {
+            background: #ff0000;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        .card {
+            background: white;
+            border-radius: 0 0 10px 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #e74c3c;
+        }
+        
+        h2 {
+            font-size: 20px;
+            color: #2c3e50;
+            margin: 20px 0 10px 0;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 5px;
+        }
+        
+        .blood-level {
+            background: #fff3cd;
+            border: 3px solid #ffc107;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .blood-level-value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 10px 0;
+        }
+        
+        .goro {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+            color: #155724;
+        }
+        
+        .toxicity-checklist {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .toxicity-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        
+        .toxicity-icon {
+            font-size: 24px;
+            margin-right: 10px;
+            width: 40px;
+            text-align: center;
+        }
+        
+        .interaction-ranking {
+            background: #fff;
+            border: 2px solid #6c757d;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .danger-level {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .danger-high {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .danger-medium {
+            background: #ffc107;
+            color: #212529;
+        }
+        
+        .danger-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        
+        .calculation-pattern {
+            background: #e7f3ff;
+            border: 2px solid #0066cc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .formula {
+            background: #fff;
+            border: 1px solid #0066cc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        .must-remember {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .must-remember h3 {
+            color: #ffc107;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .key-point {
+            background: #ffc107;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 5px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .quick-review {
+            background: #d1ecf1;
+            border: 2px solid #17a2b8;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .review-item {
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            .blood-level-value {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="emergency-header">
+        🚨 国試頻出第4位！20回出題！🚨
+    </div>
+    
+    <div class="card">
+        <h1>💊 ジゴキシン完全攻略カード</h1>
+        <p style="text-align: center; font-size: 18px; color: #e74c3c; font-weight: bold;">
+            強心配糖体 | 治療域が狭い | 中毒に要注意！
+        </p>
+        
+        <h2>📊 血中濃度（最重要！）</h2>
+        <div class="blood-level">
+            <div>有効治療域</div>
+            <div class="blood-level-value">0.5 〜 2.0 ng/mL</div>
+            <div style="color: #dc3545; font-weight: bold;">中毒域：> 2.0 ng/mL</div>
+        </div>
+        
+        <div class="goro">
+            🎯 語呂合わせ：「ジゴは 0.5（レーテンゴ）から 2.0（ニーテンゼロ）」
+        </div>
+        
+        <h2>☠️ 中毒症状チェックリスト</h2>
+        <div class="toxicity-checklist">
+            <div class="toxicity-item">
+                <span class="toxicity-icon">🤮</span>
+                <span><strong>消化器症状</strong>（初期症状！）：悪心・嘔吐・食欲不振</span>
+            </div>
+            <div class="toxicity-item">
+                <span class="toxicity-icon">👁️</span>
+                <span><strong>視覚異常</strong>：黄視症・緑視症・光がまぶしい</span>
+            </div>
+            <div class="toxicity-item">
+                <span class="toxicity-icon">💔</span>
+                <span><strong>不整脈</strong>：PVC（心室性期外収縮）・房室ブロック</span>
+            </div>
+            <div class="toxicity-item">
+                <span class="toxicity-icon">🧠</span>
+                <span><strong>精神神経症状</strong>：頭痛・めまい・錯乱</span>
+            </div>
+        </div>
+        
+        <div class="goro">
+            💡 覚え方：「おう（嘔）！き（黄）みどり（緑）、ふ（不整脈）らふら」
+        </div>
+        
+        <h2>⚠️ 相互作用危険度ランキング</h2>
+        <div class="interaction-ranking">
+            <div class="danger-level danger-high">
+                <span class="danger-icon">🚫</span>
+                <span>【最危険】ベラパミル・アミオダロン・キニジン → 濃度2倍！</span>
+            </div>
+            <div class="danger-level danger-high">
+                <span class="danger-icon">🚫</span>
+                <span>【危険】低K血症（利尿薬併用）→ 中毒増強！</span>
+            </div>
+            <div class="danger-level danger-medium">
+                <span class="danger-icon">⚠️</span>
+                <span>【注意】腎機能低下 → 蓄積リスク（減量必須）</span>
+            </div>
+            <div class="danger-level danger-medium">
+                <span class="danger-icon">⚠️</span>
+                <span>【注意】Ca拮抗薬・β遮断薬 → 徐脈リスク</span>
+            </div>
+        </div>
+        
+        <div class="goro">
+            🔥 最重要3つ：「ベアキ（ベラパミル・アミオダロン・キニジン）」
+        </div>
+        
+        <h2>📐 国試頻出計算パターン</h2>
+        <div class="calculation-pattern">
+            <h3>パターン1：腎機能低下時の用量調整</h3>
+            <div class="formula">
+                Ccr < 50 mL/min → 用量を1/2に減量
+                <br>Ccr < 10 mL/min → 用量を1/4に減量
+            </div>
+            
+            <h3>パターン2：半減期と定常状態</h3>
+            <div class="formula">
+                半減期：40時間（腎機能正常時）
+                <br>定常状態到達：5半減期 = 200時間 ≒ 8-9日
+            </div>
+            
+            <h3>パターン3：中毒時の対処時間</h3>
+            <div class="formula">
+                血中濃度が半分になる時間 = 40時間
+                <br>2.4 ng/mL → 1.2 ng/mL まで40時間必要
+            </div>
+        </div>
+        
+        <div class="must-remember">
+            <h3>⭐ 絶対覚える！国試出るポイント ⭐</h3>
+            <div style="margin: 15px 0;">
+                <span class="key-point">有効域 0.5-2.0</span>
+                <span class="key-point">初期症状は消化器</span>
+                <span class="key-point">黄視症・緑視症</span>
+            </div>
+            <div>
+                <span class="key-point">ベアキで濃度↑↑</span>
+                <span class="key-point">低K血症で中毒</span>
+                <span class="key-point">半減期40時間</span>
+            </div>
+        </div>
+        
+        <h2>⚡ 30秒クイックレビュー</h2>
+        <div class="quick-review">
+            <div class="review-item">✅ 治療域：0.5-2.0 ng/mL（狭い！）</div>
+            <div class="review-item">✅ 中毒初期：悪心・嘔吐</div>
+            <div class="review-item">✅ 特徴的：黄視症・緑視症</div>
+            <div class="review-item">✅ 最危険薬：ベラパミル・アミオダロン・キニジン</div>
+            <div class="review-item">✅ 低K血症で中毒増強（利尿薬注意）</div>
+        </div>
+        
+        <div style="background: #28a745; color: white; padding: 15px; border-radius: 10px; text-align: center; margin: 20px 0;">
+            <h3 style="font-size: 20px; margin-bottom: 10px;">🎯 国試での狙われ方</h3>
+            <p>1. 血中濃度の数値を問う（0.5-2.0を覚える）</p>
+            <p>2. 中毒症状の組み合わせ（黄視症がキー）</p>
+            <p>3. 相互作用薬剤名（ベアキ最重要）</p>
+            <p>4. 腎機能低下時の対応（減量or禁忌）</p>
+        </div>
+    </div>
+    
+    <div style="text-align: center; color: white; margin: 20px 0;">
+        <p>💪 これで国試のジゴキシン問題は完璧！</p>
+        <p style="font-size: 12px;">PharmaDex 薬学生応援ツール</p>
+    </div>
+</body>
+</html>
