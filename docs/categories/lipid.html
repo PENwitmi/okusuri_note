@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="脂質異常症治療ガイド - ストロングスタチンvsスタンダードスタチンの使い分け完全解説">
+    <meta name="keywords" content="脂質異常症, スタチン, ロスバスタチン, アトルバスタチン, LDLコレステロール">
+    <title>脂質異常症治療ガイド | PharmaDex 薬剤図鑑</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/drug-detail.css">
+    <style>
+        .lipid-hero {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .strength-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .strong-statin {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        
+        .standard-statin {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        
+        .ldl-meter {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px solid #e9ecef;
+        }
+        
+        .ldl-scale {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            position: relative;
+        }
+        
+        .ldl-bar {
+            height: 20px;
+            border-radius: 10px;
+            position: relative;
+            width: 100%;
+            background: linear-gradient(to right, #4caf50 0%, #ffeb3b 30%, #ff9800 60%, #f44336 100%);
+        }
+        
+        .ldl-marker {
+            position: absolute;
+            top: -5px;
+            width: 2px;
+            height: 30px;
+            background: #000;
+        }
+        
+        .evidence-table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        
+        .evidence-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .evidence-table th {
+            background: #6c5ce7;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+        
+        .evidence-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .patient-profile {
+            background: #e8f5e8;
+            border-left: 4px solid #4caf50;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning-alert {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .success-story {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .interactive-calculator {
+            background: #f8f9fa;
+            border: 2px dashed #6c5ce7;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .risk-card {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 8px;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .risk-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .low-risk { background: linear-gradient(45deg, #4caf50, #8bc34a); }
+        .moderate-risk { background: linear-gradient(45deg, #ff9800, #ffc107); }
+        .high-risk { background: linear-gradient(45deg, #f44336, #e91e63); }
+        
+        .timeline-treatment {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .timeline-treatment::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #6c5ce7;
+        }
+        
+        .timeline-step {
+            position: relative;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-step::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            background: #6c5ce7;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #6c5ce7;
+        }
+        
+        .side-effect-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .side-effect-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .side-effect-card:hover {
+            border-color: #6c5ce7;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="../index.html">PharmaDex</a></h1>
+                <p class="tagline">薬剤図鑑</p>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html#drugs" class="nav-link">薬剤一覧</a></li>
+                    <li><a href="../index.html#categories" class="nav-link">薬効群</a></li>
+                    <li><a href="../index.html#stories" class="nav-link">ストーリー</a></li>
+                    <li><a href="../index.html#differentiation" class="nav-link">使い分け</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- パンくずナビゲーション -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span class="separator">></span>
+            <a href="../index.html#categories">薬効群</a>
+            <span class="separator">></span>
+            <span class="current">脂質異常症治療ガイド</span>
+        </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <section class="lipid-hero">
+        <div class="container">
+            <h1 style="font-size: 3rem; margin-bottom: 1rem;">💊 脂質異常症治療ガイド</h1>
+            <p style="font-size: 1.4rem; opacity: 0.9; margin-bottom: 2rem;">
+                ストロングスタチン vs スタンダードスタチン<br>
+                最適な使い分けの科学と実践
+            </p>
+            <div class="stats-grid" style="max-width: 600px; margin: 0 auto;">
+                <div class="stat-card">
+                    <div style="font-size: 2rem; color: #6c5ce7;">📊</div>
+                    <div style="font-size: 1.2rem; font-weight: 600;">心血管イベント減少</div>
+                    <div>30-40%</div>
+                </div>
+                <div class="stat-card">
+                    <div style="font-size: 2rem; color: #6c5ce7;">🎯</div>
+                    <div style="font-size: 1.2rem; font-weight: 600;">LDL目標達成率</div>
+                    <div>Strong: 85%</div>
+                </div>
+                <div class="stat-card">
+                    <div style="font-size: 2rem; color: #6c5ce7;">👥</div>
+                    <div style="font-size: 1.2rem; font-weight: 600;">世界使用者数</div>
+                    <div>2億人以上</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- 戻るボタン -->
+            <div class="back-button-container">
+                <button onclick="history.back()" class="back-button">
+                    ← 戻る
+                </button>
+            </div>
+
+            <!-- 序章：スタチンの革命 -->
+            <section class="content-section">
+                <h2>🌟 序章：コレステロール革命の物語</h2>
+                
+                <div class="emotion-quote">
+                    「1987年、ロバスタチンの登場は医学界に革命をもたらした。それまで『加齢と共に上がるコレステロールは仕方がない』とされていた常識が、『薬で劇的に下げられる』という新時代の扉を開いたのだ。」
+                </div>
+
+                <div class="success-story">
+                    <h3>💡 歴史的瞬間：1994年、スカンジナビア研究</h3>
+                    <div style="font-size: 1.1rem; line-height: 1.8;">
+                        <p>4,444人の冠動脈疾患患者にシンバスタチンを投与した結果、<strong>死亡率30%減少</strong>という衝撃的な結果が発表された。</p>
+                        <p>「これほど明確な生存利益を示した薬は、医学史上稀だった。研究者たちは興奮を隠せなかった。」</p>
+                        <p><strong>この瞬間、スタチンは『コレステロールを下げる薬』から『命を救う薬』へと進化した。</strong></p>
+                    </div>
+                </div>
+
+                <h3>🎯 なぜストロングとスタンダードに分かれるのか？</h3>
+                
+                <div class="strength-comparison">
+                    <div class="strong-statin">
+                        <h4>⚡ ストロングスタチン</h4>
+                        <p><strong>哲学</strong>：「可能な限り積極的に」</p>
+                        <ul>
+                            <li>LDL-C 50%以上低下</li>
+                            <li>高リスク患者の標準治療</li>
+                            <li>急性冠症候群後の必須薬</li>
+                            <li>家族性高コレステロール血症</li>
+                        </ul>
+                        <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.2); border-radius: 8px;">
+                            <strong>代表薬：</strong>ロスバスタチン、アトルバスタチン高用量
+                        </div>
+                    </div>
+                    
+                    <div class="standard-statin">
+                        <h4>🛡️ スタンダードスタチン</h4>
+                        <p><strong>哲学</strong>：「安全に、確実に」</p>
+                        <ul>
+                            <li>LDL-C 30-45%低下</li>
+                            <li>一般的な脂質管理</li>
+                            <li>高齢者・多剤併用患者</li>
+                            <li>長期継続治療</li>
+                        </ul>
+                        <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.2); border-radius: 8px;">
+                            <strong>代表薬：</strong>プラバスタチン、シンバスタチン、アトルバスタチン低用量
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LDLコレステロール目標値理解 -->
+            <section class="content-section">
+                <h2>🎯 LDLコレステロール目標値の科学</h2>
+                
+                <div class="ldl-meter">
+                    <h3>📊 LDL-C値と心血管リスクの関係</h3>
+                    <div class="ldl-scale">
+                        <div class="ldl-bar">
+                            <div class="ldl-marker" style="left: 15%;"></div>
+                            <div class="ldl-marker" style="left: 30%;"></div>
+                            <div class="ldl-marker" style="left: 45%;"></div>
+                            <div class="ldl-marker" style="left: 60%;"></div>
+                            <div class="ldl-marker" style="left: 80%;"></div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 1rem; font-size: 0.9rem;">
+                        <span><strong>70</strong><br>超高リスク目標</span>
+                        <span><strong>100</strong><br>高リスク目標</span>
+                        <span><strong>120</strong><br>中リスク目標</span>
+                        <span><strong>140</strong><br>基準値上限</span>
+                        <span><strong>180</strong><br>治療開始</span>
+                    </div>
+                    
+                    <div style="margin-top: 2rem;">
+                        <h4>💡 重要な発見：「Lower is Better」の真実</h4>
+                        <p>2017年のCTT研究（26万人のメタ解析）により、<strong>LDL-C 1mmol/L（39mg/dL）低下ごとに心血管イベントが22%減少</strong>することが判明。</p>
+                        <div class="warning-alert">
+                            <strong>⚠️ 日本の現実：</strong>欧米では70mg/dL未満が常識だが、日本では120mg/dL未満で満足している医師も多い。この差が日本人の心血管イベント率に影響を与えている可能性がある。
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- リスク層別化と治療選択 -->
+            <section class="content-section">
+                <h2>⚖️ リスク層別化：誰にストロング、誰にスタンダード？</h2>
+                
+                <div class="risk-matrix">
+                    <div class="risk-card low-risk">
+                        <h4>🟢 低リスク</h4>
+                        <p><strong>スタンダードスタチン</strong></p>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>一次予防</li>
+                            <li>若年者</li>
+                            <li>糖尿病なし</li>
+                            <li>喫煙なし</li>
+                        </ul>
+                        <div style="margin-top: 1rem; font-weight: 600;">
+                            目標：LDL-C <120mg/dL
+                        </div>
+                    </div>
+                    
+                    <div class="risk-card moderate-risk">
+                        <h4>🟡 中リスク</h4>
+                        <p><strong>スタンダード→必要時ストロング</strong></p>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>糖尿病</li>
+                            <li>CKD</li>
+                            <li>家族歴あり</li>
+                            <li>喫煙者</li>
+                        </ul>
+                        <div style="margin-top: 1rem; font-weight: 600;">
+                            目標：LDL-C <100mg/dL
+                        </div>
+                    </div>
+                    
+                    <div class="risk-card high-risk">
+                        <h4>🔴 高・超高リスク</h4>
+                        <p><strong>ストロングスタチン必須</strong></p>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>冠動脈疾患既往</li>
+                            <li>ACS後</li>
+                            <li>家族性高コレステロール血症</li>
+                            <li>多血管病変</li>
+                        </ul>
+                        <div style="margin-top: 1rem; font-weight: 600;">
+                            目標：LDL-C <70mg/dL
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient-profile">
+                    <h4>📋 症例検討：47歳男性商社マン</h4>
+                    <p><strong>背景</strong>：LDL-C 165mg/dL、糖尿病、喫煙歴、父親が55歳で心筋梗塞</p>
+                    <p><strong>リスク評価</strong>：中〜高リスク（糖尿病＋家族歴＋喫煙）</p>
+                    <p><strong>目標LDL-C</strong>：100mg/dL未満（できれば70mg/dL未満）</p>
+                    
+                    <div class="timeline-treatment">
+                        <div class="timeline-step">
+                            <h5>Step 1：スタンダードから開始</h5>
+                            <p>アトルバスタチン10mg → LDL-C 120mg/dL（27%低下）</p>
+                            <div class="warning-alert">
+                                <strong>判断：</strong>目標未達、ストロングへ変更検討
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-step">
+                            <h5>Step 2：ストロングに変更</h5>
+                            <p>ロスバスタチン10mg → LDL-C 85mg/dL（48%低下）</p>
+                            <div class="warning-alert">
+                                <strong>判断：</strong>目標達成、但し理想的には70mg/dL未満
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-step">
+                            <h5>Step 3：最適化</h5>
+                            <p>ロスバスタチン15mg → LDL-C 68mg/dL（59%低下）</p>
+                            <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px;">
+                                <strong>成功：</strong>理想的なLDL-C到達、長期心血管リスク大幅減少
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ストロングスタチン詳細比較 -->
+            <section class="content-section">
+                <h2>⚡ ストロングスタチン詳細比較</h2>
+                
+                <div class="evidence-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>薬剤名</th>
+                                <th>LDL-C低下率</th>
+                                <th>特徴</th>
+                                <th>最適な患者</th>
+                                <th>注意点</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>ロスバスタチン<br>（クレストール）</strong></td>
+                                <td>45-65%</td>
+                                <td>最強の効果、水溶性、腎排泄</td>
+                                <td>家族性高コレステロール血症、ACS後</td>
+                                <td>糖尿病新規発症リスクやや高</td>
+                            </tr>
+                            <tr>
+                                <td><strong>アトルバスタチン<br>（リピトール）</strong></td>
+                                <td>40-60%</td>
+                                <td>エビデンス豊富、脂溶性</td>
+                                <td>冠動脈疾患、脳梗塞既往</td>
+                                <td>CYP3A4で代謝、相互作用注意</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ピタバスタチン<br>（リバロ）</strong></td>
+                                <td>40-50%</td>
+                                <td>日本発、相互作用最少</td>
+                                <td>多剤併用、シクロスポリン併用</td>
+                                <td>薬価がやや高い</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="success-story">
+                    <h3>🏆 ストロングスタチンの勝利：JUPITER研究</h3>
+                    <div style="font-size: 1.1rem; line-height: 1.8;">
+                        <p><strong>研究概要：</strong>LDL-C<130mg/dLだが高感度CRP高値の健常者17,802人</p>
+                        <p><strong>介入：</strong>ロスバスタチン20mg vs プラセボ</p>
+                        <p><strong>結果：</strong>心血管イベント44%減少、総死亡20%減少</p>
+                        <div style="background: rgba(255,255,255,0.2); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            「この研究により、『LDL-Cが正常でも炎症があれば治療すべき』という新概念が生まれた。ストロングスタチンの威力を世界に示した歴史的研究である。」
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- スタンダードスタチンの役割 -->
+            <section class="content-section">
+                <h2>🛡️ スタンダードスタチンの重要な役割</h2>
+                
+                <div class="patient-profile">
+                    <h4>💡 「ストロングが最良」という誤解</h4>
+                    <p>多くの医師が「強い方が良い」と考えがちだが、実際には<strong>患者の状況に応じた最適化</strong>が重要。スタンダードスタチンが最適解となる場面は多い。</p>
+                </div>
+
+                <h3>🎯 スタンダードスタチンが選ばれる理由</h3>
+                
+                <div class="side-effect-comparison">
+                    <div class="side-effect-card">
+                        <h4>👴 高齢者（75歳以上）</h4>
+                        <p><strong>理由：</strong>筋症状リスク高、転倒リスク、多剤併用</p>
+                        <p><strong>選択薬：</strong>プラバスタチン40mg</p>
+                        <div class="emotion-quote" style="margin-top: 1rem; background: #f0f8ff; border-left-color: #4fc3f7;">
+                            「82歳の母にロスバスタチンを処方したら筋肉痛で歩けなくなった。プラバスタチンに変更したら問題なし。年齢を考慮した処方の大切さを痛感した。」
+                            <cite>- 家族医療クリニック医師</cite>
+                        </div>
+                    </div>
+                    
+                    <div class="side-effect-card">
+                        <h4>🧬 相互作用リスク</h4>
+                        <p><strong>理由：</strong>CYP3A4阻害薬併用時のリスク回避</p>
+                        <p><strong>選択薬：</strong>フルバスタチン、プラバスタチン</p>
+                        <div class="warning-alert">
+                            <strong>⚠️ 要注意薬：</strong>エリスロマイシン、イトラコナゾール、シクロスポリン、グレープフルーツジュース
+                        </div>
+                    </div>
+                    
+                    <div class="side-effect-card">
+                        <h4>🔄 長期継続性重視</h4>
+                        <p><strong>理由：</strong>軽微な副作用でも継続を優先</p>
+                        <p><strong>選択薬：</strong>シンバスタチン20mg（ジェネリック）</p>
+                        <div class="emotion-quote" style="margin-top: 1rem; background: #f0f8ff; border-left-color: #4fc3f7;">
+                            「10年間シンバスタチンを続けている患者さん。効果は中程度だが、『一度も副作用なし』『薬代が安い』で満足度が高い。継続こそ最大の治療効果。」
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 実践的処方アルゴリズム -->
+            <section class="content-section">
+                <h2>🧭 実践的処方アルゴリズム</h2>
+                
+                <div class="interactive-calculator">
+                    <h3>📊 スタチン選択フローチャート</h3>
+                    <p style="margin-bottom: 2rem;">患者情報を評価して最適なスタチンを選択</p>
+                    
+                    <div class="timeline-treatment">
+                        <div class="timeline-step">
+                            <h4>Step 1：リスク評価</h4>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                                <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px;">
+                                    <strong>低リスク</strong><br>
+                                    ・一次予防<br>
+                                    ・若年者<br>
+                                    ・合併症なし
+                                </div>
+                                <div style="background: #fff3cd; padding: 1rem; border-radius: 8px;">
+                                    <strong>中リスク</strong><br>
+                                    ・糖尿病<br>
+                                    ・家族歴あり<br>
+                                    ・CKD
+                                </div>
+                                <div style="background: #f8d7da; padding: 1rem; border-radius: 8px;">
+                                    <strong>高リスク</strong><br>
+                                    ・冠動脈疾患<br>
+                                    ・ACS後<br>
+                                    ・家族性FH
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-step">
+                            <h4>Step 2：併存症・年齢考慮</h4>
+                            <div class="evidence-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>患者背景</th>
+                                            <th>推奨スタチン</th>
+                                            <th>開始用量</th>
+                                            <th>最大用量</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>健康な成人（一次予防）</td>
+                                            <td>アトルバスタチン</td>
+                                            <td>10mg</td>
+                                            <td>40mg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>冠動脈疾患（二次予防）</td>
+                                            <td>ロスバスタチン</td>
+                                            <td>10mg</td>
+                                            <td>20mg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>75歳以上高齢者</td>
+                                            <td>プラバスタチン</td>
+                                            <td>20mg</td>
+                                            <td>40mg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>多剤併用患者</td>
+                                            <td>ピタバスタチン</td>
+                                            <td>2mg</td>
+                                            <td>4mg</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-step">
+                            <h4>Step 3：効果判定・調整</h4>
+                            <div style="background: #e7f3ff; padding: 1.5rem; border-radius: 8px;">
+                                <p><strong>4-6週間後に再評価</strong></p>
+                                <ul>
+                                    <li>✅ 目標達成 → 継続、6ヶ月後再評価</li>
+                                    <li>📈 目標未達 → 用量増加 or ストロングスタチンに変更</li>
+                                    <li>⚠️ 副作用あり → 用量減量 or 薬剤変更</li>
+                                    <li>🚫 重篤な副作用 → 中止、代替療法検討</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 副作用管理と対策 -->
+            <section class="content-section">
+                <h2>⚠️ 副作用管理：安全な長期治療のために</h2>
+                
+                <h3>🔍 主要副作用と対処法</h3>
+                
+                <div class="side-effect-comparison">
+                    <div class="side-effect-card">
+                        <h4>💪 筋症状（最も頻度高）</h4>
+                        <p><strong>頻度：</strong>5-10%（ストロングで高頻度）</p>
+                        <p><strong>症状：</strong>筋肉痛、筋力低下、CK上昇</p>
+                        <p><strong>対処：</strong></p>
+                        <ul>
+                            <li>CoQ10併用（100mg/日）</li>
+                            <li>用量減量</li>
+                            <li>週1回投与</li>
+                            <li>他のスタチンへ変更</li>
+                        </ul>
+                        <div class="emotion-quote" style="margin-top: 1rem; background: #fff3cd; border-left-color: #ffc107;">
+                            「筋肉痛で中止する患者が多いが、CoQ10併用や週1回投与で継続できる場合が多い。諦めずに工夫することが大切。」
+                        </div>
+                    </div>
+                    
+                    <div class="side-effect-card">
+                        <h4>🧠 記憶障害（注目の副作用）</h4>
+                        <p><strong>頻度：</strong>1-3%（可逆性）</p>
+                        <p><strong>症状：</strong>物忘れ、集中力低下</p>
+                        <p><strong>対処：</strong></p>
+                        <ul>
+                            <li>一時中止で症状改善確認</li>
+                            <li>水溶性スタチンへ変更</li>
+                            <li>用量減量</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="side-effect-card">
+                        <h4>🩸 糖尿病新規発症</h4>
+                        <p><strong>リスク：</strong>ストロングスタチンで1.5倍</p>
+                        <p><strong>機序：</strong>インスリン感受性低下</p>
+                        <p><strong>対処：</strong></p>
+                        <ul>
+                            <li>定期的な血糖モニタリング</li>
+                            <li>生活習慣指導強化</li>
+                            <li>リスクvs ベネフィット評価</li>
+                        </ul>
+                        <div class="warning-alert">
+                            <strong>重要：</strong>糖尿病発症リスクよりも心血管保護効果の方が遥かに大きい。過度に恐れる必要はない。
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 最新トピックス -->
+            <section class="content-section">
+                <h2>🚀 最新トピックス：脂質治療の未来</h2>
+                
+                <div class="success-story">
+                    <h3>💉 PCSK9阻害薬：スタチンを超える新時代</h3>
+                    <div style="font-size: 1.1rem; line-height: 1.8;">
+                        <p><strong>革新性：</strong>LDL-C 50-70%低下、スタチンとの併用で<strong>LDL-C 20mg/dL台</strong>も可能</p>
+                        <p><strong>対象：</strong>家族性高コレステロール血症、スタチン不耐性、超高リスク患者</p>
+                        <p><strong>課題：</strong>高薬価（月約6万円）、注射製剤</p>
+                        <div style="background: rgba(255,255,255,0.2); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            「PCSK9阻害薬により、『治療困難』とされた患者でも理想的なLDL-C管理が可能になった。脂質治療の新時代の幕開けである。」
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🔬 次世代治療選択肢</h3>
+                
+                <div class="risk-matrix">
+                    <div class="risk-card" style="background: linear-gradient(45deg, #667eea, #764ba2);">
+                        <h4>💊 エゼチミブ併用</h4>
+                        <p>スタチン＋エゼチミブでLDL-C追加18%低下</p>
+                        <div style="margin-top: 1rem;">
+                            IMPROVE-IT研究で<br>心血管イベント6.4%減少証明
+                        </div>
+                    </div>
+                    
+                    <div class="risk-card" style="background: linear-gradient(45deg, #f093fb, #f5576c);">
+                        <h4>🧬 Inclisiran（siRNA）</h4>
+                        <p>年2回投与でLDL-C 50%低下</p>
+                        <div style="margin-top: 1rem;">
+                            アドヒアランス革命<br>「飲み忘れ」からの解放
+                        </div>
+                    </div>
+                    
+                    <div class="risk-card" style="background: linear-gradient(45deg, #4facfe, #00f2fe);">
+                        <h4>🎯 Bempedoic acid</h4>
+                        <p>スタチン不耐性患者の救世主</p>
+                        <div style="margin-top: 1rem;">
+                            筋症状なし<br>肝臓選択的HMG-CoA還元酵素阻害
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 実臨床での工夫とコツ -->
+            <section class="content-section">
+                <h2>💡 実臨床での工夫とコツ</h2>
+                
+                <div class="patient-profile">
+                    <h4>🎯 患者指導のポイント</h4>
+                    <h5>1. 服薬タイミングの最適化</h5>
+                    <ul>
+                        <li><strong>脂溶性スタチン（アトルバスタチン等）：</strong>夕食後（HMG-CoA還元酵素の夜間活性が高いため）</li>
+                        <li><strong>水溶性スタチン（ロスバスタチン等）：</strong>朝でも夕でも可（長時間作用）</li>
+                        <li><strong>高齢者：</strong>朝服用で飲み忘れ防止</li>
+                    </ul>
+                    
+                    <h5>2. 食事指導の現実的アプローチ</h5>
+                    <div class="emotion-quote">
+                        「『卵を食べるな』『肉を控えろ』という厳しい指導より、『週3回魚を食べましょう』『オリーブオイルを使いましょう』という前向きな指導の方が続きやすい。」
+                        <cite>- 管理栄養士の知恵</cite>
+                    </div>
+                    
+                    <h5>3. モチベーション維持の工夫</h5>
+                    <ul>
+                        <li>LDL-C値をグラフで可視化</li>
+                        <li>「血管年齢が○歳若返った」と表現</li>
+                        <li>「薬1錠で心筋梗塞を30%予防」と具体的効果を説明</li>
+                    </ul>
+                </div>
+
+                <div class="success-story">
+                    <h3>👥 チーム医療での脂質管理</h3>
+                    <div style="font-size: 1.1rem; line-height: 1.8;">
+                        <p><strong>医師：</strong>リスク評価、薬剤選択、副作用管理</p>
+                        <p><strong>薬剤師：</strong>服薬指導、相互作用チェック、アドヒアランス支援</p>
+                        <p><strong>管理栄養士：</strong>食事療法、生活習慣改善指導</p>
+                        <p><strong>看護師：</strong>患者教育、継続支援、副作用早期発見</p>
+                        <div style="background: rgba(255,255,255,0.2); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            「脂質管理は長期戦。一人の力では限界がある。チーム一丸となって患者を支えることで、初めて真の治療成功が得られる。」
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- まとめ -->
+            <section class="content-section">
+                <h2>🎊 まとめ：脂質異常症治療の真髄</h2>
+                
+                <div class="emotion-quote">
+                    脂質異常症治療は、単なる数値の改善ではない。それは患者の未来を変える医療行為である。ストロングスタチンとスタンダードスタチンの使い分けは、患者一人ひとりの人生に寄り添う医療の芸術といえる。
+                </div>
+
+                <h3>🎯 治療成功の5つの鍵</h3>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎯</div>
+                        <div class="highlight">適切な選択</div>
+                        <div>リスクに応じたスタチン選択</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>
+                        <div class="highlight">目標明確化</div>
+                        <div>個別化されたLDL-C目標</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚠️</div>
+                        <div class="highlight">安全管理</div>
+                        <div>副作用の早期発見・対処</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤝</div>
+                        <div class="highlight">チーム医療</div>
+                        <div>多職種連携による支援</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📈</div>
+                        <div class="highlight">継続性</div>
+                        <div>長期治療の継続支援</div>
+                    </div>
+                </div>
+
+                <div class="success-story">
+                    <h3>💝 薬学生・薬剤師の皆さんへ</h3>
+                    <div style="color: white; font-size: 1.1rem; line-height: 1.8;">
+                        <p>脂質異常症治療は、薬剤師の専門性が最も発揮される分野の一つです。</p>
+                        <p>単に「LDL-Cを下げる薬」として理解するのではなく、「人生を変える薬」として捉えてください。</p>
+                        <p>患者さんの背景、価値観、ライフスタイルを理解し、最適な治療を提案できる薬剤師を目指してください。</p>
+                        <p><strong>あなたの知識と情熱が、誰かの心筋梗塞を予防し、家族の笑顔を守ることができるのです。</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 関連リンク -->
+            <section class="content-section">
+                <h2>🔗 関連ページ</h2>
+                <div class="risk-matrix">
+                    <div class="drug-card">
+                        <h4>📚 個別薬剤詳細</h4>
+                        <ul>
+                            <li><a href="../drugs/rosuvastatin.html">ロスバスタチン（クレストール）</a></li>
+                            <li><a href="../drugs/atorvastatin.html">アトルバスタチン（リピトール）</a></li>
+                            <li><a href="../cardiovascular-orchestra.html">循環器系薬剤オーケストラ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>🎯 薬効群別ガイド</h4>
+                        <ul>
+                            <li><a href="others.html">TDM実践ガイド</a></li>
+                            <li><a href="../groups/statin_evolution_model.html">スタチン進化モデル</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>📖 関連ストーリー</h4>
+                        <ul>
+                            <li><a href="../stories/statin_discovery.html">スタチン発見物語</a></li>
+                            <li><a href="../index.html#stories">薬剤開発ストーリー一覧</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PharmaDex</h3>
+                    <p>薬学教育の未来を創造する</p>
+                </div>
+                <div class="footer-section">
+                    <h4>薬効群ガイド</h4>
+                    <ul>
+                        <li><a href="../cardiovascular-orchestra.html">循環器系オーケストラ</a></li>
+                        <li><a href="lipid.html">脂質異常症</a></li>
+                        <li><a href="others.html">TDM実践</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>学習リソース</h4>
+                    <ul>
+                        <li><a href="../index.html#drugs">薬剤一覧</a></li>
+                        <li><a href="../index.html#stories">開発ストーリー</a></li>
+                        <li><a href="../index.html#differentiation">使い分けガイド</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PharmaDex. 薬学教育のイノベーション</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/navigation.js"></script>
+    <script>
+        // インタラクティブ機能
+        document.addEventListener('DOMContentLoaded', function() {
+            // スムーズスクロール
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // カードホバーエフェクト
+            document.querySelectorAll('.risk-card, .side-effect-card, .drug-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                    this.style.transition = 'all 0.3s ease';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // 数値カウントアップアニメーション
+            function animateNumbers() {
+                const statValues = document.querySelectorAll('.stat-card div:last-child');
+                statValues.forEach(stat => {
+                    const text = stat.textContent;
+                    const number = parseInt(text);
+                    if (!isNaN(number) && number > 0) {
+                        let current = 0;
+                        const increment = number / 30;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= number) {
+                                current = number;
+                                clearInterval(timer);
+                            }
+                            stat.textContent = Math.floor(current) + text.replace(number, '').replace(Math.floor(current), '');
+                        }, 50);
+                    }
+                });
+            }
+
+            // スクロールアニメーション
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        
+                        // 数値アニメーションのトリガー
+                        if (entry.target.classList.contains('stats-grid')) {
+                            setTimeout(animateNumbers, 200);
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // 監視対象要素を設定
+            document.querySelectorAll('.content-section, .timeline-step, .risk-card, .side-effect-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+
+            // LDLメーターのインタラクティブ機能
+            const ldlBar = document.querySelector('.ldl-bar');
+            if (ldlBar) {
+                ldlBar.addEventListener('click', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const clickX = e.clientX - rect.left;
+                    const percentage = (clickX / rect.width) * 100;
+                    const ldlValue = Math.round(70 + (percentage * 1.1)); // 70-180の範囲
+                    
+                    // 新しいマーカーを作成
+                    const newMarker = document.createElement('div');
+                    newMarker.className = 'ldl-marker';
+                    newMarker.style.left = percentage + '%';
+                    newMarker.style.background = '#ff4757';
+                    this.appendChild(newMarker);
+                    
+                    // 3秒後に削除
+                    setTimeout(() => {
+                        newMarker.remove();
+                    }, 3000);
+                    
+                    alert(`LDL-C: ${ldlValue}mg/dL\n${ldlValue < 70 ? '超高リスク目標達成' : ldlValue < 100 ? '高リスク目標達成' : ldlValue < 120 ? '中リスク目標達成' : ldlValue < 140 ? '境界域' : '治療が必要'}`);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

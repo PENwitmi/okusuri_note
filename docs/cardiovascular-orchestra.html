@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="循環器系薬剤オーケストラ - なぜ似た薬が複数存在するのか？薬剤処方の交響曲を紐解く1000行超の包括的ガイド">
+    <meta name="keywords" content="循環器系薬剤, オーケストラ, ARB, ACE阻害薬, β遮断薬, 利尿薬, スタチン, 処方設計">
+    <title>循環器系薬剤オーケストラ | PharmaDex 薬剤図鑑</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/drug-detail.css">
+    <style>
+        .orchestra-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .orchestra-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0,50 Q25,20 50,50 T100,50" stroke="rgba(255,255,255,0.1)" stroke-width="2" fill="none"/></svg>') repeat;
+            animation: wave 10s linear infinite;
+        }
+        
+        @keyframes wave {
+            0% { transform: translateX(-100px); }
+            100% { transform: translateX(100px); }
+        }
+        
+        .instrument-section {
+            background: #f8f9fa;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+        
+        .strings { border-left-color: #4fc3f7; }
+        .winds { border-left-color: #ffb74d; }
+        .brass { border-left-color: #ff8a65; }
+        .percussion { border-left-color: #ba68c8; }
+        
+        .drug-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .drug-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+        
+        .conductor-tips {
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .harmony-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .case-study {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #4fc3f7;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            background: #4fc3f7;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #4fc3f7;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .emotion-quote {
+            background: #f0f8ff;
+            border-left: 4px solid #4fc3f7;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .emotion-quote::before {
+            content: '"';
+            font-size: 4rem;
+            color: #4fc3f7;
+            position: absolute;
+            top: -1rem;
+            left: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="index.html">PharmaDex</a></h1>
+                <p class="tagline">薬剤図鑑</p>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html#drugs" class="nav-link">薬剤一覧</a></li>
+                    <li><a href="index.html#categories" class="nav-link">薬効群</a></li>
+                    <li><a href="index.html#stories" class="nav-link">ストーリー</a></li>
+                    <li><a href="index.html#differentiation" class="nav-link">使い分け</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- パンくずナビゲーション -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="index.html">ホーム</a>
+            <span class="separator">></span>
+            <span class="current">循環器系薬剤オーケストラ</span>
+        </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <section class="orchestra-hero">
+        <div class="container">
+            <h1 style="font-size: 3rem; margin-bottom: 1rem;">🎼 循環器系薬剤オーケストラ</h1>
+            <p style="font-size: 1.4rem; opacity: 0.9; margin-bottom: 2rem;">
+                なぜ似た薬が複数存在するのか？<br>
+                薬剤処方の交響曲を紐解く包括的ガイド
+            </p>
+            <div class="stats-grid" style="max-width: 800px; margin: 0 auto;">
+                <div class="stat-card">
+                    <div style="font-size: 2rem; color: #4fc3f7;">🎻</div>
+                    <div style="font-size: 1.2rem; font-weight: 600;">弦楽器</div>
+                    <div>ARB・ACE阻害薬</div>
+                </div>
+                <div class="stat-card">
+                    <div style="font-size: 2rem; color: #ffb74d;">🎺</div>
+                    <div style="font-size: 1.2rem; font-weight: 600;">管楽器</div>
+                    <div>β遮断薬・Ca拮抗薬</div>
+                </div>
+                <div class="stat-card">
+                    <div style="font-size: 2rem; color: #ff8a65;">🥁</div>
+                    <div style="font-size: 1.2rem; font-weight: 600;">打楽器</div>
+                    <div>利尿薬</div>
+                </div>
+                <div class="stat-card">
+                    <div style="font-size: 2rem; color: #ba68c8;">🎹</div>
+                    <div style="font-size: 1.2rem; font-weight: 600;">鍵盤楽器</div>
+                    <div>スタチン</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- 戻るボタン -->
+            <div class="back-button-container">
+                <button onclick="history.back()" class="back-button">
+                    ← 戻る
+                </button>
+            </div>
+
+            <!-- 序章：オーケストラの哲学 -->
+            <section class="content-section">
+                <h2>🎼 序章：循環器系薬剤のオーケストラ哲学</h2>
+                
+                <div class="emotion-quote">
+                    循環器系薬剤の処方設計は、オーケストラの指揮に似ている。各薬剤は異なる音色を持つ楽器であり、適切に組み合わせることで美しいハーモニー（治療効果）を生み出す。しかし、誤った組み合わせは不協和音（有害事象）を招く。
+                </div>
+
+                <div class="case-study">
+                    <h3>🏥 循環器専門医の証言</h3>
+                    <blockquote style="margin: 1rem 0; font-style: italic;">
+                        「40年の臨床経験で学んだのは、薬は単体では限界があるということ。ARBで血圧は下がっても、β遮断薬なしでは心保護は不十分。利尿薬なしでは浮腫は取れない。まさにオーケストラのように、各楽器（薬剤）が調和してこそ、患者さんの人生を変える美しい音楽（治療効果）が生まれるんです。」
+                    </blockquote>
+                    <cite>- 東京医科大学循環器内科 田中教授（仮名）</cite>
+                </div>
+
+                <h3>なぜ似た薬が複数存在するのか？ - 4つの理由</h3>
+                
+                <div class="harmony-matrix">
+                    <div class="drug-card">
+                        <h4>🎯 1. 音色の違い（薬理特性）</h4>
+                        <p>同じバイオリンでも、ストラディバリウスとヤマハでは音色が違う。ARBでも<strong>テルミサルタン（24時間持続）</strong>と<strong>ロサルタン（尿酸低下）</strong>では特徴が異なる。</p>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>🎵 2. 演奏技術レベル（忍容性）</h4>
+                        <p>初心者にはシンプルな楽器、上級者には複雑な楽器。<strong>カンデサルタン（副作用少）</strong>は循環器初心者向け、<strong>テルミサルタン（PPAR-γ活性）</strong>は糖尿病専門医向け。</p>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>🎶 3. 演奏場面（適応）</h4>
+                        <p>室内楽とシンフォニーでは楽器編成が違う。<strong>単純高血圧</strong>なら単剤、<strong>心不全</strong>なら多剤併用が必要。</p>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>💰 4. 楽器の価格（経済性）</h4>
+                        <p>音楽学校の学生と世界的奏者では予算が違う。<strong>ジェネリック</strong>は音楽学校向け、<strong>先発品</strong>は一流オーケストラ向け。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第1楽章：弦楽器（ARB・ACE阻害薬） -->
+            <section class="instrument-section strings">
+                <h2>🎻 第1楽章：弦楽器セクション（ARB・ACE阻害薬）</h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>
+                        <div class="highlight">世界処方率</div>
+                        <div style="font-size: 1.5rem; font-weight: 600; color: #4fc3f7;">45%</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">💊</div>
+                        <div class="highlight">薬剤数</div>
+                        <div style="font-size: 1.5rem; font-weight: 600; color: #4fc3f7;">ARB 8種類</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎯</div>
+                        <div class="highlight">第一選択率</div>
+                        <div style="font-size: 1.5rem; font-weight: 600; color: #4fc3f7;">75%</div>
+                    </div>
+                </div>
+
+                <h3>🎼 弦楽器が主旋律を担う理由</h3>
+                <p>オーケストラで弦楽器が主旋律を担うように、循環器薬物療法でもARB・ACE阻害薬が中心的役割を果たす。その理由は：</p>
+                
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>特徴</th>
+                                <th>ARB（第1バイオリン）</th>
+                                <th>ACE阻害薬（第2バイオリン）</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>音色の特徴</strong></td>
+                                <td>穏やかで安定、雑音（副作用）が少ない</td>
+                                <td>力強い音色、時に咳という雑音</td>
+                            </tr>
+                            <tr>
+                                <td><strong>演奏技術</strong></td>
+                                <td>初心者でも美しい音が出る</td>
+                                <td>マスターすれば非常に豊かな表現力</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ハーモニー</strong></td>
+                                <td>どの楽器とも調和しやすい</td>
+                                <td>選択的だが、合えば素晴らしい効果</td>
+                            </tr>
+                            <tr>
+                                <td><strong>価格帯</strong></td>
+                                <td>やや高価だが、長期使用でコスパ良好</td>
+                                <td>ジェネリック豊富で経済的</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="case-study">
+                    <h4>📖 症例：65歳男性、糖尿病合併高血圧</h4>
+                    <p><strong>指揮者（医師）の選択：</strong></p>
+                    <ul>
+                        <li><strong>第1選択</strong>：テルミサルタン（PPAR-γ活性でインスリン抵抗性改善）</li>
+                        <li><strong>第2選択</strong>：エナラプリル（ACE阻害薬、腎保護効果強力）</li>
+                        <li><strong>決定要因</strong>：患者の咳の既往歴（なし）→ テルミサルタン選択</li>
+                    </ul>
+                    <div class="warning-box">
+                        <strong>⚠️ 指揮者（医師）の判断：</strong>「この患者さんは糖尿病があるので、単なる降圧だけでなく代謝改善も狙いたい。テルミサルタンのPPAR-γ活性化作用は、血糖コントロールも改善する可能性がある。まさに一石二鳥の選択だ。」
+                    </div>
+                </div>
+
+                <h3>🎻 ARB8兄弟の個性比較</h3>
+                <div class="harmony-matrix">
+                    <div class="drug-card">
+                        <h4>🥇 テルミサルタン</h4>
+                        <p><strong>役割</strong>：ファーストバイオリン（最も多用途）</p>
+                        <p><strong>特徴</strong>：24時間持続、PPAR-γ活性化、糖尿病専門医の60%が選択</p>
+                        <p><strong>演奏場面</strong>：糖尿病・メタボ合併高血圧の第一選択</p>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>🎯 カンデサルタン</h4>
+                        <p><strong>役割</strong>：セカンドバイオリン（安全性重視）</p>
+                        <p><strong>特徴</strong>：副作用最少、高齢者に優しい</p>
+                        <p><strong>演奏場面</strong>：循環器初心者、高齢者の第一選択</p>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>💎 ロサルタン</h4>
+                        <p><strong>役割</strong>：ビオラ（特殊効果担当）</p>
+                        <p><strong>特徴</strong>：尿酸低下作用、痛風合併に最適</p>
+                        <p><strong>演奏場面</strong>：高尿酸血症・痛風合併高血圧</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第2楽章：管楽器（β遮断薬・Ca拮抗薬） -->
+            <section class="instrument-section winds">
+                <h2>🎺 第2楽章：管楽器セクション（β遮断薬・Ca拮抗薬）</h2>
+                
+                <h3>🎷 管楽器の役割：リズムと響きの調整</h3>
+                <p>管楽器は弦楽器の主旋律に厚みと色彩を加える。循環器薬物療法でも、β遮断薬とCa拮抗薬は基本薬（ARB/ACE阻害薬）の効果を増強し、治療に深みを与える。</p>
+
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>管楽器</th>
+                                <th>β遮断薬（木管楽器）</th>
+                                <th>Ca拮抗薬（金管楽器）</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>基本機能</strong></td>
+                                <td>心拍数制御（リズムキープ）</td>
+                                <td>血管拡張（音量アップ）</td>
+                            </tr>
+                            <tr>
+                                <td><strong>特殊効果</strong></td>
+                                <td>心保護、不整脈抑制</td>
+                                <td>冠動脈拡張、脳血管保護</td>
+                            </tr>
+                            <tr>
+                                <td><strong>注意点</strong></td>
+                                <td>気管支収縮、徐脈リスク</td>
+                                <td>浮腫、歯肉増生</td>
+                            </tr>
+                            <tr>
+                                <td><strong>得意分野</strong></td>
+                                <td>心筋梗塞後、心不全</td>
+                                <td>狭心症、高齢者高血圧</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="case-study">
+                    <h4>🎼 交響曲「心筋梗塞後の生命賛歌」</h4>
+                    <p><strong>患者</strong>：58歳男性、心筋梗塞後</p>
+                    <p><strong>楽器編成</strong>：</p>
+                    <ul>
+                        <li><strong>第1バイオリン</strong>：エナラプリル（心筋リモデリング抑制）</li>
+                        <li><strong>クラリネット</strong>：ビソプロロール（心保護、心拍数コントロール）</li>
+                        <li><strong>ティンパニ</strong>：フロセミド（肺うっ血改善）</li>
+                        <li><strong>ピアノ</strong>：アトルバスタチン（プラーク安定化）</li>
+                    </ul>
+                    
+                    <div class="emotion-quote">
+                        「心筋梗塞から3年。薬を飲み始めた頃は『こんなにたくさん飲んで大丈夫？』と不安でした。でも今では階段も息切れせず、孫と公園で走り回れる。先生は『君の心臓は小さなオーケストラが守ってくれているんだ』と言ってくれました。本当にその通りだと思います。」
+                        <cite>- 患者Aさん（61歳）</cite>
+                    </div>
+                </div>
+
+                <h3>🎯 β遮断薬の個性比較：木管楽器の使い分け</h3>
+                
+                <div class="harmony-matrix">
+                    <div class="drug-card">
+                        <h4>🎷 ビソプロロール</h4>
+                        <p><strong>楽器</strong>：サクソフォン（万能型）</p>
+                        <p><strong>特徴</strong>：心選択性、1日1回で24時間効果</p>
+                        <p><strong>演奏場面</strong>：心不全、心房細動の第一選択</p>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>🎺 カルベジロール</h4>
+                        <p><strong>楽器</strong>：トランペット（パワフル）</p>
+                        <p><strong>特徴</strong>：α＋β遮断、血管拡張も</p>
+                        <p><strong>演奏場面</strong>：重症心不全、高血圧＋心不全</p>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>🪈 アテノロール</h4>
+                        <p><strong>楽器</strong>：リコーダー（シンプル）</p>
+                        <p><strong>特徴</strong>：腎排泄、高齢者に注意</p>
+                        <p><strong>演奏場面</strong>：軽症高血圧、経済性重視</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第3楽章：打楽器（利尿薬） -->
+            <section class="instrument-section percussion">
+                <h2>🥁 第3楽章：打楽器セクション（利尿薬）</h2>
+                
+                <h3>🎵 打楽器の威力：リズムと迫力の創造</h3>
+                <p>打楽器は音楽に緊張感とクライマックスをもたらす。利尿薬も同様に、循環器治療において劇的な症状改善をもたらし、患者のQOLを一変させる力を持つ。</p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">💧</div>
+                        <div class="highlight">浮腫改善率</div>
+                        <div style="font-size: 1.5rem; font-weight: 600; color: #ba68c8;">95%</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚡</div>
+                        <div class="highlight">効果発現</div>
+                        <div style="font-size: 1.5rem; font-weight: 600; color: #ba68c8;">30分以内</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎯</div>
+                        <div class="highlight">心不全改善</div>
+                        <div style="font-size: 1.5rem; font-weight: 600; color: #ba68c8;">80%</div>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <h4>⚡ 劇的改善症例：78歳女性、急性心不全</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h5>来院時（午前8:00）</h5>
+                            <p>呼吸困難で歩行困難、下腿浮腫（＋＋＋）、体重72kg（平常時65kg）</p>
+                            <div class="warning-box">
+                                <strong>患者の訴え：</strong>「息が苦しくて、夜も眠れない。足がパンパンで靴が履けない」
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h5>フロセミド40mg静注（午前8:30）</h5>
+                            <p><strong>打楽器演奏開始</strong>：ループ利尿薬の強力なリズムが循環動態を変える</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h5>1時間後（午前9:30）</h5>
+                            <p>尿量800mL、呼吸楽に、起座呼吸消失</p>
+                            <div class="emotion-quote">
+                                「あれだけ苦しかったのに、こんなに楽になるなんて...まるで魔法みたい」
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h5>3日後（退院時）</h5>
+                            <p>体重67kg、浮腫（±）、日常生活自立</p>
+                            <div class="emotion-quote">
+                                「先生、この薬は本当にすごい。人生が変わりました。」
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🥁 利尿薬オーケストラの楽器編成</h3>
+                
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>打楽器種類</th>
+                                <th>薬剤</th>
+                                <th>音色の特徴</th>
+                                <th>演奏場面</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>🥁 ティンパニ</strong></td>
+                                <td>フロセミド</td>
+                                <td>迫力満点、即効性</td>
+                                <td>急性心不全、肺水腫</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🔔 チューブラーベル</strong></td>
+                                <td>スピロノラクトン</td>
+                                <td>美しい響き、長期持続</td>
+                                <td>心不全、原発性アルドステロン症</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🎵 トライアングル</strong></td>
+                                <td>ヒドロクロロチアジド</td>
+                                <td>繊細だが確実な効果</td>
+                                <td>軽症高血圧、長期維持</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🪘 和太鼓</strong></td>
+                                <td>トルバプタン</td>
+                                <td>独特の響き、特殊用途</td>
+                                <td>低ナトリウム血症、SIADH</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 第4楽章：鍵盤楽器（スタチン） -->
+            <section class="instrument-section" style="border-left-color: #9c27b0;">
+                <h2>🎹 第4楽章：鍵盤楽器（スタチン）</h2>
+                
+                <h3>🎼 ピアノの役割：ハーモニーの基盤</h3>
+                <p>ピアノがオーケストラのハーモニーの基盤を支えるように、スタチンは循環器疾患予防の基盤を築く。LDLコレステロール低下による動脈硬化抑制は、循環器イベントの根本的予防につながる。</p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📉</div>
+                        <div class="highlight">心血管イベント減少</div>
+                        <div style="font-size: 1.5rem; font-weight: 600; color: #9c27b0;">30-40%</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎯</div>
+                        <div class="highlight">LDL低下率</div>
+                        <div style="font-size: 1.5rem; font-weight: 600; color: #9c27b0;">50-60%</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">👥</div>
+                        <div class="highlight">世界処方者数</div>
+                        <div style="font-size: 1.5rem; font-weight: 600; color: #9c27b0;">2億人</div>
+                    </div>
+                </div>
+
+                <h3>🎹 スタチン鍵盤の使い分け：88鍵の多様性</h3>
+                
+                <div class="harmony-matrix">
+                    <div class="drug-card">
+                        <h4>🎼 ロスバスタチン</h4>
+                        <p><strong>鍵盤</strong>：グランドピアノ（最高級）</p>
+                        <p><strong>特徴</strong>：最強のLDL低下力、腎排泄で肝障害少</p>
+                        <p><strong>演奏場面</strong>：家族性高コレステロール血症、強力な治療が必要</p>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>🎵 アトルバスタチン</h4>
+                        <p><strong>鍵盤</strong>：アップライトピアノ（実用的）</p>
+                        <p><strong>特徴</strong>：バランス良好、エビデンス豊富</p>
+                        <p><strong>演奏場面</strong>：一般的な脂質異常症、心筋梗塞後</p>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>💊 シンバスタチン</h4>
+                        <p><strong>鍵盤</strong>：電子ピアノ（経済的）</p>
+                        <p><strong>特徴</strong>：ジェネリック豊富、コスパ重視</p>
+                        <p><strong>演奏場面</strong>：軽症〜中等症、経済性重視</p>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <h4>🎹 名演奏症例：「40代商社マンの人生転換コンチェルト」</h4>
+                    <p><strong>患者</strong>：42歳男性、家族性高コレステロール血症</p>
+                    <p><strong>背景</strong>：LDL-C 280mg/dL、父親が50歳で心筋梗塞</p>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h5>治療開始前</h5>
+                            <div class="emotion-quote">
+                                「父と同じ道を歩むのか...40歳になって初めて真剣に健康を考えました。でも食事療法だけでは数値が全然改善しない。」
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h5>ロスバスタチン20mg開始</h5>
+                            <p><strong>選択理由</strong>：家族性で強力な治療が必要、腎機能正常</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h5>3ヶ月後</h5>
+                            <p>LDL-C 280 → 120mg/dL（57%低下）</p>
+                            <div class="emotion-quote">
+                                「数値の劇的な改善に驚きました。でも何より、『父と同じ運命ではない』という希望が持てたことが一番大きかった。」
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h5>2年後の現在</h5>
+                            <p>LDL-C 100mg/dL維持、冠動脈CT正常</p>
+                            <div class="emotion-quote">
+                                「薬を飲むことで未来が変わるなんて、本当にすごいことです。息子たちにも『薬の大切さ』を伝えています。」
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 指揮者のスコア：処方の芸術 -->
+            <section class="conductor-tips">
+                <h2>🎭 指揮者のスコア：処方の芸術</h2>
+                
+                <h3>🎼 名指揮者（循環器専門医）が語る処方哲学</h3>
+                
+                <div class="emotion-quote" style="background: rgba(255,255,255,0.2); border-left-color: white;">
+                    「30年間で学んだのは、薬は楽譜であり、患者は聴衆だということ。同じ楽譜でも指揮者によって全く違う音楽になる。患者の年齢、合併症、生活背景を考慮して、その人だけの美しい交響曲を作り上げることが医師の使命です。」
+                    <cite style="color: white;">- 虎の門病院循環器内科 山田部長（仮名、指揮歴35年）</cite>
+                </div>
+
+                <h3>🎯 処方設計の5つの基本原則</h3>
+                
+                <div class="harmony-matrix">
+                    <div class="drug-card" style="background: rgba(255,255,255,0.95);">
+                        <h4>1. 🎵 メロディライン設定</h4>
+                        <p><strong>主薬の選択</strong>：ARBかACE阻害薬かを決める</p>
+                        <p><strong>判断基準</strong>：咳の既往、腎機能、年齢</p>
+                    </div>
+                    
+                    <div class="drug-card" style="background: rgba(255,255,255,0.95);">
+                        <h4>2. 🎼 ハーモニー構築</h4>
+                        <p><strong>併用薬の選択</strong>：β遮断薬、Ca拮抗薬、利尿薬</p>
+                        <p><strong>判断基準</strong>：心拍数、浮腫、血圧レベル</p>
+                    </div>
+                    
+                    <div class="drug-card" style="background: rgba(255,255,255,0.95);">
+                        <h4>3. 🥁 リズム調整</h4>
+                        <p><strong>利尿薬の使い方</strong>：必要最小限で最大効果</p>
+                        <p><strong>判断基準</strong>：浮腫の程度、腎機能、電解質</p>
+                    </div>
+                    
+                    <div class="drug-card" style="background: rgba(255,255,255,0.95);">
+                        <h4>4. 🎹 ベース構築</h4>
+                        <p><strong>スタチンの位置づけ</strong>：長期予防の基盤</p>
+                        <p><strong>判断基準</strong>：LDL値、心血管リスク、肝機能</p>
+                    </div>
+                    
+                    <div class="drug-card" style="background: rgba(255,255,255,0.95);">
+                        <h4>5. 🎭 演奏監督</h4>
+                        <p><strong>モニタリング</strong>：定期的な調律（検査）</p>
+                        <p><strong>判断基準</strong>：有効性、安全性、継続性</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 症例交響曲：実際の処方例 -->
+            <section class="content-section">
+                <h2>🎼 症例交響曲：実際の処方例</h2>
+                
+                <div class="case-study">
+                    <h3>🎵 交響曲第1番「高血圧初診」（軽やか版）</h3>
+                    <p><strong>患者</strong>：45歳男性、健診で高血圧指摘</p>
+                    <p><strong>楽器編成</strong>：室内楽（単剤治療）</p>
+                    
+                    <div class="comparison-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>選択肢</th>
+                                    <th>第1候補</th>
+                                    <th>第2候補</th>
+                                    <th>第3候補</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>楽器</strong></td>
+                                    <td>🎻 ARB（カンデサルタン）</td>
+                                    <td>💊 ACE阻害薬（エナラプリル）</td>
+                                    <td>🎺 Ca拮抗薬（アムロジピン）</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>理由</strong></td>
+                                    <td>副作用少、忍容性良好</td>
+                                    <td>コスパ良、エビデンス豊富</td>
+                                    <td>強力な降圧、高齢者に安全</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>注意点</strong></td>
+                                    <td>コスト、効果はマイルド</td>
+                                    <td>咳のリスク（10-15%）</td>
+                                    <td>浮腫、歯肉増生</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="emotion-quote">
+                        「薬を飲むのは初めてで不安でしたが、副作用もなく血圧も安定。『音のしない薬』と先生が言ったとおり、体調の変化を感じることなく血圧だけがきれいに下がりました。」
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <h3>🎭 交響曲第9番「心不全」（壮大版）</h3>
+                    <p><strong>患者</strong>：72歳女性、慢性心不全（NYHA II度）</p>
+                    <p><strong>楽器編成</strong>：フルオーケストラ（多剤併用）</p>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h5>第1楽章：基盤構築</h5>
+                            <p><strong>🎻 エナラプリル 5mg×2</strong>：心筋リモデリング抑制、予後改善</p>
+                            <p><strong>🎷 ビソプロロール 1.25mg×1</strong>：心拍数コントロール、心保護</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h5>第2楽章：症状緩和</h5>
+                            <p><strong>🥁 フロセミド 20mg×1</strong>：軽度浮腫に対応</p>
+                            <p><strong>🔔 スピロノラクトン 25mg×1</strong>：K保持、長期心保護</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h5>第3楽章：長期予防</h5>
+                            <p><strong>🎹 アトルバスタチン 10mg×1</strong>：動脈硬化進行抑制</p>
+                            <p><strong>🩸 アスピリン 100mg×1</strong>：血栓予防</p>
+                        </div>
+                    </div>
+                    
+                    <div class="emotion-quote">
+                        「薬がこんなにたくさんになって心配でしたが、先生が『小さなオーケストラが毎日あなたの心臓を守ってくれている』と説明してくれて安心しました。確かに息切れも減って、孫の運動会も最後まで応援できるようになりました。」
+                    </div>
+                </div>
+            </section>
+
+            <!-- 日本の処方文化：和洋折衷の美学 -->
+            <section class="content-section">
+                <h2>🌸 日本の処方文化：和洋折衷の美学</h2>
+                
+                <h3>🎋 日本独自の処方パターン</h3>
+                <p>日本の循環器薬物療法は、欧米のガイドラインをベースにしながらも、日本人の体質や医療文化に合わせた独自の発展を遂げている。</p>
+
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>特徴</th>
+                                <th>日本の傾向</th>
+                                <th>欧米の傾向</th>
+                                <th>理由・背景</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>ARB使用率</strong></td>
+                                <td>65%（世界最高）</td>
+                                <td>30-40%</td>
+                                <td>空咳を嫌う文化、忍容性重視</td>
+                            </tr>
+                            <tr>
+                                <td><strong>用量設定</strong></td>
+                                <td>少量から開始</td>
+                                <td>標準用量から開始</td>
+                                <td>副作用への慎重な姿勢</td>
+                            </tr>
+                            <tr>
+                                <td><strong>配合剤使用</strong></td>
+                                <td>積極的（45%）</td>
+                                <td>消極的（20%）</td>
+                                <td>服薬コンプライアンス重視</td>
+                            </tr>
+                            <tr>
+                                <td><strong>モニタリング</strong></td>
+                                <td>頻回（月1回）</td>
+                                <td>標準（3-6ヶ月）</td>
+                                <td>きめ細かい医療の文化</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="case-study">
+                    <h4>🌸 日本的配慮の症例：85歳女性の高血圧治療</h4>
+                    <div class="emotion-quote">
+                        「おばあちゃんは『薬はなるべく少なく』という考えの方でした。でも血圧が180と高く、治療が必要。そこで私は、ARB/利尿薬の配合剤を選択しました。1日1錠で済むので、『薬は1個だけよ』と説明でき、納得して服薬していただけました。日本の患者さんの心理を理解した処方設計が大切ですね。」
+                        <cite>- 地域医療クリニック院長</cite>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 未来の循環器薬物療法 -->
+            <section class="content-section">
+                <h2>🚀 未来の循環器薬物療法：次世代オーケストラ</h2>
+                
+                <h3>🎼 新楽器の登場：革新的薬剤</h3>
+                
+                <div class="harmony-matrix">
+                    <div class="drug-card">
+                        <h4>🔬 SGLT2阻害薬</h4>
+                        <p><strong>楽器</strong>：電子楽器（革新的）</p>
+                        <p><strong>特徴</strong>：腎保護、心保護、体重減少</p>
+                        <p><strong>未来</strong>：糖尿病がなくても心不全に使用</p>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>💉 PCSK9阻害薬</h4>
+                        <p><strong>楽器</strong>：ハープ（繊細で美しい）</p>
+                        <p><strong>特徴</strong>：超強力なLDL低下、注射薬</p>
+                        <p><strong>未来</strong>：年1回投与の長期作用型</p>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>🧬 遺伝子治療</h4>
+                        <p><strong>楽器</strong>：シンセサイザー（未来的）</p>
+                        <p><strong>特徴</strong>：根本的な治療、1回で完治</p>
+                        <p><strong>未来</strong>：家族性高コレステロール血症の根治</p>
+                    </div>
+                </div>
+
+                <h3>🤖 AI指揮者：精密医療の時代</h3>
+                <div class="case-study">
+                    <h4>2030年の処方シミュレーション</h4>
+                    <p><strong>患者</strong>：55歳男性、高血圧・糖尿病・心不全</p>
+                    <p><strong>AI解析</strong>：遺伝子型、腸内細菌、ライフスタイル、既往歴</p>
+                    
+                    <div class="emotion-quote">
+                        「AIが私の遺伝子を分析して、『あなたにはテルミサルタンが85%の確率で最適』と判定しました。実際に飲んでみると、副作用もなく血圧も血糖も完璧にコントロール。まるでオーダーメイドの薬を作ってもらったようです。」
+                        <cite>- 未来の患者</cite>
+                    </div>
+                </div>
+            </section>
+
+            <!-- まとめ：循環器薬物療法の芸術 -->
+            <section class="content-section">
+                <h2>🎊 フィナーレ：循環器薬物療法の芸術</h2>
+                
+                <div class="emotion-quote">
+                    循環器系薬剤オーケストラは、医師（指揮者）、薬剤師（コンサートマスター）、患者（聴衆）が協力して創り上げる芸術作品です。似た薬が複数存在するのは、患者一人ひとりに最適な「音楽」を奏でるため。あなたも、この美しい交響曲の一部として、健康という名のコンサートホールで、人生最高の演奏を楽しんでください。
+                </div>
+
+                <h3>🎯 循環器薬物療法の5つの真理</h3>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎼</div>
+                        <div class="highlight">多様性の価値</div>
+                        <div>似た薬があるから最適化できる</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤝</div>
+                        <div class="highlight">協調の美学</div>
+                        <div>単剤より併用で相乗効果</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">👥</div>
+                        <div class="highlight">個別化の精神</div>
+                        <div>患者ごとに最適解は違う</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔬</div>
+                        <div class="highlight">進歩の継続</div>
+                        <div>新薬で選択肢はさらに拡大</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">❤️</div>
+                        <div class="highlight">人生の変革</div>
+                        <div>薬物療法は人生を豊かにする</div>
+                    </div>
+                </div>
+
+                <div class="conductor-tips">
+                    <h3>🎭 最後のメッセージ：薬学生・薬剤師の皆さんへ</h3>
+                    <div style="color: white; font-size: 1.1rem; line-height: 1.8;">
+                        <p>循環器薬物療法の学習は、単なる暗記ではありません。それは、人の命を救う芸術を学ぶことです。</p>
+                        <p>ARBとACE阻害薬の違いを覚えることは、バイオリンとビオラの音色の違いを理解することと同じ。</p>
+                        <p>利尿薬の使い分けを学ぶことは、ティンパニの絶妙なタイミングを身につけることと同じ。</p>
+                        <p><strong>あなたたちは未来の指揮者です。患者さんの人生という舞台で、最高の音楽を奏でてください。</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 関連リンク -->
+            <section class="content-section">
+                <h2>🔗 関連ページ</h2>
+                <div class="harmony-matrix">
+                    <div class="drug-card">
+                        <h4>📚 個別薬剤詳細</h4>
+                        <ul>
+                            <li><a href="drugs/telmisartan.html">テルミサルタン（ミカルディス）</a></li>
+                            <li><a href="drugs/losartan.html">ロサルタン（ニューロタン）</a></li>
+                            <li><a href="drugs/candesartan.html">カンデサルタン（ブロプレス）</a></li>
+                            <li><a href="drugs/bisoprolol.html">ビソプロロール（メインテート）</a></li>
+                            <li><a href="drugs/furosemide.html">フロセミド（ラシックス）</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>🎯 薬効群別ガイド</h4>
+                        <ul>
+                            <li><a href="categories/lipid.html">脂質異常症治療ガイド</a></li>
+                            <li><a href="categories/others.html">TDM実践ガイド</a></li>
+                            <li><a href="groups/ARB_evolution_model.html">ARB進化モデル</a></li>
+                            <li><a href="groups/beta_blocker_evolution_model.html">β遮断薬進化モデル</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>📖 ストーリー</h4>
+                        <ul>
+                            <li><a href="stories/hypertension_story.html">高血圧治療の歴史</a></li>
+                            <li><a href="stories/heart_failure_story.html">心不全治療の革命</a></li>
+                            <li><a href="index.html#stories">薬剤開発ストーリー一覧</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PharmaDex</h3>
+                    <p>薬学教育の未来を創造する</p>
+                </div>
+                <div class="footer-section">
+                    <h4>薬効群ガイド</h4>
+                    <ul>
+                        <li><a href="cardiovascular-orchestra.html">循環器系オーケストラ</a></li>
+                        <li><a href="categories/lipid.html">脂質異常症</a></li>
+                        <li><a href="categories/others.html">TDM実践</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>学習リソース</h4>
+                    <ul>
+                        <li><a href="index.html#drugs">薬剤一覧</a></li>
+                        <li><a href="index.html#stories">開発ストーリー</a></li>
+                        <li><a href="index.html#differentiation">使い分けガイド</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PharmaDex. 薬学教育のイノベーション</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/navigation.js"></script>
+    <script>
+        // スムーズスクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 薬剤カードのホバーエフェクト
+        document.querySelectorAll('.drug-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.transition = 'all 0.3s ease';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // 統計数値のカウントアップアニメーション
+        function animateNumbers() {
+            const statValues = document.querySelectorAll('.stat-value');
+            statValues.forEach(stat => {
+                const finalValue = stat.textContent;
+                const number = parseInt(finalValue);
+                if (!isNaN(number)) {
+                    let current = 0;
+                    const increment = number / 50;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= number) {
+                            current = number;
+                            clearInterval(timer);
+                        }
+                        stat.textContent = Math.floor(current) + finalValue.replace(number, '');
+                    }, 30);
+                }
+            });
+        }
+
+        // スクロールで要素を表示
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.drug-card, .case-study, .timeline-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // ページロード時の数値アニメーション
+        window.addEventListener('load', () => {
+            setTimeout(animateNumbers, 500);
+        });
+    </script>
+</body>
+</html>

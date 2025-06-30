@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="利尿薬完全ガイド - 急性期vs慢性期の戦略的使い分け、フロセミドからトラセミドへの進化、電解質管理の実践的プロトコル">
+    <meta name="keywords" content="利尿薬, フロセミド, トラセミド, スピロノラクトン, 心不全, 高血圧, 電解質異常, 急性期, 慢性期">
+    <title>利尿薬の進化ガイド - 急性期vs慢性期の戦略的使い分け | PharmaDx</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/drug-detail.css">
+    <link rel="stylesheet" href="../assets/css/category-comparison.css">
+    <style>
+        .nephron-diagram {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .nephron-section {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem;
+            display: inline-block;
+            min-width: 200px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .nephron-section.proximal { border-left: 5px solid #ffc107; }
+        .nephron-section.loop { border-left: 5px solid #dc3545; }
+        .nephron-section.distal { border-left: 5px solid #28a745; }
+        .nephron-section.collecting { border-left: 5px solid #6f42c1; }
+        
+        .acute-chronic-toggle {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .toggle-btn {
+            background: #e9ecef;
+            border: none;
+            padding: 1rem 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .toggle-btn:first-child {
+            border-radius: 25px 0 0 25px;
+        }
+        
+        .toggle-btn:last-child {
+            border-radius: 0 25px 25px 0;
+        }
+        
+        .toggle-btn.active {
+            background: #007bff;
+            color: white;
+        }
+        
+        .phase-content {
+            display: none;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .phase-content.active {
+            display: block;
+        }
+        
+        .electrolyte-table {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+        
+        .electrolyte-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .electrolyte-table th {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+            padding: 1rem;
+            font-weight: 600;
+        }
+        
+        .electrolyte-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #dee2e6;
+            text-align: center;
+        }
+        
+        .risk-high { background-color: #f8d7da; color: #721c24; }
+        .risk-medium { background-color: #fff3cd; color: #856404; }
+        .risk-low { background-color: #d4edda; color: #155724; }
+        
+        .mechanism-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .flow-arrow {
+            font-size: 2rem;
+            color: #007bff;
+            margin: 0 1rem;
+        }
+        
+        .drug-evolution-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .evolution-decade {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            border-left: 6px solid #007bff;
+        }
+        
+        .decade-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 1rem;
+        }
+        
+        .drug-breakthrough {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-top: 4px solid #28a745;
+        }
+        
+        .sequential-blockade {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 5px solid #ffc107;
+        }
+        
+        .combination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .combination-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-top: 4px solid #17a2b8;
+        }
+        
+        .effectiveness-meter {
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 20px;
+            margin: 0.5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .effectiveness-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #28a745 0%, #20c997 100%);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+        
+        .clinical-scenario {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 5px solid #6f42c1;
+        }
+        
+        .scenario-patient {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .monitoring-alert {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 5px solid #dc3545;
+        }
+        
+        .safety-protocol {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 5px solid #28a745;
+        }
+        
+        .future-trends {
+            background: linear-gradient(135deg, #e2e3e5 0%, #d6d8db 100%);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .trend-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem;
+            display: inline-block;
+            min-width: 200px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .mechanism-flow {
+                flex-direction: column;
+            }
+            
+            .flow-arrow {
+                transform: rotate(90deg);
+                margin: 1rem 0;
+            }
+            
+            .combination-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="../index.html">PharmaDx</a></h1>
+                <p class="tagline">薬剤図鑑</p>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html#drugs" class="nav-link">薬剤一覧</a></li>
+                    <li><a href="../index.html#categories" class="nav-link">薬効群</a></li>
+                    <li><a href="../index.html#stories" class="nav-link">ストーリー</a></li>
+                    <li><a href="../index.html#differentiation" class="nav-link">使い分け</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- パンくずナビゲーション -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span class="separator">></span>
+            <a href="../index.html#categories">薬効群</a>
+            <span class="separator">></span>
+            <span class="current">利尿薬ガイド</span>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- ヒーローセクション -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        利尿薬の戦略的使い分け
+                        <span class="subtitle">急性期vs慢性期、なぜ70年間で4世代が生まれたのか？</span>
+                    </h1>
+                    <p class="hero-description">
+                        単なる「水抜き」から「臓器保護」へ。フロセミドの即効性、トラセミドの持続性、
+                        スピロノラクトンの予後改善効果。電解質への影響を完全制御する
+                        Sequential Nephron Blockadeの真髄がここにある。
+                    </p>
+                </div>
+            </section>
+
+            <!-- ネフロン作用部位の理解 -->
+            <section class="nephron-mechanism">
+                <h2>🧬 ネフロンでの作用部位と最大効果：なぜ部位によって効果が違うのか？</h2>
+                
+                <div class="nephron-diagram">
+                    <h3>腎臓のNa再吸収部位別攻略マップ</h3>
+                    
+                    <div class="mechanism-flow">
+                        <div class="nephron-section proximal">
+                            <h4>近位尿細管</h4>
+                            <p><strong>65%のNa再吸収</strong></p>
+                            <p>炭酸脱水酵素阻害薬</p>
+                            <p class="effectiveness-note">（効果弱い）</p>
+                        </div>
+                        
+                        <div class="flow-arrow">→</div>
+                        
+                        <div class="nephron-section loop">
+                            <h4>ヘンレループ</h4>
+                            <p><strong>25%のNa再吸収</strong></p>
+                            <p>ループ利尿薬</p>
+                            <p class="effectiveness-note">★最強（30%阻害）</p>
+                        </div>
+                        
+                        <div class="flow-arrow">→</div>
+                        
+                        <div class="nephron-section distal">
+                            <h4>遠位尿細管</h4>
+                            <p><strong>5-10%のNa再吸収</strong></p>
+                            <p>サイアザイド系</p>
+                            <p class="effectiveness-note">（10%阻害）</p>
+                        </div>
+                        
+                        <div class="flow-arrow">→</div>
+                        
+                        <div class="nephron-section collecting">
+                            <h4>集合管</h4>
+                            <p><strong>2-3%のNa再吸収</strong></p>
+                            <p>K保持性利尿薬</p>
+                            <p class="effectiveness-note">（3%阻害）</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clinical-insight">
+                    <h3>💡 なぜループ利尿薬が最強なのか？</h3>
+                    <p>ヘンレループ上行脚は腎臓のNa再吸収の<strong>25%</strong>を担う「主戦場」。
+                    ここをブロックすると、下流の遠位尿細管・集合管の代償的Na再吸収能力（7-13%）を超える
+                    <strong>最大30%のNa喪失</strong>が可能になる。</p>
+                    <p>これが「ループ利尿薬の圧倒的な利尿効果」の薬理学的根拠である。</p>
+                </div>
+            </section>
+
+            <!-- 急性期vs慢性期の使い分け -->
+            <section class="acute-chronic-differentiation">
+                <h2>⚡ 急性期vs慢性期：戦略的使い分けの実践プロトコル</h2>
+                
+                <div class="acute-chronic-toggle">
+                    <button class="toggle-btn active" onclick="togglePhase('acute')">急性期戦略</button>
+                    <button class="toggle-btn" onclick="togglePhase('chronic')">慢性期戦略</button>
+                </div>
+                
+                <div id="acute-phase" class="phase-content active">
+                    <h3>🚨 急性期戦略：速攻性と調整性を重視</h3>
+                    
+                    <div class="clinical-scenario">
+                        <h4>代表的シナリオ：急性心不全（肺うっ血）</h4>
+                        <div class="scenario-patient">
+                            <p><strong>患者：</strong>75歳男性、急性非代償性心不全、BNP 850pg/mL</p>
+                            <p><strong>症状：</strong>安静時呼吸困難、起座呼吸、両下肺野湿性ラ音</p>
+                        </div>
+                        
+                        <h5>第一選択：フロセミド静注</h5>
+                        <div class="treatment-protocol">
+                            <ol>
+                                <li><strong>初回投与：</strong>フロセミド 20mg 静注</li>
+                                <li><strong>効果判定：</strong>2時間後の尿量（目標：400mL以上）</li>
+                                <li><strong>増量戦略：</strong>効果不十分なら40mg → 80mgと倍量増量</li>
+                                <li><strong>目標：</strong>24時間で1-2Lの負のバランス</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="monitoring-alert">
+                            <h5>⚠️ 急性期モニタリング必須項目</h5>
+                            <ul>
+                                <li><strong>尿量：</strong>毎時間測定（目標：≥0.5mL/kg/時）</li>
+                                <li><strong>電解質：</strong>6-12時間毎（K、Na、Crチェック）</li>
+                                <li><strong>腎機能：</strong>24時間後のCr上昇（≤0.3mg/dL許容）</li>
+                                <li><strong>血圧：</strong>2時間毎（過度の前負荷軽減に注意）</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="drug-selection-acute">
+                        <h4>急性期薬剤選択の優先順位</h4>
+                        <div class="combination-grid">
+                            <div class="combination-card">
+                                <h5>第一選択：フロセミド静注</h5>
+                                <div class="effectiveness-meter">
+                                    <div class="effectiveness-fill" style="width: 95%"></div>
+                                </div>
+                                <p><strong>理由：</strong></p>
+                                <ul>
+                                    <li>静注で5-10分の即効性</li>
+                                    <li>用量調整が容易（20mg刻み）</li>
+                                    <li>豊富な使用経験と安全性データ</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="combination-card">
+                                <h5>併用考慮：スピロノラクトン</h5>
+                                <div class="effectiveness-meter">
+                                    <div class="effectiveness-fill" style="width: 75%"></div>
+                                </div>
+                                <p><strong>適応：</strong></p>
+                                <ul>
+                                    <li>K<3.5mEq/Lの低K血症</li>
+                                    <li>慢性心不全の基礎治療</li>
+                                    <li>アルドステロン過剰が疑われる場合</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="combination-card">
+                                <h5>特殊状況：トルバプタン</h5>
+                                <div class="effectiveness-meter">
+                                    <div class="effectiveness-fill" style="width: 60%"></div>
+                                </div>
+                                <p><strong>限定適応：</strong></p>
+                                <ul>
+                                    <li>低Na血症合併（Na<130mEq/L）</li>
+                                    <li>ループ利尿薬抵抗性</li>
+                                    <li>電解質を変化させない水利尿が必要</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="chronic-phase" class="phase-content">
+                    <h3>📅 慢性期戦略：持続性と予後改善を重視</h3>
+                    
+                    <div class="clinical-scenario">
+                        <h4>代表的シナリオ：安定期慢性心不全</h4>
+                        <div class="scenario-patient">
+                            <p><strong>患者：</strong>68歳男性、NYHA II度、LVEF 35%</p>
+                            <p><strong>治療歴：</strong>ACE阻害薬、β遮断薬で2ヶ月安定</p>
+                        </div>
+                        
+                        <h5>第一選択：トラセミド + スピロノラクトン</h5>
+                        <div class="treatment-protocol">
+                            <ol>
+                                <li><strong>トラセミド：</strong>4mg 1日1回朝食前</li>
+                                <li><strong>スピロノラクトン：</strong>25mg 1日1回</li>
+                                <li><strong>増量：</strong>症状に応じてトラセミド 8mg → 12mgと段階的</li>
+                                <li><strong>目標：</strong>体重安定、浮腫なし、BNP<200pg/mL</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="safety-protocol">
+                            <h5>✅ 慢性期安全管理プロトコル</h5>
+                            <ul>
+                                <li><strong>月1回：</strong>電解質、腎機能、体重測定</li>
+                                <li><strong>3ヶ月毎：</strong>BNP/NT-proBNP、心エコー</li>
+                                <li><strong>患者指導：</strong>体重の日測定、塩分制限（6g/日）</li>
+                                <li><strong>服薬指導：</strong>朝食前服用でアドヒアランス向上</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="drug-selection-chronic">
+                        <h4>慢性期薬剤選択の戦略的根拠</h4>
+                        <div class="combination-grid">
+                            <div class="combination-card">
+                                <h5>トラセミドの優位性</h5>
+                                <div class="effectiveness-meter">
+                                    <div class="effectiveness-fill" style="width: 85%"></div>
+                                </div>
+                                <p><strong>フロセミドとの違い：</strong></p>
+                                <ul>
+                                    <li>半減期：3-4時間 vs 2時間</li>
+                                    <li>1日1回投与でアドヒアランス向上</li>
+                                    <li>肝代謝80%（腎機能に依存しない）</li>
+                                    <li>TORIC試験で心不全予後改善</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="combination-card">
+                                <h5>スピロノラクトンの必須性</h5>
+                                <div class="effectiveness-meter">
+                                    <div class="effectiveness-fill" style="width: 90%"></div>
+                                </div>
+                                <p><strong>予後改善効果：</strong></p>
+                                <ul>
+                                    <li>RALES試験：死亡率30%減少</li>
+                                    <li>K保持でループ利尿薬の副作用軽減</li>
+                                    <li>心筋リモデリング抑制効果</li>
+                                    <li>NYHA II度以上では標準治療</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="combination-card">
+                                <h5>高血圧での位置づけ</h5>
+                                <div class="effectiveness-meter">
+                                    <div class="effectiveness-fill" style="width: 70%"></div>
+                                </div>
+                                <p><strong>サイアザイド系の復権：</strong></p>
+                                <ul>
+                                    <li>少量（12.5-25mg）で十分な降圧</li>
+                                    <li>心血管イベント抑制のエビデンス</li>
+                                    <li>ARB/ACE阻害薬との配合剤が主流</li>
+                                    <li>日本人は低用量で反応良好</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 電解質への影響比較 -->
+            <section class="electrolyte-comparison">
+                <h2>⚖️ 電解質への影響：完全比較テーブルと管理プロトコル</h2>
+                
+                <div class="electrolyte-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>利尿薬</th>
+                                <th>K喪失リスク</th>
+                                <th>Na喪失</th>
+                                <th>Mg喪失</th>
+                                <th>Ca喪失</th>
+                                <th>尿酸上昇</th>
+                                <th>耐糖能悪化</th>
+                                <th>主要注意点</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>フロセミド</strong></td>
+                                <td class="risk-high">高</td>
+                                <td class="risk-high">高</td>
+                                <td class="risk-high">高</td>
+                                <td class="risk-high">高</td>
+                                <td class="risk-medium">中</td>
+                                <td class="risk-low">軽微</td>
+                                <td>全電解質で注意必要</td>
+                            </tr>
+                            <tr>
+                                <td><strong>トラセミド</strong></td>
+                                <td class="risk-medium">中</td>
+                                <td class="risk-high">高</td>
+                                <td class="risk-medium">中</td>
+                                <td class="risk-medium">中</td>
+                                <td class="risk-low">低</td>
+                                <td class="risk-low">軽微</td>
+                                <td>K喪失が少ない</td>
+                            </tr>
+                            <tr>
+                                <td><strong>サイアザイド系</strong></td>
+                                <td class="risk-high">高</td>
+                                <td class="risk-medium">中</td>
+                                <td class="risk-medium">中</td>
+                                <td class="risk-low">低（保持）</td>
+                                <td class="risk-high">高</td>
+                                <td class="risk-high">高</td>
+                                <td>代謝異常に注意</td>
+                            </tr>
+                            <tr>
+                                <td><strong>スピロノラクトン</strong></td>
+                                <td class="risk-low">保持</td>
+                                <td class="risk-medium">中</td>
+                                <td class="risk-low">保持</td>
+                                <td class="risk-medium">中</td>
+                                <td class="risk-low">低</td>
+                                <td class="risk-low">なし</td>
+                                <td>高K血症リスク</td>
+                            </tr>
+                            <tr>
+                                <td><strong>エプレレノン</strong></td>
+                                <td class="risk-low">保持</td>
+                                <td class="risk-medium">中</td>
+                                <td class="risk-low">保持</td>
+                                <td class="risk-medium">中</td>
+                                <td class="risk-low">低</td>
+                                <td class="risk-low">なし</td>
+                                <td>女性化乳房なし</td>
+                            </tr>
+                            <tr>
+                                <td><strong>トルバプタン</strong></td>
+                                <td class="risk-low">なし</td>
+                                <td class="risk-low">上昇傾向</td>
+                                <td class="risk-low">なし</td>
+                                <td class="risk-low">なし</td>
+                                <td class="risk-low">なし</td>
+                                <td class="risk-low">なし</td>
+                                <td>高Na血症注意</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="electrolyte-management">
+                    <h3>🎯 電解質異常の段階的管理プロトコル</h3>
+                    
+                    <div class="combination-grid">
+                        <div class="combination-card">
+                            <h4>低K血症（K<3.5mEq/L）</h4>
+                            <h5>段階的対応</h5>
+                            <ol>
+                                <li><strong>軽度（3.0-3.5）：</strong>経口K補充（スローケー®等）</li>
+                                <li><strong>中等度（2.5-3.0）：</strong>利尿薬減量＋K補充</li>
+                                <li><strong>重度（<2.5）：</strong>一時中止、入院管理検討</li>
+                            </ol>
+                            <div class="monitoring-alert">
+                                <p><strong>予防策：</strong>K保持性利尿薬併用、K豊富な食品摂取</p>
+                            </div>
+                        </div>
+                        
+                        <div class="combination-card">
+                            <h4>低Na血症（Na<135mEq/L）</h4>
+                            <h5>リスク評価と対応</h5>
+                            <ol>
+                                <li><strong>軽度（130-135）：</strong>水分制限（1000-1500mL/日）</li>
+                                <li><strong>中等度（125-130）：</strong>利尿薬減量/中止</li>
+                                <li><strong>重度（<125）：</strong>トルバプタン考慮、入院管理</li>
+                            </ol>
+                            <div class="monitoring-alert">
+                                <p><strong>高リスク：</strong>高齢者、サイアザイド系使用、SIADH合併</p>
+                            </div>
+                        </div>
+                        
+                        <div class="combination-card">
+                            <h4>高尿酸血症（UA>7.0mg/dL）</h4>
+                            <h5>利尿薬別リスクと対策</h5>
+                            <p><strong>高リスク：</strong>サイアザイド系 > ループ利尿薬</p>
+                            <p><strong>低リスク：</strong>トラセミド < スピロノラクトン</p>
+                            <div class="safety-protocol">
+                                <p><strong>管理方針：</strong></p>
+                                <ul>
+                                    <li>無症候性：経過観察（UA<9.0）</li>
+                                    <li>痛風既往：フェブキソスタット併用</li>
+                                    <li>UA>9.0：尿酸降下薬積極使用</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 利尿薬の進化：なぜ4世代が必要だったのか -->
+            <section class="evolution-analysis">
+                <h2>🧬 70年間の進化：なぜ4世代の利尿薬が生まれたのか？</h2>
+                
+                <div class="drug-evolution-timeline">
+                    <div class="evolution-decade">
+                        <div class="decade-header">第1世代（1950年代）：サイアザイド系の誕生</div>
+                        <div class="drug-breakthrough">
+                            <h4>ヒドロクロロチアジド（HCT）</h4>
+                            <p><strong>革新点：</strong>スルファニルアミドの副作用から偶然発見された利尿効果</p>
+                            <p><strong>特徴：</strong>穏やかな利尿作用、優れた降圧効果</p>
+                            <p><strong>限界：</strong>低K血症、耐糖能異常、腎機能低下時に無効</p>
+                        </div>
+                    </div>
+                    
+                    <div class="evolution-decade">
+                        <div class="decade-header">第2世代（1960年代）：ループ利尿薬の革命</div>
+                        <div class="drug-breakthrough">
+                            <h4>フロセミド（ラシックス®）</h4>
+                            <p><strong>革新点：</strong>ヘンレループ攻略で最大30%のNa阻害を実現</p>
+                            <p><strong>特徴：</strong>強力な利尿作用、腎機能低下時も有効、静注で即効性</p>
+                            <p><strong>課題：</strong>電解質異常の重篤化、聴覚毒性のリスク</p>
+                        </div>
+                        
+                        <div class="drug-breakthrough">
+                            <h4>トラセミド（ルプラック®）</h4>
+                            <p><strong>革新点：</strong>フロセミドの弱点を克服した改良型</p>
+                            <p><strong>特徴：</strong>長時間作用、肝代謝80%、抗アルドステロン作用併有</p>
+                            <p><strong>エビデンス：</strong>TORIC試験で心不全予後改善を証明</p>
+                        </div>
+                    </div>
+                    
+                    <div class="evolution-decade">
+                        <div class="decade-header">第3世代（1970年代）：K保持性利尿薬の登場</div>
+                        <div class="drug-breakthrough">
+                            <h4>スピロノラクトン（アルダクトンA®）</h4>
+                            <p><strong>革新点：</strong>アルドステロン受容体拮抗で低K血症を防ぐ</p>
+                            <p><strong>特徴：</strong>K保持、心不全予後改善（RALES試験）</p>
+                            <p><strong>課題：</strong>女性化乳房、高K血症リスク</p>
+                        </div>
+                        
+                        <div class="drug-breakthrough">
+                            <h4>エプレレノン（セララ®）</h4>
+                            <p><strong>革新点：</strong>選択的アルドステロン受容体拮抗で副作用軽減</p>
+                            <p><strong>特徴：</strong>女性化乳房なし、心筋梗塞後予後改善（EPHESUS試験）</p>
+                        </div>
+                    </div>
+                    
+                    <div class="evolution-decade">
+                        <div class="decade-header">第4世代（2010年代）：新機序の水利尿薬</div>
+                        <div class="drug-breakthrough">
+                            <h4>トルバプタン（サムスカ®）</h4>
+                            <p><strong>革新点：</strong>V2受容体拮抗で水のみ排泄、電解質無影響</p>
+                            <p><strong>特徴：</strong>低Na血症を起こさない、ADPKD進行抑制</p>
+                            <p><strong>課題：</strong>高Na血症リスク、高額な薬価</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clinical-insight">
+                    <h3>💡 なぜこれほど多様な利尿薬が必要なのか？</h3>
+                    <p>70年間の進化が示すのは、「単純な水抜きから複雑な病態生理への対応」への変遷である。</p>
+                    <ul>
+                        <li><strong>第1世代：</strong>高血圧治療の基本薬として（降圧が主目的）</li>
+                        <li><strong>第2世代：</strong>急性心不全の救命薬として（強力な除水が主目的）</li>
+                        <li><strong>第3世代：</strong>慢性心不全の予後改善薬として（生命予後が主目的）</li>
+                        <li><strong>第4世代：</strong>特殊病態の解決薬として（電解質異常対応が主目的）</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Sequential Nephron Blockade -->
+            <section class="sequential-blockade">
+                <h2>🔄 Sequential Nephron Blockade：利尿薬併用療法の戦略的思考</h2>
+                
+                <div class="sequential-blockade">
+                    <h3>異なる作用部位の利尿薬併用で相乗効果を実現</h3>
+                    <p>単剤では限界のある利尿効果を、作用部位の異なる薬剤の組み合わせで劇的に増強する戦略</p>
+                </div>
+
+                <div class="combination-grid">
+                    <div class="combination-card">
+                        <h4>ループ + サイアザイド</h4>
+                        <div class="effectiveness-meter">
+                            <div class="effectiveness-fill" style="width: 95%"></div>
+                        </div>
+                        <p><strong>最強の利尿効果</strong></p>
+                        <ul>
+                            <li>フロセミド + メトラゾン</li>
+                            <li>難治性浮腫の最終手段</li>
+                            <li>電解質異常に最大限注意</li>
+                            <li>入院管理下で実施</li>
+                        </ul>
+                        <div class="monitoring-alert">
+                            <p><strong>注意：</strong>過度の脱水、電解質異常、腎機能悪化</p>
+                        </div>
+                    </div>
+                    
+                    <div class="combination-card">
+                        <h4>ループ + K保持性</h4>
+                        <div class="effectiveness-meter">
+                            <div class="effectiveness-fill" style="width: 85%"></div>
+                        </div>
+                        <p><strong>心不全標準治療</strong></p>
+                        <ul>
+                            <li>フロセミド/トラセミド + スピロノラクトン</li>
+                            <li>K補正しつつ利尿</li>
+                            <li>予後改善効果あり</li>
+                            <li>最もバランスの取れた併用</li>
+                        </ul>
+                        <div class="safety-protocol">
+                            <p><strong>安全性：</strong>高K血症に注意、定期的な電解質チェック</p>
+                        </div>
+                    </div>
+                    
+                    <div class="combination-card">
+                        <h4>トルバプタン + 従来薬</h4>
+                        <div class="effectiveness-meter">
+                            <div class="effectiveness-fill" style="width: 70%"></div>
+                        </div>
+                        <p><strong>特殊適応の選択肢</strong></p>
+                        <ul>
+                            <li>低Na血症合併時</li>
+                            <li>従来薬抵抗性</li>
+                            <li>電解質を変化させない水利尿</li>
+                            <li>費用対効果が課題</li>
+                        </ul>
+                        <div class="monitoring-alert">
+                            <p><strong>限定使用：</strong>入院管理、高Na血症監視、コスト考慮</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clinical-scenario">
+                    <h3>📋 実践症例：Sequential Blockadeの威力</h3>
+                    <div class="scenario-patient">
+                        <h4>症例：70歳男性、CKD stage 4の難治性浮腫</h4>
+                        <p><strong>診断：</strong>糖尿病性腎症、eGFR 22mL/min/1.73m²、下腿浮腫3+</p>
+                        <p><strong>既治療：</strong>フロセミド 80mg/日で効果不十分</p>
+                    </div>
+                    
+                    <div class="treatment-protocol">
+                        <h5>段階的アプローチ</h5>
+                        <ol>
+                            <li><strong>Step 1：</strong>フロセミド 80mg → 120mg増量</li>
+                            <li><strong>Step 2：</strong>メトラゾン 2.5mg 週2回併用開始</li>
+                            <li><strong>Step 3：</strong>スピロノラクトン 25mg追加（K<4.5確認後）</li>
+                            <li><strong>結果：</strong>2週間で浮腫改善、体重3kg減少</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="safety-protocol">
+                        <h5>安全管理の実際</h5>
+                        <ul>
+                            <li><strong>電解質：</strong>週2回測定（K、Na、Mg、P）</li>
+                            <li><strong>腎機能：</strong>週1回Cr測定、30%上昇で減量検討</li>
+                            <li><strong>循環動態：</strong>血圧、心拍数、起立性低血圧チェック</li>
+                            <li><strong>患者指導：</strong>塩分制限5g/日、体重日測定</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 最新の動向と将来展望 -->
+            <section class="future-trends-section">
+                <h2>🚀 利尿薬の未来：SGLT2阻害薬時代の新たな位置づけ</h2>
+                
+                <div class="future-trends">
+                    <h3>2020年代の新展開</h3>
+                    
+                    <div class="trend-item">
+                        <h4>SGLT2阻害薬の台頭</h4>
+                        <p>軽度の利尿作用＋心不全予後改善</p>
+                        <p>従来利尿薬との棲み分け検討中</p>
+                    </div>
+                    
+                    <div class="trend-item">
+                        <h4>個別化医療</h4>
+                        <p>遺伝子多型による反応性予測</p>
+                        <p>バイオマーカーガイド下治療</p>
+                    </div>
+                    
+                    <div class="trend-item">
+                        <h4>AI活用</h4>
+                        <p>最適用量の自動設定</p>
+                        <p>副作用予測アルゴリズム</p>
+                    </div>
+                </div>
+
+                <div class="clinical-insight">
+                    <h3>💭 利尿薬の本質：単なる「水抜き」を超えて</h3>
+                    <p>利尿薬は単純な「水抜き」ではない。病態生理を理解し、適切に使い分けることで、
+                    患者のQOLと予後を大きく改善できる<strong>古くて新しい薬剤群</strong>である。</p>
+                    
+                    <p>急性期では「救命のための迅速な除水」、慢性期では「QOL向上と予後改善」という
+                    明確に異なる目標を持つ。この使い分けの精度が、現代の心不全治療成績向上の
+                    重要な鍵を握っている。</p>
+                </div>
+            </section>
+
+            <!-- まとめ -->
+            <section class="conclusion">
+                <h2>🎯 結論：利尿薬マスターへの道</h2>
+                
+                <div class="mechanism-diagram">
+                    <h3>利尿薬使い分けの5つの鉄則</h3>
+                    <ol>
+                        <li><strong>作用部位を理解せよ：</strong>ループ > サイアザイド > K保持性 の効果序列</li>
+                        <li><strong>急性期は速攻性：</strong>フロセミド静注で迅速な症状改善</li>
+                        <li><strong>慢性期は持続性：</strong>トラセミド + スピロノラクトンで予後改善</li>
+                        <li><strong>電解質を制する者が利尿薬を制す：</strong>K、Na、Mgの定期監視</li>
+                        <li><strong>併用で相乗効果：</strong>Sequential Nephron Blockadeの戦略的活用</li>
+                    </ol>
+                </div>
+
+                <div class="clinical-evidence">
+                    <h3>PharmaDxが伝えるべきメッセージ</h3>
+                    <p><strong>利尿薬の70年間の進化は、「単一の薬効群内での戦略的分化」の完璧な例である。</strong></p>
+                    
+                    <p>急性期の救命から慢性期の予後改善まで、それぞれ異なる医療ニーズに対応するため、
+                    4世代にわたって革新が続いてきた。これこそが「なぜ似た薬が複数存在するのか」への
+                    明確な答えである。</p>
+                    
+                    <p>現代医療において、利尿薬は心不全管理の中核を担い続けている。
+                    SGLT2阻害薬という新しい仲間を得て、さらなる治療成績向上が期待される。</p>
+                </div>
+            </section>
+
+            <!-- 関連ページへのリンク -->
+            <section class="related-links">
+                <h2>🔗 関連ページ</h2>
+                <div class="link-grid">
+                    <a href="../drugs/furosemide.html" class="related-card">
+                        <h3>フロセミド</h3>
+                        <p>急性期の救命薬</p>
+                    </a>
+                    <a href="../drugs/spironolactone.html" class="related-card">
+                        <h3>スピロノラクトン</h3>
+                        <p>慢性心不全の予後改善薬</p>
+                    </a>
+                    <a href="./diabetes.html" class="related-card">
+                        <h3>糖尿病薬ガイド</h3>
+                        <p>SGLT2阻害薬の革命</p>
+                    </a>
+                    <a href="../groups/cardiovascular_integrated_guide.html" class="related-card">
+                        <h3>循環器薬統合ガイド</h3>
+                        <p>心不全治療の全体像</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PharmaDx</h3>
+                    <p>薬学の深い理解と感動的なストーリーで、医療の未来を切り開く</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>カテゴリ</h4>
+                    <ul>
+                        <li><a href="../index.html#drugs">薬剤一覧</a></li>
+                        <li><a href="../index.html#categories">薬効群</a></li>
+                        <li><a href="../index.html#stories">ストーリー</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>学習ツール</h4>
+                    <ul>
+                        <li><a href="../index.html#differentiation">使い分けガイド</a></li>
+                        <li><a href="../index.html#evolution">進化系統図</a></li>
+                        <li><a href="../index.html#clinical">臨床応用</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 PharmaDx. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 急性期・慢性期の切り替え
+        function togglePhase(phase) {
+            // すべてのコンテンツを非表示
+            document.querySelectorAll('.phase-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // すべてのボタンの選択状態をリセット
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // 選択されたフェーズを表示
+            document.getElementById(phase + '-phase').classList.add('active');
+            
+            // 選択されたボタンをアクティブ状態に
+            event.target.classList.add('active');
+        }
+
+        // モバイルメニュー
+        function toggleMobileMenu() {
+            const nav = document.querySelector('.main-nav');
+            nav.classList.toggle('mobile-open');
+        }
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 効果メーターのアニメーション
+        function animateEffectivenessMeters() {
+            const meters = document.querySelectorAll('.effectiveness-fill');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fillMeter 1s ease-in-out';
+                    }
+                });
+            });
+            
+            meters.forEach(meter => observer.observe(meter));
+        }
+
+        // ページ読み込み完了時に実行
+        document.addEventListener('DOMContentLoaded', animateEffectivenessMeters);
+    </script>
+</body>
+</html>

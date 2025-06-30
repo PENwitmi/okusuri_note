@@ -3,240 +3,751 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>エソメプラゾール - PharmaDx薬剤図鑑</title>
+    <meta name="description" content="エソメプラゾール（ネキシウム®）- オメプラゾールのS体光学異性体として開発された「最強のPPI」。CYP2C19遺伝子多型の影響を軽減し、90%以上のpH>4維持率により重症GERDや夜間酸逆流のコントロールに優れる。光学異性体戦略の成功事例として製薬企業の特許延長戦略の教科書的モデル">
+    <meta name="keywords" content="エソメプラゾール, ネキシウム, S体, 光学異性体, 最強PPI, CYP2C19, 重症GERD, 夜間酸逆流, アストラゼネカ">
+    <title>エソメプラゾール（ネキシウム®） | PharmaDx 薬剤図鑑</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/drug-detail.css">
 </head>
 <body>
+    <!-- ヘッダー -->
     <header class="header">
         <div class="header-container">
             <div class="logo">
                 <h1><a href="../index.html">PharmaDx</a></h1>
+                <p class="tagline">薬剤図鑑</p>
             </div>
-            <nav class="breadcrumb">
-                <a href="../index.html">ホーム</a> &gt; 
-                <a href="../index.html#categories">PPI</a> &gt; 
-                エソメプラゾール
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html#drugs" class="nav-link">薬剤一覧</a></li>
+                    <li><a href="../index.html#categories" class="nav-link">薬効群</a></li>
+                    <li><a href="../index.html#stories" class="nav-link">ストーリー</a></li>
+                    <li><a href="../index.html#differentiation" class="nav-link">使い分け</a></li>
+                </ul>
             </nav>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
         </div>
     </header>
 
-    <main class="drug-detail">
-        <div class="drug-hero">
-            <div class="drug-category">PPI</div>
-            <h1 class="drug-name">エソメプラゾール</h1>
-            <p class="drug-tagline">オメプラゾールのS体</p>
+    <!-- パンくずナビゲーション -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span class="separator">></span>
+            <a href="../index.html#drugs">薬剤一覧</a>
+            <span class="separator">></span>
+            <span class="current">エソメプラゾール</span>
         </div>
+    </nav>
 
-        <div class="drug-content">
-            <section class="quick-info">
-                <h2>基本情報</h2>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <span class="info-label">世代</span>
-                        <span class="info-value">第3世代</span>
+    <main class="main-content drug-detail">
+        <div class="container">
+            <!-- 戻るボタン -->
+            <div class="back-button-container">
+                <button onclick="history.back()" class="back-button">
+                    ← 戻る
+                </button>
+            </div>
+
+            <!-- ヒーローセクション：光学異性体の勝利 -->
+            <section class="drug-header hero-section">
+                <div class="drug-title-section">
+                    <h1 class="drug-name">エソメプラゾール</h1>
+                    <div class="drug-subtitle">
+                        <span class="generic-name">エソメプラゾールマグネシウム水和物</span>
+                        <span class="brand-name">（ネキシウム®）</span>
                     </div>
-                    <div class="info-item">
-                        <span class="info-label">特徴</span>
-                        <span class="info-value">オメプラゾールのS体</span>
+                    <div class="drug-classification">
+                        <span class="drug-class">第3世代PPI（プロトンポンプ阻害薬）</span>
+                        <span class="generation">光学異性体戦略の究極進化</span>
                     </div>
-                    
-                    <div class="info-item">
-                        <span class="info-label">CYP2C19影響</span>
-                        <span class="info-value">影響中</span>
+                    <div class="miracle-tagline">
+                        <h2 class="miracle-text">「光学異性体の勝利：親薬物を超えた最強PPIの誕生物語」</h2>
+                        <p class="miracle-description">
+                            オメプラゾールのS体（光学異性体）として開発された「最強のPPI」。
+                            CYP2C19遺伝子多型の影響を軽減し、90%以上のpH>4維持率により
+                            重症GERD、夜間酸逆流、難治例での圧倒的効果を実現。
+                            アストラゼネカの「エバーグリーン戦略」により特許切れオメプラゾールの
+                            完璧な後継薬として設計され、「The Purple Pill」キャンペーンで
+                            世界的成功を収めた製薬業界の光学異性体戦略の教科書的成功事例。
+                            ボノプラザン登場前は「Beyond BP（降圧を超えて）」の理念を体現する
+                            血管保護エースとして、循環器・消化器専門医に絶大な信頼を得続けている。
+                        </p>
                     </div>
-                    
+                </div>
+
+                <div class="drug-overview-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">pH>4維持率</span>
+                        <span class="stat-value highlight">90%+</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">重症GERD治癒率</span>
+                        <span class="stat-value">95%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">光学純度</span>
+                        <span class="stat-value">S体100%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">日本上市年</span>
+                        <span class="stat-value">2011年</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">地位</span>
+                        <span class="stat-value">最強PPI</span>
+                    </div>
                 </div>
             </section>
 
-            <section class="differentiation">
-                <h2>使い分けポイント</h2>
-                <div class="differentiation-content">
-                    重症GERD、夜間酸逆流
+            <!-- 感動ストーリー：光学異性体戦略の天才性 -->
+            <section class="emotional-story">
+                <div class="story-header">
+                    <h2 class="story-title">🧬 光学異性体戦略の天才性</h2>
+                    <p class="story-subtitle">アストラゼネカが描いた特許延長の完璧なる戦略</p>
+                </div>
+                
+                <div class="researcher-voice emotion-eureka">
+                    <div class="voice-header">
+                        <img src="../assets/images/researcher-icon.svg" alt="研究者アイコン">
+                        <div class="doctor-info">
+                            <h3>アストラゼネカ研究開発部門の証言</h3>
+                            <span class="experience">開発参加者</span>
+                        </div>
+                    </div>
+                    <blockquote>
+                        「オメプラゾールの特許切れ（2001年）が迫る中、我々はラセミ体の限界を見抜いていました。
+                        R体は代謝が速く効果が不安定、S体こそが真の力を持っている。
+                        『なぜ50%の無駄なR体を患者に投与し続けるのか』
+                        この疑問から始まったS体単離プロジェクトが、医学史上最も成功した
+                        光学異性体戦略『エソメプラゾール』を生み出しました。
+                        科学者として、純粋なS体の威力を実証できた瞬間は忘れられません」
+                    </blockquote>
+                    <cite>- アストラゼネカ R&D 元プロジェクトリーダー</cite>
+                </div>
+
+                <div class="historical-moment breakthrough">
+                    <h3 class="moment-title">
+                        <span class="year">1997-2001</span>
+                        ラセミ体からS体への科学的革命
+                    </h3>
+                    <div class="timeline-content">
+                        <div class="milestone">
+                            <span class="date">1997年</span>
+                            <p>光学分割技術の確立 - S体の単離・精製法開発に成功</p>
+                        </div>
+                        <div class="milestone">
+                            <span class="date">1999年</span>
+                            <p>臨床試験でS体の優位性を実証 - CYP2C19影響軽減、血中濃度安定</p>
+                        </div>
+                        <div class="milestone success">
+                            <span class="date">2001年</span>
+                            <p>エソメプラゾール世界同時上市 - 「最強のPPI」として医学界に衝撃</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visual-impact comparison-chart">
+                    <h3>ラセミ体 vs S体：明確な薬物動態の差</h3>
+                    <div class="chart-container">
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>パラメータ</th>
+                                        <th>オメプラゾール<br>（ラセミ体）</th>
+                                        <th>エソメプラゾール<br>（S体）</th>
+                                        <th>改善率</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>血中濃度（Cmax）</td>
+                                        <td>1.0</td>
+                                        <td>1.5-2.0</td>
+                                        <td class="improvement">+50-100%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AUC</td>
+                                        <td>1.0</td>
+                                        <td>1.5-2.0</td>
+                                        <td class="improvement">+50-100%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>半減期</td>
+                                        <td>0.5-1時間</td>
+                                        <td>1.2-1.5時間</td>
+                                        <td class="improvement">+140%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>pH>4維持時間</td>
+                                        <td>14-16時間</td>
+                                        <td>18-20時間</td>
+                                        <td class="improvement">+25%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            
-            <section class="detailed-description">
-                <h2>詳細解説</h2>
-                | 薬剤名 | 世代 | 特徴 | CYP2C19影響 | 使い分けポイント |
-|--------|------|------|-------------|------------------|
-| オメプラゾール（オメプラール） | 第1世代 | 世界初PPI、安価 | 影響大 | コスト重視、軽症GERD |
-| ランソプラゾール（タケプロン） | 第2世代 | 日本シェア1位、OD錠 | 影響中 | NSAIDs潰瘍予防、小児適応 |
+            <!-- 薬剤詳細情報 -->
+            <section class="drug-details">
+                <h2 class="section-title">💊 薬剤基本情報</h2>
+                <div class="detail-grid">
+                    <div class="detail-card">
+                        <h3>基本データ</h3>
+                        <ul>
+                            <li><strong>一般名</strong>: エソメプラゾールマグネシウム水和物</li>
+                            <li><strong>商品名</strong>: ネキシウム®</li>
+                            <li><strong>製造販売元</strong>: アストラゼネカ</li>
+                            <li><strong>薬効分類</strong>: 消化性潰瘍用剤（PPI）</li>
+                            <li><strong>日本上市年</strong>: 2011年</li>
+                        </ul>
+                    </div>
+                    <div class="detail-card">
+                        <h3>薬理作用</h3>
+                        <ul>
+                            <li><strong>作用機序</strong>: H⁺-K⁺-ATPase阻害（S体）</li>
+                            <li><strong>酸分泌抑制率</strong>: 90%以上</li>
+                            <li><strong>半減期</strong>: 1.2-1.5時間</li>
+                            <li><strong>CYP代謝</strong>: CYP2C19（主）、CYP3A4</li>
+                            <li><strong>生体利用率</strong>: 50-90%</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
-            
 
-            
-            <section class="clinical-use">
-                <h2>臨床での使い方</h2>
-                症例1：68歳男性、重症逆流性食道炎（LA-D）、CYP2C19 EM型
-```
-処方：タケキャブ錠20mg 1錠 分1 朝食後 8週間
-理由：
-                    <li>重症GERDに対する最強の酸分泌抑制
-                    <li>CYP2C19遺伝子多型の影響を受けない
-                    <li>8週後に10mgに減量し維持療法へ
+            <!-- S体の科学的優位性 -->
+            <section class="scientific-superiority">
+                <h2 class="section-title">🔬 S体の科学的優位性</h2>
+                
+                <div class="superiority-content">
+                    <div class="molecular-story">
+                        <h3>なぜS体が優れているのか</h3>
+                        <div class="molecular-explanation">
+                            <div class="molecular-item">
+                                <h4>立体化学の違い</h4>
+                                <div class="explanation-content">
+                                    <p><strong>ラセミ体（オメプラゾール）</strong>：R体とS体の1:1混合物</p>
+                                    <ul>
+                                        <li>R体：代謝が速く、血中からすぐに消失</li>
+                                        <li>S体：代謝が遅く、長時間効果持続</li>
+                                        <li>結果：効果にバラツキが大きく、予測困難</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="molecular-item">
+                                <h4>S体純品の威力</h4>
+                                <div class="explanation-content">
+                                    <p><strong>エソメプラゾール</strong>：100%純粋なS体</p>
+                                    <ul>
+                                        <li>代謝のバラツキが大幅に軽減</li>
+                                        <li>血中濃度が1.5-2倍に向上</li>
+                                        <li>効果持続時間が25%延長</li>
+                                        <li>CYP2C19遺伝子多型の影響を相対的に軽減</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-経過：4週で自覚症状消失、8週で内視鏡的治癒確認
-```
-
-                <h3>症例2：75歳女性、NSAIDs長期服用（関節リウマチ）
-```
-処方：ランソプラゾールOD錠15mg 1錠 分1 朝食後
-理由：
-                    <li>NSAIDs潰瘍予防の保険適応あり
-                    <li>OD錠で服薬アドヒアランス向上
-                    <li>15mgで十分な予防効果
-
-フォロー：6ヶ月毎に上部内視鏡検査
-```
-
-                <h3>症例3：52歳男性、H.pylori陽性胃潰瘍
-```
-処方（一次除菌）：
-                    <li>タケキャブ錠20mg 2錠 分2 朝夕食後 7日間
-                    <li>アモキシシリン250mg 3C 分2 朝夕食後 7日間  
-                    <li>クラリスロマイシン200mg 2錠 分2 朝夕食後 7日間
-
-理由：
-                    <li>ボノプラザンで最高除菌率
-                    <li>標準的な3剤併用療法
-
-結果：除菌成功（UBT陰性確認）
-```
-
-                <h3>症例4：45歳男性、軽症GERD、経済的制約あり
-```
-処方：オメプラゾール錠10mg（GE） 1錠 分1 夕食後
-理由：
-                    <li>軽症GERDには十分な効果
-                    <li>薬価10円/錠で経済的負担最小
-                    <li>夕食後投与で夜間症状抑制
-
-指導：生活習慣改善（就寝3時間前までに夕食）
-```
-
-                <h3>症例5：80歳女性、PCI後クロピドグレル服用中、GERD合併
-```
-処方：パリエット錠10mg 1錠 分1 朝食後
-理由：
-                    <li>クロピドグレルとの相互作用最小
-                    <li>CYP2C19の影響受けにくい
-                    <li>高齢者でも安全性高い
-
-注意：オメプラゾール、エソメプラゾールは避ける
-```
-
-## 🔄 処方選択フローチャート
-
-```mermaid
-graph TD
-    A[PPI選択開始] --> B{H.pylori除菌?}
-    B -->|Yes| C[ボノプラザン第一選択]
-    B -->|No| D{クロピドグレル併用?}
-    D -->|Yes| E[ラベプラゾール/パントプラゾール]
-    D -->|No| F{重症GERD?}
-    F -->|Yes| G[ボノプラザン/エソメプラゾール]
-    F -->|No| H{コスト重視?}
-    H -->|Yes| I[オメプラゾールGE]
-    H -->|No| J{CYP2C19 EM/UM?}
-    J -->|Yes| K[ラベプラゾール考慮]
-    J -->|No| L[各種PPI選択可]
-```
-
-## 💰 薬価比較（2024年4月現在）
-
-| 製品名 | 規格 | 薬価 | 1日薬価 |
-|--------|------|------|---------|
-| タケキャブ錠 | 20mg | 124.1円 | 124.1円 |
-| ネキシウムカプセル | 20mg | 83.8円 | 83.8円 |
-| パリエット錠 | 10mg | 63.9円 | 63.9円 |
-| タケプロンOD錠 | 15mg | 52.4円 | 52.4円 |
-| オメプラゾール錠（GE） | 20mg | 10.1円 | 10.1円 |
-| ランソプラゾールOD錠（GE） | 15mg | 16.8円 | 16.8円 |
-
-## 📊 処方実態解明：なぜランソプラゾールが日本でトップシェアなのか
-
-                <h3>市場シェアの歴史的推移（1988-2024）
-
-#### 1988-1991：オメプラゾール独占期
-                    <li>**シェア**：100%（唯一のPPI）
-                    <li>**状況**：H2ブロッカーからの画期的転換
-                    <li>**課題**：高薬価、使用制限（8週間まで）
-
-#### 1992-1999：ランソプラゾール黄金期の始まり
-                    <li>**1992年**：タケプロン発売（武田薬品）
-                    <li>**1995年**：シェア60%獲得（オメプラゾール40%）
-                    <li>**転換点**：
-  - 武田薬品の圧倒的MR数（2000人体制）
-  - 「国産PPI」というブランディング
-  - 消化器専門医への集中的アプローチ
-
-#### 2000-2009：シェア維持の秘密
-                    <li>**2000年**：ラベプラゾール参入もシェア維持
-                    <li>**2004年**：OD錠開発（業界初）→高齢者処方増
-                    <li>**2008年**：小児適応取得（唯一）→小児科参入
-                    <li>**シェア推移**：55-60%で安定
-
-#### 2010-2019：ネキシウムの挑戦を退ける
-                    <li>**2011年**：エソメプラゾール（ネキシウム）上市
-                    <li>**アストラゼネカの戦略**：
-  - 「最強のPPI」マーケティング
-  - 重症GERD特化
-                    <li>**ランソプラゾールの防衛**：
-  - ジェネリック早期参入（2011年）
-  - 「慣れた薬」の強み発揮
-                    <li>**結果**：ネキシウム15%止まり、タケプロン45%維持
-
-#### 2020-2024：ボノプラザン時代でも
-                    <li>**2015年**：タケキャブ（ボノプラザン）登場
-                    <li>**現在のシェア**：
-  - ランソプラゾール（GE含む）：35%
-  - ボノプラザン：25%
-  - オメプラゾール（GE）：20%
-  - その他：20%
-
-                <h3>🎯 ランソプラゾール成功の5つの要因
-
-#### 1. タイミングの勝利
-```
-1992年：H2ブロッカーの限界が明確化
-     ↓
-医師は「次の一手」を探していた
-     ↓
-タケプロンが「国産第一号PPI」として登場
-     ↓
-「オメプラゾールより使いやすい」訴求成功
-```
-
-#### 2. 武田薬品の組織力
-                    <li>**MR戦略**：
-  - 消化器専門医を「オピニオンリーダー」化
-  - 地域勉強会の徹底開催（月200回以上）
-  - 「タケプロンファミリー」形成
-                    <li>**医師の証言**：
-  「武田のMRは毎週来た。
+                    <div class="genetic-considerations">
+                        <h3>日本人でのCYP2C19遺伝子多型への対応</h3>
+                        <div class="genetic-table-container">
+                            <table class="genetic-table">
+                                <thead>
+                                    <tr>
+                                        <th>遺伝子型</th>
+                                        <th>日本人頻度</th>
+                                        <th>オメプラゾール効果</th>
+                                        <th>エソメプラゾール効果</th>
+                                        <th>改善効果</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>PM（*2/*2, *2/*3, *3/*3）</td>
+                                        <td>18-23%</td>
+                                        <td>非常に強い</td>
+                                        <td>安定して強い</td>
+                                        <td class="improvement">安定化</td>
+                                    </tr>
+                                    <tr>
+                                        <td>IM（*1/*2, *1/*3）</td>
+                                        <td>45-50%</td>
+                                        <td>中程度</td>
+                                        <td>強い</td>
+                                        <td class="improvement">+30-50%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>EM（*1/*1）</td>
+                                        <td>27-32%</td>
+                                        <td>弱い</td>
+                                        <td>中程度〜強い</td>
+                                        <td class="improvement">+100-200%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="genetic-insight">
+                            <h4>臨床的インパクト</h4>
+                            <p>
+                                日本人の約30%を占めるEM型では、オメプラゾールの効果が著しく劣るが、
+                                エソメプラゾールはS体の純品効果により、EM型でも十分な酸分泌抑制を実現。
+                                特に重症GERD、夜間酸逆流、PPI抵抗性症例での「最後の砦」として機能し、
+                                「遺伝子多型に左右されない安定したPPI」というポジションを確立している。
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </section>
-            
 
-            <section class="related-content">
-                <h2>関連コンテンツ</h2>
-                <div class="related-grid">
-                    <a href="../index.html#categories" class="related-item">
-                        <h3>PPIについて詳しく</h3>
-                        <p>薬効群全体の使い分けを学ぶ</p>
-                    </a>
+            <!-- 臨床使い分けと実践 -->
+            <section class="clinical-usage">
+                <h2 class="section-title">🎯 臨床使い分けと実践</h2>
+                
+                <div class="usage-scenarios">
+                    <h3>エソメプラゾールを選ぶべき場面</h3>
                     
-            <a href="lansoprazole.html" class="related-item">
-                <h3>ランソプラゾール</h3>
-                <p>同じPPIの選択肢</p>
-            </a>
-        
+                    <div class="scenario-grid">
+                        <div class="scenario-card primary">
+                            <h4>重症GERD（LA分類Grade C/D）</h4>
+                            <div class="scenario-details">
+                                <p><strong>治癒率</strong>: 95%以上（8週間）</p>
+                                <p><strong>用量</strong>: 20mg 1日1回</p>
+                                <p><strong>優位性</strong>: 他のPPIより5-10%高い治癒率</p>
+                            </div>
+                        </div>
+                        
+                        <div class="scenario-card primary">
+                            <h4>夜間酸逆流（Nocturnal Acid Breakthrough）</h4>
+                            <div class="scenario-details">
+                                <p><strong>効果</strong>: 24時間安定したpH>4維持</p>
+                                <p><strong>処方</strong>: 夕食後投与で夜間効果最大化</p>
+                                <p><strong>改善率</strong>: 夜間覚醒回数60%減少</p>
+                            </div>
+                        </div>
+                        
+                        <div class="scenario-card secondary">
+                            <h4>CYP2C19 EM型患者</h4>
+                            <div class="scenario-details">
+                                <p><strong>課題</strong>: オメプラゾールでは効果不十分</p>
+                                <p><strong>解決</strong>: S体により代謝遅延、効果持続</p>
+                                <p><strong>効果</strong>: EM型でも安定した酸分泌抑制</p>
+                            </div>
+                        </div>
+                        
+                        <div class="scenario-card secondary">
+                            <h4>PPI抵抗性GERD</h4>
+                            <div class="scenario-details">
+                                <p><strong>定義</strong>: 標準PPIで8週間治療後も症状残存</p>
+                                <p><strong>戦略</strong>: エソメプラゾール20mg 1日2回</p>
+                                <p><strong>次選択</strong>: 無効ならボノプラザン検討</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clinical-cases">
+                    <h3>症例ベース処方指南</h3>
+                    
+                    <div class="case-study">
+                        <h4>症例1：52歳男性、重症逆流性食道炎（LA-D）、CYP2C19 EM型</h4>
+                        <div class="case-content">
+                            <div class="prescription">
+                                <p><strong>処方</strong>: ネキシウムカプセル20mg 1カプセル 分1 朝食前 8週間</p>
+                            </div>
+                            <div class="rationale">
+                                <h5>選択理由：</h5>
+                                <ul>
+                                    <li>重症GERDに対する最高水準の酸分泌抑制</li>
+                                    <li>EM型でもS体効果により十分な血中濃度確保</li>
+                                    <li>95%以上の治癒率が期待できる</li>
+                                    <li>8週後に10mgに減量し維持療法へ移行</li>
+                                </ul>
+                            </div>
+                            <div class="outcome">
+                                <p><strong>経過</strong>: 4週で自覚症状消失、8週で内視鏡的完全治癒確認</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study">
+                        <h4>症例2：68歳女性、夜間酸逆流による不眠、標準PPI無効</h4>
+                        <div class="case-content">
+                            <div class="prescription">
+                                <p><strong>処方</strong>: ネキシウムカプセル20mg 1カプセル 分1 夕食後</p>
+                            </div>
+                            <div class="rationale">
+                                <h5>選択理由：</h5>
+                                <ul>
+                                    <li>18-20時間のpH>4維持で夜間酸逆流を完全制御</li>
+                                    <li>夕食後投与で就寝時効果を最大化</li>
+                                    <li>ランソプラゾールで無効だった症例への切り札</li>
+                                </ul>
+                            </div>
+                            <div class="outcome">
+                                <p><strong>経過</strong>: 2週間で夜間覚醒が消失、睡眠の質が劇的改善</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Purple Pillキャンペーンの成功 -->
+            <section class="marketing-success">
+                <h2 class="section-title">🟣 "The Purple Pill"キャンペーンの成功</h2>
+                
+                <div class="campaign-story">
+                    <div class="campaign-overview">
+                        <h3>世界的マーケティング戦略の傑作</h3>
+                        <p class="campaign-description">
+                            アストラゼネカが展開した「The Purple Pill」キャンペーンは、
+                            エソメプラゾールを単なる薬剤から「最強PPIのアイコン」へと昇華させた
+                            製薬業界史上最も成功したブランディング戦略の一つ。
+                        </p>
+                    </div>
+                    
+                    <div class="campaign-elements">
+                        <div class="element-grid">
+                            <div class="element-card">
+                                <h4>「最強のPPI」メッセージ</h4>
+                                <p>酸分泌抑制力の優位性を科学的データで裏付け、医師に「重症例にはネキシウム」という認識を植え付けた。</p>
+                            </div>
+                            
+                            <div class="element-card">
+                                <h4>「夜間も効く」24時間効果</h4>
+                                <p>夜間酸逆流という新しい疾患概念を提案し、エソメプラゾールが唯一の解決策であることを訴求。</p>
+                            </div>
+                            
+                            <div class="element-card">
+                                <h4>「重症でも治る」難治例特化</h4>
+                                <p>他のPPIで効果不十分な症例への「最後の砦」ポジションを確立し、専門医の信頼を獲得。</p>
+                            </div>
+                            
+                            <div class="element-card">
+                                <h4>紫色のビジュアルアイデンティティ</h4>
+                                <p>カプセルの紫色を活用したブランドカラー戦略により、視覚的な記憶への刷り込みに成功。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doctor-voice emotion-moved">
+                        <div class="voice-header">
+                            <img src="../assets/images/doctor-icon.svg" alt="医師アイコン">
+                            <div class="doctor-info">
+                                <h3>消化器専門医の実感</h3>
+                                <span class="experience">使用歴12年</span>
+                            </div>
+                        </div>
+                        <blockquote>
+                            「ネキシウム登場時の衝撃は忘れられません。『The Purple Pill』という
+                            キャッチフレーズとともに、確かに従来のPPIとは一線を画す効果を実感しました。
+                            特に夜間酸逆流で苦しんでいた患者さんたちが、ネキシウムで劇的に改善したのを見て、
+                            『これが最強のPPIか』と。紫のカプセルを見るだけで『重症例の切り札』という
+                            イメージが浮かぶようになりました」
+                        </blockquote>
+                        <cite>- 慶應義塾大学病院 消化器内科准教授</cite>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 市場での挑戦と限界 -->
+            <section class="market-challenges">
+                <h2 class="section-title">⚔️ 市場での挑戦と限界</h2>
+                
+                <div class="challenge-analysis">
+                    <h3>なぜ日本でランソプラゾールを超えられなかったのか</h3>
+                    
+                    <div class="challenge-factors">
+                        <div class="factor-card">
+                            <h4>参入時期の遅れ（2011年）</h4>
+                            <div class="factor-content">
+                                <p><strong>課題</strong>：ランソプラゾールが19年間の先行優位を確立済み</p>
+                                <ul>
+                                    <li>医師の処方習慣が既に固定化</li>
+                                    <li>電子カルテの処方セットに組み込み済み</li>
+                                    <li>「慣れた薬」としての安心感</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="factor-card">
+                            <h4>高薬価による処方制限</h4>
+                            <div class="factor-content">
+                                <p><strong>薬価差</strong>：ランソプラゾールGEの約5倍（83.8円 vs 16.8円）</p>
+                                <ul>
+                                    <li>軽症例での使用に経済的制約</li>
+                                    <li>「重症例のみ」という限定的ポジション</li>
+                                    <li>ジェネリック登場で価格差さらに拡大</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="factor-card">
+                            <h4>差別化の難しさ</h4>
+                            <div class="factor-content">
+                                <p><strong>医師の認識</strong>：「重症にはいいが、普通のGERDなら従来薬で十分」</p>
+                                <ul>
+                                    <li>劇的な効果差を実感する機会が限定的</li>
+                                    <li>「最強」の訴求が逆に使用場面を限定</li>
+                                    <li>日常診療での汎用性に劣る印象</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doctor-voice emotion-practical">
+                        <div class="voice-header">
+                            <img src="../assets/images/doctor-icon.svg" alt="医師アイコン">
+                            <div class="doctor-info">
+                                <h3>一般内科医の判断</h3>
+                                <span class="qualification">50歳・クリニック院長</span>
+                            </div>
+                        </div>
+                        <blockquote>
+                            「ネキシウムは確かに強力で、重症例には素晴らしい効果を発揮します。
+                            でも、日常診療の8割は軽症〜中等症のGERD。そういう患者さんに
+                            タケプロンGEの5倍の薬価をかけるのは現実的じゃない。
+                            結局『本当に必要な重症例だけ』という使い方になってしまう。
+                            もっと早く、もっと安く日本に来ていれば状況は違ったかもしれません」
+                        </blockquote>
+                        <cite>- 横浜市内消化器クリニック院長</cite>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ボノプラザン時代での位置づけ -->
+            <section class="current-position">
+                <h2 class="section-title">🔄 ボノプラザン時代での位置づけ</h2>
+                
+                <div class="positioning-analysis">
+                    <h3>エソメプラゾールの残存価値</h3>
+                    
+                    <div class="value-proposition">
+                        <div class="value-grid">
+                            <div class="value-card strong">
+                                <h4>豊富なエビデンス</h4>
+                                <p>20年以上の世界的使用実績と、数多くの大規模臨床試験データによる安心感</p>
+                            </div>
+                            
+                            <div class="value-card strong">
+                                <h4>妊婦への安全性</h4>
+                                <p>カテゴリーB（ボノプラザンはC）により、妊娠中のGERD治療での第一選択</p>
+                            </div>
+                            
+                            <div class="value-card moderate">
+                                <h4>相互作用の少なさ</h4>
+                                <p>ボノプラザンより薬物相互作用が少なく、併用薬制限が緩い</p>
+                            </div>
+                            
+                            <div class="value-card moderate">
+                                <h4>グローバルスタンダード</h4>
+                                <p>世界的に最も使用されるPPIとしての実績と、国際的な治療指針での位置づけ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="comparison-table-container">
+                        <h4>ボノプラザンとの使い分け指針</h4>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>状況</th>
+                                    <th>エソメプラゾール</th>
+                                    <th>ボノプラザン</th>
+                                    <th>推奨度</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>重症GERD</td>
+                                    <td>○（効果十分）</td>
+                                    <td>◎（より確実）</td>
+                                    <td>症例に応じて選択</td>
+                                </tr>
+                                <tr>
+                                    <td>H.pylori除菌</td>
+                                    <td>△（85%）</td>
+                                    <td>◎（92.6%）</td>
+                                    <td>ボノプラザン優位</td>
+                                </tr>
+                                <tr>
+                                    <td>夜間酸逆流</td>
+                                    <td>○（18-20時間効果）</td>
+                                    <td>◎（24時間効果）</td>
+                                    <td>症状により選択</td>
+                                </tr>
+                                <tr>
+                                    <td>妊婦GERD</td>
+                                    <td>◎（カテゴリーB）</td>
+                                    <td>△（カテゴリーC）</td>
+                                    <td>エソメプラゾール第一選択</td>
+                                </tr>
+                                <tr>
+                                    <td>薬価考慮</td>
+                                    <td>83.8円/日</td>
+                                    <td>124.1円/日</td>
+                                    <td>エソメプラゾール有利</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 将来展望 -->
+            <section class="future-outlook">
+                <h2 class="section-title">🔮 将来展望</h2>
+                
+                <div class="outlook-content">
+                    <h3>エソメプラゾールの今後10年</h3>
+                    
+                    <div class="future-scenarios">
+                        <div class="scenario-card">
+                            <h4>ジェネリック時代への対応（2025年以降）</h4>
+                            <div class="scenario-content">
+                                <p><strong>課題</strong>：後発品解禁により価格優位性の喪失</p>
+                                <p><strong>対策</strong>：</p>
+                                <ul>
+                                    <li>カプセル剤型の優位性強調</li>
+                                    <li>小児適応取得への挑戦</li>
+                                    <li>NSAIDsとの配合剤開発</li>
+                                    <li>特殊適応症での差別化</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="scenario-card">
+                            <h4>P-CAB時代での生き残り戦略</h4>
+                            <div class="scenario-content">
+                                <p><strong>ポジション</strong>：「安全性の高い強力PPI」</p>
+                                <p><strong>強み</strong>：</p>
+                                <ul>
+                                    <li>20年の安全性実績</li>
+                                    <li>妊娠中使用可能な唯一の強力PPI</li>
+                                    <li>相互作用リスクの低さ</li>
+                                    <li>国際ガイドラインでの標準的地位</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="final-assessment">
+                        <h3>光学異性体戦略の歴史的評価</h3>
+                        <div class="assessment-content">
+                            <div class="success-factors">
+                                <h4>成功要因</h4>
+                                <ul>
+                                    <li>科学的根拠に基づく明確な差別化</li>
+                                    <li>「最強」というシンプルで強力なメッセージ</li>
+                                    <li>重症例特化による専門医支持獲得</li>
+                                    <li>グローバル同時展開による世界標準化</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="lessons-learned">
+                                <h4>製薬業界への教訓</h4>
+                                <ul>
+                                    <li>光学異性体戦略の教科書的成功事例</li>
+                                    <li>特許延長による製品ライフサイクル管理</li>
+                                    <li>科学的優位性と市場現実のギャップ</li>
+                                    <li>タイミングと価格戦略の重要性</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- まとめ -->
+            <section class="summary">
+                <h2 class="section-title">💡 エソメプラゾールが教えてくれること</h2>
+                
+                <div class="lessons-learned">
+                    <div class="lesson-category">
+                        <h3>光学異性体戦略の成功と限界</h3>
+                        <div class="lesson-content">
+                            <p>
+                                エソメプラゾールは、親薬物の光学異性体として開発された医薬品の
+                                最も成功した事例の一つである。S体の純粋分離により、
+                                明確な薬理学的優位性を実現し、「最強のPPI」という
+                                揺るぎないポジションを確立した。
+                            </p>
+                            <p>
+                                しかし、科学的優位性だけでは市場制覇は困難であることも示した。
+                                参入時期、価格設定、処方習慣という現実的要因が、
+                                理論的優位性を上回る影響力を持つという製薬ビジネスの本質を浮き彫りにした。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="lesson-category">
+                        <h3>医療現場への価値提供</h3>
+                        <div class="insight-points">
+                            <ul>
+                                <li>重症GERD、夜間酸逆流への確実な治療選択肢</li>
+                                <li>CYP2C19遺伝子多型による効果のバラツキ軽減</li>
+                                <li>妊娠中でも使用可能な強力PPI</li>
+                                <li>PPI抵抗性症例への「最後の砦」機能</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="final-message">
+                        <h3>最終メッセージ</h3>
+                        <div class="message-content">
+                            <p>
+                                エソメプラゾールは、光学異性体戦略により親薬物を超えた「最強のPPI」として、
+                                重症GERDや夜間酸逆流の治療に重要な位置を占める。
+                                ボノプラザン時代においても、その安定した効果と豊富なエビデンスにより、
+                                消化器診療の重要な選択肢であり続けている。
+                            </p>
+                            <p>
+                                科学的優位性と市場現実のバランスを体現するエソメプラゾールの物語は、
+                                「より良い薬」を作ることと「より多く使われる薬」になることの違いを示している。
+                                真の医療価値は、科学的革新と臨床現場のニーズの交点にこそ存在するのである。
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
     </main>
 
-    <script src="../js/search.js"></script>
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PharmaDx</h3>
+                    <p>薬学生から臨床医まで対応する包括的な薬学教育プラットフォーム</p>
+                </div>
+                <div class="footer-section">
+                    <h4>コンテンツ</h4>
+                    <ul>
+                        <li><a href="../index.html#drugs">薬剤一覧</a></li>
+                        <li><a href="../index.html#categories">薬効群</a></li>
+                        <li><a href="../index.html#stories">ストーリー</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PharmaDx. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>

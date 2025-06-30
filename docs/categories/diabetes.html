@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="糖尿病薬進化ガイド - なぜSGLT2阻害薬だけが10年で医療界を変えたのか？エンパグリフロジンとダパグリフロジンの戦略的分化、心不全・CKDへの適応拡大の真実">
+    <meta name="keywords" content="糖尿病薬, SGLT2阻害薬, エンパグリフロジン, ダパグリフロジン, 心不全, 慢性腎臓病, 臓器保護">
+    <title>糖尿病薬の進化ガイド - SGLT2阻害薬の革命 | PharmaDx</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/drug-detail.css">
+    <link rel="stylesheet" href="../assets/css/category-comparison.css">
+    <style>
+        .evolution-timeline {
+            position: relative;
+            padding: 2rem 0;
+            margin: 2rem 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            border-left: 4px solid #007bff;
+        }
+        
+        .timeline-year {
+            font-weight: bold;
+            color: #007bff;
+            min-width: 80px;
+            font-size: 1.1rem;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            margin-left: 1rem;
+        }
+        
+        .comparison-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .drug-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-top: 4px solid #28a745;
+            transition: transform 0.3s ease;
+        }
+        
+        .drug-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .drug-card.empagliflozin { border-top-color: #dc3545; }
+        .drug-card.dapagliflozin { border-top-color: #007bff; }
+        .drug-card.canagliflozin { border-top-color: #ffc107; }
+        .drug-card.tofogliflozin { border-top-color: #6f42c1; }
+        
+        .mechanism-diagram {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .flowchart {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .flow-step {
+            background: white;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .flow-step:not(:last-child)::after {
+            content: "↓";
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            color: #007bff;
+            font-weight: bold;
+        }
+        
+        .clinical-evidence {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 5px solid #ffc107;
+        }
+        
+        .doctor-testimonial {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 5px solid #28a745;
+            position: relative;
+        }
+        
+        .doctor-testimonial::before {
+            content: """;
+            font-size: 4rem;
+            color: #28a745;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+        
+        .specialty-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .specialty-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-top: 4px solid;
+        }
+        
+        .specialty-card.diabetes { border-top-color: #17a2b8; }
+        .specialty-card.cardiology { border-top-color: #dc3545; }
+        .specialty-card.nephrology { border-top-color: #6f42c1; }
+        
+        .usage-stats {
+            background: linear-gradient(135deg, #f1f3f4 0%, #e8eaed 100%);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .stat-item {
+            display: inline-block;
+            margin: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            min-width: 150px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #007bff;
+            display: block;
+        }
+        
+        .interactive-selector {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .selector-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .selector-btn {
+            background: #e9ecef;
+            border: none;
+            border-radius: 25px;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .selector-btn:hover, .selector-btn.active {
+            background: #007bff;
+            color: white;
+        }
+        
+        .patient-scenario {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border: 1px solid #dee2e6;
+            display: none;
+        }
+        
+        .patient-scenario.active {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-matrix {
+                grid-template-columns: 1fr;
+            }
+            
+            .specialty-breakdown {
+                grid-template-columns: 1fr;
+            }
+            
+            .selector-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="../index.html">PharmaDx</a></h1>
+                <p class="tagline">薬剤図鑑</p>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html#drugs" class="nav-link">薬剤一覧</a></li>
+                    <li><a href="../index.html#categories" class="nav-link">薬効群</a></li>
+                    <li><a href="../index.html#stories" class="nav-link">ストーリー</a></li>
+                    <li><a href="../index.html#differentiation" class="nav-link">使い分け</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- パンくずナビゲーション -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span class="separator">></span>
+            <a href="../index.html#categories">薬効群</a>
+            <span class="separator">></span>
+            <span class="current">糖尿病薬ガイド</span>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- ヒーローセクション -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        糖尿病薬の革命
+                        <span class="subtitle">なぜSGLT2阻害薬だけが10年で医療界を変えたのか？</span>
+                    </h1>
+                    <p class="hero-description">
+                        「尿に糖を捨てる」という常識破りの発想が、心臓と腎臓を救う奇跡を生んだ。
+                        エンパグリフロジン vs ダパグリフロジンの戦略的分化、適応症拡大の真実、
+                        そして「なぜ似た薬が複数存在するのか」への明確な答えがここにある。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 5分サマリー -->
+            <section class="summary-section">
+                <h2>📍 5分で理解するSGLT2阻害薬の全貌</h2>
+                
+                <div class="mechanism-diagram">
+                    <h3>「血糖値を下げる」から「余分な糖を捨てる」への革命</h3>
+                    <p><strong>SGLT2阻害薬</strong>は、従来の糖尿病治療を根本から変えた革命的薬剤群です。</p>
+                    <div style="font-size: 1.2rem; margin: 1rem 0; color: #007bff;">
+                        <strong>300-400kcal/日のエネルギーを尿糖として排出</strong><br>
+                        ↓<br>
+                        <strong>血糖値低下 + 体重減少 + 血圧降下 + 臓器保護</strong>
+                    </div>
+                </div>
+
+                <div class="usage-stats">
+                    <h3>驚異的な市場拡大の数字</h3>
+                    <div class="stat-item">
+                        <span class="stat-number">40%</span>
+                        <span>10年でのシェア達成</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">4つ</span>
+                        <span>適応症の拡大数</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3科</span>
+                        <span>主要処方診療科</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">38%</span>
+                        <span>心血管死減少効果</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 進化タイムライン -->
+            <section class="evolution-section">
+                <h2>🧬 SGLT2阻害薬の戦略的進化タイムライン</h2>
+                
+                <div class="evolution-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2014年</div>
+                        <div class="timeline-content">
+                            <h4>群雄割拠の始まり</h4>
+                            <p>日本で5剤が一斉承認。当初は「どれも同じ糖尿病薬」として認識</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2015年</div>
+                        <div class="timeline-content">
+                            <h4>EMPA-REGショック</h4>
+                            <p><strong>エンパグリフロジン</strong>の心血管死38%減少で医療界が震撼。「血糖降下薬が命を救う」新パラダイム確立</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2019年</div>
+                        <div class="timeline-content">
+                            <h4>心不全適応の革命</h4>
+                            <p><strong>ダパグリフロジン</strong>が世界初の心不全適応取得。「糖尿病薬」から「臓器保護薬」へ</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2021年</div>
+                        <div class="timeline-content">
+                            <h4>CKD適応で決定的分化</h4>
+                            <p><strong>ダパグリフロジン</strong>がCKD適応取得。非糖尿病患者への処方が可能に</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024年</div>
+                        <div class="timeline-content">
+                            <h4>第一選択薬へ</h4>
+                            <p>心血管リスク患者では糖尿病治療の第一選択。循環器・腎臓内科でも標準薬に</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 戦略的分化の分析 -->
+            <section class="differentiation-analysis">
+                <h2>💡 なぜ「似た薬」が複数存在するのか？戦略的分化の真実</h2>
+                
+                <div class="comparison-matrix">
+                    <div class="drug-card empagliflozin">
+                        <h3>エンパグリフロジン</h3>
+                        <p class="drug-subtitle">ジャディアンス®</p>
+                        <div class="strategy-focus">
+                            <h4>戦略：心血管死減少のパイオニア</h4>
+                            <ul>
+                                <li><strong>シェア：28%</strong></li>
+                                <li>EMPA-REG試験で先行</li>
+                                <li>循環器内科で圧倒的支持</li>
+                                <li>「心臓を守る薬」として確立</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="drug-card dapagliflozin">
+                        <h3>ダパグリフロジン</h3>
+                        <p class="drug-subtitle">フォシーガ®</p>
+                        <div class="strategy-focus">
+                            <h4>戦略：適応症ポートフォリオ拡大</h4>
+                            <ul>
+                                <li><strong>シェア：24%</strong></li>
+                                <li>心不全・CKD適応を積極取得</li>
+                                <li>非糖尿病市場への拡大</li>
+                                <li>「汎用臓器保護薬」として成功</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="drug-card canagliflozin">
+                        <h3>カナグリフロジン</h3>
+                        <p class="drug-subtitle">カナグル®</p>
+                        <div class="strategy-focus">
+                            <h4>戦略：腎保護エビデンス特化</h4>
+                            <ul>
+                                <li><strong>シェア：12%</strong></li>
+                                <li>CREDENCE試験に特化投資</li>
+                                <li>糖尿病性腎症のKOL攻略</li>
+                                <li>ニッチだが確実な市場確保</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="drug-card tofogliflozin">
+                        <h3>国産組</h3>
+                        <p class="drug-subtitle">トホグリフロジン等</p>
+                        <div class="strategy-focus">
+                            <h4>戦略：安全性重視のニッチ</h4>
+                            <ul>
+                                <li><strong>シェア：26%</strong></li>
+                                <li>日本人データ重視</li>
+                                <li>高齢者・副作用懸念時</li>
+                                <li>コスト重視市場での生存</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clinical-evidence">
+                    <h3>🏆 競争が生んだ患者利益の最大化</h3>
+                    <p>この戦略的分化により、患者・医師・医療システム全体にとって最適な選択肢が提供され、
+                    SGLT2阻害薬全体の急速な普及（10年で40%シェア）が実現した。</p>
+                    <p><strong>これは「競争が多様性を生み、多様性が患者利益を最大化する」という
+                    医薬品マーケットの理想的な例である。</strong></p>
+                </div>
+            </section>
+
+            <!-- 診療科別使い分け -->
+            <section class="specialty-usage">
+                <h2>🏥 診療科別の処方文化と使い分けの実態</h2>
+                
+                <div class="specialty-breakdown">
+                    <div class="specialty-card diabetes">
+                        <h3>🔵 糖尿病内科</h3>
+                        <h4>処方哲学：包括的な合併症予防</h4>
+                        <div class="prescription-pattern">
+                            <p><strong>処方パターン（2024年）：</strong></p>
+                            <ul>
+                                <li>エンパグリフロジン：35%（心血管リスク高い患者）</li>
+                                <li>ダパグリフロジン：30%（バランス型として）</li>
+                                <li>国産組：25%（高齢者・安全重視）</li>
+                                <li>カナグリフロジン：10%（腎症重点）</li>
+                            </ul>
+                        </div>
+                        <div class="doctor-testimonial">
+                            <p><strong>糖尿病専門医の本音：</strong><br>
+                            「血糖下げる効果はどれも同じ。だったら将来の合併症も防げるエンパかダパを選ぶ。
+                            迷ったらエンパ。EMPA-REGの安心感は別格」</p>
+                        </div>
+                    </div>
+                    
+                    <div class="specialty-card cardiology">
+                        <h3>🔴 循環器内科</h3>
+                        <h4>劇的な認識変化：「糖尿病薬」→「心不全薬」</h4>
+                        <div class="prescription-pattern">
+                            <p><strong>処方率の変化：</strong></p>
+                            <p>2015年：5% → 2024年：65%（心不全患者における）</p>
+                            <ul>
+                                <li>エンパグリフロジン：60%（EMPA-REGの信頼）</li>
+                                <li>ダパグリフロジン：35%（心不全適応）</li>
+                                <li>その他：5%（ほぼ使用せず）</li>
+                            </ul>
+                        </div>
+                        <div class="doctor-testimonial">
+                            <p><strong>循環器内科医の本音：</strong><br>
+                            「糖尿病の薬という認識はもうない。心不全の薬。糖尿病ある心不全患者にはダパ、
+                            ない患者にもダパ。エンパは心筋梗塞後に」</p>
+                        </div>
+                    </div>
+                    
+                    <div class="specialty-card nephrology">
+                        <h3>🟣 腎臓内科</h3>
+                        <h4>新たな腎保護薬としての地位確立</h4>
+                        <div class="prescription-pattern">
+                            <p><strong>CKD患者での処方パターン：</strong></p>
+                            <ul>
+                                <li>ダパグリフロジン：50%（CKD適応あり）</li>
+                                <li>カナグリフロジン：25%（CREDENCE試験）</li>
+                                <li>エンパグリフロジン：20%（心腎連関重視）</li>
+                                <li>その他：5%</li>
+                            </ul>
+                        </div>
+                        <div class="doctor-testimonial">
+                            <p><strong>腎臓内科医の本音：</strong><br>
+                            「CKD患者に糖尿病薬を使うのは最初抵抗があった。でも腎保護効果は本物。
+                            今では必須薬。eGFR 30切ったらダパ一択」</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- インタラクティブ処方選択ツール -->
+            <section class="interactive-selection">
+                <h2>🎯 あなたならどれを選ぶ？実践的処方選択シミュレーション</h2>
+                
+                <div class="interactive-selector">
+                    <h3>患者背景を選択してください：</h3>
+                    <div class="selector-buttons">
+                        <button class="selector-btn" onclick="showScenario('cv-disease')">心血管疾患既往</button>
+                        <button class="selector-btn" onclick="showScenario('heart-failure')">心不全合併</button>
+                        <button class="selector-btn" onclick="showScenario('ckd')">CKD合併</button>
+                        <button class="selector-btn" onclick="showScenario('elderly')">高齢者（75歳以上）</button>
+                        <button class="selector-btn" onclick="showScenario('obesity')">肥満合併</button>
+                        <button class="selector-btn" onclick="showScenario('standard')">標準的2型糖尿病</button>
+                    </div>
+                    
+                    <div id="cv-disease" class="patient-scenario">
+                        <h4>🫀 心血管疾患既往患者</h4>
+                        <div class="recommendation">
+                            <h5>第一選択：エンパグリフロジン（ジャディアンス®）</h5>
+                            <p><strong>選択理由：</strong></p>
+                            <ul>
+                                <li>EMPA-REG OUTCOME試験：心血管死38%減少</li>
+                                <li>心筋梗塞二次予防での明確なエビデンス</li>
+                                <li>循環器内科医の圧倒的支持</li>
+                            </ul>
+                            <div class="dosing-info">
+                                <p><strong>用法用量：</strong>10mg 1日1回朝食前 → 25mg（効果により増量）</p>
+                                <p><strong>モニタリング：</strong>月1回のHbA1c、eGFR、血圧測定</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="heart-failure" class="patient-scenario">
+                        <h4>💚 心不全合併患者</h4>
+                        <div class="recommendation">
+                            <h5>第一選択：ダパグリフロジン（フォシーガ®）</h5>
+                            <p><strong>選択理由：</strong></p>
+                            <ul>
+                                <li>DAPA-HF試験：HFrEFで心不全入院26%減少</li>
+                                <li>DELIVER試験：HFpEFでも有効性確認</li>
+                                <li>糖尿病の有無を問わない適応症</li>
+                            </ul>
+                            <div class="dosing-info">
+                                <p><strong>用法用量：</strong>10mg 1日1回朝食前（糖尿病の有無問わず）</p>
+                                <p><strong>併用推奨：</strong>ACE阻害薬/ARB、β遮断薬、MRAとの4剤併用</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="ckd" class="patient-scenario">
+                        <h4>🟣 CKD合併患者</h4>
+                        <div class="recommendation">
+                            <h5>第一選択：ダパグリフロジン（フォシーガ®）</h5>
+                            <p><strong>選択理由：</strong></p>
+                            <ul>
+                                <li>唯一のCKD適応（eGFR 25-75で使用可能）</li>
+                                <li>DAPA-CKD試験：eGFR低下44%抑制</li>
+                                <li>非糖尿病性CKDでも保険適応</li>
+                            </ul>
+                            <div class="dosing-info">
+                                <p><strong>用法用量：</strong>10mg 1日1回（eGFR≥25で継続可能）</p>
+                                <p><strong>特記事項：</strong>eGFR低下は一時的に許容（長期的には保護的）</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="elderly" class="patient-scenario">
+                        <h4>👴 高齢者（75歳以上）</h4>
+                        <div class="recommendation">
+                            <h5>第一選択：トホグリフロジン（デベルザ®）</h5>
+                            <p><strong>選択理由：</strong></p>
+                            <ul>
+                                <li>日本人高齢者での豊富な安全性データ</li>
+                                <li>低用量から開始可能（20mg）</li>
+                                <li>脱水リスクが相対的に低い</li>
+                            </ul>
+                            <div class="dosing-info">
+                                <p><strong>用法用量：</strong>20mg 1日1回朝食後（通常用量の半量から）</p>
+                                <p><strong>注意事項：</strong>脱水症状、起立性低血圧の定期確認</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="obesity" class="patient-scenario">
+                        <h4>⚖️ 肥満合併糖尿病</h4>
+                        <div class="recommendation">
+                            <h5>第一選択：エンパグリフロジン（ジャディアンス®）25mg</h5>
+                            <p><strong>選択理由：</strong></p>
+                            <ul>
+                                <li>300-400kcal/日のカロリー喪失効果</li>
+                                <li>体重減少効果：2-4kg期待</li>
+                                <li>内臓脂肪減少による代謝改善</li>
+                            </ul>
+                            <div class="dosing-info">
+                                <p><strong>用法用量：</strong>10mg → 25mg（体重減少効果増強のため）</p>
+                                <p><strong>併用効果：</strong>GLP-1受容体作動薬との相乗効果期待</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="standard" class="patient-scenario">
+                        <h4>📋 標準的2型糖尿病</h4>
+                        <div class="recommendation">
+                            <h5>第一選択：エンパグリフロジンまたはダパグリフロジン</h5>
+                            <p><strong>選択理由：</strong></p>
+                            <ul>
+                                <li>将来の心血管・腎イベント予防効果</li>
+                                <li>低血糖リスクが極めて低い</li>
+                                <li>体重減少・血圧降下の副次効果</li>
+                            </ul>
+                            <div class="dosing-info">
+                                <p><strong>判断基準：</strong>迷ったらエンパグリフロジン（EMPA-REGの信頼性）</p>
+                                <p><strong>長期目標：</strong>HbA1c改善と同時に臓器保護を実現</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 最新の臨床試験エビデンス -->
+            <section class="clinical-trials">
+                <h2>📊 革命を起こした臨床試験：データが語る真実</h2>
+                
+                <div class="flowchart">
+                    <h3>エビデンスの津波効果（2015-2024年）</h3>
+                    
+                    <div class="flow-step">
+                        <h4>EMPA-REG OUTCOME（2015年）</h4>
+                        <p><strong>エンパグリフロジン：心血管死38%減少</strong><br>
+                        「血糖降下薬が命を救う」新パラダイム確立</p>
+                    </div>
+                    
+                    <div class="flow-step">
+                        <h4>DAPA-HF（2019年）</h4>
+                        <p><strong>ダパグリフロジン：心不全入院26%減少</strong><br>
+                        非糖尿病患者でも有効性確認</p>
+                    </div>
+                    
+                    <div class="flow-step">
+                        <h4>DAPA-CKD（2020年）</h4>
+                        <p><strong>ダパグリフロジン：腎複合エンドポイント44%減少</strong><br>
+                        CKD適応取得への道筋</p>
+                    </div>
+                    
+                    <div class="flow-step">
+                        <h4>DELIVER（2022年）</h4>
+                        <p><strong>ダパグリフロジン：HFpEFでも心不全入院8%減少</strong><br>
+                        心不全適応の完全制覇</p>
+                    </div>
+                </div>
+
+                <div class="clinical-evidence">
+                    <h3>🎯 医師が実感するエビデンスの説得力</h3>
+                    <div class="doctor-testimonial">
+                        <p><strong>大学病院循環器内科医（45歳）の証言：</strong><br>
+                        「毎年のように良いデータが出る。学会に行くたびにSGLT2の話。
+                        もう使わない理由がなくなった。患者さんの心不全入院が目に見えて減った」</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 心不全・CKDへの適応拡大の戦略 -->
+            <section class="indication-expansion">
+                <h2>🚀 適応症拡大戦略：「糖尿病薬」から「臓器保護薬」への大転換</h2>
+                
+                <div class="evolution-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2014年</div>
+                        <div class="timeline-content">
+                            <h4>スタート地点：2型糖尿病のみ</h4>
+                            <p>全薬剤が同一適応症でスタート。市場規模：約500万人</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2019年</div>
+                        <div class="timeline-content">
+                            <h4>第1の革命：慢性心不全（HFrEF）追加</h4>
+                            <p>ダパグリフロジンが世界初取得。市場拡大：+100万人</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2021年</div>
+                        <div class="timeline-content">
+                            <h4>第2の革命：慢性腎臓病追加</h4>
+                            <p>非糖尿病患者への処方が可能に。市場拡大：+300万人</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2022年</div>
+                        <div class="timeline-content">
+                            <h4>第3の革命：慢性心不全（HFpEF）追加</h4>
+                            <p>心不全適応の完全制覇。市場拡大：+150万人</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">現在</div>
+                        <div class="timeline-content">
+                            <h4>「糖尿病の有無を問わない臓器保護薬」として確立</h4>
+                            <p>総市場規模：約1,050万人（開始時の約2倍）</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="usage-stats">
+                    <h3>適応症別処方実態（2024年）</h3>
+                    <div class="stat-item">
+                        <span class="stat-number">60%</span>
+                        <span>糖尿病＋心血管リスク</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">25%</span>
+                        <span>心不全（糖尿病併存）</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10%</span>
+                        <span>心不全（非糖尿病）</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5%</span>
+                        <span>CKD（非糖尿病）</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 将来展望と課題 -->
+            <section class="future-outlook">
+                <h2>🔮 SGLT2阻害薬の未来：第一選択薬への道</h2>
+                
+                <div class="clinical-evidence">
+                    <h3>5年以内に予想される変化</h3>
+                    <ol>
+                        <li><strong>糖尿病ガイドラインの改訂</strong>：心血管リスク患者では第一選択に格上げ</li>
+                        <li><strong>後発品の登場</strong>：薬価問題の解決（2030年頃から本格化）</li>
+                        <li><strong>専門医の壁の消失</strong>：全ての内科医が「臓器保護薬」として認識</li>
+                        <li><strong>新規適応の拡大</strong>：NASH/MASH、心房細動予防への可能性</li>
+                    </ol>
+                </div>
+
+                <div class="doctor-testimonial">
+                    <p><strong>糖尿病専門医の予想（50歳）：</strong><br>
+                    「あと5年もすれば、メトホルミンとSGLT2阻害薬の2剤が糖尿病治療のスタンダードになる。
+                    DPP-4阻害薬は第3選択に落ちるだろう」</p>
+                </div>
+
+                <div class="doctor-testimonial">
+                    <p><strong>循環器内科医の予想（42歳）：</strong><br>
+                    「糖尿病のない心不全患者にも当たり前に使うようになる。
+                    利尿薬、ACE阻害薬、β遮断薬、SGLT2阻害薬の4剤が標準治療」</p>
+                </div>
+            </section>
+
+            <!-- まとめ -->
+            <section class="conclusion">
+                <h2>🎯 結論：SGLT2阻害薬が示す医薬品イノベーションの理想形</h2>
+                
+                <div class="mechanism-diagram">
+                    <h3>なぜSGLT2阻害薬だけが成功したのか？</h3>
+                    <div style="text-align: left; margin: 2rem 0;">
+                        <h4>成功の4要素</h4>
+                        <ol>
+                            <li><strong>機序の革新性</strong>：「尿に糖を捨てる」常識破りの発想</li>
+                            <li><strong>エビデンスの蓄積</strong>：9年間で6つの主要CVOT完遂</li>
+                            <li><strong>タイミング</strong>：CVOTエビデンス重視の時代と合致</li>
+                            <li><strong>戦略的分化</strong>：各社が異なる医療ニーズに適応</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="clinical-evidence">
+                    <h3>PharmaDxが伝えるべきメッセージ</h3>
+                    <p><strong>SGLT2阻害薬の成功は、「機序の革新性 × エビデンスの蓄積 × タイミング × 組織力」が生む
+                    医薬品イノベーションの完璧な成功例である。</strong></p>
+                    
+                    <p>これは薬学教育において、「薬がどのように医療を変えるか」を学ぶ最も重要な現代的事例として
+                    位置づけられるべきです。</p>
+                    
+                    <p><strong>「似た薬が複数存在する理由」</strong>は、単なる偶然ではなく、
+                    患者・医師・医療システム全体の利益を最大化するための戦略的結果なのです。</p>
+                </div>
+            </section>
+
+            <!-- 関連ページへのリンク -->
+            <section class="related-links">
+                <h2>🔗 関連ページ</h2>
+                <div class="link-grid">
+                    <a href="../drugs/empagliflozin.html" class="related-card">
+                        <h3>エンパグリフロジン</h3>
+                        <p>心血管死減少のパイオニア</p>
+                    </a>
+                    <a href="../drugs/dapagliflozin.html" class="related-card">
+                        <h3>ダパグリフロジン</h3>
+                        <p>適応症拡大の戦略家</p>
+                    </a>
+                    <a href="../drugs/canagliflozin.html" class="related-card">
+                        <h3>カナグリフロジン</h3>
+                        <p>腎保護エビデンスの専門家</p>
+                    </a>
+                    <a href="./diuretic.html" class="related-card">
+                        <h3>利尿薬ガイド</h3>
+                        <p>急性期vs慢性期の使い分け</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PharmaDx</h3>
+                    <p>薬学の深い理解と感動的なストーリーで、医療の未来を切り開く</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>カテゴリ</h4>
+                    <ul>
+                        <li><a href="../index.html#drugs">薬剤一覧</a></li>
+                        <li><a href="../index.html#categories">薬効群</a></li>
+                        <li><a href="../index.html#stories">ストーリー</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>学習ツール</h4>
+                    <ul>
+                        <li><a href="../index.html#differentiation">使い分けガイド</a></li>
+                        <li><a href="../index.html#evolution">進化系統図</a></li>
+                        <li><a href="../index.html#clinical">臨床応用</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 PharmaDx. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // インタラクティブ選択ツール
+        function showScenario(scenarioId) {
+            // 全てのシナリオを非表示
+            const scenarios = document.querySelectorAll('.patient-scenario');
+            scenarios.forEach(scenario => {
+                scenario.classList.remove('active');
+            });
+            
+            // 全てのボタンの選択状態をリセット
+            const buttons = document.querySelectorAll('.selector-btn');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // 選択されたシナリオを表示
+            document.getElementById(scenarioId).classList.add('active');
+            
+            // 選択されたボタンをアクティブ状態に
+            event.target.classList.add('active');
+        }
+
+        // モバイルメニュー
+        function toggleMobileMenu() {
+            const nav = document.querySelector('.main-nav');
+            nav.classList.toggle('mobile-open');
+        }
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

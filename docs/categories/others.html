@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TDM実践ガイド - ジゴキシン、バンコマイシン、ワルファリンの血中濃度監視治療完全解説">
+    <meta name="keywords" content="TDM, 治療薬物モニタリング, ジゴキシン, バンコマイシン, ワルファリン, 血中濃度">
+    <title>TDM実践ガイド | PharmaDex 薬剤図鑑</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/drug-detail.css">
+    <style>
+        .tdm-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .drug-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            border-radius: 12px;
+            position: relative;
+        }
+        
+        .digoxin-section {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            color: #2d3436;
+        }
+        
+        .vancomycin-section {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: white;
+        }
+        
+        .warfarin-section {
+            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            color: white;
+        }
+        
+        .concentration-monitor {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            color: #2d3436;
+        }
+        
+        .level-indicator {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        
+        .level-therapeutic { background: #d1f2eb; color: #00b894; }
+        .level-subtherapeutic { background: #fff3cd; color: #fdcb6e; }
+        .level-toxic { background: #f8d7da; color: #e17055; }
+        
+        .dosing-calculator {
+            background: #f8f9fa;
+            border: 2px dashed #6c5ce7;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .monitoring-timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .monitoring-timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #6c5ce7;
+        }
+        
+        .timeline-point {
+            position: relative;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            color: #2d3436;
+        }
+        
+        .timeline-point::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            background: #6c5ce7;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #6c5ce7;
+        }
+        
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .case-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            color: #2d3436;
+            transition: transform 0.3s ease;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .adverse-effect-alert {
+            background: #ff7675;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+        
+        .success-indicator {
+            background: #00b894;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+        
+        .interaction-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .interaction-card {
+            background: white;
+            border: 2px solid #e17055;
+            border-radius: 8px;
+            padding: 1.5rem;
+            color: #2d3436;
+        }
+        
+        .protocol-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .protocol-table th,
+        .protocol-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .protocol-table th {
+            background: #6c5ce7;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .emergency-protocol {
+            background: linear-gradient(45deg, #e17055, #ff7675);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .concentration-graph {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+            color: #2d3436;
+        }
+        
+        .graph-bar {
+            height: 20px;
+            border-radius: 10px;
+            margin: 1rem 0;
+            position: relative;
+            background: linear-gradient(to right, #00b894 0%, #fdcb6e 70%, #e17055 100%);
+        }
+        
+        .concentration-marker {
+            position: absolute;
+            top: -5px;
+            width: 2px;
+            height: 30px;
+            background: #2d3436;
+        }
+        
+        .practical-tips {
+            background: #dfe6e9;
+            border-left: 4px solid #74b9ff;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+            color: #2d3436;
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="../index.html">PharmaDex</a></h1>
+                <p class="tagline">薬剤図鑑</p>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html#drugs" class="nav-link">薬剤一覧</a></li>
+                    <li><a href="../index.html#categories" class="nav-link">薬効群</a></li>
+                    <li><a href="../index.html#stories" class="nav-link">ストーリー</a></li>
+                    <li><a href="../index.html#differentiation" class="nav-link">使い分け</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- パンくずナビゲーション -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span class="separator">></span>
+            <a href="../index.html#categories">薬効群</a>
+            <span class="separator">></span>
+            <span class="current">TDM実践ガイド</span>
+        </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <section class="tdm-hero">
+        <div class="container">
+            <h1 style="font-size: 3rem; margin-bottom: 1rem;">🎯 TDM実践ガイド</h1>
+            <p style="font-size: 1.4rem; opacity: 0.9; margin-bottom: 2rem;">
+                Therapeutic Drug Monitoring<br>
+                血中濃度監視治療の科学と実践
+            </p>
+            <div class="stats-grid" style="max-width: 800px; margin: 0 auto;">
+                <div class="stat-card">
+                    <div style="font-size: 2rem; color: #74b9ff;">🔬</div>
+                    <div style="font-size: 1.2rem; font-weight: 600;">TDM対象薬剤</div>
+                    <div>ジゴキシン・バンコマイシン・ワルファリン</div>
+                </div>
+                <div class="stat-card">
+                    <div style="font-size: 2rem; color: #74b9ff;">⚡</div>
+                    <div style="font-size: 1.2rem; font-weight: 600;">有効性向上</div>
+                    <div>40-60%</div>
+                </div>
+                <div class="stat-card">
+                    <div style="font-size: 2rem; color: #74b9ff;">🛡️</div>
+                    <div style="font-size: 1.2rem; font-weight: 600;">副作用減少</div>
+                    <div>50-70%</div>
+                </div>
+                <div class="stat-card">
+                    <div style="font-size: 2rem; color: #74b9ff;">💊</div>
+                    <div style="font-size: 1.2rem; font-weight: 600;">投与量最適化</div>
+                    <div>個別化治療</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- 戻るボタン -->
+            <div class="back-button-container">
+                <button onclick="history.back()" class="back-button">
+                    ← 戻る
+                </button>
+            </div>
+
+            <!-- TDMの基本概念 -->
+            <section class="content-section">
+                <h2>🧬 TDMの基本概念：なぜ血中濃度を測るのか？</h2>
+                
+                <div class="emotion-quote">
+                    「薬の効果は血中濃度で決まる」- この単純な原理が、個別化医療の扉を開いた。同じ用量でも患者によって血中濃度は10倍以上違うことがある。TDMは、この個人差という医療の最大の壁を科学的に乗り越える手段である。
+                </div>
+
+                <h3>💡 TDMが必要な薬剤の3つの条件</h3>
+                
+                <div class="case-study-grid">
+                    <div class="case-card">
+                        <h4>🔬 1. 治療域が狭い</h4>
+                        <p><strong>有効血中濃度と中毒血中濃度が近接</strong></p>
+                        <ul>
+                            <li>ジゴキシン：有効域 1.0-2.0ng/mL、中毒域 >2.5ng/mL</li>
+                            <li>バンコマイシン：有効域 15-20μg/mL、中毒域 >20μg/mL</li>
+                            <li>ワルファリン：PT-INR 2.0-3.0、出血リスク >4.0</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="case-card">
+                        <h4>⚖️ 2. 個人差が大きい</h4>
+                        <p><strong>同一用量でも血中濃度に大きなばらつき</strong></p>
+                        <ul>
+                            <li>代謝酵素の遺伝的多型</li>
+                            <li>腎機能・肝機能の個人差</li>
+                            <li>年齢・性別・体重の影響</li>
+                            <li>併用薬による相互作用</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="case-card">
+                        <h4>🎯 3. 濃度-効果関係が明確</h4>
+                        <p><strong>血中濃度と効果・副作用の相関が確立</strong></p>
+                        <ul>
+                            <li>測定可能な信頼性の高い測定法</li>
+                            <li>薬効・副作用との明確な相関</li>
+                            <li>適切な投与調整指針</li>
+                            <li>コストベネフィットの妥当性</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ジゴキシンTDM -->
+            <section class="drug-section digoxin-section">
+                <h2>💛 ジゴキシンTDM：200年の歴史と現代の知恵</h2>
+                
+                <div class="concentration-monitor">
+                    <h3>🎯 ジゴキシン血中濃度の読み方</h3>
+                    
+                    <div class="concentration-graph">
+                        <h4>血中濃度範囲（ng/mL）</h4>
+                        <div class="graph-bar">
+                            <div class="concentration-marker" style="left: 25%;"></div>
+                            <div class="concentration-marker" style="left: 50%;"></div>
+                            <div class="concentration-marker" style="left: 75%;"></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 1rem; font-size: 0.9rem;">
+                            <span><strong>0.5</strong><br>無効域</span>
+                            <span><strong>1.0</strong><br>有効域下限</span>
+                            <span><strong>2.0</strong><br>有効域上限</span>
+                            <span><strong>2.5</strong><br>中毒域</span>
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
+                        <div class="level-indicator level-subtherapeutic">
+                            <strong>&lt;1.0 ng/mL：</strong> 効果不十分、増量検討
+                        </div>
+                        <div class="level-indicator level-therapeutic">
+                            <strong>1.0-2.0 ng/mL：</strong> 治療域、継続
+                        </div>
+                        <div class="level-indicator level-toxic">
+                            <strong>&gt;2.5 ng/mL：</strong> 中毒域、減量・休薬
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🕰️ ジゴキシンTDMプロトコル</h3>
+                
+                <div class="monitoring-timeline">
+                    <div class="timeline-point">
+                        <h4>投与開始時</h4>
+                        <p><strong>初回投与設計</strong></p>
+                        <ul>
+                            <li>年齢・腎機能・体重を考慮した用量設定</li>
+                            <li>一般的開始用量：0.125mg/日（高齢者は0.0625mg/日）</li>
+                            <li>心房細動：レートコントロール目標60-100bpm</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-point">
+                        <h4>定常状態到達（7-10日後）</h4>
+                        <p><strong>初回血中濃度測定</strong></p>
+                        <ul>
+                            <li>最終投与から12-24時間後（トラフ値）</li>
+                            <li>目標濃度：1.0-2.0ng/mL</li>
+                            <li>心房細動では1.0-1.5ng/mLで十分</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-point">
+                        <h4>用量調整</h4>
+                        <p><strong>血中濃度に基づく調整</strong></p>
+                        <ul>
+                            <li>&lt;1.0ng/mL → 25-50%増量</li>
+                            <li>2.0-2.5ng/mL → 25%減量</li>
+                            <li>&gt;2.5ng/mL → 休薬、中毒症状確認</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-point">
+                        <h4>定期モニタリング</h4>
+                        <p><strong>継続治療中の管理</strong></p>
+                        <ul>
+                            <li>安定患者：3-6ヶ月ごと</li>
+                            <li>腎機能変化時：2-4週間後</li>
+                            <li>併用薬変更時：1-2週間後</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="practical-tips">
+                    <h4>🚨 ジゴキシン中毒の早期発見</h4>
+                    <p><strong>非特異的症状に注意：</strong></p>
+                    <ul>
+                        <li><strong>消化器症状：</strong>食欲不振、悪心、嘔吐（最も多い）</li>
+                        <li><strong>精神神経症状：</strong>錯乱、視覚異常（黄視症）、頭痛</li>
+                        <li><strong>循環器症状：</strong>徐脈、不整脈、房室ブロック</li>
+                        <li><strong>血清K⁺低値：</strong>ジゴキシン中毒を増強</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- バンコマイシンTDM -->
+            <section class="drug-section vancomycin-section">
+                <h2>💜 バンコマイシンTDM：MRSA治療の最適化</h2>
+                
+                <div class="concentration-monitor">
+                    <h3>🔬 バンコマイシンTDM の新しいパラダイム</h3>
+                    
+                    <div style="background: rgba(255,255,255,0.9); color: #2d3436; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                        <h4>⚡ 2020年改訂：AUC/MIC重視への転換</h4>
+                        <p>従来のトラフ値15-20μg/mLから、<strong>AUC₀₋₂₄/MIC ≥400</strong>を目標とする新しい指針へ</p>
+                        <ul>
+                            <li><strong>有効性：</strong>AUC/MIC ≥400で治療成功率向上</li>
+                            <li><strong>安全性：</strong>高トラフ値による腎毒性リスク軽減</li>
+                            <li><strong>実用性：</strong>ベイジアン解析による正確なAUC推定</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="protocol-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>患者背景</th>
+                                    <th>目標AUC₀₋₂₄</th>
+                                    <th>推定トラフ値</th>
+                                    <th>投与量目安</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>軽症感染症</td>
+                                    <td>400-600</td>
+                                    <td>10-15 μg/mL</td>
+                                    <td>15-20 mg/kg q12h</td>
+                                </tr>
+                                <tr>
+                                    <td>重症感染症</td>
+                                    <td>600-800</td>
+                                    <td>15-20 μg/mL</td>
+                                    <td>20-25 mg/kg q12h</td>
+                                </tr>
+                                <tr>
+                                    <td>CNS感染症</td>
+                                    <td>700-1000</td>
+                                    <td>20-25 μg/mL</td>
+                                    <td>25-30 mg/kg q12h</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <h3>📊 バンコマイシンTDM実践プロトコル</h3>
+                
+                <div class="monitoring-timeline">
+                    <div class="timeline-point">
+                        <h4>初回投与設計</h4>
+                        <p><strong>患者情報に基づく用量計算</strong></p>
+                        <div class="dosing-calculator">
+                            <h5>💊 用量計算式</h5>
+                            <p><strong>初回用量 = 体重(kg) × 15-25mg/kg</strong></p>
+                            <ul>
+                                <li>腎機能正常：25-30mg/kg/日（分2-3回）</li>
+                                <li>軽度腎機能低下：20-25mg/kg/日</li>
+                                <li>中等度腎機能低下：15-20mg/kg/日</li>
+                                <li>高齢者：15-20mg/kg/日（腎機能考慮）</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-point">
+                        <h4>第1回測定（3-4投与後）</h4>
+                        <p><strong>定常状態接近時の血中濃度測定</strong></p>
+                        <ul>
+                            <li>トラフ値：次回投与直前（30分以内）</li>
+                            <li>ピーク値：投与終了1-2時間後（必要時）</li>
+                            <li>AUC計算：ベイジアン解析ソフト使用推奨</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-point">
+                        <h4>用量調整判定</h4>
+                        <p><strong>AUC₀₋₂₄/MIC目標達成評価</strong></p>
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5>🎯 調整基準</h5>
+                            <ul>
+                                <li><strong>AUC &lt; 400：</strong>用量増加または投与間隔短縮</li>
+                                <li><strong>AUC 400-600：</strong>軽症感染症では継続</li>
+                                <li><strong>AUC &gt; 600：</strong>重症感染症の目標、腎機能モニタリング強化</li>
+                                <li><strong>AUC &gt; 800：</strong>減量検討、腎毒性リスク高</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-point">
+                        <h4>継続モニタリング</h4>
+                        <p><strong>安全性と有効性の両立</strong></p>
+                        <ul>
+                            <li>血中濃度：週2-3回（安定するまで）</li>
+                            <li>腎機能：毎日（SCr、BUN、尿量）</li>
+                            <li>聴力：ベースライン、必要時</li>
+                            <li>感染症マーカー：CRP、WBC、発熱</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="adverse-effect-alert">
+                    <h4>⚠️ バンコマイシン腎毒性の管理</h4>
+                    <ul>
+                        <li><strong>リスク因子：</strong>高齢、高トラフ値、併用腎毒性薬、ICU患者</li>
+                        <li><strong>早期発見：</strong>SCr 0.5mg/dL以上の上昇 or ベースラインの50%以上上昇</li>
+                        <li><strong>対策：</strong>トラフ値&lt;15μg/mL維持、十分な水分補給、腎毒性薬併用回避</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-grid">
+                    <div class="case-card">
+                        <h4>📋 症例：MRSA肺炎（65歳男性）</h4>
+                        <p><strong>患者情報：</strong>体重70kg、SCr 1.2mg/dL、重症肺炎</p>
+                        <p><strong>初回投与：</strong>バンコマイシン 1000mg q12h</p>
+                        <p><strong>第1回測定：</strong>トラフ値 18μg/mL、AUC 520</p>
+                        <p><strong>判定：</strong>重症感染症としてAUC目標（600-800）未達</p>
+                        <p><strong>調整：</strong>1250mg q12h に増量</p>
+                        <div class="success-indicator">
+                            <strong>結果：</strong>AUC 680達成、7日後にCRP正常化
+                        </div>
+                    </div>
+                    
+                    <div class="case-card">
+                        <h4>📋 症例：MRSA菌血症（78歳女性）</h4>
+                        <p><strong>患者情報：</strong>体重50kg、SCr 1.8mg/dL、軽度腎機能低下</p>
+                        <p><strong>初回投与：</strong>バンコマイシン 750mg q24h</p>
+                        <p><strong>第1回測定：</strong>トラフ値 22μg/mL、AUC 680</p>
+                        <p><strong>判定：</strong>目標AUC達成も腎機能悪化リスク高</p>
+                        <p><strong>調整：</strong>750mg q36h に延長</p>
+                        <div class="success-indicator">
+                            <strong>結果：</strong>AUC 520維持、腎機能保持、治療成功
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ワルファリンTDM -->
+            <section class="drug-section warfarin-section">
+                <h2>💗 ワルファリンTDM：抗凝固療法の芸術</h2>
+                
+                <div class="concentration-monitor">
+                    <h3>🩸 PT-INR：最も身近なTDM指標</h3>
+                    
+                    <div style="background: rgba(255,255,255,0.9); color: #2d3436; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                        <h4>🎯 目標PT-INR設定の科学</h4>
+                        <p>ワルファリンの効果と安全性は、PT-INRという標準化された指標で精密に管理される</p>
+                        
+                        <div class="protocol-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>適応疾患</th>
+                                        <th>目標PT-INR</th>
+                                        <th>出血リスク</th>
+                                        <th>血栓リスク</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>心房細動</td>
+                                        <td>2.0-3.0</td>
+                                        <td>中等度</td>
+                                        <td>脳梗塞予防</td>
+                                    </tr>
+                                    <tr>
+                                        <td>機械弁（僧帽弁）</td>
+                                        <td>2.5-3.5</td>
+                                        <td>高</td>
+                                        <td>弁血栓予防</td>
+                                    </tr>
+                                    <tr>
+                                        <td>機械弁（大動脈弁）</td>
+                                        <td>2.0-3.0</td>
+                                        <td>中等度</td>
+                                        <td>弁血栓予防</td>
+                                    </tr>
+                                    <tr>
+                                        <td>深部静脈血栓症</td>
+                                        <td>2.0-3.0</td>
+                                        <td>中等度</td>
+                                        <td>再発予防</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>⚖️ ワルファリン投与量調整プロトコル</h3>
+                
+                <div class="monitoring-timeline">
+                    <div class="timeline-point">
+                        <h4>投与開始（1日目）</h4>
+                        <p><strong>患者背景を考慮した初回投与量</strong></p>
+                        <div class="dosing-calculator">
+                            <h5>💊 開始用量の決定</h5>
+                            <ul>
+                                <li><strong>一般成人：</strong>1-3mg/日（通常2mg/日）</li>
+                                <li><strong>高齢者（75歳以上）：</strong>1-1.5mg/日</li>
+                                <li><strong>低体重（&lt;50kg）：</strong>1-1.5mg/日</li>
+                                <li><strong>肝機能障害：</strong>1mg/日</li>
+                                <li><strong>出血リスク高：</strong>1mg/日</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-point">
+                        <h4>3日目</h4>
+                        <p><strong>初回PT-INR測定</strong></p>
+                        <ul>
+                            <li>PT-INR &lt; 1.5 → 0.5-1mg/日増量</li>
+                            <li>PT-INR 1.5-1.9 → 継続</li>
+                            <li>PT-INR 2.0-3.0 → 維持量として継続</li>
+                            <li>PT-INR &gt; 3.0 → 減量または休薬</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-point">
+                        <h4>1週間後</h4>
+                        <p><strong>効果の確認と微調整</strong></p>
+                        <ul>
+                            <li>目標PT-INR達成確認</li>
+                            <li>出血症状のチェック</li>
+                            <li>併用薬・食事の影響評価</li>
+                            <li>患者・家族への指導</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-point">
+                        <h4>安定期（2-4週間後）</h4>
+                        <p><strong>維持期間中の管理</strong></p>
+                        <ul>
+                            <li>安定患者：月1回のPT-INR測定</li>
+                            <li>併用薬変更時：1週間後に測定</li>
+                            <li>感染症等体調変化時：頻回測定</li>
+                            <li>外科手術前：休薬・ブリッジング検討</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>⚠️ ワルファリン相互作用の管理</h3>
+                
+                <div class="interaction-matrix">
+                    <div class="interaction-card">
+                        <h4>🔺 ワルファリン作用増強</h4>
+                        <p><strong>出血リスク上昇</strong></p>
+                        <ul>
+                            <li><strong>抗菌薬：</strong>ミコナゾール、ST合剤、クラリスロマイシン</li>
+                            <li><strong>NSAIDs：</strong>アスピリン、ロキソプロフェン</li>
+                            <li><strong>その他：</strong>アロプリノール、シメチジン</li>
+                        </ul>
+                        <div class="adverse-effect-alert">
+                            PT-INR 1週間後に再検、必要に応じて減量
+                        </div>
+                    </div>
+                    
+                    <div class="interaction-card">
+                        <h4>🔻 ワルファリン作用減弱</h4>
+                        <p><strong>血栓リスク上昇</strong></p>
+                        <ul>
+                            <li><strong>抗てんかん薬：</strong>フェニトイン、カルバマゼピン</li>
+                            <li><strong>ビタミンK：</strong>納豆、青汁、クロレラ</li>
+                            <li><strong>その他：</strong>リファンピシン、バルビツール</li>
+                        </ul>
+                        <div class="adverse-effect-alert">
+                            PT-INR低下時は増量検討、血栓症状に注意
+                        </div>
+                    </div>
+                    
+                    <div class="interaction-card">
+                        <h4>🍃 食事・サプリメント</h4>
+                        <p><strong>ビタミンK含有食品</strong></p>
+                        <ul>
+                            <li><strong>高含有：</strong>納豆、青汁、クロレラ（禁止）</li>
+                            <li><strong>中含有：</strong>ほうれん草、ブロッコリー（適量）</li>
+                            <li><strong>アルコール：</strong>適量は可、過量は危険</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="emergency-protocol">
+                    <h3>🚨 出血時の緊急対応プロトコル</h3>
+                    <div style="font-size: 1.1rem; line-height: 1.8;">
+                        <h4>重大な出血（生命に関わる出血）</h4>
+                        <ul>
+                            <li><strong>即座にワルファリン中止</strong></li>
+                            <li><strong>ビタミンK 10mg 静注</strong>（4-6時間で効果）</li>
+                            <li><strong>PCC（プロトロンビン複合体製剤）</strong>または<strong>新鮮凍結血漿</strong>（即効性）</li>
+                            <li><strong>PT-INR &lt; 1.5を目標</strong>に積極的補正</li>
+                        </ul>
+                        
+                        <h4>軽微な出血</h4>
+                        <ul>
+                            <li><strong>ワルファリン1-2回休薬</strong></li>
+                            <li><strong>ビタミンK 1-2.5mg 経口</strong></li>
+                            <li><strong>PT-INR再検査</strong>で効果確認</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TDM成功の実践的ポイント -->
+            <section class="content-section">
+                <h2>🎯 TDM成功の実践的ポイント</h2>
+                
+                <h3>📋 チーム医療でのTDM</h3>
+                
+                <div class="case-study-grid">
+                    <div class="case-card">
+                        <h4>👨‍⚕️ 医師の役割</h4>
+                        <ul>
+                            <li>適応判定と目標設定</li>
+                            <li>用量調整の最終決定</li>
+                            <li>副作用・相互作用の評価</li>
+                            <li>緊急時の対応指示</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="case-card">
+                        <h4>👩‍⚕️ 薬剤師の役割</h4>
+                        <ul>
+                            <li>薬物動態解析</li>
+                            <li>投与量・採血タイミングの提案</li>
+                            <li>相互作用のチェック</li>
+                            <li>患者指導・アドヒアランス支援</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="case-card">
+                        <h4>👩‍⚕️ 看護師の役割</h4>
+                        <ul>
+                            <li>正確な採血タイミング</li>
+                            <li>副作用の早期発見</li>
+                            <li>服薬状況の確認</li>
+                            <li>患者教育・継続支援</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="case-card">
+                        <h4>🔬 検査技師の役割</h4>
+                        <ul>
+                            <li>迅速・正確な測定</li>
+                            <li>緊急時対応体制</li>
+                            <li>測定法の標準化</li>
+                            <li>結果の適切な報告</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="practical-tips">
+                    <h4>💡 TDM効率化のコツ</h4>
+                    <h5>1. 採血タイミングの最適化</h5>
+                    <ul>
+                        <li><strong>トラフ値：</strong>次回投与30分前（ジゴキシン、バンコマイシン）</li>
+                        <li><strong>定常状態：</strong>半減期の5倍経過後（約7-10日）</li>
+                        <li><strong>緊急時：</strong>投与3-4回後でも有用な情報取得可能</li>
+                    </ul>
+                    
+                    <h5>2. ベイジアン解析の活用</h5>
+                    <ul>
+                        <li>少ない採血回数で正確な薬物動態パラメータ推定</li>
+                        <li>個別の腎機能・年齢を考慮した予測</li>
+                        <li>用量調整シミュレーション機能</li>
+                    </ul>
+                    
+                    <h5>3. 患者教育の重要性</h5>
+                    <ul>
+                        <li>TDMの意義と必要性の説明</li>
+                        <li>採血スケジュールの共有</li>
+                        <li>副作用の早期発見方法</li>
+                        <li>服薬アドヒアランスの向上支援</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 次世代TDM技術 -->
+            <section class="content-section">
+                <h2>🚀 次世代TDM技術：精密医療の未来</h2>
+                
+                <div class="case-study-grid">
+                    <div class="case-card">
+                        <h4>📱 リアルタイムモニタリング</h4>
+                        <p><strong>ウェアラブルデバイス連携</strong></p>
+                        <ul>
+                            <li>連続グルコースモニターの応用</li>
+                            <li>血中薬物濃度の連続測定</li>
+                            <li>AI予測アルゴリズムとの統合</li>
+                            <li>即座のアラート・用量調整提案</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="case-card">
+                        <h4>🧬 薬理遺伝学的検査</h4>
+                        <p><strong>個別化投与設計</strong></p>
+                        <ul>
+                            <li>CYP2C9・VKORC1遺伝子型（ワルファリン）</li>
+                            <li>腎機能予測モデル（バンコマイシン）</li>
+                            <li>代謝酵素活性予測（ジゴキシン）</li>
+                            <li>初回投与から最適化可能</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="case-card">
+                        <h4>🤖 AI・機械学習活用</h4>
+                        <p><strong>予測精度の飛躍的向上</strong></p>
+                        <ul>
+                            <li>ビッグデータ解析による薬物動態予測</li>
+                            <li>副作用発現リスクの事前予測</li>
+                            <li>最適な採血タイミング提案</li>
+                            <li>多剤併用時の相互作用予測</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="success-story" style="background: linear-gradient(45deg, #74b9ff, #6c5ce7);">
+                    <h3>🌟 TDMの未来ビジョン</h3>
+                    <div style="color: white; font-size: 1.1rem; line-height: 1.8;">
+                        <p>2030年、TDMは「血中濃度を測る」から「患者を全人的に理解する」医療技術へ進化するでしょう。</p>
+                        <p>遺伝子情報、生活習慣、環境因子、併用薬を統合的に解析し、一人ひとりに最適化された治療を提供する。</p>
+                        <p>薬剤師は「薬の専門家」から「個別化医療のコーディネーター」として、患者の人生に寄り添う存在になるのです。</p>
+                        <p><strong>TDMの究極の目標は、『この薬で、この患者の人生を最高にすること』なのです。</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- まとめ -->
+            <section class="content-section">
+                <h2>🎊 TDM実践の極意</h2>
+                
+                <div class="emotion-quote">
+                    TDMは単なる血中濃度測定ではない。それは患者一人ひとりに最適化された治療を実現する、個別化医療の核心である。科学的根拠に基づく精密な投与調整により、薬物治療の安全性と有効性を最大化し、患者のQOLを向上させることができる。
+                </div>
+
+                <h3>🎯 TDM成功の5つの鍵</h3>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎯</div>
+                        <div class="highlight">適切な適応</div>
+                        <div>治療域の狭い薬剤の選別</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">⏰</div>
+                        <div class="highlight">正確なタイミング</div>
+                        <div>定常状態での採血実施</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>
+                        <div class="highlight">科学的解析</div>
+                        <div>薬物動態学に基づく調整</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤝</div>
+                        <div class="highlight">チーム医療</div>
+                        <div>多職種連携による最適化</div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">👥</div>
+                        <div class="highlight">患者中心</div>
+                        <div>個別化された治療目標</div>
+                    </div>
+                </div>
+
+                <div class="success-story" style="background: linear-gradient(45deg, #6c5ce7, #a29bfe);">
+                    <h3>💝 薬学生・薬剤師の皆さんへ</h3>
+                    <div style="color: white; font-size: 1.1rem; line-height: 1.8;">
+                        <p>TDMは薬剤師の専門性が最も発揮される分野です。</p>
+                        <p>血中濃度の数値の向こうに、一人の患者の人生があることを忘れないでください。</p>
+                        <p>ジゴキシンの濃度調整で心不全患者の息苦しさを和らげ、バンコマイシンの最適化でMRSA感染症から患者を救い、ワルファリンの管理で血栓症を予防する。</p>
+                        <p><strong>あなたの知識と技術が、誰かの命を、人生を、家族の幸せを守ることができるのです。</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 関連リンク -->
+            <section class="content-section">
+                <h2>🔗 関連ページ</h2>
+                <div class="case-study-grid">
+                    <div class="case-card">
+                        <h4>📚 個別薬剤詳細</h4>
+                        <ul>
+                            <li><a href="../drugs/digoxin.html">ジゴキシン（ジギタリス）</a></li>
+                            <li><a href="../drugs/vancomycin.html">バンコマイシン</a></li>
+                            <li><a href="../drugs/warfarin.html">ワルファリン</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="case-card">
+                        <h4>🎯 薬効群別ガイド</h4>
+                        <ul>
+                            <li><a href="../cardiovascular-orchestra.html">循環器系薬剤オーケストラ</a></li>
+                            <li><a href="lipid.html">脂質異常症治療ガイド</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="case-card">
+                        <h4>📖 関連ストーリー</h4>
+                        <ul>
+                            <li><a href="../stories/digoxin_discovery.html">ジギタリス発見物語</a></li>
+                            <li><a href="../stories/vancomycin_story.html">バンコマイシン開発秘話</a></li>
+                            <li><a href="../index.html#stories">薬剤開発ストーリー一覧</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PharmaDex</h3>
+                    <p>薬学教育の未来を創造する</p>
+                </div>
+                <div class="footer-section">
+                    <h4>薬効群ガイド</h4>
+                    <ul>
+                        <li><a href="../cardiovascular-orchestra.html">循環器系オーケストラ</a></li>
+                        <li><a href="lipid.html">脂質異常症</a></li>
+                        <li><a href="others.html">TDM実践</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>学習リソース</h4>
+                    <ul>
+                        <li><a href="../index.html#drugs">薬剤一覧</a></li>
+                        <li><a href="../index.html#stories">開発ストーリー</a></li>
+                        <li><a href="../index.html#differentiation">使い分けガイド</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PharmaDex. 薬学教育のイノベーション</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/navigation.js"></script>
+    <script>
+        // TDMページ専用のインタラクティブ機能
+        document.addEventListener('DOMContentLoaded', function() {
+            // スムーズスクロール
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // 薬剤セクションのアニメーション
+            document.querySelectorAll('.drug-section').forEach(section => {
+                section.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.02)';
+                    this.style.transition = 'all 0.3s ease';
+                });
+                
+                section.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+
+            // ケースカードのホバーエフェクト
+            document.querySelectorAll('.case-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) rotate(1deg)';
+                    this.style.transition = 'all 0.3s ease';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) rotate(0deg)';
+                });
+            });
+
+            // 濃度グラフのインタラクティブ機能
+            const concentrationGraphs = document.querySelectorAll('.concentration-graph .graph-bar');
+            concentrationGraphs.forEach(graph => {
+                graph.addEventListener('click', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const clickX = e.clientX - rect.left;
+                    const percentage = (clickX / rect.width) * 100;
+                    
+                    // 新しいマーカーを作成
+                    const newMarker = document.createElement('div');
+                    newMarker.className = 'concentration-marker';
+                    newMarker.style.left = percentage + '%';
+                    newMarker.style.background = '#e17055';
+                    this.appendChild(newMarker);
+                    
+                    // 3秒後に削除
+                    setTimeout(() => {
+                        newMarker.remove();
+                    }, 3000);
+                    
+                    // 濃度値を計算して表示
+                    if (this.closest('.digoxin-section')) {
+                        const concentration = (percentage / 100 * 2.5).toFixed(1);
+                        alert(`ジゴキシン濃度: ${concentration}ng/mL\n${concentration < 1.0 ? '効果不十分' : concentration <= 2.0 ? '治療域' : '中毒域'}`);
+                    } else if (this.closest('.vancomycin-section')) {
+                        const concentration = Math.round(percentage / 100 * 30);
+                        alert(`バンコマイシントラフ値: ${concentration}μg/mL\n${concentration < 15 ? '効果不十分' : concentration <= 20 ? '適正域' : '腎毒性リスク'}`);
+                    }
+                });
+            });
+
+            // プロトコルテーブルの行ハイライト
+            document.querySelectorAll('.protocol-table tr').forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#f8f9fa';
+                    this.style.transition = 'background-color 0.2s ease';
+                });
+                
+                row.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '';
+                });
+            });
+
+            // スクロールアニメーション
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // 監視対象要素を設定
+            document.querySelectorAll('.drug-section, .timeline-point, .case-card, .interaction-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+
+            // 緊急プロトコルのパルス効果
+            const emergencyProtocols = document.querySelectorAll('.emergency-protocol');
+            emergencyProtocols.forEach(protocol => {
+                setInterval(() => {
+                    protocol.style.boxShadow = '0 0 20px rgba(225, 112, 85, 0.6)';
+                    setTimeout(() => {
+                        protocol.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+                    }, 1000);
+                }, 5000);
+            });
+
+            // 数値カウントアップアニメーション
+            function animateNumbers() {
+                const statValues = document.querySelectorAll('.stat-card div:last-child');
+                statValues.forEach(stat => {
+                    const text = stat.textContent;
+                    const number = parseInt(text);
+                    if (!isNaN(number) && number > 0) {
+                        let current = 0;
+                        const increment = number / 30;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= number) {
+                                current = number;
+                                clearInterval(timer);
+                            }
+                            stat.textContent = Math.floor(current) + text.replace(number, '').replace(Math.floor(current), '');
+                        }, 50);
+                    }
+                });
+            }
+
+            // ページロード時の数値アニメーション
+            setTimeout(animateNumbers, 1000);
+        });
+    </script>
+</body>
+</html>
