@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# PharmaDx Build Script - Phase 2 統合ビルドプロセス
+# OkusuriNote Build Script - Phase 2 統合ビルドプロセス
 # コンテンツ変換とWebサイト生成の統一スクリプト
 
 set -e  # エラー時即座に終了
 
-echo "🚀 PharmaDx統合ビルド開始"
+echo "🚀 OkusuriNote統合ビルド開始"
 echo "=================================================="
 echo "新構造: content/ → docs/ フロー"
 echo ""
@@ -110,7 +110,7 @@ done
 echo ""
 
 # Phase 5: ビルド完了レポート
-echo "🎉 PharmaDx統合ビルド完了！"
+echo "🎉 OkusuriNote統合ビルド完了！"
 echo "=================================================="
 
 # 最終統計
@@ -124,7 +124,7 @@ echo ""
 echo "🌐 確認方法:"
 echo "   ローカル確認: cd ../docs && python -m http.server 8000"
 echo "   ブラウザ: http://localhost:8000"
-echo "   GitHub Pages: https://penwitmi.github.io/pharm_dex"
+echo "   GitHub Pages: https://penwitmi.github.io/okusuri_note"
 echo ""
 
 echo "🔧 開発フロー:"
@@ -139,4 +139,4 @@ echo "   ✅ 統一ビルドプロセス"
 echo "   ✅ 明確な開発フロー"
 echo ""
 
-echo "🚀 PharmaDx - Next generation ready!"
+echo "🚀 OkusuriNote - Next generation ready!"

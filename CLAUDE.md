@@ -1,9 +1,9 @@
-# CLAUDE.md - PharmaDx プロジェクト
+# CLAUDE.md - OkusuriNote プロジェクト
 
 **最終更新**: 2025-07-01 00:15  
 **現在フェーズ**: Phase 3実行中（HTML First実装）- 第2バッチ実行中（4薬剤：digoxin、furosemide、perindopril、metformin）  
 **ダッシュボード**: MASTER_STATUS_DASHBOARD.md（CEO最終責任、Manager実務更新）  
-**公開サイト**: https://penwitmi.github.io/pharm_dex  
+**公開サイト**: https://penwitmi.github.io/okusuri_note  
 **進捗管理**: MASTER_STATUS_DASHBOARD.md（プロジェクトルートに配置）
 
 ## 🎉 Phase 3完全完了（2025-07-01 00:43）
@@ -13,11 +13,11 @@
 **第3バッチ**: ✅ 完了（5薬剤、既存含む）  
 **全体進捗**: 22/22薬剤完成（100%）🎊
 
-**PharmaDxプロジェクト完成！**
+**OkusuriNoteプロジェクト完成！**
 
 ## 🌟 プロジェクト概要
 
-**PharmaDx - 薬剤図鑑** は、薬学生から臨床医まで対応する包括的な薬学教育Webプラットフォームです。「なぜ似た薬が複数存在するのか」への明確な回答を通じて、感動的なストーリーと詳細な薬学情報を統合し、真の薬学的理解を促進します。
+**OkusuriNote - 薬剤図鑑** は、薬学生から臨床医まで対応する包括的な薬学教育Webプラットフォームです。「なぜ似た薬が複数存在するのか」への明確な回答を通じて、感動的なストーリーと詳細な薬学情報を統合し、真の薬学的理解を促進します。
 
 ### 🏗️ アーキテクチャ設計：HTML First（2025-06-30より）
 
@@ -34,7 +34,7 @@ docs/generated/    →    GitHub Pages
 - **source_materials/**: 下書き・メモ・構想用（補助的役割）
 - **tools/**: 必要時のみ使用（補助ツール）
 
-**重要**: PharmaDxの核心価値「なぜ似た薬が複数存在するのか」を最大限表現するため、HTML直接編集により感動的で教育的なコンテンツを創造します。
+**重要**: OkusuriNoteの核心価値「なぜ似た薬が複数存在するのか」を最大限表現するため、HTML直接編集により感動的で教育的なコンテンツを創造します。
 
 ## 📊 現在の実装状況（2025-06-30 23:04更新）
 
@@ -58,7 +58,7 @@ docs/generated/    →    GitHub Pages
 ### 📁 ディレクトリ構造（2025-06-30構造改革完了）
 
 ```
-pharma_dex/
+okusuri_note/
 ├── MASTER_STATUS_DASHBOARD.md      # 進捗管理ダッシュボード（2025-06-30移動）
 ├── CLAUDE.md                       # プロジェクト概要（このファイル）
 ├── source_materials/               # コンテンツ原稿（論理構造）
@@ -166,14 +166,14 @@ cd docs && python -m http.server 8000
 - **Manager注意**: Worktree自動作成機能は使用禁止
 
 ### 作業場所の厳守
-- すべての作業は `/Users/nishimototakashi/claude code/ai-team/code/pharma_dex/` 内で実施
+- すべての作業は `/Users/nishimototakashi/claude code/ai-team/code/okusuri_note/` 内で実施
 - AI-Team外での作業は厳禁
 - **異なる場所での作業は「虚偽報告」の主原因**
 
 
 ### docs/ディレクトリの性質（重要）
 **🚨 docs/は公開コンテンツ専用ディレクトリ**
-- **GitHub Pages自動公開**: docs/内のすべてのファイルがhttps://penwitmi.github.io/pharm_dexで公開される
+- **GitHub Pages自動公開**: docs/内のすべてのファイルがhttps://penwitmi.github.io/okusuri_noteで公開される
 - **公開対象のみ配置**: HTML、CSS、JavaScript、画像、データファイルのみ
 - **内部文書は厳禁**: 開発ログ、バックアップファイル、TODO、設計書、会議メモなどは絶対に配置禁止
 - **機密情報の漏洩リスク**: うっかり内部文書を配置すると全世界に公開される
@@ -393,7 +393,7 @@ cd docs && python -m http.server 8000
   - **品質達成**: 全薬剤が目標111-124%達成、PharmaDx品質基準確立
   - **プロジェクト管理**: MASTER_STATUS_DASHBOARD.mdプロジェクトルート移動完了
   - **ドキュメント**: Phase 3実行計画、品質評価、開発知見を含む23ファイル
-  - **リモートプッシュ**: https://github.com/PENwitmi/pharm_dex へ正常プッシュ完了
+  - **リモートプッシュ**: https://github.com/PENwitmi/okusuri_note へ正常プッシュ完了
 - **2025-06-30 23:30**: 📝 Phase 3実行計画策定完了 & source_materials宝庫の活用戦略
   - **計画書作成**: PHASE3_HTML_FIRST_EXECUTION_PLAN.md（詳細実行計画）
   - **タスク分解**: PHASE3_TASK_BREAKDOWN.md（開発者向け具体的指示）

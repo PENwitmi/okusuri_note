@@ -1,6 +1,6 @@
 {
   "project": {
-    "name": "PharmaDx",
+    "name": "OkusuriNote",
     "version": "1.0.0",
     "description": "薬学生のための薬剤図鑑 - Phase 1: 20薬剤実装",
     "strategy": "既存の高品質コンテンツを最大化"
@@ -290,10 +290,10 @@
   },
 
   "seoSettings": {
-    "siteName": "PharmaDx - 薬剤図鑑",
+    "siteName": "OkusuriNote - 薬剤図鑑",
     "description": "薬学生のための薬剤学習プラットフォーム。20の重要薬剤、薬効群比較、感動ストーリーで薬学を深く理解",
     "keywords": ["薬学", "薬剤", "国試", "暗記", "使い分け", "ARB", "PPI", "スタチン"],
-    "author": "PharmaDx Team",
+    "author": "OkusuriNote Team",
     "language": "ja"
   },
 

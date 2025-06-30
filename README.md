@@ -1,14 +1,14 @@
-# PharmaDx - 薬剤図鑑 | 薬学教育プラットフォーム
+# OkusuriNote - 薬剤図鑑 | 薬学教育プラットフォーム
 
 ## 🌟 概要
 
-**PharmaDx - 薬剤図鑑** は、薬学生から臨床医まで対応する包括的な薬学教育Webプラットフォームです。「なぜ似た薬が複数存在するのか？」への明確な回答を通じて、感動的なストーリーと詳細な薬学情報を統合し、真の薬学的理解を促進します。
+**OkusuriNote - 薬剤図鑑** は、薬学生から臨床医まで対応する包括的な薬学教育Webプラットフォームです。「なぜ似た薬が複数存在するのか？」への明確な回答を通じて、感動的なストーリーと詳細な薬学情報を統合し、真の薬学的理解を促進します。
 
-🔗 **公開サイト**: https://penwitmi.github.io/pharm_dex
+🔗 **公開サイト**: https://penwitmi.github.io/okusuri_note
 
 ### 🏗️ アーキテクチャ設計：HTML First（2025-06-30より）
 
-PharmaDxは**品質優先・価値最大化**を核心とする新設計を採用しています。
+OkusuriNoteは**品質優先・価値最大化**を核心とする新設計を採用しています。
 
 ```
 HTML直接編集（最優先）
@@ -22,7 +22,7 @@ docs/generated/    →    GitHub Pages
 - **source_materials/**: 下書き・メモ・構想用（補助的役割）
 - **tools/**: 必要時のみ使用（補助ツール）
 
-この設計により、医師の証言、歴史的ストーリー、視覚的階層など、PharmaDxの核心価値「感動的で教育的」なコンテンツを最大限に表現できます。
+この設計により、医師の証言、歴史的ストーリー、視覚的階層など、OkusuriNoteの核心価値「感動的で教育的」なコンテンツを最大限に表現できます。
 
 **⚠️ 重要**: `docs/`は公開コンテンツ専用ディレクトリです。内部文書・開発ログ・バックアップファイル等は配置厳禁（全世界に公開されます）。
 
@@ -64,7 +64,7 @@ docs/generated/    →    GitHub Pages
 ## 📁 プロジェクト構造（Phase 2 再構築完了）
 
 ```
-pharma_dex/
+okusuri_note/
 ├── docs/                           # 公開Webサイト（GitHub Pages）
 │   ├── index.html                  # メインページ
 │   ├── generated/                  # 高品質HTMLコンテンツ
@@ -104,7 +104,7 @@ pharma_dex/
 
 ```bash
 # プロジェクトディレクトリに移動
-cd /Users/nishimototakashi/claude\ code/ai-team/code/pharma_dex
+cd /Users/nishimototakashi/claude\ code/ai-team/code/okusuri_note
 
 # 高品質HTMLテンプレートから開始
 cp templates/drug-detail-premium.html docs/generated/drugs/NEW_drug.html
@@ -230,4 +230,4 @@ python -m http.server 8000
 
 ---
 
-**PharmaDx** - 薬学教育の未来を創造する
+**OkusuriNote** - 薬学教育の未来を創造する

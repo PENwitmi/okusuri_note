@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * PharmaDx Content Conversion Script
+ * OkusuriNote Content Conversion Script
  * 既存の高品質Markdownコンテンツを統一されたWeb体験に変換
  * 
  * 戦略: 「作る」→「磨く」
@@ -17,7 +17,7 @@ const { marked } = require('marked');
 // 設定読み込み
 const config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
 
-class PharmaDxConverter {
+class OkusuriNoteConverter {
     constructor() {
         this.drugDatabase = new Map();
         this.drugGroups = new Map();
@@ -987,7 +987,7 @@ ${drugGroup}は[メカニズム]により[効果]を実現する薬剤群です�
 
 ---
 
-*このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。*`;
+*このモデルは最新のエビデンスに基づく。OkusuriNote品質基準5.0/5.0を満たす完全版。*`;
     }
 
     integrateExistingInfo(template, existingContent) {
@@ -1557,8 +1557,8 @@ ${drugGroup}は[メカニズム]により[効果]を実現する薬剤群です�
 
 // メイン実行
 if (require.main === module) {
-    const converter = new PharmaDxConverter();
+    const converter = new OkusuriNoteConverter();
     converter.convert().catch(console.error);
 }
 
-module.exports = PharmaDxConverter;
+module.exports = OkusuriNoteConverter;
