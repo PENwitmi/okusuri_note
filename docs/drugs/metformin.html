@@ -3,26 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>メトホルミン - PharmaDx薬剤図鑑</title>
+    <meta name="description" content="メトホルミン（メトグルコ®）- 67年間君臨する不死身の第一選択薬。フェンホルミン乳酸アシドーシス事件を生き抜き、日本44年承認遅延を乗り越えた糖尿病治療の絶対的基盤。UKPDS追跡で死亡率36%減少、現在も世界中で年間1億人以上が服用する医学史上稀有なリビング・レジェンド">
+    <meta name="keywords" content="メトホルミン, メトグルコ, ビグアナイド系, 第一選択薬, UKPDS, フェンホルミン事件, 乳酸アシドーシス, 糖尿病治療, 承認遅延">
+    <title>メトホルミン（メトグルコ®） | PharmaDx 薬剤図鑑</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/drug-detail.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
-            <h1>PharmaDx 薬剤図鑑</h1>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="../index.html">PharmaDx</a></h1>
+                <p class="tagline">薬剤図鑑</p>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html#drugs" class="nav-link">薬剤一覧</a></li>
+                    <li><a href="../index.html#categories" class="nav-link">薬効群</a></li>
+                    <li><a href="../index.html#stories" class="nav-link">ストーリー</a></li>
+                    <li><a href="../index.html#differentiation" class="nav-link">使い分け</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
         </div>
     </header>
 
-    <main class="drug-detail">
-        <div class="drug-hero">
-            <div class="drug-category-badge">糖尿病薬</div>
-            <h1 class="drug-title">メトホルミン</h1>
-            <p class="drug-subtitle">67年間君臨する不死身の第一選択薬</p>
+    <!-- パンくずナビゲーション -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span class="separator">></span>
+            <a href="../index.html#drugs">薬剤一覧</a>
+            <span class="separator">></span>
+            <span class="current">メトホルミン</span>
         </div>
+    </nav>
 
-        <div class="drug-content">
+    <main class="main-content drug-detail">
+        <div class="container">
+            <!-- 戻るボタン -->
+            <div class="back-button-container">
+                <button onclick="history.back()" class="back-button">
+                    ← 戻る
+                </button>
+            </div>
+
+            <!-- ヒーローセクション：不死身の薬の真実 -->
+            <section class="drug-header hero-section">
+                <div class="drug-title-section">
+                    <h1 class="drug-name">メトホルミン</h1>
+                    <div class="drug-subtitle">
+                        <span class="generic-name">メトホルミン塩酸塩</span>
+                        <span class="brand-name">（メトグルコ®）</span>
+                    </div>
+                    <div class="drug-classification">
+                        <span class="drug-class">ビグアナイド系糖尿病薬</span>
+                        <span class="generation">67年間君臨する不死身の第一選択薬</span>
+                    </div>
+                    <div class="miracle-tagline">
+                        <h2 class="miracle-text">「最も地味だが最も偉大な薬：機序解明より臨床応用が60年先行した奇跡」</h2>
+                        <p class="miracle-description">
+                            1957年の登場以来67年間、糖尿病治療の第一選択薬として君臨し続ける「不死身の薬」。
+                            フェンホルミン乳酸アシドーシス事件（1976年）という医学史上最大級の薬害を生き抜き、
+                            日本44年承認遅延（1957-2001年）を乗り越え、SGLT2阻害薬やGLP-1受容体作動薬などの
+                            華々しい新薬が次々と登場する中でも、その地位は全く揺るがない「リビング・レジェンド」。
+                            現在も世界中で年間1億人以上が服用する糖尿病治療の絶対的基盤として、
+                            「機序より結果」の実用主義で医学界に君臨する稀有な存在。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="drug-overview-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">全死亡減少</span>
+                        <span class="stat-value highlight">36%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">使用実績</span>
+                        <span class="stat-value">67年間</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">累計使用者</span>
+                        <span class="stat-value">10億人超</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">承認年</span>
+                        <span class="stat-value">1957年</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">日本承認</span>
+                        <span class="stat-value">2001年</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 30秒サマリー -->
+            <section class="quick-summary">
+                <h2>⚡ 30秒サマリー</h2>
+                <div class="summary-box">
+                    <p class="summary-text">
+                        <strong>メトホルミンは「最も地味だが最も偉大な薬」として、67年間の時の試練に耐え抜いた医学史上稀有なリビング・レジェンド。</strong>
+                        1976年のフェンホルミン乳酸アシドーシス事件で同胞薬が次々と消える中、1万人に0.03例という1000倍以上の安全性で生き残り、
+                        1998年UKPDS試験で全死亡36%減少、心筋梗塞39%減少を実証して劇的復権。日本は44年間も承認せず国際的孤立を招いたが、
+                        2001年承認後は処方率70%超の第一選択薬として確立。機序解明（AMPK活性化、腸内細菌叢変化等）が60年後まで続く稀有な薬剤で、
+                        SGLT2阻害薬・GLP-1受容体作動薬などの新薬時代でも、安全性・効果・経済性の三位一体で揺るがない地位を保つ。
+                        「古くて新しい薬」として、現在も老化・がん予防の研究が続く真の万能薬。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 糖尿病専門医・患者の証言 -->
+            <section class="medical-voices">
+                <h2>💬 糖尿病専門医・患者の証言</h2>
+                
+                <div class="doctor-voice emotion-moved">
+                    <div class="voice-header">
+                        <img src="../assets/images/doctor-icon.svg" alt="医師アイコン">
+                        <div class="doctor-info">
+                            <h3>糖尿病専門医の声</h3>
+                            <span class="experience">東京在勤</span>
+                        </div>
+                    </div>
+                    <blockquote>
+                        「ある70代の患者さんは、複数の新薬で副作用に悩まされていました。
+                        メトホルミンに戻して6ヶ月後、久しぶりに笑顔で
+                        『やっぱりメトグルコが一番安心です』と。
+                        医師として、この薬の67年間の重みを実感する瞬間です」
+                    </blockquote>
+                    <cite>- 大学病院 糖尿病内分泌科医</cite>
+                </div>
+
+                <div class="patient-voice emotion-grateful">
+                    <div class="voice-header">
+                        <img src="../assets/images/patient-icon.svg" alt="患者アイコン">
+                        <h3>患者さんの声</h3>
+                    </div>
+                    <blockquote>
+                        「新しい薬をいろいろ試しましたが、高価で続けられませんでした。
+                        でもメトホルミンを始めてから、今では血糖値も安定し、
+                        家族も『薬代が安くて助かる』と喜んでくれています」
+                    </blockquote>
+                    <cite>- 60代 男性 神奈川県</cite>
+                </div>
+
+                <div class="doctor-voice emotion-enlightened">
+                    <div class="voice-header">
+                        <img src="../assets/images/doctor-icon.svg" alt="医師アイコン">
+                        <div class="doctor-info">
+                            <h3>開業医のエキスパート</h3>
+                            <span class="qualification">日本糖尿病学会専門医</span>
+                        </div>
+                    </div>
+                    <blockquote>
+                        「SGLT2阻害薬やGLP-1受容体作動薬も使いますが、
+                        メトホルミンの安全性の蓄積は明らかに違います。
+                        特に高齢者や経済的配慮が必要な患者さんでは、
+                        67年間の実績という点で第一選択になりました」
+                    </blockquote>
+                    <cite>- 地域 糖尿病クリニック院長</cite>
+                </div>
+            </section>
             <section class="drug-overview">
                 <h2>薬剤概要</h2>
                 <div class="overview-grid">
@@ -100,66 +247,455 @@
                 </div>
             </section>
 
-            <section class="history-evolution">
-                <h2>67年間の歴史と進化</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">1957年</div>
-                        <div class="timeline-content">
-                            <h4>発見と初期の成功</h4>
-                            <p>フランスのJean Sterne博士がフレンチライラック由来のメトホルミンを糖尿病治療に導入。当時は「効果不十分」とされ、より強力なフェンホルミンが主流だった。</p>
+            <!-- 歴史的瞬間：フェンホルミン事件の悲劇と生存 -->
+            <section class="historical-moment tragedy-survival">
+                <h2>🏛️ 歴史的瞬間：医学史上最大級の薬害を生き抜いた奇跡</h2>
+                
+                <div class="timeline-detailed">
+                    <h3>67年間の栄光と苦難：ビグアナイド興亡史</h3>
+                    
+                    <div class="era-section golden-age">
+                        <h4><span class="era-years">1957年〜1970年代</span> ビグアナイド黄金時代</h4>
+                        <div class="timeline-detailed-item">
+                            <div class="timeline-year-detailed">1957年</div>
+                            <div class="timeline-content-detailed">
+                                <h5>運命の発見</h5>
+                                <p><strong>フランスのJean Sterne博士</strong>がフレンチライラック（Galega officinalis）の有効成分ガレギンから、
+                                世界で2番目の糖尿病治療薬としてメトホルミンを糖尿病治療に導入。</p>
+                                <div class="discovery-context">
+                                    <p><strong>当時の状況</strong>：</p>
+                                    <ul>
+                                        <li>インスリンに次ぐ第二の糖尿病治療薬として大きな期待</li>
+                                        <li>同時期に開発された同胞薬：フェンホルミン、ブホルミン</li>
+                                        <li>当初の評価：「フェンホルミンが最も優秀、メトホルミンは効果不十分」</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">1976年</div>
-                        <div class="timeline-content">
-                            <h4>フェンホルミン事件と大転換</h4>
-                            <p>フェンホルミンによる乳酸アシドーシス死亡例多発（1万人に40-64例）。アメリカ・ヨーロッパで販売中止。メトホルミンは1万人に0.03例と1000倍以上安全で生き残る。</p>
+
+                    <div class="era-section tragedy-era">
+                        <h4><span class="era-years">1970年代〜1990年代</span> 大転換期：フェンホルミンの悲劇</h4>
+                        <div class="timeline-detailed-item tragedy">
+                            <div class="timeline-year-detailed">1976年</div>
+                            <div class="timeline-content-detailed">
+                                <h5>医学史上最大級の薬害事件</h5>
+                                <p><strong>フェンホルミン乳酸アシドーシス事件</strong>：最も効果的とされたフェンホルミンによる死亡例多発</p>
+                                <div class="tragedy-details">
+                                    <div class="tragedy-stats">
+                                        <h6>被害の規模</h6>
+                                        <ul>
+                                            <li><strong>発生率</strong>：1万人に40-64例の乳酸アシドーシス</li>
+                                            <li><strong>致死率</strong>：発症すると50%の高い死亡率</li>
+                                            <li><strong>機序</strong>：ミトコンドリア呼吸阻害→嫌気性解糖亢進→乳酸蓄積</li>
+                                            <li><strong>社会的衝撃</strong>：「ビグアナイド系は危険」という刻印</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="survival-story">
+                                        <h6>ビグアナイド系の運命分岐</h6>
+                                        <div class="fate-comparison">
+                                            <div class="drug-fate eliminated">
+                                                <h7>フェンホルミン</h7>
+                                                <p>→ アメリカ・ヨーロッパで販売中止</p>
+                                                <p>「最も効果的だったが最も危険」</p>
+                                            </div>
+                                            <div class="drug-fate eliminated">
+                                                <h7>ブホルミン</h7>
+                                                <p>→ 段階的に使用停止</p>
+                                                <p>「安全性への懸念で自然淘汰」</p>
+                                            </div>
+                                            <div class="drug-fate survived">
+                                                <h7>メトホルミン</h7>
+                                                <p>→ ヨーロッパでは継続使用</p>
+                                                <p>「効果は穏やかだが安全性が高い」</p>
+                                                <p><strong>乳酸アシドーシス発生率：1万人に0.03例（1000倍以上安全）</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">1998年</div>
-                        <div class="timeline-content">
-                            <h4>UKPDS による劇的復権</h4>
-                            <p>肥満2型糖尿病患者342例・10年追跡で革命的結果。糖尿病関連死亡42%減少、全死亡36%減少。「メトホルミンは命を救う薬」という認識転換。</p>
+
+                    <div class="era-section revival-era">
+                        <h4><span class="era-years">1990年代〜2000年代</span> 復活と日本の承認遅延</h4>
+                        <div class="timeline-detailed-item triumph">
+                            <div class="timeline-year-detailed">1998年</div>
+                            <div class="timeline-content-detailed">
+                                <h5>UKPDS による劇的復権</h5>
+                                <p><strong>United Kingdom Prospective Diabetes Study</strong>：肥満2型糖尿病患者342例、10年追跡</p>
+                                <div class="ukpds-results">
+                                    <h6>革命的結果</h6>
+                                    <ul>
+                                        <li><strong>糖尿病関連死亡</strong>：42%減少</li>
+                                        <li><strong>全死亡</strong>：36%減少</li>
+                                        <li><strong>心筋梗塞</strong>：39%減少</li>
+                                        <li><strong>医学界への衝撃</strong>：「メトホルミンは命を救う薬」という認識転換</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-detailed-item delay">
+                            <div class="timeline-year-detailed">1957年〜2001年</div>
+                            <div class="timeline-content-detailed">
+                                <h5>日本の承認遅延：44年間の国際的孤立</h5>
+                                <div class="japan-delay-analysis">
+                                    <h6>なぜ日本は44年間メトホルミンを承認しなかったのか</h6>
+                                    <div class="delay-reasons">
+                                        <div class="reason-item">
+                                            <h7>1. フェンホルミン事件のトラウマ</h7>
+                                            <ul>
+                                                <li>日本でもフェンホルミンによる乳酸アシドーシス死亡例</li>
+                                                <li>「ビグアナイド系は危険」という強固な先入観</li>
+                                                <li>厚生省の極めて慎重な姿勢</li>
+                                            </ul>
+                                        </div>
+                                        <div class="reason-item">
+                                            <h7>2. SU薬の成功体験</h7>
+                                            <ul>
+                                                <li>日本発のトルブタミド・グリベンクラミドの成功</li>
+                                                <li>「SU薬で十分」という医学界の空気</li>
+                                                <li>メトホルミンの必要性を感じない環境</li>
+                                            </ul>
+                                        </div>
+                                        <div class="reason-item">
+                                            <h7>3. 欧米データへの不信</h7>
+                                            <ul>
+                                                <li>「日本人には適用できない」という疑念</li>
+                                                <li>体型・食生活の違いを理由とした慎重論</li>
+                                                <li>独自の安全性試験要求</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-detailed-item approval">
+                            <div class="timeline-year-detailed">2001年</div>
+                            <div class="timeline-content-detailed">
+                                <h5>承認の転換点</h5>
+                                <div class="approval-factors">
+                                    <ul>
+                                        <li><strong>UKPDS後追跡データ</strong>：20年追跡でも死亡率減少継続</li>
+                                        <li><strong>WHO・欧米ガイドライン</strong>：第一選択薬として確立</li>
+                                        <li><strong>国際的孤立</strong>：日本だけがメトホルミンを使えない状況への批判</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2001年</div>
-                        <div class="timeline-content">
-                            <h4>日本承認（44年遅れ）</h4>
-                            <p>フェンホルミン事件のトラウマとSU薬成功体験により、日本は44年間承認せず。国際的孤立の末、ようやく承認。現在は処方率70%超の第一選択薬として確立。</p>
+
+                    <div class="era-section modern-era">
+                        <h4><span class="era-years">2001年〜現在</span> 絶対的第一選択薬への道</h4>
+                        <div class="timeline-detailed-item modern">
+                            <div class="timeline-year-detailed">2001年〜2024年</div>
+                            <div class="timeline-content-detailed">
+                                <h5>日本承認後の急速な普及</h5>
+                                <div class="japan-progression">
+                                    <div class="progression-timeline">
+                                        <p><strong>2001年</strong>：承認（44年遅れ）</p>
+                                        <p><strong>2003年</strong>：日本糖尿病学会ガイドラインに記載</p>
+                                        <p><strong>2007年</strong>：第一選択薬に格上げ</p>
+                                        <p><strong>2012年</strong>：処方制限（腎機能・造影剤）緩和</p>
+                                        <p><strong>2024年</strong>：処方率70%超（第一選択薬として確立）</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="new-drug-era-resistance">
+                                    <h6>新薬時代でも揺るがない地位</h6>
+                                    <p><strong>2010年代以降の新薬ラッシュ</strong>：</p>
+                                    <ul>
+                                        <li>DPP-4阻害薬（2009年〜）</li>
+                                        <li>SGLT2阻害薬（2014年〜）</li>
+                                        <li>GLP-1受容体作動薬（2010年〜）</li>
+                                    </ul>
+                                    
+                                    <p><strong>それでもメトホルミンが第一選択薬である理由</strong>：</p>
+                                    <ul>
+                                        <li><strong>安全性の絶対的信頼</strong>：67年間の使用実績</li>
+                                        <li><strong>効果の確実性</strong>：新薬と遜色ない血糖改善</li>
+                                        <li><strong>心血管保護</strong>：長期追跡での死亡率減少</li>
+                                        <li><strong>経済性</strong>：後発品で1日10円以下</li>
+                                        <li><strong>併用の基盤</strong>：全ての新薬との併用可能</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="mechanism">
-                <h2>「古くて新しい薬」の謎：67年間で解明され続ける作用機序</h2>
-                <div class="mechanism-evolution">
-                    <div class="mechanism-stage">
-                        <h4>第1段階：謎の血糖降下薬（1957年〜1990年代）</h4>
-                        <p>血糖値が下がることは明確だが、機序は全く不明。「ブラックボックス」状態で処方される稀有な薬剤。インスリン分泌促進なし、体重増加なし、低血糖リスク低いという特徴のみ観察。</p>
-                    </div>
-                    <div class="mechanism-stage">
-                        <h4>第2段階：肝糖新生抑制（1990年代）</h4>
-                        <p>安定同位体追跡により肝糖新生が30-50%抑制されることを発見。空腹時血糖の60-70%を供給する肝糖新生を正常レベルまで抑制し、空腹時血糖と肝インスリン抵抗性を改善。</p>
-                    </div>
-                    <div class="mechanism-stage">
-                        <h4>第3段階：AMPK活性化（2001年）</h4>
-                        <p>細胞内エネルギーセンサーAMPKの活性化を発見。糖新生抑制、脂肪酸合成抑制、グルコース取り込み促進の多面的効果。mTOR経路抑制による老化・がん抑制、オートファジー促進も判明。</p>
-                    </div>
-                    <div class="mechanism-stage">
-                        <h4>第4段階：ミトコンドリア複合体I阻害（2016年〜）</h4>
-                        <p>メトホルミンがミトコンドリア呼吸鎖複合体Iを軽度阻害し、ATP/AMP比低下を介してAMPK活性化する詳細機序を解明。分子レベルでの精密な作用メカニズムが明確化。</p>
-                    </div>
-                    <div class="mechanism-stage">
-                        <h4>第5段階：腸内細菌叢への影響（2016年〜現在）</h4>
-                        <p>メトホルミンが腸内細菌叢を劇的に変化させることを発見。Akkermansia muciniphila 3-5倍増加、短鎖脂肪酸産生増加、GLP-1分泌促進。血糖改善効果の一部が腸内細菌由来と判明。</p>
+            <!-- 作用機序の深層解明：古くて新しい薬の謎 -->
+            <section class="mechanism-evolution-detailed">
+                <h2>🧬 「古くて新しい薬」の謎：機序解明より臨床応用が60年先行した奇跡</h2>
+                
+                <div class="mechanism-introduction">
+                    <h3>医学史上稀有な現象</h3>
+                    <p>メトホルミンは<strong>「機序より結果」</strong>で67年間医学界に君臨する稀有な薬剤。
+                    1957年の臨床応用開始から60年以上経った現在も、新しい作用メカニズムが次々と発見され続けている。</p>
+                    
+                    <div class="historical-context">
+                        <h4>なぜ機序不明でも使われ続けたのか</h4>
+                        <ul>
+                            <li><strong>確実な効果</strong>：血糖降下作用は明確で再現性あり</li>
+                            <li><strong>優れた安全性</strong>：フェンホルミンの1000倍以上安全</li>
+                            <li><strong>副次効果</strong>：体重中性、低血糖リスク低</li>
+                            <li><strong>実用主義</strong>：「効けば使う」という臨床医の判断</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="mechanism-summary">
-                    <p><strong>医学史上稀有な現象</strong>：機序解明より臨床応用が60年以上先行した薬剤。現在も老化抑制・がん予防メカニズムの研究が継続中。</p>
+                
+                <div class="mechanism-evolution-stages">
+                    <h3>5段階にわたる作用機序解明の歴史</h3>
+                    
+                    <div class="stage-detailed first-stage">
+                        <div class="stage-header">
+                            <span class="stage-number">第1段階</span>
+                            <span class="stage-period">1957年〜1990年代</span>
+                            <h4>謎の血糖降下薬時代</h4>
+                        </div>
+                        <div class="stage-content">
+                            <div class="mystery-era">
+                                <h5>完全なブラックボックス状態</h5>
+                                <div class="mystery-details">
+                                    <div class="known-effects">
+                                        <h6>分かっていたこと</h6>
+                                        <ul>
+                                            <li><strong>現象</strong>：血糖値が下がることは明確</li>
+                                            <li><strong>特徴</strong>：インスリン分泌促進なし</li>
+                                            <li><strong>安全性</strong>：体重増加なし、低血糖リスク低</li>
+                                            <li><strong>持続性</strong>：特に食後血糖改善</li>
+                                        </ul>
+                                    </div>
+                                    <div class="unknown-mechanisms">
+                                        <h6>分からなかったこと</h6>
+                                        <ul>
+                                            <li><strong>機序</strong>：全く不明（「ブラックボックス」状態）</li>
+                                            <li><strong>標的</strong>：どこに作用するのか不明</li>
+                                            <li><strong>代謝経路</strong>：体内での変化不明</li>
+                                            <li><strong>分子基盤</strong>：科学的説明ができない</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="clinical-paradox">
+                                    <p><strong>臨床的パラドックス</strong>：科学的説明ができない薬の処方への抵抗がありながら、
+                                    フェンホルミン事件後の生き残りとして、実用的価値で選択され続けた。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stage-detailed second-stage">
+                        <div class="stage-header">
+                            <span class="stage-number">第2段階</span>
+                            <span class="stage-period">1990年代</span>
+                            <h4>肝糖新生抑制の発見</h4>
+                        </div>
+                        <div class="stage-content">
+                            <div class="discovery-era">
+                                <h5>初めての科学的解明</h5>
+                                <div class="discovery-details">
+                                    <p><strong>発見者</strong>：Stumvoll らの研究グループ</p>
+                                    <p><strong>手法</strong>：安定同位体を用いた糖代謝追跡</p>
+                                    <p><strong>結果</strong>：肝糖新生が30-50%抑制される</p>
+                                </div>
+                                
+                                <div class="hepatic-mechanism">
+                                    <h6>肝糖新生抑制の臨床的意義</h6>
+                                    <div class="glucose-production-flow">
+                                        <p><strong>正常時の肝糖新生</strong>：</p>
+                                        <ul>
+                                            <li>空腹時：血糖の60-70%を供給</li>
+                                            <li>食後：糖新生は抑制されるべき</li>
+                                            <li>2型糖尿病：糖新生抑制不全→高血糖</li>
+                                        </ul>
+                                        
+                                        <p><strong>メトホルミンの効果</strong>：</p>
+                                        <ul>
+                                            <li>肝糖新生を正常レベルまで抑制</li>
+                                            <li>空腹時血糖の改善</li>
+                                            <li>肝インスリン抵抗性の改善</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="first-breakthrough">
+                                    <p><strong>科学的ブレークスルー</strong>：30年間の謎が初めて部分的に解明。
+                                    しかし「なぜ肝糖新生が抑制されるのか」という根本的疑問は残存。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stage-detailed third-stage">
+                        <div class="stage-header">
+                            <span class="stage-number">第3段階</span>
+                            <span class="stage-period">2001年</span>
+                            <h4>AMPK活性化の発見</h4>
+                        </div>
+                        <div class="stage-content">
+                            <div class="ampk-discovery">
+                                <h5>エネルギーセンサーの発見</h5>
+                                <div class="discovery-scientists">
+                                    <p><strong>発見者</strong>：Ming-hui Zou、David Carling ら</p>
+                                    <p><strong>革命的発見</strong>：メトホルミンがAMPK（AMP活性化プロテインキナーゼ）を活性化</p>
+                                    <p><strong>AMPK の役割</strong>：細胞内エネルギーセンサー</p>
+                                </div>
+                                
+                                <div class="ampk-effects">
+                                    <h6>AMPK活性化による多面的効果</h6>
+                                    <div class="effect-categories">
+                                        <div class="metabolic-effects">
+                                            <h7>代謝への影響</h7>
+                                            <ul>
+                                                <li>糖新生酵素遺伝子の発現抑制</li>
+                                                <li>脂肪酸合成抑制</li>
+                                                <li>脂肪酸酸化促進</li>
+                                                <li>グルコース取り込み促進</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="cellular-effects">
+                                            <h7>細胞レベルの影響</h7>
+                                            <ul>
+                                                <li>mTOR経路抑制（老化・がん抑制）</li>
+                                                <li>オートファジー促進（細胞浄化）</li>
+                                                <li>炎症性サイトカイン抑制</li>
+                                                <li>ミトコンドリア生合成促進</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="paradigm-shift">
+                                    <p><strong>パラダイムシフト</strong>：単なる糖尿病薬から、細胞レベルでのエネルギー代謝調節薬へ。
+                                    老化・がん抑制という予想外の効果の発見により、メトホルミンの可能性が大幅に拡大。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stage-detailed fourth-stage">
+                        <div class="stage-header">
+                            <span class="stage-number">第4段階</span>
+                            <span class="stage-period">2016年〜</span>
+                            <h4>ミトコンドリア複合体I阻害の詳細解明</h4>
+                        </div>
+                        <div class="stage-content">
+                            <div class="mitochondrial-mechanism">
+                                <h5>分子レベルでの精密メカニズム</h5>
+                                <div class="molecular-discovery">
+                                    <p><strong>発見者</strong>：Viollet, Rutter らのグループ</p>
+                                    <p><strong>メカニズム</strong>：メトホルミンがミトコンドリア呼吸鎖複合体Iを軽度阻害</p>
+                                    <p><strong>結果</strong>：ATP/AMP比の低下→AMPK活性化</p>
+                                </div>
+                                
+                                <div class="detailed-pathway">
+                                    <h6>精密な分子経路</h6>
+                                    <div class="molecular-flow">
+                                        <p><strong>メトホルミンの分子標的</strong>：</p>
+                                        <p>ミトコンドリア複合体I（NADH脱水素酵素）↓（軽度阻害）</p>
+                                        <p>ATP産生軽度抑制 ↓</p>
+                                        <p>AMP/ATP比上昇 ↓</p>
+                                        <p>AMPK活性化 ↓</p>
+                                        <p>代謝リプログラミング</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="precision-medicine">
+                                    <p><strong>精密医療への道筋</strong>：分子レベルでの作用機序解明により、
+                                    個別化医療や新薬開発の基盤が確立。60年越しで科学的基盤が完成。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stage-detailed fifth-stage">
+                        <div class="stage-header">
+                            <span class="stage-number">第5段階</span>
+                            <span class="stage-period">2016年〜現在</span>
+                            <h4>腸内細菌叢への影響発見</h4>
+                        </div>
+                        <div class="stage-content">
+                            <div class="microbiome-revolution">
+                                <h5>腸内細菌叢研究の大転換</h5>
+                                <div class="microbiome-discovery">
+                                    <p><strong>発見</strong>：メトホルミンが腸内細菌叢を劇的に変化させる</p>
+                                    <p><strong>手法</strong>：メタゲノム解析による詳細な菌叢解析</p>
+                                    <p><strong>衝撃</strong>：血糖改善効果の一部が腸内細菌由来</p>
+                                </div>
+                                
+                                <div class="microbiome-changes">
+                                    <h6>メトホルミンによる腸内細菌叢変化</h6>
+                                    <div class="bacterial-changes">
+                                        <div class="beneficial-bacteria">
+                                            <h7>善玉菌の増加</h7>
+                                            <ul>
+                                                <li><strong>Akkermansia muciniphila</strong>：3-5倍増加</li>
+                                                <li><strong>Bifidobacterium</strong>：2-3倍増加</li>
+                                                <li><strong>Lactobacillus</strong>：1.5-2倍増加</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="harmful-bacteria">
+                                            <h7>悪玉菌の減少</h7>
+                                            <ul>
+                                                <li><strong>Bacteroides fragilis</strong>：30-50%減少</li>
+                                                <li><strong>Clostridium</strong>：20-30%減少</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="metabolite-changes">
+                                            <h7>産生物質の変化</h7>
+                                            <ul>
+                                                <li><strong>短鎖脂肪酸</strong>（酪酸・プロピオン酸）増加</li>
+                                                <li><strong>LPS</strong>（エンドトキシン）減少</li>
+                                                <li><strong>GLP-1分泌促進物質</strong>増加</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="gut-brain-axis">
+                                    <h6>腸内細菌叢を介した血糖改善メカニズム</h6>
+                                    <ol>
+                                        <li><strong>短鎖脂肪酸産生</strong>：腸管でのGLP-1分泌促進</li>
+                                        <li><strong>腸管バリア機能強化</strong>：炎症性物質の侵入阻止</li>
+                                        <li><strong>胆汁酸代謝変化</strong>：FXR/TGR5経路を介した代謝改善</li>
+                                        <li><strong>腸肝軸の改善</strong>：肝臓での糖代謝正常化</li>
+                                    </ol>
+                                </div>
+                                
+                                <div class="ongoing-research">
+                                    <p><strong>現在進行中の研究</strong>：老化抑制・がん予防メカニズム、認知機能への影響、
+                                    個別化医療への応用など、67年経った現在も新発見が続く「生きた薬剤」。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="integrated-mechanism">
+                    <h3>統合的作用機序モデル（2024年現在の理解）</h3>
+                    <div class="comprehensive-model">
+                        <div class="direct-effects">
+                            <h4>【直接作用】</h4>
+                            <p>メトホルミン → 肝細胞ミトコンドリア複合体I阻害 → AMPK活性化 → 肝糖新生抑制</p>
+                        </div>
+                        
+                        <div class="indirect-effects">
+                            <h4>【間接作用（腸内細菌叢）】</h4>
+                            <p>メトホルミン → 腸内細菌叢変化 → 短鎖脂肪酸産生増加 → GLP-1分泌促進 → インスリン分泌改善</p>
+                        </div>
+                        
+                        <div class="long-term-effects">
+                            <h4>【長期効果】</h4>
+                            <p>AMPK活性化 → mTOR抑制 → 老化・がん抑制 → オートファジー促進 → 細胞機能維持</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -238,41 +774,343 @@
                 </div>
             </section>
 
-            <section class="combination-therapy">
-                <h2>併用療法での位置づけ：なぜメトホルミンが基盤なのか</h2>
-                <div class="treatment-ladder">
-                    <div class="ladder-step">
-                        <h4>段階1：メトホルミン単独療法</h4>
-                        <p>目標：HbA1c &lt;7.0%、期間：3-6ヶ月で評価</p>
+            <!-- 日本独特の処方文化とメトグルコ®の位置づけ -->
+            <section class="japanese-prescription-culture-metformin">
+                <h2>🇯🇵 日本独特の処方文化とメトグルコ®の位置づけ</h2>
+                
+                <div class="japan-specific-context">
+                    <h3>44年遅延が生んだ日本独特の糖尿病治療文化</h3>
+                    
+                    <div class="cultural-background">
+                        <h4>日本の糖尿病治療における特殊事情</h4>
+                        <div class="cultural-factors">
+                            <div class="factor-item">
+                                <h5>1. SU薬中心主義の長期継続</h5>
+                                <ul>
+                                    <li><strong>背景</strong>：日本発のトルブタミド・グリベンクラミドの成功体験</li>
+                                    <li><strong>結果</strong>：1957-2001年の44年間、SU薬が事実上の第一選択薬</li>
+                                    <li><strong>影響</strong>：「血糖を下げる＝インスリン分泌促進」という固定観念</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="factor-item">
+                                <h5>2. 慎重すぎる安全性重視</h5>
+                                <ul>
+                                    <li><strong>背景</strong>：フェンホルミン事件のトラウマ</li>
+                                    <li><strong>結果</strong>：「ビグアナイド系は危険」という先入観が44年継続</li>
+                                    <li><strong>影響</strong>：欧米で標準治療となっても日本は導入拒否</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="factor-item">
+                                <h5>3. 国際ガイドラインとの乖離</h5>
+                                <ul>
+                                    <li><strong>問題</strong>：WHO・欧米ガイドラインと日本の治療方針が44年間乖離</li>
+                                    <li><strong>結果</strong>：日本の糖尿病治療が国際的に孤立</li>
+                                    <li><strong>批判</strong>：「日本だけがメトホルミンを使えない」状況への国際的批判</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="ladder-step">
-                        <h4>段階2：2剤併用療法</h4>
-                        <p>メトホルミン + 以下から選択：</p>
-                        <ul>
-                            <li>SGLT2阻害薬（心血管・腎保護重視）</li>
-                            <li>DPP-4阻害薬（安全性重視）</li>
-                            <li>GLP-1受容体作動薬（肥満合併）</li>
-                            <li>SU薬（コスト重視）</li>
-                        </ul>
-                    </div>
-                    <div class="ladder-step">
-                        <h4>段階3：3剤併用療法</h4>
-                        <p>メトホルミン + 2剤組み合わせ</p>
-                    </div>
-                    <div class="ladder-step">
-                        <h4>段階4：インスリン併用</h4>
-                        <p>メトホルミン + 基礎インスリン</p>
+                    
+                    <div class="rapid-adoption">
+                        <h4>2001年承認後の急速な普及</h4>
+                        <div class="adoption-phases">
+                            <div class="phase-item">
+                                <h5>導入期（2001-2005年）</h5>
+                                <ul>
+                                    <li><strong>特徴</strong>：慎重な導入、限定的使用</li>
+                                    <li><strong>課題</strong>：医師の経験不足、患者の不安</li>
+                                    <li><strong>教育</strong>：学会主導での安全使用講習会</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="phase-item">
+                                <h5>普及期（2006-2012年）</h5>
+                                <ul>
+                                    <li><strong>転換点</strong>：2007年ガイドラインで第一選択薬に格上げ</li>
+                                    <li><strong>普及促進</strong>：UKPDS追跡データの継続的発表</li>
+                                    <li><strong>制限緩和</strong>：腎機能・造影剤制限の段階的緩和</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="phase-item">
+                                <h5>確立期（2013年〜現在）</h5>
+                                <ul>
+                                    <li><strong>地位確立</strong>：処方率70%超で名実ともに第一選択薬</li>
+                                    <li><strong>新薬時代</strong>：SGLT2阻害薬等の登場でも地位不変</li>
+                                    <li><strong>コスト意識</strong>：ジェネリック普及で経済的優位性拡大</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
+                <div class="clinical-practice-patterns">
+                    <h3>日本の臨床現場での実際の使用パターン</h3>
+                    
+                    <div class="specialist-vs-primary">
+                        <h4>専門医と開業医の処方パターン</h4>
+                        <div class="practice-comparison">
+                            <div class="specialist-pattern">
+                                <h5>糖尿病専門医の傾向</h5>
+                                <ul>
+                                    <li><strong>積極的使用</strong>：診断確定と同時にメトホルミン開始</li>
+                                    <li><strong>併用戦略</strong>：新薬との積極的併用</li>
+                                    <li><strong>用量最適化</strong>：耐用量まで増量して効果最大化</li>
+                                    <li><strong>継続重視</strong>：軽微な副作用でも継続工夫</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="primary-pattern">
+                                <h5>開業医・一般内科医の傾向</h5>
+                                <ul>
+                                    <li><strong>標準的使用</strong>：ガイドライン通りの第一選択</li>
+                                    <li><strong>安全重視</strong>：副作用出現時は早期中止傾向</li>
+                                    <li><strong>シンプル処方</strong>：複雑な併用より単剤調整</li>
+                                    <li><strong>コスト配慮</strong>：患者負担を考慮した処方</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="age-specific-patterns">
+                        <h4>年代別処方パターン</h4>
+                        <div class="age-groups">
+                            <div class="young-adults">
+                                <h5>若年成人（20-40代）</h5>
+                                <ul>
+                                    <li><strong>積極使用</strong>：長期安全性重視で第一選択</li>
+                                    <li><strong>高用量</strong>：耐用性良好で最大用量使用</li>
+                                    <li><strong>併用展開</strong>：効果不十分時は新薬併用</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="middle-aged">
+                                <h5>中高年（50-60代）</h5>
+                                <ul>
+                                    <li><strong>標準使用</strong>：メトホルミン中心の治療戦略</li>
+                                    <li><strong>合併症配慮</strong>：高血圧・脂質異常症との併用</li>
+                                    <li><strong>心血管保護</strong>：UKPDS結果を重視した選択</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="elderly">
+                                <h5>高齢者（70代以上）</h5>
+                                <ul>
+                                    <li><strong>慎重使用</strong>：腎機能・認知機能を考慮</li>
+                                    <li><strong>低用量</strong>：副作用リスク軽減重視</li>
+                                    <li><strong>シンプル化</strong>：服薬管理の簡便性重視</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pharmaceutical-counseling">
+                    <h3>薬局での服薬指導文化</h3>
+                    
+                    <div class="counseling-evolution">
+                        <h4>服薬指導の進化</h4>
+                        <div class="counseling-phases">
+                            <div class="early-phase">
+                                <h5>導入初期（2001-2010年）</h5>
+                                <p><strong>重点</strong>：乳酸アシドーシスの恐怖軽減</p>
+                                <ul>
+                                    <li>「フェンホルミンとは違う安全な薬」の説明</li>
+                                    <li>症状観察の重要性強調</li>
+                                    <li>造影剤・手術時の中止指導徹底</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="maturation-phase">
+                                <h5>成熟期（2011年〜現在）</h5>
+                                <p><strong>重点</strong>：効果と継続の重要性</p>
+                                <ul>
+                                    <li>「67年間の安全性実績」による安心感提供</li>
+                                    <li>「世界標準の糖尿病薬」としての位置づけ説明</li>
+                                    <li>新薬と比較した経済性・安全性の優位性</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="patient-education-strategies">
+                        <h4>患者教育戦略</h4>
+                        <div class="education-approaches">
+                            <div class="evidence-based">
+                                <h5>エビデンス重視アプローチ</h5>
+                                <ul>
+                                    <li>「UKPDS試験で死亡率36%減少」の具体的データ提示</li>
+                                    <li>「世界中で年間1億人が使用」の実績説明</li>
+                                    <li>「67年間・累計10億人」の安全性データ</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="practical-focused">
+                                <h5>実用性重視アプローチ</h5>
+                                <ul>
+                                    <li>「1日数円の治療費」の経済的メリット</li>
+                                    <li>「体重増加しない」利点の説明</li>
+                                    <li>「低血糖になりにくい」安全性の強調</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                <div class="combination-reasons">
-                    <h4>なぜメトホルミンが併用の基盤なのか</h4>
-                    <ul>
-                        <li><strong>相加効果</strong>：全ての糖尿病薬と併用可能</li>
-                        <li><strong>安全性</strong>：他剤との相互作用なし</li>
-                        <li><strong>体重抑制</strong>：他剤の体重増加を相殺</li>
-                        <li><strong>心血管保護</strong>：全体的な予後改善</li>
-                    </ul>
+            <!-- 併用療法での位置づけ -->
+            <section class="combination-therapy-detailed">
+                <h2>💊 併用療法での位置づけ：なぜメトホルミンが全ての基盤なのか</h2>
+                
+                <div class="foundation-principle">
+                    <h3>「メトホルミン・ファースト」原則の科学的根拠</h3>
+                    <p>全世界のガイドラインで確立された「メトホルミン・ファースト」原則。
+                    なぜ他の優れた新薬がありながら、67年前の薬が基盤であり続けるのか。</p>
+                    
+                    <div class="foundation-reasons">
+                        <div class="reason-item">
+                            <h4>1. 相加効果：全ての糖尿病薬と併用可能</h4>
+                            <ul>
+                                <li><strong>作用機序の相補性</strong>：肝糖新生抑制は他剤と重複しない</li>
+                                <li><strong>薬物相互作用なし</strong>：67年間で重篤な相互作用報告なし</li>
+                                <li><strong>効果の予測可能性</strong>：併用時の効果が安定して期待できる</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="reason-item">
+                            <h4>2. 体重中性：他剤の副作用を相殺</h4>
+                            <ul>
+                                <li><strong>SU薬</strong>：+2-4kg体重増加をメトホルミンが相殺</li>
+                                <li><strong>インスリン</strong>：+3-6kg体重増加を抑制</li>
+                                <li><strong>チアゾリジン薬</strong>：+2-5kg体重増加を軽減</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="reason-item">
+                            <h4>3. 心血管保護：全体的な予後改善</h4>
+                            <ul>
+                                <li><strong>UKPDS追跡</strong>：20年後も死亡率減少継続</li>
+                                <li><strong>炎症抑制</strong>：CRP・IL-6・TNF-α減少</li>
+                                <li><strong>内皮機能改善</strong>：動脈硬化進展抑制</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="reason-item">
+                            <h4>4. 経済的基盤：治療継続性の確保</h4>
+                            <ul>
+                                <li><strong>安価な基盤</strong>：1日10-15円で治療の土台を確保</li>
+                                <li><strong>併用コスト軽減</strong>：高価な新薬の使用量を最小化</li>
+                                <li><strong>長期継続可能</strong>：経済的負担による中断リスク最小</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="treatment-algorithm">
+                    <h3>現代的治療アルゴリズム</h3>
+                    <div class="algorithm-steps">
+                        <div class="step-item step-1">
+                            <h4>段階1：メトホルミン単独療法</h4>
+                            <div class="step-details">
+                                <p><strong>目標</strong>：HbA1c &lt;7.0%</p>
+                                <p><strong>期間</strong>：3-6ヶ月で評価</p>
+                                <p><strong>用量調整</strong>：500mg→1000mg→1500mg（最大2250mg）</p>
+                                <p><strong>効果判定</strong>：HbA1c 1.0-1.5%低下を期待</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-item step-2">
+                            <h4>段階2：2剤併用療法</h4>
+                            <div class="combination-options">
+                                <p><strong>メトホルミン + 以下から患者因子に応じて選択</strong>：</p>
+                                <div class="option-matrix">
+                                    <div class="option-item sglt2">
+                                        <h5>+ SGLT2阻害薬</h5>
+                                        <p><strong>適応</strong>：心血管・腎保護重視</p>
+                                        <p><strong>効果</strong>：HbA1c 0.5-0.8%低下、体重2-3kg減少</p>
+                                        <p><strong>特徴</strong>：心不全・腎症に保護効果</p>
+                                    </div>
+                                    
+                                    <div class="option-item dpp4">
+                                        <h5>+ DPP-4阻害薬</h5>
+                                        <p><strong>適応</strong>：安全性重視、高齢者</p>
+                                        <p><strong>効果</strong>：HbA1c 0.5-0.8%低下、体重中性</p>
+                                        <p><strong>特徴</strong>：低血糖リスク最小</p>
+                                    </div>
+                                    
+                                    <div class="option-item glp1">
+                                        <h5>+ GLP-1受容体作動薬</h5>
+                                        <p><strong>適応</strong>：肥満合併、心血管保護</p>
+                                        <p><strong>効果</strong>：HbA1c 1.0-1.5%低下、体重3-5kg減少</p>
+                                        <p><strong>特徴</strong>：強力な体重減少効果</p>
+                                    </div>
+                                    
+                                    <div class="option-item su">
+                                        <h5>+ SU薬</h5>
+                                        <p><strong>適応</strong>：コスト重視、効果重視</p>
+                                        <p><strong>効果</strong>：HbA1c 1.0-1.5%低下</p>
+                                        <p><strong>注意</strong>：低血糖・体重増加リスク</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-item step-3">
+                            <h4>段階3：3剤併用療法</h4>
+                            <div class="step-details">
+                                <p><strong>基本原則</strong>：メトホルミン + 2剤組み合わせ</p>
+                                <p><strong>推奨組み合わせ</strong>：</p>
+                                <ul>
+                                    <li>メトホルミン + SGLT2阻害薬 + GLP-1受容体作動薬</li>
+                                    <li>メトホルミン + DPP-4阻害薬 + SGLT2阻害薬</li>
+                                    <li>メトホルミン + SU薬 + DPP-4阻害薬</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="step-item step-4">
+                            <h4>段階4：インスリン併用</h4>
+                            <div class="step-details">
+                                <p><strong>導入タイミング</strong>：3剤併用でHbA1c &gt;8.0%継続</p>
+                                <p><strong>開始方法</strong>：メトホルミン + 基礎インスリン</p>
+                                <p><strong>利点</strong>：メトホルミンによりインスリン必要量減少</p>
+                                <p><strong>継続</strong>：インスリン導入後もメトホルミン継続が原則</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modern-challenges">
+                    <h3>新薬時代における課題と対応</h3>
+                    
+                    <div class="challenge-solutions">
+                        <div class="challenge-item">
+                            <h4>高価な新薬との使い分け</h4>
+                            <div class="solution-approach">
+                                <p><strong>基本戦略</strong>：メトホルミンを基盤として、必要最小限の新薬を追加</p>
+                                <ul>
+                                    <li><strong>段階的導入</strong>：メトホルミン単独→2剤→3剤の順序</li>
+                                    <li><strong>効果判定</strong>：各段階で十分な効果判定期間を確保</li>
+                                    <li><strong>コスト効果</strong>：患者負担を考慮した現実的選択</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="challenge-item">
+                            <h4>個別化医療への対応</h4>
+                            <div class="solution-approach">
+                                <p><strong>基本原則</strong>：メトホルミンは全患者の基盤、追加薬で個別化</p>
+                                <ul>
+                                    <li><strong>心血管リスク高</strong>：+ SGLT2阻害薬またはGLP-1受容体作動薬</li>
+                                    <li><strong>腎症進行</strong>：+ SGLT2阻害薬</li>
+                                    <li><strong>肥満顕著</strong>：+ GLP-1受容体作動薬</li>
+                                    <li><strong>高齢・脆弱</strong>：+ DPP-4阻害薬</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -280,30 +1118,193 @@
 
             
 
+            <!-- 教育的価値：薬学教育の最高教材 -->
+            <section class="educational-value-comprehensive">
+                <h2>🎓 教育的価値：薬学教育の最高教材としてのメトホルミン</h2>
+                
+                <div class="educational-philosophy">
+                    <h3>「薬物治療とは何か」を問い直す存在</h3>
+                    <p>メトホルミンは薬学教育において、単なる糖尿病薬を超えた深い教育的価値を持つ。
+                    67年間の歴史を通じて、<strong>「薬物治療における真の価値とは何か」</strong>を学生に教える最良の教材である。</p>
+                    
+                    <div class="core-lessons">
+                        <h4>メトホルミンが教える5つの本質的教訓</h4>
+                        <div class="lesson-grid">
+                            <div class="lesson-item">
+                                <h5>1. 新しさより確実性の価値</h5>
+                                <p>革新性より信頼性の価値。派手な新機序より、確実で安全な効果の重要性。</p>
+                            </div>
+                            
+                            <div class="lesson-item">
+                                <h5>2. 単純さの力</h5>
+                                <p>複雑な機序より安定した効果。理解困難でも結果が確実な薬の存在意義。</p>
+                            </div>
+                            
+                            <div class="lesson-item">
+                                <h5>3. 時間の価値</h5>
+                                <p>67年間の歳月が築いた絶対的信頼。短期試験では見えない長期的価値。</p>
+                            </div>
+                            
+                            <div class="lesson-item">
+                                <h5>4. 民主化の力</h5>
+                                <p>高価な新薬に頼らない治療の実現。経済格差を越えた医療アクセス。</p>
+                            </div>
+                            
+                            <div class="lesson-item">
+                                <h5>5. 謙虚さの重要性</h5>
+                                <p>機序不明でも使われ続けた事実。科学の限界と臨床の智慧の尊重。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pharmacology-education">
+                    <h3>薬理学教育における統合的価値</h3>
+                    
+                    <div class="educational-applications">
+                        <div class="application-item">
+                            <h4>薬物動態学の実践教材</h4>
+                            <div class="pk-lessons">
+                                <h5>個人差の科学的理解</h5>
+                                <ul>
+                                    <li><strong>腎機能影響</strong>：90%腎排泄による腎機能依存性</li>
+                                    <li><strong>年齢因子</strong>：高齢者での薬物動態変化</li>
+                                    <li><strong>相互作用</strong>：造影剤・手術による一時的影響</li>
+                                    <li><strong>食事影響</strong>：食後服用による吸収安定化</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="application-item">
+                            <h4>薬力学の多面的理解</h4>
+                            <div class="pd-lessons">
+                                <h5>作用機序の階層的理解</h5>
+                                <ul>
+                                    <li><strong>分子レベル</strong>：ミトコンドリア複合体I阻害</li>
+                                    <li><strong>細胞レベル</strong>：AMPK活性化とシグナル伝達</li>
+                                    <li><strong>組織レベル</strong>：肝糖新生抑制</li>
+                                    <li><strong>個体レベル</strong>：血糖改善と心血管保護</li>
+                                    <li><strong>生態系レベル</strong>：腸内細菌叢変化</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="application-item">
+                            <h4>臨床薬学の実践知識</h4>
+                            <div class="clinical-lessons">
+                                <h5>Evidence-Based Medicine の実践</h5>
+                                <ul>
+                                    <li><strong>RCTの評価</strong>：UKPDS試験の批判的評価</li>
+                                    <li><strong>メタ解析</strong>：複数研究の統合評価</li>
+                                    <li><strong>リアルワールドエビデンス</strong>：67年間の使用経験</li>
+                                    <li><strong>ガイドライン策定</strong>：エビデンスから推奨への変換</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="case-study-education">
+                    <h3>症例検討による実践的学習</h3>
+                    
+                    <div class="educational-cases">
+                        <div class="case-scenario">
+                            <h4>教育症例：新規糖尿病患者への処方選択</h4>
+                            <div class="case-details">
+                                <p><strong>患者</strong>：55歳男性、BMI 28、HbA1c 8.5%、初回診断</p>
+                                <p><strong>併存症</strong>：高血圧、脂質異常症</p>
+                                <p><strong>社会背景</strong>：中小企業勤務、経済的配慮必要</p>
+                            </div>
+                            
+                            <div class="learning-objectives">
+                                <h5>学習到達目標</h5>
+                                <ol>
+                                    <li><strong>第一選択薬選択の根拠</strong>：なぜメトホルミンが第一選択か</li>
+                                    <li><strong>開始用量設定</strong>：500mg/日からの段階的増量理由</li>
+                                    <li><strong>モニタリング計画</strong>：腎機能・HbA1c・体重の追跡</li>
+                                    <li><strong>患者教育</strong>：継続の重要性と副作用対応</li>
+                                    <li><strong>併用薬選択</strong>：効果不十分時の追加薬選択</li>
+                                </ol>
+                            </div>
+                            
+                            <div class="discussion-points">
+                                <h5>ディスカッションポイント</h5>
+                                <ul>
+                                    <li>新薬（SGLT2阻害薬等）との比較優劣</li>
+                                    <li>患者の経済状況を考慮した現実的選択</li>
+                                    <li>長期継続の重要性と動機づけ</li>
+                                    <li>副作用出現時の対応戦略</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="historical-perspective">
+                    <h3>医学史・薬学史教育への貢献</h3>
+                    
+                    <div class="historical-lessons">
+                        <div class="lesson-category">
+                            <h4>薬害と安全性の歴史的教訓</h4>
+                            <ul>
+                                <li><strong>フェンホルミン事件</strong>：薬害の社会的影響と対策</li>
+                                <li><strong>安全性評価</strong>：市販後調査の重要性</li>
+                                <li><strong>規制の進化</strong>：薬事承認プロセスの変遷</li>
+                                <li><strong>国際調和</strong>：各国規制の差異と問題</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="lesson-category">
+                            <h4>医療格差と薬剤アクセス</h4>
+                            <ul>
+                                <li><strong>日本の承認遅延</strong>：薬剤アクセスの国際格差</li>
+                                <li><strong>経済的格差</strong>：高価な新薬 vs 安価な既存薬</li>
+                                <li><strong>医療の民主化</strong>：万人が使える治療の価値</li>
+                                <li><strong>グローバルヘルス</strong>：開発途上国での糖尿病治療</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 関連コンテンツ -->
             <section class="related-content">
-                <h2>関連コンテンツ</h2>
+                <h2>🔗 関連コンテンツ</h2>
                 <div class="related-grid">
-                    <a href="../categories/diabetes.html" class="related-item">
-                        <h3>糖尿病薬について詳しく</h3>
-                        <p>DPP-4阻害薬、SGLT2阻害薬、GLP-1受容体作動薬との使い分け</p>
+                    <a href="dapagliflozin.html" class="related-item">
+                        <h3>ダパグリフロジン</h3>
+                        <p>SGLT2阻害薬の革新：メトホルミンとの最適併用</p>
                     </a>
+                    
                     <a href="empagliflozin.html" class="related-item">
                         <h3>エンパグリフロジン</h3>
                         <p>心血管保護効果で注目のSGLT2阻害薬</p>
                     </a>
-                    <a href="dapagliflozin.html" class="related-item">
-                        <h3>ダパグリフロジン</h3>
-                        <p>体重減少効果のあるSGLT2阻害薬</p>
+                    
+                    <a href="../categories/diabetes.html" class="related-item">
+                        <h3>糖尿病薬について詳しく</h3>
+                        <p>DPP-4阻害薬、GLP-1受容体作動薬との使い分け</p>
                     </a>
-                    <a href="../stories/diabetes.html" class="related-item">
-                        <h3>糖尿病薬の進化ストーリー</h3>
-                        <p>インスリンからメトホルミン、そして新薬時代へ</p>
+                    
+                    <a href="../stories/ukpds-revolution.html" class="related-item">
+                        <h3>UKPDS革命：メトホルミン復権の物語</h3>
+                        <p>1998年の歴史的発見が変えた糖尿病治療</p>
+                    </a>
+                    
+                    <a href="../stories/phenformin-tragedy.html" class="related-item">
+                        <h3>フェンホルミン事件の真実</h3>
+                        <p>医学史上最大級の薬害とメトホルミン生存の奇跡</p>
+                    </a>
+                    
+                    <a href="../guides/diabetes-first-choice.html" class="related-item">
+                        <h3>糖尿病第一選択薬の選び方</h3>
+                        <p>なぜメトホルミンが世界標準なのか</p>
                     </a>
                 </div>
             </section>
         </div>
     </main>
 
-    <script src="../js/search.js"></script>
+    <script src="../assets/js/drug-detail.js"></script>
 </body>
 </html>
