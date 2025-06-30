@@ -30,6 +30,9 @@ build/
 *.temp
 .cache/
 
+# Backup directories
+docs/backup_*/
+
 # Database
 *.sqlite
 *.db

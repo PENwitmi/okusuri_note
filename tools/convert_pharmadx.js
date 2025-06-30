@@ -525,8 +525,8 @@ class PharmaDxConverter {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${displayName} - PharmaDx薬剤図鑑</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/drug-page.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/drug-page.css">
 </head>
 <body>
     <header class="header">
@@ -604,7 +604,7 @@ class PharmaDxConverter {
         </div>
     </main>
 
-    <script src="../js/drug-page.js"></script>
+    <script src="../assets/js/drug-page.js"></script>
 </body>
 </html>`;
     }
@@ -758,7 +758,7 @@ class PharmaDxConverter {
     }
 
     saveHtmlFile(fileName, content, options = {}) {
-        const outputDir = '../docs';
+        const outputDir = '../docs/generated';
         if (!fs.existsSync(outputDir)) {
             fs.mkdirSync(outputDir, { recursive: true });
         }
@@ -1028,7 +1028,7 @@ ${drugGroup}は[メカニズム]により[効果]を実現する薬剤群です�
      */
     async generateUnifiedCSS() {
         console.log('  🎨 CSS統合中...');
-        const cssDir = '../docs/css';
+        const cssDir = '../docs/assets/css';
         if (!fs.existsSync(cssDir)) {
             fs.mkdirSync(cssDir, { recursive: true });
         }
@@ -1048,7 +1048,7 @@ ${drugGroup}は[メカニズム]により[効果]を実現する薬剤群です�
      */
     async generateUnifiedJS() {
         console.log('  📜 JavaScript統合中...');
-        const jsDir = '../docs/js';
+        const jsDir = '../docs/assets/js';
         if (!fs.existsSync(jsDir)) {
             fs.mkdirSync(jsDir, { recursive: true });
         }
@@ -1280,8 +1280,8 @@ ${drugGroup}は[メカニズム]により[効果]を実現する薬剤群です�
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="${data.essence || data.drugNameJp + 'の詳細解説'}">
     <title>${data.drugNameJp}（${data.brandName}） | PharmaDx 薬剤図鑑</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/drug-detail.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/drug-detail.css">
 </head>
 <body>
     <header class="header">
@@ -1478,7 +1478,7 @@ ${drugGroup}は[メカニズム]により[効果]を実現する薬剤群です�
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${displayName} - PharmaDx薬剤図鑑</title>
-    <link rel="stylesheet" href="../css/drug-page.css">
+    <link rel="stylesheet" href="../assets/css/drug-page.css">
 </head>
 <body>
     <header>
@@ -1549,7 +1549,7 @@ ${drugGroup}は[メカニズム]により[効果]を実現する薬剤群です�
         </div>
     </main>
 
-    <script src="../js/drug-page.js"></script>
+    <script src="../assets/js/drug-page.js"></script>
 </body>
 </html>`;
     }
