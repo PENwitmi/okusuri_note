@@ -480,12 +480,15 @@ class PharmaDxConverter {
      * 薬剤詳細ページHTML生成
      */
     generateDrugPageHtml(drugData, drugGroup) {
+        const drugInfo = config.drugInfo[drugData.name];
+        const displayName = drugInfo ? drugInfo.displayName : drugData.name;
+        
         return `<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${drugData.name} - PharmaDx薬剤図鑑</title>
+    <title>${displayName} - PharmaDx薬剤図鑑</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/drug-page.css">
 </head>
@@ -498,7 +501,7 @@ class PharmaDxConverter {
             <nav class="breadcrumb">
                 <a href="../index.html">ホーム</a> &gt; 
                 <a href="../groups/${drugGroup.drugGroup}.html">${drugGroup.drugGroup}</a> &gt; 
-                ${drugData.name}
+                ${displayName}
             </nav>
         </div>
     </header>
@@ -506,7 +509,7 @@ class PharmaDxConverter {
     <main class="drug-detail">
         <div class="drug-hero">
             <div class="drug-category">${drugGroup.drugGroup}</div>
-            <h1 class="drug-name">${drugData.name}</h1>
+            <h1 class="drug-name">${displayName}</h1>
             <p class="drug-tagline">${drugData.feature}</p>
         </div>
 
@@ -618,9 +621,10 @@ class PharmaDxConverter {
         const existingIndex = fs.readFileSync('../docs/index.html', 'utf8');
         
         // 薬剤カードセクションを動的生成に更新
+        // より安全な正規表現で、drugsGridのIDを持つdivとその内容全体を置換
         const updatedIndex = existingIndex.replace(
-            /<div class="drugs-grid">[\s\S]*?<\/div>/,
-            this.generateDynamicDrugsGrid()
+            /<div class="drugs-grid" id="drugsGrid">[\s\S]*?<\/div>\s*<\/div>/,
+            this.generateDynamicDrugsGrid() + '\n            </div>'
         );
         
         this.saveHtmlFile('index.html', updatedIndex);
@@ -634,10 +638,11 @@ class PharmaDxConverter {
         
         config.phase1Drugs.forEach(drug => {
             const drugInfo = this.getDrugInfo(drug);
+            const displayName = drugInfo.displayName || drug;
             grid += `
-                <div class="drug-card" data-category="${drugInfo.category}" data-search="${drug.toLowerCase()}">
+                <div class="drug-card" data-category="${drugInfo.category}" data-search="${displayName.toLowerCase()}">
                     <div class="drug-category">${drugInfo.category}</div>
-                    <h3 class="drug-name">${drug}</h3>
+                    <h3 class="drug-name">${displayName}</h3>
                     <p class="drug-description">${drugInfo.description}</p>
                     <div class="drug-features">
                         ${drugInfo.features.map(f => `<span class="feature">${f}</span>`).join('')}
@@ -1092,6 +1097,8 @@ ${drugGroup}は[メカニズム]により[効果]を実現する薬剤群です�
      * 薬剤情報からHTMLページを生成
      */
     generateDrugPageHtmlFromInfo(drugName, drugInfo, groupContent) {
+        const displayName = drugInfo.displayName || drugName;
+        
         // 薬効群データから詳細情報を抽出（あれば）
         let detailInfo = {
             generation: '',
@@ -1113,7 +1120,7 @@ ${drugGroup}は[メカニズム]により[効果]を実現する薬剤群です�
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${drugName} - PharmaDx薬剤図鑑</title>
+    <title>${displayName} - PharmaDx薬剤図鑑</title>
     <link rel="stylesheet" href="../css/drug-page.css">
 </head>
 <body>
@@ -1127,7 +1134,7 @@ ${drugGroup}は[メカニズム]により[効果]を実現する薬剤群です�
     <main class="drug-detail">
         <div class="drug-hero">
             <div class="drug-category-badge">${drugInfo.category}</div>
-            <h1 class="drug-title">${drugName}</h1>
+            <h1 class="drug-title">${displayName}</h1>
             <p class="drug-subtitle">${drugInfo.description}</p>
         </div>
 

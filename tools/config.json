@@ -7,170 +7,206 @@
   },
   
   "phase1Drugs": [
-    "カンデサルタン", "テルミサルタン",
-    "エソメプラゾール", "ランソプラゾール", 
-    "ロスバスタチン", "アトルバスタチン",
-    "エンパグリフロジン", "ダパグリフロジン",
-    "カルベジロール", "ビソプロロール",
-    "エナラプリル", "ペリンドプリル",
-    "セルトラリン", "エスシタロプラム",
-    "フロセミド", "スピロノラクトン",
-    "ジゴキシン", "バンコマイシン",
-    "ワルファリン", "メトホルミン"
+    "candesartan", "telmisartan", "losartan",
+    "esomeprazole", "lansoprazole", "omeprazole",
+    "rosuvastatin", "atorvastatin",
+    "empagliflozin", "dapagliflozin",
+    "carvedilol", "bisoprolol",
+    "enalapril", "perindopril",
+    "sertraline", "escitalopram",
+    "furosemide", "spironolactone",
+    "digoxin", "vancomycin",
+    "warfarin", "metformin"
   ],
 
   "drugGroups": {
-    "ARB": ["カンデサルタン", "テルミサルタン"],
-    "PPI": ["エソメプラゾール", "ランソプラゾール"],
-    "スタチン": ["ロスバスタチン", "アトルバスタチン"],
-    "SGLT2阻害薬": ["エンパグリフロジン", "ダパグリフロジン"],
-    "β遮断薬": ["カルベジロール", "ビソプロロール"],
-    "ACE阻害薬": ["エナラプリル", "ペリンドプリル"],
-    "SSRI": ["セルトラリン", "エスシタロプラム"],
-    "利尿薬": ["フロセミド", "スピロノラクトン"],
-    "その他": ["ジゴキシン", "バンコマイシン", "ワルファリン", "メトホルミン"]
+    "ARB": ["candesartan", "telmisartan", "losartan"],
+    "PPI": ["esomeprazole", "lansoprazole", "omeprazole"],
+    "スタチン": ["rosuvastatin", "atorvastatin"],
+    "SGLT2阻害薬": ["empagliflozin", "dapagliflozin"],
+    "β遮断薬": ["carvedilol", "bisoprolol"],
+    "ACE阻害薬": ["enalapril", "perindopril"],
+    "SSRI": ["sertraline", "escitalopram"],
+    "利尿薬": ["furosemide", "spironolactone"],
+    "その他": ["digoxin", "vancomycin", "warfarin", "metformin"]
   },
 
   "drugInfo": {
-    "カンデサルタン": {
+    "candesartan": {
+      "displayName": "カンデサルタン",
       "category": "ARB",
       "description": "T/P比優秀、脳保護作用",
       "features": ["高血圧", "脳梗塞予防"],
       "quality": "A",
       "conversionStatus": "immediate"
     },
-    "テルミサルタン": {
+    "telmisartan": {
+      "displayName": "テルミサルタン",
       "category": "ARB", 
       "description": "半減期最長、PPAR-γ活性",
       "features": ["糖尿病", "長時間作用"],
       "quality": "A",
       "conversionStatus": "immediate"
     },
-    "エソメプラゾール": {
+    "esomeprazole": {
+      "displayName": "エソメプラゾール",
       "category": "PPI",
       "description": "オメプラゾールS体、強力",
       "features": ["重症GERD", "夜間逆流"],
       "quality": "A", 
       "conversionStatus": "immediate"
     },
-    "ランソプラゾール": {
+    "lansoprazole": {
+      "displayName": "ランソプラゾール",
       "category": "PPI",
       "description": "日本シェア1位、OD錠",
       "features": ["NSAIDs予防", "小児適応"],
       "quality": "A",
       "conversionStatus": "immediate"
     },
-    "ロスバスタチン": {
+    "rosuvastatin": {
+      "displayName": "ロスバスタチン",
       "category": "スタチン",
       "description": "最強LDL低下、腎排泄",
       "features": ["高LDL", "CKD"],
       "quality": "A",
       "conversionStatus": "immediate"
     },
-    "アトルバスタチン": {
+    "atorvastatin": {
+      "displayName": "アトルバスタチン",
       "category": "スタチン",
       "description": "世界最多処方、バランス型",
       "features": ["標準治療", "多面的効果"],
       "quality": "A", 
       "conversionStatus": "immediate"
     },
-    "エンパグリフロジン": {
+    "empagliflozin": {
+      "displayName": "エンパグリフロジン",
       "category": "SGLT2阻害薬",
       "description": "心不全予防、腎保護",
       "features": ["心血管保護", "体重減少"],
       "quality": "A",
       "conversionStatus": "immediate"
     },
-    "ダパグリフロジン": {
+    "dapagliflozin": {
+      "displayName": "ダパグリフロジン",
       "category": "SGLT2阻害薬", 
       "description": "世界初SGLT2阻害薬",
       "features": ["糖尿病", "慢性腎不全"],
       "quality": "A",
       "conversionStatus": "immediate"
     },
-    "カルベジロール": {
+    "carvedilol": {
+      "displayName": "カルベジロール",
       "category": "β遮断薬",
       "description": "α1遮断も有、心不全適応",
       "features": ["心不全", "高血圧"],
       "quality": "B",
       "conversionStatus": "enhance"
     },
-    "ビソプロロール": {
+    "bisoprolol": {
+      "displayName": "ビソプロロール",
       "category": "β遮断薬",
       "description": "β1選択性、長時間作用",
       "features": ["虚血性心疾患", "心房細動"],
       "quality": "B",
       "conversionStatus": "enhance"
     },
-    "エナラプリル": {
+    "enalapril": {
+      "displayName": "エナラプリル",
       "category": "ACE阻害薬",
       "description": "古典的ACE阻害薬、安価",
       "features": ["高血圧", "心不全"],
       "quality": "A",
       "conversionStatus": "immediate"
     },
-    "ペリンドプリル": {
+    "perindopril": {
+      "displayName": "ペリンドプリル",
       "category": "ACE阻害薬",
       "description": "組織ACE阻害強、脳保護",
       "features": ["脳梗塞予防", "冠動脈疾患"],
       "quality": "A",
       "conversionStatus": "immediate"
     },
-    "セルトラリン": {
+    "sertraline": {
+      "displayName": "セルトラリン",
       "category": "SSRI",
       "description": "バランス型SSRI、安全性高",
       "features": ["うつ病", "パニック障害"],
       "quality": "B",
       "conversionStatus": "enhance"
     },
-    "エスシタロプラム": {
+    "escitalopram": {
+      "displayName": "エスシタロプラム",
       "category": "SSRI",
       "description": "最も選択的、効果確実",
       "features": ["うつ病", "全般性不安障害"],
       "quality": "B", 
       "conversionStatus": "enhance"
     },
-    "フロセミド": {
+    "furosemide": {
+      "displayName": "フロセミド",
       "category": "利尿薬",
       "description": "ループ利尿薬、強力",
       "features": ["心不全", "浮腫"],
       "quality": "B",
       "conversionStatus": "enhance"
     },
-    "スピロノラクトン": {
+    "spironolactone": {
+      "displayName": "スピロノラクトン",
       "category": "利尿薬",
       "description": "K保持性、抗アルドステロン",
       "features": ["心不全", "高血圧"],
       "quality": "B",
       "conversionStatus": "enhance"
     },
-    "ジゴキシン": {
+    "digoxin": {
+      "displayName": "ジゴキシン",
       "category": "その他",
       "description": "古典的強心薬、TDM必須",
       "features": ["心房細動", "心不全"],
       "quality": "A",
       "conversionStatus": "immediate"
     },
-    "バンコマイシン": {
+    "vancomycin": {
+      "displayName": "バンコマイシン",
       "category": "その他", 
       "description": "MRSA治療薬、TDM必須",
       "features": ["MRSA", "TDM"],
       "quality": "A",
       "conversionStatus": "immediate"
     },
-    "ワルファリン": {
+    "warfarin": {
+      "displayName": "ワルファリン",
       "category": "その他",
       "description": "古典的抗凝固薬、PT-INR",
       "features": ["心房細動", "血栓予防"],
       "quality": "C",
       "conversionStatus": "create"
     },
-    "メトホルミン": {
+    "metformin": {
+      "displayName": "メトホルミン",
       "category": "その他",
       "description": "糖尿病第一選択薬",
       "features": ["2型糖尿病", "体重中性"],
       "quality": "C", 
       "conversionStatus": "create"
+    },
+    "losartan": {
+      "displayName": "ロサルタン",
+      "category": "ARB",
+      "description": "世界初ARB、尿酸排泄促進",
+      "features": ["高血圧", "痛風合併"],
+      "quality": "A",
+      "conversionStatus": "immediate"
+    },
+    "omeprazole": {
+      "displayName": "オメプラゾール",
+      "category": "PPI",
+      "description": "世界初PPI、革命的制酸薬",
+      "features": ["逆流性食道炎", "CYP2C19"],
+      "quality": "A",
+      "conversionStatus": "immediate"
     }
   },
 

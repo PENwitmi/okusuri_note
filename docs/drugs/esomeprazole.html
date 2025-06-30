@@ -4,46 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>エソメプラゾール - PharmaDx薬剤図鑑</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/drug-detail.css">
+    <link rel="stylesheet" href="../css/drug-page.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header-container">
-            <div class="logo">
-                <h1><a href="../index.html">PharmaDx</a></h1>
-            </div>
-            <nav class="breadcrumb">
-                <a href="../index.html">ホーム</a> &gt; 
-                <a href="../index.html#categories">PPI</a> &gt; 
-                エソメプラゾール
-            </nav>
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+            <h1>PharmaDx 薬剤図鑑</h1>
         </div>
     </header>
 
     <main class="drug-detail">
         <div class="drug-hero">
-            <div class="drug-category">PPI</div>
-            <h1 class="drug-name">エソメプラゾール</h1>
-            <p class="drug-tagline">オメプラゾールのS体</p>
+            <div class="drug-category-badge">PPI</div>
+            <h1 class="drug-title">エソメプラゾール</h1>
+            <p class="drug-subtitle">オメプラゾールS体、強力</p>
         </div>
 
         <div class="drug-content">
-            <section class="quick-info">
-                <h2>基本情報</h2>
-                <div class="info-grid">
+            <section class="drug-overview">
+                <h2>薬剤概要</h2>
+                <div class="overview-grid">
                     <div class="info-item">
-                        <span class="info-label">世代</span>
-                        <span class="info-value">第3世代</span>
+                        <span class="info-label">薬効群</span>
+                        <span class="info-value">PPI</span>
                     </div>
                     <div class="info-item">
-                        <span class="info-label">特徴</span>
-                        <span class="info-value">オメプラゾールのS体</span>
+                        <span class="info-label">主な特徴</span>
+                        <span class="info-value">オメプラゾールS体、強力</span>
                     </div>
                     
                     <div class="info-item">
-                        <span class="info-label">CYP2C19影響</span>
-                        <span class="info-value">影響中</span>
+                        <span class="info-label">世代</span>
+                        <span class="info-value">第2世代</span>
                     </div>
                     
                 </div>
@@ -52,191 +45,26 @@
             <section class="differentiation">
                 <h2>使い分けポイント</h2>
                 <div class="differentiation-content">
-                    重症GERD、夜間酸逆流
+                    重症GERD、夜間逆流
                 </div>
             </section>
 
             
-            <section class="detailed-description">
-                <h2>詳細解説</h2>
-                | 薬剤名 | 世代 | 特徴 | CYP2C19影響 | 使い分けポイント |
-|--------|------|------|-------------|------------------|
-| オメプラゾール（オメプラール） | 第1世代 | 世界初PPI、安価 | 影響大 | コスト重視、軽症GERD |
-| ランソプラゾール（タケプロン） | 第2世代 | 日本シェア1位、OD錠 | 影響中 | NSAIDs潰瘍予防、小児適応 |
-            </section>
-            
 
-            
-            <section class="clinical-use">
-                <h2>臨床での使い方</h2>
-                症例1：68歳男性、重症逆流性食道炎（LA-D）、CYP2C19 EM型
-```
-処方：タケキャブ錠20mg 1錠 分1 朝食後 8週間
-理由：
-                    <li>重症GERDに対する最強の酸分泌抑制
-                    <li>CYP2C19遺伝子多型の影響を受けない
-                    <li>8週後に10mgに減量し維持療法へ
-
-経過：4週で自覚症状消失、8週で内視鏡的治癒確認
-```
-
-                <h3>症例2：75歳女性、NSAIDs長期服用（関節リウマチ）
-```
-処方：ランソプラゾールOD錠15mg 1錠 分1 朝食後
-理由：
-                    <li>NSAIDs潰瘍予防の保険適応あり
-                    <li>OD錠で服薬アドヒアランス向上
-                    <li>15mgで十分な予防効果
-
-フォロー：6ヶ月毎に上部内視鏡検査
-```
-
-                <h3>症例3：52歳男性、H.pylori陽性胃潰瘍
-```
-処方（一次除菌）：
-                    <li>タケキャブ錠20mg 2錠 分2 朝夕食後 7日間
-                    <li>アモキシシリン250mg 3C 分2 朝夕食後 7日間  
-                    <li>クラリスロマイシン200mg 2錠 分2 朝夕食後 7日間
-
-理由：
-                    <li>ボノプラザンで最高除菌率
-                    <li>標準的な3剤併用療法
-
-結果：除菌成功（UBT陰性確認）
-```
-
-                <h3>症例4：45歳男性、軽症GERD、経済的制約あり
-```
-処方：オメプラゾール錠10mg（GE） 1錠 分1 夕食後
-理由：
-                    <li>軽症GERDには十分な効果
-                    <li>薬価10円/錠で経済的負担最小
-                    <li>夕食後投与で夜間症状抑制
-
-指導：生活習慣改善（就寝3時間前までに夕食）
-```
-
-                <h3>症例5：80歳女性、PCI後クロピドグレル服用中、GERD合併
-```
-処方：パリエット錠10mg 1錠 分1 朝食後
-理由：
-                    <li>クロピドグレルとの相互作用最小
-                    <li>CYP2C19の影響受けにくい
-                    <li>高齢者でも安全性高い
-
-注意：オメプラゾール、エソメプラゾールは避ける
-```
-
-## 🔄 処方選択フローチャート
-
-```mermaid
-graph TD
-    A[PPI選択開始] --> B{H.pylori除菌?}
-    B -->|Yes| C[ボノプラザン第一選択]
-    B -->|No| D{クロピドグレル併用?}
-    D -->|Yes| E[ラベプラゾール/パントプラゾール]
-    D -->|No| F{重症GERD?}
-    F -->|Yes| G[ボノプラザン/エソメプラゾール]
-    F -->|No| H{コスト重視?}
-    H -->|Yes| I[オメプラゾールGE]
-    H -->|No| J{CYP2C19 EM/UM?}
-    J -->|Yes| K[ラベプラゾール考慮]
-    J -->|No| L[各種PPI選択可]
-```
-
-## 💰 薬価比較（2024年4月現在）
-
-| 製品名 | 規格 | 薬価 | 1日薬価 |
-|--------|------|------|---------|
-| タケキャブ錠 | 20mg | 124.1円 | 124.1円 |
-| ネキシウムカプセル | 20mg | 83.8円 | 83.8円 |
-| パリエット錠 | 10mg | 63.9円 | 63.9円 |
-| タケプロンOD錠 | 15mg | 52.4円 | 52.4円 |
-| オメプラゾール錠（GE） | 20mg | 10.1円 | 10.1円 |
-| ランソプラゾールOD錠（GE） | 15mg | 16.8円 | 16.8円 |
-
-## 📊 処方実態解明：なぜランソプラゾールが日本でトップシェアなのか
-
-                <h3>市場シェアの歴史的推移（1988-2024）
-
-#### 1988-1991：オメプラゾール独占期
-                    <li>**シェア**：100%（唯一のPPI）
-                    <li>**状況**：H2ブロッカーからの画期的転換
-                    <li>**課題**：高薬価、使用制限（8週間まで）
-
-#### 1992-1999：ランソプラゾール黄金期の始まり
-                    <li>**1992年**：タケプロン発売（武田薬品）
-                    <li>**1995年**：シェア60%獲得（オメプラゾール40%）
-                    <li>**転換点**：
-  - 武田薬品の圧倒的MR数（2000人体制）
-  - 「国産PPI」というブランディング
-  - 消化器専門医への集中的アプローチ
-
-#### 2000-2009：シェア維持の秘密
-                    <li>**2000年**：ラベプラゾール参入もシェア維持
-                    <li>**2004年**：OD錠開発（業界初）→高齢者処方増
-                    <li>**2008年**：小児適応取得（唯一）→小児科参入
-                    <li>**シェア推移**：55-60%で安定
-
-#### 2010-2019：ネキシウムの挑戦を退ける
-                    <li>**2011年**：エソメプラゾール（ネキシウム）上市
-                    <li>**アストラゼネカの戦略**：
-  - 「最強のPPI」マーケティング
-  - 重症GERD特化
-                    <li>**ランソプラゾールの防衛**：
-  - ジェネリック早期参入（2011年）
-  - 「慣れた薬」の強み発揮
-                    <li>**結果**：ネキシウム15%止まり、タケプロン45%維持
-
-#### 2020-2024：ボノプラザン時代でも
-                    <li>**2015年**：タケキャブ（ボノプラザン）登場
-                    <li>**現在のシェア**：
-  - ランソプラゾール（GE含む）：35%
-  - ボノプラザン：25%
-  - オメプラゾール（GE）：20%
-  - その他：20%
-
-                <h3>🎯 ランソプラゾール成功の5つの要因
-
-#### 1. タイミングの勝利
-```
-1992年：H2ブロッカーの限界が明確化
-     ↓
-医師は「次の一手」を探していた
-     ↓
-タケプロンが「国産第一号PPI」として登場
-     ↓
-「オメプラゾールより使いやすい」訴求成功
-```
-
-#### 2. 武田薬品の組織力
-                    <li>**MR戦略**：
-  - 消化器専門医を「オピニオンリーダー」化
-  - 地域勉強会の徹底開催（月200回以上）
-  - 「タケプロンファミリー」形成
-                    <li>**医師の証言**：
-  「武田のMRは毎週来た。
-            </section>
             
 
             <section class="related-content">
                 <h2>関連コンテンツ</h2>
                 <div class="related-grid">
-                    <a href="../index.html#categories" class="related-item">
+                    <a href="../groups/PPI.html" class="related-item">
                         <h3>PPIについて詳しく</h3>
                         <p>薬効群全体の使い分けを学ぶ</p>
                     </a>
-                    
-            <a href="lansoprazole.html" class="related-item">
-                <h3>ランソプラゾール</h3>
-                <p>同じPPIの選択肢</p>
-            </a>
-        
                 </div>
             </section>
         </div>
     </main>
 
-    <script src="../js/search.js"></script>
+    <script src="../js/drug-page.js"></script>
 </body>
 </html>

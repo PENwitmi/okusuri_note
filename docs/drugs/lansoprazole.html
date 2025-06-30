@@ -4,46 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ランソプラゾール - PharmaDx薬剤図鑑</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/drug-detail.css">
+    <link rel="stylesheet" href="../css/drug-page.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header-container">
-            <div class="logo">
-                <h1><a href="../index.html">PharmaDx</a></h1>
-            </div>
-            <nav class="breadcrumb">
-                <a href="../index.html">ホーム</a> &gt; 
-                <a href="../index.html#categories">PPI</a> &gt; 
-                ランソプラゾール
-            </nav>
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+            <h1>PharmaDx 薬剤図鑑</h1>
         </div>
     </header>
 
     <main class="drug-detail">
         <div class="drug-hero">
-            <div class="drug-category">PPI</div>
-            <h1 class="drug-name">ランソプラゾール</h1>
-            <p class="drug-tagline">日本シェア1位、OD錠</p>
+            <div class="drug-category-badge">PPI</div>
+            <h1 class="drug-title">ランソプラゾール</h1>
+            <p class="drug-subtitle">日本シェア1位、OD錠</p>
         </div>
 
         <div class="drug-content">
-            <section class="quick-info">
-                <h2>基本情報</h2>
-                <div class="info-grid">
+            <section class="drug-overview">
+                <h2>薬剤概要</h2>
+                <div class="overview-grid">
                     <div class="info-item">
-                        <span class="info-label">世代</span>
-                        <span class="info-value">第2世代</span>
+                        <span class="info-label">薬効群</span>
+                        <span class="info-value">PPI</span>
                     </div>
                     <div class="info-item">
-                        <span class="info-label">特徴</span>
+                        <span class="info-label">主な特徴</span>
                         <span class="info-value">日本シェア1位、OD錠</span>
                     </div>
                     
                     <div class="info-item">
-                        <span class="info-label">CYP2C19影響</span>
-                        <span class="info-value">影響中</span>
+                        <span class="info-label">世代</span>
+                        <span class="info-value">第2世代</span>
                     </div>
                     
                 </div>
@@ -52,67 +45,26 @@
             <section class="differentiation">
                 <h2>使い分けポイント</h2>
                 <div class="differentiation-content">
-                    NSAIDs潰瘍予防、小児適応
+                    NSAIDs予防、小児適応
                 </div>
             </section>
 
             
-            <section class="detailed-description">
-                <h2>詳細解説</h2>
-                | 薬剤名 | 世代 | 特徴 | CYP2C19影響 | 使い分けポイント |
-|--------|------|------|-------------|------------------|
-| オメプラゾール（オメプラール） | 第1世代 | 世界初PPI、安価 | 影響大 | コスト重視、軽症GERD |
-| ランソプラゾール（タケプロン） | 第2世代 | 日本シェア1位、OD錠 | 影響中 | NSAIDs潰瘍予防、小児適応 |
-            </section>
-            
 
-            
-            <section class="clinical-use">
-                <h2>臨床での使い方</h2>
-                症例1：68歳男性、重症逆流性食道炎（LA-D）、CYP2C19 EM型
-```
-処方：タケキャブ錠20mg 1錠 分1 朝食後 8週間
-理由：
-                    <li>重症GERDに対する最強の酸分泌抑制
-                    <li>CYP2C19遺伝子多型の影響を受けない
-                    <li>8週後に10mgに減量し維持療法へ
-
-経過：4週で自覚症状消失、8週で内視鏡的治癒確認
-```
-
-                <h3>症例2：75歳女性、NSAIDs長期服用（関節リウマチ）
-```
-処方：ランソプラゾールOD錠15mg 1錠 分1 朝食後
-理由：
-                    <li>NSAIDs潰瘍予防の保険適応あり
-                    <li>OD錠で服薬アドヒアランス向上
-                    <li>15mgで十分な予防効果
-
-フォロー：6ヶ月毎に上部内視鏡検査
-```
-
-                <h3>
-            </section>
             
 
             <section class="related-content">
                 <h2>関連コンテンツ</h2>
                 <div class="related-grid">
-                    <a href="../index.html#categories" class="related-item">
+                    <a href="../groups/PPI.html" class="related-item">
                         <h3>PPIについて詳しく</h3>
                         <p>薬効群全体の使い分けを学ぶ</p>
                     </a>
-                    
-            <a href="esomeprazole.html" class="related-item">
-                <h3>エソメプラゾール</h3>
-                <p>同じPPIの選択肢</p>
-            </a>
-        
                 </div>
             </section>
         </div>
     </main>
 
-    <script src="../js/search.js"></script>
+    <script src="../js/drug-page.js"></script>
 </body>
 </html>
