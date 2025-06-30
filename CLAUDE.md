@@ -1,8 +1,10 @@
 # CLAUDE.md - PharmaDx プロジェクト
 
-**最終更新**: 2025-06-30 20:00  
-**現在フェーズ**: Phase 2完了（22薬剤100%実装）、ディレクトリ構造改革完全完了  
-**公開サイト**: https://penwitmi.github.io/pharm_dex
+**最終更新**: 2025-07-01 00:15  
+**現在フェーズ**: Phase 3実行中（HTML First実装）- 第2バッチ実行中（4薬剤：digoxin、furosemide、perindopril、metformin）  
+**ダッシュボード**: MASTER_STATUS_DASHBOARD.md（CEO最終責任、Manager実務更新）  
+**公開サイト**: https://penwitmi.github.io/pharm_dex  
+**進捗管理**: MASTER_STATUS_DASHBOARD.md（プロジェクトルートに配置）
 
 ## 🌟 プロジェクト概要
 
@@ -25,29 +27,31 @@ docs/generated/    →    GitHub Pages
 
 **重要**: PharmaDxの核心価値「なぜ似た薬が複数存在するのか」を最大限表現するため、HTML直接編集により感動的で教育的なコンテンツを創造します。
 
-## 📊 現在の実装状況（2025-06-29 16:11更新）
+## 📊 現在の実装状況（2025-06-30 23:04更新）
 
-### ✅ 完成コンテンツ
-- **コンテンツファイル**: 48ファイル
-  - ストーリー: 20ファイル
-  - 薬効群モデル: 23ファイル  
-  - 学習ツール: 5ファイル
-- **生成Webサイト**: 44 HTMLファイル（490KB）
-- **個別薬剤ページ**: 22薬剤すべて実装済み ✨
-  - ARB: カンデサルタン、テルミサルタン、ロサルタン
-  - PPI: エソメプラゾール、ランソプラゾール、オメプラゾール
-  - スタチン: ロスバスタチン、アトルバスタチン
-  - SGLT2阻害薬: エンパグリフロジン、ダパグリフロジン
-  - β遮断薬: カルベジロール、ビソプロロール
-  - ACE阻害薬: エナラプリル、ペリンドプリル
-  - SSRI: セルトラリン、エスシタロプラム
-  - 利尿薬: フロセミド、スピロノラクトン
-  - その他: ジゴキシン、バンコマイシン、ワルファリン、メトホルミン
+### ✅ 高品質HTML完成済み（10薬剤 = 45%）
+- **ARB**: telmisartan（916行）、losartan（764行）、candesartan（610行）
+- **利尿薬**: spironolactone（607行）
+- **SGLT2阻害薬**: empagliflozin（492行）
+- **スタチン**: rosuvastatin（476行）
+- **PPI**: omeprazole（475行）
+- **糖尿病薬**: metformin（308行）
+- **SSRI**: escitalopram（292行）、sertraline（263行）
+
+### ❌ スケルトン状態（12薬剤 = 55%）- Phase 3実装対象
+- **高優先度**: dapagliflozin、vancomycin、warfarin、digoxin、furosemide、perindopril
+- **中優先度**: enalapril、bisoprolol、atorvastatin、lansoprazole、esomeprazole、metformin_originated
+### 📝 MDファイル（参考資料）
+- **高品質MD（300行以上）**: 12薬剤分のコンテンツ原稿
+- **中品質MD（100-299行）**: 10薬剤分の基本情報
+- **用途**: HTML作成時の参考資料、下書き、構想用
 
 ### 📁 ディレクトリ構造（2025-06-30構造改革完了）
 
 ```
 pharma_dex/
+├── MASTER_STATUS_DASHBOARD.md      # 進捗管理ダッシュボード（2025-06-30移動）
+├── CLAUDE.md                       # プロジェクト概要（このファイル）
 ├── source_materials/               # コンテンツ原稿（論理構造）
 │   ├── drugs/                      # 個別薬剤事典（23ファイル）
 │   ├── drug_evolution/             # なぜ似た薬があるのか（19ファイル）
@@ -204,19 +208,18 @@ cd docs && python -m http.server 8000
 
 ## 📈 現在のフェーズと今後の計画
 
-### ✅ Phase 2完了（2025-06-29）
+### ✅ Phase 2完了（2025-06-30）
 - 大規模ディレクトリ構造改造完了
 - HTML First アーキテクチャ確立
-- 高品質HTMLコンテンツ作成
-- 44 HTMLファイル公開
+- 10薬剤の高品質HTML完成（45%）
 
-### 🔄 Phase 3準備中
-- **最新薬剤特集**: FIC薬剤（First-in-Class）の追加
-  - エサキセレノン（MRA進化）
-  - サクビトリルバルサルタン（ARNi革命）
-  - SGLT2阻害薬、GLP-1受容体作動薬等
-- **コンテンツ拡張**: 300薬剤への拡張計画
-- **高度機能**: AI検索、パーソナライズ学習
+### 🔄 Phase 3実行中（2025-06-30開始）
+- **HTML First実装**: 12薬剤のスケルトンHTMLを500行以上に
+- **最優先薬剤**: 
+  - dapagliflozin（SGLT2阻害薬の革新）
+  - vancomycin（MRSA最終兵器）
+  - warfarin（殺鼠剤から救命薬へ）
+- **品質目標**: 感動的要素、視覚的魅力、教育的価値の最大化
 
 ### 📋 長期ビジョン
 - **自動化パイプライン**: GitHub Actions導入
@@ -239,8 +242,9 @@ cd docs && python -m http.server 8000
 ## 🚨 最重要：進捗管理
 
 ### マスター進捗ダッシュボード
-**場所**: `/project-docs/development-guides/MASTER_STATUS_DASHBOARD.md`
+**場所**: `/MASTER_STATUS_DASHBOARD.md`（プロジェクトルート）
 **目的**: 全タスクと文書の状態を一元管理する唯一の情報源
+**更新**: 2025-06-30にプロジェクトルートに移動（アクセシビリティ向上）
 
 **全員必須**：
 - 作業開始前に必ず確認
@@ -348,6 +352,44 @@ cd docs && python -m http.server 8000
 
 ## 更新履歴
 
+- **2025-07-01 00:15**: 🚀 第2バッチ実行開始（4薬剤）
+  - **実行中**: digoxin（Dev1）、furosemide（Dev2）、perindopril+metformin（Dev3）
+  - **品質基準適用**: 必須3要素の徹底実装
+  - **完了予定**: Dev1（01:30）、Dev2（01:20）、Dev3（02:15）
+  - **特別指示**: digoxin「200年の歴史」、furosemide「ループ利尿薬の王者」等
+- **2025-07-01 00:10**: 📐 PharmaDx品質基準確立・第2バッチ準備開始
+  - **品質評価完了**: dapagliflozin、vancomycin、warfarin全て高評価
+  - **品質基準確立**: 必須3要素（感動的導入、歴史的文脈、日本的配慮）
+  - **構成基準**: 700-900行標準、SEO最適化、レスポンシブ対応
+  - **第2バッチ対象**: digoxin、furosemide、perindopril、metformin（4薬剤）
+  - **各開発者の工夫**: Dev1（4つの革命）、Dev2（戦略的統合）、Dev3（名言軸構成）
+- **2025-06-30 23:59**: 🎉 第1バッチ完全完了 - 驚異的成果達成
+  - **全3薬剤完成**: dapagliflozin（992行）、vancomycin（847行）、warfarin（775行+）
+  - **平均達成率**: 118.7%（目標を大幅超過）
+  - **平均作業時間**: 7.7分/薬剤（予定の90%短縮）
+  - **品質共有セッション**: 00:05開催決定（前倒し）
+  - **特記**: 感動ライブラリの効果により、全薬剤がマスターピース候補
+- **2025-06-30 23:49**: 📋 MASTER_STATUS_DASHBOARDガバナンス体制確立
+  - **ポリシー策定**: DASHBOARD_GOVERNANCE_POLICY.md作成（development-guides/に配置）
+  - **権限明確化**: CEO最終責任、Manager実務更新委任
+  - **運用開始**: 2時間ごとのCEOレビュー、5分以内のManager更新
+  - **理念**: 「Single Source of Truth」の信頼性確保
+- **2025-06-30 23:55**: 🚀 Phase 3実行開始 - 第1バッチ作業中
+  - **実行状況**: Dev1（dapagliflozin）、Dev2（vancomycin）作業中、Dev3（warfarin）待機中
+  - **完了事項**: Sonnetモデル設定、感動ライブラリ作成（emotion-library.html）
+  - **次のマイルストーン**: 01:35品質共有セッション（dapagliflozinマスターピース）
+- **2025-06-30 23:30**: 📝 Phase 3実行計画策定完了 & source_materials宝庫の活用戦略
+  - **計画書作成**: PHASE3_HTML_FIRST_EXECUTION_PLAN.md（詳細実行計画）
+  - **タスク分解**: PHASE3_TASK_BREAKDOWN.md（開発者向け具体的指示）
+  - **品質管理**: PHASE3_QUALITY_CHECKLIST.md（薬剤別チェックリスト）
+  - **重要発見**: source_materials/drugs/に全12薬剤の高品質MD（210-742行）が完備
+  - **Manager役割**: 進捗管理、品質統括、技術サポート、CEO協働の明確化
+- **2025-06-30 23:04**: 📊 MASTER_STATUS_DASHBOARD.mdプロジェクトルート移動 & Phase 3開始
+  - **移動**: project-docs/development-guides/ → プロジェクトルート（アクセシビリティ向上）
+  - **判明**: 実は10薬剤（45%）が既に高品質HTML実装済み（drug_database_originated対応）
+  - **Phase 3開始**: 残り12薬剤（55%）のスケルトンHTMLをHTML First方針で実装
+  - **優先実装**: dapagliflozin（742行MD）、vancomycin（572行MD）、warfarin（571行MD）
+  - **目標**: 全薬剤500行以上の感動的・教育的コンテンツ化
 - **2025-06-30 20:00**: 🔴 HTML First アーキテクチャへの根本的方針転換
   - **背景**: 12薬剤の高品質HTML（100-916行）の存在と、MD→HTML変換の限界（89%情報損失）が判明
   - **決定**: HTML直接編集を第一優先とし、MDは補助的役割に変更
