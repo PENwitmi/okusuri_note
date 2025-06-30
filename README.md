@@ -67,7 +67,7 @@ docs/generated/    →    GitHub Pages
 pharma_dex/
 ├── docs/                           # 公開Webサイト（GitHub Pages）
 │   ├── index.html                  # メインページ
-│   ├── generated/                  # 変換済みコンテンツ
+│   ├── generated/                  # 高品質HTMLコンテンツ
 │   │   ├── drugs/                  # 個別薬剤詳細ページ
 │   │   ├── groups/                 # 薬効群モデルページ
 │   │   ├── stories/                # 感動ストーリーページ
@@ -82,11 +82,8 @@ pharma_dex/
 │   ├── study_tools/                # 学習ツール（旧04_study_tools）
 │   ├── exhibition/                 # 展示企画（旧05_exhibition）
 │   └── resources/                  # リソース・データ（旧06_resources）
-├── tools/                          # 開発ツール統合
-│   ├── convert_pharmadx.js         # コンテンツ変換スクリプト
-│   ├── config.json                 # 設定ファイル
-│   ├── run_conversion.sh           # 変換実行スクリプト
-│   └── build.sh                    # 統合ビルドスクリプト
+├── tools/                          # 補助ツール（通常使用しない）
+│   └── （旧変換スクリプト群）
 ├── project-docs/                   # プロジェクト管理文書（整理済み）
 │   ├── architecture/               # アーキテクチャ設計書
 │   ├── guides/                     # 開発ガイド
@@ -165,12 +162,11 @@ python -m http.server 8000
   - 感動ストーリー: 20ファイル
   - 薬効群モデル: 23ファイル（ARB、PPI、スタチン、SSRI等）
   - 学習ツール: 5ファイル
-- **生成Webサイト**: 30 HTMLファイル（324KB）
+- **Webサイト**: 44 HTMLファイル（490KB）
 - **個別薬剤ページ**: 6薬剤実装済み
   - **ARB**: カンデサルタン、テルミサルタン
   - **PPI**: エソメプラゾール、ランソプラゾール
   - **SSRI**: セルトラリン、エスシタロプラム
-- **統合ビルドシステム**: tools/build.sh完成
 - **GitHub Pages**: 自動デプロイ対応
 
 ### 🔄 Phase 3準備中
@@ -206,11 +202,6 @@ python -m http.server 8000
 - **アクセシビリティ**: WCAG 2.1 AA準拠、フォーカス管理
 - **SEO**: メタタグ最適化、構造化マークアップ
 
-### バックエンド（tools/）
-- **Node.js**: 変換エンジン（convert_pharmadx.js）
-- **marked.js**: Markdown → HTML変換
-- **Bash**: ビルドスクリプト（build.sh）
-- **JSON**: 設定管理（config.json）
 
 ### コンテンツ管理（source_materials/）
 - **Markdown**: 薬効群モデル、ストーリー原稿
@@ -218,14 +209,14 @@ python -m http.server 8000
 - **Git**: バージョン管理、履歴追跡
 
 ### 品質管理システム
-- **コンテンツ品質**: A/B/C級自動分類
-- **変換品質**: パス整合性、リンク検証
-- **統合品質**: 自動ビルド、検証プロセス
+- **コンテンツ品質**: A/B/C級分類
+- **HTML品質**: 500行以上、感動的要素必須
+- **統合品質**: 手動品質確認、レビュープロセス
 
 ## 🤝 開発体制
 
 - **CEO**: 戦略決定・品質最終承認・アーキテクチャ方針
-- **Manager**: プロジェクト管理・技術統括・変換プロセス管理
+- **Manager**: プロジェクト管理・技術統括・品質管理
 - **開発チーム**: コンテンツ作成・UI/UX・技術実装
 - **品質管理**: 医学的正確性・教育的価値・技術品質の確保
 
@@ -236,7 +227,6 @@ python -m http.server 8000
 - **`project-docs/architecture/`**: アーキテクチャ設計書
 - **`project-docs/guides/`**: 開発ワークフロー
 - **`project-docs/reference/`**: 参照資料・分析レポート
-- **`tools/`**: ビルドツール・変換スクリプト
 
 ---
 

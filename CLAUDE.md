@@ -56,14 +56,14 @@ pharma_dex/
 │   ├── _resources/                 # 内部リソース（8ファイル・非公開）
 │   ├── _system/                    # システム文書（7ファイル・非公開）
 │   └── drug_database_originated/   # HTML→MD変換済み（10ファイル）
-├── tools/                          # 開発ツール統合
-│   ├── convert_pharmadx.js         # 変換エンジン
-│   ├── config.json                 # 設定管理
-│   ├── run_conversion.sh           # 変換実行
-│   └── build.sh                    # 統合ビルド
+├── tools/                          # 補助ツール（通常使用しない）
+│   ├── convert_pharmadx.js         # 旧変換スクリプト（非推奨）
+│   ├── config.json                 # 旧設定ファイル
+│   ├── run_conversion.sh           # 旧スクリプト（非推奨）
+│   └── build.sh                    # 旧スクリプト（非推奨）
 ├── docs/                           # 公開サイト（GitHub Pages）
 │   ├── index.html                  # メインページ
-│   ├── generated/                  # 変換済みコンテンツ（44ファイル）
+│   ├── generated/                  # 高品質HTMLコンテンツ（44ファイル）
 │   │   ├── drugs/                  # 個別薬剤ページ（22ファイル）
 │   │   ├── groups/                 # 薬効群ページ
 │   │   ├── stories/                # ストーリーページ
@@ -129,15 +129,11 @@ cd docs && python -m http.server 8000
 - **Vanilla JavaScript**: インタラクティブ機能
 - **GitHub Pages**: 静的サイトホスティング
 
-### バックエンド（変換処理）
-- **Node.js**: 変換エンジン
-- **marked.js**: Markdown → HTML変換
-- **Bash**: ビルドスクリプト
 
 ### 品質管理
 - **コンテンツ品質**: A/B/C級分類システム
 - **技術品質**: レスポンシブ、アクセシビリティ、SEO
-- **統合品質**: 自動ビルド・検証プロセス
+- **統合品質**: HTML直接編集による品質管理
 
 ## 🚨 重要なルール
 
@@ -161,10 +157,6 @@ cd docs && python -m http.server 8000
 - AI-Team外での作業は厳禁
 - **異なる場所での作業は「虚偽報告」の主原因**
 
-### アーキテクチャ原則の遵守
-- **関心の分離**: source_materials/ ↔ tools/ ↔ docs/
-- **自動化**: 手動のHTML編集禁止、必ずtools/経由
-- **一元管理**: 設定はtools/config.jsonに集約
 
 ### docs/ディレクトリの性質（重要）
 **🚨 docs/は公開コンテンツ専用ディレクトリ**
@@ -214,9 +206,9 @@ cd docs && python -m http.server 8000
 
 ### ✅ Phase 2完了（2025-06-29）
 - 大規模ディレクトリ構造改造完了
-- コンテンツ分離アーキテクチャ確立
-- 統合ビルドプロセス確立
-- 30 HTMLファイル生成・公開
+- HTML First アーキテクチャ確立
+- 高品質HTMLコンテンツ作成
+- 44 HTMLファイル公開
 
 ### 🔄 Phase 3準備中
 - **最新薬剤特集**: FIC薬剤（First-in-Class）の追加
@@ -258,8 +250,8 @@ cd docs && python -m http.server 8000
 ## 📚 関連ドキュメント
 
 ### アーキテクチャ・開発ガイド
-- `project-docs/development-guides/CONTENT_SEPARATION_ARCHITECTURE.md` - 分離アーキテクチャ設計書
-- `project-docs/development-guides/PHASE2_DEVELOPMENT_WORKFLOW.md` - 開発ワークフロー
+- `project-docs/2025-06-30-html-first-architecture/HTML_FIRST_ARCHITECTURE.md` - HTML First設計方針
+- `project-docs/2025-06-30-html-first-architecture/HTML_DIRECT_EDITING_WORKFLOW.md` - HTML直接編集ワークフロー
 - `project-docs/2025-06-30-phase2-planning/PHASE2_MAJOR_RESTRUCTURE_PLAN.md` - Phase 2計画書
 
 ### 参照・分析
@@ -272,8 +264,7 @@ cd docs && python -m http.server 8000
 
 ### 開発ガイド
 - `README.md` - プロジェクト概要・クイックスタート
-- `tools/` - ビルドツール・変換スクリプト
-- `source_materials/` - コンテンツ編集ガイド（各ディレクトリのREADME参照）
+- `source_materials/` - 参考資料・下書き（各ディレクトリのREADME参照）
 
 ## 🚨 重要な教訓・学習記録
 
@@ -339,15 +330,10 @@ cd docs && python -m http.server 8000
    - **例外なし**: 「急ぐ」「簡単」「小さな変更」は理由にならない
 6. **段階的更新原則**: 大規模変更は Read→バックアップ→部分Edit→検証のサイクル
 
-### ビルドプロセス
-1. **Node.jsエラー**: `cd tools && rm -rf node_modules && npm install`
-2. **パス参照エラー**: 新構造のパス確認（source_materials/, docs/, tools/）
-3. **変換失敗**: tools/ディレクトリから実行確認、権限確認
 
 ### バックアップ必須
 - 編集前に`_old_files/backup_YYYYMMDD_HHMM/`へコピー
 - 重要変更時は新規バックアップフォルダ作成
-- tools/build.shは自動バックアップ機能付き
 
 ## 🎓 開発知見ドキュメント
 - **場所**: `/Users/nishimototakashi/claude code/development-insights/`
