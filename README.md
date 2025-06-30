@@ -19,7 +19,7 @@ docs/generated/    →    GitHub Pages
 
 - **HTML直接編集**: 500行以上の充実したコンテンツ作成（第一優先）
 - **docs/**: 高品質HTMLを直接配置・公開（GitHub Pages）
-- **content/**: 下書き・メモ・構想用（補助的役割）
+- **source_materials/**: 下書き・メモ・構想用（補助的役割）
 - **tools/**: 必要時のみ使用（補助ツール）
 
 この設計により、医師の証言、歴史的ストーリー、視覚的階層など、PharmaDxの核心価値「感動的で教育的」なコンテンツを最大限に表現できます。
@@ -75,7 +75,7 @@ pharma_dex/
 │   │   ├── js/                     # インタラクティブ機能
 │   │   └── data/                   # 構造化データ
 │   └── css/                        # メインスタイル
-├── content/                        # コンテンツ原稿（論理構造）
+├── source_materials/               # コンテンツ原稿（論理構造）
 │   ├── stories/                    # ストーリー原稿（旧01_stories）
 │   ├── drug_database/              # 薬効群詳細モデル（旧02_drug_database）
 │   ├── differentiation/            # 使い分けガイド（旧03_differentiation）
@@ -212,7 +212,7 @@ python -m http.server 8000
 - **Bash**: ビルドスクリプト（build.sh）
 - **JSON**: 設定管理（config.json）
 
-### コンテンツ管理（content/）
+### コンテンツ管理（source_materials/）
 - **Markdown**: 薬効群モデル、ストーリー原稿
 - **HTML**: 学習ツール、特殊レイアウト
 - **Git**: バージョン管理、履歴追跡

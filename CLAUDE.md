@@ -20,7 +20,7 @@ docs/generated/    →    GitHub Pages
 **設計原則**: 品質優先・価値最大化
 - **HTML直接編集**: 500行以上の充実したコンテンツ作成（第一優先）
 - **docs/**: 高品質HTMLを直接配置・公開（GitHub Pages）
-- **content/**: 下書き・メモ・構想用（補助的役割）
+- **source_materials/**: 下書き・メモ・構想用（補助的役割）
 - **tools/**: 必要時のみ使用（補助ツール）
 
 **重要**: PharmaDxの核心価値「なぜ似た薬が複数存在するのか」を最大限表現するため、HTML直接編集により感動的で教育的なコンテンツを創造します。
@@ -48,7 +48,7 @@ docs/generated/    →    GitHub Pages
 
 ```
 pharma_dex/
-├── content/                        # コンテンツ原稿（論理構造）
+├── source_materials/               # コンテンツ原稿（論理構造）
 │   ├── drugs/                      # 個別薬剤事典（23ファイル）
 │   ├── drug_evolution/             # なぜ似た薬があるのか（19ファイル）
 │   ├── drug_stories/               # 薬の物語（14ファイル）
@@ -81,7 +81,7 @@ pharma_dex/
 ### 1. リサーチ・構想フェーズ
 ```bash
 # 医学的情報収集、ストーリー要素収集
-# content/drafts/ にメモ・下書き（オプション）
+# source_materials/drafts/ にメモ・下書き（オプション）
 ```
 
 ### 2. HTML直接作成フェーズ
@@ -162,7 +162,7 @@ cd docs && python -m http.server 8000
 - **異なる場所での作業は「虚偽報告」の主原因**
 
 ### アーキテクチャ原則の遵守
-- **関心の分離**: content/ ↔ tools/ ↔ docs/
+- **関心の分離**: source_materials/ ↔ tools/ ↔ docs/
 - **自動化**: 手動のHTML編集禁止、必ずtools/経由
 - **一元管理**: 設定はtools/config.jsonに集約
 
@@ -273,7 +273,7 @@ cd docs && python -m http.server 8000
 ### 開発ガイド
 - `README.md` - プロジェクト概要・クイックスタート
 - `tools/` - ビルドツール・変換スクリプト
-- `content/` - コンテンツ編集ガイド（各ディレクトリのREADME参照）
+- `source_materials/` - コンテンツ編集ガイド（各ディレクトリのREADME参照）
 
 ## 🚨 重要な教訓・学習記録
 
@@ -301,7 +301,7 @@ cd docs && python -m http.server 8000
 ### ディレクトリ違反事例（2025-06-26追記）
 - `/Users/nishimototakashi/claude code/futuristic-pharmacy/` のような場所での作業は厳禁
 - ブレインストーミング文書は必ず `project-docs/` 内に作成
-- コード実装は必ず `content/` または `tools/` 内に作成
+- コード実装は必ず `source_materials/` または `tools/` 内に作成
 - **なぜ重要か**: 異なる場所での作業は、成果物の発見を困難にする。「虚偽報告」の多くは、実は作業場所の相違が原因。開発者は誠実に作業していても、場所が違えば見つからない。
 
 ### Git管理体制の混乱事例（2025-06-29追加）
@@ -341,7 +341,7 @@ cd docs && python -m http.server 8000
 
 ### ビルドプロセス
 1. **Node.jsエラー**: `cd tools && rm -rf node_modules && npm install`
-2. **パス参照エラー**: 新構造のパス確認（content/, docs/, tools/）
+2. **パス参照エラー**: 新構造のパス確認（source_materials/, docs/, tools/）
 3. **変換失敗**: tools/ディレクトリから実行確認、権限確認
 
 ### バックアップ必須

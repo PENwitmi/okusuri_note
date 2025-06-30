@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>バンコマイシン国試暗記カード - 出題第1位（30回）</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #333;
+            max-width: 375px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        
+        .card-header {
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+        }
+        
+        .tdm-header {
+            background: #9b59b6;
+        }
+        
+        .side-effect-header {
+            background: #e74c3c;
+        }
+        
+        .indication-header {
+            background: #3498db;
+        }
+        
+        .exam-header {
+            background: #2c3e50;
+        }
+        
+        .calc-header {
+            background: #27ae60;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        /* 赤シート対応 - 重要な暗記ポイントを赤文字に */
+        .memorize {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        
+        .tdm-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .tdm-table th,
+        .tdm-table td {
+            padding: 12px 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tdm-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .tdm-table td {
+            font-size: 15px;
+        }
+        
+        .memory-hook {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .warning-box {
+            background: #ffe0e0;
+            border-left: 4px solid #e74c3c;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .success-box {
+            background: #e8f5e9;
+            border-left: 4px solid #27ae60;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .exam-pattern {
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .exam-pattern-title {
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 5px;
+        }
+        
+        .quick-review {
+            background: #f3e5f5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .review-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #6a1b9a;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .formula-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        .icon {
+            display: inline-block;
+            width: 20px;
+            text-align: center;
+            margin-right: 5px;
+        }
+        
+        .visual-memory {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        /* 印刷対応 */
+        @media print {
+            body {
+                max-width: 100%;
+                padding: 0;
+                background: white;
+            }
+            
+            .card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            
+            .memorize {
+                color: #ff0000 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+        
+        /* タブレット・PC対応 */
+        @media (min-width: 768px) {
+            body {
+                max-width: 600px;
+                padding: 20px;
+            }
+            
+            .card-content {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- タイトルカード -->
+    <div class="card">
+        <div class="card-header exam-header">
+            🏆 バンコマイシン - 国試出題第1位（30回）
+        </div>
+        <div class="card-content">
+            <div class="memory-hook">
+                💡 覚え方：「<span class="memorize">バンコマイシンはマッサ（MRSA）に効く</span>」
+            </div>
+            <div class="warning-box">
+                ⚠️ 最重要：<span class="memorize">TDM必須薬物</span>（国試頻出No.1）
+            </div>
+        </div>
+    </div>
+
+    <!-- TDM関連 -->
+    <div class="card">
+        <div class="card-header tdm-header">
+            💉 TDM（血中濃度モニタリング）- 最頻出！
+        </div>
+        <div class="card-content">
+            <table class="tdm-table">
+                <tr>
+                    <th>項目</th>
+                    <th>数値</th>
+                    <th>覚え方</th>
+                </tr>
+                <tr>
+                    <td>有効トラフ値</td>
+                    <td><span class="memorize">10-20 μg/mL</span></td>
+                    <td>「<span class="memorize">トー（10）ニー（20）</span>」</td>
+                </tr>
+                <tr>
+                    <td>中毒域</td>
+                    <td><span class="memorize">&gt;20 μg/mL</span></td>
+                    <td>「20超えたら毒」</td>
+                </tr>
+                <tr>
+                    <td>半減期</td>
+                    <td><span class="memorize">6時間</span></td>
+                    <td>「<span class="memorize">ロク（6）</span>でも覚える」</td>
+                </tr>
+            </table>
+            
+            <div class="success-box">
+                📊 採血タイミング：<span class="memorize">次回投与直前</span>（トラフ値測定）
+            </div>
+            
+            <div class="formula-box">
+                【腎機能低下時の半減期】
+                CLcr 50mL/min → 半減期 <span class="memorize">12時間</span>（2倍）
+                CLcr 10mL/min → 半減期 <span class="memorize">60時間</span>（10倍）
+            </div>
+        </div>
+    </div>
+
+    <!-- 副作用 -->
+    <div class="card">
+        <div class="card-header side-effect-header">
+            ⚠️ 3大副作用 - 必ず出題される！
+        </div>
+        <div class="card-content">
+            <div class="visual-memory">
+                <span class="memorize">腎</span>・<span class="memorize">赤</span>・<span class="memorize">耳</span>
+            </div>
+            
+            <table class="tdm-table">
+                <tr>
+                    <th>副作用</th>
+                    <th>特徴</th>
+                    <th>対策</th>
+                </tr>
+                <tr>
+                    <td><span class="memorize">腎毒性</span></td>
+                    <td>アミノグリコシド併用で<span class="memorize">増強</span></td>
+                    <td>TDM実施、水分補給</td>
+                </tr>
+                <tr>
+                    <td><span class="memorize">レッドマン症候群</span></td>
+                    <td><span class="memorize">急速投与</span>で発生</td>
+                    <td><span class="memorize">60分以上</span>かけて投与</td>
+                </tr>
+                <tr>
+                    <td><span class="memorize">聴器毒性</span></td>
+                    <td>高濃度・長期投与</td>
+                    <td>聴力検査</td>
+                </tr>
+            </table>
+            
+            <div class="memory-hook">
+                💡 語呂：「<span class="memorize">ジン（腎）は赤い耳</span>」で3大副作用
+            </div>
+        </div>
+    </div>
+
+    <!-- 適応・特徴 -->
+    <div class="card">
+        <div class="card-header indication-header">
+            💊 適応・特徴 - 投与経路がカギ！
+        </div>
+        <div class="card-content">
+            <table class="tdm-table">
+                <tr>
+                    <th>投与経路</th>
+                    <th>適応</th>
+                    <th>吸収</th>
+                </tr>
+                <tr>
+                    <td><span class="memorize">静注</span></td>
+                    <td><span class="memorize">MRSA感染症</span>全般</td>
+                    <td>－</td>
+                </tr>
+                <tr>
+                    <td><span class="memorize">経口</span></td>
+                    <td><span class="memorize">偽膜性腸炎のみ</span></td>
+                    <td><span class="memorize">吸収されない</span></td>
+                </tr>
+            </table>
+            
+            <div class="warning-box">
+                ⚠️ 超重要：経口投与は<span class="memorize">腸管内感染のみ有効</span><br>
+                理由：<span class="memorize">消化管から吸収されない</span>ため全身感染には無効
+            </div>
+            
+            <div class="success-box">
+                ✅ グラム陽性菌専用：<span class="memorize">グラム陰性菌には無効</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 国試頻出パターン -->
+    <div class="card">
+        <div class="card-header exam-header">
+            📝 国試での問われ方TOP5
+        </div>
+        <div class="card-content">
+            <div class="exam-pattern">
+                <div class="exam-pattern-title">パターン1：TDM関連</div>
+                「トラフ値<span class="memorize">10-20μg/mL</span>を維持すべき薬物は？」<br>
+                「半減期が<span class="memorize">6時間</span>の抗MRSA薬は？」
+            </div>
+            
+            <div class="exam-pattern">
+                <div class="exam-pattern-title">パターン2：副作用</div>
+                「<span class="memorize">急速投与</span>により顔面紅潮を生じる抗菌薬は？」<br>
+                「アミノグリコシドと併用で<span class="memorize">腎毒性が増強</span>する薬物は？」
+            </div>
+            
+            <div class="exam-pattern">
+                <div class="exam-pattern-title">パターン3：適応</div>
+                「<span class="memorize">経口投与で偽膜性腸炎</span>に用いる薬物は？」<br>
+                「MRSAによる肺炎の第一選択薬は？」
+            </div>
+            
+            <div class="exam-pattern">
+                <div class="exam-pattern-title">パターン4：投与設計</div>
+                「腎機能低下時に<span class="memorize">投与間隔延長</span>が必要な薬物は？」<br>
+                「CLcr 30mL/minの患者への投与間隔は？」→<span class="memorize">24-48時間</span>
+            </div>
+            
+            <div class="exam-pattern">
+                <div class="exam-pattern-title">パターン5：相互作用</div>
+                「<span class="memorize">ループ利尿薬</span>と併用で聴器毒性が増強する薬物は？」<br>
+                「筋弛緩薬の作用を<span class="memorize">増強</span>する抗菌薬は？」
+            </div>
+        </div>
+    </div>
+
+    <!-- 計算問題対策 -->
+    <div class="card">
+        <div class="card-header calc-header">
+            🧮 計算問題対策（必出！）
+        </div>
+        <div class="card-content">
+            <div class="formula-box">
+                【基本投与量】
+                通常：<span class="memorize">15-20 mg/kg</span> × 1日<span class="memorize">2回</span>
+                
+                【投与間隔の調整】
+                CLcr &gt; 80 → <span class="memorize">12時間</span>ごと
+                CLcr 50-80 → <span class="memorize">24時間</span>ごと
+                CLcr 10-50 → <span class="memorize">48時間</span>ごと
+                CLcr &lt; 10 → <span class="memorize">週2-3回</span>
+            </div>
+            
+            <div class="exam-pattern">
+                <div class="exam-pattern-title">例題：体重60kg、CLcr 30mL/minの患者</div>
+                初回投与量：60kg × <span class="memorize">20mg/kg</span> = <span class="memorize">1200mg</span><br>
+                投与間隔：CLcr 30なので<span class="memorize">48時間</span>ごと
+            </div>
+        </div>
+    </div>
+
+    <!-- 30秒クイックレビュー -->
+    <div class="card">
+        <div class="card-header exam-header">
+            ⏱️ 30秒クイックレビュー（試験直前用）
+        </div>
+        <div class="card-content">
+            <div class="quick-review">
+                <div class="review-title">絶対暗記リスト</div>
+                <div style="font-size: 16px; line-height: 2;">
+                    <span class="icon">①</span>トラフ値：<span class="memorize">10-20 μg/mL</span><br>
+                    <span class="icon">②</span>半減期：<span class="memorize">6時間</span>（腎正常時）<br>
+                    <span class="icon">③</span>副作用：<span class="memorize">腎・赤・耳</span><br>
+                    <span class="icon">④</span>レッドマン：<span class="memorize">60分以上</span>で投与<br>
+                    <span class="icon">⑤</span>経口：<span class="memorize">偽膜性腸炎のみ</span><br>
+                    <span class="icon">⑥</span>併用注意：<span class="memorize">アミノグリコシド</span>（腎毒性）<br>
+                    <span class="icon">⑦</span>採血：<span class="memorize">次回投与直前</span>
+                </div>
+            </div>
+            
+            <div class="memory-hook" style="text-align: center; margin-top: 20px; font-size: 20px;">
+                🎯 <span class="memorize">バンコマイシンはマッサ（MRSA）に効く！</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
