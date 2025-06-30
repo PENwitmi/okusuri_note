@@ -1,7 +1,7 @@
 # CLAUDE.md - PharmaDx プロジェクト
 
-**最終更新**: 2025-06-30 04:03  
-**現在フェーズ**: Phase 2完了（22薬剤100%実装）  
+**最終更新**: 2025-06-30 17:23  
+**現在フェーズ**: Phase 2完了（22薬剤100%実装）、ディレクトリ構造改革完全完了  
 **公開サイト**: https://penwitmi.github.io/pharm_dex
 
 ## 🌟 プロジェクト概要
@@ -40,21 +40,18 @@ content/          ←→          docs/
   - 利尿薬: フロセミド、スピロノラクトン
   - その他: ジゴキシン、バンコマイシン、ワルファリン、メトホルミン
 
-### 📁 ディレクトリ構造（Phase 2再構築済み）
+### 📁 ディレクトリ構造（2025-06-30構造改革完了）
 
 ```
 pharma_dex/
 ├── content/                        # コンテンツ原稿（論理構造）
-│   ├── stories/                    # 感動ストーリー（20ファイル）
-│   ├── drug_database/              # 薬効群詳細モデル（23ファイル）
-│   │   ├── cardiovascular/         # 循環器系
-│   │   ├── gastrointestinal/       # 消化器系
-│   │   ├── psychotropic/           # 精神科系
-│   │   └── ...
-│   ├── differentiation/            # 使い分けガイド
-│   ├── study_tools/                # 学習ツール（5ファイル）
-│   ├── exhibition/                 # 展示企画
-│   └── resources/                  # リソース・データ
+│   ├── drugs/                      # 個別薬剤事典（23ファイル）
+│   ├── drug_evolution/             # なぜ似た薬があるのか（19ファイル）
+│   ├── drug_stories/               # 薬の物語（14ファイル）
+│   ├── study_guides/               # 薬学学習ガイド（12ファイル）
+│   ├── _resources/                 # 内部リソース（8ファイル・非公開）
+│   ├── _system/                    # システム文書（7ファイル・非公開）
+│   └── drug_database_originated/   # HTML→MD変換済み（10ファイル）
 ├── tools/                          # 開発ツール統合
 │   ├── convert_pharmadx.js         # 変換エンジン
 │   ├── config.json                 # 設定管理
@@ -62,16 +59,17 @@ pharma_dex/
 │   └── build.sh                    # 統合ビルド
 ├── docs/                           # 公開サイト（GitHub Pages）
 │   ├── index.html                  # メインページ
-│   ├── generated/                  # 変換済みコンテンツ（30ファイル）
-│   │   ├── drugs/                  # 個別薬剤ページ（6ファイル）
+│   ├── generated/                  # 変換済みコンテンツ（44ファイル）
+│   │   ├── drugs/                  # 個別薬剤ページ（22ファイル）
 │   │   ├── groups/                 # 薬効群ページ
 │   │   ├── stories/                # ストーリーページ
 │   │   └── ...
 │   └── css/                        # メインスタイル
-└── project-docs/                   # プロジェクト管理文書
-    ├── architecture/               # アーキテクチャ設計書
-    ├── development_guides/         # 開発ガイド
-    └── project_management/         # プロジェクト管理
+└── project-docs/                   # プロジェクト管理文書（時系列構造）
+    ├── 2025-06-XX-event-name/      # 時系列イベントフォルダ
+    ├── development-guides/         # 恒久的開発ガイド
+    ├── reference/                  # リファレンス資料
+    └── _archive_superseded/        # アーカイブ
 ```
 
 ## 🔄 標準開発ワークフロー
@@ -79,9 +77,10 @@ pharma_dex/
 ### 1. コンテンツ編集フェーズ
 ```bash
 # コンテンツ原稿編集
-content/stories/              # ストーリー追加・修正
-content/drug_database/        # 薬効群モデル追加・修正
-content/study_tools/          # 学習ツール追加・修正
+content/drugs/                # 個別薬剤ページ追加・修正
+content/drug_evolution/       # 薬効群進化モデル追加・修正
+content/drug_stories/         # ストーリー追加・修正
+content/study_guides/         # 学習ガイド追加・修正
 ```
 
 ### 2. ビルド実行フェーズ
@@ -239,7 +238,7 @@ python -m http.server 8000    # ローカル確認
 ## 🚨 最重要：進捗管理
 
 ### マスター進捗ダッシュボード
-**場所**: `/project-docs/MASTER_STATUS_DASHBOARD.md`
+**場所**: `/project-docs/development-guides/MASTER_STATUS_DASHBOARD.md`
 **目的**: 全タスクと文書の状態を一元管理する唯一の情報源
 
 **全員必須**：
@@ -249,20 +248,23 @@ python -m http.server 8000    # ローカル確認
 
 ## 📚 関連ドキュメント
 
-### アーキテクチャ
-- `project-docs/architecture/CONTENT_SEPARATION_ARCHITECTURE.md` - 分離アーキテクチャ設計書
-- `project-docs/guides/PHASE2_DEVELOPMENT_WORKFLOW.md` - 開発ワークフロー
-- `project-docs/planning/PHASE2_MAJOR_RESTRUCTURE_PLAN.md` - Phase 2計画書
+### アーキテクチャ・開発ガイド
+- `project-docs/development-guides/CONTENT_SEPARATION_ARCHITECTURE.md` - 分離アーキテクチャ設計書
+- `project-docs/development-guides/PHASE2_DEVELOPMENT_WORKFLOW.md` - 開発ワークフロー
+- `project-docs/2025-06-30-phase2-planning/PHASE2_MAJOR_RESTRUCTURE_PLAN.md` - Phase 2計画書
 
 ### 参照・分析
-- `project-docs/reference/content-index/DRUG_CONTENT_INDEX.md` - 全コンテンツインデックス
-- `project-docs/reference/analysis-reports/` - 分析レポート類
+- `project-docs/reference/DRUG_CONTENT_INDEX.md` - 全コンテンツインデックス
+- `project-docs/reference/EXISTING_CONTENT_ANALYSIS_REPORT.md` - 既存コンテンツ分析
+
+### プロジェクト履歴
+- `project-docs/2025-06-30-content-restructure/` - コンテンツ構造改革記録
+- `project-docs/README.md` - プロジェクトドキュメント時系列構造ガイド
 
 ### 開発ガイド
 - `README.md` - プロジェクト概要・クイックスタート
 - `tools/` - ビルドツール・変換スクリプト
 - `content/` - コンテンツ編集ガイド（各ディレクトリのREADME参照）
-- `project-docs/README.md` - ドキュメント構造ガイド
 
 ## 🚨 重要な教訓・学習記録
 
@@ -289,8 +291,8 @@ python -m http.server 8000    # ローカル確認
 
 ### ディレクトリ違反事例（2025-06-26追記）
 - `/Users/nishimototakashi/claude code/futuristic-pharmacy/` のような場所での作業は厳禁
-- ブレインストーミング文書は必ず `/docs/` 内に作成
-- コード実装は必ず `/code/` 内に作成
+- ブレインストーミング文書は必ず `project-docs/` 内に作成
+- コード実装は必ず `content/` または `tools/` 内に作成
 - **なぜ重要か**: 異なる場所での作業は、成果物の発見を困難にする。「虚偽報告」の多くは、実は作業場所の相違が原因。開発者は誠実に作業していても、場所が違えば見つからない。
 
 ### Git管理体制の混乱事例（2025-06-29追加）
@@ -351,6 +353,80 @@ python -m http.server 8000    # ローカル確認
 
 ## 更新履歴
 
+- **2025-06-30 18:00**: project-docs内の整理とCLAUDE.md内パス更新完了（CEO単独作業）
+  - **実施内容**:
+    - project-docs内の空ディレクトリ削除（architecture/, templates/, HTMLバックアップ内の空フォルダ）
+    - CLAUDE.md内の古いディレクトリパスを新構造に更新
+    - ディレクトリ構造セクションを最新の7ディレクトリ構造に更新
+    - project-docsの時系列構造への移行を反映
+  - **効果**: 
+    - ドキュメントとコードの完全な整合性確保
+    - 新規参加者の混乱防止
+    - 正確なパス参照による作業効率向上
+- **2025-06-30 17:23**: 古いディレクトリの完全削除とクリーンアップ完了（CEO単独作業）
+  - **実施内容**: 
+    - 未処理ファイル26個の適切な移行（HTMLファイル、differentiation、exhibition等）
+    - 古いディレクトリ6個の完全削除（drug_database/, stories/, study_tools/, resources/, differentiation/, exhibition/）
+  - **最終構造**: 
+    - 7つの新ディレクトリのみの綺麗な構造を実現
+    - 総ファイル数: 93ファイル（drugs: 23, drug_evolution: 19, drug_stories: 14, study_guides: 12, _resources: 8, _system: 7, drug_database_originated: 10）
+  - **効果**: 
+    - 混乱の原因となる旧構造の完全排除
+    - ビルドツール更新への準備完了
+    - PharmaDxの核心価値が明確に反映される構造の確立
+- **2025-06-30 17:12**: コンテンツディレクトリ構造改革実施完了（CEO単独作業）
+  - **実施内容**: 計画に基づく全5フェーズの移行作業完了（約10分で完了）
+  - **移行規模**: 
+    - 67ファイルを新構造に移行（drugs: 23、drug_evolution: 17、drug_stories: 14、study_guides: 7、_system: 6）
+    - 15の新規ディレクトリ作成
+    - バックアップ作成済み（_old_files/backup_20250630_1705/）
+  - **主要成果**:
+    - drugs/: 循環器系13、消化器系3、内分泌系3、精神科系2、抗菌薬1
+    - drug_evolution/: 進化モデル9、処方実態2、臨床エコシステム6
+    - drug_stories/: ペニシリン、インスリン、高血圧等の感動ストーリー集約
+    - study_guides/: 国試対策、記憶ツール、オーケストラ理論等を体系化
+  - **残課題**: 
+    - ビルドツール（config.json、convert_pharmadx.js）の更新が必要
+    - 内部リンクの更新が必要
+  - **効果**: PharmaDxの核心価値「なぜ似た薬があるのか」が明確に可視化される構造を実現
+- **2025-06-30 17:05**: コンテンツディレクトリ構造改革計画策定（CEO単独作業）
+  - **問題認識**: drug_database内37ファイルの無秩序な混在、特にcardiovascular/の17ファイル集中
+  - **新構造設計**: ユーザーの「知りたい」に直接応える4階層構造
+    - drugs/: 個別薬剤事典（この薬について知りたい）
+    - drug_evolution/: なぜ似た薬があるのか（PharmaDxの核心価値）
+    - drug_stories/: 薬の物語（感動的な開発秘話）
+    - study_guides/: 薬学学習ガイド（効率的に学びたい）
+  - **成果物**:
+    - CONTENT_DIRECTORY_REFORM_DESIGN_20250630.md: 詳細設計書
+    - CONTENT_MIGRATION_MAPPING_20250630.md: 具体的移行マッピング（100ファイル）
+    - BUILD_SYSTEM_UPDATE_PLAN_20250630.md: ビルドシステム更新計画
+  - **期待効果**: 教育価値最大化、300薬剤拡張対応、直感的構造の実現
+- **2025-06-30 17:45**: 補強済みPPIファイルをメインdrug_databaseへ移動
+  - **対象**: エソメプラゾール、ランソプラゾール（大幅に内容補強済み）
+  - **理由**: 単なるHTML復元を超えた独自分析・深い洞察を含む高品質コンテンツ
+  - **効果**: PPI関連コンテンツの集約、ユーザビリティ向上
+  - **相互参照**: PPI_evolution_model.mdに個別薬剤へのリンク追加
+- **2025-06-30 17:30**: HTML→MD逆変換完了（12薬剤・2,450行）
+  - **背景**: 12薬剤が詳細HTMLのみ存在、MDソースファイル欠如
+  - **実行**: originated専用ディレクトリで安全にMD生成
+  - **成果**: 全12薬剤のMDファイル作成完了（合計2,450行）
+    - ARB系: テルミサルタン（133行）、ロサルタン（160行）、カンデサルタン（173行）
+    - 循環器系: スピロノラクトン（178行）
+    - SGLT2: エンパグリフロジン（172行）
+    - スタチン: ロスバスタチン（205行）
+    - PPI: オメプラゾール（261行）、エソメプラゾール（210行）、ランソプラゾール（264行）
+    - 糖尿病: メトホルミン（242行）
+    - SSRI: エスシタロプラム（211行）、セルトラリン（241行）
+  - **品質**: 全ファイルで統一構造（5分サマリー、歴史、臨床、副作用、将来展望）維持
+  - **効果**: MD→HTMLの一方向フロー確立、バージョン管理可能に
+- **2025-06-30 16:45**: MD/HTML不整合の発見と文書化
+  - **発見**: 10薬剤の詳細MDファイル（5,328行）が未活用状態
+  - **原因**: Phase 2でMD作成後、HTML変換が未実行
+  - **影響**: ビソプロロール、ダパグリフロジン等の充実した内容が非公開
+  - **文書化**:
+    - MD_HTML_DISCREPANCY_REPORT_20250630.md - 不整合状況報告
+    - MD_FILE_QUALITY_SAMPLES_20250630.md - MDファイル品質サンプル
+    - HTML_TO_MD_CONVERSION_PLAN_20250630.md - 逆変換計画
 - **2025-06-30 15:30**: ビルドツールの根本的修正 - 英語名統一化
   - **問題**: config.jsonとファイル名の不整合（カタカナ vs 英語）によるビルドツールの機能不全
   - **原因**: 内部データがカタカナ名、実ファイルが英語名の不整合
