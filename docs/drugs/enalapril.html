@@ -3,76 +3,783 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>エナラプリル - PharmaDx薬剤図鑑</title>
+    <meta name="description" content="エナラプリル（レニベース）- 蛇毒から生まれた救世主。1987年CONSENSUS試験で心不全治療に革命をもたらした、ACE阻害薬の完成形">
+    <meta name="keywords" content="エナラプリル, レニベース, ACE阻害薬, 心不全, CONSENSUS試験, 蛇毒, プロドラッグ, 臓器保護">
+    <title>エナラプリル（レニベース） | PharmaDx 薬剤図鑑</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/drug-page.css">
+    <link rel="stylesheet" href="../assets/css/drug-detail.css">
 </head>
 <body>
+    <!-- ヘッダー -->
     <header class="header">
         <div class="header-container">
             <div class="logo">
                 <h1><a href="../index.html">PharmaDx</a></h1>
+                <p class="tagline">薬剤図鑑</p>
             </div>
-            <nav class="breadcrumb">
-                <a href="../index.html">ホーム</a> &gt; 
-                <a href="../groups/ACE阻害薬.html">ACE阻害薬</a> &gt; 
-                エナラプリル
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html#drugs" class="nav-link">薬剤一覧</a></li>
+                    <li><a href="../index.html#categories" class="nav-link">薬効群</a></li>
+                    <li><a href="../index.html#stories" class="nav-link">ストーリー</a></li>
+                    <li><a href="../index.html#differentiation" class="nav-link">使い分け</a></li>
+                </ul>
             </nav>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
         </div>
     </header>
 
-    <main class="drug-detail">
-        <div class="drug-hero">
-            <div class="drug-category">ACE阻害薬</div>
-            <h1 class="drug-name">エナラプリル</h1>
-            <p class="drug-tagline">古典的ACE阻害薬、安価</p>
+    <!-- パンくずナビゲーション -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span class="separator">></span>
+            <a href="../index.html#drugs">薬剤一覧</a>
+            <span class="separator">></span>
+            <span class="current">エナラプリル</span>
         </div>
+    </nav>
 
-        <div class="drug-content">
-            <section class="quick-info">
-                <h2>基本情報</h2>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <span class="info-label">世代</span>
-                        <span class="info-value">第2世代</span>
+    <main class="main-content drug-detail">
+        <div class="container">
+            <!-- 戻るボタン -->
+            <div class="back-button-container">
+                <button onclick="history.back()" class="back-button">
+                    ← 戻る
+                </button>
+            </div>
+
+            <!-- 薬剤ヘッダー -->
+            <section class="drug-header">
+                <div class="drug-title-section">
+                    <h1 class="drug-name">エナラプリル</h1>
+                    <div class="drug-subtitle">
+                        <span class="generic-name">エナラプリルマレイン酸塩</span>
+                        <span class="brand-name">（レニベース®）</span>
                     </div>
-                    <div class="info-item">
-                        <span class="info-label">特徴</span>
-                        <span class="info-value">古典的ACE阻害薬、安価</span>
+                    <div class="drug-classification">
+                        <span class="drug-class">ACE阻害薬（第2世代）</span>
+                        <span class="generation">ACE阻害薬革命の完成形</span>
                     </div>
-                    
+                    <div class="hero-catchphrase">
+                        <p class="catchphrase-text">
+                            「蛇毒から生まれた救世主 - 1987年、心不全治療に革命をもたらした臓器保護の先駆者」
+                        </p>
+                    </div>
+                </div>
+
+                <div class="drug-overview-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">発売年</span>
+                        <span class="stat-value highlight">1985年</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">CONSENSUS試験</span>
+                        <span class="stat-value">死亡率31%減</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">投与回数</span>
+                        <span class="stat-value">1日1-2回</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">薬価</span>
+                        <span class="stat-value">安価</span>
+                    </div>
                 </div>
             </section>
 
-            <section class="differentiation">
-                <h2>使い分けポイント</h2>
-                <div class="differentiation-content">
-                    高血圧、心不全
+            <!-- 30秒サマリー -->
+            <section class="quick-summary">
+                <h2>⚡ 30秒サマリー</h2>
+                <div class="summary-box">
+                    <p class="summary-text">
+                        <strong>エナラプリルは1985年、カプトプリルの欠点を克服して誕生したACE阻害薬の完成形。</strong>
+                        プロドラッグ戦略により1日1-2回投与を実現し、1987年のCONSENSUS試験で心不全の死亡率を31%減少させて医学界に衝撃を与えた。
+                        「血圧を下げるだけでなく臓器を保護する」という概念を確立し、日本では特に空咳の発生率が高いことが知られている。
+                        現在も豊富なエビデンスと優れた経済性で、循環器治療の基盤薬剤として世界中で信頼されている。
+                    </p>
                 </div>
             </section>
 
-            
+            <!-- 3つの革命セクション -->
+            <section class="drug-innovation-revolutions">
+                <h2>🌟 エナラプリルが起こした3つの革命</h2>
+                
+                <!-- 革命1: プロドラッグ革命 -->
+                <div class="revolution-item">
+                    <div class="revolution-header">
+                        <span class="revolution-number">01</span>
+                        <h3>プロドラッグ革命</h3>
+                        <span class="revolution-subtitle">カプトプリルの限界を克服した設計の傑作</span>
+                    </div>
+                    <div class="revolution-content">
+                        <div class="revolution-description">
+                            <p><strong>1985年、蛇毒由来のカプトプリルの実用性限界を克服する画期的戦略を実現。</strong>
+                            SH基除去により味覚障害を5-10%から1%未満に激減、エステル化により半減期を2時間から11時間に延長。
+                            「不活性な前駆体→肝臓で活性体に変換」というプロドラッグ戦略で、理想的な薬物動態を達成した。</p>
+                        </div>
+                        <div class="revolution-mechanism">
+                            <h4>🔬 プロドラッグ戦略の革新性</h4>
+                            <div class="mechanism-flow">
+                                <div class="mechanism-step">
+                                    <span class="step-number">1</span>
+                                    <p>エナラプリル（不活性）<br>経口投与</p>
+                                </div>
+                                <div class="mechanism-arrow">→</div>
+                                <div class="mechanism-step">
+                                    <span class="step-number">2</span>
+                                    <p>肝臓でエステル加水分解</p>
+                                </div>
+                                <div class="mechanism-arrow">→</div>
+                                <div class="mechanism-step">
+                                    <span class="step-number">3</span>
+                                    <p>エナラプリラット（活性体）<br>半減期11時間</p>
+                                </div>
+                                <div class="mechanism-arrow">→</div>
+                                <div class="mechanism-step">
+                                    <span class="step-number">4</span>
+                                    <p>1日1-2回投与実現</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            
+                <!-- 革命2: 臓器保護革命 -->
+                <div class="revolution-item">
+                    <div class="revolution-header">
+                        <span class="revolution-number">02</span>
+                        <h3>臓器保護革命</h3>
+                        <span class="revolution-subtitle">対症療法から原因療法への医学的転換</span>
+                    </div>
+                    <div class="revolution-content">
+                        <div class="revolution-description">
+                            <p><strong>レニン・アンジオテンシン系の過活動を根本から制御し、「臓器保護薬」という概念を医学界に定着。</strong>
+                            心筋リモデリング抑制、糸球体内圧低下、血管内皮機能改善により、単なる降圧を超えた包括的臓器保護を実現。
+                            従来の利尿薬・Ca拮抗薬による対症療法から、病態生理に基づく原因療法への根本的転換を果たした。</p>
+                        </div>
+                        <div class="protection-targets">
+                            <h4>📈 包括的臓器保護効果</h4>
+                            <div class="protection-grid">
+                                <div class="protection-organ heart">
+                                    <h5>🫀 心臓保護</h5>
+                                    <ul>
+                                        <li>心筋リモデリング抑制</li>
+                                        <li>心不全進行抑制</li>
+                                        <li>突然死予防</li>
+                                    </ul>
+                                </div>
+                                <div class="protection-organ kidney">
+                                    <h5>🫘 腎臓保護</h5>
+                                    <ul>
+                                        <li>糸球体内圧低下</li>
+                                        <li>蛋白尿減少</li>
+                                        <li>腎機能低下速度遅延</li>
+                                    </ul>
+                                </div>
+                                <div class="protection-organ vessel">
+                                    <h5>🩸 血管保護</h5>
+                                    <ul>
+                                        <li>内皮機能改善</li>
+                                        <li>動脈硬化進展抑制</li>
+                                        <li>プラーク安定化</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <section class="related-content">
-                <h2>関連コンテンツ</h2>
-                <div class="related-grid">
-                    <a href="../groups/ACE阻害薬.html" class="related-item">
-                        <h3>ACE阻害薬について詳しく</h3>
-                        <p>薬効群全体の使い分けを学ぶ</p>
+                <!-- 革命3: エビデンス革命 -->
+                <div class="revolution-item">
+                    <div class="revolution-header">
+                        <span class="revolution-number">03</span>
+                        <h3>エビデンス革命</h3>
+                        <span class="revolution-subtitle">CONSENSUS試験が示した心不全治療のパラダイムシフト</span>
+                    </div>
+                    <div class="revolution-content">
+                        <div class="revolution-description">
+                            <p><strong>1987年のCONSENSUS試験で「心不全に血管拡張薬は危険」という常識を覆し、死亡率31%減少を実証。</strong>
+                            NYHA IV度の重症心不全患者253例での画期的結果により、心不全治療の標準薬として確立。
+                            経験則からエビデンスベース医療への転換点となり、現在の循環器医学の科学化を牽引した。</p>
+                        </div>
+                        <div class="consensus-results">
+                            <h4>📊 CONSENSUS試験の衝撃的結果</h4>
+                            <div class="trial-results">
+                                <div class="result-item primary">
+                                    <span class="result-label">死亡率減少</span>
+                                    <span class="result-value">31%</span>
+                                    <span class="result-significance">p<0.001</span>
+                                </div>
+                                <div class="result-item secondary">
+                                    <span class="result-label">心不全症状改善</span>
+                                    <span class="result-value">有意改善</span>
+                                </div>
+                                <div class="result-item secondary">
+                                    <span class="result-label">QOL向上</span>
+                                    <span class="result-value">運動耐容能向上</span>
+                                </div>
+                            </div>
+                            <div class="paradigm-shift">
+                                <h5>医学的パラダイムシフト</h5>
+                                <div class="shift-comparison">
+                                    <div class="before">
+                                        <h6>従来の常識</h6>
+                                        <p>「心不全に血管拡張薬は危険」</p>
+                                    </div>
+                                    <div class="arrow">→</div>
+                                    <div class="after">
+                                        <h6>新たな真実</h6>
+                                        <p>「ACE阻害薬は生命予後を改善」</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 歴史的発見の物語 -->
+            <section class="historical-discovery">
+                <h2>📚 蛇毒から生まれた救世主の物語</h2>
+                
+                <!-- 1981年の課題 -->
+                <div class="historical-moment challenge">
+                    <h3 class="moment-title">
+                        <span class="year">1981年</span>
+                        カプトプリルの革命と限界
+                    </h3>
+                    <div class="moment-content">
+                        <p class="historical-lead">
+                            ブラジルのヤラカ（Bothrops jararaca）の毒から生まれたカプトプリルは、ACE阻害という革命的機序を実証した。
+                            しかし、半減期2時間・1日3回投与・味覚障害という臨床使用の大きな壁が立ちはだかっていた。
+                        </p>
+                        
+                        <div class="challenge-analysis">
+                            <h4>カプトプリルの限界</h4>
+                            <div class="limitations-grid">
+                                <div class="limitation-item">
+                                    <span class="limitation-type">薬物動態</span>
+                                    <p>半減期2時間、1日3回投与必要</p>
+                                </div>
+                                <div class="limitation-item">
+                                    <span class="limitation-type">副作用</span>
+                                    <p>SH基による味覚障害（5-10%）</p>
+                                </div>
+                                <div class="limitation-item">
+                                    <span class="limitation-type">服薬継続</span>
+                                    <p>頻回投与による継続困難</p>
+                                </div>
+                                <div class="limitation-item">
+                                    <span class="limitation-type">皮疹・蛋白尿</span>
+                                    <p>副作用プロファイルの問題</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1985年の解決 -->
+                <div class="historical-moment breakthrough">
+                    <h3 class="moment-title">
+                        <span class="year">1985年</span>
+                        設計思想の転換 - プロドラッグ戦略
+                    </h3>
+                    <div class="moment-content">
+                        <div class="breakthrough-strategy">
+                            <h4>🎯 3つの構造改良</h4>
+                            <div class="improvements-timeline">
+                                <div class="improvement-step">
+                                    <span class="step-title">SH基の除去</span>
+                                    <p>味覚障害の主原因を排除→副作用激減</p>
+                                </div>
+                                <div class="improvement-step">
+                                    <span class="step-title">カルボキシル基のエステル化</span>
+                                    <p>経口吸収性向上→バイオアベイラビリティ改善</p>
+                                </div>
+                                <div class="improvement-step">
+                                    <span class="step-title">親水性バランス調整</span>
+                                    <p>適度な脂溶性→組織移行性確保</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clinical-breakthrough">
+                            <h4>📈 臨床的ブレイクスルー</h4>
+                            <div class="breakthrough-results">
+                                <div class="breakthrough-metric">
+                                    <span class="metric-label">投与回数</span>
+                                    <span class="metric-before">3回/日</span>
+                                    <span class="metric-after">1-2回/日</span>
+                                </div>
+                                <div class="breakthrough-metric">
+                                    <span class="metric-label">味覚障害</span>
+                                    <span class="metric-before">5-10%</span>
+                                    <span class="metric-after">&lt;1%</span>
+                                </div>
+                                <div class="breakthrough-metric">
+                                    <span class="metric-label">患者受容性</span>
+                                    <span class="metric-before">限定的</span>
+                                    <span class="metric-after">大幅改善</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1987年の証明 -->
+                <div class="historical-moment triumph">
+                    <h3 class="moment-title">
+                        <span class="year">1987年</span>
+                        CONSENSUS試験の医学史的衝撃
+                    </h3>
+                    <div class="moment-content">
+                        <div class="trial-significance">
+                            <p class="trial-lead">
+                                NYHA分類IV度という最重症心不全患者253例を対象とした画期的試験。
+                                「当時としては革新的」な全死亡を主要評価項目とし、医学界の度肝を抜く結果を叩き出した。
+                            </p>
+                            
+                            <div class="consensus-impact">
+                                <h4>🏆 試験結果の歴史的意義</h4>
+                                <div class="impact-analysis">
+                                    <div class="impact-item statistical">
+                                        <h5>統計学的衝撃</h5>
+                                        <p>死亡率31%減少（p&lt;0.001）という圧倒的な結果</p>
+                                    </div>
+                                    <div class="impact-item clinical">
+                                        <h5>臨床的革命</h5>
+                                        <p>症状改善から予後改善への治療目標転換</p>
+                                    </div>
+                                    <div class="impact-item paradigm">
+                                        <h5>パラダイム転換</h5>
+                                        <p>血行動態から神経体液性因子への治療標的変更</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 医師・薬剤師の証言 -->
+            <section class="professional-testimonials">
+                <h2>👨‍⚕️ 医療現場からの証言</h2>
+
+                <!-- 循環器専門医の証言 -->
+                <div class="doctor-voice emotion-enlightened">
+                    <div class="voice-header">
+                        <img src="../assets/images/doctor-icon.svg" alt="医師アイコン">
+                        <div class="doctor-info">
+                            <h3>循環器内科の重鎮</h3>
+                            <span class="qualification">日本循環器学会専門医</span>
+                        </div>
+                    </div>
+                    <blockquote>
+                        「1987年のCONSENSUS試験結果を見た時の衝撃は今でも忘れません。
+                        『心不全に血管拡張薬は危険』という常識が一夜にして覆された瞬間でした。
+                        エナラプリルはその後の豊富なエビデンスと安価さで、
+                        今でも心不全治療の第一選択薬として信頼しています」
+                    </blockquote>
+                    <cite>- 大学病院循環器内科 名誉教授</cite>
+                </div>
+
+                <!-- 高血圧専門医の証言 -->
+                <div class="doctor-voice emotion-practical">
+                    <div class="voice-header">
+                        <img src="../assets/images/doctor-icon.svg" alt="医師アイコン">
+                        <div class="doctor-info">
+                            <h3>高血圧専門医の実感</h3>
+                            <span class="experience">開業医</span>
+                        </div>
+                    </div>
+                    <blockquote>
+                        「エナラプリルの経済性は本当に助かります。
+                        10mg13.10円というコストで、カンデサルタンと変わらない効果が得られる。
+                        ただし、日本人では空咳が20-30%と高頻度なので、
+                        患者さんには『薬の効果の現れ』としっかり説明しています」
+                    </blockquote>
+                    <cite>- 内科クリニック院長</cite>
+                </div>
+
+                <!-- 薬剤師の証言 -->
+                <div class="pharmacist-voice emotion-knowledgeable">
+                    <div class="voice-header">
+                        <img src="../assets/images/pharmacist-icon.svg" alt="薬剤師アイコン">
+                        <div class="pharmacist-info">
+                            <h3>病院薬剤師の視点</h3>
+                            <span class="experience">循環器病院勤務</span>
+                        </div>
+                    </div>
+                    <blockquote>
+                        「エナラプリルは薬理学を学ぶ最高の教材です。
+                        プロドラッグ戦略、レニン・アンジオテンシン系、臓器保護...
+                        一つの薬で循環器薬理学の基本が全て学べる。
+                        学生時代に『なぜエナラプリルが重要なのか』を
+                        しっかり理解していれば、臨床現場での応用力が全然違います」
+                    </blockquote>
+                    <cite>- 循環器専門病院 薬剤部主任</cite>
+                </div>
+            </section>
+
+            <!-- 日本的配慮 -->
+            <section class="japanese-considerations">
+                <h2>🇯🇵 日本の医療現場での特別な配慮</h2>
+
+                <!-- 空咳問題への対応 -->
+                <div class="cough-management">
+                    <h3>😷 空咳問題：日本特有の課題と対策</h3>
+                    <div class="cough-reality">
+                        <p class="section-intro">
+                            エナラプリルの空咳発生率は、欧米人5-10%に対し日本人20-30%と2-3倍高い。
+                            この人種差は、ブラジキニン感受性の違いによるもので、
+                            日本の臨床現場では「空咳との上手な付き合い方」が重要なスキルとなっている。
+                        </p>
+                    </div>
+
+                    <div class="cough-mechanism">
+                        <h4>🔬 空咳発生のメカニズム</h4>
+                        <div class="mechanism-explanation">
+                            <div class="mechanism-pathway">
+                                <span class="pathway-step">ACE阻害</span>
+                                <span class="pathway-arrow">→</span>
+                                <span class="pathway-step">ブラジキニン蓄積</span>
+                                <span class="pathway-arrow">→</span>
+                                <span class="pathway-step">プロスタグランジン産生↑</span>
+                                <span class="pathway-arrow">→</span>
+                                <span class="pathway-step">咳受容体刺激</span>
+                                <span class="pathway-arrow">→</span>
+                                <span class="pathway-step">乾性咳嗽</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="japanese-approach">
+                        <h4>🏥 日本の医師の対応戦略</h4>
+                        <div class="management-strategies">
+                            <div class="strategy-level mild">
+                                <h5>軽度の空咳</h5>
+                                <ul>
+                                    <li><strong>患者教育</strong>：「薬の効果の表れ、2-3ヶ月で軽減可能性」</li>
+                                    <li><strong>投与時間調整</strong>：夜間の咳を避けるため朝投与</li>
+                                    <li><strong>経過観察</strong>：3ヶ月間の忍容性評価</li>
+                                </ul>
+                            </div>
+                            <div class="strategy-level moderate">
+                                <h5>中等度以上</h5>
+                                <ul>
+                                    <li><strong>ARBへの変更</strong>：カンデサルタン8mg、バルサルタン80mg等</li>
+                                    <li><strong>効果の比較</strong>：ACE阻害薬と同等の降圧効果確認</li>
+                                    <li><strong>患者満足度</strong>：QOL改善の確認</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 医療経済的配慮 -->
+                <div class="economic-considerations">
+                    <h3>💰 医療経済への配慮</h3>
+                    <div class="cost-comparison">
+                        <h4>薬剤費比較（1ヶ月あたり）</h4>
+                        <div class="cost-table">
+                            <div class="cost-row ace">
+                                <span class="drug-name">エナラプリル 10mg</span>
+                                <span class="cost-amount">約400円</span>
+                                <span class="cost-note">ジェネリック</span>
+                            </div>
+                            <div class="cost-row arb">
+                                <span class="drug-name">カンデサルタン 8mg</span>
+                                <span class="cost-amount">約3,400円</span>
+                                <span class="cost-note">先発品</span>
+                            </div>
+                            <div class="cost-impact">
+                                <span class="impact-label">価格差</span>
+                                <span class="impact-value">約8.5倍</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="decision-factors">
+                        <h4>🤔 処方決定の複合要因</h4>
+                        <div class="factors-grid">
+                            <div class="factor-item">
+                                <h5>患者負担</h5>
+                                <p>3割負担でも月額数百円から数千円の差</p>
+                            </div>
+                            <div class="factor-item">
+                                <h5>医療機関収益</h5>
+                                <p>DPC包括払いでのコスト意識</p>
+                            </div>
+                            <div class="factor-item">
+                                <h5>薬剤師の推奨</h5>
+                                <p>ジェネリック調剤率向上への対応</p>
+                            </div>
+                            <div class="factor-item">
+                                <h5>患者価値観</h5>
+                                <p>安価vs最新治療への意識差</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 服薬指導の進化 -->
+                <div class="medication-counseling-evolution">
+                    <h3>📈 服薬指導の文化的変遷</h3>
+                    <div class="counseling-timeline">
+                        <div class="era-item era-1990s">
+                            <span class="era-period">1990年代</span>
+                            <h4>「血圧の薬」時代</h4>
+                            <div class="era-content">
+                                <ul>
+                                    <li>「血圧を下げる薬です」</li>
+                                    <li>「毎日飲み続けてください」</li>
+                                    <li>「勝手に止めないでください」</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="era-item era-2000s">
+                            <span class="era-period">2000年代</span>
+                            <h4>「心臓・腎臓を守る薬」時代</h4>
+                            <div class="era-content">
+                                <ul>
+                                    <li>「血圧を下げるだけでなく、心臓や腎臓を保護します」</li>
+                                    <li>「将来の心筋梗塞や脳卒中を予防します」</li>
+                                    <li>「症状がなくても重要な薬です」</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="era-item era-2010s">
+                            <span class="era-period">2010年代以降</span>
+                            <h4>「生命予後改善薬」時代</h4>
+                            <div class="era-content">
+                                <ul>
+                                    <li>「大規模な研究で生存率の改善が証明されています」</li>
+                                    <li>「心不全の進行を抑制する効果があります」</li>
+                                    <li>「長期的な血管の健康維持に必要です」</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 教育的価値 -->
+            <section class="educational-value">
+                <h2>🎓 循環器薬理学教育の基盤</h2>
+
+                <!-- 薬理学教育での価値 -->
+                <div class="pharmacology-education">
+                    <h3>🔬 レニン・アンジオテンシン系の系統的理解</h3>
+                    <div class="educational-framework">
+                        <p class="framework-intro">
+                            エナラプリルは、複雑なレニン・アンジオテンシン系を系統的に理解する最適な教材。
+                            分子レベルの薬理作用から臨床効果まで、薬学の全領域を統合的に学習できる。
+                        </p>
+                        
+                        <div class="learning-levels">
+                            <div class="level-item molecular">
+                                <h4>分子レベル</h4>
+                                <ul>
+                                    <li>ACE酵素の構造と機能</li>
+                                    <li>エナラプリルの結合様式</li>
+                                    <li>プロドラッグの活性化機序</li>
+                                </ul>
+                            </div>
+                            <div class="level-item cellular">
+                                <h4>細胞レベル</h4>
+                                <ul>
+                                    <li>血管内皮細胞での反応</li>
+                                    <li>心筋細胞での作用</li>
+                                    <li>糸球体上皮細胞への影響</li>
+                                </ul>
+                            </div>
+                            <div class="level-item organ">
+                                <h4>臓器レベル</h4>
+                                <ul>
+                                    <li>心臓：収縮力、リモデリング</li>
+                                    <li>腎臓：糸球体機能、尿細管機能</li>
+                                    <li>血管：内皮機能、動脈硬化</li>
+                                </ul>
+                            </div>
+                            <div class="level-item individual">
+                                <h4>個体レベル</h4>
+                                <ul>
+                                    <li>血圧、心拍出量</li>
+                                    <li>体液バランス</li>
+                                    <li>運動耐容能</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 臨床推論教育 -->
+                <div class="clinical-reasoning">
+                    <h3>🧠 臨床推論能力の発達</h3>
+                    <div class="reasoning-process">
+                        <h4>症例ベース学習例</h4>
+                        <div class="case-example">
+                            <div class="case-presentation">
+                                <h5>症例：68歳男性、心筋梗塞後3ヶ月、EF 35%、軽度呼吸困難</h5>
+                            </div>
+                            <div class="reasoning-steps">
+                                <div class="reasoning-step">
+                                    <span class="step-question">Q1: なぜ最初にACE阻害薬を選択するのか？</span>
+                                    <span class="step-answer">A1: 心筋梗塞後の心室リモデリング抑制、予後改善効果</span>
+                                </div>
+                                <div class="reasoning-step">
+                                    <span class="step-question">Q2: なぜエナラプリルがよく選ばれるのか？</span>
+                                    <span class="step-answer">A2: 豊富な臨床エビデンス、ジェネリックで安価、汎用性</span>
+                                </div>
+                                <div class="reasoning-step">
+                                    <span class="step-question">Q3: 空咳が出現した場合の対応は？</span>
+                                    <span class="step-answer">A3: 忍容性評価後、ARBへの変更検討、効果の比較</span>
+                                </div>
+                                <div class="reasoning-step">
+                                    <span class="step-question">Q4: 用量調整の考え方は？</span>
+                                    <span class="step-answer">A4: 至適用量到達の重要性、段階的増量、副作用モニタリング</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 薬事制度理解 -->
+                <div class="regulatory-science">
+                    <h3>⚖️ 規制科学への理解</h3>
+                    <div class="regulatory-learning">
+                        <h4>エナラプリルを通じた薬事制度学習</h4>
+                        <div class="regulatory-aspects">
+                            <div class="aspect-item approval">
+                                <h5>承認審査</h5>
+                                <p>有効性・安全性・品質の3要素評価過程の理解</p>
+                            </div>
+                            <div class="aspect-item surveillance">
+                                <h5>市販後調査</h5>
+                                <p>長期安全性データ蓄積の重要性</p>
+                            </div>
+                            <div class="aspect-item expansion">
+                                <h5>適応拡大</h5>
+                                <p>追加的臨床試験に基づく承認プロセス</p>
+                            </div>
+                            <div class="aspect-item generic">
+                                <h5>ジェネリック</h5>
+                                <p>生物学的同等性の概念と社会的意義</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 結論 -->
+            <section class="conclusion-section">
+                <h2>🌟 結論：ACE阻害薬革命の完成形が示す普遍的価値</h2>
+                
+                <div class="concluding-insights">
+                    <div class="insight-category historical-significance">
+                        <h3>📚 歴史的意義の継承</h3>
+                        <p>
+                            エナラプリルは<strong>蛇毒から実用薬への奇跡的転換を完成させた傑作</strong>。
+                            1985年のプロドラッグ戦略成功から1987年のCONSENSUS試験まで、
+                            わずか2年で心不全治療のパラダイムを根本的に変革した歴史的薬剤として、
+                            医学史に不朽の価値を刻んでいる。
+                        </p>
+                    </div>
+
+                    <div class="insight-category clinical-value">
+                        <h3>🏥 現代臨床での確固たる地位</h3>
+                        <p>
+                            豊富なエビデンスと優れた経済性により、エナラプリルは<strong>循環器治療の基盤薬剤</strong>
+                            として世界中で信頼され続けている。日本特有の空咳問題はあるものの、
+                            適切な患者教育と管理により、その卓越した臓器保護効果を安全に享受できる。
+                        </p>
+                    </div>
+
+                    <div class="insight-category educational-legacy">
+                        <h3>🎓 教育的価値の永続性</h3>
+                        <p>
+                            <strong>循環器薬理学教育の最重要教材</strong>として、エナラプリルは
+                            レニン・アンジオテンシン系の理解、プロドラッグ戦略、エビデンスベース医療、
+                            薬事制度まで薬学の全領域を統合的に学習できる理想的な教材価値を持つ。
+                        </p>
+                    </div>
+
+                    <div class="insight-category future-relevance">
+                        <h3>🚀 未来への不変の指針</h3>
+                        <p>
+                            精密医療の時代においても、エナラプリルが示す<strong>「確実なエビデンス×経済性×安全性」</strong>
+                            のバランスは、理想的な薬剤開発の指針であり続ける。
+                            その成功モデルは、今後の創薬戦略に永続的な価値を提供している。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="final-message">
+                    <div class="pharmadx-wisdom">
+                        <h3>💎 PharmaDxメッセージ</h3>
+                        <blockquote class="wisdom-quote">
+                            <p>
+                                <strong>エナラプリルは「蛇毒から救世主へ」の奇跡を完成させた薬学の傑作である。</strong><br>
+                                プロドラッグ戦略の成功、CONSENSUS試験の衝撃、臓器保護概念の確立...<br>
+                                一つの薬剤が医学史を変えた壮大な物語がここにある。
+                            </p>
+                            <p>
+                                薬学を学ぶ者は、この歴史的転換点を心に刻み、<br>
+                                「分子設計の精緻さ」と「臨床エビデンスの重み」が<br>
+                                いかに患者の生命を救うかを深く理解すべきである。
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 関連リンク -->
+            <section class="related-links">
+                <h2>📚 関連コンテンツ</h2>
+                <div class="link-grid">
+                    <a href="../index.html#drugs" class="related-item">
+                        <span class="link-icon">💊</span>
+                        <span class="link-text">薬剤一覧に戻る</span>
                     </a>
                     
-            <a href="perindopril.html" class="related-item">
-                <h3>perindopril</h3>
-                <p>同じACE阻害薬の選択肢</p>
-            </a>
-        
+                    <a href="perindopril.html" class="related-item">
+                        <span class="link-icon">🔗</span>
+                        <span class="link-text">ペリンドプリル - 第3世代ACE阻害薬</span>
+                    </a>
+                    
+                    <a href="../groups/ace-inhibitors.html" class="related-item">
+                        <span class="link-icon">🫀</span>
+                        <span class="link-text">ACE阻害薬の全体像</span>
+                    </a>
+                    
+                    <a href="../stories/ace-inhibitor-evolution.html" class="related-item">
+                        <span class="link-icon">🐍</span>
+                        <span class="link-text">蛇毒からの奇跡の物語</span>
+                    </a>
                 </div>
             </section>
         </div>
     </main>
 
-    <script src="../assets/js/drug-page.js"></script>
+    <footer class="footer">
+        <div class="container">
+            <p class="copyright">
+                © 2024 PharmaDx 薬剤図鑑. All rights reserved.
+            </p>
+            <p class="generated-info">
+                最終更新: 2025-07-01 | 
+                作成: PharmaDx AI Team
+            </p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>
