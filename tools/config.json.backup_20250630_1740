@@ -228,45 +228,25 @@
     }
   },
 
-  "contentPaths": {
-    "drugs": "content/drugs",
-    "drugEvolution": "content/drug_evolution",
-    "drugStories": "content/drug_stories",
-    "studyGuides": "content/study_guides"
-  },
-  
-  "excludePaths": [
-    "content/_resources",
-    "content/_system",
-    "content/drug_database_originated"
-  ],
-  
-  "evolutionSubPaths": {
-    "models": "evolution_models",
-    "comparisons": "comparative_analyses",
-    "prescriptions": "prescription_patterns",
-    "ecosystems": "clinical_ecosystems"
-  },
-  
   "contentMapping": {
     "drugGroups": {
-      "ARB": "content/drug_evolution/evolution_models/cardiovascular/ARB_evolution_model.md",
-      "PPI": "content/drug_evolution/evolution_models/gastrointestinal/PPI_evolution_model.md", 
-      "スタチン": "content/drug_evolution/evolution_models/cardiovascular/statin_evolution_model.md",
-      "SGLT2阻害薬": "content/drug_evolution/prescription_patterns/SGLT2_prescription_reality.md",
-      "β遮断薬": "content/drug_evolution/evolution_models/cardiovascular/beta_blocker_evolution_model.md",
-      "ACE阻害薬": "content/drug_evolution/evolution_models/cardiovascular/ACE_inhibitor_evolution_model.md",
-      "SSRI": "content/drug_evolution/evolution_models/psychotropic/SSRI_evolution_model.md",
-      "利尿薬": "content/drug_evolution/evolution_models/cardiovascular/diuretics_evolution_model.md"
+      "ARB": "content/drug_database/cardiovascular/ARB_evolution_model.md",
+      "PPI": "content/drug_database/gastrointestinal/PPI_evolution_model.md", 
+      "スタチン": "content/drug_database/lipid/statin_evolution_model.md",
+      "SGLT2阻害薬": "content/drug_database/diabetes/SGLT2_prescription_reality.md",
+      "β遮断薬": "content/drug_database/cardiovascular/beta_blocker_evolution_model.md",
+      "ACE阻害薬": "content/drug_database/cardiovascular/ACE_inhibitor_evolution_model.md",
+      "SSRI": "content/drug_database/psychotropic/SSRI_evolution_model.md",
+      "利尿薬": "content/drug_database/cardiovascular/diuretics_evolution_model.md"
     },
     "htmlCards": {
-      "ジゴキシン": "content/study_guides/memory_tools/digoxin_kokushi_card.html",
-      "バンコマイシン": "content/study_guides/memory_tools/vancomycin_exam_memory_card.html"
+      "ジゴキシン": "content/study_tools/digoxin_kokushi_card.html",
+      "バンコマイシン": "content/study_tools/vancomycin_exam_memory_card.html"
     },
     "stories": {
-      "ペニシリン": "content/drug_stories/discovery_legends/01_penicillin/01_penicillin_story_pure.md",
-      "アスピリン": "content/drug_stories/discovery_legends/05_aspirin/05_aspirin_chronicles.md",
-      "インスリン": "content/drug_stories/development_dramas/02_insulin/02_insulin_story_pure.md"
+      "ペニシリン": "content/stories/01_penicillin/01_penicillin_story_pure.md",
+      "アスピリン": "content/stories/05_aspirin/05_aspirin_chronicles.md",
+      "インスリン": "content/stories/02_insulin/02_insulin_story_pure.md"
     }
   },
 
@@ -274,7 +254,7 @@
     "01_penicillin_story_pure": ["その他"],
     "05_aspirin_chronicles": ["その他"],
     "02_insulin_story_pure": ["その他"],
-    "03_hypertension_story_pure": ["ARB", "ACE阻害薬", "β遮断薬", "利尿薬"]
+    "03_hypertension": ["ARB", "ACE阻害薬", "β遮断薬", "利尿薬"]
   },
 
   "outputStructure": {

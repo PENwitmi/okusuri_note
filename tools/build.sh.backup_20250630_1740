@@ -36,17 +36,13 @@ echo ""
 
 # Phase 1: コンテンツ統計
 echo "📊 Phase 1: コンテンツ統計生成..."
-
-# 新構造に対応した統計
-stories_count=$(find ../content/drug_stories -name "*.md" 2>/dev/null | wc -l || echo "0")
-drugs_count=$(find ../content/drugs -name "*.md" 2>/dev/null | wc -l || echo "0")
-evolution_count=$(find ../content/drug_evolution -name "*.md" 2>/dev/null | wc -l || echo "0")
-study_guides_count=$(find ../content/study_guides \( -name "*.html" -o -name "*.md" \) 2>/dev/null | wc -l || echo "0")
+stories_count=$(find ../content/stories -name "*.md" 2>/dev/null | wc -l || echo "0")
+drug_db_count=$(find ../content/drug_database -name "*.md" 2>/dev/null | wc -l || echo "0")
+study_tools_count=$(find ../content/study_tools -name "*.html" 2>/dev/null | wc -l || echo "0")
 
 echo "   ストーリー: ${stories_count}ファイル"
-echo "   個別薬剤: ${drugs_count}ファイル"
-echo "   薬効群モデル: ${evolution_count}ファイル"
-echo "   学習ガイド: ${study_guides_count}ファイル"
+echo "   薬効群モデル: ${drug_db_count}ファイル"
+echo "   学習ツール: ${study_tools_count}ファイル"
 echo ""
 
 # Phase 2: 前処理とバックアップ
