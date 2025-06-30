@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPI進化モデル | PharmaDex 薬剤図鑑</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="../../index.html">PharmaDex</a></h1>
+                <p class="tagline">薬剤図鑑</p>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../../index.html#drugs" class="nav-link">薬剤一覧</a></li>
+                    <li><a href="../../index.html#categories" class="nav-link">薬効群</a></li>
+                    <li><a href="../../index.html#stories" class="nav-link">ストーリー</a></li>
+                    <li><a href="../../index.html#differentiation" class="nav-link">使い分け</a></li>
+                </ul>
+            </nav>
+            
+            <div class="search-container">
+                <input type="text" placeholder="薬剤名を検索..." class="search-input">
+                <button class="search-btn">
+                    <span class="search-icon">🔍</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        <article class="category-content">
+            <div class="container">
+                <h1>PPI（プロトンポンプ阻害薬）進化モデル</h1>
+                
+                <!-- 5分サマリー -->
+                <section class="summary-section">
+                    <h2>📍 5分サマリー</h2>
+                    <div class="summary-card">
+                        <h3>薬効群の本質</h3>
+                        <p>PPI（プロトンポンプ阻害薬）は、胃壁細胞の最終段階であるH+/K+-ATPase（プロトンポンプ）を不可逆的に阻害し、H2ブロッカーの10倍以上の強力な酸分泌抑制を実現する薬剤群です。1988年の登場以来、難治性GERD治癒率90%以上、H.pylori除菌成功率の劇的向上により、消化性潰瘍治療のパラダイムを変革しました。</p>
+                    </div>
+                    
+                    <div class="key-points">
+                        <h3>なぜPPIが必要か</h3>
+                        <ul>
+                            <li><strong>酸分泌抑制力</strong>：H2ブロッカーの10倍以上、24時間pH>4維持</li>
+                            <li><strong>耐性形成なし</strong>：H2ブロッカーで問題となる耐性が起きない</li>
+                            <li><strong>治癒率の差</strong>：重症GERD治癒率 H2ブロッカー40% vs PPI 90%</li>
+                            <li><strong>除菌成功率</strong>：H.pylori除菌で必須（胃内pH>6維持が抗菌薬効果に必要）</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 進化タイムライン -->
+                <section class="evolution-timeline">
+                    <h2>🧬 PPI進化の系統樹</h2>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-item">
+                            <div class="timeline-year">1988年〜</div>
+                            <div class="timeline-content">
+                                <h3>第1世代：革命の始まり</h3>
+                                <div class="drug-evolution">
+                                    <h4>オメプラゾール（オメプラール®）</h4>
+                                    <p><strong>開発背景</strong>：H2ブロッカーの限界を超える新機序</p>
+                                    <div class="features">
+                                        <span class="feature positive">✓ 酸分泌の最終段階を阻害</span>
+                                        <span class="feature positive">✓ H2ブロッカーの10倍以上の効果</span>
+                                        <span class="feature neutral">△ CYP2C19で代謝（遺伝子多型の影響大）</span>
+                                    </div>
+                                    <p><strong>現在の位置づけ</strong>：ジェネリック化により基本薬として定着</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-year">1992年〜</div>
+                            <div class="timeline-content">
+                                <h3>第2世代：改良と多様化</h3>
+                                <div class="generation-drugs">
+                                    <div class="drug-evolution">
+                                        <h4>ランソプラゾール（タケプロン®）</h4>
+                                        <p><strong>改良点</strong>：オメプラゾールより速やかな効果発現、バイオアベイラビリティ向上</p>
+                                        <div class="features">
+                                            <span class="feature positive">✓ OD錠（口腔内崩壊錠）開発</span>
+                                            <span class="feature positive">✓ NSAIDs潰瘍予防の適応取得</span>
+                                            <span class="feature positive">✓ 小児用量の確立</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="drug-evolution">
+                                        <h4>ラベプラゾール（パリエット®）</h4>
+                                        <p><strong>革新点</strong>：CYP2C19遺伝子多型の影響を最小化</p>
+                                        <div class="features">
+                                            <span class="feature positive">✓ 非酵素的代謝経路が主体</span>
+                                            <span class="feature positive">✓ 効果発現が最速（投与後2時間）</span>
+                                            <span class="feature positive">✓ 薬物相互作用が比較的少ない</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-year">2000年〜</div>
+                            <div class="timeline-content">
+                                <h3>第3世代：光学異性体の活用</h3>
+                                <div class="drug-evolution">
+                                    <h4>エソメプラゾール（ネキシウム®）</h4>
+                                    <p><strong>開発背景</strong>：オメプラゾールのS体（光学活性体）</p>
+                                    <div class="features">
+                                        <span class="feature positive">✓ バイオアベイラビリティがR体の3倍</span>
+                                        <span class="feature positive">✓ 血中濃度の個体差減少</span>
+                                        <span class="feature positive">✓ 24時間胃内pH>4の維持時間延長</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-year">2015年〜</div>
+                            <div class="timeline-content">
+                                <h3>第4世代：新たなメカニズム</h3>
+                                <div class="drug-evolution">
+                                    <h4>ボノプラザン（タケキャブ®）</h4>
+                                    <p><strong>開発背景</strong>：PPIの限界を超える新規作用機序（P-CAB）</p>
+                                    <div class="features">
+                                        <span class="feature positive">✓ 酸による活性化不要（速効性）</span>
+                                        <span class="feature positive">✓ 可逆的阻害（安全性向上）</span>
+                                        <span class="feature positive">✓ H.pylori除菌成功率90%以上</span>
+                                        <span class="feature positive">✓ CYP2C19遺伝子多型の影響を受けない</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CYP2C19遺伝子多型の影響 -->
+                <section class="cyp2c19-impact">
+                    <h2>🧬 CYP2C19遺伝子多型とPPI効果</h2>
+                    
+                    <div class="genetic-overview">
+                        <h3>日本人の遺伝子型分布と臨床的影響</h3>
+                        <div class="genetic-distribution">
+                            <div class="genetic-type">
+                                <div class="type-header">
+                                    <span class="type-name">PM型（低代謝）</span>
+                                    <span class="frequency">20-25%</span>
+                                </div>
+                                <div class="type-description">
+                                    <p>酵素活性：欠損</p>
+                                    <p class="clinical-impact positive">通常用量で十分、副作用注意</p>
+                                </div>
+                            </div>
+                            
+                            <div class="genetic-type">
+                                <div class="type-header">
+                                    <span class="type-name">IM型（中間代謝）</span>
+                                    <span class="frequency">45-50%</span>
+                                </div>
+                                <div class="type-description">
+                                    <p>酵素活性：低下</p>
+                                    <p class="clinical-impact neutral">標準的効果</p>
+                                </div>
+                            </div>
+                            
+                            <div class="genetic-type">
+                                <div class="type-header">
+                                    <span class="type-name">EM型（高速代謝）</span>
+                                    <span class="frequency">25-30%</span>
+                                </div>
+                                <div class="type-description">
+                                    <p>酵素活性：正常</p>
+                                    <p class="clinical-impact warning">効果不十分の可能性</p>
+                                </div>
+                            </div>
+                            
+                            <div class="genetic-type">
+                                <div class="type-header">
+                                    <span class="type-name">UM型（超高速代謝）</span>
+                                    <span class="frequency">1-2%</span>
+                                </div>
+                                <div class="type-description">
+                                    <p>酵素活性：著増</p>
+                                    <p class="clinical-impact negative">PPI効果期待できず</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ppi-genetic-impact">
+                        <h3>PPI別の遺伝子多型影響度</h3>
+                        <div class="impact-comparison">
+                            <div class="impact-item high-impact">
+                                <span class="ppi-name">オメプラゾール</span>
+                                <div class="impact-bar">
+                                    <div class="bar" style="width: 90%; background: #e74c3c;"></div>
+                                    <span class="impact-level">影響大</span>
+                                </div>
+                            </div>
+                            <div class="impact-item high-impact">
+                                <span class="ppi-name">ランソプラゾール</span>
+                                <div class="impact-bar">
+                                    <div class="bar" style="width: 75%; background: #f39c12;"></div>
+                                    <span class="impact-level">影響中</span>
+                                </div>
+                            </div>
+                            <div class="impact-item medium-impact">
+                                <span class="ppi-name">エソメプラゾール</span>
+                                <div class="impact-bar">
+                                    <div class="bar" style="width: 70%; background: #f39c12;"></div>
+                                    <span class="impact-level">影響中</span>
+                                </div>
+                            </div>
+                            <div class="impact-item low-impact">
+                                <span class="ppi-name">ラベプラゾール</span>
+                                <div class="impact-bar">
+                                    <div class="bar" style="width: 30%; background: #27ae60;"></div>
+                                    <span class="impact-level">影響小</span>
+                                </div>
+                            </div>
+                            <div class="impact-item no-impact">
+                                <span class="ppi-name">ボノプラザン</span>
+                                <div class="impact-bar">
+                                    <div class="bar" style="width: 5%; background: #27ae60;"></div>
+                                    <span class="impact-level">影響なし</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clinical-recommendations">
+                        <h3>臨床での対応</h3>
+                        <div class="recommendation-grid">
+                            <div class="recommendation-card">
+                                <h4>EM/UM患者への対応</h4>
+                                <ul>
+                                    <li>標準用量で効果不十分な場合が多い</li>
+                                    <li>ラベプラゾールまたはボノプラザンへの変更考慮</li>
+                                    <li>用量増量（保険適応内で）</li>
+                                </ul>
+                            </div>
+                            <div class="recommendation-card">
+                                <h4>PM患者への対応</h4>
+                                <ul>
+                                    <li>通常用量で十分な効果</li>
+                                    <li>副作用リスク注意（特に長期投与）</li>
+                                    <li>必要に応じて減量検討</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 薬剤比較マトリックス -->
+                <section class="comparison-matrix">
+                    <h2>💊 臨床使い分けマトリックス</h2>
+                    
+                    <!-- 主要薬剤比較表 -->
+                    <div class="comparison-table-wrapper">
+                        <h3>主要薬剤一覧</h3>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>薬剤名</th>
+                                    <th>世代</th>
+                                    <th>特徴</th>
+                                    <th>CYP2C19影響</th>
+                                    <th>使い分けポイント</th>
+                                    <th>詳細</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>オメプラゾール</strong><br>（オメプラール）</td>
+                                    <td><span class="generation-badge gen-1">第1世代</span></td>
+                                    <td>世界初PPI、安価</td>
+                                    <td><span class="impact-badge high">影響大</span></td>
+                                    <td>コスト重視、軽症GERD</td>
+                                    <td><a href="../drugs/omeprazole.html" class="detail-link">詳細 →</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ランソプラゾール</strong><br>（タケプロン）</td>
+                                    <td><span class="generation-badge gen-2">第2世代</span></td>
+                                    <td>日本シェア1位、OD錠</td>
+                                    <td><span class="impact-badge medium">影響中</span></td>
+                                    <td>NSAIDs潰瘍予防、小児適応</td>
+                                    <td><span class="drug-status">準備中</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ラベプラゾール</strong><br>（パリエット）</td>
+                                    <td><span class="generation-badge gen-2">第2世代</span></td>
+                                    <td>CYP2C19非依存</td>
+                                    <td><span class="impact-badge low">影響小</span></td>
+                                    <td>クロピドグレル併用、除菌</td>
+                                    <td><span class="drug-status">準備中</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>エソメプラゾール</strong><br>（ネキシウム）</td>
+                                    <td><span class="generation-badge gen-3">第3世代</span></td>
+                                    <td>オメプラゾールのS体</td>
+                                    <td><span class="impact-badge medium">影響中</span></td>
+                                    <td>重症GERD、夜間酸逆流</td>
+                                    <td><span class="drug-status">準備中</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ボノプラザン</strong><br>（タケキャブ）</td>
+                                    <td><span class="generation-badge gen-4">第4世代</span></td>
+                                    <td>P-CAB新機序</td>
+                                    <td><span class="impact-badge none">影響なし</span></td>
+                                    <td>H.pylori除菌、PPI抵抗性</td>
+                                    <td><span class="drug-status">準備中</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- H.pylori除菌での使い分け -->
+                    <div class="h-pylori-comparison">
+                        <h3>H.pylori除菌での使い分け</h3>
+                        <div class="eradication-success">
+                            <h4>一次除菌レジメン（成功率）</h4>
+                            <div class="success-rates">
+                                <div class="success-item">
+                                    <span class="drug-name">ボノプラザン 20mg bid</span>
+                                    <div class="success-bar">
+                                        <div class="bar" style="width: 92.6%; background: #27ae60;"></div>
+                                        <span class="percentage">92.6%</span>
+                                    </div>
+                                </div>
+                                <div class="success-item">
+                                    <span class="drug-name">ラベプラゾール 10mg bid</span>
+                                    <div class="success-bar">
+                                        <div class="bar" style="width: 85.7%; background: #f39c12;"></div>
+                                        <span class="percentage">85.7%</span>
+                                    </div>
+                                </div>
+                                <div class="success-item">
+                                    <span class="drug-name">エソメプラゾール 20mg bid</span>
+                                    <div class="success-bar">
+                                        <div class="bar" style="width: 84.5%; background: #f39c12;"></div>
+                                        <span class="percentage">84.5%</span>
+                                    </div>
+                                </div>
+                                <div class="success-item">
+                                    <span class="drug-name">ランソプラゾール 30mg bid</span>
+                                    <div class="success-bar">
+                                        <div class="bar" style="width: 78.8%; background: #f39c12;"></div>
+                                        <span class="percentage">78.8%</span>
+                                    </div>
+                                </div>
+                                <div class="success-item">
+                                    <span class="drug-name">オメプラゾール 20mg bid</span>
+                                    <div class="success-bar">
+                                        <div class="bar" style="width: 75.9%; background: #e74c3c;"></div>
+                                        <span class="percentage">75.9%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 疾患別推奨PPI -->
+                    <div class="disease-based-selection">
+                        <h3>疾患・病態別の推奨PPI</h3>
+                        <div class="selection-grid">
+                            <div class="selection-card">
+                                <h4>重症GERD<br>（LA-C/D）</h4>
+                                <div class="recommended-drug">ボノプラザン</div>
+                                <p class="reason">最強の酸分泌抑制</p>
+                                <div class="alternative">代替：エソメプラゾール</div>
+                            </div>
+                            
+                            <div class="selection-card">
+                                <h4>H.pylori除菌</h4>
+                                <div class="recommended-drug">ボノプラザン</div>
+                                <p class="reason">最高除菌率（92.6%）</p>
+                                <div class="alternative">代替：ラベプラゾール</div>
+                            </div>
+                            
+                            <div class="selection-card">
+                                <h4>抗血小板薬併用</h4>
+                                <div class="recommended-drug">ラベプラゾール</div>
+                                <p class="reason">クロピドグレルと相互作用最小</p>
+                                <div class="alternative">代替：ボノプラザン</div>
+                            </div>
+                            
+                            <div class="selection-card">
+                                <h4>NSAIDs潰瘍予防</h4>
+                                <div class="recommended-drug">ランソプラゾール</div>
+                                <p class="reason">適応承認、低用量で有効</p>
+                                <div class="alternative">代替：オメプラゾール</div>
+                            </div>
+                            
+                            <div class="selection-card">
+                                <h4>高齢者（85歳以上）</h4>
+                                <div class="recommended-drug">ラベプラゾール</div>
+                                <p class="reason">薬物相互作用少</p>
+                                <div class="alternative">低用量から開始</div>
+                            </div>
+                            
+                            <div class="selection-card">
+                                <h4>コスト重視</h4>
+                                <div class="recommended-drug">オメプラゾールGE</div>
+                                <p class="reason">薬価最安（10円/錠以下）</p>
+                                <div class="alternative">ランソプラゾールGE</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- なぜ似た薬が複数存在するのか -->
+                <section class="why-multiple">
+                    <h2>💡 なぜ似た薬が複数存在するのか</h2>
+                    <div class="answer-grid">
+                        <div class="answer-card">
+                            <div class="answer-icon">🧬</div>
+                            <h3>遺伝子多型対応</h3>
+                            <p>CYP2C19の遺伝子多型により、同じPPIでも効果に大きな個体差。遺伝子多型の影響を受けない薬剤の開発が必要</p>
+                        </div>
+                        <div class="answer-card">
+                            <div class="answer-icon">⚗️</div>
+                            <h3>薬物相互作用の回避</h3>
+                            <p>クロピドグレルとの相互作用回避、ワルファリンへの影響最小化など、併用薬との相互作用を考慮した改良</p>
+                        </div>
+                        <div class="answer-card">
+                            <div class="answer-icon">🎯</div>
+                            <h3>適応拡大の戦略</h3>
+                            <p>H.pylori除菌、NSAIDs潰瘍予防、小児適応など、各社が独自の適応症獲得で差別化を図る</p>
+                        </div>
+                        <div class="answer-card">
+                            <div class="answer-icon">🔬</div>
+                            <h3>新規作用機序の探求</h3>
+                            <p>従来PPIの限界（酸による活性化が必要、不可逆的阻害）を克服する新規機序（P-CAB）の開発</p>
+                        </div>
+                    </div>
+                    
+                    <div class="key-insight">
+                        <h3>PPI特有の洞察</h3>
+                        <p class="formula">PPI選択 ＝ 酸分泌抑制力 × 遺伝子多型影響 × 相互作用リスク × 適応症</p>
+                        <p class="explanation">PPIの処方選択は、ARBとは異なり遺伝子多型の影響が大きく、患者の代謝型に応じた薬剤選択が重要。また、H.pylori除菌という明確な成功率の差が存在することで、evidence-basedな選択が可能。</p>
+                    </div>
+                </section>
+
+                <!-- 関連リンク -->
+                <section class="related-links">
+                    <h2>関連情報</h2>
+                    <div class="links-grid">
+                        <div class="link-card">
+                            <h3>消化器薬剤詳細</h3>
+                            <div class="drug-links">
+                                <a href="../drugs/omeprazole.html">オメプラゾール</a>
+                                <span class="drug-status">ランソプラゾール準備中</span>
+                                <span class="drug-status">ラベプラゾール準備中</span>
+                            </div>
+                        </div>
+                        <div class="link-card">
+                            <h3>PPI開発ストーリー</h3>
+                            <p>制酸薬革命の歴史と未来</p>
+                            <a href="../stories/ppi.html" class="link">ストーリーを読む →</a>
+                        </div>
+                        <div class="link-card">
+                            <h3>CYP2C19遺伝子検査</h3>
+                            <p>個別化医療への展開</p>
+                            <a href="../stories/personalized.html" class="link">詳細を見る →</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">PharmaDex</h3>
+                    <p class="footer-description">薬学生から臨床医まで。薬学知識の真の理解を支援する包括的プラットフォーム。</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">コンテンツ</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html#drugs">薬剤詳細</a></li>
+                        <li><a href="../../index.html#categories">薬効群モデル</a></li>
+                        <li><a href="../../index.html#stories">開発ストーリー</a></li>
+                        <li><a href="../../index.html#differentiation">使い分けガイド</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 PharmaDex. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
