@@ -1,0 +1,1307 @@
+/*
+ * PharmaDex - Drug Detail Page CSS
+ * 薬剤詳細ページ専用スタイルシート
+ * Version: 1.0.0
+ * 最終更新: 2025年6月28日
+ * 
+ * テルミサルタン20,000文字級コンテンツに最適化
+ * digoxin_kokushi_card.htmlパターンを継承・発展
+ */
+
+/* ========================================
+   薬剤詳細ページ基盤設定
+======================================== */
+
+.drug-detail {
+    padding-top: var(--spacing-xl);
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-secondary) 100%);
+    min-height: 100vh;
+}
+
+.drug-detail .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-base);
+}
+
+/* 戻るボタン */
+.back-button-container {
+    margin-bottom: var(--spacing-lg);
+}
+
+.back-button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 25px;
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-light);
+}
+
+.back-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* パンくずナビゲーション */
+.breadcrumb {
+    background: var(--bg-card);
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 60px; /* ヘッダー高さ分 */
+    z-index: 10;
+    box-shadow: var(--shadow-light);
+}
+
+.breadcrumb .container {
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-sm);
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.breadcrumb .separator {
+    margin: 0 var(--spacing-sm);
+    color: var(--text-muted);
+}
+
+.breadcrumb .current {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* ========================================
+   薬剤ヘッダーセクション
+======================================== */
+
+.drug-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: var(--spacing-2xl);
+    border-radius: 20px;
+    margin-bottom: var(--spacing-2xl);
+    box-shadow: var(--shadow-heavy);
+    position: relative;
+    overflow: hidden;
+}
+
+.drug-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.drug-header > * {
+    position: relative;
+    z-index: 1;
+}
+
+.drug-title-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.drug-name {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.drug-subtitle {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-base);
+    font-size: var(--font-size-lg);
+}
+
+.generic-name {
+    background: rgba(255, 255, 255, 0.2);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+.brand-name {
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.drug-classification {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.drug-class {
+    background: var(--accent-color);
+    padding: var(--spacing-xs) var(--spacing-base);
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    width: fit-content;
+}
+
+.generation {
+    font-size: var(--font-size-lg);
+    font-weight: 300;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* 統計表示 */
+.drug-overview-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.stat-item {
+    text-align: center;
+    padding: var(--spacing-base);
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    transition: var(--transition-base);
+}
+
+.stat-item:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.stat-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    opacity: 0.8;
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-value {
+    display: block;
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.stat-value.highlight {
+    color: #ffd700;
+    text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+}
+
+/* ========================================
+   30秒サマリーセクション
+======================================== */
+
+.quick-summary {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.quick-summary h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.summary-box {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    border: 3px solid #ffc107;
+    border-radius: 15px;
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-medium);
+    position: relative;
+}
+
+.summary-box::before {
+    content: '⚡';
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: #ffc107;
+    color: #333;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+}
+
+.summary-text {
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    color: #333;
+    margin: 0;
+}
+
+.summary-text strong {
+    color: #c0392b;
+    font-weight: 700;
+}
+
+/* ========================================
+   セクション共通スタイル
+======================================== */
+
+.drug-detail section {
+    background: var(--bg-card);
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-2xl);
+    border-radius: 15px;
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--border-light);
+}
+
+.drug-detail section h2 {
+    font-size: var(--font-size-2xl);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-base);
+    border-bottom: 3px solid var(--primary-light);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.drug-detail section h3 {
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
+    margin: var(--spacing-xl) 0 var(--spacing-lg) 0;
+    padding-left: var(--spacing-base);
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* ========================================
+   24時間降圧革命セクション
+======================================== */
+
+.revolution-concept {
+    background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%);
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    margin-bottom: var(--spacing-xl);
+    border-left: 5px solid var(--secondary-color);
+}
+
+.revolution-concept p {
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    margin: 0;
+}
+
+.revolution-concept strong {
+    color: var(--secondary-dark);
+    font-weight: 700;
+}
+
+/* 半減期比較チャート */
+.half-life-comparison {
+    margin: var(--spacing-xl) 0;
+}
+
+.comparison-chart {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.drug-item {
+    background: var(--bg-light);
+    padding: var(--spacing-lg);
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+    transition: var(--transition-base);
+}
+
+.drug-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.drug-item.telmisartan {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
+.drug-item h4 {
+    margin: 0 0 var(--spacing-base) 0;
+    font-size: var(--font-size-lg);
+    color: var(--text-primary);
+}
+
+.half-life-bar {
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.telmisartan-bar {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    animation: pulse-glow 2s infinite alternate;
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 10px rgba(42, 82, 152, 0.5); }
+    100% { box-shadow: 0 0 20px rgba(42, 82, 152, 0.8); }
+}
+
+.medium-bar {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+}
+
+.short-bar {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.very-short-bar {
+    background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+}
+
+.half-life-benefit {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: var(--font-size-base);
+}
+
+.half-life-note {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+/* 臨床インパクトグリッド */
+.clinical-impact {
+    margin: var(--spacing-xl) 0;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.impact-item {
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    border: 2px solid;
+    transition: var(--transition-base);
+}
+
+.impact-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.morning-surge {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    border-color: #ff9800;
+}
+
+.night-bp {
+    background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+    border-color: #3f51b5;
+}
+
+.adherence {
+    background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%);
+    border-color: var(--secondary-color);
+}
+
+.impact-item h4 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-base);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.impact-item p {
+    line-height: 1.6;
+    margin: 0;
+}
+
+.impact-item strong {
+    color: var(--primary-color);
+}
+
+/* ========================================
+   PPAR-γ活性化セクション
+======================================== */
+
+.ppar-concept {
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    border-left: 5px solid #9c27b0;
+    margin-bottom: var(--spacing-xl);
+}
+
+.mechanism-steps {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.mechanism-step {
+    background: var(--bg-light);
+    padding: var(--spacing-lg);
+    border-radius: 10px;
+    border-left: 4px solid #9c27b0;
+    transition: var(--transition-base);
+}
+
+.mechanism-step:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-light);
+}
+
+.mechanism-step h4 {
+    color: #9c27b0;
+    margin-bottom: var(--spacing-base);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+/* 専門医の視点 */
+.specialist-perspective {
+    margin-top: var(--spacing-lg);
+}
+
+.quote-box {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-left: 5px solid var(--info-color);
+    padding: var(--spacing-lg);
+    border-radius: 0 10px 10px 0;
+    margin-bottom: var(--spacing-lg);
+    font-style: italic;
+}
+
+.quote-box blockquote {
+    margin: 0;
+    font-size: var(--font-size-lg);
+    line-height: 1.7;
+}
+
+.quote-box cite {
+    display: block;
+    text-align: right;
+    margin-top: var(--spacing-base);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    font-style: normal;
+}
+
+.prescribing-data {
+    background: var(--bg-light);
+    padding: var(--spacing-lg);
+    border-radius: 10px;
+}
+
+.prescribing-data ul {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-base) 0 0 0;
+}
+
+.prescribing-data li {
+    background: white;
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-base);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+}
+
+/* ========================================
+   ONTARGET試験セクション
+======================================== */
+
+.trial-design {
+    background: var(--bg-light);
+    padding: var(--spacing-xl);
+    border-radius: 10px;
+    margin: var(--spacing-lg) 0;
+}
+
+.design-spec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-base);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.design-spec:last-child {
+    border-bottom: none;
+}
+
+.spec-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    min-width: 120px;
+}
+
+.spec-value {
+    color: var(--text-secondary);
+    text-align: right;
+}
+
+/* 試験結果比較 */
+.results-comparison {
+    display: grid;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+}
+
+.result-group {
+    background: var(--bg-light);
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    border: 2px solid var(--border-light);
+}
+
+.result-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.telmisartan-stat {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    padding: var(--spacing-lg);
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid var(--primary-color);
+}
+
+.ramipril-stat {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    padding: var(--spacing-lg);
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #ff9800;
+}
+
+.stat-conclusion {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: var(--spacing-base);
+    background: var(--secondary-color);
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+/* 優位性ポイント */
+.superiority-points {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.superior-item {
+    background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%);
+    padding: var(--spacing-lg);
+    border-radius: 10px;
+    border-left: 5px solid var(--secondary-color);
+}
+
+.superior-item h5 {
+    color: var(--secondary-dark);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+/* 歴史的引用 */
+.historical-quotes {
+    margin-top: var(--spacing-lg);
+}
+
+.historical-quotes blockquote {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-left: 5px solid var(--primary-color);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    border-radius: 0 10px 10px 0;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+/* ========================================
+   市場シェア・競合分析セクション
+======================================== */
+
+.share-timeline {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    position: relative;
+}
+
+.share-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.timeline-year {
+    background: var(--bg-light);
+    padding: var(--spacing-lg);
+    border-radius: 10px;
+    margin-left: 60px;
+    position: relative;
+    border: 2px solid var(--border-light);
+    transition: var(--transition-base);
+}
+
+.timeline-year:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--primary-color);
+}
+
+.timeline-year::before {
+    content: '';
+    position: absolute;
+    left: -49px;
+    top: 20px;
+    width: 15px;
+    height: 15px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px var(--primary-color);
+}
+
+.timeline-year h4 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+}
+
+/* 成功要因分析 */
+.factor-analysis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.factor-item {
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    border: 2px solid;
+    transition: var(--transition-base);
+}
+
+.factor-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.differentiation {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    border-color: #ff9800;
+}
+
+.target-focus {
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+    border-color: #9c27b0;
+}
+
+.evidence-power {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-color: var(--info-color);
+}
+
+.practical-value {
+    background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%);
+    border-color: var(--secondary-color);
+}
+
+.factor-item h4 {
+    margin-bottom: var(--spacing-base);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+/* 競合比較 */
+.competitor-comparison {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.comparison-item {
+    background: var(--bg-light);
+    padding: var(--spacing-lg);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+    transition: var(--transition-base);
+}
+
+.comparison-item:hover {
+    background: white;
+    box-shadow: var(--shadow-light);
+    transform: translateX(5px);
+}
+
+.comparison-item h4 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ========================================
+   処方実践ガイドセクション
+======================================== */
+
+.scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.scenario-card {
+    padding: var(--spacing-xl);
+    border-radius: 15px;
+    border: 3px solid;
+    background: white;
+    transition: var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.scenario-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    border-radius: 15px 15px 0 0;
+}
+
+.scenario-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.diabetes {
+    border-color: #e67e22;
+}
+
+.diabetes::before {
+    background: linear-gradient(90deg, #e67e22, #f39c12);
+}
+
+.elderly {
+    border-color: #9b59b6;
+}
+
+.elderly::before {
+    background: linear-gradient(90deg, #9b59b6, #8e44ad);
+}
+
+.ckd {
+    border-color: #e74c3c;
+}
+
+.ckd::before {
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+}
+
+.morning-hypertension {
+    border-color: #3498db;
+}
+
+.morning-hypertension::before {
+    background: linear-gradient(90deg, #3498db, #2980b9);
+}
+
+.scenario-card h4 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding-top: var(--spacing-base);
+}
+
+.prescription-details p {
+    margin-bottom: var(--spacing-base);
+    line-height: 1.6;
+}
+
+.prescription-details strong {
+    color: var(--primary-color);
+}
+
+/* 用量設定表 */
+.dosing-table {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.dose-level {
+    background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
+    padding: var(--spacing-lg);
+    border-radius: 10px;
+    border-left: 5px solid var(--primary-color);
+    transition: var(--transition-base);
+}
+
+.dose-level:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-light);
+}
+
+.dose-level h4 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+}
+
+/* ========================================
+   安全性プロファイルセクション
+======================================== */
+
+.safety-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+}
+
+.safety-advantage {
+    background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%);
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    border: 2px solid var(--secondary-color);
+}
+
+.safety-monitoring {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    border: 2px solid var(--warning-color);
+}
+
+.safety-advantage h4,
+.safety-monitoring h4 {
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.safety-advantage ul,
+.safety-monitoring ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.safety-advantage li,
+.safety-monitoring li {
+    background: white;
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-base);
+    border-radius: 8px;
+    border-left: 3px solid var(--secondary-color);
+    line-height: 1.5;
+}
+
+.safety-monitoring li {
+    border-left-color: var(--warning-color);
+}
+
+.safety-advantage strong,
+.safety-monitoring strong {
+    color: var(--primary-color);
+}
+
+/* 禁忌と慎重投与 */
+.contraindication-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+}
+
+.absolute-contraindications {
+    background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    border: 3px solid #e74c3c;
+}
+
+.careful-administration {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    border: 3px solid var(--warning-color);
+}
+
+.absolute-contraindications h4,
+.careful-administration h4 {
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+/* ========================================
+   国試・実習ポイントセクション
+======================================== */
+
+.exam-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+}
+
+.exam-card {
+    background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
+    padding: var(--spacing-xl);
+    border-radius: 15px;
+    border: 3px solid var(--primary-color);
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-base);
+}
+
+.exam-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-heavy);
+    border-color: var(--primary-dark);
+}
+
+.exam-card h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-xl);
+    border: none;
+    padding: 0;
+}
+
+.exam-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exam-card li {
+    background: var(--bg-secondary);
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-base);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    line-height: 1.6;
+    transition: var(--transition-fast);
+}
+
+.exam-card li:hover {
+    background: white;
+    transform: translateX(5px);
+}
+
+.exam-card strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* 典型的な国試問題 */
+.question-examples {
+    margin-top: var(--spacing-lg);
+}
+
+.question-item {
+    background: var(--bg-light);
+    padding: var(--spacing-lg);
+    border-radius: 10px;
+    margin-bottom: var(--spacing-lg);
+    border-left: 5px solid var(--info-color);
+    transition: var(--transition-base);
+}
+
+.question-item:hover {
+    background: white;
+    box-shadow: var(--shadow-light);
+}
+
+.question-item p {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.question-item p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   関連リンクセクション
+======================================== */
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.related-link {
+    display: block;
+    background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    border: 2px solid var(--border-light);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-light);
+}
+
+.related-link:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--primary-color);
+}
+
+.link-title {
+    display: block;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.link-desc {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* ========================================
+   レスポンシブ対応
+======================================== */
+
+@media (max-width: 768px) {
+    .drug-detail .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .drug-header {
+        padding: var(--spacing-lg);
+    }
+    
+    .drug-name {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .drug-overview-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+    
+    .stat-value {
+        font-size: var(--font-size-xl);
+    }
+    
+    .summary-text {
+        font-size: var(--font-size-base);
+    }
+    
+    .drug-detail section {
+        padding: var(--spacing-lg);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .drug-detail section h2 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .scenario-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .exam-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .safety-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .factor-analysis {
+        grid-template-columns: 1fr;
+    }
+    
+    .result-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline-year {
+        margin-left: 40px;
+    }
+    
+    .timeline-year::before {
+        left: -29px;
+    }
+}
+
+@media (max-width: 480px) {
+    .drug-header {
+        padding: var(--spacing-base);
+    }
+    
+    .drug-name {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .drug-overview-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .drug-subtitle {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+    
+    .breadcrumb .container {
+        font-size: var(--font-size-xs);
+    }
+    
+    .summary-box {
+        padding: var(--spacing-base);
+    }
+    
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .links-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   印刷対応
+======================================== */
+
+@media print {
+    .drug-detail {
+        background: white;
+    }
+    
+    .drug-header {
+        background: white;
+        color: black;
+        border: 2px solid #333;
+    }
+    
+    .drug-detail section {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .back-button,
+    .breadcrumb {
+        display: none;
+    }
+    
+    .exam-card,
+    .scenario-card {
+        break-inside: avoid;
+    }
+}
+
+/* ========================================
+   アクセシビリティ対応
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    /* ダークモード対応は将来実装 */
+}
+
+/* フォーカス表示の改善 */
+.back-button:focus,
+.related-link:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* 高コントラストモード対応 */
+@media (prefers-contrast: high) {
+    .drug-header {
+        background: #000;
+        color: #fff;
+    }
+    
+    .exam-card,
+    .scenario-card {
+        border-width: 4px;
+    }
+    
+    .summary-box {
+        border-width: 4px;
+        background: #fff;
+        color: #000;
+    }
+}

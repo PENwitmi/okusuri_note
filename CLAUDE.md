@@ -353,6 +353,20 @@ python -m http.server 8000    # ローカル確認
 
 ## 更新履歴
 
+- **2025-06-30 18:38**: docs/ディレクトリ構造改革実行完了（CEO単独作業）
+  - **実施内容**:
+    - 87個のHTMLファイルをarchive/backup_20250630_1832/へアーカイブ
+    - CSS/JSファイルをassets/ディレクトリに再配置（6+2ファイル）
+    - index.htmlのパス更新（css/ → assets/css/、js/ → assets/js/）
+    - 作業用MDファイル9個を_internal/へ移動
+    - 空ディレクトリ9個を削除（backup_* 5個、categories、drugs、groups、stories）
+  - **最終構造**: 
+    - シンプルな5ディレクトリ構成（index.html、generated/、assets/、archive/、_internal/）
+    - generated/は空の状態を維持（ビルドツール出力用）
+  - **効果**:
+    - 公開コンテンツと内部文書の明確な分離
+    - ビルドツールとの整合性確保
+    - 保守性と拡張性の向上
 - **2025-06-30 18:00**: project-docs内の整理とCLAUDE.md内パス更新完了（CEO単独作業）
   - **実施内容**:
     - project-docs内の空ディレクトリ削除（architecture/, templates/, HTMLバックアップ内の空フォルダ）
