@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メトホルミン レベル1コンポーネント</title>
+    <style>
+        /* CSS変数定義 */
+        :root {
+            --pharma-primary: #3498db;           /* 学習最適化ブルー */
+            --pharma-nature: #27ae60;            /* 薬学象徴グリーン */
+            --text-reading: #374151;             /* 長時間読書専用 */
+            --category-endocrine: #f39c12;       /* 糖尿病薬（内分泌系） */
+            --category-cardiovascular: #e74c3c;   /* 降圧薬（循環器系） */
+            --category-lipid: #3498db;           /* 脂質異常症薬 */
+        }
+
+        /* レベル別カラースキーム（新仕様） */
+        .student-level {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            border-left: 5px solid var(--pharma-primary);
+        }
+
+        .intermediate-level {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 5px solid #ff9800;
+        }
+
+        .advanced-level {
+            background: linear-gradient(135deg, #f3e4f8 0%, #e1bee7 100%);
+            border-left: 5px solid #9c27b0;
+        }
+
+        /* セクション共通スタイル */
+        section {
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* 基本情報カードのスタイル */
+        .drug-name-display {
+            margin-bottom: 1.5rem;
+        }
+
+        .brand-name {
+            font-size: 2.5rem;
+            color: var(--text-reading);
+            margin: 0 0 0.5rem 0;
+            font-weight: 700;
+        }
+
+        .generic-name {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin: 0;
+        }
+
+        /* 分類バッジ */
+        .classification-badges {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .drug-class-badge {
+            background: var(--category-endocrine);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .drug-class-badge.endocrine {
+            background: var(--category-endocrine);
+        }
+
+        .first-choice-badge {
+            background: #4caf50;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* 主要適応 */
+        .main-indications h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .indication-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .indication-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .indication-list li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+
+        .indication-list li.primary {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        /* サマリーグリッド */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .summary-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .summary-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: #2c3e50;
+        }
+
+        .summary-item p {
+            margin: 0;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .fic-badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 30秒サマリータイトル */
+        .quick-summary-student h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        /* モバイル対応 */
+        @media (max-width: 768px) {
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .brand-name {
+                font-size: 2rem;
+            }
+
+            .generic-name {
+                font-size: 1rem;
+            }
+        }
+
+        /* 薬学生FAQスタイル */
+        .student-questions {
+            margin: 0;
+        }
+
+        .student-questions dt {
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 1.5rem 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .student-questions dd {
+            margin: 0 0 1rem 1.5rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .level-guide {
+            color: #3498db;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .faq-note {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            border-left: 3px solid #3498db;
+        }
+
+        /* 処方パターンスタイル */
+        .rx-example {
+            margin-bottom: 2rem;
+        }
+
+        .rx-format {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-line;
+            border-left: 3px solid #27ae60;
+        }
+
+        .rx-note {
+            margin: 0.5rem 0 0 0;
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .combo-list {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .combo-list li {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        /* 注意事項ボックススタイル */
+        .contraindications-section {
+            margin-top: 2rem;
+        }
+
+        .contraindication-box,
+        .caution-box,
+        .lifestyle-box {
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+        }
+
+        .danger {
+            background-color: #ffebee;
+            border-left: 4px solid #f44336;
+        }
+
+        .warning {
+            background-color: #fff3e0;
+            border-left: 4px solid #ff9800;
+        }
+
+        .info {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+        }
+
+        .contraindication-box h4,
+        .caution-box h4,
+        .lifestyle-box h4 {
+            margin: 0 0 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .contraindication-box ul,
+        .caution-box ul,
+        .lifestyle-box ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .contraindication-box li,
+        .caution-box li,
+        .lifestyle-box li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        /* レベル2（実習中薬学生）スタイル */
+        .intermediate-level {
+            background: linear-gradient(135deg, #f3e5f5 0%, #fce4ec 100%);
+            border-left: 5px solid #9c27b0;
+        }
+
+        /* なぜ第一選択薬セクション */
+        .why-first-choice-detailed .superiority-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .why-first-choice-detailed .superiority-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .why-first-choice-detailed .superiority-item h4 {
+            color: #9c27b0;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* 作用機序セクション */
+        .mechanism-evolution .mechanism-intro {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 3px solid #9c27b0;
+        }
+
+        .mechanism-stage {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .mechanism-stage h3 {
+            color: #9c27b0;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .mechanism-stage h4 {
+            color: #2c3e50;
+            margin: 1rem 0;
+        }
+
+        .known-unknown {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .known h5,
+        .unknown h5 {
+            color: #9c27b0;
+            margin-bottom: 0.8rem;
+        }
+
+        .clinical-significance {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .ampk-effects {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .metabolic-effects,
+        .cellular-effects {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        /* 日本の処方文化セクション */
+        .japan-prescribing-culture .delay-factors {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .japan-prescribing-culture .factor {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .japan-prescribing-culture .factor h4 {
+            color: #9c27b0;
+            margin-bottom: 1rem;
+        }
+
+        .adoption-timeline {
+            margin-top: 1.5rem;
+        }
+
+        .adoption-timeline .phase {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 3px solid #9c27b0;
+        }
+
+        .adoption-timeline .phase h4 {
+            color: #9c27b0;
+            margin-bottom: 0.5rem;
+        }
+
+        /* レベル誘導セクション */
+        .level-guide-section {
+            margin-top: 2rem;
+        }
+
+        .next-level-prompt {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 2px dashed #9c27b0;
+            text-align: center;
+        }
+
+        .next-level-prompt h3 {
+            color: #9c27b0;
+            margin-bottom: 1rem;
+        }
+
+        .next-level-prompt ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+
+        .next-level-prompt li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .next-level-prompt li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #9c27b0;
+        }
+
+        /* モバイル対応 */
+        @media (max-width: 768px) {
+            .known-unknown,
+            .ampk-effects,
+            .delay-factors {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* レベル3（研修中薬剤師・医療従事者）スタイル */
+        .advanced-level {
+            background: linear-gradient(135deg, #fce4ec 0%, #fff3e0 100%);
+            border-left: 5px solid #f44336;
+        }
+
+        /* ヒーローセクション */
+        .drug-header.hero-section h1 {
+            font-size: 3rem;
+            color: #f44336;
+            margin-bottom: 1rem;
+        }
+
+        .miracle-tagline {
+            margin: 2rem 0;
+        }
+
+        .miracle-text {
+            color: #c62828;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .miracle-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #424242;
+        }
+
+        .drug-overview-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #f44336;
+        }
+
+        .stat-value.highlight {
+            color: #c62828;
+            font-size: 2.5rem;
+        }
+
+        /* 医師・患者の証言 */
+        .medical-voices .doctor-voice,
+        .medical-voices .patient-voice {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .medical-voices blockquote {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+            border-left: 3px solid #f44336;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .medical-voices cite {
+            display: block;
+            text-align: right;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* フェンホルミン事件 */
+        .phenformin-incident .tragedy-stats {
+            background: #ffebee;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .fate-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .drug-fate {
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .drug-fate.eliminated {
+            background: #ffebee;
+            border: 2px solid #f44336;
+        }
+
+        .drug-fate.survived {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+        }
+
+        /* 日本承認遅延 */
+        .japan-delay-analysis .delay-reasons {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .reason-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .reason-item h5 {
+            color: #f44336;
+            margin-bottom: 1rem;
+        }
+
+        /* 作用機序の第4-5段階 */
+        .mechanism-advanced .mechanism-stage {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .mechanism-stage h3 {
+            color: #f44336;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .molecular-flow {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: monospace;
+            line-height: 2;
+        }
+
+        .bacterial-changes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .beneficial-bacteria,
+        .harmful-bacteria,
+        .metabolite-changes {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        /* 併用療法 */
+        .combination-therapy-detailed .foundation-reasons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .foundation-reasons .reason-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .algorithm-steps {
+            margin-top: 2rem;
+        }
+
+        .step-item {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #f44336;
+        }
+
+        .option-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .option-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        /* モバイル対応 */
+        @media (max-width: 768px) {
+            .drug-header.hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .miracle-text {
+                font-size: 1.4rem;
+            }
+
+            .drug-overview-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .fate-comparison,
+            .bacterial-changes,
+            .foundation-reasons,
+            .option-matrix {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* レベルインジケーター */
+        .level-indicator {
+            position: sticky;
+            top: 0;
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .level-indicator-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .level-btn {
+            padding: 0.75rem 2rem;
+            border: 2px solid #e0e0e0;
+            background: #ffffff;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #666;
+        }
+
+        .level-btn:hover {
+            background: #f5f5f5;
+            border-color: #3498db;
+        }
+
+        .level-btn.active {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+            box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
+        }
+
+        /* メトホルミン特殊対応スタイル */
+        .metformin-special-warning {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border: 2px solid #f44336;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(244, 67, 54, 0.2);
+        }
+
+        .metformin-special-warning h4 {
+            color: #c62828;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .lactic-acidosis-critical {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .lactic-acidosis-symptoms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .egfr-algorithm {
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+        }
+
+        .egfr-algorithm h4 {
+            color: #2e7d32;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .egfr-flowchart {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .egfr-level {
+            background: white;
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .egfr-level.safe {
+            border-color: #4caf50;
+            background: #f1f8e9;
+        }
+
+        .egfr-level.caution {
+            border-color: #ff9800;
+            background: #fff3e0;
+        }
+
+        .egfr-level.danger {
+            border-color: #f44336;
+            background: #ffebee;
+        }
+
+        .phenformin-historical-special {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+            border: 2px solid #e91e63;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(233, 30, 99, 0.2);
+        }
+
+        .phenformin-historical-special h3 {
+            color: #ad1457;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .survival-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .drug-fate.eliminated {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .drug-fate.survived {
+            background: #e8f5e8;
+            border: 2px solid #4caf50;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* モバイル対応 */
+        @media (max-width: 768px) {
+            .level-indicator {
+                padding: 0.75rem 0;
+            }
+
+            .level-indicator-inner {
+                padding: 0 1rem;
+                gap: 0.5rem;
+            }
+
+            .level-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+
+            .lactic-acidosis-symptoms,
+            .egfr-flowchart,
+            .survival-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- レベルインジケーター -->
+    <div class="level-indicator">
+        <div class="level-indicator-inner">
+            <button class="level-btn active" data-level="1">薬学生</button>
+            <button class="level-btn" data-level="2">実習中</button>
+            <button class="level-btn" data-level="3">研修中</button>
+        </div>
+    </div>
+
+    <!-- Task 1.2: レベル1基本情報カード（薬学生向けファーストビュー） -->
+    <section class="basic-info-card student-level">
+        <div class="drug-name-display">
+            <h1 class="brand-name">メトグルコ®</h1>
+            <p class="generic-name">メトホルミン塩酸塩</p>
+        </div>
+        
+        <div class="classification-badges">
+            <span class="drug-class-badge endocrine">
+                <i class="icon-endocrine">💊</i>
+                ビグアナイド系糖尿病薬
+            </span>
+            <!-- 第一選択薬の場合のみ表示 -->
+            <span class="first-choice-badge">第一選択薬</span>
+        </div>
+        
+        <div class="main-indications">
+            <h3>主な適応症</h3>
+            <ul class="indication-list">
+                <li class="primary">2型糖尿病</li>
+                <li>食事療法・運動療法で効果不十分な場合</li>
+                <li>他の糖尿病薬との併用療法</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Task 1.3: 30秒サマリー（薬学生が30秒で理解できる構成） -->
+    <section class="quick-summary-student student-level">
+        <h2>⚡ 30秒でわかるメトホルミン</h2>
+        
+        <div class="summary-grid">
+            <div class="summary-item fic-status">
+                <h4>開発の位置づけ</h4>
+                <p class="fic-badge">ビグアナイド系で唯一生き残った薬</p>
+                <p>ビグアナイド系薬剤として最も成功し、67年間使用され続けている唯一の生存者。同胞薬は全て市場から消えた。</p>
+            </div>
+            
+            <div class="summary-item why-developed">
+                <h4>なぜ作られた？</h4>
+                <p>1957年、インスリン以外の経口糖尿病治療薬が求められた時代に、植物由来成分から開発。当時は作用機序不明のまま臨床応用された。</p>
+            </div>
+            
+            <div class="summary-item clinical-use">
+                <h4>実際どう使われてる？</h4>
+                <p>世界で年間1億人以上が服用する2型糖尿病の第一選択薬。日本でも処方率70%超。500mg錠を1日1-2回から開始し、最大2250mg/日まで増量可能。</p>
+            </div>
+            
+            <div class="summary-item vs-similar">
+                <h4>他の薬との違い</h4>
+                <p>体重を増やさない唯一の古典的経口薬。低血糖リスクが極めて低く、心血管イベントを36%減少させる。月薬価約200円と経済的負担も最小。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Task 1.4: 薬学生FAQ -->
+    <section class="student-faq-section student-level">
+        <h3>💡 薬学生のよくある疑問</h3>
+        <dl class="student-questions">
+            <dt>Q: 「★★★ なぜビグアナイド系で唯一生き残った？」</dt>
+            <dd>A: フェンホルミンと比べて乳酸アシドーシスのリスクが1000倍以上低く、安全性が証明されたから。1976年のフェンホルミン販売中止後も、メトホルミンだけが使用され続けています。<span class="level-guide">（詳しくは研修編で）</span></dd>
+            
+            <dt>Q: 「★★ 乳酸アシドーシスって何？」</dt>
+            <dd>A: 血中の乳酸が蓄積して血液が酸性に傾く危険な状態。メトホルミンでは極めて稀（1万人に0.03例）だが、腎機能低下時は注意。初期症状は悪心・嘔吐・腹痛・呼吸困難です。</dd>
+            
+            <dt>Q: 「★★★ なぜヨード造影剤で48時間休薬？」</dt>
+            <dd>A: 造影剤が腎機能を一時的に低下させ、メトホルミンの排泄が遅れて乳酸アシドーシスのリスクが上がるため。造影剤使用前48時間から中止し、腎機能確認後48-72時間後に再開します。</dd>
+        </dl>
+        
+        <div class="faq-note">
+            <p>💡 <strong>ポイント</strong>：★は国試頻出度を表します。薬理学の授業で学ぶ内容に関する質問のみ掲載。実習に関する詳しい質問はレベル2で扱います。</p>
+        </div>
+    </section>
+
+    <!-- Task 1.5: 処方パターン・併用薬 -->
+    <section class="prescription-examples student-level">
+        <h3>よく見る処方パターン</h3>
+        
+        <div class="rx-example">
+            <div class="rx-format">
+Rp) メトグルコ錠 250mg  
+    1回2錠（500mg） 1日1回 夕食後  
+    30日分</div>
+            <p class="rx-note">※ 消化器症状を避けるため低用量から開始。1-2週間で効果を見て増量検討。</p>
+        </div>
+
+        <div class="rx-example">
+            <div class="rx-format">
+Rp) メトグルコ錠 500mg  
+    1回1錠 1日2回 朝夕食後  
+    30日分</div>
+            <p class="rx-note">※ 標準的な維持用量。最大750mg×2回/日まで増量可能。</p>
+        </div>
+        
+        <div class="common-combinations">
+            <h4>一緒に処方される薬TOP3</h4>
+            <ol class="combo-list">
+                <li><strong>DPP-4阻害薬</strong>（ジャヌビア®、トラゼンタ®） - 低血糖リスクが低く安全性が高い組み合わせ。高齢者でも使いやすい。</li>
+                <li><strong>SGLT2阻害薬</strong>（フォシーガ®、ジャディアンス®） - 心血管・腎保護効果を期待。体重減少効果もあり。</li>
+                <li><strong>スタチン系薬剤</strong>（クレストール®、リピトール®） - 糖尿病患者の脂質管理。心血管イベント予防のため併用頻度高い。</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- メトホルミン特殊対応：乳酸アシドーシスの特別警告ボックス -->
+    <div class="metformin-special-warning">
+        <h4>⚠️ メトホルミン最重要警告事項</h4>
+        <div class="lactic-acidosis-critical">
+            <h5>🚨 乳酸アシドーシス：致命的副作用の予防</h5>
+            <p><strong>発生頻度</strong>：1万人に0.03例（極めて稀だが致命的）</p>
+            <p><strong>致死率</strong>：発症すると約25%の死亡率</p>
+            
+            <div class="lactic-acidosis-symptoms">
+                <div class="symptom-category">
+                    <h6>初期症状（24-48時間）</h6>
+                    <ul>
+                        <li>悪心・嘔吐</li>
+                        <li>腹痛・下痢</li>
+                        <li>全身倦怠感</li>
+                        <li>食欲不振</li>
+                    </ul>
+                </div>
+                <div class="symptom-category">
+                    <h6>進行症状（48-72時間）</h6>
+                    <ul>
+                        <li>呼吸困難（深大呼吸）</li>
+                        <li>筋肉痛・筋力低下</li>
+                        <li>意識レベル低下</li>
+                        <li>ショック状態</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="background: #ffcdd2; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                <p><strong>緊急対応</strong>：上記症状が出現したら即座に医療機関受診。血液ガス分析でpH<7.35、乳酸値>5mmol/Lで診断確定。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 注意事項ボックス -->
+    <section class="contraindications-section student-level">
+        <!-- 併用禁忌 -->
+        <div class="contraindication-box danger">
+            <h4>🚫 絶対禁忌</h4>
+            <ul>
+                <li><strong>腎機能高度低下</strong> - eGFR &lt;30の場合は使用不可（メトホルミンの90%が腎排泄のため）</li>
+                <li><strong>重度心不全・肝不全</strong> - 乳酸アシドーシスのリスクが高まる</li>
+                <li><strong>急性疾患時</strong> - 重症感染症、脱水、ショック状態</li>
+            </ul>
+        </div>
+
+        <!-- 併用注意 -->
+        <div class="caution-box warning">
+            <h4>⚠️ 重要な注意点</h4>
+            <ul>
+                <li><strong>造影剤使用時</strong> - 48時間前から中止、腎機能確認後再開</li>
+                <li><strong>手術時</strong> - 全身麻酔24時間前から中止</li>
+                <li><strong>アルコール多飲</strong> - 乳酸アシドーシスのリスク増加</li>
+            </ul>
+        </div>
+
+        <!-- 生活指導 -->
+        <div class="lifestyle-box info">
+            <h4>🍽️ 服薬指導のポイント</h4>
+            <ul>
+                <li><strong>必ず食後に服用</strong> - 消化器症状（下痢・悪心）の軽減</li>
+                <li><strong>体調不良時は相談</strong> - 発熱・下痢・嘔吐時は乳酸アシドーシスリスク</li>
+                <li><strong>定期的な腎機能チェック</strong> - 年2回以上のeGFR測定が推奨</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ========== レベル2：実習中薬学生向けコンテンツ ========== -->
+    
+    <!-- なぜ第一選択薬なのか（詳細版） -->
+    <section class="why-first-choice-detailed intermediate-level">
+        <h2>なぜ60年以上第一選択薬なのか（実習編）</h2>
+        <div class="superiority-grid">
+            <div class="superiority-item">
+                <h4>1. 安全性の圧倒的蓄積</h4>
+                <p>67年間・累計数億人での使用実績。乳酸アシドーシス発生率は1万人に0.03例と極めて稀。フェンホルミンと比較して1000倍以上安全。</p>
+            </div>
+            <div class="superiority-item">
+                <h4>2. 効果の確実性</h4>
+                <p>HbA1c 1.0-1.5%低下の安定した血糖改善。耐性現象がなく長期間効果維持。インスリン感受性改善により根本的治療に近い。</p>
+            </div>
+            <div class="superiority-item">
+                <h4>3. 心血管保護（UKPDS試験）</h4>
+                <p>1998年UKPDS試験で革命的結果：全死亡36%減少、糖尿病関連死42%減少、心筋梗塞39%減少。「メトホルミンは命を救う薬」という認識転換。</p>
+            </div>
+            <div class="superiority-item">
+                <h4>4. 体重中性</h4>
+                <p>他の多くの糖尿病薬と異なり体重増加しない。肥満糖尿病で特に重要。AMPK活性化による代謝改善効果。</p>
+            </div>
+            <div class="superiority-item">
+                <h4>5. コストパフォーマンス</h4>
+                <p>1日数円という圧倒的経済性。開発途上国でも使用可能な民主的薬剤。日本でも医療費削減に貢献。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作用機序（第1-3段階） -->
+    <section class="mechanism-evolution intermediate-level">
+        <h2>🧬 作用機序の段階的解明（実習編）</h2>
+        
+        <div class="mechanism-intro">
+            <p>メトホルミンは「機序より結果」で67年間医学界に君臨する稀有な薬剤。1957年の臨床応用開始から60年以上経った現在も、新しい作用メカニズムが発見され続けています。</p>
+        </div>
+
+        <!-- 第1段階：謎の血糖降下薬時代 -->
+        <div class="mechanism-stage stage-1">
+            <h3>第1段階（1957年〜1990年代）：謎の血糖降下薬時代</h3>
+            <div class="stage-content">
+                <h4>完全なブラックボックス状態</h4>
+                <div class="known-unknown">
+                    <div class="known">
+                        <h5>分かっていたこと</h5>
+                        <ul>
+                            <li>血糖値が下がることは明確</li>
+                            <li>インスリン分泌促進なし</li>
+                            <li>体重増加なし、低血糖リスク低</li>
+                            <li>特に食後血糖改善</li>
+                        </ul>
+                    </div>
+                    <div class="unknown">
+                        <h5>分からなかったこと</h5>
+                        <ul>
+                            <li>機序：全く不明（「ブラックボックス」状態）</li>
+                            <li>標的：どこに作用するのか不明</li>
+                            <li>代謝経路：体内での変化不明</li>
+                            <li>分子基盤：科学的説明ができない</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第2段階：肝糖新生抑制の発見 -->
+        <div class="mechanism-stage stage-2">
+            <h3>第2段階（1990年代）：肝糖新生抑制の発見</h3>
+            <div class="stage-content">
+                <h4>初めての科学的解明</h4>
+                <p><strong>発見者</strong>：Stumvoll らの研究グループ<br>
+                <strong>手法</strong>：安定同位体を用いた糖代謝追跡<br>
+                <strong>結果</strong>：肝糖新生が30-50%抑制される</p>
+                
+                <h5>肝糖新生抑制の臨床的意義</h5>
+                <div class="clinical-significance">
+                    <p><strong>正常時の肝糖新生</strong>：</p>
+                    <ul>
+                        <li>空腹時：血糖の60-70%を供給</li>
+                        <li>食後：糖新生は抑制されるべき</li>
+                        <li>2型糖尿病：糖新生抑制不全→高血糖</li>
+                    </ul>
+                    
+                    <p><strong>メトホルミンの効果</strong>：</p>
+                    <ul>
+                        <li>肝糖新生を正常レベルまで抑制</li>
+                        <li>空腹時血糖の改善</li>
+                        <li>肝インスリン抵抗性の改善</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第3段階：AMPK活性化の発見 -->
+        <div class="mechanism-stage stage-3">
+            <h3>第3段階（2001年）：AMPK活性化の発見</h3>
+            <div class="stage-content">
+                <h4>エネルギーセンサーの発見</h4>
+                <p><strong>発見者</strong>：Ming-hui Zou、David Carling ら<br>
+                <strong>革命的発見</strong>：メトホルミンがAMPK（AMP活性化プロテインキナーゼ）を活性化<br>
+                <strong>AMPKの役割</strong>：細胞内エネルギーセンサー</p>
+                
+                <h5>AMPK活性化による多面的効果</h5>
+                <div class="ampk-effects">
+                    <div class="metabolic-effects">
+                        <h6>代謝への影響</h6>
+                        <ul>
+                            <li>糖新生酵素遺伝子の発現抑制</li>
+                            <li>脂肪酸合成抑制</li>
+                            <li>脂肪酸酸化促進</li>
+                            <li>グルコース取り込み促進</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cellular-effects">
+                        <h6>細胞レベルの影響</h6>
+                        <ul>
+                            <li>mTOR経路抑制（老化・がん抑制）</li>
+                            <li>オートファジー促進（細胞浄化）</li>
+                            <li>炎症性サイトカイン抑制</li>
+                            <li>ミトコンドリア生合成促進</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 日本の処方文化（要点） -->
+    <section class="japan-prescribing-culture intermediate-level">
+        <h2>🇯🇵 日本独特の処方文化（実習編）</h2>
+        
+        <div class="approval-delay">
+            <h3>44年間の承認遅延が生んだ特殊事情</h3>
+            <div class="delay-factors">
+                <div class="factor">
+                    <h4>1. SU薬中心主義の長期継続</h4>
+                    <ul>
+                        <li>日本発のトルブタミド・グリベンクラミドの成功体験</li>
+                        <li>1957-2001年の44年間、SU薬が事実上の第一選択薬</li>
+                        <li>「血糖を下げる＝インスリン分泌促進」という固定観念</li>
+                    </ul>
+                </div>
+                
+                <div class="factor">
+                    <h4>2. フェンホルミン事件のトラウマ</h4>
+                    <ul>
+                        <li>「ビグアナイド系は危険」という先入観が44年継続</li>
+                        <li>欧米で標準治療となっても日本は導入拒否</li>
+                        <li>厚生省の極めて慎重な姿勢</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="rapid-adoption">
+            <h3>2001年承認後の急速な普及</h3>
+            <div class="adoption-timeline">
+                <div class="phase">
+                    <h4>導入期（2001-2005年）</h4>
+                    <p>慎重な導入、限定的使用。医師の経験不足と患者の不安。学会主導での安全使用講習会。</p>
+                </div>
+                <div class="phase">
+                    <h4>普及期（2006-2012年）</h4>
+                    <p>2007年ガイドラインで第一選択薬に格上げ。UKPDS追跡データの継続的発表。腎機能・造影剤制限の段階的緩和。</p>
+                </div>
+                <div class="phase">
+                    <h4>確立期（2013年〜現在）</h4>
+                    <p>処方率70%超で名実ともに第一選択薬。SGLT2阻害薬等の登場でも地位不変。ジェネリック普及で経済的優位性拡大。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- レベル2からレベル3への誘導 -->
+    <section class="level-guide-section intermediate-level">
+        <div class="next-level-prompt">
+            <h3>🎓 さらに深く学びたい方へ</h3>
+            <p>レベル3（研修編）では以下の内容を学習できます：</p>
+            <ul>
+                <li>フェンホルミン事件の完全な詳細と医学的教訓</li>
+                <li>作用機序の第4-5段階（最新知見）</li>
+                <li>日本44年承認遅延の完全な分析</li>
+                <li>併用療法の詳細アルゴリズム</li>
+                <li>医師・患者の感動的な証言</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ========== レベル3：研修中薬剤師・医療従事者向けコンテンツ ========== -->
+    
+    <!-- ヒーローセクション：不死身の薬の真実 -->
+    <section class="drug-header hero-section advanced-level">
+        <h2>🏆 67年間君臨する不死身の第一選択薬（研修編）</h2>
+        <div class="drug-title-section">
+            <h1 class="drug-name">メトホルミン</h1>
+            <div class="drug-subtitle">
+                <span class="generic-name">メトホルミン塩酸塩</span>
+                <span class="brand-name">（メトグルコ®）</span>
+            </div>
+            <div class="drug-classification">
+                <span class="drug-class endocrine">ビグアナイド系糖尿病薬</span>
+                <span class="generation">67年間君臨する不死身の第一選択薬</span>
+            </div>
+            <div class="miracle-tagline">
+                <h3 class="miracle-text">「最も地味だが最も偉大な薬：機序解明より臨床応用が60年先行した奇跡」</h3>
+                <p class="miracle-description">
+                    1957年の登場以来67年間、糖尿病治療の第一選択薬として君臨し続ける「不死身の薬」。
+                    フェンホルミン乳酸アシドーシス事件（1976年）という医学史上最大級の薬害を生き抜き、
+                    日本44年承認遅延（1957-2001年）を乗り越え、SGLT2阻害薬やGLP-1受容体作動薬などの
+                    華々しい新薬が次々と登場する中でも、その地位は全く揺るがない「リビング・レジェンド」。
+                    現在も世界中で年間1億人以上が服用する糖尿病治療の絶対的基盤として、
+                    「機序より結果」の実用主義で医学界に君臨する稀有な存在。
+                </p>
+            </div>
+        </div>
+
+        <div class="drug-overview-stats">
+            <div class="stat-item">
+                <span class="stat-label">全死亡減少</span>
+                <span class="stat-value highlight">36%</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">使用実績</span>
+                <span class="stat-value">67年間</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">累計使用者</span>
+                <span class="stat-value">10億人超</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">承認年</span>
+                <span class="stat-value">1957年</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">日本承認</span>
+                <span class="stat-value">2001年</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 医師・患者の証言 -->
+    <section class="medical-voices advanced-level">
+        <h2>💬 糖尿病専門医・患者の証言（研修編）</h2>
+        
+        <div class="doctor-voice emotion-moved">
+            <div class="voice-header">
+                <div class="doctor-info">
+                    <h3>糖尿病専門医の声</h3>
+                    <span class="experience">東京在勤</span>
+                </div>
+            </div>
+            <blockquote>
+                「ある70代の患者さんは、複数の新薬で副作用に悩まされていました。
+                メトホルミンに戻して6ヶ月後、久しぶりに笑顔で
+                『やっぱりメトグルコが一番安心です』と。
+                医師として、この薬の67年間の重みを実感する瞬間です」
+            </blockquote>
+            <cite>- 大学病院 糖尿病内分泌科医</cite>
+        </div>
+
+        <div class="patient-voice emotion-grateful">
+            <div class="voice-header">
+                <h3>患者さんの声</h3>
+            </div>
+            <blockquote>
+                「新しい薬をいろいろ試しましたが、高価で続けられませんでした。
+                でもメトホルミンを始めてから、今では血糖値も安定し、
+                家族も『薬代が安くて助かる』と喜んでくれています」
+            </blockquote>
+            <cite>- 60代 男性 神奈川県</cite>
+        </div>
+
+        <div class="doctor-voice emotion-enlightened">
+            <div class="voice-header">
+                <div class="doctor-info">
+                    <h3>開業医のエキスパート</h3>
+                    <span class="qualification">日本糖尿病学会専門医</span>
+                </div>
+            </div>
+            <blockquote>
+                「SGLT2阻害薬やGLP-1受容体作動薬も使いますが、
+                メトホルミンの安全性の蓄積は明らかに違います。
+                特に高齢者や経済的配慮が必要な患者さんでは、
+                67年間の実績という点で第一選択になりました」
+            </blockquote>
+            <cite>- 地域 糖尿病クリニック院長</cite>
+        </div>
+    </section>
+
+    <!-- メトホルミン特殊対応：フェンホルミン事件の歴史的背景特別配置 -->
+    <div class="phenformin-historical-special">
+        <h3>🏛️ メトホルミン生存の歴史的意義</h3>
+        <p><strong>1976年フェンホルミン事件</strong>：ビグアナイド系薬剤の運命を決定づけた歴史的分岐点</p>
+        
+        <div class="survival-comparison">
+            <div class="drug-fate eliminated">
+                <h4>フェンホルミン</h4>
+                <p class="elimination-reason">乳酸アシドーシス 1万人に40-64例</p>
+                <p class="result">→ 全世界で販売中止</p>
+            </div>
+            <div class="drug-fate eliminated">
+                <h4>ブホルミン</h4>
+                <p class="elimination-reason">安全性への懸念</p>
+                <p class="result">→ 段階的使用停止</p>
+            </div>
+            <div class="drug-fate survived">
+                <h4>メトホルミン</h4>
+                <p class="survival-reason">乳酸アシドーシス 1万人に0.03例</p>
+                <p class="result">→ <strong>唯一の生存者</strong></p>
+                <p class="legacy">67年間、世界で使用継続</p>
+            </div>
+        </div>
+        
+        <div style="background: #f8bbd9; padding: 1rem; border-radius: 8px; margin-top: 1rem; text-align: center;">
+            <p><strong>歴史の教訓</strong>：メトホルミンの成功は偶然ではなく、1000倍以上の安全性差という科学的根拠に基づく必然的な結果</p>
+        </div>
+    </div>
+
+    <!-- フェンホルミン事件の詳細 -->
+    <section class="phenformin-incident advanced-level">
+        <h2>🚨 フェンホルミン乳酸アシドーシス事件の真実（研修編）</h2>
+        
+        <div class="tragedy-era">
+            <h3>1970年代〜1990年代 大転換期：フェンホルミンの悲劇</h3>
+            <div class="timeline-detailed-item tragedy">
+                <div class="timeline-year-detailed">1976年</div>
+                <div class="timeline-content-detailed">
+                    <h4>医学史上最大級の薬害事件</h4>
+                    <p><strong>フェンホルミン乳酸アシドーシス事件</strong>：最も効果的とされたフェンホルミンによる死亡例多発</p>
+                    <div class="tragedy-details">
+                        <div class="tragedy-stats">
+                            <h5>被害の規模</h5>
+                            <ul>
+                                <li><strong>発生率</strong>：1万人に40-64例の乳酸アシドーシス</li>
+                                <li><strong>致死率</strong>：発症すると50%の高い死亡率</li>
+                                <li><strong>機序</strong>：ミトコンドリア呼吸阻害→嫌気性解糖亢進→乳酸蓄積</li>
+                                <li><strong>社会的衝撃</strong>：「ビグアナイド系は危険」という刻印</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="survival-story">
+                            <h5>ビグアナイド系の運命分岐</h5>
+                            <div class="fate-comparison">
+                                <div class="drug-fate eliminated">
+                                    <h6>フェンホルミン</h6>
+                                    <p>→ アメリカ・ヨーロッパで販売中止</p>
+                                    <p>「最も効果的だったが最も危険」</p>
+                                </div>
+                                <div class="drug-fate eliminated">
+                                    <h6>ブホルミン</h6>
+                                    <p>→ 段階的に使用停止</p>
+                                    <p>「安全性への懸念で自然淘汰」</p>
+                                </div>
+                                <div class="drug-fate survived">
+                                    <h6>メトホルミン</h6>
+                                    <p>→ ヨーロッパでは継続使用</p>
+                                    <p>「効果は穏やかだが安全性が高い」</p>
+                                    <p><strong>乳酸アシドーシス発生率：1万人に0.03例（1000倍以上安全）</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 日本44年承認遅延の完全な分析 -->
+    <section class="japan-delay-analysis advanced-level">
+        <h2>🇯🇵 日本44年承認遅延の完全な分析（研修編）</h2>
+        
+        <div class="delay-period">
+            <h3>1957年〜2001年：44年間の国際的孤立</h3>
+            <div class="delay-analysis">
+                <h4>なぜ日本は44年間メトホルミンを承認しなかったのか</h4>
+                <div class="delay-reasons">
+                    <div class="reason-item">
+                        <h5>1. フェンホルミン事件のトラウマ</h5>
+                        <ul>
+                            <li>日本でもフェンホルミンによる乳酸アシドーシス死亡例</li>
+                            <li>「ビグアナイド系は危険」という強固な先入観</li>
+                            <li>厚生省の極めて慎重な姿勢</li>
+                        </ul>
+                    </div>
+                    <div class="reason-item">
+                        <h5>2. SU薬の成功体験</h5>
+                        <ul>
+                            <li>日本発のトルブタミド・グリベンクラミドの成功</li>
+                            <li>「SU薬で十分」という医学界の空気</li>
+                            <li>メトホルミンの必要性を感じない環境</li>
+                        </ul>
+                    </div>
+                    <div class="reason-item">
+                        <h5>3. 欧米データへの不信</h5>
+                        <ul>
+                            <li>「日本人には適用できない」という疑念</li>
+                            <li>体型・食生活の違いを理由とした慎重論</li>
+                            <li>独自の安全性試験要求</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="approval-turning-point">
+            <h3>2001年：承認の転換点</h3>
+            <div class="approval-factors">
+                <ul>
+                    <li><strong>UKPDS後追跡データ</strong>：20年追跡でも死亡率減少継続</li>
+                    <li><strong>WHO・欧米ガイドライン</strong>：第一選択薬として確立</li>
+                    <li><strong>国際的孤立</strong>：日本だけがメトホルミンを使えない状況への批判</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作用機序の第4-5段階 -->
+    <section class="mechanism-advanced advanced-level">
+        <h2>🧬 作用機序の最新知見（研修編）</h2>
+        
+        <!-- 第4段階：ミトコンドリア複合体I阻害 -->
+        <div class="mechanism-stage stage-4">
+            <h3>第4段階（2016年〜）：ミトコンドリア複合体I阻害の詳細解明</h3>
+            <div class="stage-content">
+                <div class="mitochondrial-mechanism">
+                    <h4>分子レベルでの精密メカニズム</h4>
+                    <div class="molecular-discovery">
+                        <p><strong>発見者</strong>：Viollet, Rutter らのグループ</p>
+                        <p><strong>メカニズム</strong>：メトホルミンがミトコンドリア呼吸鎖複合体Iを軽度阻害</p>
+                        <p><strong>結果</strong>：ATP/AMP比の低下→AMPK活性化</p>
+                    </div>
+                    
+                    <div class="detailed-pathway">
+                        <h5>精密な分子経路</h5>
+                        <div class="molecular-flow">
+                            <p><strong>メトホルミンの分子標的</strong>：</p>
+                            <p>ミトコンドリア複合体I（NADH脱水素酵素）↓（軽度阻害）</p>
+                            <p>ATP産生軽度抑制 ↓</p>
+                            <p>AMP/ATP比上昇 ↓</p>
+                            <p>AMPK活性化 ↓</p>
+                            <p>代謝リプログラミング</p>
+                        </div>
+                    </div>
+                    
+                    <div class="precision-medicine">
+                        <p><strong>精密医療への道筋</strong>：分子レベルでの作用機序解明により、
+                        個別化医療や新薬開発の基盤が確立。60年越しで科学的基盤が完成。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第5段階：腸内細菌叢への影響 -->
+        <div class="mechanism-stage stage-5">
+            <h3>第5段階（2016年〜現在）：腸内細菌叢への影響発見</h3>
+            <div class="stage-content">
+                <div class="microbiome-revolution">
+                    <h4>腸内細菌叢研究の大転換</h4>
+                    <div class="microbiome-discovery">
+                        <p><strong>発見</strong>：メトホルミンが腸内細菌叢を劇的に変化させる</p>
+                        <p><strong>手法</strong>：メタゲノム解析による詳細な菌叢解析</p>
+                        <p><strong>衝撃</strong>：血糖改善効果の一部が腸内細菌由来</p>
+                    </div>
+                    
+                    <div class="microbiome-changes">
+                        <h5>メトホルミンによる腸内細菌叢変化</h5>
+                        <div class="bacterial-changes">
+                            <div class="beneficial-bacteria">
+                                <h6>善玉菌の増加</h6>
+                                <ul>
+                                    <li><strong>Akkermansia muciniphila</strong>：3-5倍増加</li>
+                                    <li><strong>Bifidobacterium</strong>：2-3倍増加</li>
+                                    <li><strong>Lactobacillus</strong>：1.5-2倍増加</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="harmful-bacteria">
+                                <h6>悪玉菌の減少</h6>
+                                <ul>
+                                    <li><strong>Bacteroides fragilis</strong>：30-50%減少</li>
+                                    <li><strong>Clostridium</strong>：20-30%減少</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="metabolite-changes">
+                                <h6>産生物質の変化</h6>
+                                <ul>
+                                    <li><strong>短鎖脂肪酸</strong>（酪酸・プロピオン酸）増加</li>
+                                    <li><strong>LPS</strong>（エンドトキシン）減少</li>
+                                    <li><strong>GLP-1分泌促進物質</strong>増加</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gut-brain-axis">
+                        <h5>腸内細菌叢を介した血糖改善メカニズム</h5>
+                        <ol>
+                            <li><strong>短鎖脂肪酸産生</strong>：腸管でのGLP-1分泌促進</li>
+                            <li><strong>腸管バリア機能強化</strong>：炎症性物質の侵入阻止</li>
+                            <li><strong>胆汁酸代謝変化</strong>：FXR/TGR5経路を介した代謝改善</li>
+                            <li><strong>腸肝軸の改善</strong>：肝臓での糖代謝正常化</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="ongoing-research">
+                        <p><strong>現在進行中の研究</strong>：老化抑制・がん予防メカニズム、認知機能への影響、
+                        個別化医療への応用など、67年経った現在も新発見が続く「生きた薬剤」。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 併用療法の詳細アルゴリズム -->
+    <section class="combination-therapy-detailed advanced-level">
+        <h2>💊 併用療法での位置づけ（研修編）</h2>
+        
+        <div class="foundation-principle">
+            <h3>「メトホルミン・ファースト」原則の科学的根拠</h3>
+            <p>全世界のガイドラインで確立された「メトホルミン・ファースト」原則。
+            なぜ他の優れた新薬がありながら、67年前の薬が基盤であり続けるのか。</p>
+            
+            <div class="foundation-reasons">
+                <div class="reason-item">
+                    <h4>1. 相加効果：全ての糖尿病薬と併用可能</h4>
+                    <ul>
+                        <li><strong>作用機序の相補性</strong>：肝糖新生抑制は他剤と重複しない</li>
+                        <li><strong>薬物相互作用なし</strong>：67年間で重篤な相互作用報告なし</li>
+                        <li><strong>効果の予測可能性</strong>：併用時の効果が安定して期待できる</li>
+                    </ul>
+                </div>
+                
+                <div class="reason-item">
+                    <h4>2. 体重中性：他剤の副作用を相殺</h4>
+                    <ul>
+                        <li><strong>SU薬</strong>：+2-4kg体重増加をメトホルミンが相殺</li>
+                        <li><strong>インスリン</strong>：+3-6kg体重増加を抑制</li>
+                        <li><strong>チアゾリジン薬</strong>：+2-5kg体重増加を軽減</li>
+                    </ul>
+                </div>
+                
+                <div class="reason-item">
+                    <h4>3. 心血管保護：全体的な予後改善</h4>
+                    <ul>
+                        <li><strong>UKPDS追跡</strong>：20年後も死亡率減少継続</li>
+                        <li><strong>炎症抑制</strong>：CRP・IL-6・TNF-α減少</li>
+                        <li><strong>内皮機能改善</strong>：動脈硬化進展抑制</li>
+                    </ul>
+                </div>
+                
+                <div class="reason-item">
+                    <h4>4. 経済的基盤：治療継続性の確保</h4>
+                    <ul>
+                        <li><strong>安価な基盤</strong>：1日10-15円で治療の土台を確保</li>
+                        <li><strong>併用コスト軽減</strong>：高価な新薬の使用量を最小化</li>
+                        <li><strong>長期継続可能</strong>：経済的負担による中断リスク最小</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- メトホルミン特殊対応：eGFRに基づく用量調整アルゴリズム -->
+        <div class="egfr-algorithm">
+            <h4>🧬 eGFRに基づく安全使用アルゴリズム</h4>
+            <p><strong>基本原則</strong>：メトホルミンの90%が腎排泄のため、腎機能に応じた厳格な用量調整が必須</p>
+            
+            <div class="egfr-flowchart">
+                <div class="egfr-level safe">
+                    <h5>eGFR ≥60</h5>
+                    <p class="safety-status">✅ 安全使用可能</p>
+                    <div class="dosing-info">
+                        <p><strong>最大用量</strong>：2250mg/日</p>
+                        <p><strong>開始用量</strong>：500mg×1-2回</p>
+                        <p><strong>増量</strong>：1-2週間ごと</p>
+                        <p><strong>モニタリング</strong>：年2回eGFR確認</p>
+                    </div>
+                </div>
+                
+                <div class="egfr-level caution">
+                    <h5>eGFR 45-59</h5>
+                    <p class="safety-status">⚠️ 慎重使用</p>
+                    <div class="dosing-info">
+                        <p><strong>最大用量</strong>：1500mg/日</p>
+                        <p><strong>開始用量</strong>：250-500mg×1回</p>
+                        <p><strong>増量</strong>：2-4週間ごと</p>
+                        <p><strong>モニタリング</strong>：3-6ヶ月ごとeGFR確認</p>
+                    </div>
+                </div>
+                
+                <div class="egfr-level caution">
+                    <h5>eGFR 30-44</h5>
+                    <p class="safety-status">⚠️ 非常に慎重</p>
+                    <div class="dosing-info">
+                        <p><strong>最大用量</strong>：1000mg/日</p>
+                        <p><strong>開始用量</strong>：250mg×1回</p>
+                        <p><strong>増量</strong>：4週間以上間隔</p>
+                        <p><strong>モニタリング</strong>：1-3ヶ月ごとeGFR確認</p>
+                    </div>
+                </div>
+                
+                <div class="egfr-level danger">
+                    <h5>eGFR &lt;30</h5>
+                    <p class="safety-status">🚫 使用禁止</p>
+                    <div class="dosing-info">
+                        <p><strong>対応</strong>：即座に中止</p>
+                        <p><strong>代替薬</strong>：DPP-4阻害薬、インスリン等</p>
+                        <p><strong>理由</strong>：乳酸アシドーシスリスク激増</p>
+                        <p><strong>透析患者</strong>：絶対禁忌</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: #c8e6c9; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                <p><strong>特別注意事項</strong>：高齢者（75歳以上）、脱水リスク、造影剤使用時、急性疾患時は一時的に一段階下の基準を適用</p>
+            </div>
+        </div>
+
+        <div class="treatment-algorithm">
+            <h3>現代的治療アルゴリズム</h3>
+            <div class="algorithm-steps">
+                <div class="step-item step-1">
+                    <h4>段階1：メトホルミン単独療法</h4>
+                    <div class="step-details">
+                        <p><strong>目標</strong>：HbA1c &lt;7.0%</p>
+                        <p><strong>期間</strong>：3-6ヶ月で評価</p>
+                        <p><strong>用量調整</strong>：500mg→1000mg→1500mg（最大2250mg、腎機能による制限あり）</p>
+                        <p><strong>効果判定</strong>：HbA1c 1.0-1.5%低下を期待</p>
+                    </div>
+                </div>
+                
+                <div class="step-item step-2">
+                    <h4>段階2：2剤併用療法</h4>
+                    <div class="combination-options">
+                        <p><strong>メトホルミン + 以下から患者因子に応じて選択</strong>：</p>
+                        <div class="option-matrix">
+                            <div class="option-item sglt2">
+                                <h5>+ SGLT2阻害薬</h5>
+                                <p><strong>適応</strong>：心血管・腎保護重視</p>
+                                <p><strong>効果</strong>：HbA1c 0.5-0.8%低下、体重2-3kg減少</p>
+                                <p><strong>特徴</strong>：心不全・腎症に保護効果</p>
+                            </div>
+                            
+                            <div class="option-item dpp4">
+                                <h5>+ DPP-4阻害薬</h5>
+                                <p><strong>適応</strong>：安全性重視、高齢者</p>
+                                <p><strong>効果</strong>：HbA1c 0.5-0.8%低下、体重中性</p>
+                                <p><strong>特徴</strong>：低血糖リスク最小</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 以下は統合時に使用するためのコメント -->
+    <!--
+    ■ 統合時の注意事項：
+    1. このファイルの内容は、メインのmetformin-v2.htmlに組み込まれます
+    2. <style>タグの内容は、メインCSSファイルに統合してください
+    3. レベル2、レベル3のコンテンツと組み合わせて完全なページを構成します
+    
+    ■ 追加予定のレベル1コンテンツ：
+    - 薬学生FAQセクション（国試頻出ポイント等）
+    - 基本的な薬理作用の図解
+    - 服薬指導の基礎ポイント
+    -->
+
+    <script>
+        // レベルインジケーター機能
+        document.addEventListener('DOMContentLoaded', function() {
+            const levelButtons = document.querySelectorAll('.level-btn');
+            const levelSections = {
+                '1': document.querySelectorAll('.student-level'),
+                '2': document.querySelectorAll('.intermediate-level'),
+                '3': document.querySelectorAll('.advanced-level')
+            };
+
+            // レベルボタンのクリックイベント
+            levelButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetLevel = this.dataset.level;
+                    
+                    // アクティブボタンの更新
+                    levelButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 対応するセクションへスムーズスクロール
+                    const targetSections = levelSections[targetLevel];
+                    if (targetSections && targetSections.length > 0) {
+                        targetSections[0].scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start',
+                            inline: 'nearest'
+                        });
+                    }
+                });
+            });
+
+            // スクロール位置に応じたインジケーター更新
+            let ticking = false;
+            function updateIndicator() {
+                const scrollPosition = window.scrollY + 100; // オフセット調整
+                
+                // 各レベルのセクションをチェック
+                for (let level in levelSections) {
+                    const sections = levelSections[level];
+                    
+                    for (let section of sections) {
+                        const rect = section.getBoundingClientRect();
+                        const sectionTop = rect.top + window.scrollY;
+                        const sectionBottom = sectionTop + rect.height;
+                        
+                        // 現在のスクロール位置がセクション内にある場合
+                        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                            // 対応するボタンをアクティブに
+                            levelButtons.forEach(btn => {
+                                if (btn.dataset.level === level) {
+                                    btn.classList.add('active');
+                                } else {
+                                    btn.classList.remove('active');
+                                }
+                            });
+                            break;
+                        }
+                    }
+                }
+                
+                ticking = false;
+            }
+
+            // スクロールイベントの最適化
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateIndicator);
+                    ticking = true;
+                }
+            });
+
+            // 初期状態の設定
+            updateIndicator();
+        });
+    </script>
+</body>
+</html>
