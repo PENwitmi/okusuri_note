@@ -8,8 +8,8 @@
 ## 🎯 テンプレートの設計思想
 
 ### 核心理念：段階的学習アプローチ
-- **レベル1（薬学生）**: 基礎知識と理解
-- **レベル2（実習中の薬学生）**: 実践的な疑問への回答
+- **レベル1（薬学生）**: 基礎知識と実践的な疑問への回答
+- **レベル2（実習中の薬学生）**: 処方現場での具体的な対応
 - **レベル3（研修中の薬剤師）**: 臨床での使い分けと深い理解
 
 ### 重要原則
@@ -34,8 +34,8 @@
     <div class="study-level-indicator">
         <div class="level-progress">
             <span class="level active">薬学生</span>
-            <span class="level">臨床薬剤師</span>
-            <span class="level">専門医療者</span>
+            <span class="level">実習中の薬学生</span>
+            <span class="level">研修中の薬剤師</span>
         </div>
     </div>
 </div>
@@ -43,7 +43,7 @@
 
 ---
 
-## 🎓 セクション1：薬学生向け初級内容（ファーストビュー）
+## 🎓 レベル1：薬学生向け基礎内容（ファーストビュー）
 
 ### 1-1. 基本情報カード
 ```html
@@ -187,41 +187,10 @@
         </div>
     </div>
     
-    <!-- 調剤・服薬指導のコツ -->
-    <div class="dispensing-tips">
-        <h3>調剤・服薬指導の実践テクニック</h3>
-        
-        <div class="formulation-alerts">
-            <h4>⚠️ 調剤上の重要注意</h4>
-            <!-- 注意事項がある場合のみ表示 -->
-            <div class="alert-box" if-has-alerts>
-                <ul class="formulation-cautions">
-                    <li class="no-crush" if-applicable>
-                        <strong>粉砕不可</strong>
-                        <span class="reason">（腸溶錠のため）</span>
-                    </li>
-                    <li class="water-only" if-applicable>
-                        <strong>水以外での服用不可</strong>
-                        <span class="reason">（牛乳・ジュースで吸収低下）</span>
-                    </li>
-                    <li class="special-storage" if-applicable>
-                        <strong>冷所保存</strong>
-                        <span class="reason">（室温で変質）</span>
-                    </li>
-                    <li class="other-caution" if-applicable>
-                        [その他の重要な注意事項]
-                    </li>
-                </ul>
-            </div>
-            <!-- 特に注意事項がない場合 -->
-            <div class="no-special-alerts" if-no-alerts>
-                <p class="standard-handling">通常の調剤で問題ありません</p>
-            </div>
-        </div>
-        
-        <div class="student-faq">
-            <h4>薬学生のよくある疑問・失敗</h4>
-            <dl class="student-questions">
+    <!-- 薬学生FAQ（最重要） -->
+    <div class="student-faq-section">
+        <h3>💡 薬学生のよくある疑問（最重要）</h3>
+        <dl class="student-questions">
                 <dt>Q: 「250mgと500mgを間違えそう...」</dt>
                 <dd>A: 必ず処方箋を2回確認。初回は低用量（250mg）が基本と覚えよう</dd>
                 
@@ -256,10 +225,11 @@
             <div class="faq-note">
                 <p>💡 <strong>薬学生FAQのポイント</strong>：実務で困ることを具体的に。調剤上の注意（粉砕可否、保存方法、一包化の可否など）もここに含めます。</p>
             </div>
-        </div>
-        
-        <div class="practical-mistakes">
-            <h4>実習で注意！よくあるミス</h4>
+    </div>
+    
+    <!-- 実習で注意！よくあるミス -->
+    <div class="practical-mistakes">
+        <h3>⚠️ 実習で注意！よくあるミス</h3>
             <ul class="common-mistakes">
                 <li class="mistake-item">
                     <strong>❌ 粉砕指示への対応</strong>
@@ -274,19 +244,18 @@
                     <span>→ 「血糖値を下げる薬」と具体的に。作用機序まで聞かれたら「インスリンの効きを良くする」</span>
                 </li>
             </ul>
-        </div>
     </div>
 </section>
 ```
 
 ---
 
-## 💊 セクション2：臨床における価値（中級レベル）
+## 💊 レベル2：実習中の薬学生向け（処方現場での対応）
 
-### 2-1. なぜこの薬が必要なのか
+### 2-1. 処方現場での実践的知識
 ```html
-<section class="clinical-value intermediate-level">
-    <h2>🎯 臨床的価値と存在意義</h2>
+<section class="practical-knowledge intermediate-level">
+    <h2>🏥 処方現場で必要な実践知識</h2>
     
     <div class="value-proposition">
         <h3>この薬の3つの核心価値</h3>
@@ -488,7 +457,7 @@
 
 ---
 
-## 🔬 セクション3：深い理解（上級レベル）
+## 🔬 レベル3：研修中の薬剤師向け（深い理解と臨床価値）
 
 ### 3-1. 開発ストーリーと歴史的意義
 ```html
@@ -674,25 +643,28 @@ window.addEventListener('scroll', () => {
 ### コンテンツ作成指針
 
 #### 1. 文体の使い分け
-- **薬学生向け**: 
+- **レベル1（薬学生）**: 
   - 専門用語は必要最小限
   - 具体例を豊富に
   - 「〜です・ます」調
+  - FAQを中心に構成
   
-- **中級者向け**:
-  - 専門用語は適切に使用
-  - 理論と実践のバランス
-  - 「〜である」調も可
+- **レベル2（実習中の薬学生）**:
+  - 処方現場で使う専門用語
+  - 実践的な対応方法
+  - 「〜です・ます」調
+  - 具体的な処方例多数
 
-- **上級者向け**:
-  - 専門用語を自由に使用
-  - 最新のエビデンス引用
-  - 学術的な文体
+- **レベル3（研修中の薬剤師）**:
+  - 専門用語を適切に使用
+  - エビデンスベースの説明
+  - 「〜である」調も可
+  - 臨床判断の根拠
 
 #### 2. 分量の目安
-- **薬学生セクション**: 全体の30%（スクロール量）
-- **中級セクション**: 全体の30%
-- **上級セクション**: 全体の40%
+- **レベル1（薬学生）**: 全体の40%（FAQ中心）
+- **レベル2（実習中）**: 全体の30%
+- **レベル3（研修中）**: 全体の30%
 
 #### 3. 必須要素チェックリスト
 - [ ] 商品名と一般名の明確な表示
