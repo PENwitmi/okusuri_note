@@ -21,14 +21,14 @@
             align-items: center;
             margin: 1.5rem 0;
             padding: 1rem;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
             border-radius: 10px;
-            border-left: 4px solid #007bff;
+            border-left: 4px solid var(--category-endocrine);
         }
         
         .timeline-year {
             font-weight: bold;
-            color: #007bff;
+            color: var(--category-endocrine);
             min-width: 80px;
             font-size: 1.1rem;
         }
@@ -49,8 +49,8 @@
             background: white;
             border-radius: 10px;
             padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-top: 4px solid #28a745;
+            box-shadow: var(--shadow-light);
+            border-top: 4px solid var(--category-endocrine);
             transition: transform 0.3s ease;
         }
         
@@ -58,13 +58,45 @@
             transform: translateY(-5px);
         }
         
-        .drug-card.empagliflozin { border-top-color: #dc3545; }
-        .drug-card.dapagliflozin { border-top-color: #007bff; }
-        .drug-card.canagliflozin { border-top-color: #ffc107; }
-        .drug-card.tofogliflozin { border-top-color: #6f42c1; }
+        .drug-card.empagliflozin { border-top-color: var(--category-cardiovascular); }
+        .drug-card.dapagliflozin { border-top-color: var(--pharma-primary); }
+        .drug-card.canagliflozin { border-top-color: var(--category-endocrine); }
+        .drug-card.tofogliflozin { border-top-color: var(--category-cns); }
+        
+        /* 薬効群アイコン（色覚多様性対応） */
+        .drug-category-icon::before {
+            margin-right: 0.5em;
+            font-size: 1.1em;
+        }
+        
+        .drug-category-icon.cardiovascular::before {
+            content: "❤";
+            color: var(--category-cardiovascular);
+        }
+        
+        .drug-category-icon.endocrine::before {
+            content: "⚡";
+            color: var(--category-endocrine);
+        }
+        
+        .drug-category-icon.cns::before {
+            content: "🧠";
+        }
+        
+        .drug-category-icon.pharma-primary::before {
+            content: "⚡";
+            color: var(--pharma-primary);
+        }
+        
+        /* カテゴリラベルスタイル */
+        .category-label {
+            color: var(--text-muted);
+            font-weight: 400;
+            font-size: 0.85em;
+        }
         
         .mechanism-diagram {
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            background: linear-gradient(135deg, var(--pharma-primary-subtle) 0%, var(--bg-accent) 100%);
             border-radius: 15px;
             padding: 2rem;
             margin: 2rem 0;
@@ -72,7 +104,7 @@
         }
         
         .flowchart {
-            background: #f8f9fa;
+            background: var(--bg-secondary);
             border-radius: 10px;
             padding: 2rem;
             margin: 2rem 0;
@@ -95,31 +127,31 @@
             left: 50%;
             transform: translateX(-50%);
             font-size: 1.5rem;
-            color: #007bff;
+            color: var(--category-endocrine);
             font-weight: bold;
         }
         
         .clinical-evidence {
-            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            background: linear-gradient(135deg, var(--pharma-nature-subtle) 0%, var(--bg-accent) 100%);
             border-radius: 10px;
             padding: 1.5rem;
             margin: 1rem 0;
-            border-left: 5px solid #ffc107;
+            border-left: 5px solid var(--category-endocrine);
         }
         
         .doctor-testimonial {
-            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            background: linear-gradient(135deg, var(--pharma-nature-subtle) 0%, var(--bg-study) 100%);
             border-radius: 10px;
             padding: 1.5rem;
             margin: 1.5rem 0;
-            border-left: 5px solid #28a745;
+            border-left: 5px solid var(--pharma-nature);
             position: relative;
         }
         
         .doctor-testimonial::before {
             content: """;
             font-size: 4rem;
-            color: #28a745;
+            color: var(--pharma-nature);
             position: absolute;
             top: -10px;
             left: 20px;
@@ -141,12 +173,12 @@
             border-top: 4px solid;
         }
         
-        .specialty-card.diabetes { border-top-color: #17a2b8; }
-        .specialty-card.cardiology { border-top-color: #dc3545; }
-        .specialty-card.nephrology { border-top-color: #6f42c1; }
+        .specialty-card.diabetes { border-top-color: var(--category-endocrine); }
+        .specialty-card.cardiology { border-top-color: var(--category-cardiovascular); }
+        .specialty-card.nephrology { border-top-color: var(--category-cns); }
         
         .usage-stats {
-            background: linear-gradient(135deg, #f1f3f4 0%, #e8eaed 100%);
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
             border-radius: 10px;
             padding: 2rem;
             margin: 2rem 0;
@@ -366,8 +398,8 @@
                 <h2>💡 なぜ「似た薬」が複数存在するのか？戦略的分化の真実</h2>
                 
                 <div class="comparison-matrix">
-                    <div class="drug-card empagliflozin">
-                        <h3>エンパグリフロジン</h3>
+                    <div class="drug-card empagliflozin" aria-label="エンパグリフロジン - 循環器系薬剤カード">
+                        <h3><span class="drug-category-icon cardiovascular" aria-label="循環器系薬剤"></span>エンパグリフロジン <small class="category-label">(循環器系)</small></h3>
                         <p class="drug-subtitle">ジャディアンス®</p>
                         <div class="strategy-focus">
                             <h4>戦略：心血管死減少のパイオニア</h4>
@@ -380,8 +412,8 @@
                         </div>
                     </div>
                     
-                    <div class="drug-card dapagliflozin">
-                        <h3>ダパグリフロジン</h3>
+                    <div class="drug-card dapagliflozin" aria-label="ダパグリフロジン - 薬学教育特化プライマリー薬剤カード">
+                        <h3><span class="drug-category-icon pharma-primary" aria-label="薬学教育特化プライマリー薬剤"></span>ダパグリフロジン <small class="category-label">(薬学プライマリー)</small></h3>
                         <p class="drug-subtitle">フォシーガ®</p>
                         <div class="strategy-focus">
                             <h4>戦略：適応症ポートフォリオ拡大</h4>
@@ -394,8 +426,8 @@
                         </div>
                     </div>
                     
-                    <div class="drug-card canagliflozin">
-                        <h3>カナグリフロジン</h3>
+                    <div class="drug-card canagliflozin" aria-label="カナグリフロジン - 内分泌系薬剤カード">
+                        <h3><span class="drug-category-icon endocrine" aria-label="内分泌系薬剤"></span>カナグリフロジン <small class="category-label">(内分泌系)</small></h3>
                         <p class="drug-subtitle">カナグル®</p>
                         <div class="strategy-focus">
                             <h4>戦略：腎保護エビデンス特化</h4>
@@ -408,8 +440,8 @@
                         </div>
                     </div>
                     
-                    <div class="drug-card tofogliflozin">
-                        <h3>国産組</h3>
+                    <div class="drug-card tofogliflozin" aria-label="トホグリフロジン等 - 中枢神経系薬剤カード">
+                        <h3><span class="drug-category-icon cns" aria-label="中枢神経系薬剤"></span>国産組 <small class="category-label">(中枢神経系)</small></h3>
                         <p class="drug-subtitle">トホグリフロジン等</p>
                         <div class="strategy-focus">
                             <h4>戦略：安全性重視のニッチ</h4>

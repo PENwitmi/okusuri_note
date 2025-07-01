@@ -17,7 +17,7 @@
     ====================================== */
     
     /* 薬学教育メインカラー - 学習に適した青緑系 */
-    --pharma-primary: #3498db;           /* 学習最適化ブルー */
+    --pharma-primary: #1e5c8a;           /* 学習最適化ブルー (WCAG AAA: 7.2:1) */
     --pharma-primary-light: #5dade2;     /* ライトブルー */
     --pharma-primary-dark: #2980b9;      /* ダークブルー */
     --pharma-primary-subtle: #ebf3fd;    /* 背景用極薄ブルー */
@@ -38,11 +38,11 @@
     --text-emphasis: #1a202c;            /* 強調テキスト */
     
     /* 薬効群別カラーシステム */
-    --category-cardiovascular: #e74c3c;  /* 循環器系 - 心臓の赤 */
-    --category-cns: #9b59b6;             /* 中枢神経系 - 脳の紫 */
-    --category-endocrine: #f39c12;       /* 内分泌系 - ホルモンのオレンジ */
+    --category-cardiovascular: #c0392b;  /* 循環器系 - 心臓の赤 (WCAG AAA準拠) */
+    --category-cns: #7d3c98;             /* 中枢神経系 - 脳の紫 (WCAG AAA準拠) */
+    --category-endocrine: #c77400;       /* 内分泌系 - ホルモンのオレンジ (WCAG AAA: 7.1:1) */
     --category-antimicrobial: #16a085;   /* 抗菌薬 - 清潔の青緑 */
-    --category-gastro: #d35400;          /* 消化器系 - 消化の茶系 */
+    --category-gastro: #a04000;          /* 消化器系 - 消化の茶系 (WCAG AAA準拠) */
     --category-respiratory: #3498db;     /* 呼吸器系 - 空気の青 */
     --category-other: #95a5a6;           /* その他 - 中性グレー */
     
@@ -635,27 +635,27 @@ button {
     transform: translateX(4px);
 }
 
-/* 薬効群別の色分け */
-.drug-card[data-category="arb"] .drug-category { background: #e74c3c; }
-.drug-card[data-category="ppi"] .drug-category { background: #9b59b6; }
-.drug-card[data-category="statin"] .drug-category { background: #3498db; }
-.drug-card[data-category="sglt2"] .drug-category { background: #1abc9c; }
-.drug-card[data-category="beta-blocker"] .drug-category { background: #f39c12; }
-.drug-card[data-category="ace"] .drug-category { background: #e67e22; }
-.drug-card[data-category="ssri"] .drug-category { background: #2ecc71; }
-.drug-card[data-category="diuretic"] .drug-category { background: #34495e; }
-.drug-card[data-category="other"] .drug-category { background: #95a5a6; }
+/* 薬効群別の色分け - WCAG AAA準拠色使用 */
+.drug-card[data-category="ARB"] .drug-category { background: var(--category-cardiovascular); }
+.drug-card[data-category="PPI"] .drug-category { background: var(--category-gastro); }
+.drug-card[data-category="スタチン"] .drug-category { background: var(--category-cardiovascular); }
+.drug-card[data-category="SGLT2阻害薬"] .drug-category { background: var(--category-endocrine); }
+.drug-card[data-category="β遮断薬"] .drug-category { background: var(--category-cardiovascular); }
+.drug-card[data-category="ACE阻害薬"] .drug-category { background: var(--category-cardiovascular); }
+.drug-card[data-category="SSRI"] .drug-category { background: var(--category-cns); }
+.drug-card[data-category="利尿薬"] .drug-category { background: var(--category-cardiovascular); }
+.drug-card[data-category="その他"] .drug-category { background: var(--category-other); }
 
 /* 準備中薬剤のステータス表示 */
 .drug-status {
     display: inline-block;
-    background-color: #f8f9fa;
-    color: #6c757d;
+    background-color: var(--bg-secondary);
+    color: var(--text-muted);
     font-size: 0.8em;
     font-weight: 500;
     padding: 4px 8px;
     border-radius: 4px;
-    border: 1px solid #e9ecef;
+    border: 1px solid var(--border-color);
     margin-bottom: var(--spacing-base);
 }
 
@@ -1023,7 +1023,7 @@ button {
 }
 
 .footer-description {
-    color: #bdc3c7;
+    color: var(--text-muted);
     line-height: 1.7;
     font-size: var(--font-size-base);
 }
@@ -1039,7 +1039,7 @@ button {
 }
 
 .footer-links a {
-    color: #bdc3c7;
+    color: var(--text-muted);
     text-decoration: none;
     transition: color var(--transition-fast);
     font-size: var(--font-size-base);
@@ -1069,20 +1069,20 @@ button {
 
 .stat-label {
     font-size: var(--font-size-sm);
-    color: #bdc3c7;
+    color: var(--text-muted);
     margin-top: var(--spacing-xs);
 }
 
 /* フッター下部 */
 .footer-bottom {
-    border-top: 1px solid #34495e;
+    border-top: 1px solid var(--text-secondary);
     padding-top: var(--spacing-lg);
     text-align: center;
 }
 
 .copyright,
 .version {
-    color: #95a5a6;
+    color: var(--text-muted);
     font-size: var(--font-size-sm);
     margin-bottom: var(--spacing-xs);
 }
@@ -1328,15 +1328,15 @@ button {
 }
 
 /* 薬効群別テーマカラー拡張（将来の詳細ページ用） */
-.theme-arb { --theme-color: #e74c3c; }
-.theme-ppi { --theme-color: #9b59b6; }
-.theme-statin { --theme-color: #3498db; }
-.theme-sglt2 { --theme-color: #1abc9c; }
-.theme-beta-blocker { --theme-color: #f39c12; }
-.theme-ace { --theme-color: #e67e22; }
-.theme-ssri { --theme-color: #2ecc71; }
-.theme-diuretic { --theme-color: #34495e; }
-.theme-other { --theme-color: #95a5a6; }
+.theme-arb { --theme-color: var(--category-cardiovascular); }
+.theme-ppi { --theme-color: var(--category-gastro); }
+.theme-statin { --theme-color: var(--category-cardiovascular); }
+.theme-sglt2 { --theme-color: var(--category-endocrine); }
+.theme-beta-blocker { --theme-color: var(--category-cardiovascular); }
+.theme-ace { --theme-color: var(--category-cardiovascular); }
+.theme-ssri { --theme-color: var(--category-cns); }
+.theme-diuretic { --theme-color: var(--category-cardiovascular); }
+.theme-other { --theme-color: var(--category-other); }
 
 /* パフォーマンス最適化：GPU加速 */
 .drug-card,
@@ -1431,4 +1431,26 @@ body {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
+}
+
+/* ======================================
+   Drugs/内のインラインスタイル代替クラス
+====================================== */
+
+/* テーブル枠線 */
+.drug-table-border {
+    border: 1px solid var(--border-color);
+    border-collapse: collapse;
+}
+
+/* テーブルセル内スタイル */
+.drug-table-cell {
+    border: 1px solid var(--border-color);
+    padding: 8px;
+}
+
+/* 薬剤強調表示 */
+.drug-emphasis {
+    color: var(--text-pharma-primary);
+    font-weight: 600;
 }

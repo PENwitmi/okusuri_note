@@ -972,7 +972,7 @@ body {
     body {
         font-size: 16px;           /* 14px→16px（iOS推奨最小サイズ） */
         line-height: 1.7;          /* 1.4→1.7（読みやすさ向上） */
-        color: #1a1a1a;            /* より濃い文字色でコントラスト向上 */
+        color: var(--text-emphasis);            /* より濃い文字色でコントラスト向上 */
         background-color: var(--bg-primary);
     }
     
@@ -1032,13 +1032,13 @@ body {
     
     /* 重要な情報のハイライト */
     .highlight, .important {
-        background: linear-gradient(120deg, #fff3cd 0%, #ffeaa7 100%);
+        background: var(--learning-bookmark);        /* 警告系ハイライト背景 */
         padding: 8px 12px;
         border-radius: 6px;
         border-left: 4px solid var(--warning-border);
         margin: 12px 0;
         font-weight: 500;
-        color: #7d5a00;
+        color: var(--text-pharma-secondary);        /* 警告系テキスト */
     }
     
     /* リスト最適化 */
@@ -1124,10 +1124,10 @@ body {
     /* 用法用量の表示 */
     .dosage, .usage {
         background: var(--pharma-nature-subtle);
-        color: #2e7d32;
+        color: var(--pharma-nature-dark);        /* 成功・理解テキスト */
         padding: 8px 12px;
         border-radius: 6px;
-        border-left: 3px solid #4caf50;
+        border-left: 3px solid var(--pharma-nature);        /* 成功ボーダー */
         font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", monospace;
         font-size: 15px;
         line-height: 1.6;
@@ -1137,10 +1137,10 @@ body {
     /* 副作用・注意事項 */
     .warning, .side-effects {
         background: var(--bg-warning);
-        color: #e65100;
+        color: var(--learning-incorrect);
         padding: 12px 16px;
         border-radius: 8px;
-        border-left: 4px solid #ff9800;
+        border-left: 4px solid var(--warning-color);
         font-weight: 500;
         line-height: 1.7;
         margin: 16px 0;
@@ -1157,7 +1157,7 @@ body {
         color: var(--success-text);
         padding: 12px 16px;
         border-radius: 8px;
-        border-left: 4px solid #4caf50;
+        border-left: 4px solid var(--pharma-nature);
         line-height: 1.7;
         margin: 16px 0;
     }
@@ -1165,20 +1165,20 @@ body {
     /* 専門用語の定義 */
     .term-definition {
         background: var(--bg-info);
-        color: #4a148c;
+        color: var(--category-cns);
         padding: 8px 12px;
         border-radius: 6px;
         font-style: italic;
         font-size: 15px;
         line-height: 1.6;
         margin: 8px 0;
-        border-left: 3px solid #9c27b0;
+        border-left: 3px solid var(--category-cns);
     }
     
     /* コードブロック（化学式等） */
     code {
         background: var(--bg-secondary);
-        color: #e83e8c;
+        color: var(--accent-color);
         padding: 4px 8px;
         border-radius: 4px;
         font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", monospace;
@@ -1235,7 +1235,7 @@ body {
     
     /* 暗記カード風デザイン */
     .memory-card {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: var(--pharma-primary);
         color: var(--text-white);
         padding: 20px;
         border-radius: 12px;
@@ -1298,7 +1298,7 @@ body {
     }
     
     .progress-bar {
-        background: linear-gradient(90deg, #28a745 0%, #20c997 100%);
+        background: var(--pharma-nature);
         height: 100%;
         transition: width 0.6s ease;
         border-radius: 10px;
@@ -1319,7 +1319,7 @@ body {
     
     /* 国家試験対策特化 */
     .exam-tip {
-        background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+        background: var(--learning-bookmark);
         color: var(--text-pharma-body);
         padding: 16px;
         border-radius: 10px;
@@ -1332,16 +1332,16 @@ body {
     .exam-tip::before {
         content: "💡 国試ポイント: ";
         font-weight: 700;
-        color: #e17055;
+        color: var(--learning-incorrect);
     }
     
     /* 実習・臨床応用 */
     .clinical-note {
-        background: linear-gradient(135deg, #a8e6cf 0%, #7fcdcd 100%);
+        background: var(--pharma-nature-subtle);
         color: var(--text-pharma-body);
         padding: 16px;
         border-radius: 10px;
-        border-left: 5px solid #00cec9;
+        border-left: 5px solid var(--pharma-nature);
         margin: 16px 0;
         line-height: 1.7;
     }
@@ -1349,7 +1349,7 @@ body {
     .clinical-note::before {
         content: "🏥 臨床応用: ";
         font-weight: 700;
-        color: #00b894;
+        color: var(--pharma-nature-dark);
     }
 }
 
@@ -1566,8 +1566,8 @@ body {
 /* エラー表示の色覚異常対応 */
 .error-colorblind-safe {
     background: var(--bg-warning);
-    color: #d84315;
-    border-left: 4px solid #d84315;
+    color: var(--accent-color);
+    border-left: 4px solid var(--accent-color);
     position: relative;
     padding: 12px 16px 12px 40px;
 }
@@ -1583,8 +1583,8 @@ body {
 /* 成功表示の色覚異常対応 */
 .success-colorblind-safe {
     background: var(--pharma-nature-subtle);
-    color: #2e7d32;
-    border-left: 4px solid #2e7d32;
+    color: var(--pharma-nature-dark);
+    border-left: 4px solid var(--pharma-nature-dark);
     position: relative;
     padding: 12px 16px 12px 40px;
 }
@@ -1635,15 +1635,15 @@ body {
     
     /* 薬効群別色のコントラスト強化 */
     .category-cardiovascular-accessible {
-        color: #b71c1c; /* より濃い赤でコントラスト向上 */
-        background: #ffebee;
+        color: var(--accent-color); /* より濃い赤でコントラスト向上 */
+        background: var(--bg-accent);
         font-weight: 700;
         padding: 4px 8px;
         border-radius: 4px;
     }
     
     .category-cns-accessible {
-        color: #4a148c; /* より濃い紫でコントラスト向上 */
+        color: var(--category-cns); /* より濃い紫でコントラスト向上 */
         background: var(--bg-info);
         font-weight: 700;
         padding: 4px 8px;
@@ -1651,7 +1651,7 @@ body {
     }
     
     .category-endocrine-accessible {
-        color: #e65100; /* より濃いオレンジでコントラスト向上 */
+        color: var(--learning-incorrect); /* より濃いオレンジでコントラスト向上 */
         background: var(--bg-warning);
         font-weight: 700;
         padding: 4px 8px;
@@ -1659,16 +1659,16 @@ body {
     }
     
     .category-antimicrobial-accessible {
-        color: #00695c; /* より濃い青緑でコントラスト向上 */
-        background: #e0f2f1;
+        color: var(--pharma-nature-dark); /* より濃い青緑でコントラスト向上 */
+        background: var(--pharma-nature-subtle);
         font-weight: 700;
         padding: 4px 8px;
         border-radius: 4px;
     }
     
     .category-gastro-accessible {
-        color: #bf360c; /* より濃い茶色でコントラスト向上 */
-        background: #fbe9e7;
+        color: var(--category-gastro); /* より濃い茶色でコントラスト向上 */
+        background: var(--bg-accent);
         font-weight: 700;
         padding: 4px 8px;
         border-radius: 4px;
@@ -1683,8 +1683,8 @@ body {
     }
     
     .category-other-accessible {
-        color: #424242; /* より濃いグレーでコントラスト向上 */
-        background: #f5f5f5;
+        color: var(--text-pharma-secondary); /* より濃いグレーでコントラスト向上 */
+        background: var(--bg-secondary);
         font-weight: 700;
         padding: 4px 8px;
         border-radius: 4px;
@@ -1767,8 +1767,8 @@ body {
     /* 薬学教育特化アクセシビリティ要素 */
     .drug-warning-accessible {
         background: var(--bg-warning);
-        color: #d84315;
-        border: 2px solid #d84315;
+        color: var(--accent-color);
+        border: 2px solid var(--accent-color);
         border-radius: 8px;
         padding: 16px;
         margin: 16px 0;
@@ -1790,7 +1790,7 @@ body {
     .dosage-accessible {
         background: var(--pharma-nature-subtle);
         color: var(--success-text);
-        border: 2px solid #1b5e20;
+        border: 2px solid var(--pharma-nature-dark);
         border-radius: 8px;
         padding: 16px;
         margin: 16px 0;
@@ -1887,7 +1887,7 @@ body {
 
 .variable-priority-low {
     /* 低優先度：装飾・特殊効果 → ハードコード許可 */
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--pharma-primary);
     /* グラデーション等の複雑な装飾はハードコード維持 */
 }
 

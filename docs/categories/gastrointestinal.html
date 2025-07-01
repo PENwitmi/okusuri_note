@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../assets/css/category-comparison.css">
     <style>
         .genetic-flow {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--category-gastro) 0%, var(--pharma-primary-dark) 100%);
             color: white;
             padding: 30px;
             border-radius: 15px;
@@ -30,7 +30,7 @@
             text-align: center;
         }
         .japanese-specific {
-            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            background: linear-gradient(45deg, var(--category-gastro), var(--category-endocrine));
             color: white;
             padding: 25px;
             border-radius: 12px;
@@ -43,8 +43,8 @@
             margin: 30px 0;
         }
         .generation {
-            background: #f8f9fa;
-            border-left: 4px solid #007bff;
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--pharma-primary);
             padding: 20px;
             border-radius: 8px;
         }
@@ -65,25 +65,25 @@
             border: 1px solid #ddd;
         }
         .comparison-table th {
-            background: #007bff;
+            background: var(--pharma-primary);
             color: white;
         }
         .doctor-voice {
-            background: #e8f4f8;
-            border-left: 4px solid #17a2b8;
+            background: var(--pharma-primary-subtle);
+            border-left: 4px solid var(--pharma-primary);
             padding: 25px;
             margin: 25px 0;
             border-radius: 8px;
         }
         .patient-voice {
-            background: #f8f9e8;
-            border-left: 4px solid #28a745;
+            background: var(--pharma-nature-subtle);
+            border-left: 4px solid var(--pharma-nature);
             padding: 25px;
             margin: 25px 0;
             border-radius: 8px;
         }
         .historical-moment {
-            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            background: linear-gradient(45deg, var(--category-gastro), var(--pharma-primary));
             color: white;
             padding: 30px;
             border-radius: 15px;
@@ -98,6 +98,54 @@
         }
         .bar-chart {
             display: flex;
+        }
+        
+        /* 薬効群アイコン（色覚多様性対応） */
+        .drug-category-icon::before {
+            margin-right: 0.5em;
+            font-size: 1.1em;
+        }
+        
+        .drug-category-icon.gastro::before {
+            content: "🎯";
+            color: var(--category-gastro);
+        }
+        
+        /* セレクターオプションアイコン */
+        .selector-option::before {
+            margin-right: 0.5em;
+            font-size: 1.2em;
+        }
+        
+        .selector-option[data-condition="heavy-gerd"]::before {
+            content: "🎯";
+        }
+        
+        .selector-option[data-condition="h-pylori"]::before {
+            content: "🦠";
+        }
+        
+        .selector-option[data-condition="antiplatelet"]::before {
+            content: "💊";
+        }
+        
+        .selector-option[data-condition="em-type"]::before {
+            content: "🧬";
+        }
+        
+        .selector-option[data-condition="elderly"]::before {
+            content: "👴";
+        }
+        
+        .selector-option[data-condition="cost"]::before {
+            content: "💰";
+        }
+        
+        /* カテゴリラベルスタイル */
+        .category-label {
+            color: var(--text-muted);
+            font-weight: 400;
+            font-size: 0.85em;
             align-items: end;
             gap: 20px;
             height: 300px;
@@ -105,7 +153,7 @@
         }
         .bar {
             flex: 1;
-            background: linear-gradient(to top, #4CAF50, #8BC34A);
+            background: linear-gradient(to top, var(--pharma-nature), var(--pharma-nature-light));
             border-radius: 8px 8px 0 0;
             display: flex;
             flex-direction: column;
@@ -117,7 +165,7 @@
             position: relative;
         }
         .interactive-selector {
-            background: #f8f9fa;
+            background: var(--bg-secondary);
             padding: 30px;
             border-radius: 12px;
             margin: 30px 0;
@@ -130,16 +178,16 @@
         }
         .selector-option {
             background: white;
-            border: 2px solid #e9ecef;
+            border: 2px solid var(--border-color);
             padding: 20px;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
         .selector-option:hover {
-            border-color: #007bff;
+            border-color: var(--pharma-primary);
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-medium);
         }
     </style>
 </head>
@@ -504,33 +552,33 @@
             <p>患者背景を選択して、推奨PPIを確認してみましょう</p>
             
             <div class="selector-grid">
-                <div class="selector-option" data-condition="heavy-gerd">
-                    <h3>重症GERD</h3>
+                <div class="selector-option" data-condition="heavy-gerd" aria-label="重症GERD患者向けPPI選択オプション">
+                    <h3><span class="drug-category-icon gastro" aria-label="消化器系薬剤"></span>重症GERD <small class="category-label">(消化器系)</small></h3>
                     <p>LA-C/D、難治性</p>
                     <div class="recommendation">→ ボノプラザン</div>
                 </div>
-                <div class="selector-option" data-condition="h-pylori">
-                    <h3>H.pylori除菌</h3>
+                <div class="selector-option" data-condition="h-pylori" aria-label="H.pylori除菌用PPI選択オプション">
+                    <h3><span class="drug-category-icon gastro" aria-label="消化器系薬剤"></span>H.pylori除菌 <small class="category-label">(消化器系)</small></h3>
                     <p>一次除菌</p>
                     <div class="recommendation">→ ボノプラザン</div>
                 </div>
-                <div class="selector-option" data-condition="antiplatelet">
-                    <h3>抗血小板薬併用</h3>
+                <div class="selector-option" data-condition="antiplatelet" aria-label="抗血小板薬併用患者向けPPI選択オプション">
+                    <h3><span class="drug-category-icon gastro" aria-label="消化器系薬剤"></span>抗血小板薬併用 <small class="category-label">(消化器系)</small></h3>
                     <p>クロピドグレル使用中</p>
                     <div class="recommendation">→ ラベプラゾール</div>
                 </div>
-                <div class="selector-option" data-condition="em-type">
-                    <h3>CYP2C19高速代謝</h3>
+                <div class="selector-option" data-condition="em-type" aria-label="CYP2C19高速代謝患者向けPPI選択オプション">
+                    <h3><span class="drug-category-icon gastro" aria-label="消化器系薬剤"></span>CYP2C19高速代謝 <small class="category-label">(消化器系)</small></h3>
                     <p>EM/UM型</p>
                     <div class="recommendation">→ エソメプラゾール</div>
                 </div>
-                <div class="selector-option" data-condition="elderly">
-                    <h3>高齢者</h3>
+                <div class="selector-option" data-condition="elderly" aria-label="高齢者向けPPI選択オプション">
+                    <h3><span class="drug-category-icon gastro" aria-label="消化器系薬剤"></span>高齢者 <small class="category-label">(消化器系)</small></h3>
                     <p>85歳以上、多剤併用</p>
                     <div class="recommendation">→ ラベプラゾール</div>
                 </div>
-                <div class="selector-option" data-condition="cost">
-                    <h3>コスト重視</h3>
+                <div class="selector-option" data-condition="cost" aria-label="コスト重視患者向けPPI選択オプション">
+                    <h3><span class="drug-category-icon gastro" aria-label="消化器系薬剤"></span>コスト重視 <small class="category-label">(消化器系)</small></h3>
                     <p>軽症、経済的制約</p>
                     <div class="recommendation">→ オメプラゾールGE</div>
                 </div>

@@ -16,10 +16,14 @@
     </header>
 
     <main class="drug-detail">
-        <div class="drug-hero">
-            <div class="drug-category-badge">利尿薬</div>
-            <h1 class="drug-title">スピロノラクトン</h1>
-            <p class="drug-subtitle">K保持性、抗アルドステロン</p>
+        <div class="drug-header">
+            <div class="drug-title-section">
+                <h1 class="drug-name">スピロノラクトン</h1>
+                <div class="drug-classification">
+                    <span class="drug-class cardiovascular">K保持性利尿薬（MRA）</span>
+                    <span class="generation">K保持性、抗アルドステロン</span>
+                </div>
+            </div>
         </div>
 
         <div class="drug-content">
@@ -113,30 +117,30 @@
                         
                         <h4>用量設定の実際</h4>
                         <div class="dosing-table">
-                            <table style="width:100%; border-collapse: collapse; margin: 10px 0;">
-                                <tr style="background-color: #f0f0f0;">
-                                    <th style="border: 1px solid #ddd; padding: 8px;">腎機能</th>
-                                    <th style="border: 1px solid #ddd; padding: 8px;">開始用量</th>
-                                    <th style="border: 1px solid #ddd; padding: 8px;">最大用量</th>
-                                    <th style="border: 1px solid #ddd; padding: 8px;">注意点</th>
+                            <table class="drug-table-border" style="width:100%; margin: 10px 0;">
+                                <tr style="background-color: var(--bg-secondary);">
+                                    <th class="drug-table-cell">腎機能</th>
+                                    <th class="drug-table-cell">開始用量</th>
+                                    <th class="drug-table-cell">最大用量</th>
+                                    <th class="drug-table-cell">注意点</th>
                                 </tr>
                                 <tr>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">eGFR ≥60</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">25mg/日</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">50mg/日</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">標準的な用量で開始</td>
+                                    <td class="drug-table-cell">eGFR ≥60</td>
+                                    <td class="drug-table-cell">25mg/日</td>
+                                    <td class="drug-table-cell">50mg/日</td>
+                                    <td class="drug-table-cell">標準的な用量で開始</td>
                                 </tr>
                                 <tr>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">eGFR 30-60</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">12.5mg/日</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">25mg/日</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">減量して開始、注意深く観察</td>
+                                    <td class="drug-table-cell">eGFR 30-60</td>
+                                    <td class="drug-table-cell">12.5mg/日</td>
+                                    <td class="drug-table-cell">25mg/日</td>
+                                    <td class="drug-table-cell">減量して開始、注意深く観察</td>
                                 </tr>
                                 <tr>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">eGFR <30</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">慎重に判断</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">-</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">原則的に使用を避ける</td>
+                                    <td class="drug-table-cell">eGFR <30</td>
+                                    <td class="drug-table-cell">慎重に判断</td>
+                                    <td class="drug-table-cell">-</td>
+                                    <td class="drug-table-cell">原則的に使用を避ける</td>
                                 </tr>
                             </table>
                         </div>
@@ -304,15 +308,15 @@
                                 </div>
                                 <div class="site">
                                     <strong>ヘンレループ（25%のNa再吸収）</strong><br>
-                                    → <span style="color: #e74c3c;">ループ利尿薬（最大30%阻害）★最強</span>
+                                    → <span style="color: var(--category-cardiovascular);">ループ利尿薬（最大30%阻害）★最強</span>
                                 </div>
                                 <div class="site">
                                     <strong>遠位尿細管（5-10%のNa再吸収）</strong><br>
-                                    → <span style="color: #3498db;">サイアザイド系（最大10%阻害）</span>
+                                    → <span style="color: var(--pharma-primary);">サイアザイド系（最大10%阻害）</span>
                                 </div>
                                 <div class="site">
                                     <strong>集合管（2-3%のNa再吸収）</strong><br>
-                                    → <span style="color: #27ae60;">スピロノラクトン（K保持）</span>
+                                    → <span style="color: var(--pharma-nature);">スピロノラクトン（K保持）</span>
                                 </div>
                             </div>
                         </div>
@@ -393,44 +397,44 @@
                 <div class="differentiation-content">
                     <div class="comparison-table">
                         <h3>利尿薬クラス別特徴比較</h3>
-                        <table style="width:100%; border-collapse: collapse; margin: 15px 0;">
+                        <table class="drug-table-border" style="width:100%; margin: 15px 0;">
                             <thead>
-                                <tr style="background-color: #34495e; color: white;">
-                                    <th style="border: 1px solid #ddd; padding: 10px;">薬剤クラス</th>
-                                    <th style="border: 1px solid #ddd; padding: 10px;">代表薬</th>
-                                    <th style="border: 1px solid #ddd; padding: 10px;">利尿効果</th>
-                                    <th style="border: 1px solid #ddd; padding: 10px;">K への影響</th>
-                                    <th style="border: 1px solid #ddd; padding: 10px;">第一選択</th>
+                                <tr style="background-color: var(--text-pharma-secondary); color: white;">
+                                    <th class="drug-table-cell" style="padding: 10px;">薬剤クラス</th>
+                                    <th class="drug-table-cell" style="padding: 10px;">代表薬</th>
+                                    <th class="drug-table-cell" style="padding: 10px;">利尿効果</th>
+                                    <th class="drug-table-cell" style="padding: 10px;">K への影響</th>
+                                    <th class="drug-table-cell" style="padding: 10px;">第一選択</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td style="border: 1px solid #ddd; padding: 8px;"><strong>ループ利尿薬</strong></td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">フロセミド</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">強力（最大30%）</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">K喪失</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">急性心不全</td>
+                                    <td class="drug-table-cell"><strong>ループ利尿薬</strong></td>
+                                    <td class="drug-table-cell">フロセミド</td>
+                                    <td class="drug-table-cell">強力（最大30%）</td>
+                                    <td class="drug-table-cell">K喪失</td>
+                                    <td class="drug-table-cell">急性心不全</td>
                                 </tr>
                                 <tr>
-                                    <td style="border: 1px solid #ddd; padding: 8px;"><strong>サイアザイド系</strong></td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">HCTZ</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">中等度（10%）</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">K喪失</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">本態性高血圧</td>
+                                    <td class="drug-table-cell"><strong>サイアザイド系</strong></td>
+                                    <td class="drug-table-cell">HCTZ</td>
+                                    <td class="drug-table-cell">中等度（10%）</td>
+                                    <td class="drug-table-cell">K喪失</td>
+                                    <td class="drug-table-cell">本態性高血圧</td>
                                 </tr>
-                                <tr style="background-color: #e8f5e8;">
-                                    <td style="border: 1px solid #ddd; padding: 8px;"><strong>K保持性</strong></td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">スピロノラクトン</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">軽度（3%）</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">K保持</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">心不全（予後改善）</td>
+                                <tr style="background-color: var(--pharma-nature-subtle);">
+                                    <td class="drug-table-cell"><strong>K保持性</strong></td>
+                                    <td class="drug-table-cell">スピロノラクトン</td>
+                                    <td class="drug-table-cell">軽度（3%）</td>
+                                    <td class="drug-table-cell">K保持</td>
+                                    <td class="drug-table-cell">心不全（予後改善）</td>
                                 </tr>
                                 <tr>
-                                    <td style="border: 1px solid #ddd; padding: 8px;"><strong>バソプレシン拮抗</strong></td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">トルバプタン</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">水利尿のみ</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">影響なし</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">低Na血症合併</td>
+                                    <td class="drug-table-cell"><strong>バソプレシン拮抗</strong></td>
+                                    <td class="drug-table-cell">トルバプタン</td>
+                                    <td class="drug-table-cell">水利尿のみ</td>
+                                    <td class="drug-table-cell">影響なし</td>
+                                    <td class="drug-table-cell">低Na血症合併</td>
                                 </tr>
                             </tbody>
                         </table>

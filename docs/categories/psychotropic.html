@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../assets/css/category-comparison.css">
     <style>
         .ssri-evolution {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--category-cns) 0%, var(--pharma-primary-dark) 100%);
             color: white;
             padding: 30px;
             border-radius: 15px;
@@ -24,8 +24,8 @@
             margin: 30px 0;
         }
         .generation-card {
-            background: #f8f9fa;
-            border-left: 4px solid #007bff;
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--category-cns);
             padding: 25px;
             border-radius: 8px;
             transition: transform 0.3s ease;
@@ -53,15 +53,15 @@
             border: 1px solid #ddd;
         }
         .matrix-table th {
-            background: #007bff;
+            background: var(--category-cns);
             color: white;
         }
-        .severity-1 { background: #d4edda; color: #155724; } /* 軽度 */
-        .severity-2 { background: #fff3cd; color: #856404; } /* 中等度 */
-        .severity-3 { background: #f8d7da; color: #721c24; } /* 高度 */
-        .severity-4 { background: #d1ecf1; color: #0c5460; } /* 重度 */
+        .severity-1 { background: var(--pharma-nature-subtle); color: var(--pharma-nature-dark); } /* 軽度 */
+        .severity-2 { background: var(--bg-accent); color: var(--text-pharma-secondary); } /* 中等度 */
+        .severity-3 { background: var(--pharma-primary-subtle); color: var(--pharma-primary-dark); } /* 高度 */
+        .severity-4 { background: var(--pharma-nature-subtle); color: var(--category-cns); } /* 重度 */
         .withdrawal-warning {
-            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            background: linear-gradient(45deg, var(--category-cns), var(--category-endocrine));
             color: white;
             padding: 25px;
             border-radius: 12px;
@@ -80,7 +80,7 @@
         }
         .half-life-bar {
             flex: 1;
-            background: linear-gradient(to top, #ff7b7b, #ff9999);
+            background: linear-gradient(to top, var(--category-cns), var(--pharma-primary-light));
             border-radius: 8px 8px 0 0;
             display: flex;
             flex-direction: column;
@@ -91,12 +91,31 @@
             padding: 10px;
         }
         .japanese-pattern {
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, var(--category-cns), var(--pharma-primary));
             color: white;
             padding: 30px;
             border-radius: 15px;
             margin: 30px 0;
         }
+        
+        /* 薬効群アイコン（色覚多様性対応） */
+        .drug-category-icon::before {
+            margin-right: 0.5em;
+            font-size: 1.1em;
+        }
+        
+        .drug-category-icon.cns::before {
+            content: "🧠";
+            color: var(--category-cns);
+        }
+        
+        /* カテゴリラベルスタイル */
+        .category-label {
+            color: var(--text-muted);
+            font-weight: 400;
+            font-size: 0.85em;
+        }
+        
         .doctor-voice {
             background: #e8f4f8;
             border-left: 4px solid #17a2b8;
@@ -331,7 +350,7 @@
 
         <!-- 副作用プロファイル比較マトリックス -->
         <section class="side-effect-matrix">
-            <h2>⚠️ 副作用プロファイル比較マトリックス</h2>
+            <h2><span class="drug-category-icon cns" aria-label="中枢神経系薬剤"></span>⚠️ 副作用プロファイル比較マトリックス <small class="category-label">(中枢神経系)</small></h2>
             <p>同じSSRIでも、副作用の種類と強度は薬剤によって大きく異なります</p>
             
             <table class="matrix-table">

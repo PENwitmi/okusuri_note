@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../assets/css/drug-detail.css">
     <style>
         .tdm-hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--pharma-primary) 0%, var(--pharma-primary-dark) 100%);
             color: white;
             padding: 4rem 0;
             text-align: center;
@@ -25,17 +25,17 @@
         }
         
         .digoxin-section {
-            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
-            color: #2d3436;
+            background: linear-gradient(135deg, var(--category-cardiovascular) 0%, var(--pharma-primary-light) 100%);
+            color: white;
         }
         
         .vancomycin-section {
-            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            background: linear-gradient(135deg, var(--category-antimicrobial) 0%, var(--pharma-nature) 100%);
             color: white;
         }
         
         .warfarin-section {
-            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            background: linear-gradient(135deg, var(--category-cardiovascular) 0%, var(--pharma-primary) 100%);
             color: white;
         }
         
@@ -98,6 +98,24 @@
         .timeline-point::before {
             content: '';
             position: absolute;
+        }
+        
+        /* 薬効群アイコン（色覚多様性対応） */
+        .drug-category-icon::before {
+            margin-right: 0.5em;
+            font-size: 1.1em;
+        }
+        
+        .drug-category-icon.other::before {
+            content: "🔰";
+            color: var(--category-other);
+        }
+        
+        /* カテゴリラベルスタイル */
+        .category-label {
+            color: var(--text-muted);
+            font-weight: 400;
+            font-size: 0.85em;
             left: -25px;
             top: 20px;
             width: 12px;
@@ -267,7 +285,7 @@
     <!-- ヒーローセクション -->
     <section class="tdm-hero">
         <div class="container">
-            <h1 style="font-size: 3rem; margin-bottom: 1rem;">🎯 TDM実践ガイド</h1>
+            <h1 style="font-size: 3rem; margin-bottom: 1rem;"><span class="drug-category-icon other" aria-label="その他薬剤"></span>🎯 TDM実践ガイド <small class="category-label">(その他)</small></h1>
             <p style="font-size: 1.4rem; opacity: 0.9; margin-bottom: 2rem;">
                 Therapeutic Drug Monitoring<br>
                 血中濃度監視治療の科学と実践

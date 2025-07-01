@@ -210,7 +210,7 @@
 }
 
 .stat-value.highlight {
-    color: #ffd700;
+    color: var(--learning-bookmark);
     text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
 }
 
@@ -244,7 +244,7 @@
     top: -15px;
     left: 20px;
     background: #ffc107;
-    color: #333;
+    color: var(--text-pharma-primary);
     padding: 5px 12px;
     border-radius: 20px;
     font-size: var(--font-size-lg);
@@ -254,12 +254,12 @@
 .summary-text {
     font-size: var(--font-size-lg);
     line-height: 1.8;
-    color: #333;
+    color: var(--text-pharma-primary);
     margin: 0;
 }
 
 .summary-text strong {
-    color: #c0392b;
+    color: var(--accent-color);
     font-weight: 700;
 }
 
@@ -1304,4 +1304,43 @@
         background: #fff;
         color: #000;
     }
+}
+
+/* ========================================
+   薬効群別色分けシステム（UI/UX最適化 Phase 3.2）
+======================================== */
+
+/* 循環器系薬剤 */
+.drug-class.cardiovascular {
+    background: var(--category-cardiovascular);
+}
+
+/* 中枢神経系薬剤 */
+.drug-class.cns {
+    background: var(--category-cns);
+}
+
+/* 内分泌系薬剤 */
+.drug-class.endocrine {
+    background: var(--category-endocrine);
+}
+
+/* 抗菌薬 */
+.drug-class.antimicrobial {
+    background: var(--category-antimicrobial);
+}
+
+/* 消化器系薬剤 */
+.drug-class.gastro {
+    background: var(--category-gastro);
+}
+
+/* 呼吸器系薬剤 */
+.drug-class.respiratory {
+    background: var(--category-respiratory);
+}
+
+/* その他の薬剤 */
+.drug-class.other {
+    background: var(--category-other);
 }

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../assets/css/drug-detail.css">
     <style>
         .lipid-hero {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            background: linear-gradient(135deg, var(--category-cardiovascular) 0%, var(--pharma-primary-light) 50%, var(--pharma-primary-light) 100%);
             color: white;
             padding: 4rem 0;
             text-align: center;
@@ -25,25 +25,25 @@
         }
         
         .strong-statin {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--category-cardiovascular) 0%, var(--pharma-primary-dark) 100%);
             color: white;
             padding: 2rem;
             border-radius: 12px;
         }
         
         .standard-statin {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, var(--pharma-primary) 0%, var(--pharma-primary-light) 100%);
             color: white;
             padding: 2rem;
             border-radius: 12px;
         }
         
         .ldl-meter {
-            background: #f8f9fa;
+            background: var(--bg-secondary);
             border-radius: 12px;
             padding: 2rem;
             margin: 2rem 0;
-            border: 2px solid #e9ecef;
+            border: 2px solid var(--border-color);
         }
         
         .ldl-scale {
@@ -206,6 +206,24 @@
         .side-effect-card:hover {
             border-color: #6c5ce7;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        /* 薬効群アイコン（色覚多様性対応） */
+        .drug-category-icon::before {
+            margin-right: 0.5em;
+            font-size: 1.1em;
+        }
+        
+        .drug-category-icon.cardiovascular::before {
+            content: "❤";
+            color: var(--category-cardiovascular);
+        }
+        
+        /* カテゴリラベルスタイル */
+        .category-label {
+            color: var(--text-muted);
+            font-weight: 400;
+            font-size: 0.85em;
         }
     </style>
 </head>
@@ -450,7 +468,7 @@
 
             <!-- ストロングスタチン詳細比較 -->
             <section class="content-section">
-                <h2>⚡ ストロングスタチン詳細比較</h2>
+                <h2><span class="drug-category-icon cardiovascular" aria-label="循環器系薬剤"></span>⚡ ストロングスタチン詳細比較 <small class="category-label">(循環器系)</small></h2>
                 
                 <div class="evidence-table">
                     <table>
