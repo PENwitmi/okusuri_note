@@ -106,10 +106,10 @@
 </section>
 ```
 
-### 1-3. 実習で押さえるべきポイント
+### 1-3. 実習前に押さえておくべき基礎知識
 ```html
 <section class="practical-points-student">
-    <h2>📝 実習で必ず押さえる実践ポイント</h2>
+    <h2>📝 実習前に必ず押さえる基礎ポイント</h2>
     
     <!-- 処方でよく見る形 -->
     <div class="prescription-examples">
