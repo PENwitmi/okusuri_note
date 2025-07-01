@@ -1,28 +1,175 @@
-<div class="searchable-content"><hundefined class="section-heading" id="cardiovascular-integrated-guide"><a href="/groups/cardiovascular_integrated_guide.html" class="group-link">CARDIOVASCULAR_INTEGRATED_GUIDE</a>進化系統図と臨床使い分けモデル</hundefined><section class="summary-section">
-                    <hundefined class="summary-title">📍 5分サマリー</hundefined><hundefined class="section-heading" id="1-2">薬効群の本質（1-2文で）</hundefined><p><a href="/groups/cardiovascular_integrated_guide.html" class="group-link">CARDIOVASCULAR_INTEGRATED_GUIDE</a>は[メカニズム]により[効果]を実現する薬剤群です。</p>
-<hundefined class="section-heading" id="">主要薬剤一覧（表形式）</hundefined><div class="responsive-table">
-                <table class="drug-table sortable-table">
-                    <thead>[object Object]</thead>
-                    <tbody>undefined</tbody>
-                </table>
-            </div><hundefined class="section-heading" id="">処方選択フローチャート（テキスト版）</hundefined><div class="flowchart-container">
-                    <pre class="flowchart">患者評価
-├─ [条件1] → [薬剤1]
-├─ [条件2] → [薬剤2]
-└─ [条件3] → オー</pre>
-                <div class="interactive-flowchart" data-content="%E6%82%A3%E8%80%85%E8%A9%95%E4%BE%A1%0A%E2%94%9C%E2%94%80%20%5B%E6%9D%A1%E4%BB%B61%5D%20%E2%86%92%20%5B%E8%96%AC%E5%89%A41%5D%0A%E2%94%9C%E2%94%80%20%5B%E6%9D%A1%E4%BB%B62%5D%20%E2%86%92%20%5B%E8%96%AC%E5%89%A42%5D%0A%E2%94%94%E2%94%80%20%5B%E6%9D%A1%E4%BB%B63%5D%20%E2%86%92%20%E3%82%AA%E3%83%BC">
-                    <button class="flowchart-btn">インタラクティブ版を見る</button>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="循環器薬統合ガイドと臨床使い分けモデル - おくすりノート">
+    <meta name="keywords" content="循環器薬, ARB, ACE阻害薬, β遮断薬, Ca拮抗薬, 利尿薬, 心血管治療">
+    <title>循環器薬統合ガイドと臨床使い分けモデル | おくすりノート</title>
+    
+    <!-- CSS読み込み -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/mobile-optimization.css">
+    <link rel="stylesheet" href="../assets/css/drug-detail.css">
+    
+    <!-- 薬学教育特化スタイル -->
+    <style>
+        .drug-evolution-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #ffffff;
+        }
+        
+        .summary-section {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #2196f3;
+        }
+        
+        .summary-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0d47a1;
+            margin-bottom: 16px;
+        }
+        
+        .section-heading {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1565c0;
+            margin: 20px 0 12px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e3f2fd;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #fff3cd 0%, #ffeaa7 100%);
+            padding: 8px 12px;
+            border-radius: 6px;
+            border-left: 4px solid #f39c12;
+            margin: 12px 0;
+        }
+        
+        /* モバイル対応 */
+        @media (max-width: 768px) {
+            .drug-evolution-page {
+                padding: 12px;
+            }
+            
+            .summary-section {
+                padding: 16px;
+                margin: 12px 0;
+            }
+            
+            .summary-title {
+                font-size: 20px;
+            }
+            
+            .section-heading {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="../index.html">おくすりノート</a></h1>
+                <p class="tagline">薬剤図鑑</p>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html#drugs" class="nav-link">薬剤一覧</a></li>
+                    <li><a href="../index.html#categories" class="nav-link">薬効群</a></li>
+                    <li><a href="../index.html#stories" class="nav-link">ストーリー</a></li>
+                    <li><a href="../index.html#differentiation" class="nav-link">使い分け</a></li>
+                </ul>
+            </nav>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="薬剤名を検索..." class="search-input">
+                <button class="search-btn" onclick="performSearch()">
+                    <span class="search-icon">🔍</span>
+                </button>
+            </div>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content drug-evolution-page">
+        <div class="searchable-content">
+            <h1 class="section-heading" id="cardiovascular-integrated-guide">
+                循環器薬統合ガイドと臨床使い分けモデル
+            </h1>
+            
+            <section class="summary-section">
+                <h2 class="summary-title">📍 循環器薬統合ガイド</h2>
+                
+                <h3 class="section-heading">循環器治療の包括的アプローチ</h3>
+                <p>循環器疾患治療は複数の薬効群の戦略的組み合わせで最適化されます。ARB、ACE阻害薬、β遮断薬、Ca拮抗薬、利尿薬のそれぞれが異なる機序で心血管系を保護し、患者の予後改善に貢献します。</p>
+                
+                <div class="highlight">
+                    <p><strong>統合治療の核心</strong>：単独薬剤の限界を補完し合う薬効群の組み合わせが、現代循環器治療の基盤となっています。各薬剤の特性を理解し、患者個別の病態に応じた最適な組み合わせを選択することが重要です。</p>
                 </div>
-                </div><hundefined class="section-heading" id="cardiovascular-integrated-guide">なぜ<a href="/groups/cardiovascular_integrated_guide.html" class="group-link">CARDIOVASCULAR_INTEGRATED_GUIDE</a>が必要か（本質的な答え）</hundefined><p>[本質的な医学的意義と臨床価値]</p>
-<hundefined class="section-heading" id="">📖 詳細解説へ</hundefined><p>以下、各薬剤の詳細な進化系統、使い分けの実践、そして処方実態の深層に迫ります。</p>
-<hundefined class="section-heading" id="">📊 臨床使い分けマトリックス</hundefined><hundefined class="section-heading" id="">疾患別の推奨薬剤</hundefined><div class="responsive-table">
-                <table class="drug-table sortable-table">
-                    <thead>[object Object]</thead>
-                    <tbody>undefined</tbody>
-                </table>
-            </div><hundefined class="section-heading" id="">💊 実際の処方例</hundefined><hundefined class="section-heading" id="1">症例1：[年齢・性別・疾患]</hundefined><pre class="code-block"><code>処方：[薬剤名] [用量] [用法]
-理由：[処方根拠]
-経過：[治療経過]</code></pre><hundefined class="section-heading" id="">📊 処方実態解明</hundefined><hundefined class="section-heading" id="1">なぜ[薬剤名]がシェア1位なのか</hundefined><p>[処方実態の社会学的分析]</p>
-<hr>
-<p><em>このモデルは最新のエビデンスに基づく。おくすりノート品質基準5.0/5.0を満たす完全版。</em></p>
-</div>
+                
+                <h3 class="section-heading">📖 詳細な使い分けガイド</h3>
+                <p>以下、各薬効群の詳細な特性と臨床使い分けについては、個別の進化系統図をご参照ください。</p>
+                <ul>
+                    <li><a href="ARB_evolution_model.html">ARB進化系統図</a></li>
+                    <li><a href="diuretics_evolution_model.html">利尿薬進化系統図</a></li>
+                    <li><a href="beta_blocker_evolution_model.html">β遮断薬進化系統図</a></li>
+                </ul>
+            </section>
+        </div>
+        
+        <section class="related-stories">
+            <h2>関連ストーリー</h2>
+            <div class="stories-grid">
+                <a href="../stories/cardiovascular-revolution.html" class="story-card">
+                    <h3>循環器治療革命 - 薬剤の統合的アプローチ</h3>
+                    <p>循環器薬の発展と統合的治療アプローチの確立。単独療法から多剤併用療法への進化の物語...</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">おくすりノート</h3>
+                    <p class="footer-description">
+                        薬学生のための実践的学習プラットフォーム。<br>
+                        「なぜ似た薬が複数存在するのか」への明確な回答を提供します。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; 2025 おくすりノート. Phase 1 ベータ版 - 薬学生応援プロジェクト
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript読み込み -->
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/search.js"></script>
+    <script src="../assets/js/mobile-nav.js"></script>
+    <script src="../assets/js/responsive-elements.js"></script>
+</body>
+</html>

@@ -1,23 +1,77 @@
 /*
- * PharmaDex - 薬剤図鑑 CSS
+ * おくすりノート - 薬剤図鑑 CSS
  * 薬学生のための学習プラットフォーム
  * Version: 1.0.0
- * 最終更新: 2025年6月28日
+ * 最終更新: 2025年7月1日
  */
+
+/* モバイル最適化スタイルシートを統合済み - HTTPリクエスト削減 */
+/* @import url("mobile-optimization.css"); */
 
 /* ========================================
    CSS変数定義（色彩システム）
 ======================================== */
 :root {
+    /* ======================================
+       薬学教育特化メインカラーシステム
+    ====================================== */
+    
+    /* 薬学教育メインカラー - 学習に適した青緑系 */
+    --pharma-primary: #3498db;           /* 学習最適化ブルー */
+    --pharma-primary-light: #5dade2;     /* ライトブルー */
+    --pharma-primary-dark: #2980b9;      /* ダークブルー */
+    --pharma-primary-subtle: #ebf3fd;    /* 背景用極薄ブルー */
+    
+    /* 薬学象徴カラー - 自然・健康の緑系 */
+    --pharma-nature: #27ae60;            /* 薬学グリーン */
+    --pharma-nature-light: #58d68d;      /* ライトグリーン */
+    --pharma-nature-dark: #229954;       /* ダークグリーン */
+    --pharma-nature-subtle: #eafaf1;     /* 背景用極薄グリーン */
+    
+    /* 薬学学習テキスト階層 */
+    --text-pharma-primary: #2c3e50;      /* 薬剤名・最重要見出し用 */
+    --text-pharma-secondary: #34495e;    /* 薬効群・副見出し用 */
+    --text-pharma-body: #4a5568;         /* 本文・説明文用 */
+    --text-pharma-caption: #718096;      /* 注釈・補助情報用 */
+    --text-pharma-muted: #a0aec0;        /* 非表示的情報用 */
+    --text-reading: #374151;             /* 長文読書専用 */
+    --text-emphasis: #1a202c;            /* 強調テキスト */
+    
+    /* 薬効群別カラーシステム */
+    --category-cardiovascular: #e74c3c;  /* 循環器系 - 心臓の赤 */
+    --category-cns: #9b59b6;             /* 中枢神経系 - 脳の紫 */
+    --category-endocrine: #f39c12;       /* 内分泌系 - ホルモンのオレンジ */
+    --category-antimicrobial: #16a085;   /* 抗菌薬 - 清潔の青緑 */
+    --category-gastro: #d35400;          /* 消化器系 - 消化の茶系 */
+    --category-respiratory: #3498db;     /* 呼吸器系 - 空気の青 */
+    --category-other: #95a5a6;           /* その他 - 中性グレー */
+    
+    /* 学習支援カラー */
+    --learning-correct: #2ecc71;         /* 正答・理解 */
+    --learning-incorrect: #e67e22;       /* 誤答・要注意 */
+    --learning-bookmark: #f1c40f;        /* ブックマーク・重要 */
+    --learning-completed: #95a5a6;       /* 完了・習得済み */
+    
+    /* 学習専用背景 */
+    --bg-reading: #fdfdfd;               /* 長文読書用（眼精疲労軽減） */
+    --bg-study: #f8fbff;                 /* 学習セッション用 */
+    --bg-reference: #fafbfc;             /* 参考資料用 */
+    --bg-accent: #f1f8ff;                /* アクセント背景 */
+    --bg-tertiary: #e9ecef;              /* カード背景 */
+    
+    /* ======================================
+       レガシー変数（後方互換性）
+    ====================================== */
+    
     /* プライマリカラー：既存パターン（#2a5298）ベース */
-    --primary-color: #2a5298;
-    --primary-light: #4a72b8;
-    --primary-dark: #1e3c72;
+    --primary-color: var(--pharma-primary);
+    --primary-light: var(--pharma-primary-light);
+    --primary-dark: var(--pharma-primary-dark);
     
     /* セカンダリカラー：薬学教育に適した配色 */
-    --secondary-color: #27ae60;
-    --secondary-light: #2ecc71;
-    --secondary-dark: #219a52;
+    --secondary-color: var(--pharma-nature);
+    --secondary-light: var(--pharma-nature-light);
+    --secondary-dark: var(--pharma-nature-dark);
     
     /* アクセントカラー */
     --accent-color: #e74c3c;
@@ -26,8 +80,8 @@
     --info-color: #3498db;
     
     /* グレースケール：読みやすさ重視 */
-    --text-primary: #2c3e50;
-    --text-secondary: #555;
+    --text-primary: var(--text-pharma-primary);
+    --text-secondary: var(--text-pharma-secondary);
     --text-light: #666;
     --text-muted: #999;
     
@@ -182,8 +236,10 @@ button {
    ヘッダー・ナビゲーション（優先度1）
 ======================================== */
 .header {
-    background: var(--bg-primary);
-    border-bottom: 1px solid var(--border-light);
+    background: #ffffff; /* フォールバック */
+    background: var(--bg-primary, #ffffff);
+    border-bottom: 1px solid #f1f3f4; /* フォールバック */
+    border-bottom: 1px solid var(--border-light, #f1f3f4);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -238,7 +294,8 @@ button {
 .nav-link {
     font-size: var(--font-size-base);
     font-weight: 600;
-    color: var(--text-primary);
+    color: #2c3e50; /* フォールバック */
+    color: var(--text-primary, #2c3e50);
     padding: var(--spacing-sm) var(--spacing-base);
     border-radius: 6px;
     transition: all var(--transition-base);
@@ -246,8 +303,10 @@ button {
 }
 
 .nav-link:hover {
-    color: var(--primary-color);
-    background-color: var(--bg-light);
+    color: #3498db; /* フォールバック */
+    color: var(--primary-color, #3498db);
+    background-color: #fafbfc; /* フォールバック */
+    background-color: var(--bg-light, #fafbfc);
 }
 
 .nav-link::after {
@@ -481,12 +540,14 @@ button {
 }
 
 .drug-card {
-    background: var(--bg-card);
+    background: #ffffff; /* フォールバック */
+    background: var(--bg-card, #ffffff);
     border-radius: 16px;
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-light);
     transition: all var(--transition-base);
-    border: 1px solid var(--border-light);
+    border: 1px solid #f1f3f4; /* フォールバック */
+    border: 1px solid var(--border-light, #f1f3f4);
     position: relative;
     overflow: hidden;
 }
@@ -1294,7 +1355,7 @@ button {
    ファイル終了コメント
 ======================================== */
 /*
- * PharmaDex CSS 実装完了
+ * おくすりノート CSS 実装完了
  * 
  * 実装済み機能：
  * ✅ レスポンシブデザイン（320px-1920px対応）
@@ -1313,3 +1374,61 @@ button {
  * 品質目標：4.8/5.0達成予定
  * 薬学生が「このサイトで勉強したい」と思える美しさを実現
  */
+
+/* ========================================
+   モバイル最適化統合（Task 2.5パフォーマンス最適化）
+   HTTPリクエスト削減、Critical CSS統合
+======================================== */
+
+/* モバイル基本設定 */
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+body {
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
+}
+
+/* タッチフレンドリーボタン */
+.cta-button, .search-btn, .nav-link, .mobile-menu-btn {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+}
+
+/* モバイル専用レスポンシブ強化 */
+@media (max-width: 768px) {
+    .header {
+        padding: 8px 0;
+        min-height: 60px;
+    }
+    
+    .nav-list {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    
+    .drug-card, .category-card, .story-card {
+        margin-bottom: 16px;
+        padding: 16px;
+    }
+    
+    .main-content {
+        padding: 16px;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    /* 読みやすさ向上 */
+    h1 { font-size: 24px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 18px; }
+    
+    /* スクロール最適化 */
+    .responsive-table {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
