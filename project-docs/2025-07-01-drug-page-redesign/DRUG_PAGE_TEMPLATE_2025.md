@@ -103,28 +103,6 @@
             <p>体重を増やさない唯一の経口糖尿病薬（むしろ減少傾向）</p>
         </div>
     </div>
-    
-    <!-- 実習でよく見る商品名 -->
-    <div class="common-products" if-multiple-products>
-        <h3>実習でよく見る名前と疑問</h3>
-        <div class="product-comparison">
-            <div class="product-item">
-                <h4>メトグルコ錠</h4>
-                <p>先発品（大日本住友製薬）</p>
-                <p class="specs">250mg、500mg</p>
-            </div>
-            <div class="product-item">
-                <h4>メトホルミンMT錠「○○」</h4>
-                <p>ジェネリック医薬品</p>
-                <p class="specs">250mg、500mg</p>
-            </div>
-        </div>
-        <div class="common-questions">
-            <h4>「MTって何？」</h4>
-            <p>実は明確な定義は不明です。メーカー固有の記号の可能性があります。
-            重要なのは、どちらも同じメトホルミン製剤で、効果は同等だということです。</p>
-        </div>
-    </div>
 </section>
 ```
 
