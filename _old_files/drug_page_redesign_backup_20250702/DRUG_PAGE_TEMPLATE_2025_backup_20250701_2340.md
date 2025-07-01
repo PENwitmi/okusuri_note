@@ -8,9 +8,9 @@
 ## 🎯 テンプレートの設計思想
 
 ### 核心理念：段階的学習アプローチ
-- **レベル1（薬学生）**: 基礎知識と理解
-- **レベル2（実習中の薬学生）**: 実践的な疑問への回答
-- **レベル3（研修中の薬剤師）**: 臨床での使い分けと深い理解
+- **初級（薬学生）**: 実習で即必要な実践的情報
+- **中級（研修薬剤師）**: 臨床での使い分けと価値
+- **上級（現場医療者）**: 深い理解と最新知見
 
 ### 重要原則
 1. **再構築ではなく再配置**: 既存の豊富なコンテンツを削らない
@@ -101,28 +101,6 @@
         <div class="summary-item vs-similar">
             <h4>他の薬との違い</h4>
             <p>体重を増やさない唯一の経口糖尿病薬（むしろ減少傾向）</p>
-        </div>
-    </div>
-    
-    <!-- 実習でよく見る商品名 -->
-    <div class="common-products" if-multiple-products>
-        <h3>実習でよく見る名前と疑問</h3>
-        <div class="product-comparison">
-            <div class="product-item">
-                <h4>メトグルコ錠</h4>
-                <p>先発品（大日本住友製薬）</p>
-                <p class="specs">250mg、500mg</p>
-            </div>
-            <div class="product-item">
-                <h4>メトホルミンMT錠「○○」</h4>
-                <p>ジェネリック医薬品</p>
-                <p class="specs">250mg、500mg</p>
-            </div>
-        </div>
-        <div class="common-questions">
-            <h4>「MTって何？」</h4>
-            <p>実は明確な定義は不明です。メーカー固有の記号の可能性があります。
-            重要なのは、どちらも同じメトホルミン製剤で、効果は同等だということです。</p>
         </div>
     </div>
 </section>
@@ -219,61 +197,36 @@
             </div>
         </div>
         
-        <div class="student-faq">
-            <h4>薬学生のよくある疑問・失敗</h4>
-            <dl class="student-questions">
-                <dt>Q: 「250mgと500mgを間違えそう...」</dt>
-                <dd>A: 必ず処方箋を2回確認。初回は低用量（250mg）が基本と覚えよう</dd>
-                
-                <dt>Q: 「ビグアナイド系って他に何がある？」</dt>
-                <dd>A: 日本ではメトホルミンのみ。フェンホルミン、ブホルミンは副作用で販売中止</dd>
-                
-                <dt>Q: 「なんで食後？食前じゃダメ？」</dt>
-                <dd>A: 消化器症状（下痢）を軽減するため。空腹時は症状が強く出やすい</dd>
-                
-                <dt>Q: 「メトグルコとメトホルミンMTの在庫、どっちを使う？」</dt>
-                <dd>A: 処方箋の記載通り。一般名処方なら患者に選んでもらう（価格差を説明）</dd>
-                
-                <dt>Q: 「国試によく出るポイントは？」</dt>
-                <dd>A: ①乳酸アシドーシス ②ヨード造影剤で休薬 ③eGFR<30で禁忌 ④体重減少効果</dd>
-                
-                <dt>Q: 「この薬、粉砕してもいい？」</dt>
-                <dd>A: [薬剤に応じて回答。例：腸溶錠なので粉砕不可、通常錠なので可能だが苦味注意など]</dd>
-                
-                <dt>Q: 「保存方法で注意することは？」</dt>
-                <dd>A: [薬剤に応じて回答。例：室温保存でOK、冷所保存必須、吸湿性があるのでPTP保存など]</dd>
-                
-                <dt>Q: 「一包化してもいい？」</dt>
-                <dd>A: [薬剤に応じて回答。例：問題なし、吸湿性があるため不可、着色注意など]</dd>
-                
-                <dt>Q: 「水以外で飲んでもいい？」</dt>
-                <dd>A: [薬剤に応じて回答。例：問題なし、牛乳で吸収低下、グレープフルーツジュース禁忌など]</dd>
-                
-                <dt>Q: 「用量依存的な適応症（ICS/LABA、β遮断薬など）ってどこに書く？」</dt>
-                <dd>A: レベル1の基本情報カードに含めるか、別枠で強調表示</dd>
-            </dl>
-            
-            <div class="faq-note">
-                <p>💡 <strong>薬学生FAQのポイント</strong>：実務で困ることを具体的に。調剤上の注意（粉砕可否、保存方法、一包化の可否など）もここに含めます。</p>
-            </div>
+        <div class="counseling-points">
+            <h4>服薬指導での必須説明</h4>
+            <ol class="must-explain">
+                <li>
+                    <strong>下痢について</strong>
+                    <p>「最初の1-2週間は下痢が起こりやすいですが、多くの場合自然に改善します」</p>
+                </li>
+                <li>
+                    <strong>造影検査の確認</strong>
+                    <p>「CT検査などの予定はありませんか？ある場合は必ず医師に伝えてください」</p>
+                </li>
+                <li>
+                    <strong>体調不良時</strong>
+                    <p>「食事が取れない時、激しい下痢の時は服用を中止し、医師に連絡してください」</p>
+                </li>
+            </ol>
         </div>
         
-        <div class="practical-mistakes">
-            <h4>実習で注意！よくあるミス</h4>
-            <ul class="common-mistakes">
-                <li class="mistake-item">
-                    <strong>❌ 粉砕指示への対応</strong>
-                    <span>→ メトグルコは粉砕可能だが苦味が強い。患者に必ず説明を</span>
-                </li>
-                <li class="mistake-item">
-                    <strong>❌ 腎機能チェック忘れ</strong>
-                    <span>→ 処方監査で必ずeGFRを確認。見落とすと重大なミス</span>
-                </li>
-                <li class="mistake-item">
-                    <strong>❌ 「糖尿病の薬」とだけ説明</strong>
-                    <span>→ 「血糖値を下げる薬」と具体的に。作用機序まで聞かれたら「インスリンの効きを良くする」</span>
-                </li>
-            </ul>
+        <div class="patient-faq">
+            <h4>患者さんからよくある質問</h4>
+            <dl class="faq-list">
+                <dt>Q: 「この薬で痩せますか？」</dt>
+                <dd>A: 「体重減少効果はありますが、あくまで血糖値を下げる薬です。平均2-3kg程度の減少が報告されています」</dd>
+                
+                <dt>Q: 「一生飲み続けるんですか？」</dt>
+                <dd>A: 「血糖値の状態によりますが、生活習慣の改善で減量や中止できる場合もあります」</dd>
+                
+                <dt>Q: 「飲み忘れたらどうすれば？」</dt>
+                <dd>A: 「次の服用時間が近い場合はそのまま次から。2回分を一度に飲まないでください」</dd>
+            </dl>
         </div>
     </div>
 </section>
@@ -444,7 +397,7 @@
             <h4>用量調整のコツ</h4>
             <ul class="tips-list">
                 <li><strong>消化器症状対策</strong>: 食事中または食直後服用で軽減</li>
-                <li><strong>少量開始</strong>: 250mg×2回から開始し、徐々に増量</li>
+                <li><strong>徐放剤の活用</strong>: 通常剤で下痢→徐放剤（メトグルコMT）へ</li>
                 <li><strong>分割投与</strong>: 1日2回が基本、3回は患者負担大</li>
                 <li><strong>腎機能</strong>: eGFR 45-60で最大1500mg/日</li>
             </ul>
@@ -600,10 +553,10 @@ document.querySelectorAll('.level').forEach(level => {
             case '薬学生':
                 targetSection = '.student-level';
                 break;
-            case '実習中の薬学生':
+            case '臨床薬剤師':
                 targetSection = '.intermediate-level';
                 break;
-            case '研修中の薬剤師':
+            case '専門医療者':
                 targetSection = '.advanced-level';
                 break;
         }
@@ -623,8 +576,8 @@ document.querySelectorAll('.level').forEach(level => {
 window.addEventListener('scroll', () => {
     const sections = [
         { el: '.student-level', level: '薬学生' },
-        { el: '.intermediate-level', level: '実習中の薬学生' },
-        { el: '.advanced-level', level: '研修中の薬剤師' }
+        { el: '.intermediate-level', level: '臨床薬剤師' },
+        { el: '.advanced-level', level: '専門医療者' }
     ];
     
     sections.forEach(section => {
@@ -701,17 +654,10 @@ window.addEventListener('scroll', () => {
 - [ ] 実践的な処方例
 - [ ] 併用薬TOP3
 - [ ] 併用禁忌・注意の強調表示
-- [ ] 薬学生FAQ（最低8つ、調剤実務関連4つ以上含む）
-- [ ] 実習で注意！よくあるミス（最低3つ）
+- [ ] 服薬指導の具体的文言
+- [ ] 患者FAQ（最低3つ）
 - [ ] 用量調整プロトコル
 - [ ] 効果判定の時期と指標
-- [ ] 用量依存的な適応症の適切な配置（ICS/LABA、β遮断薬等）
-
-#### 4. 用量依存的な適応症への対応
-- **ICS/LABA**：喘息（低用量）とCOPD（高用量）の違いを基本情報カードに明記
-- **β遮断薬**：心不全（低用量開始）と高血圧（通常用量）の使い分けを表示
-- **配置場所**：レベル1の基本情報カード内に独立セクションとして配置
-- **表現例**：「用量により適応症が異なります」アイコンで視覚的に強調
 
 ---
 
