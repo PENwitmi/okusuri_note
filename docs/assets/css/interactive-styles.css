@@ -1,0 +1,886 @@
+/**
+ * OkusuriNote インタラクティブ機能スタイル
+ * - 理解度チェッククイズ
+ * - 薬剤比較ツール
+ * - 学習進捗トラッカー
+ * 作成日: 2025-07-01
+ */
+
+/* ===== 共通スタイル ===== */
+
+.interactive-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+}
+
+.interactive-section h2 {
+    color: #2c5282;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.interactive-section p {
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== 理解度チェッククイズ ===== */
+
+.understanding-quiz-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    margin: 2rem 0;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.understanding-quiz-section .container {
+    padding: 2rem;
+}
+
+.understanding-quiz-section h2 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.quiz-description {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.quiz-content {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.quiz-question {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.quiz-question:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.question-title {
+    color: #2d3748;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.question-text {
+    color: #4a5568;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.answer-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.answer-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #f7fafc;
+}
+
+.answer-option:hover {
+    border-color: #667eea;
+    background: #edf2f7;
+}
+
+.answer-option input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #667eea;
+}
+
+.option-text {
+    flex: 1;
+    color: #2d3748;
+    font-size: 0.95rem;
+}
+
+.answer-option.correct-answer {
+    border-color: #48bb78;
+    background: #f0fff4;
+}
+
+.answer-option.correct-answer .option-text {
+    color: #22543d;
+    font-weight: 500;
+}
+
+.answer-option.incorrect-answer {
+    border-color: #f56565;
+    background: #fffafa;
+}
+
+.answer-option.incorrect-answer .option-text {
+    color: #742a2a;
+}
+
+.question-feedback {
+    margin-top: 1rem;
+}
+
+.feedback {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem;
+    border-radius: 8px;
+    align-items: flex-start;
+}
+
+.feedback.correct {
+    background: #f0fff4;
+    border: 1px solid #9ae6b4;
+}
+
+.feedback.incorrect {
+    background: #fffafa;
+    border: 1px solid #feb2b2;
+}
+
+.feedback-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.feedback-text strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+}
+
+.feedback-text p {
+    margin: 0;
+    color: #4a5568;
+    line-height: 1.5;
+}
+
+.quiz-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.quiz-submit-btn,
+.quiz-reset-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quiz-submit-btn {
+    background: #667eea;
+    color: white;
+}
+
+.quiz-submit-btn:hover:not(:disabled) {
+    background: #5a67d8;
+    transform: translateY(-1px);
+}
+
+.quiz-submit-btn:disabled {
+    background: #a0aec0;
+    cursor: not-allowed;
+}
+
+.quiz-reset-btn {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+.quiz-reset-btn:hover {
+    background: #cbd5e0;
+}
+
+.quiz-results {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.quiz-score {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.quiz-score.excellent {
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    color: white;
+}
+
+.quiz-score.good {
+    background: linear-gradient(135deg, #ed8936, #dd6b20);
+    color: white;
+}
+
+.quiz-score.needs-improvement {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.quiz-score h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.score-display {
+    margin-bottom: 1rem;
+}
+
+.score-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.score-percentage {
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+
+.score-message {
+    font-size: 1.1rem;
+    margin: 0;
+    opacity: 0.95;
+}
+
+/* ===== 薬剤比較ツール ===== */
+
+.drug-comparison-section {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    margin: 2rem 0;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.drug-comparison-section .container {
+    padding: 2rem;
+}
+
+.drug-comparison-section h2 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.comparison-description {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.drug-selection {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.drug-selection h3 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.drug-checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.drug-checkbox {
+    display: block;
+    cursor: pointer;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.75rem;
+    transition: all 0.3s ease;
+    background: #f7fafc;
+}
+
+.drug-checkbox:hover {
+    border-color: #f5576c;
+    background: #fed7d7;
+}
+
+.drug-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.drug-checkbox input[type="checkbox"]:checked + .drug-checkbox-content {
+    color: #742a2a;
+}
+
+.drug-checkbox:has(input:checked) {
+    border-color: #f5576c;
+    background: #fed7d7;
+}
+
+.drug-checkbox-content {
+    display: block;
+    color: #2d3748;
+}
+
+.drug-checkbox-content strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+.drug-checkbox-content small {
+    color: #718096;
+    font-size: 0.85rem;
+}
+
+.comparison-results {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.comparison-results h3 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.comparison-table-container {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.comparison-table th {
+    background: #f7fafc;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.comparison-table td {
+    color: #4a5568;
+}
+
+.comparison-table tbody tr:hover {
+    background: #f7fafc;
+}
+
+.feature-tag {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #4a5568;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.comparison-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.compare-btn,
+.clear-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.compare-btn {
+    background: #f5576c;
+    color: white;
+}
+
+.compare-btn:hover:not(:disabled) {
+    background: #e53e3e;
+    transform: translateY(-1px);
+}
+
+.compare-btn:disabled {
+    background: #a0aec0;
+    cursor: not-allowed;
+}
+
+.clear-btn {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+.clear-btn:hover {
+    background: #cbd5e0;
+}
+
+/* ===== 学習進捗トラッカー ===== */
+
+.learning-tracker-floating {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1000;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.tracker-toggle {
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.tracker-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(66, 153, 225, 0.4);
+}
+
+.tracker-icon {
+    font-size: 1.2rem;
+}
+
+.tracker-text {
+    font-size: 0.85rem;
+}
+
+.progress-badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tracker-panel {
+    position: absolute;
+    right: 0;
+    top: -200px;
+    width: 320px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e2e8f0;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.tracker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    background: #f7fafc;
+    border-radius: 12px 12px 0 0;
+}
+
+.tracker-header h3 {
+    margin: 0;
+    color: #2d3748;
+    font-size: 1.1rem;
+}
+
+.close-tracker {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #718096;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-tracker:hover {
+    color: #2d3748;
+    background: #e2e8f0;
+    border-radius: 50%;
+}
+
+.progress-overview {
+    padding: 1.5rem;
+}
+
+.progress-item {
+    margin-bottom: 1.5rem;
+}
+
+.progress-item:last-child {
+    margin-bottom: 0;
+}
+
+.progress-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4299e1, #3182ce);
+    transition: width 0.5s ease;
+    border-radius: 4px;
+}
+
+.progress-count {
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+.achievement-section,
+.recommendations {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.achievement-section h4,
+.recommendations h4 {
+    margin: 0 0 1rem 0;
+    color: #2d3748;
+    font-size: 1rem;
+}
+
+.achievements {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: #f7fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.achievement-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.achievement-text strong {
+    display: block;
+    color: #2d3748;
+    font-size: 0.9rem;
+}
+
+.achievement-text small {
+    color: #718096;
+    font-size: 0.8rem;
+}
+
+.no-achievements,
+.no-recommendations {
+    color: #718096;
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.recommendation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.recommendation-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem;
+    background: #f7fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.recommendation-item:hover {
+    background: #edf2f7;
+    border-color: #cbd5e0;
+}
+
+.recommendation-text strong {
+    display: block;
+    color: #2d3748;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.recommendation-text small {
+    color: #718096;
+    font-size: 0.8rem;
+}
+
+.recommendation-arrow {
+    color: #4a5568;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* ===== レスポンシブ対応 ===== */
+
+@media (max-width: 768px) {
+    .understanding-quiz-section .container,
+    .drug-comparison-section .container {
+        padding: 1.5rem;
+    }
+
+    .understanding-quiz-section h2,
+    .drug-comparison-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .quiz-content,
+    .drug-selection,
+    .comparison-results {
+        padding: 1rem;
+    }
+
+    .answer-options {
+        gap: 0.5rem;
+    }
+
+    .answer-option {
+        padding: 0.5rem;
+    }
+
+    .drug-checkbox-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .comparison-table {
+        font-size: 0.8rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.5rem;
+    }
+
+    .quiz-actions,
+    .comparison-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .quiz-submit-btn,
+    .quiz-reset-btn,
+    .compare-btn,
+    .clear-btn {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .learning-tracker-floating {
+        right: 10px;
+    }
+
+    .tracker-panel {
+        width: 280px;
+        top: -180px;
+        max-height: 400px;
+    }
+
+    .tracker-toggle {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .tracker-text {
+        display: none;
+    }
+
+    .progress-overview,
+    .achievement-section,
+    .recommendations {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tracker-panel {
+        width: calc(100vw - 40px);
+        right: -280px;
+    }
+
+    .comparison-table-container {
+        font-size: 0.75rem;
+    }
+
+    .score-number {
+        font-size: 2rem;
+    }
+
+    .score-percentage {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== アニメーション ===== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.quiz-question,
+.comparison-results,
+.achievement-item {
+    animation: fadeInUp 0.5s ease;
+}
+
+.progress-badge {
+    animation: pulse 2s infinite;
+}
+
+/* ===== アクセシビリティ ===== */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== ダークモード対応 ===== */
+
+@media (prefers-color-scheme: dark) {
+    .quiz-content,
+    .drug-selection,
+    .comparison-results,
+    .tracker-panel {
+        background: #2d3748;
+        color: #e2e8f0;
+    }
+
+    .answer-option,
+    .drug-checkbox,
+    .achievement-item,
+    .recommendation-item {
+        background: #4a5568;
+        border-color: #718096;
+        color: #e2e8f0;
+    }
+
+    .answer-option:hover,
+    .drug-checkbox:hover,
+    .recommendation-item:hover {
+        background: #718096;
+    }
+
+    .comparison-table th {
+        background: #4a5568;
+        color: #e2e8f0;
+    }
+
+    .comparison-table tbody tr:hover {
+        background: #4a5568;
+    }
+
+    .tracker-header {
+        background: #4a5568;
+    }
+
+    .feature-tag {
+        background: #718096;
+        color: #e2e8f0;
+    }
+}

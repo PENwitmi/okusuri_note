@@ -61,36 +61,34 @@ docs/generated/    →    GitHub Pages
 - **医師**: 薬物療法の最適化支援
 - **医療従事者**: 薬学的知識の体系的理解
 
-## 📁 プロジェクト構造（Phase 2 再構築完了）
+## 📁 プロジェクト構造（2025-07-01現在）
 
 ```
 okusuri_note/
 ├── docs/                           # 公開Webサイト（GitHub Pages）
 │   ├── index.html                  # メインページ
-│   ├── generated/                  # 高品質HTMLコンテンツ
-│   │   ├── drugs/                  # 個別薬剤詳細ページ
-│   │   ├── groups/                 # 薬効群モデルページ
-│   │   ├── stories/                # 感動ストーリーページ
-│   │   ├── css/                    # スタイルシート
-│   │   ├── js/                     # インタラクティブ機能
-│   │   └── data/                   # 構造化データ
-│   └── css/                        # メインスタイル
+│   ├── drugs/                      # 個別薬剤ページ（22薬剤）
+│   ├── groups/                     # 薬効群モデルページ（9ページ）
+│   ├── categories/                 # カテゴリページ（4ページ）
+│   ├── css/                        # スタイルシート
+│   └── _archive/                   # アーカイブされたバックアップ
 ├── source_materials/               # コンテンツ原稿（論理構造）
-│   ├── stories/                    # ストーリー原稿（旧01_stories）
-│   ├── drug_database/              # 薬効群詳細モデル（旧02_drug_database）
-│   ├── differentiation/            # 使い分けガイド（旧03_differentiation）
-│   ├── study_tools/                # 学習ツール（旧04_study_tools）
-│   ├── exhibition/                 # 展示企画（旧05_exhibition）
-│   └── resources/                  # リソース・データ（旧06_resources）
-├── tools/                          # 補助ツール（通常使用しない）
-│   └── （旧変換スクリプト群）
-├── project-docs/                   # プロジェクト管理文書（整理済み）
-│   ├── architecture/               # アーキテクチャ設計書
-│   ├── guides/                     # 開発ガイド
-│   ├── planning/                   # 企画・戦略文書
-│   ├── progress/                   # 進捗管理
-│   ├── reference/                  # 参照資料・分析レポート
-│   └── archive/                    # 過去資料
+│   ├── drugs/                      # 個別薬剤事典（23ファイル）
+│   ├── drug_evolution/             # なぜ似た薬があるのか（19ファイル）
+│   ├── drug_stories/               # 薬の物語（14ファイル）
+│   ├── study_guides/               # 薬学学習ガイド（12ファイル）
+│   ├── drug_database_originated/   # HTML→MD変換済み（10ファイル）
+│   ├── _resources/                 # 内部リソース（8ファイル・非公開）
+│   └── _system/                    # システム文書（7ファイル・非公開）
+├── project-docs/                   # プロジェクト管理文書（時系列構造）
+│   ├── 2025-06-XX-event-name/      # 時系列イベントフォルダ
+│   ├── development-guides/         # 恒久的開発ガイド
+│   ├── reference/                  # リファレンス資料
+│   └── _archive_superseded/        # アーカイブ
+├── templates/                      # HTMLテンプレート
+├── _old_files/                     # 古いファイルのバックアップ
+│   └── tools_backup_20250701/      # MD→HTML変換ツール（使用停止）
+├── MASTER_STATUS_DASHBOARD.md      # 進捗管理ダッシュボード
 └── CLAUDE.md                       # プロジェクト詳細仕様
 ```
 
@@ -106,8 +104,8 @@ okusuri_note/
 # プロジェクトディレクトリに移動
 cd /Users/nishimototakashi/claude\ code/ai-team/code/okusuri_note
 
-# 高品質HTMLテンプレートから開始
-cp templates/drug-detail-premium.html docs/generated/drugs/NEW_drug.html
+# 高品質HTMLテンプレートから開始（templates/に配置されている場合）
+cp templates/drug-detail-premium.html docs/drugs/NEW_drug.html
 
 # HTMLを直接編集（500行以上、医師の証言、感動的ストーリー含む）
 # VS Code等のエディタで編集
@@ -115,7 +113,7 @@ cp templates/drug-detail-premium.html docs/generated/drugs/NEW_drug.html
 # ローカル確認
 cd docs
 python -m http.server 8000
-# ブラウザで http://localhost:8000/generated/drugs/NEW_drug.html を確認
+# ブラウザで http://localhost:8000/drugs/NEW_drug.html を確認
 ```
 
 ### 📝 開発ワークフロー（詳細）
@@ -155,25 +153,32 @@ python -m http.server 8000
 - **検索機能**: リアルタイム薬剤・薬効群検索
 - **ナビゲーション**: 直感的なクロスリファレンス
 
-## 📊 実装状況（2025-06-29現在）
+## 📊 実装状況（2025-07-01現在）
 
-### ✅ 完成済み
-- **コンテンツ原稿**: 48ファイル
-  - 感動ストーリー: 20ファイル
-  - 薬効群モデル: 23ファイル（ARB、PPI、スタチン、SSRI等）
-  - 学習ツール: 5ファイル
-- **Webサイト**: 44 HTMLファイル（490KB）
-- **個別薬剤ページ**: 6薬剤実装済み
-  - **ARB**: カンデサルタン、テルミサルタン
-  - **PPI**: エソメプラゾール、ランソプラゾール
-  - **SSRI**: セルトラリン、エスシタロプラム
-- **GitHub Pages**: 自動デプロイ対応
+### ✅ 完成済み（Phase 3完了）
+- **コンテンツ原稿**: 68ファイル以上
+  - 個別薬剤事典: 23ファイル
+  - 薬効群進化モデル: 19ファイル
+  - 感動ストーリー: 14ファイル
+  - 学習ガイド: 12ファイル
+- **Webサイト**: 高品質HTML完全実装
+- **個別薬剤ページ**: 22薬剤実装済み（100%完成）
+  - **ARB**: telmisartan、losartan、candesartan
+  - **ACE阻害薬**: enalapril、perindopril
+  - **β遮断薬**: carvedilol、bisoprolol
+  - **利尿薬**: spironolactone、furosemide
+  - **SGLT2阻害薬**: empagliflozin、dapagliflozin
+  - **スタチン**: rosuvastatin、atorvastatin
+  - **PPI**: omeprazole、lansoprazole、esomeprazole
+  - **SSRI**: escitalopram、sertraline
+  - **その他**: metformin、warfarin、digoxin、vancomycin
+- **GitHub Pages**: 自動デプロイ対応（https://penwitmi.github.io/okusuri_note）
 
-### 🔄 Phase 3準備中
+### 📋 今後の計画
 - **最新薬剤特集**: FIC薬剤（First-in-Class）の追加
   - エサキセレノン（MRA進化）
   - サクビトリルバルサルタン（ARNi革命）
-  - SGLT2阻害薬群、GLP-1受容体作動薬群
+  - GLP-1受容体作動薬群
 - **コンテンツ拡張**: 300薬剤への拡張計画
 
 ### 📋 長期計画

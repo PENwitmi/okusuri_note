@@ -1,0 +1,646 @@
+Tue Jul  1 12:03:17 JST 2025
+=== PharmaDx残存箇所の特定開始 ===
+docs/_archive/2025-06-30/restructure_195800/generated/ARB_prescription_reality.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/generated/ACE_inhibitor_evolution_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/dapagliflozin.html:    <title>ダパグリフロジン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/dapagliflozin.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/vancomycin.html:    <title>バンコマイシン（バンコマイシン塩酸塩®） | PharmaDx 薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/vancomycin.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/sertraline.html:    <title>セルトラリン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/sertraline.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/perindopril.html:    <title>ペリンドプリル - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/perindopril.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/bisoprolol.html:    <title>ビソプロロール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/bisoprolol.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/spironolactone.html:    <title>スピロノラクトン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/spironolactone.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/spironolactone.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/atorvastatin.html:    <title>アトルバスタチン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/atorvastatin.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/escitalopram.html:    <title>エスシタロプラム - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/escitalopram.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/warfarin.html:    <title>ワルファリン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/warfarin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/warfarin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/rosuvastatin.html:    <title>ロスバスタチン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/rosuvastatin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/rosuvastatin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/metformin_originated.html:    <title>メトホルミン（メトグルコ） | PharmaDx 薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/metformin_originated.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/enalapril.html:    <title>エナラプリル - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/enalapril.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/furosemide.html:    <title>フロセミド - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/furosemide.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/carvedilol.html:    <title>カルベジロール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/carvedilol.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/esomeprazole.html:    <title>エソメプラゾール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/esomeprazole.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/digoxin.html:    <title>ジゴキシン（ジギタリス®） | PharmaDx 薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/digoxin.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/empagliflozin.html:    <title>エンパグリフロジン（ジャディアンス） | PharmaDx 薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/empagliflozin.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/lansoprazole.html:    <title>ランソプラゾール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/lansoprazole.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/metformin.html:    <title>メトホルミン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/metformin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/generated/drugs/metformin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/generated/SGLT2_prescription_reality.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/generated/cardiovascular_integrated_guide.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/generated/drug_ecosystem_concept.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/generated/diuretics_evolution_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/generated/beta_blocker_evolution_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/generated/antibiotics_ecosystem_map.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/generated/hypertension_treatment_ecosystem.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/dapagliflozin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/INTEGRATED_CARDIOVASCULAR_GUIDE.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/vancomycin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/ARB_prescription_reality.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/perindopril.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/QUALITY_STANDARDS.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/ACE_inhibitor_evolution_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/dapagliflozin.html:    <title>ダパグリフロジン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/dapagliflozin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/dapagliflozin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/エスシタロプラム.html:    <title>エスシタロプラム - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/エスシタロプラム.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/エスシタロプラム.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/vancomycin.html:    <title>バンコマイシン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/vancomycin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/vancomycin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/メトホルミン.html:    <title>メトホルミン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/メトホルミン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/メトホルミン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/sertraline.html:    <title>セルトラリン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/sertraline.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/perindopril.html:    <title>ペリンドプリル - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/perindopril.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/perindopril.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ジゴキシン.html:    <title>ジゴキシン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ジゴキシン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ジゴキシン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/エナラプリル.html:    <title>エナラプリル - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/エナラプリル.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/エナラプリル.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ロスバスタチン.html:    <title>ロスバスタチン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ロスバスタチン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ロスバスタチン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ダパグリフロジン.html:    <title>ダパグリフロジン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ダパグリフロジン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ダパグリフロジン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ワルファリン.html:    <title>ワルファリン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ワルファリン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ワルファリン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/bisoprolol.html:    <title>ビソプロロール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/bisoprolol.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/bisoprolol.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/スピロノラクトン.html:    <title>スピロノラクトン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/スピロノラクトン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/スピロノラクトン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/spironolactone.html:    <title>スピロノラクトン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/spironolactone.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/spironolactone.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ペリンドプリル.html:    <title>ペリンドプリル - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ペリンドプリル.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ペリンドプリル.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/atorvastatin.html:    <title>アトルバスタチン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/atorvastatin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/atorvastatin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/escitalopram.html:    <title>エスシタロプラム - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/escitalopram.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/カルベジロール.html:    <title>カルベジロール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/カルベジロール.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/カルベジロール.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/バンコマイシン.html:    <title>バンコマイシン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/バンコマイシン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/バンコマイシン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/warfarin.html:    <title>ワルファリン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/warfarin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/warfarin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/rosuvastatin.html:    <title>ロスバスタチン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/rosuvastatin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/rosuvastatin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/metformin_originated.html:    <title>メトホルミン（メトグルコ） | PharmaDx 薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/metformin_originated.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/enalapril.html:    <title>エナラプリル - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/enalapril.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/enalapril.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/セルトラリン.html:    <title>セルトラリン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/セルトラリン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/セルトラリン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/アトルバスタチン.html:    <title>アトルバスタチン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/アトルバスタチン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/アトルバスタチン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ビソプロロール.html:    <title>ビソプロロール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ビソプロロール.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ビソプロロール.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/カンデサルタン.html:    <title>カンデサルタン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/カンデサルタン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/カンデサルタン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/エソメプラゾール.html:    <title>エソメプラゾール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/エソメプラゾール.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/エソメプラゾール.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/furosemide.html:    <title>フロセミド - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/furosemide.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/furosemide.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ランソプラゾール.html:    <title>ランソプラゾール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ランソプラゾール.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/ランソプラゾール.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/エンパグリフロジン.html:    <title>エンパグリフロジン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/エンパグリフロジン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/エンパグリフロジン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/carvedilol.html:    <title>カルベジロール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/carvedilol.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/carvedilol.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/esomeprazole.html:    <title>エソメプラゾール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/esomeprazole.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/フロセミド.html:    <title>フロセミド - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/フロセミド.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/フロセミド.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/digoxin.html:    <title>ジゴキシン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/digoxin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/digoxin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/テルミサルタン.html:    <title>テルミサルタン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/テルミサルタン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/テルミサルタン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/empagliflozin.html:    <title>エンパグリフロジン（ジャディアンス） | PharmaDx 薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/empagliflozin.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/lansoprazole.html:    <title>ランソプラゾール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/lansoprazole.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/metformin.html:    <title>メトホルミン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/metformin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drugs/metformin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/SGLT2_prescription_reality.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/cardiovascular_integrated_guide.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/drug_ecosystem_concept.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/bisoprolol.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/cardiovascular_orchestra_guide.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/atorvastatin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/anticancer_evolution_data.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/diuretics_evolution_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/MODEL_QUALITY_SUMMARY.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/README.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/beta_blocker_evolution_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/ecosystem_map_antibiotics.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/antibiotics_ecosystem_map.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/metformin_detailed_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/warfarin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/enalapril.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/category_overview_v2.1.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/hypertension_clinical_data.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/hypertension_treatment_ecosystem.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/dapagliflozin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/INTEGRATED_CARDIOVASCULAR_GUIDE.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/vancomycin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/ARB_prescription_reality.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/perindopril.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/QUALITY_STANDARDS.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/ACE_inhibitor_evolution_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/dapagliflozin.html:    <title>ダパグリフロジン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/dapagliflozin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/dapagliflozin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/エスシタロプラム.html:    <title>エスシタロプラム - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/エスシタロプラム.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/エスシタロプラム.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/vancomycin.html:    <title>バンコマイシン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/vancomycin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/vancomycin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/メトホルミン.html:    <title>メトホルミン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/メトホルミン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/メトホルミン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/sertraline.html:    <title>セルトラリン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/sertraline.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/perindopril.html:    <title>ペリンドプリル - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/perindopril.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/perindopril.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ジゴキシン.html:    <title>ジゴキシン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ジゴキシン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ジゴキシン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/エナラプリル.html:    <title>エナラプリル - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/エナラプリル.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/エナラプリル.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ロスバスタチン.html:    <title>ロスバスタチン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ロスバスタチン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ロスバスタチン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ダパグリフロジン.html:    <title>ダパグリフロジン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ダパグリフロジン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ダパグリフロジン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ワルファリン.html:    <title>ワルファリン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ワルファリン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ワルファリン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/bisoprolol.html:    <title>ビソプロロール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/bisoprolol.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/bisoprolol.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/スピロノラクトン.html:    <title>スピロノラクトン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/スピロノラクトン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/スピロノラクトン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/spironolactone.html:    <title>スピロノラクトン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/spironolactone.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/spironolactone.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ペリンドプリル.html:    <title>ペリンドプリル - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ペリンドプリル.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ペリンドプリル.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/atorvastatin.html:    <title>アトルバスタチン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/atorvastatin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/atorvastatin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/escitalopram.html:    <title>エスシタロプラム - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/escitalopram.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/カルベジロール.html:    <title>カルベジロール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/カルベジロール.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/カルベジロール.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/バンコマイシン.html:    <title>バンコマイシン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/バンコマイシン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/バンコマイシン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/warfarin.html:    <title>ワルファリン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/warfarin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/warfarin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/rosuvastatin.html:    <title>ロスバスタチン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/rosuvastatin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/rosuvastatin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/metformin_originated.html:    <title>メトホルミン（メトグルコ） | PharmaDx 薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/metformin_originated.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/enalapril.html:    <title>エナラプリル - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/enalapril.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/enalapril.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/セルトラリン.html:    <title>セルトラリン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/セルトラリン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/セルトラリン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/アトルバスタチン.html:    <title>アトルバスタチン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/アトルバスタチン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/アトルバスタチン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ビソプロロール.html:    <title>ビソプロロール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ビソプロロール.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ビソプロロール.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/カンデサルタン.html:    <title>カンデサルタン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/カンデサルタン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/カンデサルタン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/エソメプラゾール.html:    <title>エソメプラゾール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/エソメプラゾール.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/エソメプラゾール.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/furosemide.html:    <title>フロセミド - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/furosemide.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/furosemide.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ランソプラゾール.html:    <title>ランソプラゾール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ランソプラゾール.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/ランソプラゾール.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/エンパグリフロジン.html:    <title>エンパグリフロジン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/エンパグリフロジン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/エンパグリフロジン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/carvedilol.html:    <title>カルベジロール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/carvedilol.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/carvedilol.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/esomeprazole.html:    <title>エソメプラゾール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/esomeprazole.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/フロセミド.html:    <title>フロセミド - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/フロセミド.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/フロセミド.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/digoxin.html:    <title>ジゴキシン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/digoxin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/digoxin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/テルミサルタン.html:    <title>テルミサルタン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/テルミサルタン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/テルミサルタン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/empagliflozin.html:    <title>エンパグリフロジン（ジャディアンス） | PharmaDx 薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/empagliflozin.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/lansoprazole.html:    <title>ランソプラゾール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/lansoprazole.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/metformin.html:    <title>メトホルミン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/metformin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drugs/metformin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/SGLT2_prescription_reality.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/cardiovascular_integrated_guide.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/drug_ecosystem_concept.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/bisoprolol.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/cardiovascular_orchestra_guide.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/atorvastatin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/anticancer_evolution_data.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/diuretics_evolution_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/MODEL_QUALITY_SUMMARY.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/README.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/beta_blocker_evolution_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/ecosystem_map_antibiotics.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/antibiotics_ecosystem_map.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/metformin_detailed_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/warfarin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/enalapril.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/category_overview_v2.1.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/hypertension_clinical_data.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/hypertension_treatment_ecosystem.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/antibiotic_resistance_timeline.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/carvedilol.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/category_overview.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/digoxin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/cardiovascular-orchestra.html:                <h1><a href="index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/cardiovascular-orchestra.html:                    <h3 class="footer-title">PharmaDx</h3>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/cardiovascular-orchestra.html:                <p class="copyright">&copy; 2024 PharmaDx. All rights reserved.</p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/ARB_prescription_reality_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/html_files/category_overview_v2.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/antibiotic_resistance_timeline.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/carvedilol.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/category_overview.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/digoxin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/cardiovascular-orchestra.html:                <h1><a href="index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/cardiovascular-orchestra.html:                    <h3 class="footer-title">PharmaDx</h3>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/cardiovascular-orchestra.html:                <p class="copyright">&copy; 2024 PharmaDx. All rights reserved.</p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/ARB_prescription_reality_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/restructure_195800/archive/backup_20250630_1832/category_overview_v2.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/dapagliflozin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/INTEGRATED_CARDIOVASCULAR_GUIDE.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/vancomycin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/ARB_prescription_reality.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/perindopril.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/QUALITY_STANDARDS.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/ACE_inhibitor_evolution_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/drugs/dapagliflozin.html:    <title>ダパグリフロジン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/dapagliflozin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/dapagliflozin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/エスシタロプラム.html:    <title>エスシタロプラム - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/エスシタロプラム.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/エスシタロプラム.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/vancomycin.html:    <title>バンコマイシン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/vancomycin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/vancomycin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/メトホルミン.html:    <title>メトホルミン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/メトホルミン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/メトホルミン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/sertraline.html:    <title>セルトラリン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/sertraline.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/backup_183200/drugs/perindopril.html:    <title>ペリンドプリル - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/perindopril.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/perindopril.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/ジゴキシン.html:    <title>ジゴキシン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/ジゴキシン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/ジゴキシン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/エナラプリル.html:    <title>エナラプリル - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/エナラプリル.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/エナラプリル.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/ロスバスタチン.html:    <title>ロスバスタチン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/ロスバスタチン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/ロスバスタチン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/ダパグリフロジン.html:    <title>ダパグリフロジン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/ダパグリフロジン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/ダパグリフロジン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/ワルファリン.html:    <title>ワルファリン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/ワルファリン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/ワルファリン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/bisoprolol.html:    <title>ビソプロロール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/bisoprolol.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/bisoprolol.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/スピロノラクトン.html:    <title>スピロノラクトン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/スピロノラクトン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/スピロノラクトン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/spironolactone.html:    <title>スピロノラクトン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/spironolactone.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/spironolactone.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/ペリンドプリル.html:    <title>ペリンドプリル - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/ペリンドプリル.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/ペリンドプリル.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/atorvastatin.html:    <title>アトルバスタチン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/atorvastatin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/atorvastatin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/escitalopram.html:    <title>エスシタロプラム - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/escitalopram.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/backup_183200/drugs/カルベジロール.html:    <title>カルベジロール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/カルベジロール.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/カルベジロール.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/バンコマイシン.html:    <title>バンコマイシン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/バンコマイシン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/バンコマイシン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/warfarin.html:    <title>ワルファリン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/warfarin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/warfarin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/rosuvastatin.html:    <title>ロスバスタチン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/rosuvastatin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/rosuvastatin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/metformin_originated.html:    <title>メトホルミン（メトグルコ） | PharmaDx 薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/metformin_originated.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/backup_183200/drugs/enalapril.html:    <title>エナラプリル - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/enalapril.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/enalapril.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/セルトラリン.html:    <title>セルトラリン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/セルトラリン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/セルトラリン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/アトルバスタチン.html:    <title>アトルバスタチン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/アトルバスタチン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/アトルバスタチン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/ビソプロロール.html:    <title>ビソプロロール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/ビソプロロール.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/ビソプロロール.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/カンデサルタン.html:    <title>カンデサルタン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/カンデサルタン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/カンデサルタン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/エソメプラゾール.html:    <title>エソメプラゾール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/エソメプラゾール.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/エソメプラゾール.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/furosemide.html:    <title>フロセミド - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/furosemide.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/furosemide.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/ランソプラゾール.html:    <title>ランソプラゾール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/ランソプラゾール.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/ランソプラゾール.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/エンパグリフロジン.html:    <title>エンパグリフロジン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/エンパグリフロジン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/エンパグリフロジン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/carvedilol.html:    <title>カルベジロール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/carvedilol.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/carvedilol.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/esomeprazole.html:    <title>エソメプラゾール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/esomeprazole.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/backup_183200/drugs/フロセミド.html:    <title>フロセミド - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/フロセミド.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/フロセミド.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/digoxin.html:    <title>ジゴキシン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/digoxin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/digoxin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/テルミサルタン.html:    <title>テルミサルタン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/テルミサルタン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/テルミサルタン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/drugs/empagliflozin.html:    <title>エンパグリフロジン（ジャディアンス） | PharmaDx 薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/empagliflozin.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/backup_183200/drugs/lansoprazole.html:    <title>ランソプラゾール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/lansoprazole.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/backup_183200/drugs/metformin.html:    <title>メトホルミン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/drugs/metformin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/drugs/metformin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/SGLT2_prescription_reality.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/cardiovascular_integrated_guide.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/drug_ecosystem_concept.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/bisoprolol.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/cardiovascular_orchestra_guide.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/atorvastatin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/anticancer_evolution_data.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/diuretics_evolution_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/MODEL_QUALITY_SUMMARY.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/README.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/beta_blocker_evolution_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/ecosystem_map_antibiotics.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/antibiotics_ecosystem_map.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/metformin_detailed_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/warfarin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/enalapril.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/category_overview_v2.1.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/hypertension_clinical_data.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/hypertension_treatment_ecosystem.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/dapagliflozin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/INTEGRATED_CARDIOVASCULAR_GUIDE.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/vancomycin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/ARB_prescription_reality.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/perindopril.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/QUALITY_STANDARDS.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/ACE_inhibitor_evolution_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/dapagliflozin.html:    <title>ダパグリフロジン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/dapagliflozin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/dapagliflozin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/エスシタロプラム.html:    <title>エスシタロプラム - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/エスシタロプラム.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/エスシタロプラム.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/vancomycin.html:    <title>バンコマイシン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/vancomycin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/vancomycin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/メトホルミン.html:    <title>メトホルミン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/メトホルミン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/メトホルミン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/sertraline.html:    <title>セルトラリン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/sertraline.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/perindopril.html:    <title>ペリンドプリル - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/perindopril.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/perindopril.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ジゴキシン.html:    <title>ジゴキシン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ジゴキシン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ジゴキシン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/エナラプリル.html:    <title>エナラプリル - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/エナラプリル.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/エナラプリル.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ロスバスタチン.html:    <title>ロスバスタチン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ロスバスタチン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ロスバスタチン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ダパグリフロジン.html:    <title>ダパグリフロジン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ダパグリフロジン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ダパグリフロジン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ワルファリン.html:    <title>ワルファリン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ワルファリン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ワルファリン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/bisoprolol.html:    <title>ビソプロロール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/bisoprolol.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/bisoprolol.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/スピロノラクトン.html:    <title>スピロノラクトン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/スピロノラクトン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/スピロノラクトン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/spironolactone.html:    <title>スピロノラクトン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/spironolactone.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/spironolactone.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ペリンドプリル.html:    <title>ペリンドプリル - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ペリンドプリル.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ペリンドプリル.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/atorvastatin.html:    <title>アトルバスタチン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/atorvastatin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/atorvastatin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/escitalopram.html:    <title>エスシタロプラム - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/escitalopram.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/カルベジロール.html:    <title>カルベジロール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/カルベジロール.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/カルベジロール.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/バンコマイシン.html:    <title>バンコマイシン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/バンコマイシン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/バンコマイシン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/warfarin.html:    <title>ワルファリン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/warfarin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/warfarin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/rosuvastatin.html:    <title>ロスバスタチン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/rosuvastatin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/rosuvastatin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/metformin_originated.html:    <title>メトホルミン（メトグルコ） | PharmaDx 薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/metformin_originated.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/enalapril.html:    <title>エナラプリル - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/enalapril.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/enalapril.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/セルトラリン.html:    <title>セルトラリン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/セルトラリン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/セルトラリン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/アトルバスタチン.html:    <title>アトルバスタチン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/アトルバスタチン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/アトルバスタチン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ビソプロロール.html:    <title>ビソプロロール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ビソプロロール.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ビソプロロール.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/カンデサルタン.html:    <title>カンデサルタン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/カンデサルタン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/カンデサルタン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/エソメプラゾール.html:    <title>エソメプラゾール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/エソメプラゾール.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/エソメプラゾール.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/furosemide.html:    <title>フロセミド - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/furosemide.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/furosemide.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ランソプラゾール.html:    <title>ランソプラゾール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ランソプラゾール.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/ランソプラゾール.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/エンパグリフロジン.html:    <title>エンパグリフロジン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/エンパグリフロジン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/エンパグリフロジン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/carvedilol.html:    <title>カルベジロール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/carvedilol.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/carvedilol.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/esomeprazole.html:    <title>エソメプラゾール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/esomeprazole.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/フロセミド.html:    <title>フロセミド - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/フロセミド.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/フロセミド.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/digoxin.html:    <title>ジゴキシン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/digoxin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/digoxin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/テルミサルタン.html:    <title>テルミサルタン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/テルミサルタン.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/テルミサルタン.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/empagliflozin.html:    <title>エンパグリフロジン（ジャディアンス） | PharmaDx 薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/empagliflozin.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/lansoprazole.html:    <title>ランソプラゾール - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/lansoprazole.html:                <h1><a href="../index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/metformin.html:    <title>メトホルミン - PharmaDx薬剤図鑑</title>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/metformin.html:            <a href="../index.html" class="back-link">← PharmaDx トップへ</a>
+docs/_archive/2025-06-30/backup_183200/html_files/drugs/metformin.html:            <h1>PharmaDx 薬剤図鑑</h1>
+docs/_archive/2025-06-30/backup_183200/html_files/SGLT2_prescription_reality.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/cardiovascular_integrated_guide.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/drug_ecosystem_concept.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/bisoprolol.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/cardiovascular_orchestra_guide.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/atorvastatin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/anticancer_evolution_data.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/diuretics_evolution_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/MODEL_QUALITY_SUMMARY.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/README.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/beta_blocker_evolution_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/ecosystem_map_antibiotics.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/antibiotics_ecosystem_map.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/metformin_detailed_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/warfarin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/enalapril.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/category_overview_v2.1.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/hypertension_clinical_data.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/hypertension_treatment_ecosystem.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/antibiotic_resistance_timeline.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/carvedilol.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/category_overview.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/digoxin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/cardiovascular-orchestra.html:                <h1><a href="index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/backup_183200/html_files/cardiovascular-orchestra.html:                    <h3 class="footer-title">PharmaDx</h3>
+docs/_archive/2025-06-30/backup_183200/html_files/cardiovascular-orchestra.html:                <p class="copyright">&copy; 2024 PharmaDx. All rights reserved.</p>
+docs/_archive/2025-06-30/backup_183200/html_files/ARB_prescription_reality_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/html_files/category_overview_v2.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/antibiotic_resistance_timeline.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/carvedilol.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/category_overview.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/digoxin.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/cardiovascular-orchestra.html:                <h1><a href="index.html">PharmaDx</a></h1>
+docs/_archive/2025-06-30/backup_183200/cardiovascular-orchestra.html:                    <h3 class="footer-title">PharmaDx</h3>
+docs/_archive/2025-06-30/backup_183200/cardiovascular-orchestra.html:                <p class="copyright">&copy; 2024 PharmaDx. All rights reserved.</p>
+docs/_archive/2025-06-30/backup_183200/ARB_prescription_reality_model.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+docs/_archive/2025-06-30/backup_183200/category_overview_v2.html:<p><em>このモデルは最新のエビデンスに基づく。PharmaDx品質基準5.0/5.0を満たす完全版。</em></p>
+=== 現在アクティブなHTMLファイルでのPharmaDx検索 ===
+PharmaDx検索結果: 現在アクティブなHTMLファイルにはPharmaDxの記載なし
+=== おくすりノート表記統一状況確認 ===
+      94
+✅ フッター修正完了: PharmaDx → おくすりノート (docs/index.html:644)
+Tue Jul  1 12:05:18 JST 2025
+=== ブランド統一作業完了サマリー ===
+Tue Jul  1 12:08:49 JST 2025
+🚨 QA重要発見: line 593 PharmaDex残存を発見・修正完了

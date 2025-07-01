@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ページが見つかりません | おくすりノート</title>
+    <meta name="description" content="お探しのページが見つかりません。おくすりノートで薬学学習を継続してください。">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-family: 'Hiragino Kaku Gothic ProN', 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .error-404 {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 600px;
+            margin: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .error-404 h1 {
+            font-size: 8rem;
+            color: #fff;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: bounce 2s infinite;
+        }
+        
+        .error-404 h2 {
+            font-size: 2rem;
+            margin: 20px 0;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .error-message {
+            font-size: 1.2rem;
+            margin: 30px 0;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .suggestions {
+            margin-top: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+        }
+        
+        .suggestions h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .suggestion-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .suggestion-link {
+            display: block;
+            padding: 15px 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .suggestion-link:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .suggestion-link .icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        
+        .search-suggestion {
+            margin-top: 30px;
+        }
+        
+        .search-box {
+            display: flex;
+            margin-top: 15px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 25px 0 0 25px;
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .search-btn {
+            padding: 12px 20px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .search-btn:hover {
+            background: #c0392b;
+        }
+        
+        .pharmacy-note {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            font-style: italic;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .error-404 {
+                padding: 40px 20px;
+                margin: 10px;
+            }
+            
+            .error-404 h1 {
+                font-size: 5rem;
+            }
+            
+            .error-404 h2 {
+                font-size: 1.5rem;
+            }
+            
+            .suggestion-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <main class="error-404">
+            <h1>404</h1>
+            <h2>お探しのページが見つかりません</h2>
+            
+            <div class="error-message">
+                <p>申し訳ございません。ページが移動または削除された可能性があります。</p>
+                <p>薬学学習の旅を続けましょう。おくすりノートで新たな発見を見つけてください。</p>
+            </div>
+            
+            <div class="suggestions">
+                <h3>🎯 こちらをお探しですか？</h3>
+                
+                <div class="suggestion-links">
+                    <a href="/index.html" class="suggestion-link">
+                        <span class="icon">🏠</span>
+                        <div>
+                            <strong>トップページ</strong><br>
+                            <small>おくすりノートの入口</small>
+                        </div>
+                    </a>
+                    
+                    <a href="/drugs/" class="suggestion-link">
+                        <span class="icon">💊</span>
+                        <div>
+                            <strong>薬剤一覧</strong><br>
+                            <small>24の重要薬剤</small>
+                        </div>
+                    </a>
+                    
+                    <a href="/groups/" class="suggestion-link">
+                        <span class="icon">🧬</span>
+                        <div>
+                            <strong>薬効群</strong><br>
+                            <small>薬の使い分けを学ぶ</small>
+                        </div>
+                    </a>
+                    
+                    <a href="/categories/" class="suggestion-link">
+                        <span class="icon">📚</span>
+                        <div>
+                            <strong>カテゴリ一覧</strong><br>
+                            <small>体系的に学習</small>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="search-suggestion">
+                    <h4>🔍 薬剤名で検索</h4>
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="薬剤名を入力..." id="searchInput">
+                        <button class="search-btn" onclick="performSearch()">検索</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pharmacy-note">
+                <p>💡 <strong>薬学のヒント</strong></p>
+                <p>「迷った時こそ基本に戻る」- 薬理学の基本原理を理解すれば、すべての薬が理解できるようになります。</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.trim();
+            if (searchTerm) {
+                // 簡単な薬剤名マッピング
+                const drugMapping = {
+                    'テルミサルタン': '/drugs/telmisartan.html',
+                    'カンデサルタン': '/drugs/candesartan.html',
+                    'ロサルタン': '/drugs/losartan.html',
+                    'エンパグリフロジン': '/drugs/empagliflozin.html',
+                    'ダパグリフロジン': '/drugs/dapagliflozin.html',
+                    'オメプラゾール': '/drugs/omeprazole.html',
+                    'エスシタロプラム': '/drugs/escitalopram.html',
+                    'セルトラリン': '/drugs/sertraline.html',
+                    'メトホルミン': '/drugs/metformin.html',
+                    'ロスバスタチン': '/drugs/rosuvastatin.html',
+                    'スピロノラクトン': '/drugs/spironolactone.html'
+                };
+                
+                const drugPage = drugMapping[searchTerm];
+                if (drugPage) {
+                    window.location.href = drugPage;
+                } else {
+                    // 薬剤が見つからない場合はトップページの検索へ
+                    window.location.href = `/index.html#search=${encodeURIComponent(searchTerm)}`;
+                }
+            }
+        }
+        
+        // Enterキーでの検索対応
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    </script>
+</body>
+</html>

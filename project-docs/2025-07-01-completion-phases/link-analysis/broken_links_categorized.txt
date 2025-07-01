@@ -1,0 +1,136 @@
+OkusuriNote Broken Links by Category
+作成日時: 2025-07-01 11:09
+総数: 220件 (77%のリンク切れ)
+
+=== 1. 相対パス問題 (最優先修正) ===
+
+【../index.html系】
+../../index.html -> ../index.html not found
+../../index.html#categories -> ../index.html not found
+../../index.html#differentiation -> ../index.html not found
+../../index.html#drugs -> ../index.html not found
+../../index.html#stories -> ../index.html not found
+../index.html -> index.html not found
+../index.html#cardiovascular -> index.html not found
+../index.html#categories -> index.html not found
+../index.html#clinical -> index.html not found
+../index.html#cns -> index.html not found
+../index.html#differentiation -> index.html not found
+../index.html#drugs -> index.html not found
+../index.html#endocrine -> index.html not found
+../index.html#evolution -> index.html not found
+../index.html#latest -> index.html not found
+../index.html#memory -> index.html not found
+../index.html#stories -> index.html not found
+
+【../drugs/系】
+../drugs/ -> drugs/ not found
+../drugs/amoxicillin.html -> drugs/amoxicillin.html not found
+../drugs/atorvastatin.html -> drugs/atorvastatin.html not found
+../drugs/canagliflozin.html -> drugs/canagliflozin.html not found
+../drugs/candesartan.html -> drugs/candesartan.html not found
+../drugs/ceftriaxone.html -> drugs/ceftriaxone.html not found
+../drugs/dapagliflozin.html -> drugs/dapagliflozin.html not found
+../drugs/digoxin.html -> drugs/digoxin.html not found
+../drugs/empagliflozin.html -> drugs/empagliflozin.html not found
+../drugs/escitalopram.html -> drugs/escitalopram.html not found
+../drugs/esomeprazole.html -> drugs/esomeprazole.html not found
+../drugs/furosemide.html -> drugs/furosemide.html not found
+../drugs/lansoprazole.html -> drugs/lansoprazole.html not found
+../drugs/liraglutide.html -> drugs/liraglutide.html not found
+../drugs/losartan.html -> drugs/losartan.html not found
+../drugs/metformin.html -> drugs/metformin.html not found
+../drugs/omeprazole.html -> drugs/omeprazole.html not found
+../drugs/paroxetine.html -> drugs/paroxetine.html not found
+../drugs/rosuvastatin.html -> drugs/rosuvastatin.html not found
+../drugs/sertraline.html -> drugs/sertraline.html not found
+../drugs/spironolactone.html -> drugs/spironolactone.html not found
+../drugs/telmisartan.html -> drugs/telmisartan.html not found
+../drugs/vancomycin.html -> drugs/vancomycin.html not found
+../drugs/warfarin.html -> drugs/warfarin.html not found
+
+【../groups/系】
+../groups/ -> groups/ not found
+../groups/β遮断薬.html -> groups/β遮断薬.html not found
+../groups/その他.html -> groups/その他.html not found
+../groups/スタチン.html -> groups/スタチン.html not found
+../groups/利尿薬.html -> groups/利尿薬.html not found
+../groups/ace-inhibitors.html -> groups/ace-inhibitors.html not found
+../groups/ACE阻害薬.html -> groups/ACE阻害薬.html not found
+../groups/antibiotics_ecosystem_map.html -> groups/antibiotics_ecosystem_map.html not found
+../groups/ARB_evolution_model.html -> groups/ARB_evolution_model.html not found
+../groups/ARB.html -> groups/ARB.html not found
+../groups/cardiovascular_integrated_guide.html -> groups/cardiovascular_integrated_guide.html not found
+../groups/cardiovascular.html -> groups/cardiovascular.html not found
+../groups/PPI.html -> groups/PPI.html not found
+../groups/SGLT2阻害薬.html -> groups/SGLT2阻害薬.html not found
+../groups/SSRI.html -> groups/SSRI.html not found
+../groups/statin_evolution_model.html -> groups/statin_evolution_model.html not found
+
+=== 2. 削除済みディレクトリ参照 (高優先修正) ===
+
+【data/stories/系】
+data/stories/anticancer.html -> docs/data/stories/anticancer.html not found
+data/stories/aspirin.html -> docs/data/stories/aspirin.html not found
+data/stories/hypertension.html -> docs/data/stories/hypertension.html not found
+data/stories/insulin.html -> docs/data/stories/insulin.html not found
+data/stories/penicillin.html -> docs/data/stories/penicillin.html not found
+data/stories/personalized.html -> docs/data/stories/personalized.html not found
+data/stories/psychotropic.html -> docs/data/stories/psychotropic.html not found
+data/stories/resistance.html -> docs/data/stories/resistance.html not found
+data/stories/vaccine.html -> docs/data/stories/vaccine.html not found
+data/stories/vancomycin.html -> docs/data/stories/vancomycin.html not found
+
+【data/differentiation/系】
+data/differentiation/ace.html -> docs/data/differentiation/ace.html not found
+data/differentiation/anticoagulant.html -> docs/data/differentiation/anticoagulant.html not found
+data/differentiation/arb.html -> docs/data/differentiation/arb.html not found
+data/differentiation/beta_blocker.html -> docs/data/differentiation/beta_blocker.html not found
+data/differentiation/diuretic.html -> docs/data/differentiation/diuretic.html not found
+data/differentiation/ppi.html -> docs/data/differentiation/ppi.html not found
+data/differentiation/sglt2.html -> docs/data/differentiation/sglt2.html not found
+data/differentiation/ssri.html -> docs/data/differentiation/ssri.html not found
+data/differentiation/statin.html -> docs/data/differentiation/statin.html not found
+data/differentiation/tdm.html -> docs/data/differentiation/tdm.html not found
+
+【generated/drugs/系 (22件)】
+generated/drugs/atorvastatin.html -> docs/generated/drugs/atorvastatin.html not found
+generated/drugs/bisoprolol.html -> docs/generated/drugs/bisoprolol.html not found
+generated/drugs/candesartan.html -> docs/generated/drugs/candesartan.html not found
+(全22薬剤で同様のパターン)
+
+=== 3. CSS/アセット問題 (中優先修正) ===
+
+【../../assets/css/系】
+../../assets/css/drug-detail.css -> ../assets/css/drug-detail.css not found
+../../assets/css/style.css -> ../assets/css/style.css not found
+
+【../assets/css/系】
+../assets/css/category-comparison.css -> assets/css/category-comparison.css not found
+../assets/css/drug-detail.css -> assets/css/drug-detail.css not found
+../assets/css/drug-page.css -> assets/css/drug-page.css not found
+../assets/css/style.css -> assets/css/style.css not found
+
+【../../css/系】
+../../css/category-comparison.css -> ../css/category-comparison.css not found
+../../css/differentiation-table.css -> ../css/differentiation-table.css not found
+../../css/story-layout.css -> ../css/story-layout.css not found
+../../css/style.css -> ../css/style.css not found
+
+=== 4. 個別薬剤ファイル (docsルート配置問題) ===
+atenolol.html -> docs/atenolol.html not found
+atorvastatin.html -> docs/atorvastatin.html not found
+bisoprolol.html -> docs/bisoprolol.html not found
+candesartan.html -> docs/candesartan.html not found
+carvedilol.html -> docs/carvedilol.html not found
+dapagliflozin.html -> docs/dapagliflozin.html not found
+empagliflozin.html -> docs/empagliflozin.html not found
+(およそ25件の薬剤ファイル)
+
+=== 修正推奨手順 ===
+1. 相対パス修正: ../drugs/ → drugs/ の一括置換
+2. data/配下参照削除または適切パスに変更
+3. generated/drugs/ → drugs/ の置換
+4. CSS パスの assets/css/ への統一
+
+作成者: dev1 (Link Investigation Engineer)
