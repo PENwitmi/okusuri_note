@@ -11,26 +11,29 @@
 ```
 1. 準備作業（5分）
    ├── バックアップ作成
-   └── 作業ファイルのコピー
+   ├── ワークディレクトリ作成
+   └── 元ファイルのコピー
 
-2. Step 1: HTMLクリーン化（20分）
+2. Step 1: HTMLクリーン化（20分）@css_cleanup
+   ├── drugsから_internal/css_cleanupへコピー
    ├── class属性の完全削除
    ├── style属性の削除
    └── 構造確認
 
-3. Step 2: コンテンツ再配置（30分）
+3. Step 2: コンテンツ再配置（30分）@drug_versionup
+   ├── css_cleanupから_internal/drug_versionupへコピー
    ├── metformin-clean.htmlを参考に構造整理
    ├── レベル1→2→3の順序で配置
-   └── 不要な要素の削除
+   └── すべての内容を保持（情報欠損なし）
 
 4. Step 3: クラス付与（20分）
    ├── 必要最小限のクラスを付与
    ├── metformin-clean.htmlのクラスを参考
    └── 薬剤固有の調整
 
-5. 検証とデプロイ（15分）
-   ├── 表示確認
-   ├── モバイル確認
+5. 最終配置と検証（15分）
+   ├── drugs-v2/へ最終ファイル配置
+   ├── 表示確認・モバイル確認
    └── Git push
 ```
 
@@ -38,17 +41,31 @@
 
 ## 📝 Step 0: 準備作業
 
-### バックアップ作成
+### ワークディレクトリ作成
 ```bash
+# ワークディレクトリが存在しない場合は作成
+mkdir -p docs/_internal/css_cleanup/
+mkdir -p docs/_internal/drug_versionup/
+
 # バックアップディレクトリ作成
 mkdir -p _old_files/backup_$(date +%Y%m%d_%H%M)/
+```
 
-# 対象ファイルのバックアップ
-cp docs/drugs-v2/rosuvastatin-v2-components.html \
+### 元ファイルのバックアップとコピー
+```bash
+# 元のHTMLファイルをバックアップ
+cp docs/drugs/rosuvastatin.html \
    _old_files/backup_$(date +%Y%m%d_%H%M)/
 
-cp docs/drugs-v2/telmisartan-v2-components.html \
+cp docs/drugs/telmisartan.html \
    _old_files/backup_$(date +%Y%m%d_%H%M)/
+
+# css_cleanupディレクトリへコピー（Step 1の準備）
+cp docs/drugs/rosuvastatin.html \
+   docs/_internal/css_cleanup/rosuvastatin.html
+
+cp docs/drugs/telmisartan.html \
+   docs/_internal/css_cleanup/telmisartan.html
 ```
 
 ### 作業環境の準備
@@ -66,10 +83,10 @@ cp docs/drugs-v2/telmisartan-v2-components.html \
 #### 自動削除（sedコマンド）
 ```bash
 # rosuvastatinのクリーン化
-sed -i '' 's/ class="[^"]*"//g' docs/drugs-v2/rosuvastatin-v2-components.html
+sed -i '' 's/ class="[^"]*"//g' docs/_internal/css_cleanup/rosuvastatin.html
 
 # telmisartanのクリーン化
-sed -i '' 's/ class="[^"]*"//g' docs/drugs-v2/telmisartan-v2-components.html
+sed -i '' 's/ class="[^"]*"//g' docs/_internal/css_cleanup/telmisartan.html
 ```
 
 #### 手動削除の場合
@@ -80,7 +97,18 @@ VSCodeなどで以下の正規表現で検索・置換：
 ### 1.2 style属性の削除
 ```bash
 # インラインスタイルも同様に削除
-sed -i '' 's/ style="[^"]*"//g' docs/drugs-v2/rosuvastatin-v2-components.html
+sed -i '' 's/ style="[^"]*"//g' docs/_internal/css_cleanup/rosuvastatin.html
+sed -i '' 's/ style="[^"]*"//g' docs/_internal/css_cleanup/telmisartan.html
+```
+
+### 1.3 クリーンファイルの命名
+```bash
+# クリーン化完了後、ファイル名を変更
+mv docs/_internal/css_cleanup/rosuvastatin.html \
+   docs/_internal/css_cleanup/rosuvastatin-clean.html
+
+mv docs/_internal/css_cleanup/telmisartan.html \
+   docs/_internal/css_cleanup/telmisartan-clean.html
 ```
 
 ### 1.3 クリーン化の確認
@@ -110,7 +138,19 @@ sed -i '' 's/ style="[^"]*"//g' docs/drugs-v2/rosuvastatin-v2-components.html
 
 ## 📋 Step 2: コンテンツ再配置（Ver2化）
 
+### 2.0 ワークディレクトリへのコピー
+```bash
+# クリーン化したファイルをdrug_versionupへコピー
+cp docs/_internal/css_cleanup/rosuvastatin-clean.html \
+   docs/_internal/drug_versionup/rosuvastatin-clean.html
+
+cp docs/_internal/css_cleanup/telmisartan-clean.html \
+   docs/_internal/drug_versionup/telmisartan-clean.html
+```
+
 ### 2.1 標準構造テンプレート
+
+**重要原則**: 情報の欠損は一切なし。すべての内容を残して並べ替えるだけ。
 
 metformin-clean.htmlを基準とした構造：
 
@@ -182,15 +222,29 @@ metformin-clean.htmlを基準とした構造：
 - 副作用と対処法
 
 #### レベル3に配置すべきもの
+- **レベル1、2に含まれない元HTMLのすべての内容**
 - 臨床での使い分け
 - エビデンスの詳細
 - 医師・患者の声
 - 最新の研究動向
+- その他すべての情報（削除禁止）
 
-### 2.3 不要な要素の削除
-- 古いナビゲーション要素
-- 重複するコンテンツ
-- デザインのためだけの装飾的div
+### 2.3 Ver2化完了後のファイル名
+```bash
+# Ver2化が完了したら、ファイル名を変更
+mv docs/_internal/drug_versionup/rosuvastatin-clean.html \
+   docs/_internal/drug_versionup/rosuvastatin-clean-v2.html
+
+mv docs/_internal/drug_versionup/telmisartan-clean.html \
+   docs/_internal/drug_versionup/telmisartan-clean-v2.html
+```
+
+### 2.4 情報の扱いに関する注意
+- ✅ すべての情報を保持（情報欠損なし）
+- ✅ 重複があっても削除しない
+- ✅ 古い表現があっても残す
+- ❌ 勝手に情報を削除しない
+- ❌ 「不要」と判断して省略しない
 
 ---
 
@@ -368,22 +422,27 @@ grep -o 'class="[^"]*"' docs/drugs-v2/rosuvastatin-clean.html | wc -l
 
 ## 📁 完成後の処理
 
-### ファイル名変更
+### 最終ファイルの配置
 ```bash
-# componentsをcleanに変更
-mv docs/drugs-v2/rosuvastatin-v2-components.html \
+# drug_versionupからdrugs-v2へ最終配置
+# 注意：最終的なファイル名は-cleanで終わる（metforminに合わせる）
+cp docs/_internal/drug_versionup/rosuvastatin-clean-v2.html \
    docs/drugs-v2/rosuvastatin-clean.html
 
-mv docs/drugs-v2/telmisartan-v2-components.html \
+cp docs/_internal/drug_versionup/telmisartan-clean-v2.html \
    docs/drugs-v2/telmisartan-clean.html
 ```
 
 ### Git commit & push
 ```bash
 git add docs/drugs-v2/
+git add docs/_internal/  # ワークディレクトリも含める
+
 git commit -m "feat: ロスバスタチンとテルミサルタンをclean形式で実装
 
+- drugs/からクリーン化、Ver2化を経て最終配置
 - 全クラスを削除後、必要最小限（29個）のみ付与
+- 情報欠損なしで全内容を保持したまま再配置
 - metformin-clean.htmlをテンプレートとして使用
 - レベル1→2→3の論理的配置を実現
 - モバイル対応とレベル切り替え機能を実装"

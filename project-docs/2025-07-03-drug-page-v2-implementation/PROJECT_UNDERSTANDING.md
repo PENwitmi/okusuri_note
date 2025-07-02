@@ -82,6 +82,8 @@
 ### 作業2：Ver2化（コンテンツ再配置）
 **目的**: 学習効果を最大化する論理的な順序
 
+**重要原則**: 情報の欠損は一切なし。すべての内容を残して並べ替えるだけ。
+
 **metformin-clean.htmlを参考にした標準構成**:
 1. **レベルインジケーター**: 学習段階の可視化
 2. **レベル1コンテンツ**: 
@@ -94,9 +96,11 @@
    - 作用機序の段階的解明
    - 実習での注意点
 4. **レベル3コンテンツ**:
+   - **上記以外のすべての内容を配置**
    - 臨床での深い理解
    - 医師・患者の証言
    - 最新研究動向
+   - その他元のHTMLに含まれるすべての情報
 
 ### 作業3：CSS適用（最小限クラス付与）
 **目的**: 保守可能な最小構成の実現
@@ -126,6 +130,38 @@
 - level-3-content
 - level-btn
 ```
+
+---
+
+## 🔧 ワークディレクトリと実装フロー
+
+### ワークディレクトリの構成
+```
+docs/
+├── drugs/                             # 既存の薬剤ページ（元ファイル）
+├── _internal/
+│   ├── css_cleanup/                   # Step1: CSS除去作業用
+│   └── drug_versionup/                # Step2: Ver2化作業用
+└── drugs-v2/                          # 最終成果物の配置場所
+```
+
+### 正しい実装フロー
+```
+1. drugs/rosuvastatin.html（元ファイル）
+     ↓ コピー
+2. _internal/css_cleanup/rosuvastatin-clean.html（CSS除去）
+     ↓ コピー＆再配置
+3. _internal/drug_versionup/rosuvastatin-clean-v2.html（Ver2化）
+     ↓ 最終配置
+4. drugs-v2/rosuvastatin-clean.html（公開用）
+```
+
+### metforminの特例
+metforminは歴史的経緯により、この標準フローと異なる順序で作成されました：
+- 通常: drug → clean → clean-v2
+- metformin: drug → v2 → clean（トラブル対応の結果）
+
+そのため、metformin-clean.htmlは命名規則から外れていますが、最終的な品質は標準フローと同等です。
 
 ---
 
