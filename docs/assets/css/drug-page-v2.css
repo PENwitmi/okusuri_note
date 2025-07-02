@@ -180,6 +180,32 @@
     box-shadow: var(--shadow-light);
 }
 
+/* レベル3（研修医向け） */
+.level-3-content {
+    background: #fdfdfd;  /* 長文読書用背景 */
+    color: var(--text-secondary);
+    border: 2px solid #cfd8dc;  /* 上品な境界 */
+    border-top: 4px solid #37474f;  /* 権威性を表す上部ボーダー */
+    font-weight: 600;
+    padding: 14px;
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    border-radius: 4px;
+    position: relative;
+    font-family: 'Times New Roman', 'メイリオ', serif;
+    box-shadow: inset 0 0 0 1px rgba(55, 71, 79, 0.1);
+}
+
+.level-3-content:before {
+    content: "🎖️";
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    font-size: 12px;
+    opacity: 0.4;
+}
+
 /* ========================================
    レベル管理系（新規実装）
 ======================================== */
