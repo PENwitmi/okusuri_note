@@ -6,7 +6,21 @@
 
 ---
 
-## 🚀 実装の全体フロー
+## ⚠️ 重要：rosuvastatin/telmisartanは特例ルート
+
+**現在の状態**：
+- rosuvastatin-v2-components.html → すでにVer2化済み（古いCSS付き）
+- telmisartan-v2-components.html → すでにVer2化済み（古いCSS付き）
+
+これらはすでにコンテンツの再配置（Ver2化）が完了しているため、**Step 2をスキップ**して：
+1. クリーン化（古いCSS除去）
+2. 新CSS付与
+
+の手順で進めます。詳細は「**特例: rosuvastatin/telmisartanの実装手順**」セクションを参照してください。
+
+---
+
+## 🚀 実装の全体フロー（標準ルート）
 
 ```
 1. 準備作業（5分）
@@ -473,4 +487,81 @@ git push
 
 ---
 
-**ガイド作成完了**: 2025-07-03 05:20
+## 🔴 特例: rosuvastatin/telmisartanの実装手順
+
+すでにVer2化されているこれらの薬剤は、以下の特別な手順で進めます：
+
+### Step 0: 準備作業
+```bash
+# バックアップ作成
+mkdir -p _old_files/backup_$(date +%Y%m%d_%H%M)/
+
+# 現在のv2-componentsファイルをバックアップ
+cp docs/drugs-v2/rosuvastatin-v2-components.html \
+   _old_files/backup_$(date +%Y%m%d_%H%M)/
+
+cp docs/drugs-v2/telmisartan-v2-components.html \
+   _old_files/backup_$(date +%Y%m%d_%H%M)/
+
+# ワークディレクトリへコピー
+cp docs/drugs-v2/rosuvastatin-v2-components.html \
+   docs/_internal/css_cleanup/rosuvastatin-v2.html
+
+cp docs/drugs-v2/telmisartan-v2-components.html \
+   docs/_internal/css_cleanup/telmisartan-v2.html
+```
+
+### Step 1: クリーン化（古いCSS除去）
+```bash
+# class属性の削除
+sed -i '' 's/ class="[^"]*"//g' docs/_internal/css_cleanup/rosuvastatin-v2.html
+sed -i '' 's/ class="[^"]*"//g' docs/_internal/css_cleanup/telmisartan-v2.html
+
+# style属性の削除
+sed -i '' 's/ style="[^"]*"//g' docs/_internal/css_cleanup/rosuvastatin-v2.html
+sed -i '' 's/ style="[^"]*"//g' docs/_internal/css_cleanup/telmisartan-v2.html
+
+# クリーン化完了後のファイル名変更
+mv docs/_internal/css_cleanup/rosuvastatin-v2.html \
+   docs/_internal/css_cleanup/rosuvastatin-clean.html
+
+mv docs/_internal/css_cleanup/telmisartan-v2.html \
+   docs/_internal/css_cleanup/telmisartan-clean.html
+```
+
+### Step 2: 新CSS付与（Ver2化は不要）
+**注意**: すでにコンテンツはVer2配置済みなので、クラス付与のみ実施
+
+1. metformin-clean.htmlを参考に必要な29個のクラスを付与
+2. 薬効群に応じたdata-category設定
+   - rosuvastatin → `data-category="cardiovascular"`
+   - telmisartan → `data-category="cardiovascular"`
+3. JavaScriptのコピー（metformin-clean.htmlから）
+
+### Step 3: 最終配置
+```bash
+# drugs-v2へ最終配置
+cp docs/_internal/css_cleanup/rosuvastatin-clean.html \
+   docs/drugs-v2/rosuvastatin-clean.html
+
+cp docs/_internal/css_cleanup/telmisartan-clean.html \
+   docs/drugs-v2/telmisartan-clean.html
+
+# 古いv2-componentsファイルは削除またはアーカイブ
+mv docs/drugs-v2/rosuvastatin-v2-components.html \
+   _old_files/backup_$(date +%Y%m%d_%H%M)/
+
+mv docs/drugs-v2/telmisartan-v2-components.html \
+   _old_files/backup_$(date +%Y%m%d_%H%M)/
+```
+
+### 特例ルートの要点
+- ✅ Ver2化（コンテンツ再配置）はスキップ
+- ✅ クリーン化と新CSS付与のみ実施
+- ✅ 最終的なファイル名は`-clean.html`
+- ✅ 古い`-v2-components.html`は削除/アーカイブ
+
+---
+
+**ガイド作成完了**: 2025-07-03 05:20  
+**更新**: 2025-07-03 05:45 (特例ルート追加)

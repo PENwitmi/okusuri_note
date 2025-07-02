@@ -156,12 +156,49 @@ docs/
 4. drugs-v2/rosuvastatin-clean.html（公開用）
 ```
 
-### metforminの特例
-metforminは歴史的経緯により、この標準フローと異なる順序で作成されました：
-- 通常: drug → clean → clean-v2
-- metformin: drug → v2 → clean（トラブル対応の結果）
+### 3つの異なる実装ルート
 
-そのため、metformin-clean.htmlは命名規則から外れていますが、最終的な品質は標準フローと同等です。
+現在、薬剤ページの実装には3つの異なるルートが存在します：
+
+#### 1. 標準ルート（今後の新規薬剤）
+```
+drugs/drug.html
+  ↓ クリーン化
+_internal/css_cleanup/drug-clean.html
+  ↓ Ver2化（再配置）
+_internal/drug_versionup/drug-clean-v2.html
+  ↓ 最終配置
+drugs-v2/drug-clean.html
+```
+
+#### 2. metforminルート（完成済み・特例）
+```
+drugs/metformin.html
+  ↓ Ver2化（先に実施）
+drugs-v2/metformin-v2-components.html
+  ↓ クリーン化（CSS問題対応）
+drugs-v2/metformin-clean.html ✅完成
+```
+
+#### 3. rosuvastatin/telmisartanルート（現在の対象）
+```
+drugs/drug.html
+  ↓ Ver2化（実施済み）
+drugs-v2/drug-v2-components.html ← 現在ここ（古いCSS）
+  ↓ クリーン化（これから）
+_internal/css_cleanup/drug-clean.html
+  ↓ 新CSS付与
+drugs-v2/drug-clean.html
+```
+
+### 各薬剤の現在の状態
+
+| 薬剤名 | 現在の状態 | 必要な作業 | ファイル名 |
+|--------|------------|------------|------------|
+| metformin | ✅ 完成 | なし | metformin-clean.html |
+| rosuvastatin | V2化済み（古いCSS） | クリーン化→新CSS付与 | rosuvastatin-v2-components.html |
+| telmisartan | V2化済み（古いCSS） | クリーン化→新CSS付与 | telmisartan-v2-components.html |
+| その他19薬剤 | 未着手 | 標準ルートで実装 | - |
 
 ---
 
