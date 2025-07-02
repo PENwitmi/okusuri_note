@@ -1,0 +1,499 @@
+/*
+ * Ver2専用CSS統一ルール
+ * 作成日時: 2025-07-02 14:20
+ * 作成者: CEO
+ * 目的: Ver2ファイルの個別CSS問題解決・技術債務根絶
+ * 対象: メトホルミン、テルミサルタン、ロスバスタチン（Phase 1）
+ */
+
+/* =================================
+   既存CSS変数の継承（基盤）
+   ================================= */
+
+/* 既存のstyle.cssから主要変数を継承 */
+@import url('./style.css');
+
+/* =================================
+   Ver2専用変数定義（拡張）
+   ================================= */
+
+:root {
+  /* ===== 3段階学習システム専用変数 ===== */
+  
+  /* レベル1（薬学生）- 認知負荷軽減・学習継続性重視 */
+  --v2-level1-bg: #f8fbff;             /* 薬学生向け背景：極薄ブルーで集中力向上 */
+  --v2-level1-border: #e3f2fd;         /* やわらかい境界：視覚的ストレス軽減 */
+  --v2-level1-accent: var(--pharma-primary-light); /* 既存薬学教育色統一 */
+  --v2-level1-text-size: 18px;         /* 読みやすい大きめ文字：長時間学習対応 */
+  --v2-level1-line-height: 1.8;        /* ゆったりした行間：読解速度最適化 */
+  --v2-level1-cognitive-load: low;     /* 認知負荷軽減指標 */
+  --v2-level1-visual-weight: 300;      /* 軽やかな視覚的重み */
+  
+  /* レベル2（実習生）- 実践的要素強調・臨床文脈重視 */
+  --v2-level2-warning: #fff3cd;        /* 実習生向け注意喚起：臨床的注意 */
+  --v2-level2-important: var(--accent-color); /* 重要事項 - 既存アクセント色統一 */
+  --v2-level2-practice: var(--learning-correct); /* 実践ポイント - 既存正答色統一 */
+  --v2-level2-clinical-context: emphasized; /* 臨床文脈強調 */
+  --v2-level2-case-study: #f0f8ff;     /* 症例研究背景：実践的学習促進 */
+  --v2-level2-visual-weight: 500;      /* 中程度の視覚的重み */
+  
+  /* レベル3（研修医）- 専門性・エビデンスレベル表現 */
+  --v2-level3-professional: #37474f;   /* 研修医向け専門色：権威性表現 */
+  --v2-level3-detail: #90a4ae;         /* 詳細情報：精密性重視 */
+  --v2-level3-border: #cfd8dc;         /* 上品な境界：洗練された専門性 */
+  --v2-level3-evidence-high: #2e7d32;  /* 高エビデンス：緑系で信頼性表現 */
+  --v2-level3-evidence-moderate: #f57c00; /* 中エビデンス：橙系で注意喚起 */
+  --v2-level3-visual-weight: 600;      /* 重厚な視覚的重み */
+  
+  /* ===== 進捗・マイルストーン表示 ===== */
+  --v2-progress-indicator: #4CAF50;    /* 進捗表示 */
+  --v2-milestone-complete: #2E7D32;    /* 達成表示 */
+  --v2-component-hierarchy: #E3F2FD;   /* コンポーネント階層 */
+  
+  /* ===== Ver2基盤拡張 ===== */
+  --v2-base-primary: var(--pharma-primary);
+  --v2-base-secondary: var(--pharma-nature);
+  --v2-attention: #e74c3c;             /* 注意喚起専用 */
+}
+
+/* =================================
+   3段階学習システムコンポーネント
+   ================================= */
+
+/* レベル1（薬学生向け）- 認知負荷軽減・学習継続性重視 */
+.level-1-content {
+  /* 認知科学に基づく学習最適化 */
+  background: var(--bg-study);               /* 学習セッション用背景 */
+  color: var(--text-reading);               /* 長時間学習最適化テキスト */
+  
+  /* 薬学生の学習特性に最適化されたスタイル */
+  border-left: 4px solid var(--v2-level1-accent);
+  font-size: var(--v2-level1-text-size);
+  line-height: var(--v2-level1-line-height);
+  font-weight: var(--v2-level1-visual-weight);
+  padding: 20px;
+  margin: 16px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.08); /* 柔らかい影で視覚的ストレス軽減 */
+  transition: box-shadow 0.2s ease;
+  
+  /* 認知負荷軽減のための情報密度制御 */
+  max-width: 800px; /* 読みやすい幅に制限 */
+  letter-spacing: 0.3px; /* 文字間隔で可読性向上 */
+}
+
+.level-1-content:hover {
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.12); /* ホバー時の軽やかな強調 */
+}
+
+.level-1-summary {
+  background: var(--pharma-primary-subtle);  /* 読みやすさ重視背景 */
+  color: var(--text-pharma-primary);         /* 薬剤名・最重要見出し色 */
+  padding: 16px;
+  border: 2px solid var(--pharma-primary-light);
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.level-1-faq {
+  background: var(--v2-level1-bg);
+  border: 1px solid var(--v2-level1-border);
+  padding: 14px;
+  margin: 12px 0;
+  border-radius: 6px;
+}
+
+.level-1-faq h4 {
+  color: var(--v2-level1-accent);
+  margin-top: 0;
+  font-size: 16px;
+}
+
+/* レベル2（実習生向け）- 実践的要素強調・臨床文脈重視 */
+.level-2-content {
+  /* 実習生の学習ニーズに特化 */
+  color: var(--text-pharma-body);            /* 本文・説明文色 */
+  
+  /* 実践的学習を促進する視覚的設計 */
+  background: linear-gradient(135deg, #fff 0%, var(--v2-level2-case-study) 100%);
+  border: 2px solid var(--learning-bookmark); /* ブックマーク・重要色 */
+  border-left: 5px solid var(--v2-level2-practice); /* 実践ポイント強調 */
+  font-weight: var(--v2-level2-visual-weight);
+  padding: 16px;
+  margin: 12px 0;
+  border-radius: 6px;
+  position: relative;
+  
+  /* 臨床現場を意識したインタラクティブ設計 */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.level-2-content:before {
+  content: "🏥"; /* 病院アイコンで臨床文脈を表現 */
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.level-2-content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-left-width: 6px;
+}
+
+.practice-point {
+  color: var(--v2-level2-practice);
+  background: var(--bg-study);               /* 学習背景 */
+  font-weight: 600;
+  border-left: 3px solid var(--learning-correct); /* 正答・理解色 */
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 4px;
+}
+
+.warning-note {
+  background: var(--v2-level2-warning);
+  color: var(--v2-level2-important);
+  border: 1px solid var(--learning-incorrect); /* 誤答・要注意色 */
+  padding: 10px;
+  font-weight: 500;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.prescription-pattern {
+  background: var(--bg-secondary);
+  border: 1px dashed var(--v2-level2-practice);
+  padding: 12px;
+  margin: 10px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+}
+
+/* レベル3（研修医向け）- 専門性・エビデンスレベル表現 */
+.level-3-content {
+  /* 研修医の求める専門性と精密性を表現 */
+  background: var(--bg-reading);             /* 長文読書用背景 */
+  color: var(--text-pharma-secondary);       /* 薬効群・副見出し色 */
+  
+  /* 専門医療レベルの視覚的設計 */
+  border: 2px solid var(--v2-level3-border);
+  border-top: 4px solid var(--v2-level3-professional); /* 権威性を表す上部ボーダー */
+  font-weight: var(--v2-level3-visual-weight);
+  padding: 14px;
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  border-radius: 4px;
+  position: relative;
+  
+  /* 研修医レベルの情報密度と精密性 */
+  font-family: 'Times New Roman', 'メイリオ', serif; /* 学術的なフォント */
+  box-shadow: inset 0 0 0 1px rgba(55, 71, 79, 0.1); /* 微細な内部シャドウ */
+}
+
+.level-3-content:before {
+  content: "🎖️"; /* 学術的権威を表すメダルアイコン */
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 12px;
+  opacity: 0.4;
+}
+
+/* エビデンスレベル別視覚的差別化 */
+.level-3-evidence-high {
+  border-left: 6px solid var(--v2-level3-evidence-high);
+  background: linear-gradient(to right, rgba(46, 125, 50, 0.03), transparent);
+}
+
+.level-3-evidence-moderate {
+  border-left: 6px solid var(--v2-level3-evidence-moderate);
+  background: linear-gradient(to right, rgba(245, 124, 0, 0.03), transparent);
+}
+
+.expert-note {
+  background: var(--pharma-primary-subtle);  /* 極薄ブルー背景 */
+  color: var(--v2-level3-detail);
+  border-left: 2px solid var(--text-pharma-caption); /* 注釈・補助情報色 */
+  font-style: italic;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 3px;
+}
+
+.clinical-evidence {
+  background: var(--bg-light);
+  color: var(--v2-level3-professional);
+  border: 1px dashed var(--category-cardiovascular); /* 薬効群色の活用例 */
+  padding: 12px;
+  font-size: 15px;
+  margin: 8px 0;
+  border-radius: 4px;
+}
+
+/* =================================
+   薬効群別テーマカラー（科学的根拠に基づく色彩設計）
+   ================================= */
+
+/* 循環器系薬剤：血流・酸素化プロセス表現 */
+.cardio-theme {
+  --cardio-oxygenated: #d32f2f;   /* 動脈血（酸素飽和）*/
+  --cardio-deoxygenated: #1976d2; /* 静脈血（酸素不足）*/
+  --cardio-intervention: #f57c00;  /* 薬物介入ポイント */
+}
+
+.cardio-theme .level-1-content {
+  border-left: 4px solid var(--cardio-oxygenated);
+  background: linear-gradient(to right, #fff, rgba(211, 47, 47, 0.05));
+}
+
+.cardio-theme .level-2-content {
+  border: 2px solid var(--cardio-intervention);
+  background: linear-gradient(135deg, #fff 0%, rgba(245, 124, 0, 0.08) 100%);
+}
+
+.cardio-theme .clinical-evidence {
+  border-left: 3px solid var(--cardio-deoxygenated);
+  background: rgba(25, 118, 210, 0.03);
+}
+
+/* 内分泌系薬剤：ホルモンフィードバック機構表現 */
+.endo-theme {
+  --endo-stimulus: #388e3c;        /* 刺激ホルモン */
+  --endo-response: #7b1fa2;        /* 標的器官応答 */
+  --endo-feedback: #f57c00;        /* フィードバック制御 */
+}
+
+.endo-theme .level-1-content {
+  border-left: 4px solid var(--endo-stimulus);
+  background: linear-gradient(to right, #fff, rgba(56, 142, 60, 0.05));
+}
+
+.endo-theme .level-2-content {
+  border: 2px solid var(--endo-feedback);
+  background: linear-gradient(135deg, #fff 0%, rgba(245, 124, 0, 0.08) 100%);
+}
+
+.endo-theme .clinical-evidence {
+  border-left: 3px solid var(--endo-response);
+  background: rgba(123, 31, 162, 0.03);
+}
+
+/* 中枢神経系薬剤：神経伝達物質作用表現 */
+.cns-theme {
+  --cns-excitatory: #d32f2f;       /* 興奮性神経伝達 */
+  --cns-inhibitory: #1976d2;       /* 抑制性神経伝達 */
+  --cns-modulation: #388e3c;       /* 神経調節作用 */
+}
+
+.cns-theme .level-1-content {
+  border-left: 4px solid var(--cns-modulation);
+  background: linear-gradient(to right, #fff, rgba(56, 142, 60, 0.05));
+}
+
+.cns-theme .level-2-content {
+  border: 2px solid var(--cns-excitatory);
+  background: linear-gradient(135deg, #fff 0%, rgba(211, 47, 47, 0.08) 100%);
+}
+
+.cns-theme .clinical-evidence {
+  border-left: 3px solid var(--cns-inhibitory);
+  background: rgba(25, 118, 210, 0.03);
+}
+
+/* =================================
+   共通ユーティリティクラス
+   ================================= */
+
+/* 進捗インジケーター */
+.progress-indicator {
+  background: var(--v2-progress-indicator);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+  margin: 4px 0;
+}
+
+/* マイルストーン完了 */
+.milestone-complete {
+  background: var(--v2-milestone-complete);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+  margin: 6px 0;
+}
+
+/* 階層表示 */
+.component-hierarchy {
+  background: var(--v2-component-hierarchy);
+  border: 1px solid var(--v2-level1-border);
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 4px;
+}
+
+/* 薬剤名表示 */
+.drug-name-display {
+  color: var(--text-pharma-primary);
+  font-size: 24px;
+  font-weight: 700;
+  margin: 16px 0;
+  padding: 12px 0;
+  border-bottom: 2px solid var(--pharma-primary-light);
+}
+
+/* =================================
+   レスポンシブ対応（薬学生70%スマホ利用対応）
+   ================================= */
+
+/* スマートフォン（薬学生主要デバイス）*/
+@media (max-width: 480px) {
+  .level-1-content {
+    padding: 14px;
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 10px 0;
+    border-radius: 6px;
+  }
+  
+  .level-2-content {
+    padding: 12px;
+    font-size: 15px;
+    margin: 8px 0;
+  }
+  
+  .level-3-content {
+    padding: 10px;
+    font-size: 14px;
+    margin: 6px 0;
+  }
+  
+  .drug-name-display {
+    font-size: 18px;
+    padding: 6px 0;
+    line-height: 1.4;
+  }
+  
+  /* スマホでの学習最適化 */
+  .level-1-summary {
+    padding: 12px;
+    margin: 16px 0;
+  }
+}
+
+/* タブレット縦（実習環境対応）*/
+@media (min-width: 481px) and (max-width: 768px) {
+  .level-1-content {
+    padding: 16px;
+    font-size: 17px;
+    margin: 12px 0;
+  }
+  
+  .level-2-content,
+  .level-3-content {
+    padding: 14px;
+    margin: 10px 0;
+  }
+  
+  .drug-name-display {
+    font-size: 22px;
+    padding: 8px 0;
+  }
+}
+
+/* タブレット横・小型ノートPC（詳細学習）*/
+@media (min-width: 769px) and (max-width: 1024px) {
+  .level-1-content {
+    padding: 18px;
+    font-size: 18px;
+    margin: 14px 0;
+  }
+  
+  .level-2-content,
+  .level-3-content {
+    padding: 16px;
+    margin: 12px 0;
+  }
+  
+  .drug-name-display {
+    font-size: 24px;
+    padding: 10px 0;
+  }
+  
+  /* 詳細学習モード最適化 */
+  .expert-note {
+    padding: 10px 14px;
+    margin: 8px 0;
+  }
+}
+
+/* デスクトップ（教育機関・病院環境）*/
+@media (min-width: 1025px) {
+  .level-1-content {
+    padding: 20px;
+    font-size: 18px;
+    margin: 16px 0;
+  }
+  
+  .level-2-content,
+  .level-3-content {
+    padding: 18px;
+    margin: 14px 0;
+  }
+  
+  .drug-name-display {
+    font-size: 26px;
+    padding: 12px 0;
+  }
+  
+  /* 教育・臨床環境最適化 */
+  .clinical-evidence {
+    padding: 16px;
+    margin: 12px 0;
+  }
+}
+
+/* =================================
+   アクセシビリティ対応
+   ================================= */
+
+/* フォーカス表示の改善 */
+.level-1-content:focus,
+.level-2-content:focus,
+.level-3-content:focus {
+  outline: 2px solid var(--pharma-primary);
+  outline-offset: 2px;
+}
+
+/* 高コントラストモード対応 */
+@media (prefers-contrast: high) {
+  .level-1-content,
+  .level-2-content,
+  .level-3-content {
+    border-width: 2px;
+  }
+  
+  .expert-note,
+  .practice-point,
+  .warning-note {
+    border-width: 2px;
+  }
+}
+
+/* 動きの抑制要求対応 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
