@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PPI（プロトンポンプ阻害薬）の進化系統図と臨床使い分けモデル - おくすりノート">
+    <meta name="keywords" content="PPI, プロトンポンプ阻害薬, オメプラゾール, ランソプラゾール, ボノプラザン, GERD治療">
+    <title>PPI進化系統図と臨床使い分けモデル | おくすりノート</title>
+    
+    <!-- CSS読み込み -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/mobile-optimization.css">
+    <link rel="stylesheet" href="../assets/css/drug-detail.css">
+    
+    <!-- 薬学教育特化スタイル -->
+    <style>
+        /* 薬効群ページ特化スタイル */
+        .drug-evolution-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: var(--bg-primary);
+        }
+        
+        .summary-section {
+            background: linear-gradient(135deg, var(--pharma-primary-subtle) 0%, var(--pharma-primary-light) 100%);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid var(--category-gastro);
+        }
+        
+        .summary-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-pharma-primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-heading {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-pharma-secondary);
+            margin: 20px 0 12px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--pharma-primary-subtle);
+        }
+        
+        .group-link {
+            color: var(--pharma-primary-dark);
+            font-weight: 700;
+            text-decoration: none;
+            padding: 2px 6px;
+            background: rgba(33, 150, 243, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .group-link:hover {
+            background: rgba(33, 150, 243, 0.2);
+            color: var(--pharma-primary-dark);
+        }
+        
+        .responsive-table {
+            overflow-x: auto;
+            margin: 16px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .drug-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        .drug-table th {
+            background: var(--category-gastro);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .drug-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+        
+        .drug-table tr:nth-child(even) {
+            background: var(--bg-secondary);
+        }
+        
+        .flowchart-container {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid var(--pharma-nature);
+        }
+        
+        .flowchart {
+            background: var(--text-pharma-primary);
+            color: var(--learning-correct);
+            padding: 16px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-x: auto;
+        }
+        
+        .flowchart-btn {
+            background: var(--pharma-nature);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            margin-top: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .flowchart-btn:hover {
+            background: var(--pharma-nature-dark);
+            transform: translateY(-1px);
+        }
+        
+        .code-block {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 16px;
+            margin: 16px 0;
+            overflow-x: auto;
+        }
+        
+        .code-block code {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--text-pharma-primary);
+        }
+        
+        /* 薬学教育特化要素 */
+        .drug-name {
+            color: var(--pharma-primary-dark);
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .warning {
+            background: var(--bg-study);
+            color: var(--category-gastro);
+            padding: 12px 16px;
+            border-radius: 8px;
+            border-left: 4px solid var(--category-gastro);
+            margin: 16px 0;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, var(--bg-study) 0%, var(--pharma-primary-subtle) 100%);
+            padding: 8px 12px;
+            border-radius: 6px;
+            border-left: 4px solid var(--category-gastro);
+            margin: 12px 0;
+        }
+        
+        /* 関連ストーリーセクション */
+        .related-stories {
+            margin-top: 40px;
+            padding: 24px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+        }
+        
+        .related-stories h2 {
+            color: var(--pharma-primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .story-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--pharma-primary);
+        }
+        
+        .story-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            color: inherit;
+        }
+        
+        .story-card h3 {
+            color: var(--pharma-primary);
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+        
+        .story-card p {
+            color: var(--text-pharma-caption);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        
+        /* モバイル対応 */
+        @media (max-width: 768px) {
+            .drug-evolution-page {
+                padding: 12px;
+            }
+            
+            .summary-section {
+                padding: 16px;
+                margin: 12px 0;
+            }
+            
+            .summary-title {
+                font-size: 20px;
+            }
+            
+            .section-heading {
+                font-size: 18px;
+            }
+            
+            .flowchart {
+                font-size: 12px;
+                padding: 12px;
+            }
+            
+            .stories-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .story-card {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="../index.html">おくすりノート</a></h1>
+                <p class="tagline">薬剤図鑑</p>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html#drugs" class="nav-link">薬剤一覧</a></li>
+                    <li><a href="../index.html#categories" class="nav-link">薬効群</a></li>
+                    <li><a href="../index.html#stories" class="nav-link">ストーリー</a></li>
+                    <li><a href="../index.html#differentiation" class="nav-link">使い分け</a></li>
+                </ul>
+            </nav>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="薬剤名を検索..." class="search-input">
+                <button class="search-btn" onclick="performSearch()">
+                    <span class="search-icon">🔍</span>
+                </button>
+            </div>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content drug-evolution-page">
+        <div class="searchable-content">
+            <h1 class="section-heading" id="ppi">
+                <a href="/groups/PPI_evolution_model.html" class="group-link">PPI</a>（プロトンポンプ阻害薬）進化系統図と臨床使い分けモデル
+            </h1>
+            
+            <section class="summary-section">
+                <h2 class="summary-title">📍 5分サマリー</h2>
+                
+                <h3 class="section-heading" id="1-2">薬効群の本質（1-2文で）</h3>
+                <p><a href="/groups/PPI_evolution_model.html" class="group-link">PPI</a>（プロトンポンプ阻害薬）は、胃壁細胞の最終段階であるH+/K+-ATPase（プロトンポンプ）を不可逆的に阻害し、H2ブロッカーの10倍以上の強力な酸分泌抑制を実現する薬剤群です。1988年の登場以来、難治性GERD治癒率90%以上、H.pylori除菌成功率の劇的向上により、消化性潰瘍治療のパラダイムを変革しました。</p>
+                
+                <h3 class="section-heading">主要薬剤一覧（表形式）</h3>
+                <div class="responsive-table">
+                    <table class="drug-table sortable-table">
+                        <thead>
+                            <tr>
+                                <th>薬剤名</th>
+                                <th>商品名</th>
+                                <th>世代</th>
+                                <th>特徴</th>
+                                <th>適応</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="drug-name">オメプラゾール</span></td>
+                                <td>オメプラール</td>
+                                <td>第1世代</td>
+                                <td>世界初PPI、革命的効果</td>
+                                <td>GERD、胃潰瘍</td>
+                            </tr>
+                            <tr>
+                                <td><span class="drug-name">ランソプラゾール</span></td>
+                                <td>タケプロン</td>
+                                <td>第2世代</td>
+                                <td>日本発、OD錠先駆け</td>
+                                <td>NSAIDs潰瘍予防</td>
+                            </tr>
+                            <tr>
+                                <td><span class="drug-name">ラベプラゾール</span></td>
+                                <td>パリエット</td>
+                                <td>第2世代</td>
+                                <td>CYP2C19非依存</td>
+                                <td>除菌、クロピドグレル併用</td>
+                            </tr>
+                            <tr>
+                                <td><span class="drug-name">エソメプラゾール</span></td>
+                                <td>ネキシウム</td>
+                                <td>第3世代</td>
+                                <td>S体純粋化、パープルピル</td>
+                                <td>重症GERD</td>
+                            </tr>
+                            <tr>
+                                <td><span class="drug-name">ボノプラザン</span></td>
+                                <td>タケキャブ</td>
+                                <td>第4世代</td>
+                                <td>P-CAB、除菌率92.6%</td>
+                                <td>難治性GERD、除菌</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 class="section-heading">処方選択フローチャート（テキスト版）</h3>
+                <div class="flowchart-container">
+                    <pre class="flowchart">患者評価
+├─ H.pylori除菌 → ボノプラザン第一選択（除菌率92.6%）
+├─ クロピドグレル併用 → ラベプラゾール/ボノプラザン
+├─ 重症GERD（LA-C/D） → ボノプラザン/エソメプラゾール
+├─ NSAIDs潰瘍予防 → ランソプラゾール（適応あり）
+├─ CYP2C19 EM型 → ラベプラゾール/ボノプラザン考慮
+└─ コスト重視 → オメプラゾールGE（10円/錠）</pre>
+                    <div class="interactive-flowchart">
+                        <button class="flowchart-btn">インタラクティブ版を見る</button>
+                    </div>
+                </div>
+                
+                <h3 class="section-heading" id="cyp2c19">CYP2C19遺伝子多型の重要性</h3>
+                <p>日本人の遺伝子型分布と臨床的影響：</p>
+                <ul>
+                    <li><strong>PM型（低代謝）20-25%</strong>：通常用量で十分、副作用注意</li>
+                    <li><strong>IM型（中間代謝）45-50%</strong>：標準的効果</li>
+                    <li><strong>EM型（高速代謝）25-30%</strong>：効果不十分の可能性 → ラベプラゾール、ボノプラザン選択</li>
+                    <li><strong>UM型（超高速代謝）1-2%</strong>：<a href="/groups/PPI_evolution_model.html" class="group-link">PPI</a>効果期待できず → ボノプラザン必須</li>
+                </ul>
+                
+                <h3 class="section-heading" id="ppi">なぜ<a href="/groups/PPI_evolution_model.html" class="group-link">PPI</a>が必要か（本質的な答え）</h3>
+                <p><strong>H2ブロッカーとの決定的な違い</strong>：</p>
+                <ul>
+                    <li><strong>酸分泌抑制力</strong>：H2ブロッカーの10倍以上、24時間pH&gt;4維持</li>
+                    <li><strong>耐性形成なし</strong>：H2ブロッカーで問題となる耐性が起きない</li>
+                    <li><strong>治癒率の差</strong>：重症GERD治癒率 H2ブロッカー40% vs <a href="/groups/PPI_evolution_model.html" class="group-link">PPI</a> 90%</li>
+                    <li><strong>除菌成功率</strong>：H.pylori除菌で必須（胃内pH&gt;6維持が抗菌薬効果に必要）</li>
+                </ul>
+                
+                <div class="highlight">
+                    <p><strong>ランソプラゾール日本一の真実</strong>：薬理学的優位性ではなく「1992年タイミングの勝利」「武田MR 2000人体制」「タケプロンファミリー形成」「OD錠・小児適応の先駆け」による処方慣性。現在もシェア35%維持は「最初に使った薬」効果と電子カルテ時代の処方セット固定化による。</p>
+                </div>
+                
+                <h3 class="section-heading">📖 詳細解説へ</h3>
+                <p>以下、各<a href="/groups/PPI_evolution_model.html" class="group-link">PPI</a>の詳細な進化系統、CYP2C19遺伝子多型の臨床的意義、H.pylori除菌での使い分け、そして「なぜランソプラゾールが処方され続けるのか」という処方実態の深層に迫ります。</p>
+            </section>
+            
+            <hr>
+            
+            <!-- 詳細コンテンツ -->
+            <section>
+                <h2 class="section-heading">🧬 PPI進化の系統樹</h2>
+                
+                <h3 class="section-heading">第1世代（1988年〜）：革命の始まり</h3>
+                <h4>オメプラゾール（オメプラール®/オメプラゾン®）</h4>
+                <ul>
+                    <li><strong>開発背景</strong>：H2ブロッカーの限界を超える新機序</li>
+                    <li><strong>革新点</strong>：
+                        <ul>
+                            <li>酸分泌の最終段階（プロトンポンプ）を不可逆的に阻害</li>
+                            <li>H2ブロッカーの10倍以上の酸分泌抑制効果</li>
+                            <li>難治性逆流性食道炎の治癒率90%以上</li>
+                        </ul>
+                    </li>
+                    <li><strong>課題</strong>：
+                        <ul>
+                            <li>CYP2C19で代謝（遺伝子多型の影響大）</li>
+                            <li>薬物相互作用多い</li>
+                            <li>酸耐性カプセルが必要（腸溶錠技術）</li>
+                        </ul>
+                    </li>
+                    <li><strong>現在の位置づけ</strong>：ジェネリック化により基本薬として定着</li>
+                </ul>
+                
+                <h3 class="section-heading">第2世代（1992年〜）：改良と多様化</h3>
+                <h4>ランソプラゾール（タケプロン®）</h4>
+                <ul>
+                    <li><strong>開発背景</strong>：日本発、より安定した効果を追求</li>
+                    <li><strong>改良点</strong>：
+                        <ul>
+                            <li>オメプラゾールより速やかな効果発現</li>
+                            <li>バイオアベイラビリティ向上（80-90%）</li>
+                            <li>OD錠（口腔内崩壊錠）の開発</li>
+                        </ul>
+                    </li>
+                    <li><strong>独自性</strong>：
+                        <ul>
+                            <li>NSAIDs潰瘍予防の適応取得</li>
+                            <li>小児用量の確立</li>
+                        </ul>
+                    </li>
+                    <li><strong>課題</strong>：CYP2C19・3A4両方で代謝</li>
+                </ul>
+                
+                <h4>ラベプラゾール（パリエット®）</h4>
+                <ul>
+                    <li><strong>開発背景</strong>：CYP2C19遺伝子多型の影響を最小化</li>
+                    <li><strong>革新点</strong>：
+                        <ul>
+                            <li>非酵素的代謝経路が主体</li>
+                            <li>遺伝子多型による効果の個体差が少ない</li>
+                            <li>効果発現が最速（投与後2時間）</li>
+                        </ul>
+                    </li>
+                    <li><strong>特徴</strong>：
+                        <ul>
+                            <li>H.pylori除菌での安定した効果</li>
+                            <li>薬物相互作用が比較的少ない</li>
+                        </ul>
+                    </li>
+                    <li><strong>課題</strong>：やや高価</li>
+                </ul>
+                
+                <h3 class="section-heading">第4世代（2015年〜）：新たなメカニズム</h3>
+                <h4>ボノプラザン（タケキャブ®）</h4>
+                <ul>
+                    <li><strong>開発背景</strong>：<a href="/groups/PPI_evolution_model.html" class="group-link">PPI</a>の限界を超える新規作用機序</li>
+                    <li><strong>革新的特徴</strong>：
+                        <ul>
+                            <li>P-CAB（カリウムイオン競合型アシッドブロッカー）</li>
+                            <li>酸による活性化不要（速効性）</li>
+                            <li>可逆的阻害（安全性向上）</li>
+                            <li>半減期9時間（持続性）</li>
+                        </ul>
+                    </li>
+                    <li><strong>臨床的インパクト</strong>：
+                        <ul>
+                            <li>H.pylori除菌成功率90%以上</li>
+                            <li>難治性GERD（<a href="/groups/PPI_evolution_model.html" class="group-link">PPI</a>抵抗性）に有効</li>
+                            <li>酸関連疾患治療のパラダイムシフト</li>
+                        </ul>
+                    </li>
+                    <li><strong>課題</strong>：長期安全性データ蓄積中、最高薬価</li>
+                </ul>
+            </section>
+        </div>
+        
+        <section class="related-stories">
+            <h2>関連ストーリー</h2>
+            <div class="stories-grid">
+                <a href="../stories/ppi_revolution.html" class="story-card">
+                    <h3>プロトンポンプ革命 - 胃酸分泌の新たな制御</h3>
+                    <p>H2ブロッカーの限界を突破したPPIの開発物語。胃酸分泌の最終段階を標的とした革命的なアプローチ...</p>
+                </a>
+                <a href="../stories/takekit_development.html" class="story-card">
+                    <h3>タケキャブ誕生 - P-CABという新機序への挑戦</h3>
+                    <p>従来のPPIを超える新たな機序P-CABの開発秘話。10年の歳月をかけた酸関連疾患治療の革新...</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">おくすりノート</h3>
+                    <p class="footer-description">
+                        薬学生のための実践的学習プラットフォーム。<br>
+                        「なぜ似た薬が複数存在するのか」への明確な回答を提供します。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; 2025 おくすりノート. Phase 1 ベータ版 - 薬学生応援プロジェクト
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript読み込み -->
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/search.js"></script>
+    <script src="../assets/js/mobile-nav.js"></script>
+    <script src="../assets/js/responsive-elements.js"></script>
+</body>
+</html>

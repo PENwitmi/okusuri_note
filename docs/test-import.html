@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@importテストページ</title>
+    <link rel="stylesheet" href="assets/css/ver2-import-test.css">
+</head>
+<body>
+    <div class="container">
+        <h1>@import動作テスト</h1>
+        
+        <div class="import-test-success">
+            このメッセージが緑色の背景で表示されていれば、ver2-import-test.cssは正常に読み込まれています。
+        </div>
+        
+        <div class="ver2-test-element">
+            <h2>Ver2テスト要素</h2>
+            <p>この要素に青い枠線が表示されていれば、CSS変数も正常に動作しています。</p>
+        </div>
+        
+        <div class="drug-header">
+            <h2>既存CSSクラステスト</h2>
+            <p>drug-detail.cssから読み込まれたdrug-headerクラスのテスト</p>
+        </div>
+        
+        <div class="basic-info">
+            <h3>基本情報テスト</h3>
+            <p>style.cssまたはdrug-detail.cssから読み込まれたbasic-infoクラスのテスト</p>
+        </div>
+        
+        <hr>
+        
+        <h2>確認項目</h2>
+        <ul>
+            <li>✓ ver2-import-test.cssが読み込まれている</li>
+            <li>✓ @import経由でstyle.cssが読み込まれている</li>
+            <li>✓ @import経由でdrug-detail.cssが読み込まれている</li>
+            <li>✓ CSS変数（--pharma-primary）が機能している</li>
+        </ul>
+        
+        <p>開発者ツール（F12）のNetworkタブで、以下のファイルが読み込まれているか確認してください：</p>
+        <ol>
+            <li>ver2-import-test.css</li>
+            <li>style.css（@import経由）</li>
+            <li>drug-detail.css（@import経由）</li>
+        </ol>
+    </div>
+</body>
+</html>

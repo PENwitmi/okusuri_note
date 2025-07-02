@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>レスポンシブCSS動作確認</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive-unified.css">
+    <style>
+        .test-section {
+            margin: var(--spacing-2xl) 0;
+            padding: var(--spacing-lg);
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+        }
+        .device-info {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: var(--pharma-primary);
+            color: white;
+            padding: var(--spacing-sm) var(--spacing-base);
+            border-radius: 4px;
+            font-size: var(--font-size-sm);
+        }
+        .test-grid {
+            margin-top: var(--spacing-base);
+        }
+        .test-card {
+            background: var(--bg-card);
+            padding: var(--spacing-base);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+        }
+    </style>
+</head>
+<body>
+    <!-- デバイス情報表示 -->
+    <div class="device-info">
+        <span id="viewport-width"></span>px
+    </div>
+
+    <div class="container">
+        <h1>レスポンシブCSS動作確認ページ</h1>
+        
+        <!-- グリッドテスト -->
+        <section class="test-section">
+            <h2>グリッドレイアウトテスト</h2>
+            <div class="drugs-grid test-grid">
+                <div class="drug-card test-card">
+                    <h3>カード1</h3>
+                    <p>モバイル：1カラム<br>タブレット：2カラム<br>デスクトップ：3カラム</p>
+                </div>
+                <div class="drug-card test-card">
+                    <h3>カード2</h3>
+                    <p>レスポンシブグリッドの動作確認</p>
+                </div>
+                <div class="drug-card test-card">
+                    <h3>カード3</h3>
+                    <p>ブレークポイント：768px / 1024px</p>
+                </div>
+                <div class="drug-card test-card">
+                    <h3>カード4</h3>
+                    <p>CSS変数も正しく適用されています</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- タッチターゲットテスト -->
+        <section class="test-section">
+            <h2>タッチターゲットテスト（44px以上）</h2>
+            <div style="display: flex; gap: var(--spacing-base); flex-wrap: wrap;">
+                <button class="btn">標準ボタン</button>
+                <button class="cta-button">CTAボタン</button>
+                <a href="#" class="nav-link">ナビリンク</a>
+            </div>
+        </section>
+
+        <!-- フォントサイズテスト -->
+        <section class="test-section">
+            <h2>フォントサイズ調整テスト</h2>
+            <h1>見出し1（H1）</h1>
+            <h2>見出し2（H2）</h2>
+            <h3>見出し3（H3）</h3>
+            <p>本文テキスト：薬学生の長時間学習に配慮し、モバイルでも16px以上のフォントサイズを確保しています。</p>
+        </section>
+
+        <!-- レスポンシブテーブル -->
+        <section class="test-section">
+            <h2>レスポンシブテーブルテスト</h2>
+            <div class="responsive-table">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <th style="border: 1px solid var(--border-color); padding: var(--spacing-sm);">ブレークポイント</th>
+                        <th style="border: 1px solid var(--border-color); padding: var(--spacing-sm);">デバイス</th>
+                        <th style="border: 1px solid var(--border-color); padding: var(--spacing-sm);">動作</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid var(--border-color); padding: var(--spacing-sm);">〜768px</td>
+                        <td style="border: 1px solid var(--border-color); padding: var(--spacing-sm);">モバイル</td>
+                        <td style="border: 1px solid var(--border-color); padding: var(--spacing-sm);">1カラム表示</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid var(--border-color); padding: var(--spacing-sm);">769px〜1024px</td>
+                        <td style="border: 1px solid var(--border-color); padding: var(--spacing-sm);">タブレット</td>
+                        <td style="border: 1px solid var(--border-color); padding: var(--spacing-sm);">2カラム表示</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid var(--border-color); padding: var(--spacing-sm);">1025px〜</td>
+                        <td style="border: 1px solid var(--border-color); padding: var(--spacing-sm);">デスクトップ</td>
+                        <td style="border: 1px solid var(--border-color); padding: var(--spacing-sm);">3-4カラム表示</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- モバイル専用/デスクトップ専用 -->
+        <section class="test-section">
+            <h2>デバイス別表示テスト</h2>
+            <p class="mobile-only" style="color: var(--pharma-primary); font-weight: bold;">
+                📱 このテキストはモバイルでのみ表示されます
+            </p>
+            <p class="desktop-only" style="color: var(--pharma-nature); font-weight: bold;">
+                💻 このテキストはタブレット以上で表示されます
+            </p>
+        </section>
+    </div>
+
+    <script>
+        // ビューポート幅を表示
+        function updateViewportWidth() {
+            document.getElementById('viewport-width').textContent = window.innerWidth;
+        }
+        updateViewportWidth();
+        window.addEventListener('resize', updateViewportWidth);
+    </script>
+</body>
+</html>

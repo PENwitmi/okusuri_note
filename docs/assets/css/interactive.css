@@ -333,48 +333,6 @@ body.menu-open {
     border-radius: 8px;
 }
 
-/* ========================================
-   ダークモード対応
-======================================== */
-
-@media (prefers-color-scheme: dark) {
-    .search-highlight {
-        background: #495057;
-        color: #ffc107;
-        border-color: #6c757d;
-    }
-    
-    .search-results-info {
-        background: var(--bg-card);
-        border-color: var(--border-color);
-    }
-    
-    .clear-search-btn {
-        background: var(--bg-card);
-        color: var(--text-secondary);
-        border-color: var(--border-color);
-    }
-    
-    .clear-search-btn:hover {
-        background: var(--primary-color);
-        color: white;
-    }
-    
-    .main-nav {
-        background: rgba(26, 26, 26, 0.95);
-    }
-    
-    .nav-link {
-        background: var(--bg-card);
-        color: var(--text-primary);
-    }
-    
-    .nav-link:hover,
-    .nav-link.active {
-        background: var(--primary-color);
-        color: white;
-    }
-}
 
 /* ========================================
    ハイコントラストモード対応
@@ -576,7 +534,7 @@ body.menu-open {
  * ✅ アクティブナビゲーション（スクロール連動）
  * ✅ スクロールビヘイビア（ヘッダー制御）
  * ✅ アクセシビリティ強化（フォーカス、キーボード対応）
- * ✅ ダークモード・ハイコントラスト対応
+ * ✅ ハイコントラスト対応
  * ✅ レスポンシブ・タッチデバイス最適化
  * ✅ パフォーマンス最適化（GPU加速）
  * 

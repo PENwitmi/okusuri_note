@@ -1276,9 +1276,6 @@
     }
 }
 
-@media (prefers-color-scheme: dark) {
-    /* ダークモード対応は将来実装 */
-}
 
 /* フォーカス表示の改善 */
 .back-button:focus,

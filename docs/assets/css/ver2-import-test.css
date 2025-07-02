@@ -1,0 +1,29 @@
+/*
+ * Ver2 @import動作テスト用CSS
+ * 作成日時: 2025-07-02 23:40
+ * 目的: @importが正常に動作するか確認
+ */
+
+/* 既存CSSのインポートテスト */
+@import url("style.css");
+@import url("drug-detail.css");
+
+/* テスト用の追加スタイル */
+.import-test-success {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.import-test-success::before {
+    content: "✓ @import成功: ";
+}
+
+/* Ver2固有のテストスタイル */
+.ver2-test-element {
+    border: 2px solid var(--pharma-primary, blue);
+    padding: 1rem;
+    margin: 1rem 0;
+}

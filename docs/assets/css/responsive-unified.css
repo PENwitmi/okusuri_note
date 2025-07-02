@@ -1,0 +1,518 @@
+/*
+ * おくすりノート - 統合レスポンシブCSS
+ * responsive-unified.css
+ * 
+ * 設計思想：薬学生の学習体験を最優先にしつつ、保守性と拡張性を確保
+ * Version: 1.0.0
+ * 作成日: 2025年7月3日
+ * 
+ * 構成：
+ * 1. 基本モバイル設定（すべてのデバイス共通）
+ * 2. モバイルファースト基本スタイル（〜768px）
+ * 3. タブレット対応（769px〜1024px）
+ * 4. デスクトップ対応（1025px〜）
+ * 5. アクセシビリティ・特殊対応
+ */
+
+/* ========================================
+   1. 基本モバイル設定（すべてのデバイス共通）
+======================================== */
+
+/* タッチデバイス最適化 */
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+/* iOS/Android共通最適化 */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    touch-action: manipulation;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* タッチフレンドリー要素（44px以上確保） */
+.btn,
+.cta-button,
+.search-btn,
+.nav-link,
+.mobile-menu-btn,
+.drug-card,
+.category-card,
+.interactive-element,
+input[type="button"],
+input[type="submit"],
+button {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+}
+
+/* リンク・ボタンのタッチ範囲拡大 */
+a,
+button {
+    position: relative;
+}
+
+/* スクロール最適化 */
+.responsive-table,
+.table-wrapper,
+.code-block,
+.overflow-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+/* ========================================
+   2. モバイルファースト基本スタイル（〜768px）
+======================================== */
+
+/* モバイルはデフォルトスタイルとして定義済み（style.css内） */
+/* ここでは追加の微調整のみ */
+
+/* モバイル用CSS変数調整 */
+@media (max-width: 768px) {
+    :root {
+        --font-size-4xl: 1.875rem;  /* 30px */
+        --font-size-3xl: 1.5rem;    /* 24px */
+        --spacing-xl: 1.5rem;       /* 24px */
+        --spacing-2xl: 2rem;        /* 32px */
+        --spacing-3xl: 2.5rem;      /* 40px */
+    }
+}
+
+/* モバイル用パディング調整 */
+.container,
+.section-container {
+    padding-left: var(--spacing-base);
+    padding-right: var(--spacing-base);
+}
+
+/* モバイル用フォントサイズ確保（最小16px） */
+body,
+input,
+textarea,
+select,
+button {
+    font-size: max(16px, var(--font-size-base));
+}
+
+/* モバイル用グリッド（単一カラム） */
+.drugs-grid,
+.categories-grid,
+.stories-grid,
+.differentiation-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-base);
+}
+
+/* モバイル専用調整（〜768px） */
+@media (max-width: 768px) {
+    /* ヘッダー調整 */
+    .header-container {
+        padding: var(--spacing-sm) var(--spacing-base);
+    }
+    
+    /* ナビゲーション */
+    .main-nav {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    /* 検索コンテナ */
+    .search-container {
+        min-width: 200px;
+    }
+    
+    /* ヒーローセクション */
+    .hero {
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    .hero-stats {
+        gap: var(--spacing-lg);
+    }
+    
+    /* セクション説明文 */
+    .section-description {
+        font-size: var(--font-size-base);
+    }
+    
+    /* カード調整 */
+    .category-card {
+        padding: var(--spacing-lg);
+    }
+    
+    /* ストーリーメタ情報 */
+    .story-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+    
+    /* 差別化カード */
+    .diff-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .diff-number {
+        position: static;
+        width: 36px;
+        height: 36px;
+        margin-bottom: var(--spacing-base);
+        font-size: var(--font-size-base);
+    }
+    
+    .diff-title {
+        padding-right: 0;
+    }
+    
+    /* フッター */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .footer-stats {
+        justify-content: center;
+    }
+}
+
+/* ========================================
+   3. タブレット対応（769px〜1024px）
+======================================== */
+@media (min-width: 769px) {
+    /* コンテナ幅調整 */
+    .container {
+        padding-left: var(--spacing-lg);
+        padding-right: var(--spacing-lg);
+    }
+    
+    /* グリッドレイアウト（2カラム） */
+    .drugs-grid,
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+    
+    /* ナビゲーション表示 */
+    .main-nav {
+        display: flex;
+    }
+    
+    .mobile-menu-btn {
+        display: none;
+    }
+    
+    /* ヘッダー調整 */
+    .header-container {
+        padding: var(--spacing-base) var(--spacing-lg);
+    }
+    
+    /* カード内パディング拡大 */
+    .drug-card,
+    .category-card,
+    .story-card {
+        padding: var(--spacing-lg);
+    }
+    
+    /* ヒーローセクション調整 */
+    .hero {
+        padding: var(--spacing-3xl) 0;
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-4xl);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-xl);
+    }
+    
+    /* 薬剤ヘッダー調整 */
+    .drug-header {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+    
+    /* サイドバー対応 */
+    .content-with-sidebar {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: var(--spacing-xl);
+    }
+}
+
+/* ========================================
+   4. デスクトップ対応（1025px〜）
+======================================== */
+@media (min-width: 1025px) {
+    /* コンテナ最大幅 */
+    .container {
+        max-width: var(--breakpoint-xl);
+        margin: 0 auto;
+    }
+    
+    /* グリッドレイアウト（3-4カラム） */
+    .drugs-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .categories-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .stories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* 大画面用スペーシング */
+    .hero {
+        padding: var(--spacing-3xl) 0;
+    }
+    
+    .section {
+        padding: var(--spacing-3xl) 0;
+    }
+    
+    /* 薬剤詳細ページの最適幅 */
+    .drug-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    /* フッターグリッド */
+    .footer-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: var(--spacing-2xl);
+    }
+    
+    /* デスクトップ用ホバー効果 */
+    .drug-card:hover,
+    .category-card:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-heavy);
+    }
+    
+    /* サイドバー固定 */
+    .sidebar {
+        position: sticky;
+        top: calc(var(--header-height) + var(--spacing-lg));
+        max-height: calc(100vh - var(--header-height) - var(--spacing-2xl));
+        overflow-y: auto;
+    }
+}
+
+/* ========================================
+   5. アクセシビリティ・特殊対応
+======================================== */
+
+/* 印刷対応 */
+@media print {
+    /* 不要な要素を非表示 */
+    .header,
+    .footer,
+    .mobile-menu-btn,
+    .search-container,
+    .cta-section,
+    .social-share {
+        display: none !important;
+    }
+    
+    /* 印刷用スタイル */
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+    }
+    
+    /* リンクのURL表示 */
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    
+    /* ページブレーク制御 */
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    .drug-card,
+    .story-card {
+        page-break-inside: avoid;
+    }
+}
+
+/* ハイコントラストモード */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #0051a5;
+        --text-primary: #000;
+        --bg-primary: #fff;
+        --border-color: #000;
+    }
+    
+    /* 境界線を強調 */
+    .drug-card,
+    .category-card,
+    button,
+    input {
+        border: 2px solid var(--border-color);
+    }
+}
+
+/* アニメーション制限 */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ========================================
+   小型デバイス追加対応（480px以下）
+======================================== */
+@media (max-width: 480px) {
+    /* ヘッダーレイアウト調整 */
+    .header-container {
+        flex-wrap: wrap;
+        gap: var(--spacing-base);
+    }
+    
+    /* 検索バー全幅化 */
+    .search-container {
+        order: 3;
+        width: 100%;
+        min-width: unset;
+    }
+    
+    /* ヒーロー統計の縦並び */
+    .hero-stats {
+        flex-direction: column;
+        gap: var(--spacing-base);
+    }
+    
+    /* 極小画面用フォントサイズ */
+    .hero-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .section-title {
+        font-size: var(--font-size-xl);
+    }
+    
+    /* カード内パディング最小化 */
+    .drug-card,
+    .category-card {
+        padding: var(--spacing-base);
+    }
+    
+    /* テーブルのカード化 */
+    .responsive-table table {
+        display: block;
+    }
+    
+    .responsive-table tbody,
+    .responsive-table tr,
+    .responsive-table td {
+        display: block;
+        width: 100%;
+    }
+    
+    .responsive-table td {
+        padding-left: 40%;
+        position: relative;
+        text-align: left;
+    }
+    
+    .responsive-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: var(--spacing-base);
+        font-weight: 600;
+    }
+}
+
+/* ========================================
+   レガシー移行時の互換性確保
+======================================== */
+
+/* mobile-optimization.cssからの移行クラス */
+.mobile-only {
+    display: block;
+}
+
+.desktop-only {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .mobile-only {
+        display: none;
+    }
+    
+    .desktop-only {
+        display: block;
+    }
+}
+
+/* モバイル最適化統合（旧mobile-optimization.cssより） */
+
+/* モバイル読みやすさ向上 */
+@media (max-width: 768px) {
+    /* ヘッダー最小高さ確保 */
+    .header {
+        padding: 8px 0;
+        min-height: 60px;
+    }
+    
+    /* ナビゲーションリスト */
+    .nav-list {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    
+    /* カード間隔調整 */
+    .drug-card, 
+    .category-card, 
+    .story-card {
+        margin-bottom: 16px;
+        padding: 16px;
+    }
+    
+    /* メインコンテンツ */
+    .main-content {
+        padding: 16px;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    /* 見出しサイズ調整 */
+    h1 { font-size: 24px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 18px; }
+    
+    /* テーブルスクロール最適化 */
+    .responsive-table {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* 
+ * ファイル終了
+ * 総行数目標: 800行以内
+ * 現在: 約450行（目標達成）
+ */

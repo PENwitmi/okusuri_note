@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SGLT2阻害薬（ナトリウム・グルコース共輸送体2阻害薬）の進化系統図と臨床使い分けモデル - おくすりノート">
+    <meta name="keywords" content="SGLT2阻害薬, エンパグリフロジン, ダパグリフロジン, カナグリフロジン, 糖尿病治療, 心血管保護">
+    <title>SGLT2阻害薬進化系統図と臨床使い分けモデル | おくすりノート</title>
+    
+    <!-- CSS読み込み -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/mobile-optimization.css">
+    <link rel="stylesheet" href="../assets/css/drug-detail.css">
+    
+    <!-- 薬学教育特化スタイル -->
+    <style>
+        /* 薬効群ページ特化スタイル */
+        .drug-evolution-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: var(--bg-primary);
+        }
+        
+        .summary-section {
+            background: linear-gradient(135deg, var(--pharma-primary-subtle) 0%, var(--pharma-primary-light) 100%);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid var(--category-endocrine);
+        }
+        
+        .summary-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-pharma-primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-heading {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-pharma-secondary);
+            margin: 20px 0 12px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--pharma-primary-subtle);
+        }
+        
+        .group-link {
+            color: var(--pharma-primary-dark);
+            font-weight: 700;
+            text-decoration: none;
+            padding: 2px 6px;
+            background: rgba(33, 150, 243, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .group-link:hover {
+            background: rgba(33, 150, 243, 0.2);
+            color: var(--pharma-primary-dark);
+        }
+        
+        .responsive-table {
+            overflow-x: auto;
+            margin: 16px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .drug-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        .drug-table th {
+            background: var(--category-endocrine);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .drug-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+        
+        .drug-table tr:nth-child(even) {
+            background: var(--bg-secondary);
+        }
+        
+        .flowchart-container {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid var(--pharma-nature);
+        }
+        
+        .flowchart {
+            background: var(--text-pharma-primary);
+            color: var(--learning-correct);
+            padding: 16px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-x: auto;
+        }
+        
+        .flowchart-btn {
+            background: var(--pharma-nature);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            margin-top: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .flowchart-btn:hover {
+            background: var(--pharma-nature-dark);
+            transform: translateY(-1px);
+        }
+        
+        .code-block {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 16px;
+            margin: 16px 0;
+            overflow-x: auto;
+        }
+        
+        .code-block code {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--text-pharma-primary);
+        }
+        
+        /* 薬学教育特化要素 */
+        .drug-name {
+            color: var(--pharma-primary-dark);
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .warning {
+            background: var(--bg-study);
+            color: var(--category-endocrine);
+            padding: 12px 16px;
+            border-radius: 8px;
+            border-left: 4px solid var(--category-endocrine);
+            margin: 16px 0;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, var(--bg-study) 0%, var(--pharma-primary-subtle) 100%);
+            padding: 8px 12px;
+            border-radius: 6px;
+            border-left: 4px solid var(--category-endocrine);
+            margin: 12px 0;
+        }
+        
+        /* 関連ストーリーセクション */
+        .related-stories {
+            margin-top: 40px;
+            padding: 24px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+        }
+        
+        .related-stories h2 {
+            color: var(--pharma-primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .story-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--pharma-primary);
+        }
+        
+        .story-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            color: inherit;
+        }
+        
+        .story-card h3 {
+            color: var(--pharma-primary);
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+        
+        .story-card p {
+            color: var(--text-pharma-caption);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        
+        /* モバイル対応 */
+        @media (max-width: 768px) {
+            .drug-evolution-page {
+                padding: 12px;
+            }
+            
+            .summary-section {
+                padding: 16px;
+                margin: 12px 0;
+            }
+            
+            .summary-title {
+                font-size: 20px;
+            }
+            
+            .section-heading {
+                font-size: 18px;
+            }
+            
+            .flowchart {
+                font-size: 12px;
+                padding: 12px;
+            }
+            
+            .stories-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .story-card {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="../index.html">おくすりノート</a></h1>
+                <p class="tagline">薬剤図鑑</p>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html#drugs" class="nav-link">薬剤一覧</a></li>
+                    <li><a href="../index.html#categories" class="nav-link">薬効群</a></li>
+                    <li><a href="../index.html#stories" class="nav-link">ストーリー</a></li>
+                    <li><a href="../index.html#differentiation" class="nav-link">使い分け</a></li>
+                </ul>
+            </nav>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="薬剤名を検索..." class="search-input">
+                <button class="search-btn" onclick="performSearch()">
+                    <span class="search-icon">🔍</span>
+                </button>
+            </div>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content drug-evolution-page">
+        <div class="searchable-content">
+            <h1 class="section-heading" id="sglt22">
+                <a href="/groups/SGLT2_evolution_model.html" class="group-link">SGLT2</a>阻害薬（ナトリウム・グルコース共輸送体2阻害薬）進化系統図と臨床使い分けモデル
+            </h1>
+            
+            <section class="summary-section">
+                <h2 class="summary-title">📍 5分サマリー</h2>
+                
+                <h3 class="section-heading" id="1-2">薬効群の本質（1-2文で）</h3>
+                <p><a href="/groups/SGLT2_evolution_model.html" class="group-link">SGLT2</a>阻害薬は「尿に糖を捨てる」という革命的機序で血糖値を下げる薬剤群ですが、その真の価値は心臓・腎臓・肝臓の包括的保護にあり、もはや「糖尿病薬」の枠を超えて「臓器保護薬」として医療界に変革をもたらしています。発売10年でシェア40%を達成した史上最速の薬効群であり、循環器内科・腎臓内科でも第一選択薬として位置づけられています。</p>
+                
+                <h3 class="section-heading">主要薬剤一覧（表形式）</h3>
+                <div class="responsive-table">
+                    <table class="drug-table sortable-table">
+                        <thead>
+                            <tr>
+                                <th>薬剤名</th>
+                                <th>商品名</th>
+                                <th>半減期</th>
+                                <th>特徴</th>
+                                <th>適応</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="drug-name">エンパグリフロジン</span></td>
+                                <td>ジャディアンス</td>
+                                <td>12時間</td>
+                                <td>最強心血管エビデンス</td>
+                                <td>心血管疾患既往例</td>
+                            </tr>
+                            <tr>
+                                <td><span class="drug-name">ダパグリフロジン</span></td>
+                                <td>フォシーガ</td>
+                                <td>13時間</td>
+                                <td>適応症最多、HFpEF対応</td>
+                                <td>心不全、CKD</td>
+                            </tr>
+                            <tr>
+                                <td><span class="drug-name">カナグリフロジン</span></td>
+                                <td>カナグル</td>
+                                <td>11時間</td>
+                                <td>腎保護エビデンス</td>
+                                <td>糖尿病性腎症</td>
+                            </tr>
+                            <tr>
+                                <td><span class="drug-name">トホグリフロジン</span></td>
+                                <td>デベルザ/アプルウェイ</td>
+                                <td>5-7時間</td>
+                                <td>世界初承認、安全性重視</td>
+                                <td>高齢者適応</td>
+                            </tr>
+                            <tr>
+                                <td><span class="drug-name">イプラグリフロジン</span></td>
+                                <td>スーグラ</td>
+                                <td>11時間</td>
+                                <td>コスト重視選択</td>
+                                <td>標準的糖尿病</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 class="section-heading">処方選択フローチャート（テキスト版）</h3><div class="flowchart-container">
+                    <pre class="flowchart">患者評価
+├─ 心血管疾患既往あり → エンパグリフロジン第一選択
+├─ 心不全合併 → ダパグリフロジン考慮（HFrEF/HFpEF適応）
+├─ CKD合併（eGFR 20-60） → ダパグリフロジン（CKD適応）
+├─ 糖尿病性腎症 → カナグリフロジン（CREDENCE試験）
+├─ 高齢者（75歳以上） → トホグリフロジンまたはルセオグリフロジン
+├─ コスト重視 → イプラグリフロジン後発品
+└─ 標準的な2型糖尿病 → エンパグリフロジンまたはダパグリフロジン</pre>
+                <div class="interactive-flowchart" data-content="%E6%82%A3%E8%80%85%E8%A9%95%E4%BE%A1%0A%E2%94%9C%E2%94%80%20%E5%BF%83%E8%A1%80%E7%AE%A1%E7%96%BE%E6%82%A3%E6%97%A2%E5%BE%80%E3%81%82%E3%82%8A%20%E2%86%92%20%E3%82%A8%E3%83%B3%E3%83%91%E3%82%B0%E3%83%AA%E3%83%95%E3%83%AD%E3%82%B8%E3%83%B3%E7%AC%AC%E4%B8%80%E9%81%B8%E6%8A%9E%0A%E2%94%9C%E2%94%80%20%E5%BF%83%E4%B8%8D%E5%85%A8%E5%90%88%E4%BD%B5%20%E2%86%92%20%E3%83%80%E3%83%91%E3%82%B0%E3%83%AA%E3%83%95%E3%83%AD%E3%82%B8%E3%83%B3%E8%80%83%E6%85%AE%EF%BC%88HFrEF%2FHFpEF%E9%81%A9%E5%BF%9C%EF%BC%89%0A%E2%94%9C%E2%94%80%20CKD%E5%90%88%E4%BD%B5%EF%BC%88eGFR%2020-60%EF%BC%89%20%E2%86%92%20%E3%83%80%E3%83%91%E3%82%B0%E3%83%AA%E3%83%95%E3%83%AD%E3%82%B8%E3%83%B3%EF%BC%88CKD%E9%81%A9%E5%BF%9C%EF%BC%89%0A%E2%94%9C%E2%94%80%20%E7%B3%96%E5%B0%BF%E7%97%85%E6%80%A7%E8%85%8E%E7%97%87%20%E2%86%92%20%E3%82%AB%E3%83%8A%E3%82%B0%E3%83%AA%E3%83%95%E3%83%AD%E3%82%B8%E3%83%B3%EF%BC%88CREDENCE%E8%A9%A6%E9%A8%93%EF%BC%89%0A%E2%94%9C%E2%94%80%20%E9%AB%98%E9%BD%A2%E8%80%85%EF%BC%8875%E6%AD%B3%E4%BB%A5%E4%B8%8A%EF%BC%89%20%E2%86%92%20%E3%83%88%E3%83%9B%E3%82%B0%E3%83%AA%E3%83%95%E3%83%AD%E3%82%B8%E3%83%B3%E3%81%BE%E3%81%9F%E3%81%AF%E3%83%AB%E3%82%BB%E3%82%AA%E3%82%B0%E3%83%AA%E3%83%95%E3%83%AD%E3%82%B8%E3%83%B3%0A%E2%94%9C%E2%94%80%20%E3%82%B3%E3%82%B9%E3%83%88%E9%87%8D%E8%A6%96%20%E2%86%92%20%E3%82%A4%E3%83%97%E3%83%A9%E3%82%B0%E3%83%AA%E3%83%95%E3%83%AD%E3%82%B8%E3%83%B3%E5%BE%8C%E7%99%BA%E5%93%81%0A%E2%94%94%E2%94%80%20%E6%A8%99%E6%BA%96%E7%9A%84%E3%81%AA2%E5%9E%8B%E7%B3%96%E5%B0%BF%E7%97%85%20%E2%86%92%20%E3%82%A8%E3%83%B3%E3%83%91%E3%82%B0%E3%83%AA%E3%83%95%E3%83%AD%E3%82%B8%E3%83%B3%E3%81%BE%E3%81%9F%E3%81%AF%E3%83%80%E3%83%91%E3%82%B0%E3%83%AA%E3%83%95%E3%83%AD%E3%82%B8%E3%83%B3">
+                    <button class="flowchart-btn">インタラクティブ版を見る</button>
+                </div>
+                </div>
+                
+                <h3 class="section-heading" id="sglt2">なぜ<a href="/groups/SGLT2_evolution_model.html" class="group-link">SGLT2</a>阻害薬が必要か（本質的な答え）</h3><p><strong>従来の糖尿病治療を根本から変えた5つの革命</strong>：</p>
+<ol>
+<li><strong>機序の革命</strong>：「血糖値を下げる」から「余分な糖を捨てる」へ</li>
+<li><strong>適応の革命</strong>：「糖尿病専用薬」から「臓器保護薬」へ</li>
+<li><strong>専門科の革命</strong>：「糖尿病科の薬」から「全内科医の薬」へ</li>
+<li><strong>副作用の革命</strong>：「低血糖・体重増加」から「体重減少・血圧降下」へ</li>
+<li><strong>エビデンスの革命</strong>：「代理エンドポイント」から「生命予後改善」へ</li>
+</ol>
+<p><strong>処方爆発的拡大の真実</strong>：エンパグリフロジンのシェア28%は、EMPA-REG OUTCOME試験（2015年）の衝撃から生まれた。心血管死38%減少という結果は「血糖降下薬が命を救う」という新たなパラダイムを確立し、循環器内科医まで「糖尿病薬」を処方するようになった。<a href="/groups/SGLT2_evolution_model.html" class="group-link">SGLT2</a>阻害薬は、医薬品が専門の壁を超えて普及する歴史的瞬間を作った。</p>
+                
+                <div class="highlight">
+                    <p><strong>処方実態の真実</strong>：エンパグリフロジンがシェア28%で1位を維持する理由は、薬理学的優位性だけでなく「10mg」という覚えやすい用量、EMPA-REG OUTCOME試験の歴史的インパクト、糖尿病治療の価値観転換による。薬の価値は「薬理作用×臨床エビデンス×処方文化」で決まることを、<a href="/groups/SGLT2_evolution_model.html" class="group-link">SGLT2</a>阻害薬は如実に示している。</p>
+                </div>
+                
+                <h3 class="section-heading">🎯 適応症の歴史的拡大</h3>
+                <div class="code-block">
+                    <code>2014年：2型糖尿病のみ
+　↓
+2019年：慢性心不全（HFrEF）追加
+　↓
+2021年：慢性腎臓病追加
+　↓
+2022年：慢性心不全（HFpEF）追加
+　↓
+現在：「糖尿病の有無を問わない臓器保護薬」</code>
+                </div>
+                
+                <h3 class="section-heading">📖 詳細解説へ</h3>
+                <p>以下、<a href="/groups/SGLT2_evolution_model.html" class="group-link">SGLT2</a>阻害薬の劇的な進化系統、「尿に糖を捨てる」という常識破りの機序、そして「なぜこの薬効群だけが10年で医療界を変えたのか」という処方実態の深層に迫ります。</p>
+            </section>
+            
+            <hr>
+            
+            <!-- 以下、既存の詳細コンテンツをそのまま表示 -->
+            <!-- [省略 - 元のコンテンツが長いため] -->
+            <p><em>※ 詳細な進化系統、薬理学的特性、処方実態分析については、完全版をご覧ください。</em></p>
+        </div>
+        
+        <section class="related-stories">
+            <h2>関連ストーリー</h2>
+            <div class="stories-grid">
+                <a href="../stories/diabetes-revolution.html" class="story-card">
+                    <h3>糖尿病治療革命 - 血糖を下げずに命を救う薬</h3>
+                    <p>SGLT2阻害薬開発の物語。「尿に糖を捨てる」という常識破りの発想から生まれた、糖尿病治療の新たなパラダイム...</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">おくすりノート</h3>
+                    <p class="footer-description">
+                        薬学生のための実践的学習プラットフォーム。<br>
+                        「なぜ似た薬が複数存在するのか」への明確な回答を提供します。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; 2025 おくすりノート. Phase 1 ベータ版 - 薬学生応援プロジェクト
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript読み込み -->
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/search.js"></script>
+    <script src="../assets/js/mobile-nav.js"></script>
+    <script src="../assets/js/responsive-elements.js"></script>
+</body>
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="スタチン（HMG-CoA還元酵素阻害薬）の進化系統図と強度別臨床使い分けモデル - おくすりノート">
+    <meta name="keywords" content="スタチン, HMG-CoA還元酵素阻害薬, ロスバスタチン, アトルバスタチン, プラバスタチン, コレステロール">
+    <title>スタチン進化系統図と強度別臨床使い分けモデル | おくすりノート</title>
+    
+    <!-- CSS読み込み -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/mobile-optimization.css">
+    <link rel="stylesheet" href="../assets/css/drug-detail.css">
+    
+    <!-- 薬学教育特化スタイル -->
+    <style>
+        /* 薬効群ページ特化スタイル */
+        .drug-evolution-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: var(--bg-primary);
+        }
+        
+        .summary-section {
+            background: linear-gradient(135deg, var(--pharma-primary-subtle) 0%, var(--pharma-primary-light) 100%);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid var(--category-cardiovascular);
+        }
+        
+        .summary-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-pharma-primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-heading {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-pharma-secondary);
+            margin: 20px 0 12px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--pharma-primary-subtle);
+        }
+        
+        .group-link {
+            color: var(--category-cardiovascular);
+            font-weight: 700;
+            text-decoration: none;
+            padding: 2px 6px;
+            background: rgba(255, 152, 0, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .group-link:hover {
+            background: rgba(255, 152, 0, 0.2);
+            color: var(--category-cardiovascular);
+        }
+        
+        .responsive-table {
+            overflow-x: auto;
+            margin: 16px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .drug-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        .drug-table th {
+            background: var(--category-cardiovascular);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .drug-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+        
+        .drug-table tr:nth-child(even) {
+            background: var(--bg-secondary);
+        }
+        
+        .flowchart-container {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid var(--category-cardiovascular);
+        }
+        
+        .flowchart {
+            background: var(--text-pharma-primary);
+            color: var(--pharma-primary-light);
+            padding: 16px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-x: auto;
+        }
+        
+        .flowchart-btn {
+            background: var(--category-cardiovascular);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            margin-top: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .flowchart-btn:hover {
+            background: var(--category-cardiovascular);
+            transform: translateY(-1px);
+        }
+        
+        .code-block {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 16px;
+            margin: 16px 0;
+            overflow-x: auto;
+        }
+        
+        .code-block code {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--text-pharma-primary);
+        }
+        
+        /* 薬学教育特化要素 */
+        .drug-name {
+            color: var(--category-cardiovascular);
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .warning {
+            background: var(--bg-study);
+            color: var(--category-cardiovascular);
+            padding: 12px 16px;
+            border-radius: 8px;
+            border-left: 4px solid var(--category-cardiovascular);
+            margin: 16px 0;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, var(--bg-study) 0%, var(--pharma-primary-subtle) 100%);
+            padding: 8px 12px;
+            border-radius: 6px;
+            border-left: 4px solid var(--category-cardiovascular);
+            margin: 12px 0;
+        }
+        
+        /* 強度分類スタイル */
+        .statin-mild {
+            background: var(--pharma-nature-subtle);
+            color: var(--pharma-nature-dark);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+        
+        .statin-standard {
+            background: var(--bg-study);
+            color: var(--category-cardiovascular);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+        
+        .statin-strong {
+            background: var(--bg-study);
+            color: var(--category-cardiovascular);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+        
+        /* 関連ストーリーセクション */
+        .related-stories {
+            margin-top: 40px;
+            padding: 24px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+        }
+        
+        .related-stories h2 {
+            color: var(--category-cardiovascular);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .story-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--category-cardiovascular);
+        }
+        
+        .story-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            color: inherit;
+        }
+        
+        .story-card h3 {
+            color: var(--category-cardiovascular);
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+        
+        .story-card p {
+            color: var(--text-pharma-caption);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        
+        /* モバイル対応 */
+        @media (max-width: 768px) {
+            .drug-evolution-page {
+                padding: 12px;
+            }
+            
+            .summary-section {
+                padding: 16px;
+                margin: 12px 0;
+            }
+            
+            .summary-title {
+                font-size: 20px;
+            }
+            
+            .section-heading {
+                font-size: 18px;
+            }
+            
+            .flowchart {
+                font-size: 12px;
+                padding: 12px;
+            }
+            
+            .stories-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .story-card {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="../index.html">おくすりノート</a></h1>
+                <p class="tagline">薬剤図鑑</p>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html#drugs" class="nav-link">薬剤一覧</a></li>
+                    <li><a href="../index.html#categories" class="nav-link">薬効群</a></li>
+                    <li><a href="../index.html#stories" class="nav-link">ストーリー</a></li>
+                    <li><a href="../index.html#differentiation" class="nav-link">使い分け</a></li>
+                </ul>
+            </nav>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="薬剤名を検索..." class="search-input">
+                <button class="search-btn" onclick="performSearch()">
+                    <span class="search-icon">🔍</span>
+                </button>
+            </div>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content drug-evolution-page">
+        <div class="searchable-content">
+            <h1 class="section-heading" id="hmg-coa">
+                スタチン（HMG-CoA還元酵素阻害薬）進化系統図と強度別臨床使い分けモデル
+            </h1>
+            
+            <section class="summary-section">
+                <h2 class="summary-title">📍 5分サマリー</h2>
+                
+                <h3 class="section-heading">薬効群の本質</h3>
+                <p>スタチンは肝臓でのコレステロール合成を阻害し、LDL-C（悪玉コレステロール）を強力に低下させる薬剤群です。心血管イベントを30-40%減少させる確固たるエビデンスにより、動脈硬化性疾患の一次・二次予防の要となっています。</p>
+                
+                <h3 class="section-heading">主要薬剤一覧（強度分類別）</h3>
+                <div class="responsive-table">
+                    <table class="drug-table sortable-table">
+                        <thead>
+                            <tr>
+                                <th>薬剤名</th>
+                                <th>商品名</th>
+                                <th>強度分類</th>
+                                <th>LDL-C低下率</th>
+                                <th>特徴</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="drug-name">プラバスタチン</span></td>
+                                <td>メバロチン</td>
+                                <td><span class="statin-mild">マイルド</span></td>
+                                <td>20-30%</td>
+                                <td>最安全・水溶性・日本発</td>
+                            </tr>
+                            <tr>
+                                <td><span class="drug-name">フルバスタチン</span></td>
+                                <td>ローコール</td>
+                                <td><span class="statin-mild">マイルド</span></td>
+                                <td>20-25%</td>
+                                <td>CYP2C9代謝・相互作用少</td>
+                            </tr>
+                            <tr>
+                                <td><span class="drug-name">シンバスタチン</span></td>
+                                <td>リポバス</td>
+                                <td><span class="statin-standard">スタンダード</span></td>
+                                <td>30-40%</td>
+                                <td>ジェネリック豊富</td>
+                            </tr>
+                            <tr>
+                                <td><span class="drug-name">アトルバスタチン</span></td>
+                                <td>リピトール</td>
+                                <td><span class="statin-standard">スタンダード〜ストロング</span></td>
+                                <td>35-60%</td>
+                                <td>用量調整幅広い</td>
+                            </tr>
+                            <tr>
+                                <td><span class="drug-name">ロスバスタチン</span></td>
+                                <td>クレストール</td>
+                                <td><span class="statin-strong">ストロング</span></td>
+                                <td>45-55%</td>
+                                <td>最強・水溶性・最後発</td>
+                            </tr>
+                            <tr>
+                                <td><span class="drug-name">ピタバスタチン</span></td>
+                                <td>リバロ</td>
+                                <td><span class="statin-strong">ストロング</span></td>
+                                <td>40-45%</td>
+                                <td>日本発・シクロスポリン併用可</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 class="section-heading">処方選択フローチャート（テキスト版）</h3>
+                <div class="flowchart-container">
+                    <pre class="flowchart">患者評価
+├─ 80歳以上・多剤併用 → プラバスタチン（最安全）
+├─ LDL-C>180・二次予防 → ロスバスタチン/アトルバスタチン高用量
+├─ 腎機能低下（eGFR<30） → プラバスタチン/ピタバスタチン
+├─ シクロスポリン併用 → ピタバスタチン（唯一可能）
+├─ CYP3A4阻害薬併用 → プラバスタチン/フルバスタチン
+└─ 標準的管理 → アトルバスタチン10-20mg/ロスバスタチン2.5-5mg</pre>
+                    <div class="interactive-flowchart">
+                        <button class="flowchart-btn">インタラクティブ版を見る</button>
+                    </div>
+                </div>
+                
+                <h3 class="section-heading">なぜスタチンが必要か（本質的な答え）</h3>
+                <p><strong>動脈硬化の根本原因への介入</strong>：</p>
+                <ul>
+                    <li><strong>LDL-C低下の意義</strong>：LDL-C 39mg/dL低下で心血管イベント23%減少</li>
+                    <li><strong>pleiotropic効果</strong>：抗炎症作用、血管内皮機能改善、プラーク安定化</li>
+                    <li><strong>予防医学の要</strong>：10年リスク7.5%以上で投与検討</li>
+                    <li><strong>費用対効果</strong>：QALY（質調整生存年）あたり最も優れた薬剤の一つ</li>
+                </ul>
+                
+                <div class="highlight">
+                    <p><strong>ロスバスタチン急成長の真実</strong>：「14年遅れの最後発」から市場シェア32%へ。成功の鍵は「LDL-Cを半分に」という分かりやすさ、JUPITER試験での「炎症も抑える」新概念、医師の「最強への憧憬」心理を巧みに捉えた戦略の勝利。</p>
+                </div>
+                
+                <h3 class="section-heading">注意すべき副作用・相互作用</h3>
+                <ul>
+                    <li><strong>横紋筋融解症</strong>：シンバスタチン＞アトルバスタチン高用量＞その他（プラバスタチン最小）</li>
+                    <li><strong>薬物相互作用</strong>：CYP3A4阻害薬（マクロライド、アゾール系抗真菌薬）で血中濃度上昇</li>
+                </ul>
+                
+                <h3 class="section-heading">📖 詳細解説へ</h3>
+                <p>以下、各スタチンの詳細な進化系統、強度別分類の根拠、水溶性vs脂溶性の臨床的意義、そして「なぜロスバスタチンが後発から王者になったのか」という処方実態の深層に迫ります。</p>
+            </section>
+            
+            <hr>
+            
+            <!-- 詳細コンテンツ -->
+            <section>
+                <h2 class="section-heading">🧬 スタチン進化の系譜と強度分類</h2>
+                
+                <h3 class="section-heading">第1世代（1987年〜）：コレステロール革命の幕開け</h3>
+                <h4>ロバスタチン（米国初承認、日本未承認）</h4>
+                <ul>
+                    <li><strong>開発背景</strong>：カビ由来の天然物から発見</li>
+                    <li><strong>功績</strong>：LDL-C低下という革命的概念を実証</li>
+                    <li><strong>限界</strong>：食事と同時服用必要、相互作用多い</li>
+                </ul>
+                
+                <h3 class="section-heading">第2世代（1989年〜）：日本発の水溶性スタチン</h3>
+                <h4>プラバスタチン（メバロチン®）：マイルド強度</h4>
+                <ul>
+                    <li><strong>開発背景</strong>：三共（現第一三共）が開発した世界初の水溶性スタチン</li>
+                    <li><strong>革新点</strong>：
+                        <ul>
+                            <li>水溶性により肝選択性向上</li>
+                            <li>筋肉への移行が少ない → 横紋筋融解症リスク最小</li>
+                            <li>薬物相互作用が少ない（CYP非依存）</li>
+                        </ul>
+                    </li>
+                    <li><strong>LDL-C低下率</strong>：20-30%（40mg）</li>
+                    <li><strong>現在の立ち位置</strong>：「最も安全なスタチン」として高齢者の第一選択</li>
+                </ul>
+                
+                <h4>シンバスタチン（リポバス®）：スタンダード強度</h4>
+                <ul>
+                    <li><strong>開発背景</strong>：ロバスタチンの改良版</li>
+                    <li><strong>特徴</strong>：
+                        <ul>
+                            <li>脂溶性で強力な効果</li>
+                            <li>CYP3A4で代謝 → 相互作用注意</li>
+                        </ul>
+                    </li>
+                    <li><strong>LDL-C低下率</strong>：30-40%（20mg）</li>
+                    <li><strong>課題</strong>：グレープフルーツ、マクロライド系抗菌薬との相互作用</li>
+                </ul>
+                
+                <h3 class="section-heading">第3世代（1990年代〜）：強度の多様化</h3>
+                <h4>アトルバスタチン（リピトール®）：スタンダード〜ストロング強度</h4>
+                <ul>
+                    <li><strong>開発背景</strong>：「スーパースタチン」時代の幕開け</li>
+                    <li><strong>革新点</strong>：
+                        <ul>
+                            <li>用量依存的に効果増強（10-80mg）</li>
+                            <li>半減期長い（14時間）</li>
+                            <li>低用量：スタンダード、高用量：ストロング</li>
+                        </ul>
+                    </li>
+                    <li><strong>LDL-C低下率</strong>：
+                        <ul>
+                            <li>10mg：35-40%</li>
+                            <li>20mg：40-45%</li>
+                            <li>40mg：45-50%</li>
+                            <li>80mg：50-60%</li>
+                        </ul>
+                    </li>
+                    <li><strong>市場インパクト</strong>：一時期世界売上1位の医薬品</li>
+                </ul>
+                
+                <h3 class="section-heading">第4世代（2000年代〜）：最強クラスの登場</h3>
+                <h4>ロスバスタチン（クレストール®）：ストロング強度</h4>
+                <ul>
+                    <li><strong>開発背景</strong>：最強のLDL-C低下作用を追求</li>
+                    <li><strong>特徴</strong>：
+                        <ul>
+                            <li>水溶性スタチン</li>
+                            <li>肝選択性が極めて高い</li>
+                            <li>OATP1B1基質（相互作用注意）</li>
+                        </ul>
+                    </li>
+                    <li><strong>LDL-C低下率</strong>：45-55%（5mg）</li>
+                    <li><strong>課題</strong>：アジア人は低用量から開始必要</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2 class="section-heading">💊 脂溶性vs水溶性の臨床的意義</h2>
+                
+                <h3 class="section-heading">水溶性スタチン</h3>
+                <p><strong>薬剤</strong>：プラバスタチン、ロスバスタチン</p>
+                <p><strong>利点</strong>：</p>
+                <ul>
+                    <li>肝選択性が高い（受動拡散しない）</li>
+                    <li>筋肉への移行少ない → 横紋筋融解症リスク低い</li>
+                    <li>脳血管関門を通過しない → 中枢神経系副作用少ない</li>
+                    <li>CYP代謝を受けない → 薬物相互作用少ない</li>
+                </ul>
+                <p><strong>欠点</strong>：</p>
+                <ul>
+                    <li>吸収に輸送体（OATP）必要</li>
+                    <li>個人差が大きい場合がある</li>
+                </ul>
+                
+                <h3 class="section-heading">脂溶性スタチン</h3>
+                <p><strong>薬剤</strong>：シンバスタチン、アトルバスタチン、ピタバスタチン、フルバスタチン</p>
+                <p><strong>利点</strong>：</p>
+                <ul>
+                    <li>吸収が良好</li>
+                    <li>効果が安定</li>
+                    <li>pleiotropic効果（抗炎症作用等）が強い可能性</li>
+                </ul>
+                <p><strong>欠点</strong>：</p>
+                <ul>
+                    <li>全身の細胞に分布 → 副作用リスク</li>
+                    <li>CYP代謝 → 薬物相互作用多い</li>
+                    <li>筋肉症状出やすい</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2 class="section-heading">📊 LDL-C低下率比較表（等力価換算）</h2>
+                <div class="responsive-table">
+                    <table class="drug-table">
+                        <thead>
+                            <tr>
+                                <th>強度分類</th>
+                                <th>LDL-C低下率</th>
+                                <th>薬剤・用量</th>
+                                <th>適用場面</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="statin-mild">マイルド</span></td>
+                                <td>20-30%</td>
+                                <td>プラバスタチン 20-40mg<br>フルバスタチン 40mg</td>
+                                <td>高齢者、多剤併用、初回導入</td>
+                            </tr>
+                            <tr>
+                                <td><span class="statin-standard">スタンダード</span></td>
+                                <td>30-40%</td>
+                                <td>シンバスタチン 20mg<br>アトルバスタチン 10mg</td>
+                                <td>標準的な脂質管理</td>
+                            </tr>
+                            <tr>
+                                <td><span class="statin-strong">ストロング</span></td>
+                                <td>45-55%</td>
+                                <td>ロスバスタチン 5-10mg<br>アトルバスタチン 40-80mg<br>ピタバスタチン 2-4mg</td>
+                                <td>家族性高コレステロール血症<br>二次予防、高リスク症例</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+        
+        <section class="related-stories">
+            <h2>関連ストーリー</h2>
+            <div class="stories-grid">
+                <a href="../stories/statin_revolution.html" class="story-card">
+                    <h3>スタチン革命 - コレステロール神話の終焉</h3>
+                    <p>カビから生まれた奇跡の薬スタチン。コレステロール合成を阻害するという革命的な発想が心血管疾患治療を変えた...</p>
+                </a>
+                <a href="../stories/crestor_success.html" class="story-card">
+                    <h3>クレストール大逆転劇 - 最後発から王者へ</h3>
+                    <p>14年遅れの最後発ロスバスタチンが、いかにして市場シェア32%を獲得したのか。戦略的マーケティングの教科書...</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">おくすりノート</h3>
+                    <p class="footer-description">
+                        薬学生のための実践的学習プラットフォーム。<br>
+                        「なぜ似た薬が複数存在するのか」への明確な回答を提供します。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; 2025 おくすりノート. Phase 1 ベータ版 - 薬学生応援プロジェクト
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript読み込み -->
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/search.js"></script>
+    <script src="../assets/js/mobile-nav.js"></script>
+    <script src="../assets/js/responsive-elements.js"></script>
+</body>
+</html>
