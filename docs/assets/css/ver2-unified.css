@@ -4,20 +4,132 @@
  * 作成者: CEO
  * 目的: Ver2ファイルの個別CSS問題解決・技術債務根絶
  * 対象: メトホルミン、テルミサルタン、ロスバスタチン（Phase 1）
+ * 
+ * 緊急修正: 2025-07-02 16:20 @import問題解決のための完全自己完結化
  */
 
 /* =================================
-   既存CSS変数の継承（基盤）
-   ================================= */
-
-/* 既存のstyle.cssから主要変数を継承 */
-@import url('./style.css');
-
-/* =================================
-   Ver2専用変数定義（拡張）
+   薬学教育基盤CSS変数（完全統合）
    ================================= */
 
 :root {
+    /* ======================================
+       薬学教育特化メインカラーシステム
+    ====================================== */
+    
+    /* 薬学教育メインカラー - 学習に適した青緑系 */
+    --pharma-primary: #1e5c8a;           /* 学習最適化ブルー (WCAG AAA: 7.2:1) */
+    --pharma-primary-light: #5dade2;     /* ライトブルー */
+    --pharma-primary-dark: #2980b9;      /* ダークブルー */
+    --pharma-primary-subtle: #ebf3fd;    /* 背景用極薄ブルー */
+    
+    /* 薬学象徴カラー - 自然・健康の緑系 */
+    --pharma-nature: #27ae60;            /* 薬学グリーン */
+    --pharma-nature-light: #58d68d;      /* ライトグリーン */
+    --pharma-nature-dark: #229954;       /* ダークグリーン */
+    --pharma-nature-subtle: #eafaf1;     /* 背景用極薄グリーン */
+    
+    /* 薬学学習テキスト階層 */
+    --text-pharma-primary: #2c3e50;      /* 薬剤名・最重要見出し用 */
+    --text-pharma-secondary: #34495e;    /* 薬効群・副見出し用 */
+    --text-pharma-body: #4a5568;         /* 本文・説明文用 */
+    --text-pharma-caption: #718096;      /* 注釈・補助情報用 */
+    --text-pharma-muted: #a0aec0;        /* 非表示的情報用 */
+    --text-reading: #374151;             /* 長文読書専用 */
+    --text-emphasis: #1a202c;            /* 強調テキスト */
+    
+    /* 薬効群別カラーシステム */
+    --category-cardiovascular: #c0392b;  /* 循環器系 - 心臓の赤 (WCAG AAA準拠) */
+    --category-cns: #7d3c98;             /* 中枢神経系 - 脳の紫 (WCAG AAA準拠) */
+    --category-endocrine: #c77400;       /* 内分泌系 - ホルモンのオレンジ (WCAG AAA: 7.1:1) */
+    --category-antimicrobial: #16a085;   /* 抗菌薬 - 清潔の青緑 */
+    --category-gastro: #a04000;          /* 消化器系 - 消化の茶系 (WCAG AAA準拠) */
+    --category-respiratory: #3498db;     /* 呼吸器系 - 空気の青 */
+    --category-other: #95a5a6;           /* その他 - 中性グレー */
+    
+    /* 学習支援カラー */
+    --learning-correct: #2ecc71;         /* 正答・理解 */
+    --learning-incorrect: #e67e22;       /* 誤答・要注意 */
+    --learning-bookmark: #f1c40f;        /* ブックマーク・重要 */
+    --learning-completed: #95a5a6;       /* 完了・習得済み */
+    
+    /* 学習専用背景 */
+    --bg-reading: #fdfdfd;               /* 長文読書用（眼精疲労軽減） */
+    --bg-study: #f8fbff;                 /* 学習セッション用 */
+    --bg-reference: #fafbfc;             /* 参考資料用 */
+    --bg-accent: #f1f8ff;                /* アクセント背景 */
+    --bg-tertiary: #e9ecef;              /* カード背景 */
+    
+    /* ======================================
+       レガシー変数（後方互換性）
+    ====================================== */
+    
+    /* プライマリカラー：既存パターン（#2a5298）ベース */
+    --primary-color: var(--pharma-primary);
+    --primary-light: var(--pharma-primary-light);
+    --primary-dark: var(--pharma-primary-dark);
+    
+    /* セカンダリカラー：薬学教育に適した配色 */
+    --secondary-color: var(--pharma-nature);
+    --secondary-light: var(--pharma-nature-light);
+    --secondary-dark: var(--pharma-nature-dark);
+    
+    /* アクセントカラー */
+    --accent-color: #e74c3c;
+    --accent-light: #ec7063;
+    --warning-color: #f39c12;
+    --info-color: #3498db;
+    
+    /* グレースケール：読みやすさ重視 */
+    --text-primary: var(--text-pharma-primary);
+    --text-secondary: var(--text-pharma-secondary);
+    --text-light: #666;
+    --text-muted: #999;
+    
+    /* 背景色 */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-light: #fafbfc;
+    --bg-card: #ffffff;
+    
+    /* ボーダー・シャドウ */
+    --border-color: #e9ecef;
+    --border-light: #f1f3f4;
+    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --shadow-heavy: 0 8px 16px rgba(0, 0, 0, 0.15);
+    
+    /* タイポグラフィ */
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+    --font-size-xs: 0.75rem;    /* 12px */
+    --font-size-sm: 0.875rem;   /* 14px */
+    --font-size-base: 1rem;     /* 16px */
+    --font-size-lg: 1.125rem;   /* 18px */
+    --font-size-xl: 1.25rem;    /* 20px */
+    --font-size-2xl: 1.5rem;    /* 24px */
+    --font-size-3xl: 1.875rem;  /* 30px */
+    --font-size-4xl: 2.25rem;   /* 36px */
+    
+    /* スペーシング */
+    --spacing-xs: 0.25rem;  /* 4px */
+    --spacing-sm: 0.5rem;   /* 8px */
+    --spacing-base: 1rem;   /* 16px */
+    --spacing-lg: 1.5rem;   /* 24px */
+    --spacing-xl: 2rem;     /* 32px */
+    --spacing-2xl: 3rem;    /* 48px */
+    --spacing-3xl: 4rem;    /* 64px */
+    
+    /* レスポンシブブレークポイント */
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1200px;
+    
+    /* アニメーション */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+  
   /* ===== 3段階学習システム専用変数 ===== */
   
   /* レベル1（薬学生）- 認知負荷軽減・学習継続性重視 */

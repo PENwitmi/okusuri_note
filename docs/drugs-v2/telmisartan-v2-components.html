@@ -20,7 +20,7 @@
     <div class="container">
 
         <!-- Task 1.2: レベル1基本情報カード -->
-        <section class="basic-info-card student-level">
+        <section class="basic-info-card level-1-content">
             <div class="drug-name-display">
                 <h1 class="brand-name">ミカルディス®</h1>
                 <p class="generic-name">テルミサルタン</p>
@@ -88,7 +88,7 @@
         </section>
 
         <!-- Task 1.3: 30秒サマリー -->
-        <section class="quick-summary-student student-level">
+        <section class="quick-summary-student level-1-content">
             <h2>⚡ 30秒でわかるテルミサルタン</h2>
             
             <div class="summary-grid">
@@ -116,7 +116,7 @@
         </section>
 
         <!-- Task 1.4: 薬学生FAQ -->
-        <section class="student-level">
+        <section class="level-1-content">
             <div class="student-faq-section">
                 <h3>💡 薬学生のよくある疑問（最重要）</h3>
                 <dl class="student-questions">
@@ -137,7 +137,7 @@
         </section>
 
         <!-- Task 1.5: 処方パターン・併用薬 -->
-        <section class="prescription-examples student-level">
+        <section class="prescription-examples level-1-content">
             <h3>よく見る処方パターン</h3>
             
             <div class="rx-example">
@@ -441,7 +441,7 @@ Rp) ミカルディス錠 80mg
         </section>
 
         <!-- 注意事項ボックス -->
-        <section class="contraindications-section student-level">
+        <section class="contraindications-section level-1-content">
             <!-- 絶対禁忌 -->
             <div class="contraindication-box danger">
                 <h4>🚫 絶対禁忌</h4>
@@ -1606,7 +1606,7 @@ Rp) ミカルディス錠 80mg
         document.addEventListener('DOMContentLoaded', function() {
             const levelButtons = document.querySelectorAll('.level-btn');
             const levelSections = {
-                '1': document.querySelectorAll('.student-level'),
+                '1': document.querySelectorAll('.level-1-content'),
                 '2': document.querySelectorAll('.intermediate-level'),
                 '3': document.querySelectorAll('.advanced-level')
             };
