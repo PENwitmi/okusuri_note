@@ -712,6 +712,84 @@
 }
 
 /* ========================================
+   未定義クラスの追加（2025-07-04）
+======================================== */
+
+/* カード要素 */
+.card {
+    background: var(--bg-card);
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid var(--border-light);
+    transition: all var(--transition-base);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-medium);
+}
+
+/* 統計セクション */
+.statistics {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: space-around;
+    padding: var(--spacing-lg);
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    margin: var(--spacing-lg) 0;
+    flex-wrap: wrap;
+}
+
+.statistics > div {
+    text-align: center;
+    flex: 1;
+    min-width: 100px;
+}
+
+.statistics span:first-child {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+}
+
+.statistics span:last-child {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--pharma-primary);
+}
+
+/* 統計結論 */
+.stat-conclusion {
+    background: var(--bg-accent);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    border-radius: 8px;
+    border-left: 4px solid var(--pharma-primary);
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+/* サマリーアイテム */
+.summary-item {
+    background: var(--bg-card);
+    padding: var(--spacing-base);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-sm);
+    border-left: 3px solid var(--pharma-primary-light);
+}
+
+.summary-item h4 {
+    color: var(--pharma-primary);
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-base);
+}
+
+/* ========================================
    アクセシビリティ
 ======================================== */
 
