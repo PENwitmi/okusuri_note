@@ -1,25 +1,25 @@
 /*
- * index.css - ¤óÇÃ¯¹Úü¸(¹¿¤ë·üÈ
+ * index.css - ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒšãƒ¼ã‚¸å°‚ç”¨ã‚¹ã‚¿ã‚¤ãƒ«ã‚·ãƒ¼ãƒˆ
  * Version: 1.0.0
  * Created: 2025-07-04
  * Modified: 2025-07-04
  * 
- * ¬Ù: index.htmlgn(UŒ‹¹¿¤ë
- * X: style.cssÅ	
+ * è²¬å‹™: index.htmlã§ã®ã¿ä½¿ç”¨ã•ã‚Œã‚‹ã‚¹ã‚¿ã‚¤ãƒ«
+ * ä¾å­˜: style.csså¿…é ˆ
  * 
- * …¹:
- * - Òüíü»¯·çó
- * - ¬d«üÉ°êÃÉ
- * - ¬¹¤«üÉ
- * - ¹Èüêü«üÉ
- * - DQ«üÉ
+ * å†…å®¹:
+ * - ãƒ’ãƒ¼ãƒ­ãƒ¼ã‚»ã‚¯ã‚·ãƒ§ãƒ³
+ * - è–¬å‰¤ã‚«ãƒ¼ãƒ‰ã‚°ãƒªãƒƒãƒ‰
+ * - ã‚«ãƒ†ã‚´ãƒªã‚«ãƒ¼ãƒ‰
+ * - ã‚¹ãƒˆãƒ¼ãƒªãƒ¼ã‚«ãƒ¼ãƒ‰
+ * - CTAã‚»ã‚¯ã‚·ãƒ§ãƒ³
  * 
- * fJ: p n&h:’MĞhW_-
- * ¬d%Úü¸go(b
+ * è­¦å‘Š: è¤‡æ•°è¦ç´ ã®ä¸¦åˆ—è¡¨ç¤ºã‚’å‰æã¨ã—ãŸè¨­è¨ˆ
+ * è–¬å‰¤å€‹åˆ¥ãƒšãƒ¼ã‚¸ã§ã¯ä½¿ç”¨ç¦æ­¢
  */
 
 /* ========================================
-   Òüíü»¯·çó
+   ãƒ’ãƒ¼ãƒ­ãƒ¼ã‚»ã‚¯ã‚·ãƒ§ãƒ³
 ======================================== */
 .hero {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
@@ -62,7 +62,7 @@
     margin-right: auto;
 }
 
-/* Òüíüq */
+/* ãƒ’ãƒ¼ãƒ­ãƒ¼çµ±è¨ˆ */
 .hero-stats {
     display: flex;
     justify-content: center;
@@ -88,7 +88,7 @@
     font-weight: 500;
 }
 
-/* CTAÜ¿ó */
+/* CTAãƒœã‚¿ãƒ³ */
 .cta-button {
     display: inline-flex;
     align-items: center;
@@ -112,7 +112,7 @@
 }
 
 /* ========================================
-   »¯·çóq¹¿¤ë
+   å…±é€šã‚»ã‚¯ã‚·ãƒ§ãƒ³ã‚¹ã‚¿ã‚¤ãƒ«
 ======================================== */
 .drugs-section,
 .categories-section,
@@ -154,7 +154,7 @@
 }
 
 /* ========================================
-   ¬d«üÉdrug-card	
+   è–¬å‰¤ã‚«ãƒ¼ãƒ‰ï¼ˆdrug-cardï¼‰
 ======================================== */
 .drugs-grid {
     display: grid;
@@ -164,13 +164,13 @@
 }
 
 .drug-card {
-    background: #ffffff; /* Õ©üëĞÃ¯ */
+    background: #ffffff; /* ãƒ•ã‚©ãƒ¼ãƒ«ãƒãƒƒã‚¯ */
     background: var(--bg-card, #ffffff);
     border-radius: 16px;
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-light);
     transition: all var(--transition-base);
-    border: 1px solid #f1f3f4; /* Õ©üëĞÃ¯ */
+    border: 1px solid #f1f3f4; /* ãƒ•ã‚©ãƒ¼ãƒ«ãƒãƒƒã‚¯ */
     border: 1px solid var(--border-light, #f1f3f4);
     position: relative;
     overflow: hidden;
@@ -250,7 +250,7 @@
 }
 
 .drug-link::after {
-    content: '’';
+    content: 'â†’';
     margin-left: var(--spacing-xs);
     transition: transform var(--transition-fast);
 }
@@ -259,18 +259,18 @@
     transform: translateX(4px);
 }
 
-/* ¬¹¤%nrQ - WCAG AAA–àr( */
+/* è–¬åŠ¹åˆ¥ã‚«ãƒ†ã‚´ãƒªèƒŒæ™¯è‰² - WCAG AAAæº–æ‹ æ¸ˆã¿ */
 .drug-card[data-category="ARB"] .drug-category { background: var(--category-cardiovascular); }
 .drug-card[data-category="PPI"] .drug-category { background: var(--category-gastro); }
-.drug-card[data-category="¹¿Áó"] .drug-category { background: var(--category-cardiovascular); }
-.drug-card[data-category="SGLT2;³¬"] .drug-category { background: var(--category-endocrine); }
-.drug-card[data-category="²n­¬"] .drug-category { background: var(--category-cardiovascular); }
-.drug-card[data-category="ACE;³¬"] .drug-category { background: var(--category-cardiovascular); }
+.drug-card[data-category="ãƒ“ã‚°ã‚¢ãƒŠã‚¤ãƒ‰"] .drug-category { background: var(--category-endocrine); }
+.drug-card[data-category="SGLT2é˜»å®³è–¬"] .drug-category { background: var(--category-endocrine); }
+.drug-card[data-category="åˆ©å°¿è–¬"] .drug-category { background: var(--category-cardiovascular); }
+.drug-card[data-category="ACEé˜»å®³è–¬"] .drug-category { background: var(--category-cardiovascular); }
 .drug-card[data-category="SSRI"] .drug-category { background: var(--category-cns); }
-.drug-card[data-category=")?¬"] .drug-category { background: var(--category-cardiovascular); }
-.drug-card[data-category="]nÖ"] .drug-category { background: var(--category-other); }
+.drug-card[data-category="å¼·å¿ƒé…ç³–ä½“"] .drug-category { background: var(--category-cardiovascular); }
+.drug-card[data-category="ãã®ä»–"] .drug-category { background: var(--category-other); }
 
-/* –™-¬dn¹Æü¿¹h: */
+/* è–¬å‰¤ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹è¡¨ç¤ºï¼ˆæº–å‚™ä¸­ãªã©ï¼‰ */
 .drug-status {
     display: inline-block;
     background-color: var(--bg-secondary);
@@ -284,7 +284,7 @@
 }
 
 /* ========================================
-   ¬¹¤«üÉcategory-card	
+   ã‚«ãƒ†ã‚´ãƒªã‚«ãƒ¼ãƒ‰ï¼ˆcategory-cardï¼‰
 ======================================== */
 .categories-grid {
     display: grid;
@@ -387,7 +387,7 @@
 }
 
 /* ========================================
-   ¹Èüêü«üÉstory-card	
+   ã‚¹ãƒˆãƒ¼ãƒªãƒ¼ã‚«ãƒ¼ãƒ‰ï¼ˆstory-cardï¼‰
 ======================================== */
 .stories-grid {
     display: grid;
@@ -498,7 +498,7 @@
 }
 
 .story-link::after {
-    content: '’';
+    content: 'â†’';
     margin-left: var(--spacing-xs);
     transition: transform var(--transition-fast);
 }
@@ -508,7 +508,7 @@
 }
 
 /* ========================================
-   DQ«üÉdiff-card	
+   å·®åˆ¥åŒ–ã‚«ãƒ¼ãƒ‰ï¼ˆdiff-cardï¼‰
 ======================================== */
 .differentiation-grid {
     display: grid;
