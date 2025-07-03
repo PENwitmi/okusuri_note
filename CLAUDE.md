@@ -1,9 +1,9 @@
 # CLAUDE.md - OkusuriNote プロジェクト
 
-**最終更新**: 2025-07-03 03:41  
-**プロジェクト状態**: 🚧 CSS統合プロジェクト実装フェーズ進行中  
-**現在フェーズ**: ゼロベース設計仕様完成、新CSS作成準備完了  
-**進捗状況**: Option C決定、responsive-unified.css（1000行目標）の実装開始待機
+**最終更新**: 2025-07-04 05:17  
+**プロジェクト状態**: 🚧 Level3復元・CSS改革プロジェクト進行中  
+**現在フェーズ**: Level 3表示問題修正とCSS構造改革  
+**進捗状況**: 調査・計画完了、実装準備中
 
 ## 🚨 現在の最重要状況
 
@@ -12,6 +12,22 @@
 **目的**: 全タスクと文書の状態を一元管理する唯一の情報源  
 **更新頻度**: リアルタイム（変更発生時即座）  
 **責任**: CEOが最終編集責任、Managerに実務更新委任
+
+### 🚧 Level3復元・CSS改革プロジェクト（2025-07-04 03:50〜進行中）
+**ステータス**: 🔥 Phase 1-2完了、Phase 3準備中  
+**最終更新**: 2025-07-04 05:50  
+**目的**: Level 3コンテンツ表示問題の解決とCSS構造改革
+
+#### 進捗状況
+- **Phase 1（Manager完了）**: ✅ Level 3表示問題の緊急修正（4ファイル）
+  - digoxin, carvedilol, warfarin: display:none削除
+  - vancomycin: level-3-contentクラス追加
+- **Phase 2（CEO完了）**: ✅ CSS分離実装
+  - style.css → old-style.css リネーム
+  - 新style.css（514行）、index.css（606行）作成
+  - 23ファイルのHTML更新（old-style.css参照）
+- **次ステップ**: Git commit/push後、新CSS構成への移行、Phase 3コンテンツ復元
+- **詳細**: `project-docs/2025-07-04-level3-restoration-css-reform/`参照
 
 ### ✅ CSS統合プロジェクト（2025-07-03 02:36-04:09 完了）
 **ステータス**: ✅ 実装完了（検証フェーズ）  
@@ -22,14 +38,24 @@
 - **効果**: style.css=基本定義、responsive-unified.css=レスポンシブ調整の明確化
 - **詳細**: `project-docs/2025-07-03-css-consolidation/`参照
 
-## 📊 直近完了プロジェクト（7月2日夕方〜3日未明）
+## 📊 直近完了プロジェクト（7月2日夕方〜4日未明）
+
+### ✅ 薬剤ページVer2実装プロジェクト（2025-07-03 06:15 - 2025-07-04 03:30）
+**成果**: 22薬剤の完全Ver2化とCSS適用
+- **対象**: 全23薬剤中22薬剤（metformin完成済み）
+- **Step1 クリーン化**: 19/19（100%）完了
+- **Step2 Ver2化**: 19/19（100%）完了
+- **Step3 CSS付与**: 22/22（100%）完了
+- **品質達成**: 全薬剤基本品質基準達成
+- **配置**: docs/drugs-v2/に全22薬剤-refined.html配置
+- **詳細**: `project-docs/2025-07-03-drug-page-v2-implementation/`
 
 ### ✅ CSS整合性修復プロジェクト Phase 5（2025-07-02 22:15 - 2025-07-03 02:20）
 **成果**: ゼロベース再構築によるCSS整合性100%達成
 - **問題**: 91.4%のCSS不整合（561個未使用、584個未定義）
 - **解決**: 29クラスのみの最小実装（82.7%削減）
 - **実装**: drug-page-v2.css（370行、96%削減）
-- **検証**: metformin-clean.html本番環境デプロイ完了
+- **検証**: metformin-refined.html本番環境デプロイ完了
 - **効果**: 保守性向上、完全把握可能なサイズ
 - **詳細**: `project-docs/2025-07-02-css-unity-emergency/03-css-integrity-resolution/`
 
@@ -70,10 +96,20 @@
    - `project-docs/2025-07-03-css-consolidation/`
    - Option B実装計画詳細
 
+5. **Level3復元・CSS改革** (7/4 03:50-進行中)
+   - `project-docs/2025-07-04-level3-restoration-css-reform/`
+   - 8文書による包括的計画（調査、歴史、提案、実装）
+   - CSS命名規則変更: style.css → old-style.css → 新style.css
+
 ### 重要な成果物
 - **drug-page-v2.css**: ゼロベース再構築の成果（370行、29クラス）
-- **metformin-clean.html**: クリーンHTML実装例
+- **metformin-refined.html**: クリーンHTML実装例
 - **ver2-unified.css**: Ver2統一CSS（314行、A級品質）
+
+### 計画中の重要変更
+- **CSS命名規則変更**: style.css → old-style.css、新style.cssを基盤CSSとして作成
+- **CSS責務分離**: 新style.css（全ページ共通） + index.css（インデックス専用）
+- **Level 3表示修正**: display:none除去、class欠落修正
 
 ## 📊 確定済み戦略・仕様
 
@@ -400,13 +436,25 @@ cd docs && python -m http.server 8000
 
 ## 更新履歴
 
+- **2025-07-04 05:17**: 🚧 Level3復元・CSS改革プロジェクト開始
+  - **調査完了**: Level 3コンテンツ非表示問題の原因特定（display:none、class欠落）
+  - **計画策定**: CSS命名規則変更（style.css → old-style.css → 新style.css）
+  - **文書作成**: 8文書完成（調査報告、CSS歴史、分離提案、実装計画等）
+  - **次ステップ**: Phase 1緊急修正、Phase 2 CSS分離実装
+  - **薬剤ページVer2実装プロジェクト**: 完了（03:30、全22薬剤配置済み）
+- **2025-07-03 14:46**: 🚧 薬剤ページVer2実装プロジェクト進行中
+  - **開始**: 06:15より22薬剤のVer2実装開始（全23薬剤中、metformin完成済み）
+  - **進捗**: 開発者タスク（Step1,2）100%完了（14:14）
+  - **現状**: CEO/Manager CSS付与作業（Step3,4）待機中
+  - **作業分担**: CEO 9薬剤、Manager 10薬剤、特例ルート2薬剤
+  - **完了予測**: 17:30-18:00 全22薬剤完了見込み
 - **2025-07-03 04:56**: ✅ レベル3以降の見やすさ改善完了
   - **問題特定**: CSSの問題（HTMLは適切、見出しスタイル不足）
   - **レベル3改善**: 背景色強化、テキスト色濃く、h2〜h6包括的スタイル設定
   - **特有要素**: blockquote/citeスタイル追加（医師の証言セクション）
   - **その他**: strong要素強調、リスト間隔調整、モバイル最適化
   - **CSSコメント修正**: レベル説明をHTMLと整合
-- **2025-07-03 04:47**: ✅ metformin-clean.html視覚的改善完了
+- **2025-07-03 04:47**: ✅ metformin-refined.html視覚的改善完了
   - **drug-page-v2.css改善**: 既存クラスの最適化で視覚的階層を実現
   - **改善内容**: 見出しカラー統一、カード要素強化、FAQ・処方パターン改善
   - **HTML構造**: containerクラス活用、セクション背景の交互配置

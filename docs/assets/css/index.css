@@ -1,0 +1,606 @@
+/*
+ * index.css - §Û«√Øπ⁄¸∏(πø§Î∑¸»
+ * Version: 1.0.0
+ * Created: 2025-07-04
+ * Modified: 2025-07-04
+ * 
+ * ¨Ÿ: index.htmlgn(Uåãπø§Î
+ * ùX: style.css≈	
+ * 
+ * Öπ:
+ * - “¸Ì¸ªØ∑ÁÛ
+ * - ¨d´¸…∞Í√…
+ * - ¨π§´¸…
+ * - π»¸Í¸´¸…
+ * - DQ´¸…
+ * 
+ * fJ: pÅ n&h:íM–hW_-
+ * ¨d%⁄¸∏go(Åb
+ */
+
+/* ========================================
+   “¸Ì¸ªØ∑ÁÛ
+======================================== */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: var(--spacing-3xl) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.06)"/></svg>');
+    pointer-events: none;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 900;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.2;
+}
+
+.hero-description {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-2xl);
+    opacity: 0.95;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* “¸Ì¸q */
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: var(--font-size-4xl);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-label {
+    font-size: var(--font-size-base);
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* CTA‹øÛ */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: var(--primary-color);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    padding: var(--spacing-base) var(--spacing-2xl);
+    border-radius: 32px;
+    text-decoration: none;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-medium);
+}
+
+.cta-button:hover {
+    background: var(--bg-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-heavy);
+    color: var(--primary-dark);
+}
+
+/* ========================================
+   ªØ∑ÁÛqπø§Î
+======================================== */
+.drugs-section,
+.categories-section,
+.stories-section,
+.differentiation-section {
+    padding: var(--spacing-3xl) 0;
+}
+
+.drugs-section {
+    background: var(--bg-primary);
+}
+
+.categories-section {
+    background: var(--bg-secondary);
+}
+
+.stories-section {
+    background: var(--bg-primary);
+}
+
+.differentiation-section {
+    background: var(--bg-light);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-primary);
+}
+
+.section-description {
+    text-align: center;
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-2xl);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========================================
+   ¨d´¸…drug-card	
+======================================== */
+.drugs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-2xl);
+}
+
+.drug-card {
+    background: #ffffff; /* ’©¸Î–√Ø */
+    background: var(--bg-card, #ffffff);
+    border-radius: 16px;
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-light);
+    transition: all var(--transition-base);
+    border: 1px solid #f1f3f4; /* ’©¸Î–√Ø */
+    border: 1px solid var(--border-light, #f1f3f4);
+    position: relative;
+    overflow: hidden;
+}
+
+.drug-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+}
+
+.drug-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-heavy);
+    border-color: var(--primary-color);
+}
+
+.drug-category {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    padding: var(--spacing-xs) var(--spacing-base);
+    border-radius: 20px;
+    margin-bottom: var(--spacing-base);
+}
+
+.drug-name {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+}
+
+.drug-description {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-base);
+    line-height: 1.6;
+}
+
+.drug-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.feature {
+    display: inline-block;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.drug-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.drug-link:hover {
+    color: var(--primary-dark);
+    transform: translateX(4px);
+}
+
+.drug-link::after {
+    content: 'í';
+    margin-left: var(--spacing-xs);
+    transition: transform var(--transition-fast);
+}
+
+.drug-link:hover::after {
+    transform: translateX(4px);
+}
+
+/* ¨π§%nrQ - WCAG AAAñ‡r( */
+.drug-card[data-category="ARB"] .drug-category { background: var(--category-cardiovascular); }
+.drug-card[data-category="PPI"] .drug-category { background: var(--category-gastro); }
+.drug-card[data-category="πø¡Û"] .drug-category { background: var(--category-cardiovascular); }
+.drug-card[data-category="SGLT2;≥¨"] .drug-category { background: var(--category-endocrine); }
+.drug-card[data-category="≤n≠¨"] .drug-category { background: var(--category-cardiovascular); }
+.drug-card[data-category="ACE;≥¨"] .drug-category { background: var(--category-cardiovascular); }
+.drug-card[data-category="SSRI"] .drug-category { background: var(--category-cns); }
+.drug-card[data-category=")?¨"] .drug-category { background: var(--category-cardiovascular); }
+.drug-card[data-category="]n÷"] .drug-category { background: var(--category-other); }
+
+/* ñô-¨dnπ∆¸øπh: */
+.drug-status {
+    display: inline-block;
+    background-color: var(--bg-secondary);
+    color: var(--text-muted);
+    font-size: 0.8em;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    margin-bottom: var(--spacing-base);
+}
+
+/* ========================================
+   ¨π§´¸…category-card	
+======================================== */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-2xl);
+}
+
+.category-card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: var(--spacing-xl);
+    text-align: center;
+    box-shadow: var(--shadow-medium);
+    transition: all var(--transition-base);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    pointer-events: none;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-heavy);
+    border-color: var(--primary-color);
+}
+
+.category-card:hover::before {
+    opacity: 0.03;
+}
+
+.category-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-base);
+    display: block;
+    opacity: 0.9;
+    transition: all var(--transition-base);
+}
+
+.category-card:hover .category-icon {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.category-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-base);
+    color: var(--text-primary);
+}
+
+.category-description {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+    font-size: var(--font-size-base);
+}
+
+.category-drugs {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    padding: var(--spacing-xs) var(--spacing-base);
+    border-radius: 20px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.category-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    padding: var(--spacing-base) var(--spacing-xl);
+    border-radius: 32px;
+    text-decoration: none;
+    transition: all var(--transition-base);
+    min-width: 160px;
+}
+
+.category-link:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* ========================================
+   π»¸Í¸´¸…story-card	
+======================================== */
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-2xl);
+}
+
+.story-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-light);
+    transition: all var(--transition-base);
+    border: 1px solid var(--border-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.story-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(42, 82, 152, 0.02) 100%);
+    pointer-events: none;
+    transition: opacity var(--transition-base);
+    opacity: 0;
+}
+
+.story-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-heavy);
+    border-color: var(--primary-light);
+}
+
+.story-card:hover::after {
+    opacity: 1;
+}
+
+.story-image {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-base);
+    text-align: center;
+    opacity: 0.8;
+    transition: all var(--transition-base);
+}
+
+.story-card:hover .story-image {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.story-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-base);
+    color: var(--text-primary);
+}
+
+.story-description {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.7;
+}
+
+.story-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    gap: var(--spacing-base);
+}
+
+.story-year {
+    background: var(--warning-color);
+    color: white;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 12px;
+}
+
+.story-impact {
+    background: var(--secondary-color);
+    color: white;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 12px;
+}
+
+.story-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.story-link:hover {
+    color: var(--primary-dark);
+    transform: translateX(4px);
+}
+
+.story-link::after {
+    content: 'í';
+    margin-left: var(--spacing-xs);
+    transition: transform var(--transition-fast);
+}
+
+.story-link:hover::after {
+    transform: translateX(4px);
+}
+
+/* ========================================
+   DQ´¸…diff-card	
+======================================== */
+.differentiation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-2xl);
+}
+
+.diff-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-light);
+    transition: all var(--transition-base);
+    border: 1px solid var(--border-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.diff-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent-color), var(--warning-color));
+}
+
+.diff-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-heavy);
+    border-color: var(--accent-color);
+}
+
+.diff-number {
+    position: absolute;
+    top: var(--spacing-base);
+    right: var(--spacing-base);
+    width: 48px;
+    height: 48px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-lg);
+    font-weight: 900;
+}
+
+.diff-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: var(--spacing-base);
+    color: var(--text-primary);
+    padding-right: 60px;
+}
+
+.diff-description {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-base);
+    line-height: 1.7;
+    font-size: var(--font-size-base);
+}
+
+.diff-drugs {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    padding: var(--spacing-sm) var(--spacing-base);
+    border-radius: 12px;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.diff-link {
+    display: inline-flex;
+    align-items: center;
+    background: var(--accent-color);
+    color: white;
+    font-weight: 600;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 24px;
+    text-decoration: none;
+    transition: all var(--transition-base);
+    font-size: var(--font-size-sm);
+}
+
+.diff-link:hover {
+    background: var(--accent-light);
+    transform: translateY(-2px);
+    color: white;
+}
