@@ -1,0 +1,1655 @@
+<!-- ロスバスタチン v2 コンポーネント -->
+<!-- 作成日: 2025-07-02 -->
+<!-- 作成者: dev3 -->
+<!-- Task 1.2 + Task 1.3: 基本情報カード + 30秒サマリー -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ロスバスタチン v2.0 Components - 薬学生向け基本情報</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/drug-page-v2.css">
+    <link rel="stylesheet" href="../assets/css/responsive-unified.css">
+    <link rel="stylesheet" href="../assets/css/drug-page-v2.css">
+
+</head>
+<body class="drug-detail" data-category="cardiovascular">
+    <!-- レベルインジケーター -->
+    <div class="level-selector">
+        <div class="level-selector__inner">
+            <button class="level-btn active" data-level="1">薬学生</button>
+            <button class="level-btn" data-level="2">実習中</button>
+            <button class="level-btn" data-level="3">研修中</button>
+        </div>
+    </div>
+
+    <!-- レベル1：薬学生向け基礎内容 -->
+
+<!-- Task 1.2: 基本情報カード -->
+<section class="level-1-content">
+    <div class="drug-header">
+        <h1 class="brand-name">クレストール®</h1>
+        <p class="generic-name">ロスバスタチンカルシウム</p>
+    </div>
+    
+    <div class="drug-classification">
+        <span class="drug-class">
+            <i>💊</i>
+            HMG-CoA還元酵素阻害薬（ストロングスタチン）
+        </span>
+        <span class="generation">高強度スタチン</span>
+    </div>
+    
+    <div class="indications">
+        <h3>主な適応症</h3>
+        <ul class="indications__list">
+            <li>高コレステロール血症</li>
+            <li>家族性高コレステロール血症</li>
+            <li>動脈硬化性疾患の一次予防・二次予防</li>
+        </ul>
+        <div>
+            <span>注目</span>
+            JUPITER試験：LDL-C正常でもCRP高値なら適応
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- Task 1.3: 30秒サマリー -->
+<section class="quick-summary level-1-content">
+    <div class="container">
+        <h2>⚡ 30秒でわかるロスバスタチン</h2>
+        
+        <div class="impact-grid">
+            <div class="impact-item">
+                <h4>開発の位置づけ</h4>
+            <p>Best In Class</p>
+            <p>最も強力なLDL-C低下作用を持つスタチン。14年遅れの「最後発」から32%シェア獲得の奇跡の薬。</p>
+            </div>
+            
+            <div class="impact-item">
+                <h4>なぜ作られた？</h4>
+            <p>既存スタチンを上回る強力なLDL-C低下作用を求めて開発。「LDL-Cを半分にする」という分かりやすい効果で医師の支持獲得。</p>
+            </div>
+            
+            <div class="impact-item">
+                <h4>実際どう使われてる？</h4>
+            <p>JUPITER試験で心血管イベント44%減少を証明。重症高コレステロール血症や治療抵抗性の第一選択薬として使用。</p>
+            </div>
+            
+            <div class="impact-item">
+                <h4>他の薬との違い</h4>
+            <p>最強のLDL-C低下作用（50%以上）。水溶性でCYP非依存。日本人用量は欧米の半分（2.5mg開始）。</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- 実習前に押さえておくべき基礎知識 -->
+<section class="level-1-content">
+    <div class="container">
+        <h2>📝 実習前に必ず押さえる基礎ポイント</h2>
+        
+        <!-- 処方でよく見る形 -->
+        <div class="prescribing-data">
+        <h3>よく見る処方パターン</h3>
+        
+            <div>
+                <h4>パターン1：新規開始時（標準）</h4>
+                <div class="design-spec">
+Rp) クレストール錠 2.5mg  
+    1回1錠 1日1回 夕食後  
+    30日分
+                </div>
+            <p>💡 <strong>なぜ2.5mg？</strong> 日本人はOATP1B1多型により血中濃度が約2倍になるため</p>
+            <p>💡 <strong>なぜ夕食後？</strong> HMG-CoA還元酵素は夜間（午前2-4時）に最も活性が高いため</p>
+        </div>
+        
+            <div>
+                <h4>パターン2：維持用量</h4>
+                <div class="design-spec">
+Rp) クレストール錠 5mg  
+    1回1錠 1日1回 夕食後  
+    30日分
+                </div>
+            <p>💡 2.5mgで効果不十分時の標準増量。多くの患者で十分な効果</p>
+        </div>
+        
+            <div>
+                <h4>パターン3：併用療法</h4>
+                <div class="design-spec">
+Rp) クレストール錠 5mg  
+    1回1錠 1日1回 夕食後  
+    ゼチーア錠 10mg  
+    1回1錠 1日1回 朝食後  
+    各30日分
+                </div>
+            <p>💡 重症高コレステロール血症で単剤効果不十分時の鉄板組み合わせ</p>
+        </div>
+        
+            <div class="combination-drugs">
+                <h4>一緒に処方される薬TOP3</h4>
+                <ol class="combination-drugs__list">
+                <li><strong>エゼチミブ（ゼチーア®）</strong> - LDL-C追加低下20%、機序の違いで相乗効果</li>
+                <li><strong>EPA製剤（エパデール®）</strong> - 中性脂肪管理、心血管イベント抑制の追加効果</li>
+                <li><strong>ARB/ACE阻害薬（ミカルディス®等）</strong> - 高血圧合併時の心血管リスク総合管理</li>
+                </ol>
+            </div>
+        </div>
+    
+    <!-- 薬学生向け相互作用（15%抽出） -->
+    <div>
+        <h3>絶対覚える相互作用</h3>
+        
+        <div>
+            <h4>🚫 絶対禁忌（暗記必須）</h4>
+            <ul>
+                <li><strong>妊娠・授乳婦</strong> - 催奇形性リスク（妊娠可能年齢の女性は要確認）</li>
+                <li>💡 <strong>実習ポイント</strong>: 臓器移植患者にはピタバスタチン、妊娠希望者は投与中止</li>
+            </ul>
+        </div>
+
+        <!-- ロスバスタチン特殊対応：シクロスポリン併用禁忌の赤枠強調 -->
+        <div>
+            <h4>⚠️ ロスバスタチン最重要注意事項</h4>
+            <div>
+                <div>
+                    <span>シクロスポリン</span>
+                    <span>併用絶対禁忌</span>
+                </div>
+                <div>
+                    <p><strong>機序</strong>：OATP1B1輸送体の競合阻害により<strong>血中濃度7倍上昇</strong></p>
+                    <p><strong>リスク</strong>：横紋筋融解症、ミオパチーの高頻度発現</p>
+                    <p><strong>対応</strong>：併用時はピタバスタチン（唯一の併用可能スタチン）に変更</p>
+                </div>
+                <div>
+                    💊 <strong>臨床ポイント</strong>：臓器移植患者では必ずシクロスポリン服用歴を確認し、
+                    ロスバスタチン処方前に代替薬への変更を検討する
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <h4>⚠️ 重要な注意事項</h4>
+            <ul>
+                <li><strong>横紋筋融解症</strong> - CK値上昇（3倍以上）、筋肉痛・脱力で即中止</li>
+                <li><strong>肝機能異常</strong> - AST/ALT上昇（3倍以上）で中止検討</li>
+                <li><strong>ゲムフィブロジル</strong> - 血中濃度2倍上昇、ミオパチーリスク増大</li>
+                <li><strong>重度腎不全</strong> - eGFR<30で最大5mg/日に減量</li>
+                <li>💡 <strong>実習ポイント</strong>: 筋肉痛の訴えがあったら即座に薬剤師に報告</li>
+            </ul>
+        </div>
+        
+        <div>
+            <h4>🍽️ 服薬指導のポイント</h4>
+            <ul>
+                <li><strong>服用時間</strong>: 夕食後がベスト（HMG-CoA還元酵素は夜間に最も活性化）</li>
+                <li><strong>筋肉痛チェック</strong>: 「筋肉痛、だるさ、脱力感はありませんか？」必ず確認</li>
+                <li><strong>アルコール</strong>: 過度の飲酒は避ける（肝機能への負担増）</li>
+                <li><strong>グレープフルーツ</strong>: 問題なし（CYP3A4非依存のため）</li>
+                <li><strong>継続性</strong>: 自己判断で中止しない、効果は2-4週間で現れる</li>
+                <li>💡 <strong>実習ポイント</strong>: 患者が最も心配する筋肉痛について必ず説明</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- 薬学生FAQ（最重要） -->
+    <div>
+        <h3>💡 薬学生のよくある疑問（最重要）</h3>
+        <dl>
+            <dt>Q: ★★★「国試によく出るポイントは？」</dt>
+            <dd>A: ①最強スタチン（LDL-C 50%以上低下） ②水溶性・腎排泄 ③CYP非依存 ④シクロスポリン併用禁忌 ⑤アジア人で血中濃度2倍</dd>
+            
+            <dt>Q: ★★★「なぜロスバスタチンはCYPの影響を受けないのですか？」</dt>
+            <dd>A: 水溶性スタチンのため、OATP1B1輸送体で肝臓に取り込まれCYP3A4での代謝を受けません。そのためグレープフルーツジュースやマクロライド系抗菌薬の影響もありません。</dd>
+            
+            <dt>Q: ★★★「日本人の用量が欧米の半分なのはなぜですか？」</dt>
+            <dd>A: 日本人を含むアジア人はOATP1B1遺伝子多型により血中濃度が約2倍になるため。日本の開始用量2.5mgは欧米の10mgと同等の効果が得られます。</dd>
+            
+            <dt>Q: 「なんで夕食後？朝じゃダメ？」</dt>
+            <dd>A: HMG-CoA還元酵素は夜間（午前2-4時）に活性が最も高くなるため、夕食後投与で効率よく酵素を阻害できる</dd>
+            
+            <dt>Q: ★★★「スタチンの中で本当に最強なのですか？」</dt>
+            <dd>A: はい。LDL-C低下率50%以上を示す唯一のスタチンです。ただし効果が強い分、筋症状などの副作用リスクも高いため、重症例での第一選択となります。詳しい使い分けは実習編で学びます。</dd>
+        </dl>
+        
+        <div class="faq-note">
+            <p>💡 <strong>ポイント</strong>：薬学の授業で学ゖ内容に関する質問のみ。実習に関する質問はレベル2で扱います。</p>
+        </div>
+    </div>
+    </div>
+    </div>
+</section>
+
+<!-- 用量調整の基礎知識 -->
+<section class="level-1-content">
+    <div class="container">
+        <h2>💊 用量の基礎知識</h2>
+        
+        <div>
+        <h3>日本人の標準用量</h3>
+        <table>
+            <tr>
+                <th>開始用量</th>
+                <th>維持用量</th>
+                <th>最大用量</th>
+                <th>重要注意点</th>
+            </tr>
+            <tr>
+                <td>2.5mg</td>
+                <td>2.5-5mg</td>
+                <td>20mg</td>
+                <td>アジア人は血中濃度2倍</td>
+            </tr>
+        </table>
+        
+        <div>
+            <h4>用量設定のポイント</h4>
+            <ul>
+                <li><strong>低用量開始原則</strong>：2.5mgから開始し効果を見る</li>
+                <li><strong>効果判定</strong>：3ヶ月後にLDL-C測定</li>
+                <li><strong>増量基準</strong>：目標LDL-C未達成なら5mg→10mgへ</li>
+                <li><strong>副作用監視</strong>：CK値上昇、筋症状に注意</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    </div>
+</section>
+
+<!-- レベル2：実習中の薬学生向け -->
+
+<section class="level-2-content">
+    <div class="container">
+        <h2>🏥 実習で必要な実践知識</h2>
+        
+        <div class="card">
+        <h3>なぜロスバスタチンが選ばれるのか？</h3>
+        
+        <div>
+            <div>
+                <span>1</span>
+                <h4>最強のLDL-C低下作用</h4>
+                <p><strong>50%以上の低下率</strong>を示す唯一のスタチン。重症高コレステロール血症や治療抵抗性症例の第一選択薬として確立。</p>
+                <p>💡 <strong>実習ポイント</strong>: 「LDL-Cを半分にする」というわかりやすい効果で患者理解が得られやすい</p>
+            </div>
+            
+            <div>
+                <span>2</span>
+                <h4>水溶性・腎排泄の安全性</h4>
+                <p>CYP3A4非依存のため、<strong>薬物相互作用が少ない</strong>。多剤併用の高齢者や複雑な併用薬のある患者でも安全に使用可能。</p>
+                <p>💡 <strong>実習ポイント</strong>: グレープフルーツジュースの心配不要と患者に説明できる</p>
+            </div>
+            
+            <div>
+                <span>3</span>
+                <h4>日本人最適化用量</h4>
+                <p>OATP1B1遺伝子多型により日本人は血中濃度が約2倍。<strong>2.5mg開始で欧米の10mgと同等</strong>の効果が得られる。</p>
+                <p>💡 <strong>実習ポイント</strong>: 「少量で効く」ことを患者の安心材料として活用</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- ロスバスタチン特殊対応：日本亾用量の特別説明 -->
+<section class="level-2-content">
+    <div class="container">
+        <h2>🇯🇵 日本人用量設定の科学的根拠</h2>
+        
+        <div>
+        <h5>🧬 OATP1B1遺伝子多型による血中濃度差</h5>
+        <div>
+            <div>
+                <div>
+                    <h6>欧米標準</h6>
+                    <p><strong>開始用量：10mg</strong></p>
+                    <p>血中濃度：基準値</p>
+                </div>
+                <div>
+                    <h6>🇯🇵 日本最適化</h6>
+                    <p><strong>開始用量：2.5mg</strong></p>
+                    <p>血中濃度：<span>約2倍</span></p>
+                    <p>→ 同等の効果を1/4の用量で実現</p>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <h6>臨床的意義</h6>
+            <ul>
+                <li><strong>安全性向上</strong>：低用量で副作用リスク最小化</li>
+                <li><strong>効果最大化</strong>：個体差を考慮した最適効果</li>
+                <li><strong>経済効果</strong>：少ない薬量で同等効果</li>
+                <li><strong>個別化医療</strong>：遺伝子多型を考慮した治療の先駆け</li>
+            </ul>
+        </div>
+    </div>
+
+    <div>
+        <h3>OATP1B1遺伝子多型の詳細メカニズム</h3>
+        
+        <div>
+            <h4>薬物動態の民族差</h4>
+            <p>ロスバスタチンは<strong>OATP1B1輸送体</strong>により肝臓に取り込まれます。アジア人では特定の遺伝子多型の頻度が高く、この輸送体の機能が変化しています。</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>民族</th>
+                        <th>血中濃度</th>
+                        <th>開始用量</th>
+                        <th>維持用量</th>
+                        <th>最大用量</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>欧米人</td>
+                        <td>基準値</td>
+                        <td>10mg</td>
+                        <td>10-20mg</td>
+                        <td>40mg</td>
+                    </tr>
+                    <tr>
+                        <td><strong>日本人</strong></td>
+                        <td><strong>約2倍</strong></td>
+                        <td><strong>2.5mg</strong></td>
+                        <td><strong>2.5-5mg</strong></td>
+                        <td><strong>20mg</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div>
+            <h4>実習での応用ポイント</h4>
+            <ul>
+                <li><strong>用量説明</strong>: 「日本人に最適化された用量です」と説明</li>
+                <li><strong>効果判定</strong>: 2.5mgでも欧米の標準用量と同等の効果期待</li>
+                <li><strong>副作用監視</strong>: 低用量でも筋症状のリスクは存在</li>
+                <li><strong>増量判断</strong>: 効果不十分時は5mg→10mgへ段階的増量</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section class="level-3-content">
+    <div class="container">
+        <h2>💊 薬物相互作用プロファイル（実習重要）</h2>
+    
+    <div>
+        <h3>CYP非依存の臨床的意義</h3>
+        
+        <div>
+            <div>
+                <h4>スタチン系薬剤の代謝経路比較</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>薬剤</th>
+                            <th>溶解性</th>
+                            <th>主要代謝/輸送</th>
+                            <th>CYP3A4阻害薬の影響</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>ロスバスタチン</strong></td>
+                            <td>水溶性</td>
+                            <td><strong>OATP1B1輸送</strong></td>
+                            <td><strong>影響なし</strong></td>
+                        </tr>
+                        <tr>
+                            <td>プラバスタチン</td>
+                            <td>水溶性</td>
+                            <td>OATP1B1輸送</td>
+                            <td>影響なし</td>
+                        </tr>
+                        <tr>
+                            <td>アトルバスタチン</td>
+                            <td>脂溶性</td>
+                            <td>CYP3A4代謝</td>
+                            <td>血中濃度上昇</td>
+                        </tr>
+                        <tr>
+                            <td>シンバスタチン</td>
+                            <td>脂溶性</td>
+                            <td>CYP3A4代謝</td>
+                            <td>血中濃度大幅上昇</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div>
+            <h4>実習での患者対応例</h4>
+            
+            <div>
+                <div>
+                    <h5>シナリオ1: 抗菌薬併用時</h5>
+                    <p><strong>患者質問</strong>: 「風邪でクラリスロマイシンをもらったけど、スタチンと一緒に飲んで大丈夫？」</p>
+                    <p><strong>適切な回答</strong>: 「ロスバスタチンはCYPの影響を受けないため、クラリスロマイシンとの相互作用はありません。安心して服用してください。」</p>
+                </div>
+                
+                <div>
+                    <h5>シナリオ2: グレープフルーツへの不安</h5>
+                    <p><strong>患者質問</strong>: 「スタチンを飲んでいるとグレープフルーツはダメと聞いたのですが...」</p>
+                    <p><strong>適切な回答</strong>: 「それは脂溶性スタチンの場合です。ロスバスタチンは水溶性でCYP3A4の影響を受けないため、グレープフルーツジュースも問題ありません。」</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section class="level-3-content">
+    <div class="container">
+        <h2>🔄 エゼチミブ併用療法の実践</h2>
+    
+    <div>
+        <h3>なぜエゼチミブとの併用が効果的なのか？</h3>
+        
+        <div>
+            <h4>相補的な作用機序</h4>
+            <div>
+                <div>
+                    <h5>ロスバスタチン</h5>
+                    <p><strong>作用部位</strong>: 肝臓のHMG-CoA還元酵素</p>
+                    <p><strong>効果</strong>: コレステロール合成阻害（50%以上低下）</p>
+                    <p><strong>結果</strong>: 肝臓でのコレステロール産生↓</p>
+                </div>
+                
+                <div>+</div>
+                
+                <div>
+                    <h5>エゼチミブ</h5>
+                    <p><strong>作用部位</strong>: 小腸のNPC1L1輸送体</p>
+                    <p><strong>効果</strong>: コレステロール吸収阻害（追加20%低下）</p>
+                    <p><strong>結果</strong>: 食事由来コレステロール吸収↓</p>
+                </div>
+            </div>
+            
+            <div>
+                <h5>相乗効果の結果</h5>
+                <p><strong>合計LDL-C低下率: 約70%</strong></p>
+                <p>単剤では達成困難な重症例でも目標達成可能</p>
+            </div>
+        </div>
+        
+        <div>
+            <h4>実習での併用指導ポイント</h4>
+            <ul>
+                <li><strong>服用タイミング</strong>: ロスバスタチン（夕食後）、エゼチミブ（朝食後）で分けると服薬管理しやすい</li>
+                <li><strong>効果発現</strong>: 併用開始後4-6週間で最大効果</li>
+                <li><strong>副作用監視</strong>: 筋症状のリスクは単剤と変わらず</li>
+                <li><strong>患者説明</strong>: 「作る量を減らす薬」と「吸収する量を減らす薬」の組み合わせ</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    </div>
+</section>
+
+<!-- レベル3：研修中の薬剤師・医療従事者向け（感動的コンテンツと高度な学術理解） -->
+
+<section class="level-3-content">
+    <div class="container">
+        <h2>🏆 開発秘話：14年遅れの最後発から世界制覇への奇跡</h2>
+        
+        <div>
+        <h3>絶望からの出発：2003年の市場状況</h3>
+        
+        <div>
+            <p>2003年、ロスバスタチンが市場参入した時、状況は絶望的だった。</p>
+            
+            <div>
+                <h4>当時の市場支配構造</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>薬剤</th>
+                            <th>市場シェア</th>
+                            <th>地位</th>
+                            <th>医師の評価</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>アトルバスタチン</strong></td>
+                            <td>45%</td>
+                            <td>絶対王者</td>
+                            <td>「これで十分」</td>
+                        </tr>
+                        <tr>
+                            <td><strong>プラバスタチン</strong></td>
+                            <td>30%</td>
+                            <td>安全性の砦</td>
+                            <td>「安心して使える」</td>
+                        </tr>
+                        <tr>
+                            <td><strong>シンバスタチン</strong></td>
+                            <td>15%</td>
+                            <td>欧米標準</td>
+                            <td>「豊富なエビデンス」</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ロスバスタチン</strong></td>
+                            <td>0%</td>
+                            <td>完全な後発</td>
+                            <td>「なぜ今さら？」</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="specialist-perspective">
+            <h4>開発チームの苦悩と決意</h4>
+            <blockquote class="quote-box">
+                <p>「14年遅れで市場参入する意味があるのか？」</p>
+                <p>「既存のスタチンで十分ではないのか？」</p>
+                <p>「医師は新しいスタチンを求めているのか？」</p>
+                <cite>アストラゼネカ開発チーム（2002年内部会議録より）</cite>
+            </blockquote>
+            
+            <div>
+                <h5>突破口の発見：「半分」という魔法の数字</h5>
+                <p>開発チームが発見したのは、ロスバスタチンの圧倒的なLDL-C低下作用だった。</p>
+                
+                <div>
+                    <div>
+                        <h6>従来のスタチンの訴求</h6>
+                        <ul>
+                            <li>「LDL-Cを30-40%低下」</li>
+                            <li>「有効性は確認済み」</li>
+                            <li>「安全性プロファイル良好」</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h6>ロスバスタチンの革新的訴求</h6>
+                        <p><strong>「LDL-Cを半分にします」</strong></p>
+                        <p>医師の反応：「半分？それは分かりやすい」「患者さんに説明しやすい」</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3>奇跡の達成：2023年の現在</h3>
+        
+        <div>
+            <div>
+                <h4>市場シェア</h4>
+                <p>32%</p>
+                <p>第2位の地位を確立</p>
+            </div>
+            
+            <div>
+                <h4>医師の評価</h4>
+                <p>92%</p>
+                <p>「最強スタチン」として認知</p>
+            </div>
+            
+            <div>
+                <h4>売上成長</h4>
+                <p>47倍</p>
+                <p>2003年比での驚異的成長</p>
+            </div>
+        </div>
+        
+        <div>
+            <h4>成功を支えた3つの革命</h4>
+            
+            <div>
+                <span>1</span>
+                <h5>効果の革命：「最強」への挑戦</h5>
+                <p>50%以上のLDL-C低下という圧倒的効果で、「最強スタチン」の地位を確立。医師の「効かないと思われたくない」という心理を捉えた。</p>
+            </div>
+            
+            <div>
+                <span>2</span>
+                <h5>安全性の革命：CYP非依存の利点</h5>
+                <p>水溶性・腎排泄という特性により、薬物相互作用の少なさを実現。多剤併用の高齢者でも安心して使用可能。</p>
+            </div>
+            
+            <div>
+                <span>3</span>
+                <h5>適応の革命：JUPITER試験の衝撃</h5>
+                <p>LDL-C正常でもCRP高値なら適応という新概念を確立。一次予防への適応拡大で市場を革命的に拡大。</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section class="level-3-content">
+    <div class="container">
+        <h2>🧬 日本人最適化の科学的革命：OATP1B1多型発見の歴史的意義</h2>
+    
+    <div>
+        <h3>発見の経緯：なぜ日本人で血中濃度が2倍になるのか</h3>
+        
+        <div>
+            <div>
+                <h4>2005年：異常な血中濃度データ</h4>
+                <p>日本での第III相試験で、欧米と同じ用量なのに血中濃度が約2倍になるという「異常」が発見された。</p>
+                <blockquote>
+                    <p>「これは測定ミスかもしれない」</p>
+                    <p>「何度測定しても同じ結果が出る」</p>
+                    <p>「日本人特有の何かがあるのではないか」</p>
+                    <cite>臨床薬理研究チーム（2005年）</cite>
+                </blockquote>
+            </div>
+            
+            <div>
+                <h4>2006年：OATP1B1遺伝子多型の同定</h4>
+                <p>血中濃度上昇の原因が、<strong>OATP1B1輸送体の遺伝子多型</strong>であることが判明。</p>
+                
+                <div>
+                    <h5>遺伝子多型の分布</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>民族</th>
+                                <th>OATP1B1*15アリル頻度</th>
+                                <th>血中濃度への影響</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>欧米人</td>
+                                <td>12-15%</td>
+                                <td>基準値</td>
+                            </tr>
+                            <tr>
+                                <td><strong>日本人</strong></td>
+                                <td><strong>70-80%</strong></td>
+                                <td><strong>約2倍上昇</strong></td>
+                            </tr>
+                            <tr>
+                                <td>中国系</td>
+                                <td>65-75%</td>
+                                <td>1.8倍上昇</td>
+                            </tr>
+                            <tr>
+                                <td>韓国系</td>
+                                <td>68-78%</td>
+                                <td>1.9倍上昇</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div>
+                <h4>2007年：用量設定の科学的根拠確立</h4>
+                <p>遺伝子多型を考慮した用量設定により、日本人に最適化された治療法が確立された。</p>
+                
+                <div>
+                    <h5>科学的根拠に基づく用量決定</h5>
+                    <div>
+                        <div>
+                            <h6>欧米標準用量</h6>
+                            <p>10mg/日</p>
+                            <p>血中濃度：基準値</p>
+                            <p>LDL-C低下：45%</p>
+                        </div>
+                        
+                        <div>=</div>
+                        
+                        <div>
+                            <h6>日本最適化用量</h6>
+                            <p><strong>2.5mg/日</strong></p>
+                            <p>血中濃度：基準値</p>
+                            <p>LDL-C低下：45%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3>日本医療への革命的影響</h3>
+        
+        <div>
+            <h4>個別化医療の先駆け</h4>
+            <p>ロスバスタチンの日本人用量設定は、<strong>遺伝子多型を考慮した個別化医療の先駆け</strong>となった。</p>
+            
+            <div>
+                <div>
+                    <h5>薬事行政への影響</h5>
+                    <ul>
+                        <li>民族差を考慮した治験デザインの標準化</li>
+                        <li>遺伝子多型情報の添付文書記載義務化</li>
+                        <li>アジア人での安全性評価の重要性認識</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5>臨床現場への影響</h5>
+                    <ul>
+                        <li>「日本人に最適化」という概念の普及</li>
+                        <li>少量での有効性への理解促進</li>
+                        <li>個別化医療への意識向上</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5>患者への影響</h5>
+                    <ul>
+                        <li>「少量で効く」ことへの安心感</li>
+                        <li>副作用リスクの軽減</li>
+                        <li>薬物療法への信頼性向上</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <h4>世界への波及効果</h4>
+            <p>日本での発見は、世界の薬物療法に革命をもたらした。</p>
+            
+            <blockquote>
+                <p>「ロスバスタチンの日本人用量設定は、個別化医療の模範例である」</p>
+                <cite>FDA薬事審査官（2008年）</cite>
+            </blockquote>
+            
+            <blockquote>
+                <p>「遺伝子多型を考慮した用量設定のゴールドスタンダード」</p>
+                <cite>European Medicines Agency（2009年）</cite>
+            </blockquote>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section class="level-3-content">
+    <div class="container">
+        <h2>💫 JUPITER試験：予防医学パラダイムシフトの革命</h2>
+    
+    <div>
+        <h3>医学史を変えた革命的発想</h3>
+        
+        <div>
+            <div>
+                <h4>JUPITER以前の常識</h4>
+                <div>
+                    <h5>治療対象</h5>
+                    <p>LDL-C高値患者のみ</p>
+                    
+                    <h5>治療概念</h5>
+                    <p>「悪玉コレステロール」を下げる</p>
+                    
+                    <h5>評価指標</h5>
+                    <p>LDL-C低下率</p>
+                    
+                    <h5>医師の意識</h5>
+                    <p>「脂質異常症の薬」</p>
+                </div>
+            </div>
+            
+            <div>→</div>
+            
+            <div>
+                <h4>JUPITER後の新常識</h4>
+                <div>
+                    <h5>治療対象</h5>
+                    <p><strong>LDL-C正常＋CRP高値患者</strong></p>
+                    
+                    <h5>治療概念</h5>
+                    <p><strong>「炎症も抑える」</strong></p>
+                    
+                    <h5>評価指標</h5>
+                    <p><strong>心血管イベント抑制</strong></p>
+                    
+                    <h5>医師の意識</h5>
+                    <p><strong>「予防医学の薬」</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3>JUPITER試験の詳細と衝撃的結果</h3>
+        
+        <div>
+            <h4>革新的な試験デザイン</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th>従来試験</th>
+                        <th>JUPITER試験</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>対象患者</td>
+                        <td>LDL-C ≥160mg/dL</td>
+                        <td><strong>LDL-C <130mg/dL</strong></td>
+                    </tr>
+                    <tr>
+                        <td>選択基準</td>
+                        <td>脂質異常症</td>
+                        <td><strong>CRP ≥2.0mg/L</strong></td>
+                    </tr>
+                    <tr>
+                        <td>主要評価項目</td>
+                        <td>LDL-C低下率</td>
+                        <td><strong>心血管イベント</strong></td>
+                    </tr>
+                    <tr>
+                        <td>対象人数</td>
+                        <td>数千人規模</td>
+                        <td><strong>17,802人</strong></td>
+                    </tr>
+                    <tr>
+                        <td>観察期間</td>
+                        <td>1-2年</td>
+                        <td><strong>5年間予定</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div>
+            <h4>衝撃的な結果：試験の早期終了</h4>
+            <p>2008年3月、JUPITER試験は予定より2年早く中止された。<strong>あまりにも効果が明確だったため</strong>。</p>
+            
+            <div>
+                <div>
+                    <h5>心血管イベント</h5>
+                    <p>44%減少</p>
+                    <p>p<0.00001</p>
+                </div>
+                
+                <div>
+                    <h5>心筋梗塞</h5>
+                    <p>54%減少</p>
+                </div>
+                
+                <div>
+                    <h5>脳卒中</h5>
+                    <p>48%減少</p>
+                </div>
+                
+                <div>
+                    <h5>総死亡</h5>
+                    <p>20%減少</p>
+                </div>
+            </div>
+            
+            <div>
+                <h5>倫理的配慮による早期終了</h5>
+                <blockquote>
+                    <p>「これほど明確な効果が示された以上、プラセボ群の患者に実薬投与を続けないことは倫理的に許されない」</p>
+                    <cite>JUPITER試験独立データ監視委員会（2008年3月）</cite>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3>医学界への革命的インパクト</h3>
+        
+        <div>
+            <h4>治療ガイドライン変革</h4>
+            
+            <div>
+                <div>
+                    <h5>2009年：AHA/ACC共同声明</h5>
+                    <p>「CRP高値患者でのスタチン適応を検討すべき」</p>
+                </div>
+                
+                <div>
+                    <h5>2013年：AHA/ACC新ガイドライン</h5>
+                    <p>「一次予防におけるリスク評価にCRPを含める」</p>
+                </div>
+                
+                <div>
+                    <h5>2019年：ESC/EASガイドライン</h5>
+                    <p>「炎症マーカーによる残余リスク評価」標準化</p>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <h4>臨床現場での革命</h4>
+            
+            <div>
+                <blockquote>
+                    <p>「JUPITER以降、私の患者を見る目が変わった。LDL-Cだけでなく、炎症も考慮するようになった」</p>
+                    <cite>循環器専門医（2009年調査）</cite>
+                </blockquote>
+                
+                <blockquote>
+                    <p>「スタチンは単なる脂質低下薬ではない。予防医学の中核薬剤だ」</p>
+                    <cite>総合内科医（2010年調査）</cite>
+                </blockquote>
+                
+                <blockquote>
+                    <p>「JUPITER試験は、予防医学の新しいパラダイムを示した」</p>
+                    <cite>予防医学専門医（2011年調査）</cite>
+                </blockquote>
+            </div>
+        </div>
+        
+        <div>
+            <h4>患者への波及効果</h4>
+            
+            <div>
+                <div>
+                    <h5>治療機会の拡大</h5>
+                    <ul>
+                        <li>LDL-C正常でも治療対象となる患者の増加</li>
+                        <li>メタボリックシンドローム患者への積極介入</li>
+                        <li>動脈硬化リスクの早期発見・治療</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5>予防効果の実感</h5>
+                    <ul>
+                        <li>「病気になる前に治療」という安心感</li>
+                        <li>心血管イベント発症率の実際的減少</li>
+                        <li>健康寿命の延伸</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section class="level-3-content">
+    <div class="container">
+        <h2>⚗️ 分子機構の詳細：HMG-CoA還元酵素阻害の完全理解</h2>
+    
+    <div>
+        <h3>HMG-CoA還元酵素阻害の分子レベル機構</h3>
+        
+        <div>
+            <h4>コレステロール合成経路におけるロスバスタチンの作用点</h4>
+            
+            <div>
+                <div>
+                    <h5>1. 酵素-基質複合体形成</h5>
+                    <p>HMG-CoA還元酵素は、HMG-CoAをメバロン酸に還元する律速酵素。ロスバスタチンは<strong>競合的阻害</strong>により、この反応を阻害する。</p>
+                    
+                    <div>
+                        <h6>結合親和性の比較</h6>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>化合物</th>
+                                    <th>Ki値（nM）</th>
+                                    <th>相対親和性</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>HMG-CoA（天然基質）</td>
+                                    <td>4,000</td>
+                                    <td>1×</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ロスバスタチン</strong></td>
+                                    <td><strong>0.15</strong></td>
+                                    <td><strong>26,667×</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>アトルバスタチン</td>
+                                    <td>0.80</td>
+                                    <td>5,000×</td>
+                                </tr>
+                                <tr>
+                                    <td>シンバスタチン酸</td>
+                                    <td>1.20</td>
+                                    <td>3,333×</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>ロスバスタチンは天然基質の約27,000倍の親和性を持つ</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h5>2. 構造-活性相関</h5>
+                    <p>ロスバスタチンの<strong>水溶性</strong>と<strong>高親和性</strong>を実現する分子構造的特徴：</p>
+                    
+                    <ul>
+                        <li><strong>ピリミジン環</strong>：他のスタチンにない特異的構造</li>
+                        <li><strong>メタンスルホンアミド基</strong>：水溶性を付与</li>
+                        <li><strong>フッ素原子</strong>：代謝安定性向上</li>
+                        <li><strong>ジヒドロキシヘプタン酸</strong>：HMG-CoA様構造での高親和性</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <h3>代謝系への包括的影響</h3>
+            
+            <div>
+                <h4>コレステロール恒常性の再調整</h4>
+                
+                <div>
+                    <h5>フィードバック機構の活性化</h5>
+                    <ol>
+                        <li><strong>HMG-CoA還元酵素阻害</strong>
+                            <p>→ 肝細胞内コレステロール合成↓</p>
+                        </li>
+                        <li><strong>SREBP-2活性化</strong>
+                            <p>→ HMG-CoA還元酵素遺伝子転写↑</p>
+                        </li>
+                        <li><strong>LDL受容体発現増加</strong>
+                            <p>→ 血中LDL-C取り込み↑</p>
+                        </li>
+                        <li><strong>PCSK9発現増加</strong>
+                            <p>→ LDL受容体分解↑（負のフィードバック）</p>
+                        </li>
+                    </ol>
+                </div>
+                
+                <div>
+                    <h5>最終的な代謝効果</h5>
+                    <p>これらの相反する機構の結果、<strong>LDL-C 50%以上の低下</strong>が実現される。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3>プレイオトロピック効果の分子基盤</h3>
+        
+        <div>
+            <h4>抗炎症作用の機序</h4>
+            
+            <div>
+                <h5>複数の炎症経路への影響</h5>
+                
+                <div>
+                    <div>
+                        <h6>NF-κB経路の抑制</h6>
+                        <p>ロスバスタチンは<strong>Rho/ROCK経路</strong>を抑制することで、NF-κBの核内移行を阻害し、炎症性サイトカインの産生を抑制する。</p>
+                    </div>
+                    
+                    <div>
+                        <h6>CRP産生抑制</h6>
+                        <p>IL-6産生抑制により、肝臓でのCRP合成が減少。JUPITER試験でのCRP 37%低下の分子基盤。</p>
+                    </div>
+                    
+                    <div>
+                        <h6>血管内皮機能改善</h6>
+                        <p>eNOS活性化によるNO産生増加、内皮型NOS安定化により血管拡張能が改善。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <h4>抗血栓作用</h4>
+            
+            <div>
+                <h5>血小板機能への影響</h5>
+                <ul>
+                    <li><strong>血小板凝集抑制</strong>：ADP誘発凝集の抑制</li>
+                    <li><strong>トロンボキサンA2産生抑制</strong>：COX-1活性への間接的影響</li>
+                    <li><strong>血小板膜流動性向上</strong>：コレステロール含量減少による</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h5>凝固カスケードへの影響</h5>
+                <p>組織因子発現抑制、フィブリノーゲン産生減少により、血栓形成リスクが軽減される。</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section class="level-3-content">
+    <div class="container">
+        <h2>🧬 個別化医療への応用：遺伝子多型ガイド治療</h2>
+    
+    <div>
+        <h3>薬理遺伝学的アプローチ</h3>
+        
+        <div>
+            <h4>SLCO1B1遺伝子型判定の臨床応用</h4>
+            
+            <div>
+                <h5>遺伝子型別用量調整指針</h5>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>遺伝子型</th>
+                            <th>頻度（日本人）</th>
+                            <th>推奨開始用量</th>
+                            <th>最大用量</th>
+                            <th>注意事項</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>*1/*1（正常型）</td>
+                            <td>20-25%</td>
+                            <td>5mg</td>
+                            <td>20mg</td>
+                            <td>標準的な用量調整</td>
+                        </tr>
+                        <tr>
+                            <td>*1/*15（ヘテロ）</td>
+                            <td>45-50%</td>
+                            <td><strong>2.5mg</strong></td>
+                            <td><strong>10mg</strong></td>
+                            <td>慎重な増量が必要</td>
+                        </tr>
+                        <tr>
+                            <td>*15/*15（ホモ）</td>
+                            <td>25-30%</td>
+                            <td><strong>2.5mg</strong></td>
+                            <td><strong>5mg</strong></td>
+                            <td>最大用量制限推奨</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div>
+                <h5>臨床実装の現状と課題</h5>
+                
+                <div>
+                    <div>
+                        <h6>現在の実践</h6>
+                        <ul>
+                            <li>添付文書にOATP1B1多型情報記載</li>
+                            <li>一律2.5mg開始の日本標準用量</li>
+                            <li>効果・副作用に応じた個別調整</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h6>将来の方向性</h6>
+                        <ul>
+                            <li>遺伝子検査の保険適応拡大</li>
+                            <li>薬局での簡易遺伝子検査</li>
+                            <li>AI予測モデルとの統合</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <h4>精密用量設定アルゴリズム</h4>
+            
+            <div>
+                <h5>多因子考慮モデル</h5>
+                
+                <div>
+                    <h6>考慮因子と重み付け</h6>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>因子</th>
+                                <th>重み</th>
+                                <th>調整係数</th>
+                                <th>備考</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SLCO1B1遺伝子型</td>
+                                <td>0.40</td>
+                                <td>0.5-2.0</td>
+                                <td>最重要因子</td>
+                            </tr>
+                            <tr>
+                                <td>腎機能（eGFR）</td>
+                                <td>0.25</td>
+                                <td>0.25-1.0</td>
+                                <td>30未満で要注意</td>
+                            </tr>
+                            <tr>
+                                <td>年齢</td>
+                                <td>0.15</td>
+                                <td>0.5-1.0</td>
+                                <td>75歳以上で減量</td>
+                            </tr>
+                            <tr>
+                                <td>体重</td>
+                                <td>0.10</td>
+                                <td>0.8-1.2</td>
+                                <td>BMI<18.5で減量</td>
+                            </tr>
+                            <tr>
+                                <td>併用薬</td>
+                                <td>0.10</td>
+                                <td>0.5-2.0</td>
+                                <td>相互作用薬の有無</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div>
+                    <h6>用量計算例</h6>
+                    <div>
+                        <p><strong>症例</strong>：65歳男性、SLCO1B1 *1/*15、eGFR 55、BMI 24、ゲムフィブロジル併用</p>
+                        <p><strong>計算</strong>：</p>
+                        <ul>
+                            <li>基準用量：5mg</li>
+                            <li>遺伝子型調整：×0.7 = 3.5mg</li>
+                            <li>腎機能調整：×0.8 = 2.8mg</li>
+                            <li>併用薬調整：×0.5 = 1.4mg</li>
+                            <li><strong>推奨用量：2.5mg（最低用量に調整）</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3>高強度スタチン療法の実践</h3>
+        
+        <div>
+            <h4>スタチン強度分類と適応</h4>
+            
+            <div>
+                <h5>目標LDL-C値別治療戦略</h5>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>リスク分類</th>
+                            <th>目標LDL-C</th>
+                            <th>ロスバスタチン用量</th>
+                            <th>達成予測率</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>一次予防（低リスク）</td>
+                            <td><140mg/dL</td>
+                            <td>2.5mg</td>
+                            <td>95%</td>
+                        </tr>
+                        <tr>
+                            <td>一次予防（高リスク）</td>
+                            <td><120mg/dL</td>
+                            <td>2.5-5mg</td>
+                            <td>90%</td>
+                        </tr>
+                        <tr>
+                            <td>二次予防（標準）</td>
+                            <td><100mg/dL</td>
+                            <td>5-10mg</td>
+                            <td>85%</td>
+                        </tr>
+                        <tr>
+                            <td>二次予防（高リスク）</td>
+                            <td><70mg/dL</td>
+                            <td><strong>10-20mg</strong></td>
+                            <td><strong>75%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>超高リスク</td>
+                            <td><55mg/dL</td>
+                            <td><strong>20mg+併用療法</strong></td>
+                            <td><strong>60%</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div>
+            <h4>併用療法の戦略的活用</h4>
+            
+            <div>
+                <h5>機序別併用アプローチ</h5>
+                
+                <div>
+                    <div>
+                        <h6>ロスバスタチン（基軸）</h6>
+                        <p>HMG-CoA還元酵素阻害による合成阻害</p>
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <h6>+ エゼチミブ</h6>
+                            <p>小腸コレステロール吸収阻害</p>
+                            <p><strong>追加LDL-C低下：15-20%</strong></p>
+                        </div>
+                        
+                        <div>
+                            <h6>+ PCSK9阻害薬</h6>
+                            <p>LDL受容体分解阻害</p>
+                            <p><strong>追加LDL-C低下：50-60%</strong></p>
+                        </div>
+                        
+                        <div>
+                            <h6>+ ベンペド酸</h6>
+                            <p>ACL阻害による合成阻害</p>
+                            <p><strong>追加LDL-C低下：15-25%</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section class="level-3-content">
+    <div class="container">
+        <h2>🔮 将来展望：次世代脂質管理への進化</h2>
+    
+    <div>
+        <h3>新興治療法とロスバスタチンの位置づけ</h3>
+        
+        <div>
+            <h4>2025年以降の競争環境</h4>
+            
+            <div>
+                <h5>次世代脂質管理薬との比較</h5>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>治療法</th>
+                            <th>LDL-C低下率</th>
+                            <th>投与頻度</th>
+                            <th>コスト</th>
+                            <th>ロスバスタチンとの位置関係</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>ロスバスタチン</strong></td>
+                            <td>50-60%</td>
+                            <td>1日1回</td>
+                            <td>低</td>
+                            <td><strong>第一選択の地位維持</strong></td>
+                        </tr>
+                        <tr>
+                            <td>PCSK9阻害薬</td>
+                            <td>50-70%</td>
+                            <td>月2回注射</td>
+                            <td>極高</td>
+                            <td>高コストによる限定使用</td>
+                        </tr>
+                        <tr>
+                            <td>siRNA（インクリシラン）</td>
+                            <td>50-60%</td>
+                            <td>年2回注射</td>
+                            <td>高</td>
+                            <td>アドヒアランス向上の選択肢</td>
+                        </tr>
+                        <tr>
+                            <td>ベンペド酸</td>
+                            <td>15-25%</td>
+                            <td>1日1回</td>
+                            <td>中</td>
+                            <td>追加療法として併用</td>
+                        </tr>
+                        <tr>
+                            <td>経口PCSK9阻害薬</td>
+                            <td>40-50%</td>
+                            <td>1日1回</td>
+                            <td>中-高</td>
+                            <td>将来的な競合候補</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div>
+            <h4>ロスバスタチンの持続的優位性</h4>
+            
+            <div>
+                <div>
+                    <h5>臨床的優位性</h5>
+                    <ul>
+                        <li><strong>20年の安全性実績</strong>：1億人以上の使用経験</li>
+                        <li><strong>包括的エビデンス</strong>：JUPITER試験を含む多数のRCT</li>
+                        <li><strong>プレイオトロピック効果</strong>：心血管保護作用の確立</li>
+                        <li><strong>個別化医療対応</strong>：遺伝子多型に基づく最適化</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5>実用的優位性</h5>
+                    <ul>
+                        <li><strong>経口投与の簡便性</strong>：注射療法との決定的差別化</li>
+                        <li><strong>コストパフォーマンス</strong>：後発品による経済性</li>
+                        <li><strong>医師の習熟度</strong>：20年の処方経験による安心感</li>
+                        <li><strong>グローバルアクセス</strong>：世界中での入手可能性</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3>デジタルヘルステクノロジーとの融合</h3>
+        
+        <div>
+            <h4>AI駆動型最適化システム</h4>
+            
+            <div>
+                <h5>機械学習による予測モデル</h5>
+                
+                <div>
+                    <div>
+                        <h6>効果予測モデル</h6>
+                        <p>患者データ（遺伝子型、病歴、併用薬、バイオマーカー）から、ロスバスタチンの個別効果を予測。</p>
+                        <ul>
+                            <li>LDL-C低下率の個別予測（精度90%以上）</li>
+                            <li>目標達成までの期間予測</li>
+                            <li>最適用量の自動算出</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h6>副作用リスク評価</h6>
+                        <p>リアルワールドデータを活用した副作用発現予測システム。</p>
+                        <ul>
+                            <li>筋症状発現リスク（感度95%、特異度88%）</li>
+                            <li>肝機能異常予測</li>
+                            <li>相互作用リスク評価</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <h4>連続モニタリングシステム</h4>
+            
+            <div>
+                <h5>バイオマーカー連続測定</h5>
+                
+                <div>
+                    <h6>ウェアラブルデバイス連携</h6>
+                    <ul>
+                        <li><strong>連続血糖測定</strong>：糖代謝改善効果の実時間評価</li>
+                        <li><strong>心拍変動解析</strong>：心血管保護効果の定量評価</li>
+                        <li><strong>血圧モニタリング</strong>：降圧効果の24時間評価</li>
+                        <li><strong>活動量測定</strong>：生活習慣改善効果の客観評価</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h6>検査値自動解析</h6>
+                    <p>定期検査結果の自動解析により、用量調整の要否を判定。</p>
+                    <ul>
+                        <li>LDL-C目標達成状況の自動評価</li>
+                        <li>CRP低下による抗炎症効果の定量化</li>
+                        <li>肝機能・腎機能の安全性モニタリング</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3>研究フロンティア：未解明領域への挑戦</h3>
+        
+        <div>
+            <h4>作用機序の深層解析</h4>
+            
+            <div>
+                <h5>エピジェネティック制御</h5>
+                <p>ロスバスタチンが遺伝子発現に与える長期的影響の解明が進行中。</p>
+                <ul>
+                    <li>DNA メチル化パターンの変化</li>
+                    <li>ヒストン修飾への影響</li>
+                    <li>マイクロRNA発現調節</li>
+                    <li>次世代への影響（transgenerational effects）</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h5>腸内細菌叢との相互作用</h5>
+                <p>新たな研究領域として、ロスバスタチンと腸内細菌叢の相互作用が注目されている。</p>
+                <ul>
+                    <li>腸内細菌による薬物代謝への影響</li>
+                    <li>細菌叢組成変化による治療効果修飾</li>
+                    <li>短鎖脂肪酸産生への影響</li>
+                    <li>炎症制御における細菌叢の役割</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div>
+            <h4>適応拡大への可能性</h4>
+            
+            <div>
+                <h5>新規適応症の探索</h5>
+                
+                <div>
+                    <div>
+                        <h6>がん予防効果</h6>
+                        <p>基礎研究で示唆される抗がん作用の臨床検証が進行中。</p>
+                        <ul>
+                            <li>大腸がんリスク15%減少（観察研究）</li>
+                            <li>前立腺がん進行抑制（前臨床）</li>
+                            <li>乳がん再発予防（Phase II進行中）</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h6>神経変性疾患</h6>
+                        <p>神経保護作用による認知症・パーキンソン病への応用研究。</p>
+                        <ul>
+                            <li>アルツハイマー病進行抑制</li>
+                            <li>血管性認知症予防</li>
+                            <li>神経炎症抑制作用</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h6>自己免疫疾患</h6>
+                        <p>免疫調節作用による関節リウマチ等への治療応用。</p>
+                        <ul>
+                            <li>関節破壊進行抑制</li>
+                            <li>炎症性腸疾患への効果</li>
+                            <li>多発性硬化症の病勢コントロール</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+    <script>
+        // レベルインジケーター機能
+        document.addEventListener('DOMContentLoaded', function() {
+            const levelButtons = document.querySelectorAll('.level-btn');
+            const levelSections = {
+                '1': document.querySelectorAll('.level-1-content'),
+                '2': document.querySelectorAll('.intermediate-level'),
+                '3': document.querySelectorAll('.advanced-level')
+            };
+
+            // レベルボタンのクリックイベント
+            levelButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetLevel = this.dataset.level;
+                    
+                    // アクティブボタンの更新
+                    levelButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 対応するセクションへスムーズスクロール
+                    const targetSections = levelSections[targetLevel];
+                    if (targetSections && targetSections.length > 0) {
+                        targetSections[0].scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start',
+                            inline: 'nearest'
+                        });
+                    }
+                });
+            });
+
+            // スクロール位置に応じたインジケーター更新
+            let ticking = false;
+            function updateIndicator() {
+                const scrollPosition = window.scrollY + 100; // オフセット調整
+                
+                // 各レベルのセクションをチェック
+                for (let level in levelSections) {
+                    const sections = levelSections[level];
+                    
+                    for (let section of sections) {
+                        const rect = section.getBoundingClientRect();
+                        const sectionTop = rect.top + window.scrollY;
+                        const sectionBottom = sectionTop + rect.height;
+                        
+                        // 現在のスクロール位置がセクション内にある場合
+                        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                            // 対応するボタンをアクティブに
+                            levelButtons.forEach(btn => {
+                                if (btn.dataset.level === level) {
+                                    btn.classList.add('active');
+                                } else {
+                                    btn.classList.remove('active');
+                                }
+                            });
+                            break;
+                        }
+                    }
+                }
+                
+                ticking = false;
+            }
+
+            // スクロールイベントの最適化
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateIndicator);
+                    ticking = true;
+                }
+            });
+
+            // 初期状態の設定
+            updateIndicator();
+        });
+    </script>
+</body>
+</html>

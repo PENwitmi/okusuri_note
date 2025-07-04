@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../assets/css/drug-page-v2.css">
     <link rel="stylesheet" href="../assets/css/responsive-unified.css">
     <link rel="stylesheet" href="../assets/css/drug-page-v2.css">
+    <link rel="stylesheet" href="../assets/css/level-selector.css">
 
 </head>
 <body class="drug-detail" data-category="cardiovascular">
@@ -1576,80 +1577,6 @@ Rp) クレストール錠 5mg
     </div>
 </section>
 
-    <script>
-        // レベルインジケーター機能
-        document.addEventListener('DOMContentLoaded', function() {
-            const levelButtons = document.querySelectorAll('.level-btn');
-            const levelSections = {
-                '1': document.querySelectorAll('.level-1-content'),
-                '2': document.querySelectorAll('.intermediate-level'),
-                '3': document.querySelectorAll('.advanced-level')
-            };
-
-            // レベルボタンのクリックイベント
-            levelButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const targetLevel = this.dataset.level;
-                    
-                    // アクティブボタンの更新
-                    levelButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // 対応するセクションへスムーズスクロール
-                    const targetSections = levelSections[targetLevel];
-                    if (targetSections && targetSections.length > 0) {
-                        targetSections[0].scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start',
-                            inline: 'nearest'
-                        });
-                    }
-                });
-            });
-
-            // スクロール位置に応じたインジケーター更新
-            let ticking = false;
-            function updateIndicator() {
-                const scrollPosition = window.scrollY + 100; // オフセット調整
-                
-                // 各レベルのセクションをチェック
-                for (let level in levelSections) {
-                    const sections = levelSections[level];
-                    
-                    for (let section of sections) {
-                        const rect = section.getBoundingClientRect();
-                        const sectionTop = rect.top + window.scrollY;
-                        const sectionBottom = sectionTop + rect.height;
-                        
-                        // 現在のスクロール位置がセクション内にある場合
-                        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                            // 対応するボタンをアクティブに
-                            levelButtons.forEach(btn => {
-                                if (btn.dataset.level === level) {
-                                    btn.classList.add('active');
-                                } else {
-                                    btn.classList.remove('active');
-                                }
-                            });
-                            break;
-                        }
-                    }
-                }
-                
-                ticking = false;
-            }
-
-            // スクロールイベントの最適化
-            window.addEventListener('scroll', function() {
-                if (!ticking) {
-                    window.requestAnimationFrame(updateIndicator);
-                    ticking = true;
-                }
-            });
-
-            // 初期状態の設定
-            updateIndicator();
-        });
-    </script>
+    <script src="../assets/js/level-selector.js"></script>
 </body>
 </html>

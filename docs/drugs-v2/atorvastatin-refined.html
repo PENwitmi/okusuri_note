@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../assets/css/drug-page-v2.css">
     <link rel="stylesheet" href="../assets/css/responsive-unified.css">
     <link rel="stylesheet" href="../assets/css/drug-page-v2.css">
+    <link rel="stylesheet" href="../assets/css/level-selector.css">
 </head>
 <body class="drug-detail" data-category="cardiovascular">
     <!-- レベルインジケーター -->
@@ -540,49 +541,6 @@
         </div>
     </footer>
 
-    <script>
-            </div>
-    </section>
-
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-        // レベル切り替え機能
-        const levelBtns = document.querySelectorAll('[data-level]');
-        const level1Contents = document.querySelectorAll('.level-1-content');
-        const level2Contents = document.querySelectorAll('.level-2-content');
-        const level3Contents = document.querySelectorAll('.level-3-content');
-        
-        function showLevel(level) {
-            // すべて非表示
-            level1Contents.forEach(el => el.style.display = 'none');
-            level2Contents.forEach(el => el.style.display = 'none');
-            level3Contents.forEach(el => el.style.display = 'none');
-            
-            // 選択レベルのみ表示
-            if (level === '1') level1Contents.forEach(el => el.style.display = 'block');
-            if (level === '2') level2Contents.forEach(el => el.style.display = 'block');
-            if (level === '3') level3Contents.forEach(el => el.style.display = 'block');
-            
-            // ボタンのアクティブ状態
-            levelBtns.forEach(btn => {
-                if (btn.dataset.level === level) {
-                    btn.style.background = '#007bff';
-                    btn.style.color = 'white';
-                } else {
-                    btn.style.background = '#f0f0f0';
-                    btn.style.color = '#333';
-                }
-            });
-        }
-        
-        // ボタンクリックイベント
-        levelBtns.forEach(btn => {
-            btn.addEventListener('click', () => showLevel(btn.dataset.level));
-        });
-        
-        // 初期表示（レベル1）
-        showLevel('1');
-    });
-    </script>
+    <script src="../assets/js/level-selector.js"></script>
 </body>
 </html>

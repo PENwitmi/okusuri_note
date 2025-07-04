@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../assets/css/drug-page-v2.css">
     <link rel="stylesheet" href="../assets/css/responsive-unified.css">
     <link rel="stylesheet" href="../assets/css/drug-page-v2.css">
+    <link rel="stylesheet" href="../assets/css/level-selector.css">
 </head>
 <body class="drug-detail" data-category="endocrine">
     <!-- ヘッダー -->
@@ -451,40 +452,7 @@
         </div>
     </main>
 
-    <script src="../js/search.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const levelBtns = document.querySelectorAll('[data-level]');
-            const level1Contents = document.querySelectorAll('section:nth-of-type(2)');
-            const level2Contents = document.querySelectorAll('section:nth-of-type(3)');
-            const level3Contents = document.querySelectorAll('section:nth-of-type(4)');
-            
-            function showLevel(level) {
-                level1Contents.forEach(el => el.style.display = 'none');
-                level2Contents.forEach(el => el.style.display = 'none');
-                level3Contents.forEach(el => el.style.display = 'none');
-                
-                if (level === '1') level1Contents.forEach(el => el.style.display = 'block');
-                if (level === '2') level2Contents.forEach(el => el.style.display = 'block');
-                if (level === '3') level3Contents.forEach(el => el.style.display = 'block');
-                
-                levelBtns.forEach(btn => {
-                    if (btn.dataset.level === level) {
-                        btn.style.background = '#007bff';
-                        btn.style.color = 'white';
-                    } else {
-                        btn.style.background = '#f0f0f0';
-                        btn.style.color = '#333';
-                    }
-                });
-            }
-            
-            levelBtns.forEach(btn => {
-                btn.addEventListener('click', () => showLevel(btn.dataset.level));
-            });
-            
-            showLevel('1');
-        });
-    </script>
+    <script src="../assets/js/search.js"></script>
+    <script src="../assets/js/level-selector.js"></script>
 </body>
 </html>

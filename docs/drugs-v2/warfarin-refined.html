@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../assets/css/drug-page-v2.css">
     <link rel="stylesheet" href="../assets/css/responsive-unified.css">
     <link rel="stylesheet" href="../assets/css/drug-page-v2.css">
+    <link rel="stylesheet" href="../assets/css/level-selector.css">
 </head>
 <body class="drug-detail" data-category="cardiovascular">
     <!-- ヘッダー -->
@@ -174,7 +175,7 @@
             </section>
 
             <!-- レベル2：実習中向け詳細情報 -->
-            <section class="level-2-content" style="display: none;">
+            <section class="level-2-content">
                 <h2>レベル2：実習中向け詳細情報</h2>
 
             <!-- 医師の証言セクション -->
@@ -1103,40 +1104,6 @@
         </div>
     </footer>
 
-    <script>
-        // レベル切り替え機能
-        document.addEventListener('DOMContentLoaded', function() {
-            const levelBtns = document.querySelectorAll('[data-level]');
-            const level1Contents = document.querySelectorAll('.level-1-content');
-            const level2Contents = document.querySelectorAll('.level-2-content');
-            const level3Contents = document.querySelectorAll('.level-3-content');
-            
-            levelBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const level = this.getAttribute('data-level');
-                    
-                    // ボタンのアクティブ状態更新
-                    levelBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // コンテンツの表示切り替え
-                    level1Contents.forEach(content => {
-                        content.style.display = level === '1' ? 'block' : 'none';
-                    });
-                    level2Contents.forEach(content => {
-                        content.style.display = level === '2' ? 'block' : 'none';
-                    });
-                    level3Contents.forEach(content => {
-                        content.style.display = level === '3' ? 'block' : 'none';
-                    });
-                });
-            });
-        });
-        
-        // モバイルメニュー機能
-        function toggleMobileMenu() {
-            // モバイルメニューの実装（必要に応じて）
-        }
-    </script>
+    <script src="../assets/js/level-selector.js"></script>
 </body>
 </html>
