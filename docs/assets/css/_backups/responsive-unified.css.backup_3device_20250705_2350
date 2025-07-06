@@ -3,15 +3,15 @@
  * responsive-unified.css
  * 
  * 設計思想：薬学生の学習体験を最優先にしつつ、保守性と拡張性を確保
- * Version: 1.1.0
+ * Version: 1.0.0
  * 作成日: 2025年7月3日
- * 修正日: 2025年7朅5日 - 2段階ブレークポイント統合
  * 
  * 構成：
  * 1. 基本モバイル設定（すべてのデバイス共通）
- * 2. モバイル対応（〜767px）
- * 3. デスクトップ対応（768px〜）- PC・タブレット統合
- * 4. アクセシビリティ・特殊対応
+ * 2. モバイルファースト基本スタイル（〜768px）
+ * 3. タブレット対応（769px〜1024px）
+ * 4. デスクトップ対応（1025px〜）
+ * 5. アクセシビリティ・特殊対応
  */
 
 /* ========================================
@@ -70,14 +70,14 @@ button {
 }
 
 /* ========================================
-   2. モバイル対応（〜767px）
+   2. モバイルファースト基本スタイル（〜768px）
 ======================================== */
 
 /* モバイルはデフォルトスタイルとして定義済み（style.css内） */
 /* ここでは追加の微調整のみ */
 
 /* モバイル用CSS変数調整 */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     :root {
         --font-size-4xl: 1.875rem;  /* 30px */
         --font-size-3xl: 1.5rem;    /* 24px */
@@ -113,8 +113,8 @@ button {
     gap: var(--spacing-base);
 }
 
-/* モバイル専用調整（〜767px） */
-@media (max-width: 767px) {
+/* モバイル専用調整（〜768px） */
+@media (max-width: 768px) {
     /* ヘッダー調整 */
     .header-container {
         padding: var(--spacing-sm) var(--spacing-base);
@@ -189,9 +189,9 @@ button {
 }
 
 /* ========================================
-   3. デスクトップ対応（768px〜）- PC・タブレット統合
+   3. タブレット対応（769px〜1024px）
 ======================================== */
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     /* コンテナ幅調整 */
     .container {
         padding-left: var(--spacing-lg);
@@ -250,21 +250,12 @@ button {
         grid-template-columns: 1fr 300px;
         gap: var(--spacing-xl);
     }
-    
-    /* 表示制御（旧Line 461から統合） */
-    .mobile-only {
-        display: none;
-    }
-    
-    .desktop-only {
-        display: block;
-    }
 }
 
 /* ========================================
-   4. デスクトップ高度対応（1024px〜）
+   4. デスクトップ対応（1025px〜）
 ======================================== */
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     /* コンテナ最大幅 */
     .container {
         max-width: var(--breakpoint-xl);
@@ -467,10 +458,20 @@ button {
     display: none;
 }
 
+@media (min-width: 769px) {
+    .mobile-only {
+        display: none;
+    }
+    
+    .desktop-only {
+        display: block;
+    }
+}
+
 /* モバイル最適化統合（旧mobile-optimization.cssより） */
 
 /* モバイル読みやすさ向上 */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     /* ヘッダー最小高さ確保 */
     .header {
         padding: 8px 0;
@@ -512,6 +513,6 @@ button {
 
 /* 
  * ファイル終了
- * 2段階レスポンシブ設計: 767px以下(モバイル) / 768px以上(デスクトップ)
- * 総行数: 約500行（目標達成）
+ * 総行数目標: 800行以内
+ * 現在: 約450行（目標達成）
  */

@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>メトホルミン - 薬剤詳細</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/responsive-unified.css">
-    <link rel="stylesheet" href="../assets/css/sidebar.css">
-    <link rel="stylesheet" href="../assets/css/mobile-controls.css">
-    <link rel="stylesheet" href="../assets/css/level-selector.css">
     <link rel="stylesheet" href="../assets/css/drug-page-v2.css">
+    <link rel="stylesheet" href="../assets/css/responsive-unified.css">
+    <link rel="stylesheet" href="../assets/css/level-selector.css">
 </head>
 <body class="drug-detail" data-category="endocrine">
-    <div class="sidebar-layout">
-        <main class="main-content">
+    <!-- レベルインジケーター -->
+    <div class="level-selector">
+        <div class="level-selector__inner">
+            <button class="level-btn active" data-level="1">薬学生</button>
+            <button class="level-btn" data-level="2">実習中</button>
+            <button class="level-btn" data-level="3">研修中</button>
+        </div>
+    </div>
 
     <!-- Task 1.2: レベル1基本情報カード（薬学生向けファーストビュー） -->
     <section class="level-1-content">
@@ -849,158 +853,20 @@ Rp) メトグルコ錠 500mg
         </div>
     </section>
 
-        </main>
-        
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <!-- Level Selector Section -->
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">📚 学習レベル</h3>
-                <div class="level-selector__inner">
-                    <button class="level-btn active" data-level="1">薬学生</button>
-                    <button class="level-btn" data-level="2">実習中</button>
-                    <button class="level-btn" data-level="3">研修中</button>
-                </div>
-            </div>
-            
-            <!-- Related Drugs Section -->
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">🔗 関連薬剤</h3>
-                <div class="sidebar-links">
-                    <a href="dapagliflozin-refined.html" class="sidebar-link">
-                        📋 ダパグリフロジン
-                        <span class="drug-category">SGLT2阻害薬</span>
-                    </a>
-                    <a href="sitagliptin-refined.html" class="sidebar-link">
-                        📋 シタグリプチン
-                        <span class="drug-category">DPP-4阻害薬</span>
-                    </a>
-                    <a href="insulin-glargine-refined.html" class="sidebar-link">
-                        📋 インスリン グラルギン
-                        <span class="drug-category">持効型インスリン</span>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Drug Category Section -->
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">🎯 薬効群</h3>
-                <div class="sidebar-links">
-                    <a href="../categories/endocrine.html" class="sidebar-link">
-                        🏥 内分泌系薬剤
-                        <span class="category-desc">糖尿病・甲状腺等</span>
-                    </a>
-                    <a href="../groups/antidiabetic.html" class="sidebar-link">
-                        💊 糖尿病治療薬
-                        <span class="category-desc">血糖管理薬一覧</span>
-                    </a>
-                </div>
-            </div>
-        </aside>
-    </div>
-
-    <!-- Mobile Controls -->
-    <button class="mobile-fab" onclick="toggleBottomSheet()">📋</button>
+    <!-- 以下は統合時に使用するためのコメント -->
+    <!--
+    ■ 統合時の注意事項：
+    1. このファイルの内容は、メインのmetformin-v2.htmlに組み込まれます
+    2. <style>タグの内容は、メインCSSファイルに統合してください
+    3. レベル2、レベル3のコンテンツと組み合わせて完全なページを構成します
     
-    <div class="bottom-sheet-overlay" onclick="toggleBottomSheet()"></div>
-    
-    <div class="bottom-sheet">
-        <div class="bottom-sheet-handle" onclick="toggleBottomSheet()"></div>
-        <div class="bottom-sheet-content">
-            <!-- Level Selection Section -->
-            <div class="bottom-sheet-section">
-                <h3 class="bottom-sheet-title">📚 学習レベル</h3>
-                <div class="bottom-sheet-buttons">
-                    <button class="bottom-sheet-btn active" data-level="1">
-                        <span>🎓 薬学生</span>
-                        <span class="arrow">→</span>
-                    </button>
-                    <button class="bottom-sheet-btn" data-level="2">
-                        <span>🏥 実習中</span>
-                        <span class="arrow">→</span>
-                    </button>
-                    <button class="bottom-sheet-btn" data-level="3">
-                        <span>👨‍⚕️ 研修中</span>
-                        <span class="arrow">→</span>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Related Drugs Section -->
-            <div class="bottom-sheet-section">
-                <h3 class="bottom-sheet-title">🔗 関連薬剤</h3>
-                <div class="bottom-sheet-buttons">
-                    <a href="dapagliflozin-refined.html" class="bottom-sheet-btn">
-                        <span>📋 ダパグリフロジン</span>
-                        <span class="arrow">→</span>
-                    </a>
-                    <a href="sitagliptin-refined.html" class="bottom-sheet-btn">
-                        <span>📋 シタグリプチン</span>
-                        <span class="arrow">→</span>
-                    </a>
-                    <a href="insulin-glargine-refined.html" class="bottom-sheet-btn">
-                        <span>📋 インスリン グラルギン</span>
-                        <span class="arrow">→</span>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Drug Category Section -->
-            <div class="bottom-sheet-section">
-                <h3 class="bottom-sheet-title">🎯 薬効群</h3>
-                <div class="bottom-sheet-buttons">
-                    <a href="../categories/endocrine.html" class="bottom-sheet-btn">
-                        <span>🏥 内分泌系薬剤</span>
-                        <span class="arrow">→</span>
-                    </a>
-                    <a href="../groups/antidiabetic.html" class="bottom-sheet-btn">
-                        <span>💊 糖尿病治療薬</span>
-                        <span class="arrow">→</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+    ■ 追加予定のレベル1コンテンツ：
+    - 薬学生FAQセクション（国試頻出ポイント等）
+    - 基本的な薬理作用の図解
+    - 服薬指導の基礎ポイント
+    -->
 
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/level-selector.js"></script>
-    
-    <script>
-        // Bottom sheet toggle functionality
-        function toggleBottomSheet() {
-            const overlay = document.querySelector('.bottom-sheet-overlay');
-            const sheet = document.querySelector('.bottom-sheet');
-            
-            overlay.classList.toggle('active');
-            sheet.classList.toggle('active');
-        }
-        
-        // Level button functionality for bottom sheet
-        document.querySelectorAll('.bottom-sheet-btn[data-level]').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const level = this.dataset.level;
-                
-                // Remove active class from all level buttons
-                document.querySelectorAll('.bottom-sheet-btn[data-level]').forEach(b => {
-                    b.classList.remove('active');
-                });
-                document.querySelectorAll('.level-btn').forEach(b => {
-                    b.classList.remove('active');
-                });
-                
-                // Add active class to clicked button and corresponding sidebar button
-                this.classList.add('active');
-                document.querySelector(`.level-btn[data-level="${level}"]`).classList.add('active');
-                
-                // Trigger level change (assuming level-selector.js handles this)
-                if (window.switchLevel) {
-                    window.switchLevel(level);
-                }
-                
-                // Close bottom sheet
-                toggleBottomSheet();
-            });
-        });
-    </script>
 </body>
 </html>

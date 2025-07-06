@@ -292,25 +292,3 @@
         color: #d4af37;
     }
 }
-
-/* ========================================
-   サイドバー内配置用スタイル
-   追加日: 2025-07-06
-   用途: sidebar.cssと連携してサイドバー内での縦並び配置を実現
-======================================== */
-.sidebar .level-selector__inner {
-    flex-direction: column;  /* 縦並びに変更 */
-    max-width: none;         /* 幅制限を解除 */
-}
-
-.sidebar .level-btn {
-    width: 100%;                      /* ボタンを幅いっぱいに */
-    margin-bottom: var(--spacing-sm); /* ボタン間の余白 */
-    text-align: left;                 /* テキストを左寄せ */
-    justify-content: flex-start;      /* 内容を左寄せ */
-    padding: var(--spacing-base);     /* 適切なパディング */
-}
-
-.sidebar .level-btn:last-child {
-    margin-bottom: 0;  /* 最後のボタンの余白を除去 */
-}
