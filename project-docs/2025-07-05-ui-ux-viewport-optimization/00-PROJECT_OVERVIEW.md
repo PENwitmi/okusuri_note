@@ -70,24 +70,40 @@
 
 ## 🗂️ **プロジェクト構成**
 
-### **作成済みドキュメント一覧（全25ファイル → 主要4ファイル + アーカイブ）**
+### **作成済みドキュメント一覧（全25ファイル → 20ファイル + アーカイブ）**
 ```
 project-docs/2025-07-05-ui-ux-viewport-optimization/
 ├── 00-PROJECT_OVERVIEW.md                    # プロジェクトダッシュボード（このファイル）
+├── 01-CRITICAL_VIEWPORT_ISSUES_ANALYSIS.md   # 深層問題分析
+├── 02-TECHNICAL_SOLUTION_ROADMAP.md          # 技術解決戦略
+├── 03-COMPLETE_ROOT_CAUSE_ANALYSIS.md        # 根本原因完全分析
+├── 04-OPTIMAL_LAYOUT_DESIGN_PROPOSAL.md      # 最適レイアウト設計提案
+├── 05-SIDEBAR_PLACEMENT_RESEARCH_ANALYSIS.md # サイドバー配置研究分析
+├── 06-CSS_RESPONSIVE_STRUCTURE_ANALYSIS.md   # CSS構造分析
+├── 07-CSS_OPTIMIZATION_IMPLEMENTATION_PLAN.md # CSS最適化実装計画
+├── 08-CSS_IMPLEMENTATION_COMPLETION_REPORT.md # CSS実装完了報告
+├── 09-PHASE5-8_DETAILED_LAYOUT_IMPLEMENTATION_DESIGN.md # 実装検討
+├── 10-CSS_IMPLEMENTATION_PLAN_PHASE5-8.md    # Phase5-8計画
+├── 11-CSS_ARCHITECTURE_ANALYSIS_EXPERT_OPINION.md # CSS専門家分析
+├── 12-OPTIMIZED_CSS_IMPLEMENTATION_PROPOSAL.md # 最適化提案
 ├── 13-SIDEBAR_SYSTEM_IMPLEMENTATION_PROPOSAL.md # 🎯最終確定実装提案
+├── 14-PARALLEL_IMPLEMENTATION_STRATEGY.md    # 並列実装戦略（統合版）
+├── 15-PHASE3_INTEGRATION_TEST_PLAN.md        # Phase 3統合テスト計画
+├── 16-PHASE3_TEST_RESULTS.md                 # Phase 3テスト結果
+├── 17-BATCH_CONVERSION_PATTERN_ANALYSIS.md   # 一括変換パターン分析
 ├── 20-BROWSER_TEST_GUIDE.md                  # ✅ブラウザテストガイド（実施待ち）
 ├── 25-TECHNICAL_CHANGES_SUMMARY.md           # ✅技術的変更まとめ（18-24番統合）
 └── _archive/                                  # アーカイブ済みドキュメント
-    ├── analysis-phase/                        # 分析フェーズ（1,3,6番）
-    ├── planning-phase/                        # 計画フェーズ（2,4,5,7,9-12番）
-    ├── implementation-phase/                  # 実装フェーズ（8,14-17番）
-    └── technical-implementation-details/      # 技術的実装詳細（18-19,21-24番）
+    ├── 14-TWO_PERSON_IMPLEMENTATION_STRATEGY.md  # 撤回された旧版
+    ├── 15-PARALLEL_IMPLEMENTATION_REVISION.md    # 撤回された旧版
+    └── 18-24-technical-fixes/                    # 技術的修正詳細（18-24番）
 ```
 
-### **ドキュメント整理結果（2025-07-07 06:10）**
-- **主要文書**: 4ファイルに集約（00, 13, 20, 25番）
-- **アーカイブ**: 21ファイルをフェーズ別に整理
-- **効果**: 必要な情報へのアクセスが大幅に改善
+### **ドキュメント整理結果（2025-07-07 06:15）**
+- **メイン文書**: 1-17番（計画・実装フェーズ）+ 20番（テストガイド）
+- **統合文書**: 25番（18-24番の技術的変更まとめ）
+- **アーカイブ**: 18-24番（技術的修正の詳細ログ）
+- **効果**: 計画・実装の流れを保持しつつ、細かい修正ログを整理
 
 ---
 
