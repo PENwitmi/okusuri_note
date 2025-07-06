@@ -21,10 +21,18 @@
 /* ========================================
    レベル表示の初期設定
 ======================================== */
-/* レベル2と3のコンテンツは初期非表示 */
+/* すべてのレベルコンテンツは初期非表示 */
+.level-1-content,
 .level-2-content,
 .level-3-content {
-    display: none;
+    display: none !important;
+}
+
+/* アクティブ時のみ表示（JavaScriptがactiveクラスを付与） */
+.level-1-content.active,
+.level-2-content.active,
+.level-3-content.active {
+    display: block !important;
 }
 
 /* ========================================
