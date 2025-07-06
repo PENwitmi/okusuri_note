@@ -50,20 +50,34 @@ function handleLevelChange(event) {
 // レベル表示関数（core機能）
 function showLevel(level) {
     // すべてのレベルコンテンツを取得
-    const allLevelContents = document.querySelectorAll('.level-1-content, .level-2-content, .level-3-content');
+    const allLevelContents = document.querySelectorAll('[class*="level-"][class*="-content"]');
     const levelButtons = document.querySelectorAll('.level-btn');
     
-    // すべてのレベルコンテンツからactiveクラスを削除
+    // アニメーション付き非表示
     allLevelContents.forEach(content => {
-        content.classList.remove('active');
-        // !importantがCSSにあるため、styleの直接操作は不要
+        if (CONFIG.enableAnimation) {
+            content.style.transition = `opacity ${CONFIG.transitionDuration}ms`;
+            content.style.opacity = '0';
+            setTimeout(() => {
+                content.style.display = 'none';
+            }, CONFIG.transitionDuration);
+        } else {
+            content.style.display = 'none';
+        }
     });
     
-    // 選択レベルのコンテンツにactiveクラスを追加
-    const targetContents = document.querySelectorAll(`.level-${level}-content`);
-    targetContents.forEach(content => {
-        content.classList.add('active');
-    });
+    // 選択レベルのコンテンツを表示
+    setTimeout(() => {
+        const targetContents = document.querySelectorAll(`.level-${level}-content`);
+        targetContents.forEach(content => {
+            content.style.display = 'block';
+            if (CONFIG.enableAnimation) {
+                setTimeout(() => {
+                    content.style.opacity = '1';
+                }, 10);
+            }
+        });
+    }, CONFIG.enableAnimation ? CONFIG.transitionDuration : 0);
     
     // ボタンのアクティブ状態更新
     levelButtons.forEach(btn => {
