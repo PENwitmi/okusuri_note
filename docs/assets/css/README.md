@@ -1,7 +1,7 @@
 # CSS変更履歴・アーキテクチャ調査レポート
 
 **作成日**: 2025-07-05  
-**最終更新**: 2025-07-05（実稼働ファイル特定により全面修正 + 未使用CSS整理完了）  
+**最終更新**: 2025-07-07（薬剤ページデザイン洗練計画実装による変更反映）  
 **調査範囲**: 2025年6月〜7月のCSS改革プロジェクト全記録 + 実稼働状況調査  
 **調査方法**: プロジェクトドキュメント30+文書の詳細精査 + 実稼働ページCSS利用状況分析 + 未使用ファイル整理実行
 
@@ -12,14 +12,15 @@
 おくすりノートプロジェクトでは、2025年7月2日〜4日の72時間で**3つの連続CSS改革プロジェクト**が実施され、根本的なアーキテクチャ変更が行われました。
 
 ### 🎯 主要成果
-- **実稼働CSS特定**: 実際に使用される6つのCSSファイルのみを明確化
+- **実稼働CSS特定**: 実際に使用される8つのCSSファイルを明確化（2025-07-06に2ファイル追加）
 - **アーキテクチャ統一**: 責務の明確化による保守性向上  
 - **技術債務根絶**: 重複CSS解消と未使用ファイルの特定
 - **薬学教育特化**: 教育効果を最大化するCSS設計
+- **UI/UX最適化**: PC 85%・モバイル 90%コンテンツ表示領域確保（新規CSS追加）
 
 ### 🎯 実稼働CSSファイル役割分担
 
-#### **6つの実稼働CSSファイル - 責務別分類**
+#### **8つの実稼働CSSファイル - 責務別分類**
 
 | ファイル | 行数 | 主要責務 | 使用ページ |
 |----------|------|----------|-----------|
@@ -27,8 +28,10 @@
 | **responsive-unified.css** | 516行 | レスポンシブ調整（3段階ブレークポイント対応） | index.html, drugs-v2/*.html |
 | **index.css** | 605行 | メインページ専用（薬剤カード・検索表示） | index.htmlのみ |
 | **interactive.css** | 542行 | インタラクティブ機能（検索・モバイルナビ） | index.htmlのみ |
-| **drug-page-v2.css** | 819行 | 薬剤詳細ページ専用（薬剤情報・医師証言） | drugs-v2/*.htmlのみ |
-| **level-selector.css** | 293行 | レベル選択システム（UIガイダンス・切替機能） | drugs-v2/*.htmlのみ |
+| **drug-page-v2.css** | 1006行 | 薬剤詳細ページ専用（薬剤情報・医師証言） | drugs-v2/*.htmlのみ |
+| **level-selector.css** | 315行 | レベル選択システム（UIガイダンス・切替機能） | drugs-v2/*.htmlのみ |
+| **sidebar.css** | 129行 | 汎用サイドバーシステム（PC用） | drugs-v2/*.html、将来的に他ページ |
+| **mobile-controls.css** | 203行 | モバイル用フローティング+ボトムシート | drugs-v2/*.html、将来的に他ページ |
 
 #### **各ファイルの詳細機能**
 
@@ -55,17 +58,36 @@
 - アクセシビリティ強化（フォーカス管理、ハイコントラスト）
 - パフォーマンス最適化（GPU加速、タッチデバイス対応）
 
-**drug-page-v2.css（819行）** - 薬剤詳細ページ専用
+**drug-page-v2.css（1006行）** - 薬剤詳細ページ専用
 - 薬剤ヘッダー・分類表示
-- 医師証言・臨床エビデンス
+- 医師証言・臨床エビデンス（新規：patient-voice、doctor-testimony、credential）
 - 副作用・相互作用情報
 - 処方例・服薬指導ポイント
+- タイポグラフィ最適化（レベル1見出し強化）
+- カードデザイン洗練（quick-summary、impact-item）
+- 薬効群別アクセントカラー（内分泌系専用装飾）
+- 未定義クラスの追加（drug-category、category-desc）
 
-**level-selector.css（293行）** - レベル選択システム
+**level-selector.css（315行）** - レベル選択システム
 - UIガイダンス（学習レベル説明）
 - レベル切替ボタン・インジケーター
 - コンテンツ表示制御
 - アニメーション・トランジション
+
+**sidebar.css（129行）** - 汎用サイドバーシステム（2025-07-06追加）
+- PC環境専用のサイドバーレイアウト
+- グリッドレイアウトによる画面分割（250px + 残り）
+- スティッキー位置指定によるスクロール追従
+- サイドバー内のセクション・リンク管理
+- レスポンシブ対応（767px以下で非表示）
+- sidebar-linksクラス追加（リンクグループコンテナ）
+
+**mobile-controls.css（203行）** - モバイル用UI（2025-07-06追加）
+- フローティングアクションボタン（FAB）
+- ボトムシート（下からスライドするメニュー）
+- オーバーレイ（背景暗転）効果
+- タッチ操作最適化
+- モバイル専用表示（768px以上で非表示）
 
 #### **ページ別CSS読み込みパターン**
 
@@ -79,8 +101,10 @@
 <!-- drugs-v2/*.html（薬剤詳細ページ） -->
 <link rel="stylesheet" href="../assets/css/style.css">
 <link rel="stylesheet" href="../assets/css/responsive-unified.css">
-<link rel="stylesheet" href="../assets/css/drug-page-v2.css">
+<link rel="stylesheet" href="../assets/css/sidebar.css">
+<link rel="stylesheet" href="../assets/css/mobile-controls.css">
 <link rel="stylesheet" href="../assets/css/level-selector.css">
+<link rel="stylesheet" href="../assets/css/drug-page-v2.css">
 
 <!-- 404.html（エラーページ） -->
 <link rel="stylesheet" href="/assets/css/style.css">
@@ -112,9 +136,10 @@ drugs-v2/*.html → level-selector.css（学習レベル機能）
 基盤層: style.css (513行) - 全ページ共通基盤
 └── レスポンシブ層: responsive-unified.css (516行)
     ├── メインページ層: index.css (605行) + interactive.css (542行)
-    └── 薬剤ページ層: drug-page-v2.css (819行) + level-selector.css (293行)
+    └── 薬剤ページ層: drug-page-v2.css (828行) + level-selector.css (315行)
+                    + sidebar.css (122行) + mobile-controls.css (203行)
 
-【総計】実稼働CSS: 3,288行（6ファイル）
+【総計】実稼働CSS: 3,644行（8ファイル）
 ```
 
 ---
@@ -263,9 +288,39 @@ index.css (約600行) → index.htmlのみで読み込み
 
 ---
 
+### 🚀 2025年7月6日: UI/UXビューポート最適化プロジェクト Phase 5実装
+
+#### サイドバーシステム実装
+**12:00-13:00** - PC・モバイル用の双システム実装完了
+
+**実装内容**:
+- **sidebar.css（122行）**: PC用汎用サイドバーシステム作成
+- **mobile-controls.css（203行）**: モバイル用フローティング+ボトムシートシステム作成
+- **metformin-refined.html**: 新システム統合完了
+
+**技術的成果**:
+```
+【PC環境】
+- コンテンツ表示領域: 65% → 85%（20%向上）
+- サイドバー幅: 250px固定
+- スティッキー位置によるスクロール追従
+
+【モバイル環境】
+- コンテンツ表示領域: 45% → 90%（45%向上）
+- フローティングアクションボタン実装
+- ボトムシートによるオンデマンド表示
+```
+
+**責務分離の成功**:
+- PC専用UI（sidebar.css）とモバイル専用UI（mobile-controls.css）の明確な分離
+- 既存のlevel-selector.cssとの適切な連携
+- 将来の拡張性確保（カテゴリページ、検索結果ページへの適用可能）
+
+---
+
 ## 🏗️ 実稼働CSSアーキテクチャ
 
-### 📊 実稼働ファイル構成（6個のアクティブファイル）
+### 📊 実稼働ファイル構成（8個のアクティブファイル）
 
 **重要**: 以下のファイルのみが実際に稼働中のページで使用されています
 
@@ -284,8 +339,10 @@ index.css (約600行) → index.htmlのみで読み込み
 |----------|------|----------|-----------|
 | **index.css** | 605行 | ✅ 稼働中 | index.htmlのみ |
 | **interactive.css** | 542行 | ✅ 稼働中 | index.htmlのみ |
-| **drug-page-v2.css** | 819行 | ✅ 稼働中 | drugs-v2/*.htmlのみ |
-| **level-selector.css** | 293行 | ✅ 稼働中 | drugs-v2/*.htmlのみ |
+| **drug-page-v2.css** | 828行 | ✅ 稼働中 | drugs-v2/*.htmlのみ |
+| **level-selector.css** | 315行 | ✅ 稼働中 | drugs-v2/*.htmlのみ |
+| **sidebar.css** | 122行 | ✅ 稼働中 | drugs-v2/*.html、将来的に他ページ |
+| **mobile-controls.css** | 203行 | ✅ 稼働中 | drugs-v2/*.html、将来的に他ページ |
 
 ### 🚫 未使用ファイル（仮置きコンテンツ用）
 
@@ -459,6 +516,12 @@ index.css (約600行) → index.htmlのみで読み込み
 
 ---
 
+## 📄 関連ドキュメント
+
+- **HTMLクラスマッピング詳細**: [27-METFORMIN_HTML_CSS_CLASS_MAPPING.md](../../project-docs/2025-07-05-ui-ux-viewport-optimization/27-METFORMIN_HTML_CSS_CLASS_MAPPING.md) - metformin-refined.htmlで使用されている全クラスとCSS定義場所の完全マッピング
+
+---
+
 ## 🔍 バックアップとバージョン管理
 
 ### 📁 バックアップ体系
@@ -493,6 +556,7 @@ _old_files/
 | 2025-07-03 | v2.0 | CSS統合・45%削減 | backup_20250703_0305 |
 | 2025-07-04 | v3.0 | 責務分離・新アーキテクチャ | backup_20250704_0450 |
 | 2025-07-05 | v3.1 | Level-selector統合 | backup_20250705_2350 |
+| 2025-07-07 | v3.2 | 薬剤ページデザイン洗練 | 新規クラス5個追加 |
 
 ---
 

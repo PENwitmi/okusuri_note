@@ -78,9 +78,20 @@
 
 /* 世代・特徴 */
 .generation {
-    color: var(--accent-color);
-    font-weight: 700;
+    background: var(--pharma-primary);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-base);
+    border-radius: 20px;
     font-size: var(--font-size-sm);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.generation::before {
+    content: '👑';
+    font-size: 1.1em;
 }
 
 /* ========================================
@@ -89,11 +100,30 @@
 
 /* 30秒サマリー */
 .quick-summary {
-    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-accent) 100%);
-    padding: var(--spacing-3xl) var(--spacing-2xl);
-    margin: var(--spacing-2xl) 0;
-    border-radius: 16px;
-    box-shadow: var(--shadow-light);
+    background: linear-gradient(135deg, 
+        var(--bg-study) 0%, 
+        var(--pharma-primary-subtle) 100%);
+    padding: var(--spacing-3xl);
+    margin: var(--spacing-3xl) 0;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(30, 92, 138, 0.08);
+    border: 1px solid rgba(30, 92, 138, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 装飾的な背景パターン */
+.quick-summary::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, 
+        rgba(30, 92, 138, 0.05) 0%, 
+        transparent 70%);
+    border-radius: 50%;
 }
 
 .quick-summary h2 {
@@ -105,23 +135,65 @@
 
 /* 引用ボックス */
 .quote-box {
-    background: var(--bg-accent);
-    border-left: 6px solid var(--pharma-primary);
+    background: var(--bg-reading);
+    border-left: 4px solid var(--pharma-primary);
     padding: var(--spacing-xl);
-    margin: var(--spacing-xl) 0;
+    margin: var(--spacing-2xl) 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+}
+
+.quote-box::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 60px;
+    color: var(--pharma-primary);
+    opacity: 0.2;
+    font-family: Georgia, serif;
+}
+
+.quote-box blockquote {
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    color: var(--text-reading);
     font-style: italic;
-    border-radius: 8px;
-    box-shadow: var(--shadow-light);
+    margin: 0;
+}
+
+.quote-box cite {
+    display: block;
+    text-align: right;
+    margin-top: var(--spacing-base);
+    color: var(--text-pharma-secondary);
+    font-size: var(--font-size-base);
+    font-style: normal;
 }
 
 /* 専門家視点 */
 .specialist-perspective {
-    background: linear-gradient(135deg, var(--bg-accent), var(--pharma-primary-subtle));
+    background: linear-gradient(135deg,
+        var(--bg-accent) 0%,
+        var(--bg-study) 100%);
+    border: 2px solid var(--pharma-primary-light);
     padding: var(--spacing-2xl);
     border-radius: 16px;
     margin: var(--spacing-2xl) auto;
     max-width: 1200px;
-    box-shadow: var(--shadow-medium);
+    box-shadow: 0 4px 20px rgba(30, 92, 138, 0.1);
+}
+
+.specialist-perspective h3 {
+    color: var(--pharma-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.specialist-perspective h3::before {
+    content: '🩺';
+    font-size: 1.5em;
 }
 
 /* インパクトグリッド */
@@ -129,22 +201,22 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-xl);
-    margin: var(--spacing-xl) 0;
+    margin-top: var(--spacing-2xl);
 }
 
 /* インパクトアイテム */
 .impact-item {
-    background: var(--bg-card);
+    background: white;
     padding: var(--spacing-xl);
-    border-radius: 12px;
-    box-shadow: var(--shadow-light);
-    transition: all var(--transition-base);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
     border: 1px solid var(--border-light);
+    transition: all var(--transition-base);
 }
 
 .impact-item:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-heavy);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     border-color: var(--pharma-primary-light);
 }
 
@@ -177,6 +249,36 @@
 
 .level-1-content:hover {
     box-shadow: 0 4px 12px rgba(33, 150, 243, 0.12);
+}
+
+/* レベル1見出し - より大きく、より強く */
+.level-1-content h2 {
+    font-size: var(--font-size-3xl);  /* 36px相当に */
+    font-weight: 800;                  /* 700 → 800 */
+    color: var(--pharma-primary);
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    padding-bottom: var(--spacing-base);
+}
+
+/* 見出しに装飾的な下線 */
+.level-1-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--pharma-primary) 0%, var(--pharma-primary-light) 100%);
+    border-radius: 2px;
+}
+
+/* サブ見出しの改善 */
+.level-1-content h3 {
+    font-size: var(--font-size-xl);
+    color: var(--text-pharma-primary);
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-lg);
 }
 
 /* レベル2（実習中薬学生向け） */
@@ -301,16 +403,20 @@
 
 /* 適応症セクション */
 .indications {
-    background: var(--bg-card);
-    padding: var(--spacing-lg);
-    border-radius: 8px;
-    margin: var(--spacing-base) 0;
+    background: white;
+    padding: var(--spacing-2xl);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    margin: var(--spacing-2xl) 0;
 }
 
 .indications h3 {
     color: var(--pharma-primary);
-    margin-bottom: var(--spacing-base);
     font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
 }
 
 /* 適応症リスト */
@@ -320,16 +426,21 @@
 }
 
 .indications__list li {
-    padding: var(--spacing-sm) 0;
-    padding-left: 24px;
-    position: relative;
+    padding: var(--spacing-base);
+    margin-bottom: var(--spacing-sm);
+    background: var(--bg-study);
+    border-radius: 8px;
+    border-left: 3px solid var(--pharma-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
 }
 
-.indications__list li:before {
-    content: "▶";
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
+.indications__list li::before {
+    content: '✓';
+    color: var(--learning-correct);
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 /* 併用薬セクション */
@@ -604,6 +715,7 @@
 /* 薬剤個別ページのメインセクション区切り */
 .drug-detail > section {
     position: relative;
+    margin-bottom: var(--spacing-3xl);  /* 64px統一 */
 }
 
 .drug-detail > section:nth-child(even) {
@@ -620,14 +732,41 @@
     padding-bottom: var(--spacing-2xl);
 }
 
+/* 内部要素の余白リズム */
+.drug-detail h2 {
+    margin-top: var(--spacing-3xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.drug-detail h3 {
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-lg);
+}
+
+.drug-detail p {
+    margin-bottom: var(--spacing-base);
+    line-height: 1.8;
+}
+
 /* ========================================
    カテゴリ別テーマ（data属性ベース）
 ======================================== */
 
 /* 内分泌系 */
+.drug-detail[data-category="endocrine"] .drug-header {
+    background: linear-gradient(135deg, 
+        rgba(199, 116, 0, 0.08) 0%, 
+        var(--bg-light) 100%);
+    border-top: 4px solid var(--category-endocrine);
+}
+
 .drug-detail[data-category="endocrine"] .drug-class {
-    background: var(--category-endocrine);
-    color: white;
+    background: linear-gradient(135deg,
+        rgba(199, 116, 0, 0.1) 0%,
+        rgba(199, 116, 0, 0.05) 100%);
+    color: var(--category-endocrine);
+    border: 1px solid rgba(199, 116, 0, 0.2);
+    font-weight: 600;
 }
 
 /* 循環器系 */
@@ -826,4 +965,43 @@
         animation: none !important;
         transition: none !important;
     }
+}
+
+/* ========================================
+   新規クラス追加（2025-07-07）
+======================================== */
+
+/* 患者の声・医師の証言用の新規クラス */
+.patient-voice,
+.doctor-testimony {
+    background: var(--bg-accent);
+    padding: var(--spacing-2xl);
+    border-radius: 16px;
+    margin: var(--spacing-xl) 0;
+    box-shadow: var(--shadow-light);
+    position: relative;
+}
+
+.patient-voice {
+    border-left: 4px solid var(--pharma-nature);
+}
+
+.doctor-testimony {
+    border-left: 4px solid var(--pharma-primary);
+    background: linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-study) 100%);
+}
+
+.credential {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* 未定義クラスの追加 */
+.drug-category,
+.category-desc {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    display: block;
 }

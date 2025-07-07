@@ -106,6 +106,13 @@
     padding: var(--spacing-base);
 }
 
+/* サイドバー内のリンクグループコンテナ */
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
 /* モバイルでは従来レイアウト */
 @media (max-width: 767px) {
     .sidebar-layout {
