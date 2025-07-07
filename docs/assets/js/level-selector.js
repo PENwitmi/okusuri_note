@@ -2,8 +2,8 @@
 // 作成日時: 2025-07-04 15:35
 // 作成者: CEO
 // 目的: 22薬剤ページで重複している1,100行のJavaScriptコードを統一
-// 更新日時: 2025-07-07 22:40
-// 更新内容: URLハッシュ機能追加（ブラウザ戻るボタン対応）
+// 更新日時: 2025-07-07 23:52
+// 更新内容: レベルインジケーター制御機能追加（level-N-indicatorクラス対応）
 
 // グローバル設定
 const CONFIG = {
@@ -82,11 +82,12 @@ function showLevelInternal(level) {
         window.scrollTo(0, 0);
     }
     
-    // すべてのレベルコンテンツを取得
+    // すべてのレベルコンテンツとインジケーターを取得
     const allLevelContents = document.querySelectorAll('[class*="level-"][class*="-content"]');
+    const allLevelIndicators = document.querySelectorAll('[class*="level-"][class*="-indicator"]');
     const levelButtons = document.querySelectorAll('.level-btn');
     
-    // アニメーション付き非表示
+    // アニメーション付き非表示（コンテンツ）
     allLevelContents.forEach(content => {
         if (CONFIG.enableAnimation) {
             content.style.transition = `opacity ${CONFIG.transitionDuration}ms`;
@@ -97,6 +98,11 @@ function showLevelInternal(level) {
         } else {
             content.style.display = 'none';
         }
+    });
+    
+    // インジケーターを即座に非表示
+    allLevelIndicators.forEach(indicator => {
+        indicator.style.display = 'none';
     });
     
     // 選択レベルのコンテンツを表示
@@ -110,6 +116,12 @@ function showLevelInternal(level) {
                 }, 10);
             }
         });
+        
+        // 選択レベルのインジケーターを表示
+        const targetIndicator = document.querySelector(`.level-${level}-indicator`);
+        if (targetIndicator) {
+            targetIndicator.style.display = 'inline-block';
+        }
     }, CONFIG.enableAnimation ? CONFIG.transitionDuration : 0);
     
     // ボタンのアクティブ状態更新
