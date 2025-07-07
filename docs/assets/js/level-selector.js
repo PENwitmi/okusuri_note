@@ -120,7 +120,7 @@ function showLevelInternal(level) {
         // 選択レベルのインジケーターを表示
         const targetIndicator = document.querySelector(`.level-${level}-indicator`);
         if (targetIndicator) {
-            targetIndicator.style.display = 'inline-block';
+            targetIndicator.style.display = 'block';
         }
     }, CONFIG.enableAnimation ? CONFIG.transitionDuration : 0);
     
