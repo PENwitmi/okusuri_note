@@ -70,6 +70,18 @@ function handleLevelChange(event) {
 
 // レベル表示の内部実装（ハッシュ更新なし）
 function showLevelInternal(level) {
+    // ページトップへスムーズスクロール
+    // 古いブラウザにも対応
+    if ('scrollBehavior' in document.documentElement.style) {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    } else {
+        // 古いブラウザ用フォールバック
+        window.scrollTo(0, 0);
+    }
+    
     // すべてのレベルコンテンツを取得
     const allLevelContents = document.querySelectorAll('[class*="level-"][class*="-content"]');
     const levelButtons = document.querySelectorAll('.level-btn');
