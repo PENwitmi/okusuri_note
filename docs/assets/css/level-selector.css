@@ -191,20 +191,6 @@
     display: none;
 }
 
-/* サイドバー内のレベルセレクターボタンを縮小 */
-.sidebar .level-selector__inner {
-    gap: 5px;
-}
-
-.sidebar .level-btn {
-    padding: 6px 12px;
-    font-size: 13px;
-}
-
-.sidebar .level-desc {
-    display: none;  /* サイドバーでは説明文を非表示 */
-}
-
 /* =================================
    レスポンシブ対応
    ================================= */
