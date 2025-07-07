@@ -83,8 +83,8 @@ function showLevelInternal(level) {
     }
     
     // すべてのレベルコンテンツとインジケーターを取得
-    const allLevelContents = document.querySelectorAll('[class*="level-"][class*="-content"]');
-    const allLevelIndicators = document.querySelectorAll('[class*="level-"][class*="-indicator"]');
+    const allLevelContents = document.querySelectorAll('.level-1-content, .level-2-content, .level-3-content');
+    const allLevelIndicators = document.querySelectorAll('.level-1-indicator, .level-2-indicator, .level-3-indicator');
     const levelButtons = document.querySelectorAll('.level-btn');
     
     // アニメーション付き非表示（コンテンツ）

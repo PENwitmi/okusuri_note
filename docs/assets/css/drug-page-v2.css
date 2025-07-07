@@ -42,7 +42,12 @@
 ======================================== */
 /* レベル2と3のコンテンツは初期非表示 */
 .level-2-content,
-.level-3-content,
+.level-3-content {
+    display: none;
+}
+
+/* すべてのレベルインジケーターは初期非表示（JavaScriptで制御） */
+.level-1-indicator,
 .level-2-indicator,
 .level-3-indicator {
     display: none;
