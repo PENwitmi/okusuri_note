@@ -19,6 +19,25 @@
 @import "style.css";
 
 /* ========================================
+   薬剤ページ専用のコンパクトな変数オーバーライド
+======================================== */
+.drug-detail {
+    /* よりコンパクトなスペーシング（医療情報サイト向け） */
+    --spacing-base: 0.75rem;   /* 12px - 通常16px */
+    --spacing-lg: 1rem;        /* 16px - 通常24px */
+    --spacing-xl: 1.5rem;      /* 24px - 通常32px */
+    --spacing-2xl: 2rem;       /* 32px - 通常48px */
+    --spacing-3xl: 2.5rem;     /* 40px - 通常64px */
+    
+    /* より適切なフォントサイズ（情報密度重視） */
+    --font-size-base: 0.9375rem;  /* 15px - 通常16px */
+    --font-size-lg: 1rem;         /* 16px - 通常18px */
+    --font-size-xl: 1.125rem;     /* 18px - 通常20px */
+    --font-size-2xl: 1.375rem;    /* 22px - 通常24px */
+    --font-size-3xl: 1.625rem;    /* 26px - 通常30px */
+}
+
+/* ========================================
    レベル表示の初期設定
 ======================================== */
 /* レベル2と3のコンテンツは初期非表示 */
@@ -33,13 +52,14 @@
 
 /* 薬剤ヘッダー */
 .drug-header {
-    background: linear-gradient(135deg, var(--pharma-primary-subtle) 0%, var(--bg-light) 100%);
-    padding: var(--spacing-3xl) var(--spacing-lg);
+    background: var(--bg-secondary);
+    padding: var(--spacing-xl) var(--spacing-lg);
     text-align: center;
     position: relative;
-    border-radius: 0 0 24px 24px;
+    border-radius: 0 0 12px 12px;
     box-shadow: var(--shadow-light);
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--pharma-primary-light);
 }
 
 /* 商品名 */
@@ -81,17 +101,10 @@
     background: var(--pharma-primary);
     color: white;
     padding: var(--spacing-xs) var(--spacing-base);
-    border-radius: 20px;
+    border-radius: 4px;
     font-size: var(--font-size-sm);
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-xs);
-}
-
-.generation::before {
-    content: '👑';
-    font-size: 1.1em;
+    font-weight: 600;
+    display: inline-block;
 }
 
 /* ========================================
@@ -100,30 +113,12 @@
 
 /* 30秒サマリー */
 .quick-summary {
-    background: linear-gradient(135deg, 
-        var(--bg-study) 0%, 
-        var(--pharma-primary-subtle) 100%);
-    padding: var(--spacing-3xl);
-    margin: var(--spacing-3xl) 0;
-    border-radius: 24px;
-    box-shadow: 0 8px 32px rgba(30, 92, 138, 0.08);
-    border: 1px solid rgba(30, 92, 138, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-/* 装飾的な背景パターン */
-.quick-summary::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, 
-        rgba(30, 92, 138, 0.05) 0%, 
-        transparent 70%);
-    border-radius: 50%;
+    background: var(--bg-study);
+    padding: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--pharma-primary-light);
 }
 
 .quick-summary h2 {
@@ -135,28 +130,16 @@
 
 /* 引用ボックス */
 .quote-box {
-    background: var(--bg-reading);
-    border-left: 4px solid var(--pharma-primary);
-    padding: var(--spacing-xl);
-    margin: var(--spacing-2xl) 0;
-    border-radius: 0 12px 12px 0;
-    position: relative;
-}
-
-.quote-box::before {
-    content: '"';
-    position: absolute;
-    top: -10px;
-    left: 20px;
-    font-size: 60px;
-    color: var(--pharma-primary);
-    opacity: 0.2;
-    font-family: Georgia, serif;
+    background: var(--bg-accent);
+    border-left: 3px solid var(--pharma-primary);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    border-radius: 4px;
 }
 
 .quote-box blockquote {
-    font-size: var(--font-size-lg);
-    line-height: 1.8;
+    font-size: var(--font-size-base);
+    line-height: 1.7;
     color: var(--text-reading);
     font-style: italic;
     margin: 0;
@@ -165,59 +148,49 @@
 .quote-box cite {
     display: block;
     text-align: right;
-    margin-top: var(--spacing-base);
-    color: var(--text-pharma-secondary);
-    font-size: var(--font-size-base);
+    margin-top: var(--spacing-sm);
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
     font-style: normal;
 }
 
 /* 専門家視点 */
 .specialist-perspective {
-    background: linear-gradient(135deg,
-        var(--bg-accent) 0%,
-        var(--bg-study) 100%);
-    border: 2px solid var(--pharma-primary-light);
-    padding: var(--spacing-2xl);
-    border-radius: 16px;
-    margin: var(--spacing-2xl) auto;
+    background: var(--bg-accent);
+    border-left: 3px solid var(--pharma-primary);
+    padding: var(--spacing-lg);
+    border-radius: 6px;
+    margin: var(--spacing-lg) auto;
     max-width: 1200px;
-    box-shadow: 0 4px 20px rgba(30, 92, 138, 0.1);
 }
 
 .specialist-perspective h3 {
     color: var(--pharma-primary);
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-}
-
-.specialist-perspective h3::before {
-    content: '🩺';
-    font-size: 1.5em;
+    font-weight: 600;
 }
 
 /* インパクトグリッド */
 .impact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-xl);
-    margin-top: var(--spacing-2xl);
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
 }
 
 /* インパクトアイテム */
 .impact-item {
     background: white;
-    padding: var(--spacing-xl);
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    padding: var(--spacing-lg);
+    border-radius: 6px;
+    box-shadow: var(--shadow-light);
     border: 1px solid var(--border-light);
     transition: all var(--transition-base);
 }
 
 .impact-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    border-color: var(--pharma-primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--pharma-primary);
 }
 
 .impact-item h4 {
@@ -234,51 +207,32 @@
 .level-1-content {
     background: var(--bg-study);
     color: var(--text-reading);
-    border-left: 5px solid var(--pharma-primary-light);
-    font-size: 18px;
-    line-height: 1.9;
-    font-weight: 300;
-    padding: var(--spacing-xl);
-    margin: var(--spacing-xl) auto;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(33, 150, 243, 0.1);
-    transition: box-shadow 0.2s ease;
+    border-left: 3px solid var(--pharma-primary-light);
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    font-weight: 400;
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) auto;
+    border-radius: 6px;
     max-width: 1000px;
-    letter-spacing: 0.3px;
 }
 
-.level-1-content:hover {
-    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.12);
-}
-
-/* レベル1見出し - より大きく、より強く */
+/* レベル1見出し */
 .level-1-content h2 {
-    font-size: var(--font-size-3xl);  /* 36px相当に */
-    font-weight: 800;                  /* 700 → 800 */
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
     color: var(--pharma-primary);
-    margin-bottom: var(--spacing-xl);
-    position: relative;
-    padding-bottom: var(--spacing-base);
+    margin-bottom: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
 }
 
-/* 見出しに装飾的な下線 */
-.level-1-content h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--pharma-primary) 0%, var(--pharma-primary-light) 100%);
-    border-radius: 2px;
-}
-
-/* サブ見出しの改善 */
+/* サブ見出し */
 .level-1-content h3 {
     font-size: var(--font-size-xl);
     color: var(--text-pharma-primary);
-    margin-top: var(--spacing-2xl);
-    margin-bottom: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-base);
+    font-weight: 600;
 }
 
 /* レベル2（実習中薬学生向け） */
@@ -404,10 +358,10 @@
 /* 適応症セクション */
 .indications {
     background: white;
-    padding: var(--spacing-2xl);
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    margin: var(--spacing-2xl) 0;
+    padding: var(--spacing-lg);
+    border-radius: 6px;
+    box-shadow: var(--shadow-light);
+    margin: var(--spacing-lg) 0;
 }
 
 .indications h3 {
@@ -426,21 +380,11 @@
 }
 
 .indications__list li {
-    padding: var(--spacing-base);
-    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-base);
+    margin-bottom: var(--spacing-xs);
     background: var(--bg-study);
-    border-radius: 8px;
+    border-radius: 4px;
     border-left: 3px solid var(--pharma-primary);
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-}
-
-.indications__list li::before {
-    content: '✓';
-    color: var(--learning-correct);
-    font-weight: bold;
-    font-size: 1.2em;
 }
 
 /* 併用薬セクション */
@@ -715,7 +659,7 @@
 /* 薬剤個別ページのメインセクション区切り */
 .drug-detail > section {
     position: relative;
-    margin-bottom: var(--spacing-3xl);  /* 64px統一 */
+    margin-bottom: var(--spacing-xl);
 }
 
 .drug-detail > section:nth-child(even) {
@@ -728,24 +672,24 @@
 
 /* 薬剤個別ページの全幅セクション対応 */
 .drug-detail > .level-selector + section {
-    padding-top: var(--spacing-2xl);
-    padding-bottom: var(--spacing-2xl);
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
 }
 
 /* 内部要素の余白リズム */
 .drug-detail h2 {
-    margin-top: var(--spacing-3xl);
-    margin-bottom: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
 }
 
 .drug-detail h3 {
-    margin-top: var(--spacing-2xl);
-    margin-bottom: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-base);
 }
 
 .drug-detail p {
     margin-bottom: var(--spacing-base);
-    line-height: 1.8;
+    line-height: 1.65;
 }
 
 /* ========================================
@@ -797,12 +741,12 @@
     }
     
     .drug-header {
-        padding: var(--spacing-xl) var(--spacing-base);
+        padding: var(--spacing-lg) var(--spacing-base);
         border-radius: 0;
     }
     
     .quick-summary {
-        padding: var(--spacing-xl) var(--spacing-base);
+        padding: var(--spacing-lg) var(--spacing-base);
         border-radius: 0;
     }
     
@@ -975,20 +919,18 @@
 .patient-voice,
 .doctor-testimony {
     background: var(--bg-accent);
-    padding: var(--spacing-2xl);
-    border-radius: 16px;
-    margin: var(--spacing-xl) 0;
-    box-shadow: var(--shadow-light);
+    padding: var(--spacing-lg);
+    border-radius: 6px;
+    margin: var(--spacing-lg) 0;
     position: relative;
 }
 
 .patient-voice {
-    border-left: 4px solid var(--pharma-nature);
+    border-left: 3px solid var(--pharma-nature);
 }
 
 .doctor-testimony {
-    border-left: 4px solid var(--pharma-primary);
-    background: linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-study) 100%);
+    border-left: 3px solid var(--pharma-primary);
 }
 
 .credential {

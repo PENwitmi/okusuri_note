@@ -1,0 +1,514 @@
+/*
+ * style.css - おくすりノート 基本スタイルシート
+ * Version: 1.0.0
+ * Created: 2025-07-04
+ * Modified: 2025-07-04
+ * 
+ * 責務: すべてのページで使用される基本スタイル
+ * 依存: なし
+ * 
+ * 内容:
+ * - CSS変数定義
+ * - リセットCSS
+ * - 基本レイアウト
+ * - ヘッダー・フッター
+ * - ユーティリティクラス
+ * 
+ * 注: 元style.cssをold-style.cssにリネーム
+ */
+
+/* ========================================
+   CSS変数定義（色彩システム）
+======================================== */
+:root {
+    /* ======================================
+       薬学教育特化メインカラーシステム
+    ====================================== */
+    
+    /* 薬学教育メインカラー - 学習に適した青緑系 */
+    --pharma-primary: #1e5c8a;           /* 学習最適化ブルー (WCAG AAA: 7.2:1) */
+    --pharma-primary-light: #5dade2;     /* ライトブルー */
+    --pharma-primary-dark: #2980b9;      /* ダークブルー */
+    --pharma-primary-subtle: #ebf3fd;    /* 背景用極薄ブルー */
+    
+    /* 薬学象徴カラー - 自然・健康の緑系 */
+    --pharma-nature: #27ae60;            /* 薬学グリーン */
+    --pharma-nature-light: #58d68d;      /* ライトグリーン */
+    --pharma-nature-dark: #229954;       /* ダークグリーン */
+    --pharma-nature-subtle: #eafaf1;     /* 背景用極薄グリーン */
+    
+    /* 薬学専門テキストカラー */
+    --text-pharma-primary: #2c3e50;      /* メイン見出し（濃）*/
+    --text-pharma-secondary: #34495e;    /* サブ見出し（中）*/
+    --text-pharma-body: #4a5568;         /* 本文（標準）*/
+    --text-pharma-caption: #718096;      /* キャプション（薄）*/
+    --text-pharma-muted: #a0aec0;        /* 補足情報（薄）*/
+    --text-reading: #374151;             /* 長文読解用 */
+    --text-emphasis: #1a202c;            /* 強調表示 */
+    
+    /* 薬効別カテゴリカラー */
+    --category-cardiovascular: #c0392b;  /* 循環器系 - 血流イメージ (WCAG AAA済) */
+    --category-cns: #7d3c98;             /* 中枢神経系 - 神経伝達 (WCAG AAA済) */
+    --category-endocrine: #c77400;       /* 内分泌系 - ホルモンカラー (WCAG AAA: 7.1:1) */
+    --category-antimicrobial: #16a085;   /* 抗菌薬 - 緑青系 */
+    --category-gastro: #a04000;          /* 消化器系 - 臓器カラー (WCAG AAA済) */
+    --category-respiratory: #3498db;     /* 呼吸器系 - 空気感 */
+    --category-other: #95a5a6;           /* その他 - 中立グレー */
+    
+    /* 学習状態表示 */
+    --learning-correct: #2ecc71;         /* 正解・習得済み */
+    --learning-incorrect: #e67e22;       /* 不正解・要復習 */
+    --learning-bookmark: #f1c40f;        /* ブックマーク済み */
+    --learning-completed: #95a5a6;       /* 学習完了 */
+    
+    /* 学習最適化背景 */
+    --bg-reading: #fdfdfd;               /* 長文読解用（最高コントラスト）*/
+    --bg-study: #f8fbff;                 /* 学習カード背景 */
+    --bg-reference: #fafbfc;             /* 参考資料背景 */
+    --bg-accent: #f1f8ff;                /* アクセント背景 */
+    --bg-tertiary: #e9ecef;              /* 第三背景 */
+    
+    /* ======================================
+       従来互換性のための変数エイリアス
+    ====================================== */
+    
+    /* プライマリーカラー（薬学ブルー#2a5298から移行）*/
+    --primary-color: var(--pharma-primary);
+    --primary-light: var(--pharma-primary-light);
+    --primary-dark: var(--pharma-primary-dark);
+    
+    /* セカンダリーカラー（薬学グリーン）*/
+    --secondary-color: var(--pharma-nature);
+    --secondary-light: var(--pharma-nature-light);
+    --secondary-dark: var(--pharma-nature-dark);
+    
+    /* システムカラー */
+    --accent-color: #e74c3c;
+    --accent-light: #ec7063;
+    --warning-color: #f39c12;
+    --info-color: #3498db;
+    
+    /* テキストカラー従来互換 */
+    --text-primary: var(--text-pharma-primary);
+    --text-secondary: var(--text-pharma-secondary);
+    --text-light: #666;
+    --text-muted: #999;
+    
+    /* 背景色 */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-light: #fafbfc;
+    --bg-card: #ffffff;
+    
+    /* ボーダー・シャドウ */
+    --border-color: #e9ecef;
+    --border-light: #f1f3f4;
+    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --shadow-heavy: 0 8px 16px rgba(0, 0, 0, 0.15);
+    
+    /* タイポグラフィ */
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+    --font-size-xs: 0.75rem;    /* 12px */
+    --font-size-sm: 0.875rem;   /* 14px */
+    --font-size-base: 1rem;     /* 16px */
+    --font-size-lg: 1.125rem;   /* 18px */
+    --font-size-xl: 1.25rem;    /* 20px */
+    --font-size-2xl: 1.5rem;    /* 24px */
+    --font-size-3xl: 1.875rem;  /* 30px */
+    --font-size-4xl: 2.25rem;   /* 36px */
+    
+    /* スペーシング */
+    --spacing-xs: 0.25rem;  /* 4px */
+    --spacing-sm: 0.5rem;   /* 8px */
+    --spacing-base: 1rem;   /* 16px */
+    --spacing-lg: 1.5rem;   /* 24px */
+    --spacing-xl: 2rem;     /* 32px */
+    --spacing-2xl: 3rem;    /* 48px */
+    --spacing-3xl: 4rem;    /* 64px */
+    
+    /* レスポンシブブレークポイント */
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1200px;
+    
+    /* トランジション */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* ========================================
+   リセットCSS
+======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* リンク */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* 見出し */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-base);
+    color: var(--text-primary);
+}
+
+h1 { font-size: var(--font-size-4xl); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-2xl); }
+h4 { font-size: var(--font-size-xl); }
+h5 { font-size: var(--font-size-lg); }
+h6 { font-size: var(--font-size-base); }
+
+/* 段落 */
+p {
+    margin-bottom: var(--spacing-base);
+}
+
+/* リスト */
+ul, ol {
+    margin-bottom: var(--spacing-base);
+    padding-left: var(--spacing-lg);
+}
+
+/* ボタン */
+button {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+/* ========================================
+   ユーティリティクラス
+======================================== */
+.container {
+    max-width: var(--breakpoint-xl);
+    margin: 0 auto;
+    padding: 0 var(--spacing-base);
+}
+
+.section-container {
+    max-width: var(--breakpoint-lg);
+    margin: 0 auto;
+    padding: 0 var(--spacing-base);
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ========================================
+   ヘッダーセクション
+======================================== */
+.header {
+    background: #ffffff; /* フォールバック */
+    background: var(--bg-primary, #ffffff);
+    border-bottom: 1px solid #f1f3f4; /* フォールバック */
+    border-bottom: 1px solid var(--border-light, #f1f3f4);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-light);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-base) var(--spacing-base);
+    max-width: var(--breakpoint-xl);
+    margin: 0 auto;
+}
+
+/* ロゴ */
+.logo h1 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+    font-weight: 900;
+}
+
+.logo h1 a {
+    color: var(--primary-color);
+    font-weight: inherit;
+}
+
+.logo h1 a:hover {
+    color: var(--primary-dark);
+}
+
+.tagline {
+    font-size: var(--font-size-sm);
+    color: var(--text-light);
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ナビゲーション */
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-xl);
+    margin: 0;
+}
+
+.nav-link {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: #2c3e50; /* フォールバック */
+    color: var(--text-primary, #2c3e50);
+    padding: var(--spacing-sm) var(--spacing-base);
+    border-radius: 6px;
+    transition: all var(--transition-base);
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #3498db; /* フォールバック */
+    color: var(--primary-color, #3498db);
+    background-color: #fafbfc; /* フォールバック */
+    background-color: var(--bg-light, #fafbfc);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: all var(--transition-base);
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* 検索バー */
+.search-container {
+    display: flex;
+    align-items: center;
+    background: var(--bg-secondary);
+    border-radius: 24px;
+    padding: var(--spacing-xs);
+    min-width: 280px;
+    transition: all var(--transition-base);
+}
+
+.search-container:focus-within {
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-medium);
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: var(--spacing-sm) var(--spacing-base);
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: var(--text-muted);
+}
+
+.search-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+}
+
+.search-btn:hover {
+    background: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+.search-icon {
+    font-size: var(--font-size-lg);
+}
+
+/* モバイルメニューボタン */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    width: 32px;
+    height: 32px;
+    justify-content: space-around;
+    padding: 4px;
+}
+
+.hamburger {
+    width: 100%;
+    height: 3px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: all var(--transition-base);
+}
+
+/* ========================================
+   フッター
+======================================== */
+.footer {
+    background: var(--text-primary);
+    color: white;
+    padding: var(--spacing-3xl) 0 var(--spacing-xl) 0;
+    margin-top: var(--spacing-3xl);
+}
+
+.footer-container {
+    max-width: var(--breakpoint-xl);
+    margin: 0 auto;
+    padding: 0 var(--spacing-base);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: var(--spacing-base);
+}
+
+.footer-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 900;
+    color: var(--primary-light);
+    margin-bottom: var(--spacing-base);
+}
+
+.footer-subtitle {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: white;
+    margin-bottom: var(--spacing-base);
+}
+
+.footer-description {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: var(--font-size-base);
+}
+
+.footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    font-size: var(--font-size-base);
+}
+
+.footer-links a:hover {
+    color: var(--primary-light);
+}
+
+/* フッター統計 */
+.footer-stats {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.footer-stat {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: var(--font-size-2xl);
+    font-weight: 900;
+    color: var(--primary-light);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    margin-top: var(--spacing-xs);
+}
+
+/* フッター下部 */
+.footer-bottom {
+    border-top: 1px solid var(--text-secondary);
+    padding-top: var(--spacing-lg);
+    text-align: center;
+}
+
+.copyright,
+.version {
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-xs);
+}
