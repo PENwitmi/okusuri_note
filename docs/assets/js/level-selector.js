@@ -2,8 +2,8 @@
 // 作成日時: 2025-07-04 15:35
 // 作成者: CEO
 // 目的: 22薬剤ページで重複している1,100行のJavaScriptコードを統一
-// 更新日時: 2025-07-07 23:52
-// 更新内容: レベルインジケーター制御機能追加（level-N-indicatorクラス対応）
+// 更新日時: 2025-07-08 00:13
+// 更新内容: コンテンツインジケーター機能削除（サイドバー内では不要のため）
 
 // グローバル設定
 const CONFIG = {
@@ -58,8 +58,8 @@ function initializeLevelSelector() {
         showLevel(CONFIG.defaultLevel);
     }
     
-    // コンテンツカウントの自動計算と表示
-    updateContentIndicators();
+    // レベル間誘導を追加
+    addLevelTransitionPrompts();
 }
 
 // レベル切替処理
@@ -128,9 +128,6 @@ function showLevelInternal(level) {
     levelButtons.forEach(btn => {
         btn.classList.toggle('active', btn.dataset.level === level);
     });
-    
-    // インジケーター更新
-    updateIndicatorState(level);
 }
 
 // レベル表示関数（URLハッシュ更新あり）
@@ -178,71 +175,6 @@ function injectUIGuidanceIfNeeded() {
     });
 }
 
-// コンテンツインジケーターの更新
-function updateContentIndicators() {
-    const levels = ['1', '2', '3'];
-    const levelNames = ['基本情報', '実践情報', '詳細情報'];
-    
-    // 各レベルのコンテンツ数を計算
-    const contentCounts = levels.map(level => {
-        const contents = document.querySelectorAll(`.level-${level}-content`);
-        return contents.length;
-    });
-    
-    // インジケーターが存在しない場合は作成
-    let indicator = document.querySelector('.content-indicator');
-    if (!indicator && contentCounts.some(count => count > 0)) {
-        createContentIndicator();
-        indicator = document.querySelector('.content-indicator');
-    }
-    
-    // カウントを更新
-    if (indicator) {
-        levels.forEach((level, index) => {
-            const item = indicator.querySelectorAll('.indicator-item')[index];
-            if (item) {
-                const countSpan = item.querySelector('.content-count');
-                if (countSpan) {
-                    countSpan.textContent = `${levelNames[index]} ${contentCounts[index]}項目`;
-                }
-            }
-        });
-    }
-    
-    // レベル間誘導を追加
-    addLevelTransitionPrompts();
-}
-
-// コンテンツインジケーターの作成
-function createContentIndicator() {
-    const levelSelector = document.querySelector('.level-selector');
-    const indicatorHTML = `
-        <div class="content-indicator">
-            <div class="indicator-item active">
-                <span class="level">Level 1</span>
-                <span class="content-count">基本情報 0項目</span>
-            </div>
-            <div class="indicator-item">
-                <span class="level">Level 2</span>
-                <span class="content-count">実践情報 0項目</span>
-            </div>
-            <div class="indicator-item">
-                <span class="level">Level 3</span>
-                <span class="content-count">詳細情報 0項目</span>
-            </div>
-        </div>
-    `;
-    levelSelector.insertAdjacentHTML('beforeend', indicatorHTML);
-}
-
-// インジケーター状態の更新
-function updateIndicatorState(activeLevel) {
-    const items = document.querySelectorAll('.indicator-item');
-    items.forEach((item, index) => {
-        const itemLevel = (index + 1).toString();
-        item.classList.toggle('active', itemLevel <= activeLevel);
-    });
-}
 
 // レベル間誘導プロンプトの追加
 function addLevelTransitionPrompts() {
@@ -301,7 +233,4 @@ window.debugLevelSelector = function() {
     
     const guide = document.querySelector('.level-selector__guide');
     console.log(`UI Guide: ${guide ? 'Present' : 'Missing'}`);
-    
-    const indicator = document.querySelector('.content-indicator');
-    console.log(`Content Indicator: ${indicator ? 'Present' : 'Missing'}`);
 };

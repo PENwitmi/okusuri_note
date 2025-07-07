@@ -60,49 +60,6 @@
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* =================================
-   コンテンツインジケーター
-   ================================= */
-.content-indicator {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 15px;
-    padding: 12px 15px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.indicator-item {
-    text-align: center;
-    padding: 10px 20px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    opacity: 0.5;
-    background: transparent;
-    border: 1px solid transparent;
-}
-
-.indicator-item.active {
-    background: #007bff;
-    color: white;
-    opacity: 1;
-    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
-    transform: translateY(-1px);
-}
-
-.indicator-item .level {
-    display: block;
-    font-weight: bold;
-    font-size: 14px;
-    margin-bottom: 4px;
-}
-
-.indicator-item .content-count {
-    display: block;
-    font-size: 12px;
-    opacity: 0.9;
-}
 
 /* =================================
    レベル間誘導プロンプト
@@ -186,9 +143,8 @@
 /* =================================
    サイドバー内での特別対応
    ================================= */
-/* サイドバー内のレベルセレクターではガイドとインジケーターを非表示 */
-.sidebar .level-selector__guide,
-.sidebar .content-indicator {
+/* サイドバー内のレベルセレクターではガイドを非表示 */
+.sidebar .level-selector__guide {
     display: none;
 }
 
@@ -207,25 +163,6 @@
     
     .guide-sub {
         font-size: 13px;
-    }
-    
-    .content-indicator {
-        flex-direction: column;
-        gap: 8px;
-        padding: 10px;
-    }
-    
-    .indicator-item {
-        padding: 8px 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .indicator-item .level,
-    .indicator-item .content-count {
-        display: inline;
-        margin: 0;
     }
     
     .next-level-prompt {
@@ -281,14 +218,6 @@
     }
     
     .guide-sub {
-        color: #b8c5d6;
-    }
-    
-    .content-indicator {
-        background: #1e2a3a;
-    }
-    
-    .indicator-item {
         color: #b8c5d6;
     }
     
