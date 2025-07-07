@@ -960,10 +960,12 @@
     background: var(--bg-accent);
     color: var(--pharma-primary);
     padding: var(--spacing-sm) var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
+    margin: 0 auto var(--spacing-lg) auto;  /* 左右のmargin: autoでセンタリング */
     border-radius: 24px;
-    display: inline-block;
+    display: block;  /* blockに変更してセンタリング可能に */
+    width: fit-content;  /* コンテンツ幅に合わせる */
     font-weight: 600;
     font-size: var(--font-size-base);
     box-shadow: var(--shadow-light);
+    text-align: center;  /* テキスト自体もセンタリング */
 }
