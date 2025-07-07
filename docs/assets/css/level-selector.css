@@ -191,6 +191,26 @@
     display: none;
 }
 
+/* サイドバー内のコンテンツインジケーターを調整 */
+.sidebar .content-indicator {
+    flex-direction: column;  /* 縦並びに変更 */
+    gap: 8px;
+    padding: 8px;
+}
+
+.sidebar .indicator-item {
+    padding: 8px 12px;
+    width: 100%;
+}
+
+.sidebar .indicator-item .level {
+    font-size: 13px;
+}
+
+.sidebar .indicator-item .content-count {
+    font-size: 11px;
+}
+
 /* =================================
    レスポンシブ対応
    ================================= */
