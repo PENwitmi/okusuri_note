@@ -186,29 +186,10 @@
 /* =================================
    サイドバー内での特別対応
    ================================= */
-/* サイドバー内のレベルセレクターではガイドを非表示 */
-.sidebar .level-selector__guide {
-    display: none;
-}
-
-/* サイドバー内のコンテンツインジケーターを調整 */
+/* サイドバー内のレベルセレクターではガイドとインジケーターを非表示 */
+.sidebar .level-selector__guide,
 .sidebar .content-indicator {
-    flex-direction: column;  /* 縦並びに変更 */
-    gap: 8px;
-    padding: 8px;
-}
-
-.sidebar .indicator-item {
-    padding: 8px 12px;
-    width: 100%;
-}
-
-.sidebar .indicator-item .level {
-    font-size: 13px;
-}
-
-.sidebar .indicator-item .content-count {
-    font-size: 11px;
+    display: none;
 }
 
 /* =================================
