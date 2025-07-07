@@ -184,6 +184,28 @@
 }
 
 /* =================================
+   サイドバー内での特別対応
+   ================================= */
+/* サイドバー内のレベルセレクターではガイドを非表示 */
+.sidebar .level-selector__guide {
+    display: none;
+}
+
+/* サイドバー内のレベルセレクターボタンを縮小 */
+.sidebar .level-selector__inner {
+    gap: 5px;
+}
+
+.sidebar .level-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+.sidebar .level-desc {
+    display: none;  /* サイドバーでは説明文を非表示 */
+}
+
+/* =================================
    レスポンシブ対応
    ================================= */
 @media (max-width: 768px) {
