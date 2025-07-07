@@ -2,6 +2,8 @@
 // 作成日時: 2025-07-04 15:35
 // 作成者: CEO
 // 目的: 22薬剤ページで重複している1,100行のJavaScriptコードを統一
+// 更新日時: 2025-07-07 22:40
+// 更新内容: URLハッシュ機能追加（ブラウザ戻るボタン対応）
 
 // グローバル設定
 const CONFIG = {
@@ -14,6 +16,17 @@ const CONFIG = {
 // 初期化関数
 document.addEventListener('DOMContentLoaded', function() {
     initializeLevelSelector();
+});
+
+// URLハッシュ変更時の処理
+window.addEventListener('hashchange', function() {
+    const hash = window.location.hash;
+    const match = hash.match(/#level-([1-3])/);
+    if (match) {
+        const level = match[1];
+        // ハッシュ更新なしでレベルを表示
+        showLevelInternal(level);
+    }
 });
 
 function initializeLevelSelector() {
@@ -34,8 +47,16 @@ function initializeLevelSelector() {
     // UIガイダンスの自動挿入（存在しない場合）
     injectUIGuidanceIfNeeded();
     
-    // 初期表示の設定
-    showLevel(CONFIG.defaultLevel);
+    // 初期表示の設定（URLハッシュをチェック）
+    const hash = window.location.hash;
+    const match = hash.match(/#level-([1-3])/);
+    if (match) {
+        // URLハッシュがある場合はそのレベルを表示
+        showLevel(match[1]);
+    } else {
+        // ハッシュがない場合はデフォルトレベルを表示
+        showLevel(CONFIG.defaultLevel);
+    }
     
     // コンテンツカウントの自動計算と表示
     updateContentIndicators();
@@ -47,8 +68,8 @@ function handleLevelChange(event) {
     showLevel(targetLevel);
 }
 
-// レベル表示関数（core機能）
-function showLevel(level) {
+// レベル表示の内部実装（ハッシュ更新なし）
+function showLevelInternal(level) {
     // すべてのレベルコンテンツを取得
     const allLevelContents = document.querySelectorAll('[class*="level-"][class*="-content"]');
     const levelButtons = document.querySelectorAll('.level-btn');
@@ -86,6 +107,17 @@ function showLevel(level) {
     
     // インジケーター更新
     updateIndicatorState(level);
+}
+
+// レベル表示関数（URLハッシュ更新あり）
+function showLevel(level) {
+    // レベル表示の共通処理を実行
+    showLevelInternal(level);
+    
+    // URLハッシュを更新（無限ループ防止のため現在値と比較）
+    if (window.location.hash !== `#level-${level}`) {
+        window.location.hash = `level-${level}`;
+    }
 }
 
 // UIガイダンスの自動挿入
@@ -227,6 +259,8 @@ function addLevelTransitionPrompts() {
 
 // 外部から呼び出し可能な関数をグローバルに公開
 window.showLevel = showLevel;
+// ハッシュ更新なし版（モバイルボトムシート等で使用可能）
+window.showLevelWithoutHashUpdate = showLevelInternal;
 
 // デバッグ用ユーティリティ（本番環境では削除可能）
 window.debugLevelSelector = function() {
