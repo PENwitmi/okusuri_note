@@ -1,10 +1,10 @@
 # OkusuriNote マスター進捗ダッシュボード
-**最新更新**: 2025-07-08 18:24 - 吸入薬完全マスター特集ページプロジェクト完了  
+**最新更新**: 2025-07-09 00:50 - ダパグリフロジンv3移行完了  
 **更新頻度**: リアルタイム（変更発生時即座）  
 **目的**: すべてのタスクと文書の状態を一元管理  
 **ガバナンス**: CEOが最終編集責任、Managerに実務更新委任（2025-06-30 23:45策定）
 
-## 🎯 現在の状況（18:24時点）
+## 🎯 現在の状況（00:50時点）
 
 ### 🚀 薬剤ページv2→v3移行プロジェクト（2025-07-08 02:20開始）
 **ステータス**: 🚀 **Phase 1完了、Phase 2進行中**（循環器系薬剤移行中）  
@@ -17,9 +17,10 @@
 - **v3の革新性**: 最新UI/UX実装、3レベル構造、統合的コンテンツ（1,000行以上/薬剤）
 - **source_materials活用**: drugs/、drug_evolution/、drug_stories/、study_guides/の統合
 
-#### 移行進捗（2/22薬剤、9.1%完了）
+#### 移行進捗（3/22薬剤、13.6%完了）
 - ✅ **rosuvastatin**: 完了（2時間27分、A級品質達成）- 「14年遅れの最後発」からの逆転劇
 - ✅ **telmisartan**: 完了（56分、A級品質達成）- 「Beyond BP」PPAR-γ活性化作用を軸に展開
+- ✅ **dapagliflozin**: 完了（43分、A級品質達成）- 「糖を捨てる」革新的発想から多臓器保護薬へ
 - 🚀 **次の対象**: atorvastatin（循環器系第3薬剤）
 
 #### 移行フェーズ計画
@@ -77,6 +78,40 @@ Phase 4: 第3バッチ（3-4日）
 
 **詳細**: `project-docs/2025-07-08-inhaler-feature/`参照
 
+### ✅ MR拮抗薬特集ページ開発（2025-07-08 21:40-07-09 00:04完了）
+**ステータス**: ✅ **完了** - 全実装完了、2時間24分で完成  
+**目的**: K保持性利尿薬からMR拮抗薬への変遷と4世代の薬剤を体系的に解説  
+**対象薬剤**: スピロノラクトン、エプレレノン、エサキセレノン（ミネブロ）、フィネレノン（ケレンディア）  
+**実績工数**: 2時間24分（情報収集52分、HTML作成92分）
+
+#### 実装成果
+- ✅ source_materials/drugs/cardiovascular/mr_antagonists/に4薬剤の詳細情報作成
+- ✅ K保持性利尿薬→アルドステロン拮抗薬→MR拮抗薬への名称変遷史
+- ✅ 主要臨床試験（RALES、EMPHASIS-HF、FIDELIO-DKD等）のエビデンス統合
+- ✅ 2025年ガイドラインHFpEF推奨度（フィネレノンClass IIa、他Class IIb）
+- ✅ docs/features/mr-antagonist-complete-guide.html実装完了（766行）
+- ✅ feature-page.cssにMR拮抗薬世代別色変数追加（--mr-gen1〜4）
+
+**詳細**: `project-docs/2025-07-08-mr-antagonist-feature/`参照
+
+### ✅ 心不全治療特集ページ開発（2025-07-09 00:17-01:08完了）
+**ステータス**: ✅ **完了** - 全実装完了、51分で完成  
+**目的**: 2025年ガイドライン改訂を基軸としたHFrEF/HFpEF治療の包括的解説  
+**対象薬剤**: ARNI、β遮断薬、MR拮抗薬、SGLT2阻害薬、フィネレノン、GLP-1受容体作動薬  
+**実績工数**: 51分（情報収集14分、HTML作成37分）
+
+#### 実装成果
+- ✅ 2025年ガイドライン改訂内容の調査（7年ぶりの全面改訂）
+- ✅ HFpEFの病態生理と治療革命の詳細調査
+- ✅ project-docs/2025-07-09-heart-failure-feature/に7文書作成
+- ✅ source_materials/drugs/cardiovascular/heart_failure/に薬剤情報6件保存
+- ✅ docs/features/heart-failure-treatment-guide.html実装完了（810行）
+- ✅ HFpEF病態の詳細解説（なぜ収縮正常で心不全か）
+- ✅ HFrEF「Fantastic Four」による予後改善戦略
+- ✅ HFpEF治療革命（SGLT2阻害薬、フィネレノン、GLP-1）の体系的解説
+
+**詳細**: `project-docs/2025-07-09-heart-failure-feature/`参照
+
 ---
 
 ## 🚨 直近完了プロジェクト
@@ -131,6 +166,17 @@ Phase 4: 第3バッチ（3-4日）
 
 ### 現在進行中プロジェクト
 
+#### 心不全治療特集ページ（2025-07-09）
+**場所**: project-docs/2025-07-09-heart-failure-feature/
+- 01-PROJECT_OVERVIEW.md - プロジェクト概要
+- 02-HFPEF_PATHOPHYSIOLOGY.md - HFpEFの病態解説
+- 03-2025_GUIDELINE_UPDATES.md - ガイドライン改訂要点
+- 04-HFREF_TREATMENT_STRATEGY.md - HFrEFの4本柱治療
+- 05-HFPEF_TREATMENT_REVOLUTION.md - HFpEFの治療革命
+- 06-CLINICAL_EVIDENCE_SUMMARY.md - 主要臨床試験まとめ
+- 07-FEATURE_PAGE_STRUCTURE_DESIGN.md - 特集ページ構成案
+- source_materials/drugs/cardiovascular/heart_failure/ - 各薬剤詳細（6薬剤）
+
 #### 薬剤ページv2→v3移行プロジェクト（2025-07-08）
 **場所**: project-docs/2025-07-08-drug-v3-migration/
 - 01-PROJECT_OVERVIEW.md - プロジェクト概要（背景、スコープ、フェーズ計画）
@@ -144,6 +190,17 @@ Phase 4: 第3バッチ（3-4日）
 
 
 ### 最近完了プロジェクト
+
+#### MR拮抗薬特集ページ（2025-07-08〜07-09）
+**場所**: project-docs/2025-07-08-mr-antagonist-feature/
+- 01-PROJECT_OVERVIEW.md - プロジェクト概要
+- 02-MR_ANTAGONIST_EVOLUTION.md - 名称変遷と進化の歴史  
+- 03-DRUG_COMPARISON_ANALYSIS.md - 4薬剤の包括的比較
+- 04-CLINICAL_EVIDENCE_SUMMARY.md - 主要臨床試験のまとめ（HFpEF追加済）
+- 05-NOMENCLATURE_EVOLUTION_HISTORY.md - K保持性からMRへの深層分析
+- 06-HFPEF_LATEST_EVIDENCE.md - HFpEFへの効果と2025年ガイドライン
+- source_materials/drugs/cardiovascular/mr_antagonists/ - 各薬剤詳細（HFpEF情報更新済）
+- 成果物：docs/features/mr-antagonist-complete-guide.html, feature-page.css拡張
 
 #### 吸入薬完全マスター特集ページ（2025-07-08）
 **場所**: project-docs/2025-07-08-inhaler-feature/

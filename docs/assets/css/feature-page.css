@@ -17,6 +17,12 @@
     --benefit-bg: #efe;
     --benefit-border: #cfc;
     --benefit-text: #080;
+    
+    /* MR拮抗薬世代別色 */
+    --mr-gen1: #3498db;          /* 第1世代（スピロノラクトン）- 青 */
+    --mr-gen2: #27ae60;          /* 第2世代（エプレレノン）- 緑 */
+    --mr-gen3: #e74c3c;          /* 第3世代（エサキセレノン）- 赤 */
+    --mr-gen4: #9b59b6;          /* 第4世代（フィネレノン）- 紫 */
 }
 
 /* ヒーローセクション */
@@ -883,6 +889,23 @@
 
 .point-card:nth-child(4) {
     border-color: var(--inhaler-triple);
+}
+
+/* MR拮抗薬特集用 */
+.mr-antagonist-feature .point-card:nth-child(1) {
+    border-color: var(--mr-gen1);
+}
+
+.mr-antagonist-feature .point-card:nth-child(2) {
+    border-color: var(--mr-gen2);
+}
+
+.mr-antagonist-feature .point-card:nth-child(3) {
+    border-color: var(--mr-gen3);
+}
+
+.mr-antagonist-feature .point-card:nth-child(4) {
+    border-color: var(--mr-gen4);
 }
 
 .point-card:hover {
