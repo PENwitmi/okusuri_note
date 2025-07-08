@@ -1,10 +1,10 @@
 # OkusuriNote マスター進捗ダッシュボード
-**最新更新**: 2025-07-08 17:00 - index.html特集ページ構造変更プロジェクト完了  
+**最新更新**: 2025-07-08 18:30 - 吸入薬完全マスター特集ページプロジェクト開始  
 **更新頻度**: リアルタイム（変更発生時即座）  
 **目的**: すべてのタスクと文書の状態を一元管理  
 **ガバナンス**: CEOが最終編集責任、Managerに実務更新委任（2025-06-30 23:45策定）
 
-## 🎯 現在の状況（17:00時点）
+## 🎯 現在の状況（18:30時点）
 
 ### 🚀 薬剤ページv2→v3移行プロジェクト（2025-07-08 02:20開始）
 **ステータス**: 🚀 **Phase 1完了、Phase 2進行中**（循環器系薬剤移行中）  
@@ -61,6 +61,20 @@ Phase 4: 第3バッチ（3-4日）
 - ✅ HTMLサイズ28.8%削減（666行→474行）
 
 **詳細**: `project-docs/2025-07-08-index-feature-integration/`参照
+
+### 🫁 吸入薬完全マスター特集ページ開発（2025-07-08 17:30開始）
+**ステータス**: 🚧 **情報収集・設計完了、実装待ち**  
+**目的**: 吸入薬の総合的な解説特集ページの作成  
+**対象薬剤**: テリルジー、レルベア、シムビコート、メプチン  
+**推定工数**: 4-6時間（残り実装3-4時間）
+
+#### 進捗詳細
+- ✅ source_materials/drugs/respiratory/inhalers/に4薬剤の詳細情報作成
+- ✅ 適応症と用量の違い（COPD vs 喘息）の分析完了
+- ✅ 特集ページ構成設計完了（デバイス比較、吸入指導、ケーススタディ含む）
+- 🚧 HTML実装待ち（docs/features/inhaler-complete-guide.html）
+
+**詳細**: `project-docs/2025-07-08-inhaler-feature/`参照
 
 ---
 
@@ -124,7 +138,14 @@ Phase 4: 第3バッチ（3-4日）
 - 04-INFORMATION_MAPPING.md - 情報収集マッピング
 - 05-MIGRATION_WORKFLOW.md - 移行ワークフロー
 - 06-FACTUAL_DEVELOPMENT_STORIES_GUIDE.md - 開発ストーリーガイド
-- migration-logs/ - 各薬剤の移行記録（01-rosuvastatin-migration-log.md完了）
+- migration-logs/ - 各薬剤の移行記録（01-rosuvastatin、02-telmisartan完了）
+
+#### 吸入薬完全マスター特集ページ（2025-07-08）
+**場所**: project-docs/2025-07-08-inhaler-feature/
+- 01-PROJECT_OVERVIEW.md - プロジェクト概要
+- 02-INHALER_DRUGS_RESEARCH.md - 4薬剤の調査結果
+- 03-FEATURE_PAGE_STRUCTURE_DESIGN.md - 特集ページ構成設計
+- source_materials/drugs/respiratory/inhalers/ - 各薬剤詳細（trelegy.md, relvar.md, symbicort.md, meptin.md）
 
 
 ### 最近完了プロジェクト
