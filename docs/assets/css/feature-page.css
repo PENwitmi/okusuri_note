@@ -1,0 +1,967 @@
+/* ==============================================
+   特集ページ専用スタイル
+   ============================================== */
+
+/* 吸入薬特集用のカスタム変数 */
+:root {
+    /* 吸入薬カテゴリ色 */
+    --inhaler-saba: #FF6B6B;         /* 短時間作用型（緊急性） */
+    --inhaler-ics-laba: #4ECDC4;     /* ICS/LABA配合剤 */
+    --inhaler-smart: #FFD93D;        /* SMART療法 */
+    --inhaler-triple: #6C5CE7;       /* トリプル療法 */
+    
+    /* リスク/ベネフィット表示色 */
+    --risk-bg: #fee;
+    --risk-border: #fcc;
+    --risk-text: #c00;
+    --benefit-bg: #efe;
+    --benefit-border: #cfc;
+    --benefit-text: #080;
+}
+
+/* ヒーローセクション */
+.feature-hero {
+    background: linear-gradient(135deg, var(--pharma-primary-subtle) 0%, var(--bg-accent) 100%);
+    padding: 60px 0 40px;
+    margin-bottom: 40px;
+}
+
+.feature-hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.feature-breadcrumb {
+    font-size: 14px;
+    color: var(--text-pharma-body);
+    margin-bottom: 20px;
+}
+
+.feature-breadcrumb a {
+    color: var(--text-pharma-body);
+    text-decoration: none;
+}
+
+.feature-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.feature-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-emphasis);
+    margin-bottom: 10px;
+}
+
+.feature-subtitle {
+    font-size: 20px;
+    color: var(--text-pharma-body);
+    margin-bottom: 20px;
+}
+
+.feature-lead {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-pharma-secondary);
+    max-width: 800px;
+}
+
+/* セクション共通 */
+.feature-section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.feature-section:last-child {
+    border-bottom: none;
+}
+
+/* イントロダクション */
+.intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-highlights {
+    background: var(--bg-secondary);
+    padding: 30px;
+    border-radius: 12px;
+    margin: 30px 0;
+}
+
+.intro-highlights h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--text-emphasis);
+}
+
+.intro-highlights ul {
+    list-style: none;
+    padding: 0;
+}
+
+.intro-highlights li {
+    padding: 8px 0;
+    padding-left: 24px;
+    position: relative;
+}
+
+.intro-highlights li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--learning-correct);
+    font-weight: bold;
+}
+
+/* 薬剤フロー */
+.drug-overview {
+    margin-top: 40px;
+}
+
+.drug-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.drug-flow-item {
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    min-width: 160px;
+    position: relative;
+}
+
+.drug-number {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: var(--info-color);
+    color: white;
+    border-radius: 50%;
+    line-height: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.drug-flow-item strong {
+    display: block;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.drug-type {
+    display: inline-block;
+    background: var(--pharma-primary-subtle);
+    color: var(--pharma-primary-dark);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.drug-role {
+    display: block;
+    font-size: 14px;
+    color: var(--text-pharma-body);
+}
+
+.flow-arrow {
+    font-size: 24px;
+    color: var(--text-pharma-muted);
+}
+
+/* 薬剤詳細セクション */
+.drug-details {
+    background: var(--bg-light);
+}
+
+.drug-article {
+    background: var(--bg-primary);
+    border-radius: 12px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+}
+
+.drug-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 30px;
+    background: var(--bg-secondary);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.drug-name {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.drug-icon {
+    font-size: 32px;
+    margin-right: 15px;
+}
+
+.drug-category {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}
+
+.drug-category.saba {
+    background: var(--inhaler-saba);
+}
+
+.drug-category.ics-laba {
+    background: var(--inhaler-ics-laba);
+}
+
+.drug-category.ics-laba.smart {
+    background: var(--inhaler-smart);
+    color: var(--text-pharma-secondary);
+}
+
+.drug-category.triple {
+    background: var(--inhaler-triple);
+}
+
+.drug-content {
+    padding: 30px;
+}
+
+/* 薬剤情報カード */
+.drug-info-card {
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.drug-info-card h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--text-emphasis);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item.full-width {
+    grid-column: 1 / -1;
+}
+
+.info-label {
+    font-size: 14px;
+    color: var(--text-pharma-body);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.info-value {
+    font-size: 16px;
+    color: var(--text-emphasis);
+}
+
+/* 適応表 */
+.indication-table table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.indication-table th,
+.indication-table td {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.indication-table th {
+    background: var(--border-light);
+    font-weight: 600;
+}
+
+.indication-comparison {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.indication-item {
+    flex: 1;
+    padding: 15px;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.indication-item strong {
+    color: var(--info-color);
+}
+
+.reason {
+    display: block;
+    font-size: 14px;
+    color: var(--text-pharma-body);
+    margin-top: 5px;
+}
+
+/* デバイス関連 */
+.device-selection h4,
+.device-info h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--text-emphasis);
+}
+
+.device-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.device-card {
+    background: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.device-card h5 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--info-color);
+}
+
+.device-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.device-card li {
+    padding: 5px 0;
+    font-size: 14px;
+    color: var(--text-pharma-body);
+}
+
+.device-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 20px;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+}
+
+.feature-item strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--text-emphasis);
+}
+
+.feature-item p {
+    font-size: 14px;
+    color: var(--text-pharma-body);
+    margin: 0;
+}
+
+/* 警告ボックス */
+.warning-box {
+    background: #fff3cd;
+    border: 2px solid var(--warning-color);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.warning-box h4 {
+    color: var(--warning-color);
+    margin-bottom: 15px;
+}
+
+.warning-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.warning-box li {
+    padding: 8px 0;
+    color: var(--warning-color);
+}
+
+.warning-box li strong {
+    color: var(--warning-color);
+}
+
+.warning-note {
+    margin-top: 15px;
+    font-weight: 600;
+    color: var(--warning-color);
+}
+
+/* 患者プロファイル */
+.patient-profile h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--text-emphasis);
+}
+
+.patient-profile ul {
+    list-style: none;
+    padding: 0;
+}
+
+.patient-profile li {
+    padding: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    font-size: 15px;
+}
+
+.patient-profile li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--info-color);
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.profile-item {
+    background: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.profile-item h5 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--info-color);
+}
+
+.profile-item p {
+    font-size: 14px;
+    color: var(--text-pharma-body);
+    margin: 0;
+}
+
+/* 適応理由カード */
+.adaptation-reason h4,
+.smart-therapy h4,
+.triple-therapy h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--text-emphasis);
+}
+
+.reason-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.reason-card {
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.reason-card h5 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--info-color);
+}
+
+.reason-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.reason-card li {
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+.reason-card li strong {
+    color: var(--inhaler-saba);
+}
+
+/* SMART療法 */
+.smart-concept {
+    background: var(--pharma-primary-subtle);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.smart-definition {
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.smart-definition strong {
+    color: var(--pharma-primary-dark);
+}
+
+.dosing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.dosing-table th,
+.dosing-table td {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.dosing-table th {
+    background: var(--border-light);
+    font-weight: 600;
+}
+
+.smart-reason {
+    background: #fff3cd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.smart-reason h5 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--warning-color);
+}
+
+.highlight-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--warning-color);
+}
+
+.highlight-text strong {
+    color: var(--warning-color);
+}
+
+.smart-patients {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.patient-card {
+    background: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--info-color);
+}
+
+.patient-card h5 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--text-emphasis);
+}
+
+.patient-card p {
+    font-size: 14px;
+    color: var(--text-pharma-body);
+    margin: 0;
+}
+
+/* トリプル療法 */
+.triple-reasons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.reason-box {
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.reason-box h5 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--inhaler-triple);
+}
+
+.emphasis {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: var(--border-light);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-pharma-secondary);
+}
+
+.restriction-explanation {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.risk-box,
+.benefit-box {
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.risk-box {
+    background: var(--risk-bg);
+    border: 2px solid var(--risk-border);
+}
+
+.risk-box h5 {
+    color: var(--risk-text);
+    margin-bottom: 15px;
+}
+
+.benefit-box {
+    background: var(--benefit-bg);
+    border: 2px solid var(--benefit-border);
+}
+
+.benefit-box h5 {
+    color: var(--benefit-text);
+    margin-bottom: 15px;
+}
+
+.triple-patients {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.patient-type {
+    background: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.patient-type h5 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--inhaler-triple);
+}
+
+/* 比較表セクション */
+.comparison-section {
+    background: var(--bg-secondary);
+}
+
+.comparison-table-wrapper {
+    margin-bottom: 40px;
+}
+
+.comparison-table-wrapper h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--text-emphasis);
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-medium);
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table th {
+    background: var(--border-light);
+    font-weight: 600;
+    color: var(--text-emphasis);
+    position: sticky;
+    top: 0;
+}
+
+.comparison-table tbody tr:hover {
+    background: var(--bg-secondary);
+}
+
+.comparison-table strong {
+    color: var(--text-emphasis);
+}
+
+/* 成分タグ */
+.component {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}
+
+.component.saba {
+    background: var(--inhaler-saba);
+}
+
+.component.ics {
+    background: var(--inhaler-ics-laba);
+}
+
+.component.laba {
+    background: var(--inhaler-smart);
+    color: var(--text-pharma-secondary);
+}
+
+.component.lama {
+    background: var(--inhaler-triple);
+}
+
+/* まとめセクション */
+.summary-section {
+    background: var(--bg-primary);
+}
+
+.principles {
+    margin-bottom: 40px;
+}
+
+.principle-list {
+    list-style: none;
+    padding: 0;
+    counter-reset: principle;
+}
+
+.principle-list li {
+    padding: 15px 0;
+    padding-left: 40px;
+    position: relative;
+    counter-increment: principle;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.principle-list li:before {
+    content: counter(principle);
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 30px;
+    height: 30px;
+    background: var(--info-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* チェックリスト */
+.checklist-box {
+    background: var(--bg-secondary);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+
+.checklist-box h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--text-emphasis);
+}
+
+.checklist {
+    display: grid;
+    gap: 15px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checklist-item:hover {
+    box-shadow: var(--shadow-medium);
+}
+
+.checklist-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.checklist-item span {
+    font-size: 15px;
+    color: var(--text-pharma-secondary);
+}
+
+/* キーポイント */
+.key-points {
+    margin-bottom: 40px;
+}
+
+.point-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.point-card {
+    background: var(--bg-primary);
+    border: 2px solid;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.point-card:nth-child(1) {
+    border-color: var(--inhaler-saba);
+}
+
+.point-card:nth-child(2) {
+    border-color: var(--inhaler-ics-laba);
+}
+
+.point-card:nth-child(3) {
+    border-color: var(--inhaler-smart);
+}
+
+.point-card:nth-child(4) {
+    border-color: var(--inhaler-triple);
+}
+
+.point-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.point-card h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--text-emphasis);
+}
+
+.point-card p {
+    font-size: 14px;
+    color: var(--text-pharma-body);
+    margin: 0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .feature-title {
+        font-size: 28px;
+    }
+    
+    .feature-subtitle {
+        font-size: 18px;
+    }
+    
+    .drug-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .drug-flow {
+        flex-direction: column;
+    }
+    
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .device-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .reason-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-table {
+        font-size: 14px;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-hero {
+        padding: 40px 0 30px;
+    }
+    
+    .section-container {
+        padding: 0 15px;
+    }
+    
+    .drug-content {
+        padding: 20px;
+    }
+    
+    .checklist-box {
+        padding: 20px;
+    }
+}
