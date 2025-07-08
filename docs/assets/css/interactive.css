@@ -137,7 +137,6 @@
         z-index: 999;
         transform: translateX(-100%);
         transition: transform var(--transition-base);
-        display: flex !important;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -148,6 +147,7 @@
     
     .main-nav.active {
         transform: translateX(0);
+        display: flex !important;
     }
     
     .main-nav.animate-in {
@@ -210,6 +210,18 @@
 .mobile-menu-btn.active {
     background: rgba(42, 82, 152, 0.1);
     border-radius: 8px;
+}
+
+/* モバイルメニューボタンを固定位置に配置 */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+        background: var(--bg-primary);
+        box-shadow: var(--shadow-medium);
+    }
 }
 
 /* メニューが開いている時のボディスクロール防止 */
@@ -383,6 +395,7 @@ body.menu-open {
     .main-nav.active {
         transition: none;
         transform: translateX(0);
+        display: flex !important;
     }
     
     .drug-card:hover {
