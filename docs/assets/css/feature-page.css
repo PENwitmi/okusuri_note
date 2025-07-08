@@ -925,6 +925,23 @@
     margin: 0;
 }
 
+/* 心不全特集用 - 縦方向フロー */
+.drug-flow.vertical {
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.drug-flow.vertical .drug-flow-item {
+    width: 100%;
+    max-width: 500px;
+}
+
+.drug-flow.vertical .flow-arrow {
+    transform: rotate(90deg);
+    margin: 15px 0;
+}
+
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
     .feature-title {
