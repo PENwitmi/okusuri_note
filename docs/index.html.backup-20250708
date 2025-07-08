@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="サクッとお薬ノート - 薬学生のための薬剤図鑑。21の重要薬剤、特集ページで薬学を深く理解">
+    <meta name="description" content="おくすりノート - 薬学生のための薬剤図鑑。21の重要薬剤、薬効群比較、感動ストーリーで薬学を深く理解">
     <meta name="keywords" content="薬学, 薬剤, 国試, 暗記, 使い分け, ARB, PPI, スタチン">
-    <title>サクッとお薬ノート - 薬剤図鑑 | 薬学生のための学習プラットフォーム</title>
+    <title>おくすりノート - 薬剤図鑑 | 薬学生のための学習プラットフォーム</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/responsive-unified.css">
@@ -16,14 +16,16 @@
     <header class="header">
         <div class="header-container">
             <div class="logo">
-                <h1><a href="index.html">サクッとお薬ノート</a></h1>
+                <h1><a href="index.html">おくすりノート</a></h1>
                 <p class="tagline">薬剤図鑑</p>
             </div>
             
             <nav class="main-nav">
                 <ul class="nav-list">
                     <li><a href="#drugs" class="nav-link">薬剤一覧</a></li>
-                    <li><a href="#features" class="nav-link">特集ページ</a></li>
+                    <li><a href="#categories" class="nav-link">薬効群</a></li>
+                    <li><a href="#stories" class="nav-link">ストーリー</a></li>
+                    <li><a href="#differentiation" class="nav-link">使い分け</a></li>
                 </ul>
             </nav>
             
@@ -62,8 +64,8 @@
                         <span class="stat-label">薬効群</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">4</span>
-                        <span class="stat-label">特集ページ</span>
+                        <span class="stat-number">10</span>
+                        <span class="stat-label">感動ストーリー</span>
                     </div>
                 </div>
                 <a href="#drugs" class="cta-button">今すぐ学習を始める</a>
@@ -80,7 +82,7 @@
                 </p>
                 
                 <div class="drugs-grid" id="drugsGrid">
-                <!-- ARB系薬剤（カンデサルタン、ロサルタン）とPPI系薬剤（3種）は準備中
+                <!-- ARB系薬剤（3種）とPPI系薬剤（3種）は準備中
                 <div class="drug-card" data-category="ARB" data-search="カンデサルタン">
                     <div class="drug-category">ARB</div>
                     <h3 class="drug-name">カンデサルタン</h3>
@@ -90,9 +92,17 @@
                     </div>
                     <a href="drugs/candesartan.html" class="drug-link">詳細を見る</a>
                 </div>
-                -->
             
-                <!-- ARB系薬剤（ロサルタン）は準備中
+                <div class="drug-card" data-category="ARB" data-search="テルミサルタン">
+                    <div class="drug-category">ARB</div>
+                    <h3 class="drug-name">テルミサルタン</h3>
+                    <p class="drug-description">半減期最長、PPAR-γ活性</p>
+                    <div class="drug-features">
+                        <span class="feature">糖尿病</span><span class="feature">長時間作用</span>
+                    </div>
+                    <a href="drugs/telmisartan.html" class="drug-link">詳細を見る</a>
+                </div>
+            
                 <div class="drug-card" data-category="ARB" data-search="ロサルタン">
                     <div class="drug-category">ARB</div>
                     <h3 class="drug-name">ロサルタン</h3>
@@ -142,16 +152,6 @@
                         <span class="feature">高LDL</span><span class="feature">CKD</span>
                     </div>
                     <a href="drugs-v3/rosuvastatin-v3.html" class="drug-link">詳細を見る</a>
-                </div>
-            
-                <div class="drug-card" data-category="ARB" data-search="テルミサルタン">
-                    <div class="drug-category">ARB</div>
-                    <h3 class="drug-name">テルミサルタン</h3>
-                    <p class="drug-description">半減期最長、PPAR-γ活性</p>
-                    <div class="drug-features">
-                        <span class="feature">糖尿病</span><span class="feature">長時間作用</span>
-                    </div>
-                    <a href="drugs-v3/telmisartan-v3.html" class="drug-link">詳細を見る</a>
                 </div>
             
                 <!-- スタチン（アトルバスタチン）、SGLT2阻害薬（2種）、β遮断薬（カルベジロール）は準備中
@@ -313,95 +313,287 @@
             </div>
         </section>
 
-        <!-- 特集ページ -->
-        <section id="features" class="features-section">
+        <!-- 薬効群別ナビゲーション -->
+        <section id="categories" class="categories-section">
             <div class="section-container">
-                <h2 class="section-title">特集ページ</h2>
+                <h2 class="section-title">薬効群別ガイド</h2>
                 <p class="section-description">
-                    最新ガイドライン・臨床エビデンスに基づく、実践的な薬物治療の特集コンテンツ
+                    同じ薬効群内での使い分けポイントを詳しく解説。「なぜ似た薬が複数あるのか」がわかります。
                 </p>
                 
-                <div class="features-grid">
-                    <!-- 優先度1: 心不全治療特集 -->
-                    <div class="feature-card feature-priority-high" data-category="cardiovascular">
-                        <div class="feature-badge">2025最新</div>
-                        <div class="feature-icon">🫀</div>
-                        <h3 class="feature-title">心不全治療の新展開</h3>
-                        <h4 class="feature-subtitle">HFpEF vs HFrEF - パラダイムシフト</h4>
-                        <p class="feature-description">
-                            SGLT2阻害薬がもたらした治療革命。EMPEROR-Preserved・DELIVER試験の衝撃と実臨床への応用
-                        </p>
-                        <div class="feature-highlights">
-                            <span class="highlight-item">📊 最新ガイドライン</span>
-                            <span class="highlight-item">💊 新規適応薬</span>
-                            <span class="highlight-item">🔬 臨床試験解説</span>
-                        </div>
-                        <a href="features/heart-failure-2025.html" class="feature-link">
-                            特集を読む
-                            <span class="link-arrow">→</span>
-                        </a>
+                <div class="categories-grid">
+                    <div class="category-card" role="article" aria-labelledby="category-cardiovascular">
+                        <div class="category-icon" aria-hidden="true">🫀</div>
+                        <h3 class="category-title" id="category-cardiovascular">循環器オーケストラガイド</h3>
+                        <p class="category-description">音楽理論で理解する循環器薬の完全統合ガイド。新時代楽器（エサキセレノン・ARNi）も登場</p>
+                        <div class="category-drugs" aria-label="循環器薬剤数">9薬剤</div>
+                        <a href="cardiovascular-orchestra.html" class="category-link" aria-describedby="category-cardiovascular">オーケストラを聴く</a>
                     </div>
 
-                    <!-- 優先度2: 安全性情報特集 -->
-                    <div class="feature-card" data-category="safety">
-                        <div class="feature-icon">⚠️</div>
-                        <h3 class="feature-title">医薬品安全性情報</h3>
-                        <h4 class="feature-subtitle">イエローレター・ブルーレター完全ガイド</h4>
-                        <p class="feature-description">
-                            重要な安全性情報の読み解き方と実臨床での対応。最新の注意喚起情報を網羅
-                        </p>
-                        <div class="feature-highlights">
-                            <span class="highlight-item">🔴 イエローレター</span>
-                            <span class="highlight-item">🔵 ブルーレター</span>
-                            <span class="highlight-item">📋 対応チェックリスト</span>
-                        </div>
-                        <a href="features/drug-safety-guide.html" class="feature-link">
-                            特集を読む
-                            <span class="link-arrow">→</span>
-                        </a>
+                    <div class="category-card" role="article" aria-labelledby="category-gastrointestinal">
+                        <div class="category-icon" aria-hidden="true">🧬</div>
+                        <h3 class="category-title" id="category-gastrointestinal">消化器系薬剤</h3>
+                        <p class="category-description">PPI薬剤のCYP2C19による効果の違い</p>
+                        <div class="category-drugs" aria-label="消化器系薬剤数">2薬剤</div>
+                        <a href="categories/gastrointestinal.html" class="category-link" aria-describedby="category-gastrointestinal">使い分けを学ぶ</a>
                     </div>
 
-                    <!-- 優先度3: MR拮抗薬特集 -->
-                    <div class="feature-card" data-category="cardiovascular">
-                        <div class="feature-icon">💊</div>
-                        <h3 class="feature-title">MR拮抗薬の進化</h3>
-                        <h4 class="feature-subtitle">第4世代フィネレノンまでの軌跡</h4>
-                        <p class="feature-description">
-                            「カリウム保持性利尿薬」から「MR拮抗薬」へ。4世代の薬剤の使い分けと最新知見
-                        </p>
-                        <div class="feature-highlights">
-                            <span class="highlight-item">🧬 作用機序</span>
-                            <span class="highlight-item">📈 世代別比較</span>
-                            <span class="highlight-item">🎯 適応拡大</span>
-                        </div>
-                        <a href="features/mr-antagonists-evolution.html" class="feature-link">
-                            特集を読む
-                            <span class="link-arrow">→</span>
-                        </a>
+                    <div class="category-card" role="article" aria-labelledby="category-lipid">
+                        <div class="category-icon" aria-hidden="true">🫁</div>
+                        <h3 class="category-title" id="category-lipid">脂質異常症薬</h3>
+                        <p class="category-description">ストロング vs スタンダードスタチンの選択基準</p>
+                        <div class="category-drugs" aria-label="脂質異常症薬剤数">2薬剤</div>
+                        <a href="categories/lipid.html" class="category-link" aria-describedby="category-lipid">使い分けを学ぶ</a>
                     </div>
 
-                    <!-- 優先度4: 吸入薬特集 -->
-                    <div class="feature-card" data-category="respiratory">
-                        <div class="feature-icon">🫁</div>
-                        <h3 class="feature-title">吸入薬完全マスター</h3>
-                        <h4 class="feature-subtitle">デバイス特性と適応別選択</h4>
-                        <p class="feature-description">
-                            シムビコート・テリルジー・レルベア徹底比較。吸入指導のポイントも詳解
-                        </p>
-                        <div class="feature-highlights">
-                            <span class="highlight-item">🔧 デバイス比較</span>
-                            <span class="highlight-item">💨 吸入手技</span>
-                            <span class="highlight-item">📊 薬剤選択</span>
-                        </div>
-                        <a href="features/inhaler-complete-guide.html" class="feature-link">
-                            特集を読む
-                            <span class="link-arrow">→</span>
-                        </a>
+                    <div class="category-card" role="article" aria-labelledby="category-psychotropic">
+                        <div class="category-icon" aria-hidden="true">🧠</div>
+                        <h3 class="category-title" id="category-psychotropic">精神神経系薬</h3>
+                        <p class="category-description">SSRI薬剤の副作用プロファイル比較</p>
+                        <div class="category-drugs" aria-label="精神神経系薬剤数">2薬剤</div>
+                        <a href="categories/psychotropic.html" class="category-link" aria-describedby="category-psychotropic">使い分けを学ぶ</a>
+                    </div>
+
+                    <div class="category-card" role="article" aria-labelledby="category-diabetes">
+                        <div class="category-icon" aria-hidden="true">🍯</div>
+                        <h3 class="category-title" id="category-diabetes">糖尿病薬</h3>
+                        <p class="category-description">SGLT2阻害薬の適応別使い分け（心不全 vs CKD）</p>
+                        <div class="category-drugs" aria-label="糖尿病薬剤数">2薬剤</div>
+                        <a href="categories/diabetes.html" class="category-link" aria-describedby="category-diabetes">使い分けを学ぶ</a>
+                    </div>
+
+                    <div class="category-card" role="article" aria-labelledby="category-diuretic">
+                        <div class="category-icon" aria-hidden="true">💧</div>
+                        <h3 class="category-title" id="category-diuretic">利尿薬</h3>
+                        <p class="category-description">急性 vs 慢性心不全での利尿薬選択</p>
+                        <div class="category-drugs" aria-label="利尿薬剤数">2薬剤</div>
+                        <a href="categories/diuretic.html" class="category-link" aria-describedby="category-diuretic">使い分けを学ぶ</a>
+                    </div>
+
+                    <div class="category-card" role="article" aria-labelledby="category-others">
+                        <div class="category-icon" aria-hidden="true">⚕️</div>
+                        <h3 class="category-title" id="category-others">その他重要薬</h3>
+                        <p class="category-description">TDM対象薬、相互作用要注意薬の実践ポイント</p>
+                        <div class="category-drugs" aria-label="その他重要薬剤数">4薬剤</div>
+                        <a href="categories/others.html" class="category-link" aria-describedby="category-others">使い分けを学ぶ</a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- 10大ストーリー -->
+        <section id="stories" class="stories-section">
+            <div class="section-container">
+                <h2 class="section-title">薬学史 10大ストーリー</h2>
+                <p class="section-description">
+                    感動的な発見物語から、薬剤への理解と愛着を深めましょう。歴史を知ることで薬学がもっと好きになります。
+                </p>
+                
+                <div class="stories-grid">
+                    <div class="story-card">
+                        <div class="story-image">🧪</div>
+                        <h3 class="story-title">ペニシリンの奇跡</h3>
+                        <p class="story-description">フレミングの偶然の発見が、どのように数億人の命を救ったのか</p>
+                        <div class="story-meta">
+                            <span class="story-year">1928年</span>
+                            <span class="story-impact">感染症治療革命</span>
+                        </div>
+                        <a href="stories/penicillin.html" class="story-link">ストーリーを読む</a>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">💉</div>
+                        <h3 class="story-title">インスリンの光と影</h3>
+                        <p class="story-description">糖尿病患者に希望をもたらした治療薬の発見と商業化の裏側</p>
+                        <div class="story-meta">
+                            <span class="story-year">1921年</span>
+                            <span class="story-impact">糖尿病治療革命</span>
+                        </div>
+                        <a href="stories/insulin.html" class="story-link">ストーリーを読む</a>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">🫀</div>
+                        <h3 class="story-title">高血圧治療への挑戦</h3>
+                        <p class="story-description">サイレントキラーとの戦い - ACE阻害薬からARBへの進化</p>
+                        <div class="story-meta">
+                            <span class="story-year">1977年</span>
+                            <span class="story-impact">心血管疾患予防</span>
+                        </div>
+                        <a href="stories/hypertension.html" class="story-link">ストーリーを読む</a>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">🛡️</div>
+                        <h3 class="story-title">バンコマイシンの最後の砦</h3>
+                        <p class="story-description">MRSA出現で注目された「最終兵器」の光と影</p>
+                        <div class="story-meta">
+                            <span class="story-year">1958年</span>
+                            <span class="story-impact">耐性菌対策</span>
+                        </div>
+                        <a href="stories/vancomycin.html" class="story-link">ストーリーを読む</a>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">💊</div>
+                        <h3 class="story-title">アスピリンの奇跡</h3>
+                        <p class="story-description">解熱鎮痛薬から心筋梗塞予防薬へ - 100年の進化</p>
+                        <div class="story-meta">
+                            <span class="story-year">1897年</span>
+                            <span class="story-impact">心血管疾患予防</span>
+                        </div>
+                        <a href="stories/aspirin.html" class="story-link">ストーリーを読む</a>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">🎯</div>
+                        <h3 class="story-title">がん治療薬の夜明け</h3>
+                        <p class="story-description">化学療法から分子標的薬へ - がん治療の劇的進歩</p>
+                        <div class="story-meta">
+                            <span class="story-year">1940年</span>
+                            <span class="story-impact">がん治療革命</span>
+                        </div>
+                        <a href="stories/anticancer.html" class="story-link">ストーリーを読む</a>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">🧠</div>
+                        <h3 class="story-title">精神科薬の光と影</h3>
+                        <p class="story-description">精神医学を変えた薬剤の発見と社会への影響</p>
+                        <div class="story-meta">
+                            <span class="story-year">1950年</span>
+                            <span class="story-impact">精神医学革命</span>
+                        </div>
+                        <a href="stories/psychotropic.html" class="story-link">ストーリーを読む</a>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">💉</div>
+                        <h3 class="story-title">ワクチンの奇跡</h3>
+                        <p class="story-description">天然痘撲滅からCOVID-19まで - 予防医学の勝利</p>
+                        <div class="story-meta">
+                            <span class="story-year">1796年</span>
+                            <span class="story-impact">感染症予防</span>
+                        </div>
+                        <a href="stories/vaccine.html" class="story-link">ストーリーを読む</a>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">🦠</div>
+                        <h3 class="story-title">耐性菌との攻防</h3>
+                        <p class="story-description">抗生物質と耐性菌のいたちごっこ - 終わりなき戦い</p>
+                        <div class="story-meta">
+                            <span class="story-year">1940年</span>
+                            <span class="story-impact">AMR対策</span>
+                        </div>
+                        <a href="stories/resistance.html" class="story-link">ストーリーを読む</a>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">🧬</div>
+                        <h3 class="story-title">個別化医療の始まり</h3>
+                        <p class="story-description">遺伝子解析から始まる、一人ひとりに最適な治療</p>
+                        <div class="story-meta">
+                            <span class="story-year">2003年</span>
+                            <span class="story-impact">精密医療</span>
+                        </div>
+                        <a href="stories/personalized.html" class="story-link">ストーリーを読む</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 薬剤使い分けの極意 -->
+        <section id="differentiation" class="differentiation-section">
+            <div class="section-container">
+                <h2 class="section-title">薬剤使い分けの極意</h2>
+                <p class="section-description">
+                    同効薬の使い分けで迷わない！実臨床で重要な判断ポイントを10項目で完全攻略。
+                </p>
+                
+                <div class="differentiation-grid">
+                    <div class="diff-card">
+                        <div class="diff-number">01</div>
+                        <h3 class="diff-title">SGLT2阻害薬の適応別使い分け</h3>
+                        <p class="diff-description">心不全にはエンパグリフロジン、CKDにはダパグリフロジン</p>
+                        <div class="diff-drugs">エンパグリフロジン vs ダパグリフロジン</div>
+                        <a href="groups/SGLT2_evolution_model.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+
+                    <div class="diff-card">
+                        <div class="diff-number">02</div>
+                        <h3 class="diff-title">スタチンの強度別使い分け</h3>
+                        <p class="diff-description">冠動脈疾患にはストロング、予防にはスタンダード</p>
+                        <div class="diff-drugs">ロスバスタチン vs アトルバスタチン</div>
+                        <a href="groups/statin_evolution_model.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+
+                    <div class="diff-card">
+                        <div class="diff-number">03</div>
+                        <h3 class="diff-title">PPIの代謝特性による選択</h3>
+                        <p class="diff-description">CYP2C19 PMにはエソメプラゾール一択</p>
+                        <div class="diff-drugs">エソメプラゾール vs ランソプラゾール</div>
+                        <a href="groups/PPI_evolution_model.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+
+                    <div class="diff-card">
+                        <div class="diff-number">04</div>
+                        <h3 class="diff-title">β遮断薬の選択性による使い分け</h3>
+                        <p class="diff-description">心不全にはカルベジロール、高血圧にはビソプロロール</p>
+                        <div class="diff-drugs">カルベジロール vs ビソプロロール</div>
+                        <a href="groups/beta_blocker_evolution_model.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+
+                    <div class="diff-card">
+                        <div class="diff-number">05</div>
+                        <h3 class="diff-title">ARBの臓器保護作用別選択</h3>
+                        <p class="diff-description">脳保護作用重視ならカンデサルタン</p>
+                        <div class="diff-drugs">カンデサルタン vs テルミサルタン</div>
+                        <a href="groups/ARB_evolution_model.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+
+                    <div class="diff-card">
+                        <div class="diff-number">06</div>
+                        <h3 class="diff-title">利尿薬の病期別使い分け</h3>
+                        <p class="diff-description">急性期はフロセミド、慢性期はスピロノラクトン</p>
+                        <div class="diff-drugs">フロセミド vs スピロノラクトン</div>
+                        <a href="groups/diuretics_evolution_model.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+
+                    <div class="diff-card">
+                        <div class="diff-number">07</div>
+                        <h3 class="diff-title">SSRIの副作用プロファイル比較</h3>
+                        <p class="diff-description">初回治療にはエスシタロプラム</p>
+                        <div class="diff-drugs">セルトラリン vs エスシタロプラム</div>
+                        <a href="groups/SSRI_evolution_model.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+
+                    <div class="diff-card">
+                        <div class="diff-number">08</div>
+                        <h3 class="diff-title">ACE阻害薬のエビデンス別選択</h3>
+                        <p class="diff-description">心不全にはエナラプリル、冠動脈疾患にはペリンドプリル</p>
+                        <div class="diff-drugs">エナラプリル vs ペリンドプリル</div>
+                        <a href="groups/ACE_inhibitor_evolution_model.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+
+                    <div class="diff-card">
+                        <div class="diff-number">09</div>
+                        <h3 class="diff-title">TDM対象薬の管理ポイント</h3>
+                        <p class="diff-description">ジゴキシンは効果、バンコマイシンは副作用重視</p>
+                        <div class="diff-drugs">ジゴキシン vs バンコマイシン</div>
+                        <a href="groups/drug_ecosystem_concept.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+
+                    <div class="diff-card">
+                        <div class="diff-number">10</div>
+                        <h3 class="diff-title">抗凝固薬の選択基準</h3>
+                        <p class="diff-description">ワルファリンの適応と相互作用管理</p>
+                        <div class="diff-drugs">ワルファリン vs DOAC</div>
+                        <a href="groups/cardiovascular_integrated_guide.html" class="diff-link">極意を学ぶ</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- フッター -->
@@ -409,7 +601,7 @@
         <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3 class="footer-title">サクッとお薬ノート</h3>
+                    <h3 class="footer-title">おくすりノート</h3>
                     <p class="footer-description">
                         薬学生のための実践的学習プラットフォーム。<br>
                         「なぜ似た薬が複数存在するのか」への明確な回答を提供します。
@@ -460,7 +652,7 @@
             
             <div class="footer-bottom">
                 <p class="copyright">
-                    &copy; 2025 サクッとお薬ノート. Phase 1 ベータ版 - 薬学生応援プロジェクト
+                    &copy; 2025 おくすりノート. Phase 1 ベータ版 - 薬学生応援プロジェクト
                 </p>
                 <p class="version">
                     Version 1.0.0 | 最終更新: 2025年6月28日

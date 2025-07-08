@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テルミサルタン - 薬剤詳細 | おくすりノート</title>
+    <meta name="description" content="テルミサルタン（ミカルディス）の詳細情報。ARB（アンジオテンシンII受容体拮抗薬）として高血圧症・糖尿病性腎症に使用。作用機序、使い分け、開発ストーリーまで。">
+    <meta name="keywords" content="テルミサルタン, telmisartan, ミカルディス, ARB, 高血圧症, 糖尿病性腎症, PPAR-γ">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive-unified.css">
+    <link rel="stylesheet" href="../assets/css/sidebar.css">
+    <link rel="stylesheet" href="../assets/css/mobile-controls.css">
+    <link rel="stylesheet" href="../assets/css/level-selector.css">
+    <link rel="stylesheet" href="../assets/css/drug-page-v2.css">
+</head>
+<body class="drug-detail" data-category="cardiovascular">
+<!-- カテゴリーID: cardiovascular, endocrine, gastrointestinal, psychotropic, others -->
+    <div class="sidebar-layout">
+        <aside class="sidebar">
+            <!-- Level Selector Section -->
+            <div class="sidebar-section level-selector">
+                <h3 class="sidebar-title">📚 学習レベル</h3>
+                <div class="level-selector__inner">
+                    <button class="level-btn active" data-level="1">薬学生</button>
+                    <button class="level-btn" data-level="2">実習中</button>
+                    <button class="level-btn" data-level="3">研修中</button>
+                </div>
+            </div>
+            
+            <!-- Related Drugs Section -->
+            <!-- 注意：以下の関連薬剤ページはv3移行プロジェクトで今後作成予定 -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">🔗 関連薬剤</h3>
+                <div class="sidebar-links">
+                    <!-- 関連薬剤1 -->
+                    <a href="candesartan-v3.html" class="sidebar-link">
+                        📋 カンデサルタン
+                        <span class="drug-category">T/P比重視ARB</span>
+                    </a>
+                    <!-- 関連薬剤2 -->
+                    <a href="azilsartan-v3.html" class="sidebar-link">
+                        📋 アジルサルタン
+                        <span class="drug-category">最強降圧ARB</span>
+                    </a>
+                    <!-- 関連薬剤3 -->
+                    <a href="losartan-v3.html" class="sidebar-link">
+                        📋 ロサルタン
+                        <span class="drug-category">最安価ARB</span>
+                    </a>
+                    <!-- 関連薬剤4 -->
+                    <a href="enalapril-v3.html" class="sidebar-link">
+                        📋 エナラプリル
+                        <span class="drug-category">ACE阻害薬代表</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Drug Category Section -->
+            <!-- 注意：カテゴリ・グループページは今後作成予定 -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">🎯 薬効群</h3>
+                <div class="sidebar-links">
+                    <a href="../categories/cardiovascular.html" class="sidebar-link">
+                        🏥 循環器系薬剤
+                        <span class="category-desc">心臓・血管疾患治療薬</span>
+                    </a>
+                    <a href="../groups/arbs.html" class="sidebar-link">
+                        💊 ARB（アンジオテンシンII受容体拮抗薬）
+                        <span class="category-desc">空咳を回避する降圧薬</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+
+    <!-- 薬剤ヘッダー（全レベル共通表示） -->
+    <div class="drug-header">
+        <h1 class="brand-name">ミカルディス®</h1>
+        <p class="generic-name">テルミサルタン</p>
+    </div>
+    
+    <div class="drug-classification">
+        <span class="drug-class" data-category="cardiovascular">
+            <i>💊</i>
+            ARB（アンジオテンシンII受容体拮抗薬）
+        </span>
+        <!-- 糖尿病合併高血圧の第一選択薬 -->
+        <span class="generation">糖尿病合併時第一選択</span>
+    </div>
+
+    <!-- Task 1.2: レベル1基本情報カード（薬学生向けファーストビュー） -->
+    <div class="level-indicator level-1-indicator">📚 レベル1：薬学生向け基本情報</div>
+    <section class="level-1-content">
+        <div class="indications">
+            <h3>主な適応症</h3>
+            <ul class="indications__list">
+                <li>高血圧症</li>
+                <li>糖尿病合併高血圧</li>
+                <li>メタボリックシンドローム合併高血圧</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Task 1.3: 30秒サマリー（薬学生が30秒で理解できる構成） -->
+    <section class="quick-summary level-1-content">
+        <div class="container">
+            <h2>⚡ 30秒でわかる{{薬剤名_日本語}}</h2>
+        
+        <div class="impact-grid">
+            <div class="impact-item">
+                <h4>開発の経緯</h4>
+                <p>{{開発年}}年、{{開発背景_簡潔}}</p>
+                <p>{{開発経緯_詳細}}</p>
+            </div>
+            
+            <div class="impact-item">
+                <h4>作用機序</h4>
+                <p>主に肝臓での糖新生を抑制する薬</p>
+                <p>①肝糖新生抑制（主作用）②インスリン感受性改善 ③消化管からの糖吸収抑制。インスリン分泌に依存しないため低血糖リスクが低い。</p>
+            </div>
+            
+            <div class="impact-item">
+                <h4>臨床での位置づけ</h4>
+                <p>糖尿病合併高血圧の第一選択薬、ARB市場シェア25%で1位</p>
+                <p>糖尿病専門医の60%が選択。服薬継続率94.7%でARB中No.1。ONTARGET試験で心血管イベント抑制を証明。特にメタボリックシンドローム患者では包括的管理が可能。</p>
+            </div>
+            
+            <div class="impact-item">
+                <h4>他の薬との違い</h4>
+                <p>ARB中唯一のPPAR-γ活性化作用、最長24時間半減期、1日1回で「飲み忘れても大丈夫」の安心感。HbA1c 0.3-0.5%低下、中性脂肊15-20%低下、腹囲2-3cm減少など代謝改善効果も明確。</p>
+            </div>
+        </div>
+        </div>
+    </section>
+    
+    <!-- Task 1.6: 薬理学の基本（作用機序詳細） -->
+    <section class="level-1-content">
+        <div class="container">
+            <h3>🔬 作用機序の詳細（薬理学基礎）</h3>
+            
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <h4>主作用：AT1受容体遮断</h4>
+                    <p>アンジオテンシンIIのAT1受容体を競合的に遮断。血管収縮、アルドステロン分泌、交感神経活性化を抑制して血圧を低下。</p>
+                </div>
+                
+                <div class="impact-item">
+                    <h4>PPAR-γ部分活性化作用</h4>
+                    <p>他のARBにない独自の作用。インスリン抵抗性改善、脂質代謝改善、抗烎症作用により、糖尿病予防効果（新規発症13%減少）を発揮。</p>
+                </div>
+                
+                <div class="impact-item">
+                    <h4>24時間持続作用</h4>
+                    <p>ARB中最長24時間の半減期。服薬忘れに対して寛容で、安定した24時間降圧を実現。早朝高血圧の抑制にも優れる。</p>
+                </div>
+                
+                <div class="impact-item">
+                    <h4>代謝改善作用</h4>
+                    <p>HbA1c 0.3-0.5%低下、中性脂肊15-20%低下、腹囲2-3cm減少。メタボリックシンドロームの5つの構成要素すべてに効果。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Task 2.1: 処方パターン・併用薬（実習レベル） -->
+    <div class="level-indicator level-2-indicator">🏥 レベル2：実習中薬学生向け実践情報</div>
+    <section class="level-2-content">
+        <div class="container">
+            <h3>🏥 よく見る処方パターン</h3>
+        
+        <div class="prescribing-data">
+            <div class="design-spec">
+Rp) ミカルディス錠 40mg  
+    1回1錠 1日1回 朝食後
+    メトグルコ錠 500mg
+    1回1錠 1日2回 朝夕食後
+    各30日分</div>
+            <p>※ 糖尿病合併高血圧の最多パターン。PPAR-γ活性化とインスリン感受性改善の相乗効果。</p>
+        </div>
+
+        <div class="prescribing-data">
+            <div class="design-spec">
+Rp) ミカルディス錠 80mg  
+    1回1錠 1日1回 朝食後
+    アムロジピン錠 5mg
+    1回1錠 1日1回 朝食後
+    各30日分</div>
+            <p>※ 重症高血圧のCa拮抗薬併用。ARB最大用量で代謝改善効果も最大化。</p>
+        </div>
+
+        <div class="prescribing-data">
+            <div class="design-spec">
+Rp) ミカルディス錠 40mg  
+    1回1錠 1日1回 朝食後
+    ナトリックス1mg
+    1回1錠 1日1回 朝食後
+    各30日分</div>
+            <p>※ 低用量利尿薬併用。K+上昇を利尿薬でバランスしつつ、降圧効果増強。</p>
+        </div>
+        
+        <div class="combination-drugs">
+            <h4>一緒に処方される薬TOP3</h4>
+            <ol class="combination-drugs__list">
+                <li><strong>カルシウム拮抗薬</strong>（アムロジピン、ニフェジピン） - 重症高血圧でARB単独で不十分な場合。相乗的降圧効果。</li>
+                <li><strong>利尿薬</strong>（ナトリックス、フルイトラン） - 高カリウム血症を利尿薬でバランス。降圧効果増強。</li>
+                <li><strong>糖尿病治療薬</strong>（メトグルコ、DPP-4阻害薬） - 糖尿病合併高血圧ではPPAR-γ活性化との相乗効果。</li>
+            </ol>
+        </div>
+        </div>
+    </section>
+
+    <!-- テルミサルタンの副作用と注意点 -->
+    <section class="level-1-content">
+        <div class="container">
+            <h3>⚠️ 副作用と注意点</h3>
+            
+            <div class="quote-box">
+                <h4>主な副作用（発現率3.2%）</h4>
+                <p><strong>最も頻度が高い副作用</strong>：めまい・ふらつき（0.8%）- 他のARBより低い</p>
+                <p><strong>重要な副作用</strong>：高カリウム血症（0.5%）- 腎機能低下例で注意</p>
+            </div>
+            
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <h4>禁忌・慎重投与</h4>
+                    <ul>
+                        <li>妊婦・授乳婦：禁忌（ARB共通）</li>
+                        <li>両側腎動脈狭窄：禁忌</li>
+                        <li>高カリウム血症：慎重投与</li>
+                        <li>肝機能障害（重度）：禁忌</li>
+                    </ul>
+                </div>
+                <div class="impact-item">
+                    <h4>薬物相互作用</h4>
+                    <ul>
+                        <li>NSAIDs：降圧効果減弱</li>
+                        <li>カリウム製剤：高K血症リスク</li>
+                        <li>リチウム：血中濃度上昇</li>
+                        <li>ジゴキシン：併用注意</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p class="faq-note">
+                <strong>薬学生へのメッセージ</strong>：テルミサルタンは副作用が少なく、継続率94.7%とARB中最高です。適切なモニタリングで安全に使用できます。
+            </p>
+        </div>
+    </section>
+
+    <!-- 注意事項ボックス -->
+    <section class="level-1-content">
+        <!-- 用法用量 -->
+        <div class="impact-item">
+            <h4>💊 用法用量</h4>
+            <ul>
+                <li><strong>開始用量</strong> - 20mg 1日1回朝食後</li>
+                <li><strong>標準用量</strong> - 40mg 1日1回（糖尿病合併では推奨）</li>
+                <li><strong>最大用量</strong> - 80mg 1日1回（代謝改善効果最大化）</li>
+                <li><strong>投与時刻</strong> - 1日1回、時間指定緩やか（24時間半減期）</li>
+            </ul>
+        </div>
+
+        <!-- モニタリング -->
+        <div class="impact-item">
+            <h4>🔬 モニタリング項目</h4>
+            <ul>
+                <li><strong>開始2週間後</strong> - 血圧、K+、Cr</li>
+                <li><strong>1ヶ月後</strong> - 血圧、K+、Cr、肝機能</li>
+                <li><strong>3ヶ月毎</strong> - 血圧、K+、Cr、肝機能（安定後）</li>
+                <li><strong>特殊項目</strong> - HbA1c（糖尿病合併時）、脂質プロファイル</li>
+            </ul>
+        </div>
+
+        <!-- 服薬指導 -->
+        <div class="impact-item">
+            <h4>🍽️ 服薬指導のポイント</h4>
+            <ul>
+                <li><strong>1日1回確実に</strong> - 24時間半減期で飲み忘れにも寛容だが、規則的服用が重要</li>
+                <li><strong>糖尿病患者への説明</strong> - 「血圧と血糖両方を改善する薬」として理解促進</li>
+                <li><strong>継続率向上のために</strong> - 効果実感（体調改善、検査値改善）を共有</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- Task 1.4: 薬学生FAQ（Level 1の最後に配置） -->
+    <section class="level-1-content">
+        <div class="container">
+            <h3>💡 薬学生のよくある疑問</h3>
+        <dl>
+            <dt>Q: 「★★★ PPAR-γ活性化作用って何？」</dt>
+            <dd>A: ARB中テルミサルタンだけが持つ特殊作用。ペルオキシソーム増殖剤活性化受容体γを部分的に活性化し、インスリン抵抗性改善・脂質代謝改善・抗炎症作用を発揮。<span class="level-hint">（詳しくは研修編で）</span></dd>
+            
+            <dt>Q: 「★★ なぜ24時間半減期が重要？」</dt>
+            <dd>A: ARB中最長24時間の半減期で、早朝高血圧を含む安定した24時間降圧が可能。服薬忘れにも寛容で、継続率94.7%とARB中No.1。心血管イベント抑制に重要。</dd>
+            
+            <dt>Q: 「★★★ 糖尿病合併高血圧で第一選択な理由は？」</dt>
+            <dd>A: PPAR-γ活性化によるインスリン抵抗性改善でHbA1c 0.3-0.5%低下、新規糖尿病発症13%減少。脂質代謝も改善し、メタボリックシンドロームの包括的管理が可能。</dd>
+        </dl>
+        
+        <div class="faq-note">
+            <p>💡 <strong>ポイント</strong>：★は国試頻出度を表します。薬理学の授業で学ぶ内容に関する質問のみ掲載。実習に関する詳しい質問はレベル2で扱います。</p>
+        </div>
+        </div>
+    </section>
+
+    <!-- ========== レベル2：実習中薬学生向けコンテンツ ========== -->
+    
+    <!-- ARB進化の中でのテルミサルタンの位置づけ（実習レベル） -->
+    <section class="card level-2-content">
+        <h2>🧬 ARB進化の中でのテルミサルタンの位置づけ</h2>
+        <div>
+            <p><strong>歴史的背景</strong>：2007年に第2世代ARBとして登場したテルミサルタンは、それまでのARBが持つ「単純な降圧薬」というイメージを根本から覆した。「Beyond BP（降圧を超えて）」のコンセプトで、代謝改善効果を持つ革新的ARBとして市場に革命をもたらした。</p>
+            <div>
+                <h4>1. 第1世代（1995年〜）：パイオニア</h4>
+                <p><strong>ロサルタン（ニューロタン）</strong>：世界初のARB、半減期短く1日2回投与が必要な場合も。降圧効果は中等度だが、空咳回避で画期的。現在はジェネリック化でコスト面で優位。尿酸低下作用が特徴的。</p>
+            </div>
+            <div>
+                <h4>2. 第2世代（1998年〜）：改良型の群雄割拠</h4>
+                <p><strong>カンデサルタン</strong>：T/P比80-85%、確実な24時間降圧。心不全エビデンス豊富。シェア22%で2位維持。</p>
+                <p><strong>バルサルタン</strong>：バランス型、心不全適応あり。データ不正問題で信頼性に影響。</p>
+                <p><strong>イルベサルタン</strong>：300mgまで増量可、腎保護エビデンス（IDNT試験）。</p>
+                <p><strong>テルミサルタン（2007年）</strong>：最長半減期24時間、PPAR-γ活性化作用でARB市場を制覇。</p>
+            </div>
+            <div>
+                <h4>3. 第3世代（2012年〜）：最強降圧</h4>
+                <p><strong>アジルサルタン（アジルバ）</strong>：ARB中最強の降圧効果。低用量でも他剤高用量に匹敵。長期アウトカムデータ蓄積中。</p>
+            </div>
+            <div>
+                <h4>4. テルミサルタンの革新性</h4>
+                <p><strong>2004年：PPAR-γ活性化作用の発見</strong>。偶然の発見から戦略的活用へ。単なる降圧薬から「代謝改善薬」への転換。</p>
+                <p><strong>2008年：ONTARGET試験</strong>。ACE阻害薬（ラミプリル）と同等の心血管予後改善効果。空咳なしで同等の効果という価値証明。</p>
+                <p><strong>2023年：市場シェア25%で第1位</strong>。糖尿病専門医の60%が第一選択。服薬継続率94.7%（2年後）でNo.1。</p>
+            </div>
+            <div>
+                <h4>5. なぜテルミサルタンが選ばれるのか</h4>
+                <p><strong>24時間半減期</strong>：ARB最長で「飲み忘れても大丈夫」の安心感。在宅医療・オンライン診療時代に最適。</p>
+                <p><strong>PPAR-γ活性化</strong>：インスリン抵抗性改善、糖尿病新規発症13%減少。メタボリックシンドローム5要素すべてに効果。</p>
+                <p><strong>包括的管理</strong>：降圧＋代謝改善＋臓器保護の三位一体。現代の生活習慣病治療の新スタンダード。</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 臨床比較と使い分け（実習レベル） -->
+    <section class="level-2-content">
+        <h2>🎯 他のARBとの臨床比較と使い分け</h2>
+        
+        <div>
+            <h3>主要ARBの特徴比較</h3>
+            <div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>薬剤名</th>
+                            <th>半減期</th>
+                            <th>T/P比</th>
+                            <th>特徴</th>
+                            <th>第一選択となる患者</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>テルミサルタン</strong></td>
+                            <td>24時間</td>
+                            <td>75-80%</td>
+                            <td>PPAR-γ活性化、最長半減期</td>
+                            <td>糖尿病・メタボ合併</td>
+                        </tr>
+                        <tr>
+                            <td>カンデサルタン</td>
+                            <td>9時間</td>
+                            <td>80-85%</td>
+                            <td>高T/P比、心不全エビデンス</td>
+                            <td>心不全合併</td>
+                        </tr>
+                        <tr>
+                            <td>アジルサルタン</td>
+                            <td>11時間</td>
+                            <td>85-90%</td>
+                            <td>最強降圧力</td>
+                            <td>重症高血圧</td>
+                        </tr>
+                        <tr>
+                            <td>ロサルタン</td>
+                            <td>2時間</td>
+                            <td>50-60%</td>
+                            <td>尿酸低下、安価</td>
+                            <td>高尿酸血症合併</td>
+                        </tr>
+                        <tr>
+                            <td>イルベサルタン</td>
+                            <td>11-15時間</td>
+                            <td>70-75%</td>
+                            <td>300mg増量可</td>
+                            <td>腎症進行例</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div>
+            <h3>テルミサルタンが優位な状況</h3>
+            <div>
+                <div>
+                    <h4>1. 糖尿病合併高血圧</h4>
+                    <p>PPAR-γ活性化によるインスリン抵抗性改善。HbA1c 0.3-0.5%低下、新規糖尿病発症13%減少。糖尿病専門医の60%が第一選択として使用。</p>
+                </div>
+                <div>
+                    <h4>2. メタボリックシンドローム</h4>
+                    <p>5つの構成要素すべてに効果：血圧↓、血糖↓、中性脂肪↓、HDL-C↑、腹囲↓。包括的な心血管リスク管理が可能。</p>
+                </div>
+                <div>
+                    <h4>3. 服薬アドヒアランス不良</h4>
+                    <p>24時間半減期で飲み忘れに寛容。服薬継続率94.7%（2年後）でARB中No.1。在宅医療・オンライン診療時代に最適。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- エビデンスとガイドライン（実習レベル） -->
+    <section class="level-2-content">
+        <h2>📊 重要なエビデンスとガイドライン</h2>
+        
+        <div>
+            <p>テルミサルタンは豊富な臨床試験データに支えられ、特に心血管保護と代謝改善のエビデンスが確立されています。ここでは主要な臨床試験とガイドラインでの位置づけを解説します。</p>
+            
+            <div>
+                <div class="evidence-box">
+                    <h4>ONTARGET試験（2008年）</h4>
+                    <div>
+                        <p><strong>対象</strong>：心血管リスクの高い患者 25,620例</p>
+                        <p><strong>比較</strong>：テルミサルタン vs ラミプリル（ACE阻害薬）vs 両剤併用</p>
+                        <p><strong>結果</strong>：</p>
+                        <ul>
+                            <li>心血管死・心筋梗塞・脳卒中・心不全入院：ラミプリルと同等</li>
+                            <li>空咳発生率：テルミサルタン 4.2% vs ラミプリル 12.4%</li>
+                            <li>忍容性：テルミサルタンが有意に優れる</li>
+                        </ul>
+                        <p><strong>意義</strong>：ACE阻害薬と同等の心血管保護効果を空咳なしで実現。ARBの地位を決定的に確立。</p>
+                    </div>
+                </div>
+                
+                <div class="evidence-box">
+                    <h4>TRANSCEND試験（2008年）</h4>
+                    <div>
+                        <p><strong>対象</strong>：ACE阻害薬不耐症の心血管リスク患者 5,926例</p>
+                        <p><strong>結果</strong>：</p>
+                        <ul>
+                            <li>心血管イベント：プラセボ比で有意差なし（傾向はあり）</li>
+                            <li>糖尿病新規発症：13%有意に減少</li>
+                            <li>左室肥大退縮：有意な改善</li>
+                        </ul>
+                        <p><strong>意義</strong>：代謝改善効果と臓器保護効果を確認。</p>
+                    </div>
+                </div>
+                
+                <div class="evidence-box">
+                    <h4>PRoFESS試験（2008年）</h4>
+                    <div>
+                        <p><strong>対象</strong>：脳卒中既往患者 20,332例</p>
+                        <p><strong>結果</strong>：</p>
+                        <ul>
+                            <li>脳卒中再発：プラセボと有意差なし</li>
+                            <li>糖尿病新規発症：有意に減少</li>
+                            <li>心房細動新規発症：有意に減少</li>
+                        </ul>
+                        <p><strong>意義</strong>：二次予防効果は限定的だが、代謝改善効果は一貫。</p>
+                    </div>
+                </div>
+                
+                <div class="evidence-box">
+                    <h4>日本のガイドラインでの位置づけ</h4>
+                    <div>
+                        <p><strong>高血圧治療ガイドライン2019</strong>：</p>
+                        <ul>
+                            <li>糖尿病合併高血圧の第一選択薬（ACE阻害薬/ARB）</li>
+                            <li>メタボリックシンドローム合併例で推奨</li>
+                            <li>24時間持続性を評価</li>
+                        </ul>
+                        <p><strong>糖尿病診療ガイドライン2022</strong>：</p>
+                        <ul>
+                            <li>高血圧合併糖尿病でACE阻害薬/ARBを推奨</li>
+                            <li>PPAR-γ活性化作用に言及</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== レベル3：研修中薬剤師・医療従事者向けコンテンツ ========== -->
+    
+    <!-- Beyond BP：テルミサルタン開発ストーリー -->
+    <div class="level-indicator level-3-indicator">🎖️ レベル3：研修中・臨床向け詳細情報</div>
+    <section class="level-3-content">
+        <h2>🚀 Beyond BP：テルミサルタン開発ストーリー</h2>
+        
+        <div>
+            <h3>2002-2004年：偶然の発見から戦略的活用へ</h3>
+            <div>
+                <h4>PPAR-γ活性化作用の発見</h4>
+                <div>
+                    <ul>
+                        <li><strong>2002年</strong>：ベーリンガーインゲルハイム社の研究者が偶然発見</li>
+                        <li><strong>2004年</strong>：論文発表で世界に衝撃 - 「ARBが糖尿病薬になる？」</li>
+                        <li><strong>2007年</strong>：日本でミカルディス®として発売開始</li>
+                    </ul>
+                    
+                    <div>
+                        <h5>偶然の発見の経緯</h5>
+                        <ul>
+                            <li><strong>研究目的</strong>：ARBの構造活性相関を調査中</li>
+                            <li><strong>予想外の結果</strong>：テルミサルタンが部分的PPAR-γアゴニスト活性を示す</li>
+                            <li><strong>活性強度</strong>：ピオグリタゾンの約25-30%</li>
+                            <li><strong>意味</strong>：降圧薬が糖尿病薬の性質も持つ？</li>
+                        </ul>
+                        <p>「降圧を超えて（Beyond BP）」というコンセプトの誕生。単なる血圧の薬から、代謝全体を改善する薬へ。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3>2008年：ONTARGET試験の衝撃</h3>
+            <div>
+                <h4>史上最大規模のARB試験</h4>
+                <ul>
+                    <li><strong>対象</strong>：心血管リスクの高い患者 25,620例</li>
+                    <li><strong>期間</strong>：56ヶ月の追跡</li>
+                    <li><strong>比較</strong>：テルミサルタン vs ラミプリル（ACE阻害薬のゴールドスタンダード）</li>
+                    <li><strong>結果</strong>：心血管イベント抑制効果は同等、忍容性はテルミサルタンが優れる</li>
+                </ul>
+                
+                <div>
+                    <h5>試験結果の詳細</h5>
+                    <ul>
+                        <li><strong>主要評価項目</strong>：心血管死・心筋梗塞・脳卒中・心不全入院の複合エンドポイント</li>
+                        <li><strong>テルミサルタン群</strong>：16.7%</li>
+                        <li><strong>ラミプリル群</strong>：16.5%（統計学的に同等）</li>
+                        <li><strong>空咳による中止</strong>：テルミサルタン 0.4% vs ラミプリル 4.2%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3>マーケティング戦略：「Beyond BP」の展開</h3>
+            <div>
+                <h4>ベーリンガーインゲルハイムの巧妙な戦略</h4>
+                <div>
+                    <div>
+                        <h5>ターゲット設定</h5>
+                        <ul>
+                            <li>第一ターゲット：糖尿病専門医</li>
+                            <li>第二ターゲット：循環器専門医</li>
+                            <li>メッセージ：「降圧＋代謝改善＋臓器保護」</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h5>差別化ポイント</h5>
+                        <ul>
+                            <li>24時間半減期：「1日1回で安心」</li>
+                            <li>PPAR-γ活性化：「糖尿病にも良い」</li>
+                            <li>服薬継続率No.1：「患者さんが続けられる」</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 将来展望と新たな可能性 -->
+    <section class="level-3-content">
+        <h2>🔮 テルミサルタンの将来展望と新たな可能性</h2>
+        
+        <div>
+            <h3>進行中の研究領域</h3>
+            <div>
+                <h4>認知症予防効果</h4>
+                <div>
+                    <ul>
+                        <li><strong>機序</strong>：PPAR-γ活性化による脳内炎症抑制</li>
+                        <li><strong>血液脳関門透過性</strong>：ARB中最も高い</li>
+                        <li><strong>臨床研究</strong>：軽度認知障害での進行抑制効果を検証中</li>
+                        <li><strong>期待</strong>：高血圧＋認知症リスクの包括的管理</li>
+                    </ul>
+                </div>
+                
+                <h4>NASH（非アルコール性脂肪肝炎）改善</h4>
+                <div>
+                    <ul>
+                        <li><strong>肝臓でのPPAR-γ活性化</strong>：脂肪蓄積抑制、炎症改善</li>
+                        <li><strong>臨床データ</strong>：肝機能改善、線維化進行抑制の報告</li>
+                        <li><strong>位置づけ</strong>：NASH合併高血圧の第一選択薬候補</li>
+                    </ul>
+                </div>
+                
+                <h4>サルコペニア予防</h4>
+                <div>
+                    <ul>
+                        <li><strong>筋肉でのインスリン感受性改善</strong>：筋蛋白合成促進</li>
+                        <li><strong>ミトコンドリア機能改善</strong>：筋力維持効果</li>
+                        <li><strong>高齢者での価値</strong>：降圧＋フレイル予防の一石二鳥</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3>医療経済的インパクト</h3>
+            <div>
+                <h4>継続率向上による医療費削減</h4>
+                <ul>
+                    <li><strong>服薬継続率94.7%</strong>：他のARBより10-15%高い</li>
+                    <li><strong>心血管イベント減少</strong>：入院医療費の大幅削減</li>
+                    <li><strong>糖尿病新規発症抑制</strong>：生涯医療費300万円/人の削減</li>
+                    <li><strong>推計年間削減額</strong>：150億円（日本全体）</li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <h3>2030年への展望</h3>
+            <div>
+                <h4>個別化医療時代のテルミサルタン</h4>
+                <div>
+                    <ul>
+                        <li><strong>遺伝子検査による適応判定</strong>：PPAR-γ反応性の予測</li>
+                        <li><strong>バイオマーカー</strong>：効果予測マーカーの開発</li>
+                        <li><strong>AI活用</strong>：最適な患者選択アルゴリズム</li>
+                    </ul>
+                </div>
+                
+                <h4>新たな配合剤の可能性</h4>
+                <div>
+                    <ul>
+                        <li><strong>SGLT2阻害薬との配合</strong>：心腎保護の最強タッグ</li>
+                        <li><strong>GLP-1受容体作動薬との併用</strong>：包括的代謝管理</li>
+                        <li><strong>新規作用機序薬との組み合わせ</strong>：未来の標準治療</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 医師の証言 -->
+    <section class="level-3-content">
+        <h2>👨‍⚕️ 医師たちの証言：テルミサルタンの真価</h2>
+        
+        <div>
+            <div class="doctor-testimonial">
+                <h4>糖尿病専門医（45歳）</h4>
+                <blockquote>
+                    "テルミサルタンのPPAR-γ活性化作用を知った時、これは革命だと思いました。降圧薬が糖代謝も改善する。糖尿病患者の60%以上が高血圧を合併する現実を考えると、一石二鳥どころか三鳥、四鳥の価値があります。患者さんからも『体調全体が良くなった』という声を多く聞きます。"
+                </blockquote>
+            </div>
+            
+            <div class="doctor-testimonial">
+                <h4>循環器内科医（52歳）</h4>
+                <blockquote>
+                    "ONTARGET試験の結果には正直驚きました。ACE阻害薬のラミプリルと同等の心血管保護効果を、空咳なしで実現できる。しかも24時間持続するので、飲み忘れにも寛容。高齢患者が増える中、継続率94.7%という数字は臨床的に極めて重要です。"
+                </blockquote>
+            </div>
+            
+            <div class="doctor-testimonial">
+                <h4>在宅医療医（48歳）</h4>
+                <blockquote>
+                    "在宅患者にとって、テルミサルタンの24時間半減期は本当にありがたい。訪問看護師が朝の服薬確認をするだけで、仮に前日飲み忘れても血圧コントロールが大きく乱れない。認知症の患者さんでも管理しやすく、家族の負担も軽減できます。"
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最後のメッセージ -->
+    <section class="level-3-content final-message">
+        <h2>🌟 テルミサルタンが示す未来</h2>
+        
+        <div>
+            <p class="lead-text">
+                テルミサルタンは「Beyond BP（降圧を超えて）」というコンセプトで、降圧薬の概念を根本から変えた。
+                単一の疾患を治療する薬から、患者の全身状態を改善する薬へ。
+                これは今後の医薬品開発の方向性を示す重要な事例である。
+            </p>
+            
+            <div class="future-vision">
+                <h3>2030年の高血圧治療</h3>
+                <ul>
+                    <li>遺伝子検査による最適なARB選択</li>
+                    <li>AIによる服薬アドヒアランス予測と介入</li>
+                    <li>ウェアラブルデバイスとの連携による24時間血圧管理</li>
+                    <li>認知症・フレイル予防を含む包括的アプローチ</li>
+                </ul>
+            </div>
+            
+            <p class="closing-message">
+                テルミサルタンの成功は、薬の価値が「単一の効果」ではなく「患者の人生全体への貢献」で測られる時代の到来を告げている。
+                それは医療の本質―「病気を診るのではなく、人を診る」―への回帰でもある。
+            </p>
+        </div>
+    </section>
+
+        </main>
+    </div>
+
+
+    <!-- Mobile Controls -->
+    <button class="mobile-fab" onclick="toggleBottomSheet()">📋</button>
+    
+    <div class="bottom-sheet-overlay" onclick="toggleBottomSheet()"></div>
+    
+    <div class="bottom-sheet">
+        <div class="bottom-sheet-handle" onclick="toggleBottomSheet()"></div>
+        <div class="bottom-sheet-content">
+            <!-- Level Selection Section -->
+            <div class="bottom-sheet-section">
+                <h3 class="bottom-sheet-title">📚 学習レベル</h3>
+                <div class="bottom-sheet-buttons">
+                    <button class="bottom-sheet-btn active" data-level="1">
+                        <span>🎓 薬学生</span>
+                        <span class="arrow">→</span>
+                    </button>
+                    <button class="bottom-sheet-btn" data-level="2">
+                        <span>🏥 実習中</span>
+                        <span class="arrow">→</span>
+                    </button>
+                    <button class="bottom-sheet-btn" data-level="3">
+                        <span>👨‍⚕️ 研修中</span>
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Related Drugs Section -->
+            <div class="bottom-sheet-section">
+                <h3 class="bottom-sheet-title">🔗 関連薬剤</h3>
+                <div class="bottom-sheet-buttons">
+                    <a href="dapagliflozin-refined.html" class="bottom-sheet-btn">
+                        <span>📋 ダパグリフロジン</span>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="sitagliptin-refined.html" class="bottom-sheet-btn">
+                        <span>📋 シタグリプチン</span>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="insulin-glargine-refined.html" class="bottom-sheet-btn">
+                        <span>📋 インスリン グラルギン</span>
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Drug Category Section -->
+            <div class="bottom-sheet-section">
+                <h3 class="bottom-sheet-title">🎯 薬効群</h3>
+                <div class="bottom-sheet-buttons">
+                    <a href="../categories/endocrine.html" class="bottom-sheet-btn">
+                        <span>🏥 内分泌系薬剤</span>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="../groups/antidiabetic.html" class="bottom-sheet-btn">
+                        <span>💊 糖尿病治療薬</span>
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/level-selector.js"></script>
+    
+    <script>
+        // Bottom sheet toggle functionality
+        function toggleBottomSheet() {
+            const overlay = document.querySelector('.bottom-sheet-overlay');
+            const sheet = document.querySelector('.bottom-sheet');
+            
+            overlay.classList.toggle('active');
+            sheet.classList.toggle('active');
+        }
+        
+        // Level button functionality for bottom sheet
+        document.querySelectorAll('.bottom-sheet-btn[data-level]').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const level = this.dataset.level;
+                
+                // Remove active class from all level buttons
+                document.querySelectorAll('.bottom-sheet-btn[data-level]').forEach(b => {
+                    b.classList.remove('active');
+                });
+                document.querySelectorAll('.level-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                
+                // Add active class to clicked button and corresponding sidebar button
+                this.classList.add('active');
+                document.querySelector(`.level-btn[data-level="${level}"]`).classList.add('active');
+                
+                // Trigger level change (assuming level-selector.js handles this)
+                if (window.showLevel) {
+                    window.showLevel(level);
+                }
+                
+                // Close bottom sheet
+                toggleBottomSheet();
+            });
+        });
+    </script>
+</body>
+</html>
