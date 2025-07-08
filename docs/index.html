@@ -72,17 +72,6 @@
             </div>
         </section>
 
-        <!-- 🚨 Ver3本番確認用（一時的） -->
-        <section class="v3-verification" style="background-color: #f0f8ff; padding: 20px; margin: 20px auto; max-width: 1200px; border-radius: 8px; border: 2px dashed #3498db;">
-            <div class="section-container">
-                <h2 style="color: #3498db;">🔬 Ver3薬剤ページ - 本番確認用</h2>
-                <p style="color: #666;">以下は本番環境での動作確認用のリンクです（一時的）：</p>
-                <div style="display: flex; gap: 20px; margin-top: 15px;">
-                    <a href="drugs-v3/metformin-v3.html" style="padding: 10px 20px; background: #3498db; color: white; border-radius: 6px; text-decoration: none;">メトホルミン Ver3</a>
-                    <a href="drugs-v3/rosuvastatin-v3.html" style="padding: 10px 20px; background: #e74c3c; color: white; border-radius: 6px; text-decoration: none;">ロスバスタチン Ver3</a>
-                </div>
-            </div>
-        </section>
 
         <!-- 重要薬剤20選 -->
         <section id="drugs" class="drugs-section">
@@ -93,6 +82,7 @@
                 </p>
                 
                 <div class="drugs-grid" id="drugsGrid">
+                <!-- ARB系薬剤（3種）とPPI系薬剤（3種）は準備中
                 <div class="drug-card" data-category="ARB" data-search="カンデサルタン">
                     <div class="drug-category">ARB</div>
                     <h3 class="drug-name">カンデサルタン</h3>
@@ -152,6 +142,7 @@
                     </div>
                     <a href="drugs/omeprazole.html" class="drug-link">詳細を見る</a>
                 </div>
+                -->
             
                 <div class="drug-card" data-category="スタチン" data-search="ロスバスタチン">
                     <div class="drug-category">スタチン</div>
@@ -160,9 +151,10 @@
                     <div class="drug-features">
                         <span class="feature">高LDL</span><span class="feature">CKD</span>
                     </div>
-                    <a href="drugs/rosuvastatin.html" class="drug-link">詳細を見る</a>
+                    <a href="drugs-v3/rosuvastatin-v3.html" class="drug-link">詳細を見る</a>
                 </div>
             
+                <!-- スタチン（アトルバスタチン）、SGLT2阻害薬（2種）、β遮断薬（カルベジロール）は準備中
                 <div class="drug-card" data-category="スタチン" data-search="アトルバスタチン">
                     <div class="drug-category">スタチン</div>
                     <h3 class="drug-name">アトルバスタチン</h3>
@@ -202,7 +194,9 @@
                     </div>
                     <a href="drugs/carvedilol.html" class="drug-link">詳細を見る</a>
                 </div>
+                -->
             
+                <!-- β遮断薬（ビソプロロール）、ACE阻害薬（2種）、SSRI（2種）、利尿薬（2種）は準備中
                 <div class="drug-card" data-category="β遮断薬" data-search="ビソプロロール">
                     <div class="drug-category">β遮断薬</div>
                     <h3 class="drug-name">ビソプロロール</h3>
@@ -272,7 +266,9 @@
                     </div>
                     <a href="drugs/spironolactone.html" class="drug-link">詳細を見る</a>
                 </div>
+                -->
             
+                <!-- その他カテゴリー（ジゴキシン、バンコマイシン、ワルファリン）は準備中
                 <div class="drug-card" data-category="その他" data-search="ジゴキシン">
                     <div class="drug-category">その他</div>
                     <h3 class="drug-name">ジゴキシン</h3>
@@ -302,6 +298,7 @@
                     </div>
                     <a href="drugs/warfarin.html" class="drug-link">詳細を見る</a>
                 </div>
+                -->
             
                 <div class="drug-card" data-category="その他" data-search="メトホルミン">
                     <div class="drug-category">その他</div>
@@ -310,7 +307,7 @@
                     <div class="drug-features">
                         <span class="feature">2型糖尿病</span><span class="feature">体重中性</span>
                     </div>
-                    <a href="drugs/metformin.html" class="drug-link">詳細を見る</a>
+                    <a href="drugs-v3/metformin-v3.html" class="drug-link">詳細を見る</a>
                 </div>
             </div>
             </div>
