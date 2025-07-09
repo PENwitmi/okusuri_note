@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>風邪に効く漢方薬完全ガイド - 症状と体質で選ぶ8つの処方 | サクッとお薬ノート</title>
+    <meta name="description" content="葛根湯だけじゃない！風邪の時期・症状・体質に応じた漢方薬の選び方。麻黄湯・小青竜湯・桔梗湯など8処方を徹底解説。">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/feature-page.css">
+    <link rel="stylesheet" href="../assets/css/responsive-unified.css">
+    <style>
+        /* 漢方薬特集用カスタムスタイル */
+        :root {
+            --kampo-warm: #e74c3c;      /* 温める薬（麻黄湯、葛根湯） */
+            --kampo-cool: #3498db;      /* 冷やす薬 */
+            --kampo-neutral: #27ae60;   /* 中庸の薬 */
+            --kampo-gentle: #9b59b6;    /* 穏やかな薬（香蘇散） */
+        }
+
+        .kampo-flow {
+            background: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .kampo-flow-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .flow-stage {
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .flow-stage h4 {
+            color: var(--text-emphasis);
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .flow-options {
+            display: grid;
+            gap: 10px;
+            margin-left: 20px;
+        }
+
+        .flow-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .flow-condition {
+            color: var(--text-pharma-body);
+            min-width: 120px;
+        }
+
+        .flow-arrow {
+            color: var(--text-pharma-muted);
+        }
+
+        .flow-medicine {
+            font-weight: 600;
+            color: var(--kampo-warm);
+        }
+
+        .symptom-matrix {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .symptom-matrix table {
+            width: 100%;
+            min-width: 600px;
+            border-collapse: collapse;
+        }
+
+        .symptom-matrix th,
+        .symptom-matrix td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .symptom-matrix th {
+            background: var(--border-light);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .symptom-matrix td {
+            font-size: 18px;
+        }
+
+        .effectiveness-high {
+            color: var(--kampo-warm);
+            font-weight: bold;
+        }
+
+        .effectiveness-medium {
+            color: var(--kampo-neutral);
+        }
+
+        .effectiveness-low {
+            color: var(--text-pharma-muted);
+        }
+
+        .kampo-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .kampo-card {
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .kampo-card:hover {
+            box-shadow: var(--shadow-heavy);
+            transform: translateY(-5px);
+        }
+
+        .kampo-card h4 {
+            color: var(--kampo-warm);
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .kampo-ingredients {
+            background: var(--bg-secondary);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .kampo-ingredients h5 {
+            font-size: 14px;
+            color: var(--text-pharma-body);
+            margin-bottom: 10px;
+        }
+
+        .ingredient-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .ingredient-tag {
+            background: var(--border-light);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: var(--text-pharma-secondary);
+        }
+
+        .ingredient-tag.main {
+            background: var(--kampo-warm);
+            color: white;
+        }
+
+        .usage-guide {
+            background: #fff3cd;
+            border: 2px solid var(--warning-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .usage-guide h4 {
+            color: var(--warning-color);
+            margin-bottom: 10px;
+        }
+
+        .usage-guide ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .usage-guide li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .usage-guide li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--warning-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="../index.html">サクッとお薬ノート</a></h1>
+                <p class="tagline">薬剤図鑑</p>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html#drugs" class="nav-link">薬剤一覧</a></li>
+                    <li><a href="../index.html#features" class="nav-link">特集ページ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        <!-- ヒーローセクション -->
+        <section class="feature-hero">
+            <div class="feature-hero-container">
+                <div class="feature-breadcrumb">
+                    <a href="../index.html">ホーム</a> &gt; 
+                    <a href="../index.html#features">特集ページ</a> &gt; 
+                    <span>風邪に効く漢方薬完全ガイド</span>
+                </div>
+                <h1 class="feature-title">風邪に効く漢方薬完全ガイド</h1>
+                <p class="feature-subtitle">症状と体質で選ぶ8つの処方</p>
+                <p class="feature-lead">
+                    「風邪には葛根湯」だけでは不十分。体質（証）、病期、症状に応じた適切な漢方薬選択が重要です。保険適用の8処方を体系的に解説し、エビデンスに基づいた使い分けをマスターしましょう。
+                </p>
+            </div>
+        </section>
+
+        <!-- イントロダクション -->
+        <section class="feature-section">
+            <div class="section-container">
+                <h2 class="section-title">なぜ風邪に漢方薬が効くのか</h2>
+                <div class="intro-content">
+                    <p>風邪（急性上気道炎）は、西洋医学では対症療法が中心ですが、漢方薬は「全身の調和を整える」ことで自然治癒力を高めます。2000年以上の経験に基づく処方は、現代のエビデンスでもその有効性が証明されています。</p>
+                    
+                    <div class="intro-highlights">
+                        <h3>漢方薬選択の3つのポイント</h3>
+                        <ul>
+                            <li><strong>体質（証）</strong>：実証（体力充実）か虚証（体力虚弱）か</li>
+                            <li><strong>病期</strong>：初期・中期・回復期のどの段階か</li>
+                            <li><strong>主症状</strong>：悪寒・発熱・咳・鼻水など、何が主体か</li>
+                        </ul>
+                    </div>
+
+                    <div class="drug-overview">
+                        <h3>本特集で扱う8つの処方</h3>
+                        <div class="drug-flow">
+                            <div class="drug-flow-item">
+                                <span class="drug-number">主</span>
+                                <strong>葛根湯</strong>
+                                <span class="drug-type">中間証</span>
+                                <span class="drug-role">風邪の初期</span>
+                            </div>
+                            <div class="drug-flow-item">
+                                <span class="drug-number">主</span>
+                                <strong>麻黄湯</strong>
+                                <span class="drug-type">実証</span>
+                                <span class="drug-role">インフルエンザ</span>
+                            </div>
+                            <div class="drug-flow-item">
+                                <span class="drug-number">主</span>
+                                <strong>小青竜湯</strong>
+                                <span class="drug-type">鼻水型</span>
+                                <span class="drug-role">アレルギー性鼻炎</span>
+                            </div>
+                            <div class="drug-flow-item">
+                                <span class="drug-number">主</span>
+                                <strong>桔梗湯</strong>
+                                <span class="drug-type">のど型</span>
+                                <span class="drug-role">咽頭痛</span>
+                            </div>
+                            <div class="drug-flow-item">
+                                <span class="drug-number">主</span>
+                                <strong>柴胡桂枝湯</strong>
+                                <span class="drug-type">亜急性期</span>
+                                <span class="drug-role">長引く風邪</span>
+                            </div>
+                            <div class="drug-flow-item">
+                                <span class="drug-number">主</span>
+                                <strong>麦門冬湯</strong>
+                                <span class="drug-type">乾咳型</span>
+                                <span class="drug-role">気管支炎</span>
+                            </div>
+                            <div class="drug-flow-item">
+                                <span class="drug-number">補</span>
+                                <strong>参蘇飲</strong>
+                                <span class="drug-type">胃腸虚弱</span>
+                                <span class="drug-role">虚弱者の風邪</span>
+                            </div>
+                            <div class="drug-flow-item">
+                                <span class="drug-number">補</span>
+                                <strong>香蘇散</strong>
+                                <span class="drug-type">軽症型</span>
+                                <span class="drug-role">気分不良</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 症状・時期別フローチャート -->
+        <section class="feature-section">
+            <div class="section-container">
+                <h2 class="section-title">症状・時期別フローチャート</h2>
+                <div class="kampo-flow">
+                    <h3>あなたの症状から適切な漢方薬を選ぶ</h3>
+                    <div class="kampo-flow-chart">
+                        <div class="flow-stage">
+                            <h4>🌡️ 風邪の初期（1-2日目）</h4>
+                            <div class="flow-options">
+                                <div class="flow-option">
+                                    <span class="flow-condition">強い悪寒・無汗</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-medicine">麻黄湯（実証向け）</span>
+                                </div>
+                                <div class="flow-option">
+                                    <span class="flow-condition">肩こり・頭痛</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-medicine">葛根湯（中間証）</span>
+                                </div>
+                                <div class="flow-option">
+                                    <span class="flow-condition">鼻水・くしゃみ</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-medicine">小青竜湯（水様鼻汁）</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flow-stage">
+                            <h4>💊 風邪の中期（3-7日目）</h4>
+                            <div class="flow-options">
+                                <div class="flow-option">
+                                    <span class="flow-condition">のどの痛み</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-medicine">桔梗湯（咽頭痛）</span>
+                                </div>
+                                <div class="flow-option">
+                                    <span class="flow-condition">胃腸症状あり</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-medicine">柴胡桂枝湯（半表半裏）</span>
+                                </div>
+                                <div class="flow-option">
+                                    <span class="flow-condition">乾いた咳</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-medicine">麦門冬湯（燥咳）</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flow-stage">
+                            <h4>🌿 回復期・虚弱者</h4>
+                            <div class="flow-options">
+                                <div class="flow-option">
+                                    <span class="flow-condition">胃腸虚弱者</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-medicine">参蘇飲（補剤配合）</span>
+                                </div>
+                                <div class="flow-option">
+                                    <span class="flow-condition">軽症・気分不良</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-medicine">香蘇散（気剤）</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 薬剤別詳細解説 -->
+        <section class="feature-section drug-details">
+            <div class="section-container">
+                <h2 class="section-title">主要6処方の詳細解説</h2>
+
+                <!-- 葛根湯 vs 麻黄湯 比較 -->
+                <div class="kampo-comparison">
+                    <h3>なぜ似た薬が2つ？葛根湯と麻黄湯の使い分け</h3>
+                    <div class="kampo-card">
+                        <h4>葛根湯（かっこんとう）</h4>
+                        <p><strong>ツムラ1番</strong> | 1日薬価：約74円</p>
+                        <div class="kampo-ingredients">
+                            <h5>構成生薬（7種類）</h5>
+                            <div class="ingredient-list">
+                                <span class="ingredient-tag main">葛根</span>
+                                <span class="ingredient-tag main">麻黄</span>
+                                <span class="ingredient-tag">桂皮</span>
+                                <span class="ingredient-tag">芍薬</span>
+                                <span class="ingredient-tag">甘草</span>
+                                <span class="ingredient-tag">大棗</span>
+                                <span class="ingredient-tag">生姜</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li><strong>体質</strong>：中間証〜やや実証</li>
+                            <li><strong>症状</strong>：悪寒、肩こり、頭痛</li>
+                            <li><strong>特徴</strong>：汗が出ていない時期に使用</li>
+                            <li><strong>エビデンス</strong>：インフルエンザで有効性確認</li>
+                        </ul>
+                    </div>
+
+                    <div class="kampo-card">
+                        <h4>麻黄湯（まおうとう）</h4>
+                        <p><strong>ツムラ27番</strong> | 1日薬価：約40円</p>
+                        <div class="kampo-ingredients">
+                            <h5>構成生薬（4種類）</h5>
+                            <div class="ingredient-list">
+                                <span class="ingredient-tag main">麻黄</span>
+                                <span class="ingredient-tag">桂皮</span>
+                                <span class="ingredient-tag">杏仁</span>
+                                <span class="ingredient-tag">甘草</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li><strong>体質</strong>：実証（体力充実）</li>
+                            <li><strong>症状</strong>：高熱、強い悪寒、関節痛</li>
+                            <li><strong>特徴</strong>：インフルエンザに第一選択</li>
+                            <li><strong>エビデンス</strong>：タミフルと同等の効果</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="usage-guide">
+                    <h4>⚠️ 葛根湯と麻黄湯の選択ポイント</h4>
+                    <ul>
+                        <li>体力がある＋高熱 → <strong>麻黄湯</strong></li>
+                        <li>中等度の体力＋肩こり → <strong>葛根湯</strong></li>
+                        <li>高齢者・虚弱者には両方とも不適（麻黄の副作用リスク）</li>
+                        <li>すでに汗をかいている場合は使用しない</li>
+                    </ul>
+                </div>
+
+                <!-- 小青竜湯 -->
+                <article class="drug-article" id="shoseiryuto">
+                    <div class="drug-header">
+                        <h3 class="drug-name">
+                            <span class="drug-icon">💧</span>
+                            小青竜湯（しょうせいりゅうとう）
+                        </h3>
+                        <span class="drug-category">鼻水型風邪・アレルギー性鼻炎</span>
+                    </div>
+
+                    <div class="drug-content">
+                        <div class="drug-info-card">
+                            <h4>基本情報</h4>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="info-label">処方番号</span>
+                                    <span class="info-value">ツムラ19番</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">1日薬価</span>
+                                    <span class="info-value">約108円</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">主な生薬</span>
+                                    <span class="info-value">麻黄、桂皮、半夏、細辛</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">適応症状</span>
+                                    <span class="info-value">水様鼻汁、くしゃみ、鼻閉</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="patient-profile">
+                            <h4>こんな時に処方</h4>
+                            <ul>
+                                <li>透明でサラサラした鼻水が止まらない</li>
+                                <li>アレルギー性鼻炎の症状がある風邪</li>
+                                <li>朝起きた時のくしゃみ連発</li>
+                                <li>体が冷えると症状悪化</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 桔梗湯 -->
+                <article class="drug-article" id="kikyoto">
+                    <div class="drug-header">
+                        <h3 class="drug-name">
+                            <span class="drug-icon">🌸</span>
+                            桔梗湯（ききょうとう）
+                        </h3>
+                        <span class="drug-category">のどの痛み専門薬</span>
+                    </div>
+
+                    <div class="drug-content">
+                        <div class="drug-info-card">
+                            <h4>基本情報</h4>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="info-label">処方番号</span>
+                                    <span class="info-value">ツムラ138番</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">1日薬価</span>
+                                    <span class="info-value">約30円</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">構成生薬</span>
+                                    <span class="info-value">桔梗、甘草（2種類のみ）</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">特徴</span>
+                                    <span class="info-value">うがい薬としても使用可</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="patient-profile">
+                            <h4>使用のポイント</h4>
+                            <ul>
+                                <li>のどの痛みに特化したシンプル処方</li>
+                                <li>溶かしてうがいしてから飲み込む</li>
+                                <li>扁桃炎、咽頭炎に有効</li>
+                                <li>甘草含有量注意（偽アルドステロン症）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 柴胡桂枝湯 -->
+                <article class="drug-article" id="saikokeishito">
+                    <div class="drug-header">
+                        <h3 class="drug-name">
+                            <span class="drug-icon">🌿</span>
+                            柴胡桂枝湯（さいこけいしとう）
+                        </h3>
+                        <span class="drug-category">長引く風邪・胃腸症状</span>
+                    </div>
+
+                    <div class="drug-content">
+                        <div class="drug-info-card">
+                            <h4>基本情報</h4>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="info-label">処方番号</span>
+                                    <span class="info-value">ツムラ10番</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">1日薬価</span>
+                                    <span class="info-value">約157円</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">証</span>
+                                    <span class="info-value">半表半裏（亜急性期）</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">特徴</span>
+                                    <span class="info-value">小柴胡湯＋桂枝湯の合方</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="patient-profile">
+                            <h4>適応となる状態</h4>
+                            <ul>
+                                <li>風邪が長引いて治りきらない（3日以上）</li>
+                                <li>微熱が続く、寒気と熱感が交互</li>
+                                <li>みぞおちのつかえ、食欲不振</li>
+                                <li>ストレスが多い人の風邪</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 麦門冬湯 -->
+                <article class="drug-article" id="bakumondoto">
+                    <div class="drug-header">
+                        <h3 class="drug-name">
+                            <span class="drug-icon">🍃</span>
+                            麦門冬湯（ばくもんどうとう）
+                        </h3>
+                        <span class="drug-category">乾いた咳・気管支炎</span>
+                    </div>
+
+                    <div class="drug-content">
+                        <div class="drug-info-card">
+                            <h4>基本情報</h4>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="info-label">処方番号</span>
+                                    <span class="info-value">ツムラ29番</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">1日薬価</span>
+                                    <span class="info-value">約268円（最も高価）</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">主な生薬</span>
+                                    <span class="info-value">麦門冬、半夏、人参</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">作用</span>
+                                    <span class="info-value">気道粘膜の潤い補給</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="patient-profile">
+                            <h4>エビデンスと使用法</h4>
+                            <ul>
+                                <li>感冒後咳嗽のRCTで有効性確認</li>
+                                <li>痰の少ない乾いた咳が続く時</li>
+                                <li>高齢者の慢性咳嗽にも有効</li>
+                                <li>COPD患者の咳症状改善報告あり</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 補助的2剤 -->
+                <div class="supplementary-medicines">
+                    <h3>補助的な2処方（簡潔に）</h3>
+                    <div class="info-grid">
+                        <div class="drug-info-card">
+                            <h4>参蘇飲（じんそいん）</h4>
+                            <p><strong>ツムラ66番</strong> | 胃腸虚弱者の風邪</p>
+                            <ul>
+                                <li>人参・蘇葉配合で胃腸保護</li>
+                                <li>食欲不振を伴う風邪</li>
+                                <li>高齢者・虚弱者向け</li>
+                            </ul>
+                        </div>
+                        <div class="drug-info-card">
+                            <h4>香蘇散（こうそさん）</h4>
+                            <p><strong>ツムラ70番</strong> | 軽症の風邪・気分不良</p>
+                            <ul>
+                                <li>香附子・蘇葉で気の巡り改善</li>
+                                <li>神経質な人の風邪</li>
+                                <li>妊婦にも比較的安全</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 比較表セクション -->
+        <section class="feature-section comparison-section">
+            <div class="section-container">
+                <h2 class="section-title">8処方の総合比較</h2>
+                
+                <!-- 症状別早見表 -->
+                <div class="symptom-matrix">
+                    <h3>症状別効果マトリックス</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>症状</th>
+                                <th>葛根湯</th>
+                                <th>麻黄湯</th>
+                                <th>小青竜湯</th>
+                                <th>桔梗湯</th>
+                                <th>柴胡桂枝湯</th>
+                                <th>麦門冬湯</th>
+                                <th>参蘇飲</th>
+                                <th>香蘇散</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>悪寒</td>
+                                <td class="effectiveness-high">◎</td>
+                                <td class="effectiveness-high">◎</td>
+                                <td class="effectiveness-medium">○</td>
+                                <td>-</td>
+                                <td class="effectiveness-medium">○</td>
+                                <td>-</td>
+                                <td class="effectiveness-medium">○</td>
+                                <td class="effectiveness-low">△</td>
+                            </tr>
+                            <tr>
+                                <td>発熱</td>
+                                <td class="effectiveness-high">◎</td>
+                                <td class="effectiveness-high">◎</td>
+                                <td class="effectiveness-medium">○</td>
+                                <td>-</td>
+                                <td class="effectiveness-medium">○</td>
+                                <td>-</td>
+                                <td class="effectiveness-low">△</td>
+                                <td class="effectiveness-low">△</td>
+                            </tr>
+                            <tr>
+                                <td>頭痛</td>
+                                <td class="effectiveness-high">◎</td>
+                                <td class="effectiveness-medium">○</td>
+                                <td class="effectiveness-low">△</td>
+                                <td>-</td>
+                                <td class="effectiveness-medium">○</td>
+                                <td>-</td>
+                                <td class="effectiveness-low">△</td>
+                                <td class="effectiveness-low">△</td>
+                            </tr>
+                            <tr>
+                                <td>のどの痛み</td>
+                                <td class="effectiveness-low">△</td>
+                                <td class="effectiveness-low">△</td>
+                                <td>-</td>
+                                <td class="effectiveness-high">◎</td>
+                                <td class="effectiveness-medium">○</td>
+                                <td class="effectiveness-medium">○</td>
+                                <td class="effectiveness-low">△</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>鼻水</td>
+                                <td class="effectiveness-low">△</td>
+                                <td class="effectiveness-low">△</td>
+                                <td class="effectiveness-high">◎</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="effectiveness-medium">○</td>
+                                <td class="effectiveness-low">△</td>
+                            </tr>
+                            <tr>
+                                <td>咳</td>
+                                <td class="effectiveness-low">△</td>
+                                <td class="effectiveness-medium">○</td>
+                                <td class="effectiveness-medium">○</td>
+                                <td>-</td>
+                                <td class="effectiveness-medium">○</td>
+                                <td class="effectiveness-high">◎</td>
+                                <td class="effectiveness-medium">○</td>
+                                <td class="effectiveness-low">△</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 10px; font-size: 14px; color: var(--text-pharma-body);">
+                        ◎：特に有効　○：有効　△：やや有効　-：適応外
+                    </p>
+                </div>
+
+                <!-- 詳細比較表 -->
+                <div class="comparison-table-wrapper">
+                    <h3>処方選択のための詳細比較</h3>
+                    <div class="table-responsive">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>処方名</th>
+                                    <th>適応体質</th>
+                                    <th>病期</th>
+                                    <th>主な症状</th>
+                                    <th>1日薬価</th>
+                                    <th>注意点</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>葛根湯</strong></td>
+                                    <td>中間証〜実証</td>
+                                    <td>初期</td>
+                                    <td>悪寒、肩こり、頭痛</td>
+                                    <td>74円</td>
+                                    <td>汗をかいたら中止</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>麻黄湯</strong></td>
+                                    <td>実証</td>
+                                    <td>初期</td>
+                                    <td>高熱、強い悪寒</td>
+                                    <td>40円</td>
+                                    <td>高齢者注意</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>小青竜湯</strong></td>
+                                    <td>中間証</td>
+                                    <td>初期〜中期</td>
+                                    <td>水様鼻汁、くしゃみ</td>
+                                    <td>108円</td>
+                                    <td>胃腸虚弱者注意</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>桔梗湯</strong></td>
+                                    <td>不問</td>
+                                    <td>全期</td>
+                                    <td>咽頭痛</td>
+                                    <td>30円</td>
+                                    <td>甘草含有</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>柴胡桂枝湯</strong></td>
+                                    <td>中間証</td>
+                                    <td>亜急性期</td>
+                                    <td>微熱、胃腸症状</td>
+                                    <td>157円</td>
+                                    <td>間質性肺炎注意</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>麦門冬湯</strong></td>
+                                    <td>中間証〜虚証</td>
+                                    <td>中期〜後期</td>
+                                    <td>乾いた咳</td>
+                                    <td>268円</td>
+                                    <td>最も高価</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>参蘇飲</strong></td>
+                                    <td>虚証</td>
+                                    <td>全期</td>
+                                    <td>胃腸虚弱者の風邪</td>
+                                    <td>132円</td>
+                                    <td>補剤配合</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>香蘇散</strong></td>
+                                    <td>虚証</td>
+                                    <td>初期</td>
+                                    <td>軽症、気分不良</td>
+                                    <td>48円</td>
+                                    <td>妊婦可</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 実践的選択ガイド -->
+        <section class="feature-section">
+            <div class="section-container">
+                <h2 class="section-title">実践的選択ガイド</h2>
+
+                <div class="warning-box">
+                    <h4>⚠️ よくある間違いと注意点</h4>
+                    <ul>
+                        <li><strong>葛根湯の過剰使用</strong>：すべての風邪に葛根湯は間違い。体質・症状を確認</li>
+                        <li><strong>汗をかいている時の麻黄剤</strong>：発汗後は桂枝湯系に変更が必要</li>
+                        <li><strong>長期連用</strong>：風邪の漢方薬は急性期用。1週間で改善なければ再評価</li>
+                        <li><strong>甘草の重複</strong>：複数の漢方薬併用時は総量2.5g/日以下に</li>
+                    </ul>
+                </div>
+
+                <div class="drug-info-card">
+                    <h4>薬剤師のための服薬指導ポイント</h4>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">服用タイミング</span>
+                            <span class="info-value">食前または食間（空腹時）が原則</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">服用方法</span>
+                            <span class="info-value">白湯に溶かして服用を推奨</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">効果判定</span>
+                            <span class="info-value">2-3日で効果なければ処方再検討</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">併用注意</span>
+                            <span class="info-value">西洋薬の解熱鎮痛薬との併用は可能</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patient-profile">
+                    <h4>患者タイプ別の推奨処方</h4>
+                    <div class="profile-grid">
+                        <div class="profile-item">
+                            <h5>体力充実した成人</h5>
+                            <p>初期：麻黄湯・葛根湯<br>中期：柴胡桂枝湯</p>
+                        </div>
+                        <div class="profile-item">
+                            <h5>高齢者・虚弱者</h5>
+                            <p>参蘇飲・香蘇散を中心に<br>麻黄剤は避ける</p>
+                        </div>
+                        <div class="profile-item">
+                            <h5>小児</h5>
+                            <p>葛根湯（用量調整）<br>桔梗湯（うがい困難注意）</p>
+                        </div>
+                        <div class="profile-item">
+                            <h5>妊婦</h5>
+                            <p>香蘇散が比較的安全<br>麻黄剤は原則避ける</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- まとめセクション -->
+        <section class="feature-section summary-section">
+            <div class="section-container">
+                <h2 class="section-title">まとめ：風邪漢方選択の極意</h2>
+
+                <div class="principles">
+                    <h3>風邪漢方選択の5原則</h3>
+                    <ol class="principle-list">
+                        <li>体質（証）の見極めが最重要 - 実証か虚証か中間証か</li>
+                        <li>病期を正確に判断 - 初期・中期・回復期で処方が変わる</li>
+                        <li>主症状に合わせて選択 - 悪寒発熱型、鼻水型、咳型など</li>
+                        <li>早期投与が効果的 - 特に初期の処方は48時間以内</li>
+                        <li>効果がなければ速やかに変更 - 2-3日で判断</li>
+                    </ol>
+                </div>
+
+                <div class="checklist-box">
+                    <h3>処方前チェックリスト</h3>
+                    <div class="checklist">
+                        <label class="checklist-item">
+                            <input type="checkbox">
+                            <span>患者の体質（実証・虚証）を確認した</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox">
+                            <span>発症からの日数を確認した</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox">
+                            <span>主な症状（悪寒・鼻水・咳など）を把握した</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox">
+                            <span>汗の有無を確認した（麻黄剤使用の判断）</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox">
+                            <span>既往歴・併用薬を確認した</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="key-points">
+                    <h3>覚えておくべき4つのポイント</h3>
+                    <div class="point-cards">
+                        <div class="point-card">
+                            <h4>体質重視</h4>
+                            <p>同じ風邪でも体質により処方が異なる</p>
+                        </div>
+                        <div class="point-card">
+                            <h4>早期投与</h4>
+                            <p>初期ほど効果的、48時間以内が勝負</p>
+                        </div>
+                        <div class="point-card">
+                            <h4>柔軟な変更</h4>
+                            <p>病期の進行に応じて処方を変更</p>
+                        </div>
+                        <div class="point-card">
+                            <h4>安全重視</h4>
+                            <p>麻黄・甘草の副作用に常に注意</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">サクッとお薬ノート</h3>
+                    <p class="footer-description">
+                        薬学生のための実践的学習プラットフォーム。<br>
+                        「なぜ似た薬が複数存在するのか」への明確な回答を提供します。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; 2025 サクッとお薬ノート. 薬学生応援プロジェクト
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
