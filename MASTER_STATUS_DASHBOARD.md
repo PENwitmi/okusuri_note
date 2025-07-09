@@ -1,319 +1,83 @@
 # OkusuriNote マスター進捗ダッシュボード
-**最新更新**: 2025-07-09 13:50 - 漢方薬特集ページ情報収集完了  
+**最新更新**: 2025-07-09 22:12 - 進行中プロジェクトを上部配置、完了済みをコンパクト化  
 **更新頻度**: リアルタイム（変更発生時即座）  
 **目的**: すべてのタスクと文書の状態を一元管理  
 **ガバナンス**: CEOが最終編集責任、Managerに実務更新委任（2025-06-30 23:45策定）
 
-## 🎯 現在の状況（13:50時点）
+## 🎯 現在の状況（22:12時点）
 
-### 🚀 薬剤ページv2→v3移行プロジェクト（2025-07-08 02:20開始）
-**ステータス**: 🚀 **Phase 1完了、Phase 2進行中**（循環器系薬剤移行中）  
+### 📊 プロジェクト統計サマリー
+- **v3薬剤ページ完成**: 10/22薬剤（45.5%）
+- **特集ページ完成**: 7ページ
+- **HTML作成待機中**: 3件（抗生物質、H1ブロッカー、向精神薬）
+- **source_materials拡充**: 漢方薬21処方、消化管運動改善薬7ファイル追加
+
+## 🚀 現在進行中のプロジェクト
+
+### 薬剤ページv2→v3移行プロジェクト（2025-07-08 02:20開始）
+**ステータス**: 🚀 **Phase 2進行中**（循環器系薬剤移行中）  
 **目的**: source_materialsの豊富な情報を活用した高品質v3薬剤ページの作成  
 **方針**: metformin-refined.htmlをテンプレートとし、手作業で各薬剤の情報を統合  
 **推定工数**: 10-14日（22薬剤 × 2-3時間/薬剤）
 
-#### v3移行の背景と必要性
-- **v2の構造的問題**: HTML構造の不統一、情報分類の不適切、コンテンツ品質格差
-- **v3の革新性**: 最新UI/UX実装、3レベル構造、統合的コンテンツ（1,000行以上/薬剤）
-- **source_materials活用**: drugs/、drug_evolution/、drug_stories/、study_guides/の統合
-
-#### 移行進捗（5/22薬剤、22.7%完了）
-- ✅ **rosuvastatin**: 完了（2時間27分、A級品質達成）- 「14年遅れの最後発」からの逆転劇
-- ✅ **telmisartan**: 完了（56分、A級品質達成）- 「Beyond BP」PPAR-γ活性化作用を軸に展開
-- ✅ **dapagliflozin**: 完了（43分、A級品質達成）- 「糖を捨てる」革新的発想から多臓器保護薬へ
-- ✅ **dotinurad**: 完了（継続セッション、A級品質達成）- SURI新カテゴリー創出、2024年グローバル展開
-- ✅ **lansoprazole**: 完了（継続セッション、A級品質達成）- 処方慣性の象徴、30年シェア1位の秘密
-- 🚀 **次の対象**: atorvastatin（循環器系第4薬剤）
+#### 移行進捗（10/22薬剤、45.5%完了）
+- ✅ rosuvastatin、telmisartan、dapagliflozin、dotinurad、lansoprazole
+- ✅ atorvastatin、amlodipine、empagliflozin、domperidone、metoclopramide
+- 🚀 **次の対象**: bisoprolol（β遮断薬）または他の循環器系薬剤
 
 #### 移行フェーズ計画
-```
-Phase 1: 基盤整備（1-2日）✅ 完了
-- テンプレート準備、品質基準策定、ワークフロー確立
+- Phase 1: 基盤整備（✅ 完了）
+- Phase 2: 第1バッチ・循環器系（🚀 進行中）
+- Phase 3: 第2バッチ・内分泌系/消化器系
+- Phase 4: 第3バッチ・精神神経系/その他
 
-Phase 2: 第1バッチ（3-4日）🚀 進行中
-- 循環器系薬剤（7薬剤）- 最も情報が豊富な薬効群
+**詳細**: `project-docs/2025-07-08-drug-v3-migration/`
 
-Phase 3: 第2バッチ（3-4日）
-- 内分泌系薬剤（5薬剤）、消化器系薬剤（3薬剤）
+### 📋 HTML作成待機中の特集ページ（3件）
 
-Phase 4: 第3バッチ（3-4日）
-- 精神神経系薬剤（2薬剤）、その他薬剤（5薬剤）
-```
+1. **抗生物質処方ガイド**（情報収集：7/9 07:00-07:20完了）  
+   - 外来感染症の第一選択薬、de-escalation戦略、耐性菌対策
+   - 詳細：`project-docs/2025-07-09-antibiotics-prescription-guide/`
 
-#### 期待される成果
-- **コンテンツ量**: 平均500行 → 1,000行以上（100%増）
-- **情報統合度**: 1-2ファイル → 4-5ファイル統合
-- **UI/UX統一**: 全薬剤で最新UI実装（sidebar.css、mobile-controls.css対応）
-- **学習価値**: 段階的学習による理解度向上、開発ストーリー等の付加価値情報
+2. **H1ブロッカー使い分けガイド**（情報収集：7/9 07:20-07:56完了）  
+   - 第2世代抗ヒスタミン薬11種比較、患者タイプ別選択
+   - 詳細：`project-docs/2025-07-09-h1-blocker-allergy-guide/`
 
-#### プロジェクトドキュメント
-- **場所**: `project-docs/2025-07-08-drug-v3-migration/`
-- **主要文書**: PROJECT_OVERVIEW、V3_QUALITY_STANDARDS、MIGRATION_WORKFLOW
-- **移行ログ**: migration-logs/各薬剤の詳細記録
+3. **向精神薬の代替適応**（情報収集：7/9 07:00-07:45完了）  
+   - 慢性疼痛等での使用実態、科学的根拠
+   - 詳細：`project-docs/2025-07-09-psychotropic-alternative-uses-feature/`
 
-### ✅ index.html特集ページ構造変更プロジェクト（2025-07-08 16:15 - 17:00完了）
-**ステータス**: ✅ **完了** - 全実装完了、45分で完成（推定の50%時間）  
-**目的**: ROADMAP_VISION_2025.mdに基づくトップページ構造の最適化  
-**実績工数**: 45分（当初推定1-1.5時間から70%短縮達成）
+## ✅ 完了済みプロジェクト
 
-#### 実装成果
-- ✅ サイト名変更：「おくすりノート」→「サクッとお薬ノート」（全箇所完了）
-- ✅ 3セクション削除→1セクション追加（特集ページ4カード実装）
-- ✅ story-cardスタイル再利用によるfeature-card実装（最高効率達成）
-- ✅ 最小限のCSS追加（約33行）とコメントアウト処理完了
-- ✅ HTMLサイズ28.8%削減（666行→474行）
+### 特集ページ（HTML実装完了：7種類）
+1. **吸入薬完全マスター**（7/8）：`inhaler-complete-guide.html`
+2. **MR拮抗薬**（7/8-9）：`mr-antagonist-complete-guide.html`  
+3. **心不全治療**（7/9）：`heart-failure-treatment-guide.html`
+4. **消化管運動改善薬**（7/9）：`prokinetics-complete-guide.html`
+5. **風邪に効く漢方薬**（7/9）：`kampo-cold-medicine-guide.html`
+6. **消化器系の漢方薬**（7/9）：`kampo-digestive-guide.html`
+7. **循環器薬物治療のオーケストラ**（7/7）：`cardiovascular-orchestra.html`
 
-**詳細**: `project-docs/2025-07-08-index-feature-integration/`参照
-
-### ✅ 吸入薬完全マスター特集ページ開発（2025-07-08 17:30-18:24完了）
-**ステータス**: ✅ **完了** - 全実装完了、54分で完成  
-**目的**: 吸入薬の総合的な解説特集ページの作成  
-**対象薬剤**: メプチン、レルベア、シムビコート、テリルジー（基礎→応用の順番）  
-**実績工数**: 54分（情報収集・設計・実装すべて含む）
-
-#### 実装成果
-- ✅ source_materials/drugs/respiratory/inhalers/に4薬剤の詳細情報作成
-- ✅ 適応症と用量の違い（COPD vs 喘息）の詳細分析と解説
-- ✅ 基礎から応用への流れで構成変更（SABA→ICS/LABA→SMART→トリプル）
-- ✅ docs/features/inhaler-complete-guide.html実装完了（750行）
-- ✅ feature-page.css作成（780行の専用スタイル）
-
-**詳細**: `project-docs/2025-07-08-inhaler-feature/`参照
-
-### ✅ MR拮抗薬特集ページ開発（2025-07-08 21:40-07-09 00:04完了）
-**ステータス**: ✅ **完了** - 全実装完了、2時間24分で完成  
-**目的**: K保持性利尿薬からMR拮抗薬への変遷と4世代の薬剤を体系的に解説  
-**対象薬剤**: スピロノラクトン、エプレレノン、エサキセレノン（ミネブロ）、フィネレノン（ケレンディア）  
-**実績工数**: 2時間24分（情報収集52分、HTML作成92分）
-
-#### 実装成果
-- ✅ source_materials/drugs/cardiovascular/mr_antagonists/に4薬剤の詳細情報作成
-- ✅ K保持性利尿薬→アルドステロン拮抗薬→MR拮抗薬への名称変遷史
-- ✅ 主要臨床試験（RALES、EMPHASIS-HF、FIDELIO-DKD等）のエビデンス統合
-- ✅ 2025年ガイドラインHFpEF推奨度（フィネレノンClass IIa、他Class IIb）
-- ✅ docs/features/mr-antagonist-complete-guide.html実装完了（766行）
-- ✅ feature-page.cssにMR拮抗薬世代別色変数追加（--mr-gen1〜4）
-
-**詳細**: `project-docs/2025-07-08-mr-antagonist-feature/`参照
-
-### ✅ 心不全治療特集ページ開発（2025-07-09 00:17-01:08完了）
-**ステータス**: ✅ **完了** - 全実装完了、51分で完成  
-**目的**: 2025年ガイドライン改訂を基軸としたHFrEF/HFpEF治療の包括的解説  
-**対象薬剤**: ARNI、β遮断薬、MR拮抗薬、SGLT2阻害薬、フィネレノン、GLP-1受容体作動薬  
-**実績工数**: 51分（情報収集14分、HTML作成37分）
-
-#### 実装成果
-- ✅ 2025年ガイドライン改訂内容の調査（7年ぶりの全面改訂）
-- ✅ HFpEFの病態生理と治療革命の詳細調査
-- ✅ project-docs/2025-07-09-heart-failure-feature/に7文書作成
-- ✅ source_materials/drugs/cardiovascular/heart_failure/に薬剤情報6件保存
-- ✅ docs/features/heart-failure-treatment-guide.html実装完了（810行）
-- ✅ HFpEF病態の詳細解説（なぜ収縮正常で心不全か）
-- ✅ HFrEF「Fantastic Four」による予後改善戦略
-- ✅ HFpEF治療革命（SGLT2阻害薬、フィネレノン、GLP-1）の体系的解説
-
-**詳細**: `project-docs/2025-07-09-heart-failure-feature/`参照
-
-### 📋 抗生物質処方ガイド特集ページ情報収集（2025-07-09 07:00-07:20完了）
-**ステータス**: ✅ **情報収集完了** - HTML作成待機中  
-**目的**: 実際の臨床現場での抗生物質処方パターンを体系的にまとめた特集ページ用情報収集  
-**実績工数**: 20分（9ファイル作成）
-
-#### 収集内容
-- ✅ 外来でよく見る感染症と第一選択薬（6カテゴリー）
-- ✅ 入院での重症感染症治療とde-escalation戦略
-- ✅ 年齢別（小児・成人・高齢者）の選択基準
-- ✅ 頻用抗生物質TOP20の詳細情報
-- ✅ 耐性菌対策（MRSA、ESBL等）と適正使用
-- ✅ 実際の処方例と思考プロセス（ケーススタディ7例）
-- ✅ 薬剤師向け処方チェックと服薬指導ガイド
-- ✅ source_materials/drugs/antibiotics/に個別抗生物質情報保存
-
-**詳細**: `project-docs/2025-07-09-antibiotics-prescription-guide/`参照
-
-### 🌸 H1ブロッカー使い分けガイド特集ページ情報収集（2025-07-09 07:20-07:56完了）
-**ステータス**: ✅ **情報収集完了** - HTML作成待機中  
-**目的**: 花粉症・アレルギー治療薬の選択基準と使い分けを明確化する特集ページ用情報収集  
-**実績工数**: 36分（8ファイル作成）
-
-#### 収集内容
-- ✅ 第2世代抗ヒスタミン薬11種の詳細比較（効果・眠気・価格）
-- ✅ 患者タイプ別選択ガイド（職業・年齢・重症度別）
-- ✅ H1ブロッカー以外のアレルギー薬（抗ロイコトリエン薬、点鼻ステロイド等）
-- ✅ よくある質問TOP20と実践的回答
-- ✅ 2025年の治療トレンドと将来展望
-- ✅ 空腹時服用薬剤の詳細ガイド（ビラスチンのADME特性、ビスホスホネート等）
-
-**詳細**: `project-docs/2025-07-09-h1-blocker-allergy-guide/`参照
-
-### ✅ 向精神薬の代替適応特集ページ情報収集（2025-07-09 07:00-07:45完了）
-**ステータス**: ✅ **情報収集完了** - HTML作成待機中  
-**目的**: 向精神薬が本来の精神科適応以外で使用される実態と科学的根拠を解説する特集ページ用情報収集  
-**実績工数**: 45分（9ファイル作成）
-
-#### 収集内容
-- ✅ デュロキセチン（サインバルタ）- 慢性疼痛治療への応用
-- ✅ エチゾラム（デパス）- 筋緊張緩和と整形外科領域での使用
-- ✅ アミトリプチリン（トリプタノール）- 片頭痛予防と慢性疼痛治療
-- ✅ プレガバリン（リリカ）- 神経障害性疼痛と線維筋痛症
-- ✅ トラゾドン・クエチアピン - 不眠症治療での使用
-- ✅ 総括的考察 - なぜ精神科の薬が別の症状に効くのか
-- ✅ 特集ページ構成案作成
-- ✅ source_materials/drugs/psychotropic/に3薬剤の詳細情報保存
-
-**詳細**: `project-docs/2025-07-09-psychotropic-alternative-uses-feature/`参照
-
-### ✅ 漢方薬特集ページ情報収集（2025-07-09 07:45-13:42完了）
-**ステータス**: ✅ **情報収集完了** - 全21ファイル作成完了  
-**目的**: 保険適用の医療用漢方薬（風邪薬系・消化器系）のエビデンスベース解説特集ページ用情報収集  
-**実績工数**: 5時間57分（21ファイル、約150,000文字）
-
-#### 収集内容
-- **風邪薬系漢方8処方**: 葛根湯、麻黄湯、小青竜湯、桔梗湯、麦門冬湯、柴胡桂枝湯、参蘇飲、香蘇散
-- **消化器系漢方8処方**: 半夏瀉心湯、大建中湯、六君子湯、補中益気湯、安中散、平胃散、五苓散、真武湯
-- **基礎知識・理論**: 漢方医学の基礎理論（証、気血水、四診等）
-- **医療用漢方製剤比較**: ツムラ・クラシエ等メーカー比較、剤形・薬価・供給体制
-- **特集ページ構成案**: 風邪薬編・消化器薬編の詳細な構成提案
-
-#### 主要成果
-- ✅ 各漢方薬の東洋医学的理解と現代医学的エビデンスを統合
-- ✅ 実践的な処方例（年齢・性別・症状・用量）を多数収録
-- ✅ 他剤との使い分け表、服薬指導のポイントを網羅
-- ✅ 最新の研究動向（アクアポリン、グレリン、CGRP等）を反映
-- ✅ 医療者の評価コメントによる実践的視点の追加
-
-**詳細**: `project-docs/2025-07-09-kampo-medicine-features/`参照
-
----
-
-## 🚨 直近完了プロジェクト
-
-### ✅ UI/UXビューポート最適化プロジェクト（2025-07-05 22:21 - 2025-07-06 13:05完了）
-**ステータス**: ✅ **全Phase完了** - sidebar.css + mobile-controls.css双システム実装  
-**目的**: PC・モバイルでのコンテンツ表示領域劇的拡大（PC 65%→85%、モバイル 45%→90%）  
-**成果**: 114行のsidebar.css、203行のmobile-controls.css実装、23文書作成
-
-#### 主要成果
-- **Phase 1-4**: CSS構造分析・戦略設計・基盤実装（responsive-unified.css統合）
-- **実装フェーズ**: sidebar.css（114行）+ mobile-controls.css（203行）実装完了
-- **技術的解決**: CSS変数依存問題解決、クラス競合解決（sidebar-layoutに変更）
-- **文書成果**: 23文書（問題分析、実装設計、テストガイド、修正ログ）
-
-**詳細**: `project-docs/2025-07-05-ui-ux-viewport-optimization/`参照
-
-### ✅ コンテンツ品質評価・管理プロジェクト（2025-07-05 02:04 - 07:37完了）
-**ステータス**: ✅ **全22薬剤評価完了** - 品質管理フレームワーク確立  
-**目的**: CEO-Manager協働による全22薬剤の体系的品質評価・改善  
-**成果**: A級50%、B級32%、C級18%の品質分布判明、3軸評価システム確立
-
-#### 主要成果
-- **品質評価結果**: 全22薬剤の品質評価完了（A級11薬剤、B級7薬剤、C級4薬剤）
-- **評価システム**: CLI対応3軸評価（独自性×2、内容充実度×2、教育価値×1）
-- **協働プロセス**: CEO-Manager協働評価（40-50分/薬剤）で客観性確保
-- **改善計画**: C級薬剤の根本改善、B級のA級押し上げ戦略策定
-
-**詳細**: `project-docs/2025-07-05-content-quality-evaluation-management/`参照
-
-### ✅ Level配置最適化・CSS改革プロジェクト（2025-07-04 03:50〜23:24完了）
-**ステータス**: ✅ **全Phase完全完了** - 技術基盤100%達成  
-**目的**: LevelシステムのUIコミュニケーション改善とCSS構造改革  
-**成果**: UIガイダンス機能実装、Level-selector統合、全22薬剤対応完了
-
-#### 主要成果
-- **Phase 1**: Level 3表示問題緊急修正（4薬剤）
-- **Phase 2**: CSS分離実装（新style.css 514行、index.css 606行）
-- **Phase 2.5**: 21薬剤分析でUI問題本質発見（コンテンツ削除なし確認）
-- **Phase 3**: JavaScript統合・UIガイダンス実装
-  - level-selector.js統一（1,100行→217行、98%削減）
-  - level-selector.css作成（294行）
-  - 全22薬剤への統合完了、自動UIガイダンス機能実装
-
-**詳細**: `project-docs/2025-07-01-to-07-07/2025-07-04-level3-restoration-css-reform/`参照
-
-
+### 技術基盤プロジェクト
+- **index.html特集ページ構造変更**（7/8、45分）：サイト名変更、特集ページ4カード実装
+- **UI/UXビューポート最適化**（7/5-6）：sidebar.css + mobile-controls.css実装
+- **Level配置最適化・CSS改革**（7/4）：level-selector.js統一（98%削減）
+- **コンテンツ品質評価**（7/5）：全22薬剤3軸評価完了
 
 ---
 
 ## 📁 プロジェクトドキュメント状況
 
-### 現在進行中プロジェクト
+### 進行中プロジェクトドキュメント
 
-#### 心不全治療特集ページ（2025-07-09）
-**場所**: project-docs/2025-07-09-heart-failure-feature/
-- 01-PROJECT_OVERVIEW.md - プロジェクト概要
-- 02-HFPEF_PATHOPHYSIOLOGY.md - HFpEFの病態解説
-- 03-2025_GUIDELINE_UPDATES.md - ガイドライン改訂要点
-- 04-HFREF_TREATMENT_STRATEGY.md - HFrEFの4本柱治療
-- 05-HFPEF_TREATMENT_REVOLUTION.md - HFpEFの治療革命
-- 06-CLINICAL_EVIDENCE_SUMMARY.md - 主要臨床試験まとめ
-- 07-FEATURE_PAGE_STRUCTURE_DESIGN.md - 特集ページ構成案
-- source_materials/drugs/cardiovascular/heart_failure/ - 各薬剤詳細（6薬剤）
-
-#### 薬剤ページv2→v3移行プロジェクト（2025-07-08）
+#### 薬剤ページv2→v3移行プロジェクト（2025-07-08〜）
 **場所**: project-docs/2025-07-08-drug-v3-migration/
-- 01-PROJECT_OVERVIEW.md - プロジェクト概要（背景、スコープ、フェーズ計画）
-- 02-V3_QUALITY_STANDARDS.md - v3品質基準
-- 03-TEMPLATE_PREPARATION.md - テンプレート準備手順
-- 04-INFORMATION_MAPPING.md - 情報収集マッピング
-- 05-MIGRATION_WORKFLOW.md - 移行ワークフロー
-- 06-FACTUAL_DEVELOPMENT_STORIES_GUIDE.md - 開発ストーリーガイド
-- migration-logs/ - 各薬剤の移行記録（01-rosuvastatin、02-telmisartan完了）
+- PROJECT_OVERVIEW、V3_QUALITY_STANDARDS、MIGRATION_WORKFLOW
+- migration-logs/：各薬剤の移行記録（10薬剤完了）
 
-
-
-### 最近完了プロジェクト
-
-#### MR拮抗薬特集ページ（2025-07-08〜07-09）
-**場所**: project-docs/2025-07-08-mr-antagonist-feature/
-- 01-PROJECT_OVERVIEW.md - プロジェクト概要
-- 02-MR_ANTAGONIST_EVOLUTION.md - 名称変遷と進化の歴史  
-- 03-DRUG_COMPARISON_ANALYSIS.md - 4薬剤の包括的比較
-- 04-CLINICAL_EVIDENCE_SUMMARY.md - 主要臨床試験のまとめ（HFpEF追加済）
-- 05-NOMENCLATURE_EVOLUTION_HISTORY.md - K保持性からMRへの深層分析
-- 06-HFPEF_LATEST_EVIDENCE.md - HFpEFへの効果と2025年ガイドライン
-- source_materials/drugs/cardiovascular/mr_antagonists/ - 各薬剤詳細（HFpEF情報更新済）
-- 成果物：docs/features/mr-antagonist-complete-guide.html, feature-page.css拡張
-
-#### 吸入薬完全マスター特集ページ（2025-07-08）
-**場所**: project-docs/2025-07-08-inhaler-feature/
-- 01-PROJECT_OVERVIEW.md - プロジェクト概要
-- 02-INHALER_DRUGS_RESEARCH.md - 4薬剤の調査結果  
-- 03-FEATURE_PAGE_STRUCTURE_DESIGN.md - 特集ページ構成設計（基礎→応用の流れ）
-- source_materials/drugs/respiratory/inhalers/ - 各薬剤詳細（trelegy.md, relvar.md, symbicort.md, meptin.md）
-- 成果物：docs/features/inhaler-complete-guide.html, feature-page.css
-
-#### index.html特集ページ構造変更プロジェクト（2025-07-08）
-**場所**: project-docs/2025-07-08-index-feature-integration/
-- 7文書による計画・設計・実装（45分で全実装完了）
-- 01-PROJECT_OVERVIEW.md - プロジェクト概要
-- 02-CURRENT_STRUCTURE_ANALYSIS.md - 現状分析（276行削除の詳細）
-- 03-NEW_FEATURE_SECTION_DESIGN.md - 新セクション設計
-- 04-CARD_DESIGN_PROPOSAL.md - story-card再利用案（Plan D採用）
-- 05-CSS_MODIFICATION_PLAN.md - CSS変更計画
-- 06-IMPLEMENTATION_PLAN.md - 実装計画（45分で完了）
-- 07-MIGRATION_CHECKLIST.md - 移行チェックリスト
-
-#### UI/UXビューポート最適化プロジェクト（2025-07-05-07-06）
-**場所**: project-docs/2025-07-05-ui-ux-viewport-optimization/
-- 23文書による段階的検討・実装完了
-- 13-SIDEBAR_SYSTEM_IMPLEMENTATION_PROPOSAL.md - 最終実装提案
-- 20-BROWSER_TEST_GUIDE.md - ブラウザテストガイド
-- 21-23 - HTML要素順序・レベルセレクター・包括的修正ログ
-
-#### コンテンツ品質評価・管理プロジェクト（2025-07-05）
-**場所**: project-docs/2025-07-05-content-quality-evaluation-management/
-- 全22薬剤の品質評価完了、3軸評価システム確立
-- ceo-evaluations/ - CEO評価レポート（22薬剤）
-- manager-evaluations/ - Manager評価レポート（22薬剤）
-- 03-manager-ceo_evaluation_comparison_analysis.md - 比較分析
-
-#### Level配置最適化・CSS改革プロジェクト（2025-07-04）
-**場所**: project-docs/2025-07-01-to-07-07/2025-07-04-level3-restoration-css-reform/
-- 全18文書完成、技術基盤100%達成で完了
-- 11-LEVEL_SYSTEM_TRUTH_AND_SOLUTION.md - 問題の本質理解と解決策
-- 13-IMPLEMENTATION_TASK_BREAKDOWN.md - 実装タスク詳細化
-- 17-CEO_STRATEGIC_ANALYSIS_AND_ACTION_PLAN.md - CEO戦略分析
-
+### 完了プロジェクトドキュメント
+- **特集ページ関連**：各project-docs/2025-07-XX-feature/参照
+- **技術基盤関連**：各project-docs/参照（CSS改革、UI/UX最適化等）
 
 ### プロジェクト管理（恒久的）
 **場所**: プロジェクトルート

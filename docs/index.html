@@ -134,16 +134,8 @@
                 </div>
                 -->
             
-                <div class="drug-card" data-category="スタチン" data-search="ロスバスタチン">
-                    <div class="drug-category">スタチン</div>
-                    <h3 class="drug-name">ロスバスタチン</h3>
-                    <p class="drug-description">最強LDL低下、腎排泄</p>
-                    <div class="drug-features">
-                        <span class="feature">高LDL</span><span class="feature">CKD</span>
-                    </div>
-                    <a href="drugs-v3/rosuvastatin-v3.html" class="drug-link">詳細を見る</a>
-                </div>
-            
+                <!-- v3完成薬剤（薬効群別に配置） -->
+                <!-- ARB -->
                 <div class="drug-card" data-category="ARB" data-search="テルミサルタン">
                     <div class="drug-category">ARB</div>
                     <h3 class="drug-name">テルミサルタン</h3>
@@ -152,6 +144,17 @@
                         <span class="feature">糖尿病</span><span class="feature">長時間作用</span>
                     </div>
                     <a href="drugs-v3/telmisartan-v3.html" class="drug-link">詳細を見る</a>
+                </div>
+            
+                <!-- スタチン -->
+                <div class="drug-card" data-category="スタチン" data-search="ロスバスタチン">
+                    <div class="drug-category">スタチン</div>
+                    <h3 class="drug-name">ロスバスタチン</h3>
+                    <p class="drug-description">最強LDL低下、腎排泄</p>
+                    <div class="drug-features">
+                        <span class="feature">高LDL</span><span class="feature">CKD</span>
+                    </div>
+                    <a href="drugs-v3/rosuvastatin-v3.html" class="drug-link">詳細を見る</a>
                 </div>
             
                 <div class="drug-card" data-category="スタチン" data-search="アトルバスタチン">
@@ -164,17 +167,40 @@
                     <a href="drugs-v3/atorvastatin-v3.html" class="drug-link">詳細を見る</a>
                 </div>
             
-                <!-- SGLT2阻害薬（2種）、β遮断薬（カルベジロール）は準備中
+                <!-- PPI -->
+                <div class="drug-card" data-category="PPI" data-search="ランソプラゾール">
+                    <div class="drug-category">PPI</div>
+                    <h3 class="drug-name">ランソプラゾール</h3>
+                    <p class="drug-description">日本シェア1位、OD錠</p>
+                    <div class="drug-features">
+                        <span class="feature">NSAIDs予防</span><span class="feature">小児適応</span>
+                    </div>
+                    <a href="drugs-v3/lansoprazole-v3.html" class="drug-link">詳細を見る</a>
+                </div>
             
+                <!-- Ca拮抗薬 -->
+                <div class="drug-card" data-category="Ca拮抗薬" data-search="アムロジピン">
+                    <div class="drug-category">Ca拮抗薬</div>
+                    <h3 class="drug-name">アムロジピン</h3>
+                    <p class="drug-description">半減期35-50時間、世界標準</p>
+                    <div class="drug-features">
+                        <span class="feature">高血圧</span><span class="feature">狭心症</span>
+                    </div>
+                    <a href="drugs-v3/amlodipine-v3.html" class="drug-link">詳細を見る</a>
+                </div>
+            
+                <!-- SGLT2阻害薬 -->
                 <div class="drug-card" data-category="SGLT2阻害薬" data-search="エンパグリフロジン">
                     <div class="drug-category">SGLT2阻害薬</div>
                     <h3 class="drug-name">エンパグリフロジン</h3>
-                    <p class="drug-description">心不全予防、腎保護</p>
+                    <p class="drug-description">心血管死38%減少、革命的</p>
                     <div class="drug-features">
-                        <span class="feature">心血管保護</span><span class="feature">体重減少</span>
+                        <span class="feature">心血管保護</span><span class="feature">腎保護</span>
                     </div>
-                    <a href="drugs/empagliflozin.html" class="drug-link">詳細を見る</a>
+                    <a href="drugs-v3/empagliflozin-v3.html" class="drug-link">詳細を見る</a>
                 </div>
+            
+                <!-- SGLT2阻害薬（ダパグリフロジン）、β遮断薬（カルベジロール）は準備中
             
                 <div class="drug-card" data-category="SGLT2阻害薬" data-search="ダパグリフロジン">
                     <div class="drug-category">SGLT2阻害薬</div>
@@ -321,16 +347,6 @@
                     <a href="drugs-v3/dotinurad-v3.html" class="drug-link">詳細を見る</a>
                 </div>
             
-                <div class="drug-card" data-category="Ca拮抗薬" data-search="アムロジピン">
-                    <div class="drug-category">Ca拮抗薬</div>
-                    <h3 class="drug-name">アムロジピン</h3>
-                    <p class="drug-description">半減期35-50時間、世界標準</p>
-                    <div class="drug-features">
-                        <span class="feature">高血圧</span><span class="feature">狭心症</span>
-                    </div>
-                    <a href="drugs-v3/amlodipine-v3.html" class="drug-link">詳細を見る</a>
-                </div>
-            
                 <div class="drug-card" data-category="SGLT2阻害薬" data-search="ダパグリフロジン">
                     <div class="drug-category">SGLT2阻害薬</div>
                     <h3 class="drug-name">ダパグリフロジン</h3>
@@ -426,6 +442,45 @@
                             <span class="highlight-item">💊 エビデンス解説</span>
                         </div>
                         <a href="features/kampo-cold-medicine-guide.html" class="feature-link">
+                            特集を読む
+                            <span class="link-arrow">→</span>
+                        </a>
+                    </div>
+
+                    <!-- 優先度3: 消化器系漢方薬特集 -->
+                    <div class="feature-card" data-category="kampo">
+                        <div class="feature-icon">🏥</div>
+                        <h3 class="feature-title">消化器系の漢方薬完全ガイド</h3>
+                        <h4 class="feature-subtitle">お腹の不調を体質から改善する8つの処方</h4>
+                        <p class="feature-description">
+                            大建中湯・六君子湯・五苓散・補中益気湯を中心に、腹部膨満・食欲不振・下痢・胃痛への漢方アプローチを詳説
+                        </p>
+                        <div class="feature-highlights">
+                            <span class="highlight-item">🎈 症状別選択</span>
+                            <span class="highlight-item">🔬 作用機序解明</span>
+                            <span class="highlight-item">📈 最新エビデンス</span>
+                        </div>
+                        <a href="features/kampo-digestive-guide.html" class="feature-link">
+                            特集を読む
+                            <span class="link-arrow">→</span>
+                        </a>
+                    </div>
+
+                    <!-- 消化管運動改善薬特集 -->
+                    <div class="feature-card feature-priority-high" data-category="gastrointestinal">
+                        <div class="feature-badge">2025年改訂</div>
+                        <div class="feature-icon">🎉</div>
+                        <h3 class="feature-title">消化管運動改善薬 完全マスター</h3>
+                        <h4 class="feature-subtitle">メトクロプラミド vs ドンペリドン - 50年ぶりの妊婦解禁</h4>
+                        <p class="feature-description">
+                            2025年ガイドライン改訂で歴史的転換！メトクロプラミドとドンペリドンの使い分けを、作用機序・副作用・適応症から徹底解説
+                        </p>
+                        <div class="feature-highlights">
+                            <span class="highlight-item">🤰 妊婦使用解禁</span>
+                            <span class="highlight-item">🧠 中枢移行性</span>
+                            <span class="highlight-item">💊 使い分け極意</span>
+                        </div>
+                        <a href="features/prokinetics-complete-guide.html" class="feature-link">
                             特集を読む
                             <span class="link-arrow">→</span>
                         </a>
