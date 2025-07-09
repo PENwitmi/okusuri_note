@@ -1,16 +1,16 @@
 # OkusuriNote マスター進捗ダッシュボード
-**最新更新**: 2025-07-09 22:12 - 進行中プロジェクトを上部配置、完了済みをコンパクト化  
+**最新更新**: 2025-07-10 03:29 - index.html誤情報修正完了（実表示薬剤数9に修正）  
 **更新頻度**: リアルタイム（変更発生時即座）  
 **目的**: すべてのタスクと文書の状態を一元管理  
 **ガバナンス**: CEOが最終編集責任、Managerに実務更新委任（2025-06-30 23:45策定）
 
-## 🎯 現在の状況（22:12時点）
+## 🎯 現在の状況（03:29時点）
 
 ### 📊 プロジェクト統計サマリー
 - **v3薬剤ページ完成**: 10/22薬剤（45.5%）
 - **特集ページ完成**: 7ページ
-- **HTML作成待機中**: 3件（抗生物質、H1ブロッカー、向精神薬）
-- **source_materials拡充**: 漢方薬21処方、消化管運動改善薬7ファイル追加
+- **HTML作成待機中**: 4件（インスリン製剤、抗生物質、H1ブロッカー、向精神薬）
+- **source_materials拡充**: 漢方薬21処方、消化管運動改善薬7ファイル、抗血小板薬3ファイル追加
 
 ## 🚀 現在進行中のプロジェクト
 
@@ -33,32 +33,37 @@
 
 **詳細**: `project-docs/2025-07-08-drug-v3-migration/`
 
-### 📋 HTML作成待機中の特集ページ（3件）
+### 📋 HTML作成待機中の特集ページ（4件）
 
-1. **抗生物質処方ガイド**（情報収集：7/9 07:00-07:20完了）  
+1. **現在最も処方されているインスリン製剤**（情報収集：7/10 03:06-03:19完了）  
+   - TOP5製剤の使い分けと実践的指導、デバイスの重要性
+   - 詳細：`project-docs/2025-07-09-insulin-products-feature/`
+
+2. **抗生物質処方ガイド**（情報収集：7/9 07:00-07:20完了）  
    - 外来感染症の第一選択薬、de-escalation戦略、耐性菌対策
    - 詳細：`project-docs/2025-07-09-antibiotics-prescription-guide/`
 
-2. **H1ブロッカー使い分けガイド**（情報収集：7/9 07:20-07:56完了）  
+3. **H1ブロッカー使い分けガイド**（情報収集：7/9 07:20-07:56完了）  
    - 第2世代抗ヒスタミン薬11種比較、患者タイプ別選択
    - 詳細：`project-docs/2025-07-09-h1-blocker-allergy-guide/`
 
-3. **向精神薬の代替適応**（情報収集：7/9 07:00-07:45完了）  
+4. **向精神薬の代替適応**（情報収集：7/9 07:00-07:45完了）  
    - 慢性疼痛等での使用実態、科学的根拠
    - 詳細：`project-docs/2025-07-09-psychotropic-alternative-uses-feature/`
 
 ## ✅ 完了済みプロジェクト
 
 ### 特集ページ（HTML実装完了：7種類）
-1. **吸入薬完全マスター**（7/8）：`inhaler-complete-guide.html`
-2. **MR拮抗薬**（7/8-9）：`mr-antagonist-complete-guide.html`  
-3. **心不全治療**（7/9）：`heart-failure-treatment-guide.html`
-4. **消化管運動改善薬**（7/9）：`prokinetics-complete-guide.html`
-5. **風邪に効く漢方薬**（7/9）：`kampo-cold-medicine-guide.html`
-6. **消化器系の漢方薬**（7/9）：`kampo-digestive-guide.html`
-7. **循環器薬物治療のオーケストラ**（7/7）：`cardiovascular-orchestra.html`
+1. **抗血栓薬完全マスター**（7/10）：`antithrombotic-complete-guide.html`
+2. **吸入薬完全マスター**（7/8）：`inhaler-complete-guide.html`
+3. **MR拮抗薬**（7/8-9）：`mr-antagonist-complete-guide.html`  
+4. **心不全治療**（7/9）：`heart-failure-treatment-guide.html`
+5. **消化管運動改善薬**（7/9）：`prokinetics-complete-guide.html`
+6. **風邪に効く漢方薬**（7/9）：`kampo-cold-medicine-guide.html`
+7. **消化器系の漢方薬**（7/9）：`kampo-digestive-guide.html`
 
 ### 技術基盤プロジェクト
+- **index.html誤情報修正**（7/10、10分）：薬剤数9個に修正、薬効群・ストーリー削除、特集ページ7個に統一
 - **index.html特集ページ構造変更**（7/8、45分）：サイト名変更、特集ページ4カード実装
 - **UI/UXビューポート最適化**（7/5-6）：sidebar.css + mobile-controls.css実装
 - **Level配置最適化・CSS改革**（7/4）：level-selector.js統一（98%削減）
