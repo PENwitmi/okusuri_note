@@ -459,11 +459,6 @@ button {
         padding: var(--spacing-base);
     }
     
-    /* 薬剤カードを1列表示に戻す */
-    .drugs-grid {
-        grid-template-columns: 1fr;
-    }
-    
     /* テーブルのカード化 */
     .responsive-table table {
         display: block;
