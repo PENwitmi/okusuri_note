@@ -87,17 +87,17 @@ button {
     }
 }
 
-/* モバイル用フォントサイズ確保（最小16px） */
-body,
-input,
-textarea,
-select,
-button {
-    font-size: max(16px, var(--font-size-base));
-}
-
 /* モバイル専用調整（〜767px） */
 @media (max-width: 767px) {
+    /* モバイル用フォントサイズ確保（最小16px） */
+    body,
+    input,
+    textarea,
+    select,
+    button {
+        font-size: max(16px, var(--font-size-base));
+    }
+    
     /* モバイル用パディング調整 */
     .container,
     .section-container {
@@ -211,6 +211,7 @@ button {
     
     /* モバイルでは特集ページを1列表示 */
     .features-grid {
+        display: grid;
         grid-template-columns: 1fr;
         gap: var(--spacing-base);
     }
@@ -230,6 +231,7 @@ button {
     .drugs-grid,
     .categories-grid,
     .features-grid {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-lg);
     }
