@@ -87,6 +87,13 @@ button {
     }
 }
 
+/* モバイル用パディング調整 */
+.container,
+.section-container {
+    padding-left: var(--spacing-base);
+    padding-right: var(--spacing-base);
+}
+
 /* モバイル用フォントサイズ確保（最小16px） */
 body,
 input,
@@ -96,30 +103,23 @@ button {
     font-size: max(16px, var(--font-size-base));
 }
 
+/* モバイル用グリッド */
+.drugs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* 薬剤カードは2列表示 */
+    gap: var(--spacing-sm);
+}
+
+.categories-grid,
+.stories-grid,
+.differentiation-grid {
+    display: grid;
+    grid-template-columns: 1fr;  /* その他は1列表示維持 */
+    gap: var(--spacing-base);
+}
+
 /* モバイル専用調整（〜767px） */
 @media (max-width: 767px) {
-    /* モバイル用パディング調整 */
-    .container,
-    .section-container {
-        padding-left: var(--spacing-base);
-        padding-right: var(--spacing-base);
-    }
-    
-    /* モバイル用グリッド */
-    .drugs-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);  /* 薬剤カードは2列表示 */
-        gap: var(--spacing-sm);
-    }
-    
-    .categories-grid,
-    .stories-grid,
-    .differentiation-grid {
-        display: grid;
-        grid-template-columns: 1fr;  /* その他は1列表示維持 */
-        gap: var(--spacing-base);
-    }
-    
     /* ヘッダー調整 */
     .header-container {
         padding: var(--spacing-sm) var(--spacing-base);
