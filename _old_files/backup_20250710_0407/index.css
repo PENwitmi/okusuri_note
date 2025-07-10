@@ -391,8 +391,8 @@
 ======================================== */
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);  /* 2列固定レイアウト */
-    gap: 32px;  /* より広いギャップ（--spacing-lg: 24px → 32px） */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
     margin-top: var(--spacing-2xl);
 }
 

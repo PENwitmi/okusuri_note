@@ -103,19 +103,13 @@ button {
     font-size: max(16px, var(--font-size-base));
 }
 
-/* モバイル用グリッド */
-.drugs-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);  /* 薬剤カードは2列表示 */
-    gap: var(--spacing-sm);
-}
-
+/* モバイル用グリッド（単一カラム） */
+.drugs-grid,
 .categories-grid,
 .stories-grid,
-.differentiation-grid,
-.features-grid {
+.differentiation-grid {
     display: grid;
-    grid-template-columns: 1fr;  /* その他は1列表示維持 */
+    grid-template-columns: 1fr;
     gap: var(--spacing-base);
 }
 
@@ -191,23 +185,6 @@ button {
     
     .footer-stats {
         justify-content: center;
-    }
-    
-    /* 特集カードのモバイルサイズ調整 */
-    .feature-card {
-        padding: var(--spacing-lg);  /* 余白を少し小さく */
-    }
-    
-    .feature-icon {
-        font-size: 2.5rem;  /* 3rem → 2.5rem */
-    }
-    
-    .feature-title {
-        font-size: 1.25rem;  /* 小さめに調整 */
-    }
-    
-    .feature-subtitle {
-        font-size: 0.875rem;
     }
 }
 
@@ -449,11 +426,6 @@ button {
     .drug-card,
     .category-card {
         padding: var(--spacing-base);
-    }
-    
-    /* 薬剤カードを1列表示に戻す */
-    .drugs-grid {
-        grid-template-columns: 1fr;
     }
     
     /* テーブルのカード化 */
