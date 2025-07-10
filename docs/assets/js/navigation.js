@@ -1,5 +1,5 @@
 /**
- * PharmaDx ナビゲーション機能
+ * おくすりノート ナビゲーション機能
  * 薬学生のモバイル学習に最適化されたナビゲーションシステム
  * 
  * 機能:
@@ -10,7 +10,7 @@
  * - アクセシビリティ対応
  */
 
-class PharmaDxNavigation {
+class OkusuriNavigation {
     constructor() {
         this.mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         this.mainNav = document.querySelector('.main-nav');
@@ -35,7 +35,7 @@ class PharmaDxNavigation {
         this.setupKeyboardNavigation();
         this.setupClickOutside();
         
-        console.log('PharmaDx ナビゲーションシステム初期化完了');
+        console.log('おくすりノート ナビゲーションシステム初期化完了');
     }
     
     /**
@@ -406,8 +406,8 @@ class PharmaDxNavigation {
  * グローバルナビゲーション関数（HTMLから呼び出される）
  */
 function toggleMobileMenu() {
-    if (window.pharmaDxNavigation) {
-        window.pharmaDxNavigation.toggleMobileMenu();
+    if (window.okusuriNavigation) {
+        window.okusuriNavigation.toggleMobileMenu();
     }
 }
 
@@ -416,8 +416,8 @@ function toggleMobileMenu() {
  * @param {string} sectionId - 移動先セクションID
  */
 function navigateToSection(sectionId) {
-    if (window.pharmaDxNavigation) {
-        window.pharmaDxNavigation.navigateToSection(sectionId);
+    if (window.okusuriNavigation) {
+        window.okusuriNavigation.navigateToSection(sectionId);
     }
 }
 
@@ -426,28 +426,28 @@ function navigateToSection(sectionId) {
  */
 document.addEventListener('DOMContentLoaded', () => {
     // ナビゲーションシステムのインスタンス化
-    window.pharmaDxNavigation = new PharmaDxNavigation();
+    window.okusuriNavigation = new OkusuriNavigation();
     
     // ページ読み込み時のハッシュ処理
     if (window.location.hash) {
         setTimeout(() => {
-            window.pharmaDxNavigation.smoothScrollToSection(window.location.hash);
+            window.okusuriNavigation.smoothScrollToSection(window.location.hash);
         }, 100);
     }
     
     // 戻る/進むボタン対応
     window.addEventListener('popstate', (e) => {
         if (window.location.hash) {
-            window.pharmaDxNavigation.smoothScrollToSection(window.location.hash);
+            window.okusuriNavigation.smoothScrollToSection(window.location.hash);
         } else {
-            window.pharmaDxNavigation.smoothScrollToTop();
+            window.okusuriNavigation.smoothScrollToTop();
         }
     });
     
-    console.log('PharmaDx ナビゲーションシステム起動完了');
+    console.log('おくすりノート ナビゲーションシステム起動完了');
     
     // 開発モード用統計表示
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        console.log('ナビゲーション統計:', window.pharmaDxNavigation.getNavigationStats());
+        console.log('ナビゲーション統計:', window.okusuriNavigation.getNavigationStats());
     }
 });

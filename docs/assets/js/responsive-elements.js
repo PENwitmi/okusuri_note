@@ -854,14 +854,8 @@ function optimizeForLighthouse() {
  * リソースヒントの追加
  */
 function addResourceHints() {
-    const head = document.head;
-    
-    // 重要なリソースのプリロード
-    const preloadLink = document.createElement('link');
-    preloadLink.rel = 'preload';
-    preloadLink.href = 'assets/css/mobile-optimization.css';
-    preloadLink.as = 'style';
-    head.appendChild(preloadLink);
+    // 現在はリソースヒントは不要（mobile-optimization.cssは廃止済み）
+    // 将来的に必要になった場合にここに追加
 }
 
 /**

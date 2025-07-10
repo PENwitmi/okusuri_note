@@ -1,5 +1,5 @@
 /**
- * PharmaDx検索機能
+ * おくすりノート検索機能
  * 薬学生のモバイル学習を考慮した高速検索システム
  * 
  * 機能:
@@ -10,7 +10,7 @@
  * - 検索結果件数表示
  */
 
-class PharmaDxSearch {
+class OkusuriSearch {
     constructor() {
         this.searchInput = document.getElementById('searchInput');
         this.drugsGrid = document.querySelector('.drugs-grid');
@@ -33,7 +33,7 @@ class PharmaDxSearch {
         // イベントリスナーの設定
         this.setupEventListeners();
         
-        console.log(`PharmaDx検索システム初期化完了 - ${this.drugCards.length}薬剤対応`);
+        console.log(`おくすりノート検索システム初期化完了 - ${this.drugCards.length}薬剤対応`);
     }
     
     /**
@@ -457,8 +457,8 @@ class PharmaDxSearch {
  */
 function performSearch() {
     const searchInput = document.getElementById('searchInput');
-    if (searchInput && window.pharmaDxSearch) {
-        window.pharmaDxSearch.handleSearch(searchInput.value);
+    if (searchInput && window.okusuriSearch) {
+        window.okusuriSearch.handleSearch(searchInput.value);
     }
 }
 
@@ -467,15 +467,15 @@ function performSearch() {
  */
 document.addEventListener('DOMContentLoaded', () => {
     // 検索システムのインスタンス化
-    window.pharmaDxSearch = new PharmaDxSearch();
+    window.okusuriSearch = new OkusuriSearch();
     
     // ページ読み込み時の検索状態復元
-    window.pharmaDxSearch.restoreSearchState();
+    window.okusuriSearch.restoreSearchState();
     
-    console.log('PharmaDx検索システム起動完了');
+    console.log('おくすりノート検索システム起動完了');
     
     // 開発モード用統計表示
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        console.log('検索統計:', window.pharmaDxSearch.getSearchStats());
+        console.log('検索統計:', window.okusuriSearch.getSearchStats());
     }
 });
