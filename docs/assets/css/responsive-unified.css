@@ -109,7 +109,7 @@ button {
     .drugs-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);  /* 薬剤カードは2列表示 */
-        gap: var(--spacing-sm);
+        gap: var(--spacing-xs);  /* より狭いギャップ */
     }
     
     .categories-grid,
@@ -156,6 +156,30 @@ button {
     /* カード調整 */
     .category-card {
         padding: var(--spacing-lg);
+    }
+    
+    /* 薬剤カードのモバイル最適化 */
+    .drug-card .drug-name {
+        font-size: var(--font-size-lg);  /* var(--font-size-xl)から縮小 */
+        line-height: 1.3;
+    }
+    
+    .drug-card .drug-category {
+        font-size: var(--font-size-xs);  /* より小さく */
+        padding: 0.125rem 0.5rem;  /* パディングも縮小 */
+    }
+    
+    .drug-card .feature-icon {
+        font-size: 1.25rem;  /* 1.5remから縮小 */
+    }
+    
+    .drug-card .feature-text {
+        font-size: var(--font-size-sm);  /* より小さく */
+        line-height: 1.3;
+    }
+    
+    .drug-card {
+        padding: var(--spacing-sm);  /* より小さいパディング */
     }
     
     /* ストーリーメタ情報 */

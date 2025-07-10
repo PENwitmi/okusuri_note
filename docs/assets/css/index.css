@@ -167,7 +167,7 @@
     background: #ffffff; /* フォールバック */
     background: var(--bg-card, #ffffff);
     border-radius: 16px;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-base);
     box-shadow: var(--shadow-light);
     transition: all var(--transition-base);
     border: 1px solid #f1f3f4; /* フォールバック */
@@ -232,6 +232,28 @@
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: 12px;
     border: 1px solid var(--border-color);
+}
+
+/* 新しい薬剤主要特徴（絵文字付き） */
+.drug-key-feature {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-xs) 0;
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.feature-text {
+    color: var(--text-secondary);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    line-height: 1.4;
 }
 
 .drug-link {
