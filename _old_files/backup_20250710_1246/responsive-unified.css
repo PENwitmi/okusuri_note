@@ -112,7 +112,8 @@ button {
 
 .categories-grid,
 .stories-grid,
-.differentiation-grid {
+.differentiation-grid,
+.features-grid {
     display: grid;
     grid-template-columns: 1fr;  /* その他は1列表示維持 */
     gap: var(--spacing-base);
@@ -208,12 +209,6 @@ button {
     .feature-subtitle {
         font-size: 0.875rem;
     }
-    
-    /* モバイルでは特集ページを1列表示 */
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-base);
-    }
 }
 
 /* ========================================
@@ -228,8 +223,7 @@ button {
     
     /* グリッドレイアウト（2カラム） */
     .drugs-grid,
-    .categories-grid,
-    .features-grid {
+    .categories-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-lg);
     }
