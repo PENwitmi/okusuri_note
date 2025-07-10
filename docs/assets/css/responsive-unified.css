@@ -228,11 +228,17 @@ button {
     }
     
     /* グリッドレイアウト（2カラム） */
-    .drugs-grid,
     .categories-grid,
     .features-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+    
+    /* 薬剤グリッドは別途制御 */
+    .drugs-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: var(--spacing-lg);
     }
     

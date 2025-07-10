@@ -700,14 +700,24 @@ function adjustGridColumns(grid) {
     const width = window.innerWidth;
     let columns;
     
-    if (width <= 480) {
-        columns = '1fr';
-    } else if (width <= 768) {
-        columns = 'repeat(2, 1fr)';
-    } else if (width <= 1024) {
-        columns = 'repeat(3, 1fr)';
+    // 薬剤カードは特別扱い
+    if (grid.classList.contains('drugs-grid')) {
+        if (width <= 768) {
+            columns = 'repeat(2, 1fr)';  // モバイルでも2列維持
+        } else {
+            columns = 'repeat(3, 1fr)';  // デスクトップは3列
+        }
     } else {
-        columns = 'repeat(auto-fit, minmax(300px, 1fr))';
+        // その他のグリッド（features-grid、categories-gridなど）
+        if (width <= 480) {
+            columns = '1fr';
+        } else if (width <= 768) {
+            columns = 'repeat(2, 1fr)';
+        } else if (width <= 1024) {
+            columns = 'repeat(3, 1fr)';
+        } else {
+            columns = 'repeat(auto-fit, minmax(300px, 1fr))';
+        }
     }
     
     grid.style.gridTemplateColumns = columns;
