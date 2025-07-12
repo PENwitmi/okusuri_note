@@ -143,17 +143,61 @@
             </div>
         </section>
 
-        <!-- 血栓形成の基本理解セクション -->
+        <!-- なぜ2種類必要？セクション -->
         <section class="feature-section">
             <div class="section-container">
-                <h2 class="section-title">🩸 血栓形成の基本理解</h2>
+                <h2 class="section-title">🤔 なぜ抗血小板薬と抗凝固薬の2種類が必要？</h2>
                 
                 <div class="intro-content">
-                    <p>血液凝固は出血死を防ぐ重要な生体防御機構です。しかし、この機構が過剰に働くと血栓症を引き起こし、心筋梗塞や脳梗塞などの致死的疾患につながります。血栓には形成場所と機序により2種類存在し、それぞれ異なる薬剤で治療する必要があります。</p>
+                    <p>抗血栓薬を理解する鍵は、<strong>血栓の「色」</strong>にあります。動脈で形成される白色血栓と、静脈で形成される赤色血栓では、形成メカニズムが全く異なるため、それぞれに特化した薬剤が必要なのです。</p>
                     
+                    <div class="thrombus-visual">
+                        <div class="thrombus-box arterial-box">
+                            <div class="thrombus-icon arterial-icon">⚪</div>
+                            <h3>白色血栓（動脈血栓）</h3>
+                            <p><strong>形成場所</strong>：動脈（高速血流）</p>
+                            <p><strong>主成分</strong>：血小板</p>
+                            <p><strong>トリガー</strong>：血管内皮障害</p>
+                            <p><strong>疾患</strong>：心筋梗塞、脳梗塞</p>
+                            <div style="margin-top: 20px; padding: 15px; background: #FFF5F0; border-radius: 8px;">
+                                <strong style="color: var(--antiplatelet-color);">→ 抗血小板薬で対応</strong>
+                            </div>
+                        </div>
+                        
+                        <div class="thrombus-box venous-box">
+                            <div class="thrombus-icon venous-icon">🔴</div>
+                            <h3>赤色血栓（静脈血栓）</h3>
+                            <p><strong>形成場所</strong>：静脈（低速血流）</p>
+                            <p><strong>主成分</strong>：赤血球＋フィブリン</p>
+                            <p><strong>トリガー</strong>：血流うっ滞</p>
+                            <p><strong>疾患</strong>：深部静脈血栓症、肺塞栓症</p>
+                            <div style="margin-top: 20px; padding: 15px; background: #E0F2F1; border-radius: 8px;">
+                                <strong style="color: var(--anticoagulant-color);">→ 抗凝固薬で対応</strong>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="intro-highlights">
+                        <h3>覚えておきたい基本原則</h3>
+                        <ul>
+                            <li><strong>高速血流（動脈）</strong>では血小板が活性化しやすい → 抗血小板薬</li>
+                            <li><strong>低速血流（静脈）</strong>では凝固因子が蓄積しやすい → 抗凝固薬</li>
+                            <li><strong>心房細動</strong>は心房内の血流うっ滞 → 抗凝固薬（静脈血栓型）</li>
+                            <li><strong>ステント留置後</strong>は血小板が活性化 → 抗血小板薬（DAPT）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 詳しい病態生理（後半に配置） -->
+        <section class="feature-section">
+            <div class="section-container">
+                <h2 class="section-title">📚 もっと詳しく知りたい人へ：血栓形成のメカニズム</h2>
+                
+                <div class="intro-content">
                     <div class="pathophysiology-detail" style="margin: 30px 0; padding: 25px; background: #F5F5F5; border-radius: 12px;">
-                        <h3 style="margin-bottom: 20px;">1. 動脈血栓（白色血栓）の形成過程</h3>
-                        <p><strong>形成環境</strong>：動脈の高速血流下（高ずり応力）で形成</p>
+                        <h3 style="margin-bottom: 20px;">動脈血栓（白色血栓）の詳しい形成過程</h3>
                         
                         <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 8px;">
                             <h4>形成メカニズム：</h4>
@@ -165,16 +209,48 @@
                                 <li>GPⅡb/Ⅲa受容体活性化によりフィブリノゲンで血小板同士が架橋</li>
                                 <li>血小板血栓（白色血栓）が形成される</li>
                             </ol>
-                            <p style="margin-top: 15px;"><strong>主成分</strong>：血小板（だから白く見える）<br>
-                            <strong>代表的疾患</strong>：急性冠症候群、脳梗塞（アテローム血栓性）<br>
-                            <strong style="color: var(--antiplatelet-color);">治療薬</strong>：抗血小板薬（アスピリン、クロピドグレル、プラスグレル等）</p>
+                            <p style="margin-top: 15px;"><strong>補足</strong>：動脈の高速血流下（高ずり応力）で形成されるため、血小板の粘着・凝集が主体となります。</p>
+                        </div>
+                        
+                        <div style="margin: 20px 0; padding: 20px; background: #FFF5F0; border-radius: 8px;">
+                            <h4>血小板活性化の3段階と薬剤の作用点</h4>
+                            
+                            <h5>1. 粘着（Adhesion）</h5>
+                            <p>血管内皮下のコラーゲン、vWFに血小板が結合<br>
+                            <strong>関与受容体</strong>：GPⅠb-Ⅸ-Ⅴ複合体、GPⅥ<br>
+                            <em>※この段階を阻害する薬剤は現在臨床使用されていない</em></p>
+                            
+                            <h5 style="margin-top: 20px;">2. 活性化（Activation）- 抗血小板薬の主要ターゲット</h5>
+                            
+                            <div style="margin: 15px 0; padding: 10px; background: #FFFBF0; border-left: 4px solid var(--antiplatelet-color);">
+                                <strong>アラキドン酸カスケード</strong>
+                                <pre style="font-family: monospace; line-height: 1.6; margin-top: 10px;">
+血小板膜リン脂質
+    ↓ ホスホリパーゼA2
+アラキドン酸
+    ↓ COX-1
+PGG2 → PGH2
+    ↓ トロンボキサン合成酵素
+TXA2（強力な血小板活性化物質）
+                                </pre>
+                                <p><strong style="color: var(--antiplatelet-color);">→ アスピリン</strong>はCOX-1のSer530をアセチル化し不可逆的に阻害</p>
+                            </div>
+                            
+                            <div style="margin: 15px 0; padding: 10px; background: #F0F8FF; border-left: 4px solid var(--antiplatelet-color);">
+                                <strong>ADP受容体経路</strong>
+                                <p style="margin-top: 10px;"><strong>P2Y1受容体</strong>：血小板の形態変化を誘導<br>
+                                <strong>P2Y12受容体</strong>：血小板凝集の増幅に重要（主要な治療ターゲット）</p>
+                                <p style="margin-top: 10px;"><strong style="color: var(--antiplatelet-color);">→ P2Y12阻害薬</strong>：クロピドグレル、プラスグレル、チカグレロル</p>
+                            </div>
+                            
+                            <h5 style="margin-top: 20px;">3. 凝集（Aggregation）</h5>
+                            <p>GPⅡb/Ⅲa受容体が活性化し、フィブリノゲンが架橋となり血小板凝集塊形成<br>
+                            <em>※GPⅡb/Ⅲa阻害薬は強力だが出血リスクが高く、急性期の静注薬のみ</em></p>
                         </div>
                     </div>
                     
                     <div class="pathophysiology-detail" style="margin: 30px 0; padding: 25px; background: #FFEBEE; border-radius: 12px;">
-                        <h3 style="margin-bottom: 20px;">2. 静脈血栓（赤色血栓）の形成過程</h3>
-                        <p><strong>形成環境</strong>：静脈の低速血流・うっ滞（低ずり応力）で形成<br>
-                        <strong>重要</strong>：心房細動では左房内で血流が滞り、同様の機序で血栓形成</p>
+                        <h3 style="margin-bottom: 20px;">静脈血栓（赤色血栓）の詳しい形成過程</h3>
                         
                         <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 8px;">
                             <h4>形成メカニズム：</h4>
@@ -188,20 +264,52 @@
                                 <li>フィブリンが網状構造を形成し、赤血球・白血球を捕捉</li>
                                 <li><strong>この血栓が遊離すると脳や肺の血管を詰まらせ塞栓症を引き起こす</strong></li>
                             </ol>
-                            <p style="margin-top: 15px;"><strong>主成分</strong>：赤血球＋フィブリン（だから赤く見える）<br>
-                            <strong>代表的疾患</strong>：深部静脈血栓症、肺塞栓症、心原性脳塞栓症<br>
-                            <strong style="color: var(--anticoagulant-color);">治療薬</strong>：抗凝固薬（ワルファリン、DOAC）</p>
+                            <p style="margin-top: 15px;"><strong>補足</strong>：心房細動では左房内で血流が滞り、同様の機序で血栓が形成されます。</p>
                         </div>
-                    </div>
-                    
-                    <div class="intro-highlights" style="margin-top: 30px;">
-                        <h3>薬剤選択の基本原則</h3>
-                        <ul>
-                            <li><strong>動脈血栓</strong>：血小板が主役 → 抗血小板薬で血小板機能を抑制</li>
-                            <li><strong>静脈血栓</strong>：凝固因子が主役 → 抗凝固薬で凝固カスケードを抑制</li>
-                            <li><strong>心房細動</strong>：左房内の血流うっ滞による静脈血栓型 → 抗凝固薬（DOACが第一選択）</li>
-                            <li><strong>ステント留置後</strong>：ステント表面での血小板活性化 → 抗血小板薬2剤併用（DAPT）</li>
-                        </ul>
+                        
+                        <div style="margin: 20px 0; padding: 20px; background: #FFEBEE; border-radius: 8px;">
+                            <h4>凝固カスケードの詳細</h4>
+                            
+                            <h5>外因系経路（組織因子経路）</h5>
+                            <pre style="font-family: monospace; line-height: 1.6;">
+組織損傷
+    ↓
+組織因子（TF）放出
+    ↓
+TF + 第Ⅶ因子 → TF-Ⅶa複合体
+    ↓
+第Ⅹ因子活性化
+                            </pre>
+                            
+                            <h5 style="margin-top: 20px;">内因系経路（接触経路）</h5>
+                            <pre style="font-family: monospace; line-height: 1.6;">
+第Ⅻ因子 → Ⅻa
+    ↓
+第Ⅺ因子 → Ⅺa
+    ↓
+第Ⅸ因子 → Ⅸa（＋第Ⅷ因子）
+    ↓
+第Ⅹ因子活性化
+                            </pre>
+                            
+                            <h5 style="margin-top: 20px;">共通経路</h5>
+                            <pre style="font-family: monospace; line-height: 1.6;">
+第Ⅹa因子（＋第Ⅴ因子）
+    ↓
+プロトロンビン → トロンビン（第Ⅱa因子）
+    ↓
+フィブリノゲン → フィブリン
+                            </pre>
+                            
+                            <div style="margin-top: 20px; padding: 15px; background: white; border-radius: 8px;">
+                                <h5>抗凝固薬の作用点</h5>
+                                <ul style="line-height: 1.8;">
+                                    <li><strong>ワルファリン</strong>：ビタミンK依存性凝固因子（Ⅱ、Ⅶ、Ⅸ、Ⅹ）の産生阻害</li>
+                                    <li><strong>ダビガトラン</strong>：トロンビン（第Ⅱa因子）の直接阻害</li>
+                                    <li><strong>リバーロキサバン、アピキサバン、エドキサバン</strong>：第Xa因子の直接阻害</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -278,88 +386,72 @@
             </div>
         </section>
 
-        <!-- 血小板活性化のメカニズムと薬剤の作用点 -->
+        <!-- 抗血小板薬のわかりやすい説明 -->
         <section class="feature-section">
             <div class="section-container">
-                <h2 class="section-title">🔬 血小板活性化のメカニズムと薬剤の作用点</h2>
+                <h2 class="section-title">💊 血小板をブロックする薬（抗血小板薬）</h2>
                 
-                <div class="mechanism-content" style="padding: 25px; background: #F8F9FA; border-radius: 12px;">
-                    <h3>血小板活性化の3段階と薬剤の介入ポイント</h3>
+                <div class="intro-content">
+                    <p style="font-size: 18px; margin-bottom: 30px;">
+                        血小板がくっつくのを防ぐ薬には、いくつかの種類があります。<br>
+                        それぞれ違う方法で血小板をブロックします！
+                    </p>
                     
-                    <div style="margin: 20px 0;">
-                        <h4>1. 粘着（Adhesion）</h4>
-                        <p>血管内皮下のコラーゲン、vWFに血小板が結合<br>
-                        <strong>関与受容体</strong>：GPⅠb-Ⅸ-Ⅴ複合体、GPⅥ<br>
-                        <em>※この段階を阻害する薬剤は現在臨床使用されていない</em></p>
-                    </div>
-                    
-                    <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 8px;">
-                        <h4>2. 活性化（Activation）- 抗血小板薬の主要ターゲット</h4>
-                        
-                        <div style="margin: 15px 0; padding: 15px; background: #FFF5F0; border-radius: 8px;">
-                            <h5>アラキドン酸カスケード</h5>
-                            <pre style="font-family: monospace; line-height: 1.6;">
-血小板膜リン脂質
-    ↓ ホスホリパーゼA2
-アラキドン酸
-    ↓ COX-1
-PGG2 → PGH2
-    ↓ トロンボキサン合成酵素
-TXA2（強力な血小板活性化物質）
-                            </pre>
-                            <p style="margin-top: 10px;"><strong style="color: var(--antiplatelet-color);">→ アスピリン</strong>はCOX-1のSer530をアセチル化し不可逆的に阻害<br>
-                            <strong>用量</strong>：低用量（81-100mg）で十分な抗血小板効果<br>
-                            <strong>特徴</strong>：血小板は核を持たないため新たなCOX-1を合成できず、効果は血小板寿命（7-10日）持続</p>
+                    <!-- ビジュアルな薬剤説明 -->
+                    <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; margin: 40px 0;">
+                        <div style="flex: 1; min-width: 280px; padding: 25px; background: #FFF5F0; border-radius: 12px; border: 2px solid var(--antiplatelet-color);">
+                            <h3 style="color: var(--antiplatelet-color); margin-bottom: 15px;">
+                                <span style="font-size: 32px;">💊</span> アスピリン
+                            </h3>
+                            <div style="padding: 15px; background: white; border-radius: 8px; margin-bottom: 15px;">
+                                <p><strong>どんな薬？</strong></p>
+                                <p>最も歴史が長い抗血小板薬（100年以上！）</p>
+                                <p style="margin-top: 10px;"><strong>どうやって効く？</strong></p>
+                                <p>血小板を活性化させる物質（TXA2）を作れなくする</p>
+                            </div>
+                            <div style="padding: 10px; background: var(--antiplatelet-color); color: white; border-radius: 8px; text-align: center;">
+                                <strong>用量：81-100mg（低用量）</strong>
+                            </div>
                         </div>
                         
-                        <div style="margin: 15px 0; padding: 15px; background: #E3F2FD; border-radius: 8px;">
-                            <h5>ADP受容体経路</h5>
-                            <p><strong>P2Y1受容体</strong>：血小板の形態変化を誘導<br>
-                            <strong>P2Y12受容体</strong>：血小板凝集の増幅に重要（主要な治療ターゲット）</p>
-                            
-                            <div style="margin-top: 10px;">
-                                <p><strong style="color: var(--antiplatelet-color);">→ クロピドグレル（プラビックス®）</strong><br>
-                                • プロドラッグ：CYP2C19により活性代謝物に変換<br>
-                                • <span style="color: red;">問題点</span>：日本人の約20%がCYP2C19 poor metabolizerで効果減弱<br>
-                                • Loading dose：300-600mg、維持量：75mg<br>
-                                • PPIとの相互作用に注意（特にオメプラゾール）</p>
-                                
-                                <p style="margin-top: 10px;"><strong style="color: var(--antiplatelet-color);">→ プラスグレル（エフィエント®）</strong><br>
-                                • より強力で、CYP2C19多型の影響を受けにくい<br>
-                                • Loading dose：20mg、維持量：3.75mg<br>
-                                • <span style="color: red;">注意</span>：75歳以上、体重60kg以下では出血リスク増加</p>
-                                
-                                <p style="margin-top: 10px;"><strong style="color: var(--antiplatelet-color);">→ チカグレロル（ブリリンタ®）</strong><br>
-                                • 可逆的結合（他は不可逆的）- 中止後速やかに効果消失<br>
-                                • 直接作用型（代謝活性化不要）<br>
-                                • 1日2回投与が必要、呼吸困難（15%）の副作用</p>
+                        <div style="flex: 1; min-width: 280px; padding: 25px; background: #E3F2FD; border-radius: 12px; border: 2px solid var(--antiplatelet-color);">
+                            <h3 style="color: var(--antiplatelet-color); margin-bottom: 15px;">
+                                <span style="font-size: 32px;">💊</span> クロピドグレル
+                            </h3>
+                            <div style="padding: 15px; background: white; border-radius: 8px; margin-bottom: 15px;">
+                                <p><strong>どんな薬？</strong></p>
+                                <p>P2Y12受容体をブロックする薬</p>
+                                <p style="margin-top: 10px;"><strong>どうやって効く？</strong></p>
+                                <p>血小板同士がくっつくための「接着剤」（ADP）が働けなくする</p>
+                            </div>
+                            <div style="padding: 10px; background: #FF6B6B; color: white; border-radius: 8px; text-align: center;">
+                                <strong>注意：日本人の20%は効きにくい体質</strong>
                             </div>
                         </div>
                     </div>
                     
-                    <div style="margin: 20px 0;">
-                        <h4>3. 凝集（Aggregation）</h4>
-                        <p>GPⅡb/Ⅲa受容体が活性化し、フィブリノゲンが架橋となり血小板凝集塊形成<br>
-                        <em>※GPⅡb/Ⅲa阻害薬は強力だが出血リスクが高く、急性期の静注薬のみ</em></p>
-                    </div>
-                </div>
-                
-                <div class="dapt-info" style="margin-top: 30px; padding: 20px; background: #F0F7FF; border-radius: 12px;">
-                    <h3>DAPT（二剤併用抗血小板療法）の考え方</h3>
-                    <p><strong>標準的なDAPT</strong>：アスピリン100mg ＋ P2Y12阻害薬</p>
-                    <p><strong>作用機序の異なる2剤併用の理由</strong>：<br>
-                    • TXA2経路とADP経路の両方をブロック<br>
-                    • より強力な血小板抑制効果<br>
-                    • ステント血栓症の予防</p>
-                    
-                    <div style="margin-top: 15px;">
-                        <h4>DAPT期間の考え方（国試頻出）</h4>
-                        <ul style="line-height: 1.8;">
-                            <li><strong>ACS後</strong>：原則12ヶ月</li>
-                            <li><strong>待機的PCI後</strong>：3-6ヶ月</li>
-                            <li><strong>高出血リスク（HBR）</strong>：1-3ヶ月に短縮考慮</li>
-                            <li><strong>複雑病変・高血栓リスク</strong>：12ヶ月以上の延長考慮</li>
-                        </ul>
+                    <!-- DAPT（2剤併用）の説明 -->
+                    <div style="margin-top: 40px; padding: 25px; background: #F0F7FF; border-radius: 12px;">
+                        <h3 style="text-align: center; margin-bottom: 20px;">
+                            <span style="font-size: 24px;">🎯</span> DAPT（ダプト）= 2つの薬を一緒に使う
+                        </h3>
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <div style="display: inline-block; padding: 15px 30px; background: white; border-radius: 8px; font-size: 18px;">
+                                アスピリン + クロピドグレル（または他のP2Y12阻害薬）
+                            </div>
+                        </div>
+                        <p style="text-align: center; font-size: 16px;">
+                            <strong>なぜ2つ使う？</strong><br>
+                            違う方法で血小板をブロックすることで、より強力に血栓を防ぐため！
+                        </p>
+                        <div style="margin-top: 20px; padding: 15px; background: #FFE0B2; border-radius: 8px;">
+                            <p><strong>いつ使う？</strong></p>
+                            <ul style="line-height: 1.8;">
+                                <li>ステント（血管を広げる金属の筒）を入れた後</li>
+                                <li>心筋梗塞の後</li>
+                                <li>期間：通常3-12ヶ月（状態により異なる）</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
