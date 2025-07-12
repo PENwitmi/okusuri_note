@@ -4,7 +4,10 @@
 
 **OkusuriNote - 薬剤図鑑** は、薬学生から臨床医まで対応する包括的な薬学教育Webプラットフォームです。「なぜ似た薬が複数存在するのか？」への明確な回答を通じて、感動的なストーリーと詳細な薬学情報を統合し、真の薬学的理解を促進します。
 
-🔗 **公開サイト**: https://penwitmi.github.io/okusuri_note
+🔗 **公開サイト**: 
+- **GitHub Pages**: https://penwitmi.github.io/okusuri_note
+- **Vercel**: https://pharm.nishimoto-learning.jp/okusuri_note/index.html
+  - ※ Vercelのrewrite機能により、nishimoto-learning.jpのサブディレクトリとして公開
 
 ### 🏗️ アーキテクチャ設計：HTML First（2025-06-30より）
 
