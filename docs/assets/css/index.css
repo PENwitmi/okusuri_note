@@ -135,7 +135,6 @@
     justify-content: center;
     align-items: center;
     gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-2xl);
     background: rgba(255,255,255,0.1);
     padding: var(--spacing-lg) var(--spacing-2xl);
     border-radius: 100px;
