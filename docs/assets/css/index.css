@@ -47,12 +47,16 @@
 }
 
 .hero-title {
-    font-size: var(--font-size-4xl);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 900;
     margin-bottom: var(--spacing-lg);
     line-height: 1.2;
     color: white;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    text-shadow: 
+        0 0 40px rgba(0,0,0,0.8),
+        0 2px 4px rgba(0,0,0,0.8),
+        0 4px 8px rgba(0,0,0,0.6);
+    letter-spacing: 0.02em;
 }
 
 .hero-description {
