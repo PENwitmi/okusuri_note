@@ -168,17 +168,18 @@
     margin-bottom: var(--spacing-xs);
 }
 
-.stat-label {
+.hero .stat-label {
     font-size: var(--font-size-base);
     font-weight: 700;
-    color: white;
+    color: white !important;
     text-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
-.stat-divider {
+.hero .stat-divider {
     font-size: var(--font-size-2xl);
     font-weight: 300;
-    opacity: 0.5;
+    opacity: 0.7;
+    color: white;
 }
 
 /* CTAボタン */
