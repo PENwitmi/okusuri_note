@@ -146,6 +146,20 @@
     text-align: center;
 }
 
+.stat-link {
+    text-decoration: none;
+    color: white;
+    transition: all var(--transition-base);
+    display: block;
+    padding: var(--spacing-sm);
+    border-radius: 12px;
+}
+
+.stat-link:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
 .stat-number {
     display: block;
     font-size: var(--font-size-3xl);
