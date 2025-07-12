@@ -97,7 +97,7 @@
 .hero-benefits {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-lg);
     margin: var(--spacing-2xl) 0;
     flex-wrap: wrap;
 }
@@ -109,7 +109,8 @@
     border-radius: 16px;
     backdrop-filter: blur(10px);
     transition: all var(--transition-base);
-    flex: 0 0 auto;
+    flex: 0 1 180px;
+    min-width: 150px;
 }
 
 .benefit-item:hover {
@@ -250,11 +251,12 @@
     
     .hero-benefits {
         gap: var(--spacing-base);
-        justify-content: space-between;
+        justify-content: center;
     }
     
     .benefit-item {
-        flex: 0 0 calc(50% - 8px);
+        flex: 0 0 calc(50% - var(--spacing-sm));
+        max-width: none;
         min-width: 0;
     }
     
@@ -830,3 +832,25 @@
 /*     transform: translateY(-2px);; */
 /*     color: white;; */
 /* }; */
+
+/* ========================================
+   追加の小画面対応（480px以下）
+======================================== */
+@media (max-width: 480px) {
+    .hero-benefits {
+        gap: var(--spacing-sm);
+    }
+    
+    .benefit-item {
+        flex: 0 0 calc(50% - var(--spacing-xs));
+        padding: var(--spacing-sm);
+    }
+    
+    .benefit-icon {
+        font-size: 1.75rem;
+    }
+    
+    .benefit-text {
+        font-size: var(--font-size-xs);
+    }
+}
