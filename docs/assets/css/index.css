@@ -109,6 +109,7 @@
     border-radius: 16px;
     backdrop-filter: blur(10px);
     transition: all var(--transition-base);
+    flex: 0 0 auto;
 }
 
 .benefit-item:hover {
@@ -253,7 +254,7 @@
     }
     
     .benefit-item {
-        flex: 0 0 calc(33.333% - 8px);
+        flex: 0 0 calc(50% - 8px);
         min-width: 0;
     }
     
