@@ -120,7 +120,7 @@
             <div class="impact-item">
                 <h4>他の薬との違い</h4>
                 <p>「肝臓に優しい」が最大の特徴</p>
-                <p><strong>ベンズブロマロン</strong>：効くけど肝臓が心配（劇症肝炎のリスク）<br>
+                <p><strong>ベンズブロマロン</strong>：効くけど肝臓が心配（劇症肝炎のリスク・イエローレター）<br>
                 <strong>フェブキソスタット</strong>：尿酸を作らせない薬（そもそも作用が違う）<br>
                 <strong>ドチヌラド</strong>：ベンズブロマロンと同じ効果で肝臓に優しい薬です。</p>
             </div>
@@ -651,29 +651,111 @@ Rp) ユリス錠 2mg
         </div>
     </footer>
 
-    <!-- モバイルコントロール -->
-    <div class="mobile-controls">
-        <button class="mobile-toggle-btn" onclick="toggleMobileSidebar()">
-            <span>📚</span>
-            <span>メニュー</span>
-        </button>
+        </main>
     </div>
 
-    <!-- JavaScript -->
+    <!-- Mobile Controls -->
+    <button class="mobile-fab" onclick="toggleBottomSheet()">📋</button>
+    
+    <div class="bottom-sheet-overlay" onclick="toggleBottomSheet()"></div>
+    
+    <div class="bottom-sheet">
+        <div class="bottom-sheet-handle" onclick="toggleBottomSheet()"></div>
+        <div class="bottom-sheet-content">
+            <!-- Level Selection Section -->
+            <div class="bottom-sheet-section">
+                <h3 class="bottom-sheet-title">📚 学習レベル</h3>
+                <div class="bottom-sheet-buttons">
+                    <button class="bottom-sheet-btn active" data-level="1">
+                        <span>🎓 薬学生</span>
+                        <span class="arrow">→</span>
+                    </button>
+                    <button class="bottom-sheet-btn" data-level="2">
+                        <span>🏥 実習中</span>
+                        <span class="arrow">→</span>
+                    </button>
+                    <button class="bottom-sheet-btn" data-level="3">
+                        <span>👨‍⚕️ 研修中</span>
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Related Drugs Section -->
+            <div class="bottom-sheet-section">
+                <h3 class="bottom-sheet-title">🔗 関連薬剤</h3>
+                <div class="bottom-sheet-buttons">
+                    <a href="febuxostat-v3.html" class="bottom-sheet-btn">
+                        <span>📋 フェブキソスタット</span>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="benzbromarone-v3.html" class="bottom-sheet-btn">
+                        <span>📋 ベンズブロマロン</span>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="allopurinol-v3.html" class="bottom-sheet-btn">
+                        <span>📋 アロプリノール</span>
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Drug Category Section -->
+            <div class="bottom-sheet-section">
+                <h3 class="bottom-sheet-title">🎯 薬効群</h3>
+                <div class="bottom-sheet-buttons">
+                    <a href="../categories/metabolic.html" class="bottom-sheet-btn">
+                        <span>🏥 代謝系薬剤</span>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="../groups/hyperuricemia-drugs.html" class="bottom-sheet-btn">
+                        <span>💊 高尿酸血症治療薬</span>
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
     <script src="../assets/js/level-selector.js"></script>
-    <script src="../assets/js/mobile-controls.js"></script>
+    
     <script>
-        // Initialize level selector on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const level = urlParams.get('level');
-            if (level) {
-                showLevel(parseInt(level));
-            }
+        // Bottom sheet toggle functionality
+        function toggleBottomSheet() {
+            const overlay = document.querySelector('.bottom-sheet-overlay');
+            const sheet = document.querySelector('.bottom-sheet');
+            
+            overlay.classList.toggle('active');
+            sheet.classList.toggle('active');
+        }
+        
+        // Level button functionality for bottom sheet
+        document.querySelectorAll('.bottom-sheet-btn[data-level]').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const level = this.dataset.level;
+                
+                // Remove active class from all level buttons
+                document.querySelectorAll('.bottom-sheet-btn[data-level]').forEach(b => {
+                    b.classList.remove('active');
+                });
+                document.querySelectorAll('.level-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                
+                // Add active class to clicked button and corresponding sidebar button
+                this.classList.add('active');
+                document.querySelector(`.level-btn[data-level="${level}"]`).classList.add('active');
+                
+                // Trigger level change (assuming level-selector.js handles this)
+                if (window.showLevel) {
+                    window.showLevel(level);
+                }
+                
+                // Close bottom sheet
+                toggleBottomSheet();
+            });
         });
     </script>
-
-</main>
-</div>
 </body>
 </html>
