@@ -143,47 +143,64 @@
             </div>
         </section>
 
-        <!-- なぜ2種類必要？セクション -->
+        <!-- 血栓形成の基本理解セクション -->
         <section class="feature-section">
             <div class="section-container">
-                <h2 class="section-title">🤔 なぜ抗血小板薬と抗凝固薬の2種類が必要？</h2>
+                <h2 class="section-title">🩸 血栓形成の基本理解</h2>
                 
                 <div class="intro-content">
-                    <p>抗血栓薬を理解する鍵は、<strong>血栓の「色」</strong>にあります。動脈で形成される白色血栓と、静脈で形成される赤色血栓では、形成メカニズムが全く異なるため、それぞれに特化した薬剤が必要なのです。</p>
+                    <p>血液凝固は出血死を防ぐ重要な生体防御機構です。しかし、この機構が過剰に働くと血栓症を引き起こし、心筋梗塞や脳梗塞などの致死的疾患につながります。血栓には形成場所と機序により2種類存在し、それぞれ異なる薬剤で治療する必要があります。</p>
                     
-                    <div class="thrombus-visual">
-                        <div class="thrombus-box arterial-box">
-                            <div class="thrombus-icon arterial-icon">⚪</div>
-                            <h3>白色血栓（動脈血栓）</h3>
-                            <p><strong>形成場所</strong>：動脈（高速血流）</p>
-                            <p><strong>主成分</strong>：血小板</p>
-                            <p><strong>トリガー</strong>：血管内皮障害</p>
-                            <p><strong>疾患</strong>：心筋梗塞、脳梗塞</p>
-                            <div style="margin-top: 20px; padding: 15px; background: #FFF5F0; border-radius: 8px;">
-                                <strong style="color: var(--antiplatelet-color);">→ 抗血小板薬で対応</strong>
-                            </div>
-                        </div>
+                    <div class="pathophysiology-detail" style="margin: 30px 0; padding: 25px; background: #F5F5F5; border-radius: 12px;">
+                        <h3 style="margin-bottom: 20px;">1. 動脈血栓（白色血栓）の形成過程</h3>
+                        <p><strong>形成環境</strong>：動脈の高速血流下（高ずり応力）で形成</p>
                         
-                        <div class="thrombus-box venous-box">
-                            <div class="thrombus-icon venous-icon">🔴</div>
-                            <h3>赤色血栓（静脈血栓）</h3>
-                            <p><strong>形成場所</strong>：静脈（低速血流）</p>
-                            <p><strong>主成分</strong>：赤血球＋フィブリン</p>
-                            <p><strong>トリガー</strong>：血流うっ滞</p>
-                            <p><strong>疾患</strong>：深部静脈血栓症、肺塞栓症</p>
-                            <div style="margin-top: 20px; padding: 15px; background: #E0F2F1; border-radius: 8px;">
-                                <strong style="color: var(--anticoagulant-color);">→ 抗凝固薬で対応</strong>
-                            </div>
+                        <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 8px;">
+                            <h4>形成メカニズム：</h4>
+                            <ol style="line-height: 1.8;">
+                                <li>動脈硬化プラークの破綻により内皮下コラーゲンが露出</li>
+                                <li>血小板がGPⅠb-Ⅸ-Ⅴ複合体を介して粘着</li>
+                                <li>血小板が活性化し、TXA2、ADP、セロトニンを放出</li>
+                                <li>これらの物質が周囲の血小板をさらに活性化（正のフィードバック）</li>
+                                <li>GPⅡb/Ⅲa受容体活性化によりフィブリノゲンで血小板同士が架橋</li>
+                                <li>血小板血栓（白色血栓）が形成される</li>
+                            </ol>
+                            <p style="margin-top: 15px;"><strong>主成分</strong>：血小板（だから白く見える）<br>
+                            <strong>代表的疾患</strong>：急性冠症候群、脳梗塞（アテローム血栓性）<br>
+                            <strong style="color: var(--antiplatelet-color);">治療薬</strong>：抗血小板薬（アスピリン、クロピドグレル、プラスグレル等）</p>
                         </div>
                     </div>
                     
-                    <div class="intro-highlights">
-                        <h3>覚えておきたい基本原則</h3>
+                    <div class="pathophysiology-detail" style="margin: 30px 0; padding: 25px; background: #FFEBEE; border-radius: 12px;">
+                        <h3 style="margin-bottom: 20px;">2. 静脈血栓（赤色血栓）の形成過程</h3>
+                        <p><strong>形成環境</strong>：静脈の低速血流・うっ滞（低ずり応力）で形成<br>
+                        <strong>重要</strong>：心房細動では左房内で血流が滞り、同様の機序で血栓形成</p>
+                        
+                        <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 8px;">
+                            <h4>形成メカニズム：</h4>
+                            <ol style="line-height: 1.8;">
+                                <li>血流うっ滞により局所的な低酸素状態が発生</li>
+                                <li>内皮細胞が活性化し、組織因子を発現</li>
+                                <li>外因系凝固カスケードが活性化（第Ⅶ因子）</li>
+                                <li>内因系も活性化され、共通経路へ収束</li>
+                                <li>第Xa因子がプロトロンビンをトロンビンに変換</li>
+                                <li>トロンビンがフィブリノゲンをフィブリンに変換</li>
+                                <li>フィブリンが網状構造を形成し、赤血球・白血球を捕捉</li>
+                                <li><strong>この血栓が遊離すると脳や肺の血管を詰まらせ塞栓症を引き起こす</strong></li>
+                            </ol>
+                            <p style="margin-top: 15px;"><strong>主成分</strong>：赤血球＋フィブリン（だから赤く見える）<br>
+                            <strong>代表的疾患</strong>：深部静脈血栓症、肺塞栓症、心原性脳塞栓症<br>
+                            <strong style="color: var(--anticoagulant-color);">治療薬</strong>：抗凝固薬（ワルファリン、DOAC）</p>
+                        </div>
+                    </div>
+                    
+                    <div class="intro-highlights" style="margin-top: 30px;">
+                        <h3>薬剤選択の基本原則</h3>
                         <ul>
-                            <li><strong>高速血流（動脈）</strong>では血小板が活性化しやすい → 抗血小板薬</li>
-                            <li><strong>低速血流（静脈）</strong>では凝固因子が蓄積しやすい → 抗凝固薬</li>
-                            <li><strong>心房細動</strong>は心房内の血流うっ滞 → 抗凝固薬（静脈血栓型）</li>
-                            <li><strong>ステント留置後</strong>は血小板が活性化 → 抗血小板薬（DAPT）</li>
+                            <li><strong>動脈血栓</strong>：血小板が主役 → 抗血小板薬で血小板機能を抑制</li>
+                            <li><strong>静脈血栓</strong>：凝固因子が主役 → 抗凝固薬で凝固カスケードを抑制</li>
+                            <li><strong>心房細動</strong>：左房内の血流うっ滞による静脈血栓型 → 抗凝固薬（DOACが第一選択）</li>
+                            <li><strong>ステント留置後</strong>：ステント表面での血小板活性化 → 抗血小板薬2剤併用（DAPT）</li>
                         </ul>
                     </div>
                 </div>
@@ -256,6 +273,93 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 血小板活性化のメカニズムと薬剤の作用点 -->
+        <section class="feature-section">
+            <div class="section-container">
+                <h2 class="section-title">🔬 血小板活性化のメカニズムと薬剤の作用点</h2>
+                
+                <div class="mechanism-content" style="padding: 25px; background: #F8F9FA; border-radius: 12px;">
+                    <h3>血小板活性化の3段階と薬剤の介入ポイント</h3>
+                    
+                    <div style="margin: 20px 0;">
+                        <h4>1. 粘着（Adhesion）</h4>
+                        <p>血管内皮下のコラーゲン、vWFに血小板が結合<br>
+                        <strong>関与受容体</strong>：GPⅠb-Ⅸ-Ⅴ複合体、GPⅥ<br>
+                        <em>※この段階を阻害する薬剤は現在臨床使用されていない</em></p>
+                    </div>
+                    
+                    <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 8px;">
+                        <h4>2. 活性化（Activation）- 抗血小板薬の主要ターゲット</h4>
+                        
+                        <div style="margin: 15px 0; padding: 15px; background: #FFF5F0; border-radius: 8px;">
+                            <h5>アラキドン酸カスケード</h5>
+                            <pre style="font-family: monospace; line-height: 1.6;">
+血小板膜リン脂質
+    ↓ ホスホリパーゼA2
+アラキドン酸
+    ↓ COX-1
+PGG2 → PGH2
+    ↓ トロンボキサン合成酵素
+TXA2（強力な血小板活性化物質）
+                            </pre>
+                            <p style="margin-top: 10px;"><strong style="color: var(--antiplatelet-color);">→ アスピリン</strong>はCOX-1のSer530をアセチル化し不可逆的に阻害<br>
+                            <strong>用量</strong>：低用量（81-100mg）で十分な抗血小板効果<br>
+                            <strong>特徴</strong>：血小板は核を持たないため新たなCOX-1を合成できず、効果は血小板寿命（7-10日）持続</p>
+                        </div>
+                        
+                        <div style="margin: 15px 0; padding: 15px; background: #E3F2FD; border-radius: 8px;">
+                            <h5>ADP受容体経路</h5>
+                            <p><strong>P2Y1受容体</strong>：血小板の形態変化を誘導<br>
+                            <strong>P2Y12受容体</strong>：血小板凝集の増幅に重要（主要な治療ターゲット）</p>
+                            
+                            <div style="margin-top: 10px;">
+                                <p><strong style="color: var(--antiplatelet-color);">→ クロピドグレル（プラビックス®）</strong><br>
+                                • プロドラッグ：CYP2C19により活性代謝物に変換<br>
+                                • <span style="color: red;">問題点</span>：日本人の約20%がCYP2C19 poor metabolizerで効果減弱<br>
+                                • Loading dose：300-600mg、維持量：75mg<br>
+                                • PPIとの相互作用に注意（特にオメプラゾール）</p>
+                                
+                                <p style="margin-top: 10px;"><strong style="color: var(--antiplatelet-color);">→ プラスグレル（エフィエント®）</strong><br>
+                                • より強力で、CYP2C19多型の影響を受けにくい<br>
+                                • Loading dose：20mg、維持量：3.75mg<br>
+                                • <span style="color: red;">注意</span>：75歳以上、体重60kg以下では出血リスク増加</p>
+                                
+                                <p style="margin-top: 10px;"><strong style="color: var(--antiplatelet-color);">→ チカグレロル（ブリリンタ®）</strong><br>
+                                • 可逆的結合（他は不可逆的）- 中止後速やかに効果消失<br>
+                                • 直接作用型（代謝活性化不要）<br>
+                                • 1日2回投与が必要、呼吸困難（15%）の副作用</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <h4>3. 凝集（Aggregation）</h4>
+                        <p>GPⅡb/Ⅲa受容体が活性化し、フィブリノゲンが架橋となり血小板凝集塊形成<br>
+                        <em>※GPⅡb/Ⅲa阻害薬は強力だが出血リスクが高く、急性期の静注薬のみ</em></p>
+                    </div>
+                </div>
+                
+                <div class="dapt-info" style="margin-top: 30px; padding: 20px; background: #F0F7FF; border-radius: 12px;">
+                    <h3>DAPT（二剤併用抗血小板療法）の考え方</h3>
+                    <p><strong>標準的なDAPT</strong>：アスピリン100mg ＋ P2Y12阻害薬</p>
+                    <p><strong>作用機序の異なる2剤併用の理由</strong>：<br>
+                    • TXA2経路とADP経路の両方をブロック<br>
+                    • より強力な血小板抑制効果<br>
+                    • ステント血栓症の予防</p>
+                    
+                    <div style="margin-top: 15px;">
+                        <h4>DAPT期間の考え方（国試頻出）</h4>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>ACS後</strong>：原則12ヶ月</li>
+                            <li><strong>待機的PCI後</strong>：3-6ヶ月</li>
+                            <li><strong>高出血リスク（HBR）</strong>：1-3ヶ月に短縮考慮</li>
+                            <li><strong>複雑病変・高血栓リスク</strong>：12ヶ月以上の延長考慮</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -395,61 +499,313 @@
             </div>
         </section>
 
-        <!-- 疾患別の薬剤選択 -->
+        <!-- 凝固カスケードと抗凝固薬の作用点 -->
         <section class="feature-section">
             <div class="section-container">
-                <h2 class="section-title">🏥 疾患別の薬剤選択ガイド</h2>
+                <h2 class="section-title">🔬 凝固カスケードと抗凝固薬の作用点</h2>
                 
-                <div class="patient-cards">
-                    <!-- 心房細動 -->
-                    <div class="patient-card">
-                        <h3>心房細動（AF）</h3>
-                        <div class="patient-info">
-                            <p><strong>血栓タイプ</strong>：赤色血栓（心房内うっ滞）</p>
-                            <p><strong>第一選択</strong>：<span class="doac-badge">DOAC</span></p>
-                            <div style="margin-top: 15px; padding: 15px; background: #F0F7FF; border-radius: 8px;">
-                                <p><strong>CHA₂DS₂-VAScスコア</strong></p>
-                                <ul style="margin-top: 10px;">
-                                    <li>男性≥2点、女性≥3点 → 抗凝固薬推奨</li>
-                                    <li>男性1点、女性2点 → 抗凝固薬考慮</li>
-                                    <li>男性0点、女性1点 → 不要</li>
-                                </ul>
-                            </div>
+                <div class="coagulation-content" style="padding: 25px; background: #FFF3E0; border-radius: 12px;">
+                    <h3>凝固カスケードの理解</h3>
+                    <p>静脈血栓形成の主役である凝固カスケードは、外因系・内因系・共通経路から構成されます。</p>
+                    
+                    <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 8px;">
+                        <h4>外因系経路（組織因子経路）</h4>
+                        <pre style="font-family: monospace; line-height: 1.6;">
+組織損傷
+    ↓
+組織因子（TF）放出
+    ↓
+TF + 第Ⅶ因子 → TF-Ⅶa複合体
+    ↓
+第Ⅹ因子活性化
+                        </pre>
+                    </div>
+                    
+                    <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 8px;">
+                        <h4>内因系経路（接触経路）</h4>
+                        <pre style="font-family: monospace; line-height: 1.6;">
+第Ⅻ因子 → Ⅻa
+    ↓
+第Ⅺ因子 → Ⅺa
+    ↓
+第Ⅸ因子 → Ⅸa（＋第Ⅷ因子）
+    ↓
+第Ⅹ因子活性化
+                        </pre>
+                    </div>
+                    
+                    <div style="margin: 20px 0; padding: 20px; background: #E8F5E9; border-radius: 8px;">
+                        <h4>共通経路（最重要）</h4>
+                        <pre style="font-family: monospace; line-height: 1.6;">
+第Ⅹa因子（＋第Ⅴ因子）
+    ↓
+プロトロンビン → トロンビン（第Ⅱa因子）
+    ↓
+フィブリノゲン → フィブリン → 血栓形成
+                        </pre>
+                    </div>
+                </div>
+                
+                <div class="anticoagulant-mechanism" style="margin-top: 30px;">
+                    <h3>抗凝固薬の作用点と選択</h3>
+                    
+                    <div style="margin: 20px 0; padding: 20px; background: #FFEBEE; border-radius: 12px;">
+                        <h4>ワルファリン</h4>
+                        <p><strong>作用機序</strong>：<br>
+                        • ビタミンK還元酵素（VKORC1）を阻害<br>
+                        • ビタミンK依存性凝固因子（Ⅱ、Ⅶ、Ⅸ、Ⅹ）の産生を阻害<br>
+                        • 効果発現に3-5日必要（既存の凝固因子が消費されるまで）</p>
+                        
+                        <p style="margin-top: 15px;"><strong>モニタリング（国試必須）</strong>：<br>
+                        • PT-INR目標値：<br>
+                        　- 非弁膜症性AF：<strong>2.0-3.0</strong><br>
+                        　- 機械弁：<strong>2.5-3.5</strong></p>
+                        
+                        <p style="margin-top: 15px;"><strong>問題点</strong>：<br>
+                        • 食事制限（納豆、クロレラ、青汁など）<br>
+                        • 多数の薬物相互作用<br>
+                        • 頻回のモニタリング必要<br>
+                        • 効果発現・消失が遅い</p>
+                    </div>
+                    
+                    <div style="margin: 20px 0; padding: 20px; background: #E3F2FD; border-radius: 12px;">
+                        <h4>DOAC（直接経口抗凝固薬）の共通利点</h4>
+                        <ul style="line-height: 1.8;">
+                            <li>効果発現が速い（2-4時間）</li>
+                            <li>用量調整不要（腎機能による減量のみ）</li>
+                            <li>食事制限なし</li>
+                            <li>定期的なモニタリング不要</li>
+                            <li>薬物相互作用が少ない</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <h4>各DOACの特徴と使い分け</h4>
+                        
+                        <div style="margin: 15px 0; padding: 15px; background: #F5F5F5; border-radius: 8px;">
+                            <h5>ダビガトラン（プラザキサ®）- 直接トロンビン阻害薬</h5>
+                            <p>• トロンビン（第Ⅱa因子）を直接阻害<br>
+                            • 腎排泄率<strong>80%</strong>（腎機能低下で蓄積）<br>
+                            • 特異的中和薬：<strong>イダルシズマブ</strong>あり<br>
+                            • 消化器症状（10-20%）に注意<br>
+                            • カプセル剤（湿気に弱い）</p>
+                        </div>
+                        
+                        <div style="margin: 15px 0; padding: 15px; background: #E8F5E9; border-radius: 8px;">
+                            <h5>第Xa因子阻害薬</h5>
+                            
+                            <p><strong>リバーロキサバン（イグザレルト®）</strong><br>
+                            • 1日1回投与で服薬アドヒアランス良好<br>
+                            • <span style="color: red;">必ず食後投与</span>（15mg、20mg錠）- 空腹時はBA 66%に低下<br>
+                            • CAD/PADにも適応拡大（2.5mg×2）<br>
+                            • CYP3A4/P-gp基質</p>
+                            
+                            <p style="margin-top: 10px;"><strong>アピキサバン（エリキュース®）</strong><br>
+                            • 1日2回投与<br>
+                            • 腎排泄率<strong>27%</strong>（最も低い）- 腎機能低下例で安全<br>
+                            • 高齢者での安全性データ豊富<br>
+                            • 3つの減量基準（80歳以上、60kg以下、Cr≥1.5のうち2つ）</p>
+                            
+                            <p style="margin-top: 10px;"><strong>エドキサバン（リクシアナ®）</strong><br>
+                            • 1日1回投与<br>
+                            • 体重による用量調整（60kg以下で30mg）<br>
+                            • がん患者でのエビデンス豊富<br>
+                            • 日本発のDOAC</p>
                         </div>
                     </div>
+                    
+                    <div style="margin: 20px 0; padding: 20px; background: #F0F7FF; border-radius: 12px;">
+                        <h4>ワルファリン vs DOAC の選択（実践編）</h4>
+                        
+                        <p><strong>ワルファリンを選ぶ場合（限定的）</strong>：</p>
+                        <ul>
+                            <li><span style="color: red;">機械弁（DOACは禁忌）</span></li>
+                            <li>重度腎不全（CrCl <15）</li>
+                            <li>経済的制約</li>
+                            <li>DOACで血栓・出血イベントあり</li>
+                        </ul>
+                        
+                        <p style="margin-top: 15px;"><strong>DOACが優先される場合（ほとんどの症例）</strong>：</p>
+                        <ul>
+                            <li>非弁膜症性心房細動</li>
+                            <li>静脈血栓塞栓症</li>
+                            <li>INR管理困難例</li>
+                            <li>患者希望（食事制限回避）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- 急性冠症候群 -->
-                    <div class="patient-card">
-                        <h3>急性冠症候群（ACS）</h3>
-                        <div class="patient-info">
-                            <p><strong>血栓タイプ</strong>：白色血栓（動脈内）</p>
-                            <p><strong>第一選択</strong>：<span class="antiplatelet-badge">DAPT</span></p>
-                            <div style="margin-top: 15px; padding: 15px; background: #FFF5F0; border-radius: 8px;">
-                                <p><strong>標準的DAPT</strong></p>
-                                <ul style="margin-top: 10px;">
-                                    <li>アスピリン100mg ＋</li>
-                                    <li>P2Y12阻害薬 12ヶ月</li>
-                                    <li>（プラスグレル or チカグレロル優先）</li>
-                                </ul>
-                            </div>
+        <!-- 疾患別の薬剤選択（実践編） -->
+        <section class="feature-section">
+            <div class="section-container">
+                <h2 class="section-title">🏥 疾患別の薬剤選択（実践編）</h2>
+                
+                <div style="margin-bottom: 30px; padding: 20px; background: #FFF9C4; border-radius: 12px;">
+                    <h3>1. 心房細動（静脈血栓型）</h3>
+                    
+                    <div style="margin: 20px 0;">
+                        <h4>リスク評価：CHA₂DS₂-VAScスコア（国試必須）</h4>
+                        <table style="width: 100%; border-collapse: collapse; margin: 10px 0;">
+                            <tr style="background: #F5F5F5;">
+                                <th style="padding: 10px; border: 1px solid #ddd;">項目</th>
+                                <th style="padding: 10px; border: 1px solid #ddd;">点数</th>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>C</strong>：うっ血性心不全</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">1点</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>H</strong>：高血圧</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">1点</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>A₂</strong>：年齢≥75歳</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2点</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>D</strong>：糖尿病</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">1点</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>S₂</strong>：脳梗塞/TIA既往</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2点</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>V</strong>：血管疾患</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">1点</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>A</strong>：年齢65-74歳</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">1点</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>Sc</strong>：女性</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">1点</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div style="margin: 20px 0; padding: 15px; background: white; border-radius: 8px;">
+                        <h4>薬剤選択の実際</h4>
+                        <pre style="font-family: monospace; line-height: 1.8;">
+男性≥2点、女性≥3点 → 抗凝固薬推奨
+    ↓
+CrCl≥30 → DOAC第一選択
+  • アピキサバン 5mg×2 or 2.5mg×2（減量基準該当時）
+  • リバーロキサバン 15mg×1（食後）
+  • エドキサバン 60mg×1 or 30mg×1（体重≤60kg）
+  • ダビガトラン 150mg×2 or 110mg×2（高齢者）
+
+CrCl 15-29 → 選択肢限定
+  • アピキサバン 2.5mg×2
+  • ワルファリン（PT-INR 2.0-3.0）
+
+CrCl<15 → ワルファリンのみ
+                        </pre>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 30px; padding: 20px; background: #FFEBEE; border-radius: 12px;">
+                    <h3>2. 急性冠症候群（動脈血栓型）</h3>
+                    
+                    <div style="margin: 20px 0;">
+                        <h4>急性期の処方例</h4>
+                        <div style="padding: 15px; background: white; border-radius: 8px;">
+                            <p><strong>来院時（Loading dose）</strong>：</p>
+                            <ul style="line-height: 1.8;">
+                                <li>アスピリン 162-325mg（嚙み砕き）</li>
+                                <li>プラスグレル 20mg または</li>
+                                <li>チカグレロル 180mg または</li>
+                                <li>クロピドグレル 600mg（第二選択）</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 8px;">
+                            <p><strong>維持期DAPT（12ヶ月）</strong>：</p>
+                            <ul style="line-height: 1.8;">
+                                <li>アスピリン 81-100mg 1日1回 ＋</li>
+                                <li>プラスグレル 3.75mg 1日1回（推奨）または</li>
+                                <li>チカグレロル 90mg 1日2回（推奨）または</li>
+                                <li>クロピドグレル 75mg 1日1回</li>
+                            </ul>
+                            <p style="margin-top: 10px; color: red;">※高出血リスク（HBR）では3-6ヶ月に短縮考慮</p>
                         </div>
                     </div>
-
-                    <!-- 静脈血栓塞栓症 -->
-                    <div class="patient-card">
-                        <h3>静脈血栓塞栓症（VTE）</h3>
-                        <div class="patient-info">
-                            <p><strong>血栓タイプ</strong>：赤色血栓（静脈内）</p>
-                            <p><strong>第一選択</strong>：<span class="doac-badge">DOAC</span></p>
-                            <div style="margin-top: 15px; padding: 15px; background: #E8F5E9; border-radius: 8px;">
-                                <p><strong>治療期間</strong></p>
-                                <ul style="margin-top: 10px;">
-                                    <li>誘因あり：3ヶ月</li>
-                                    <li>誘因なし：3-6ヶ月後に再評価</li>
-                                    <li>再発例：無期限考慮</li>
-                                </ul>
-                            </div>
+                </div>
+                
+                <div style="margin-bottom: 30px; padding: 20px; background: #E8F5E9; border-radius: 12px;">
+                    <h3>3. 静脈血栓塞栓症（VTE）</h3>
+                    
+                    <div style="margin: 20px 0;">
+                        <h4>初期治療の選択</h4>
+                        <div style="padding: 15px; background: white; border-radius: 8px;">
+                            <p><strong>第一選択：DOAC（初期増量不要型）</strong></p>
+                            <ul style="line-height: 1.8;">
+                                <li><strong>リバーロキサバン</strong>：15mg×2（3週間）→ 20mg×1（食後）</li>
+                                <li><strong>アピキサバン</strong>：10mg×2（7日間）→ 5mg×2</li>
+                            </ul>
+                            
+                            <p style="margin-top: 15px;"><strong>その他のDOAC</strong></p>
+                            <ul style="line-height: 1.8;">
+                                <li><strong>エドキサバン</strong>：ヘパリン5日間後 → 60mg×1</li>
+                                <li><strong>ダビガトラン</strong>：ヘパリン5日間後 → 150mg×2</li>
+                            </ul>
                         </div>
+                        
+                        <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 8px;">
+                            <p><strong>治療期間の決定</strong></p>
+                            <ul style="line-height: 1.8;">
+                                <li><strong>誘因あり</strong>（手術、長期臥床）：3ヶ月で終了</li>
+                                <li><strong>誘因なし初回</strong>：3-6ヶ月後に再評価（D-dimer測定）</li>
+                                <li><strong>再発例</strong>：無期限治療</li>
+                                <li><strong>がん関連</strong>：がん治療中は継続（エドキサバンのエビデンス豊富）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 30px; padding: 20px; background: #F3E5F5; border-radius: 12px;">
+                    <h3>4. 複雑症例：AF + PCI</h3>
+                    
+                    <div style="margin: 20px 0; padding: 15px; background: white; border-radius: 8px;">
+                        <h4>Triple therapy回避の実際</h4>
+                        <pre style="font-family: monospace; line-height: 1.8;">
+PCI直後（1-4週間、最小限に）：
+  Triple therapy（やむを得ない場合のみ）
+  • DOAC（減量考慮）＋ アスピリン ＋ クロピドグレル
+    ↓
+その後（〜12ヶ月）：
+  Dual therapy（アスピリン中止）
+  • DOAC ＋ クロピドグレル
+    ↓
+12ヶ月以降：
+  • DOAC単独
+                        </pre>
+                        <p style="margin-top: 10px; color: red;">※出血リスクが高い場合は、より早期にDual therapyへ移行</p>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 30px; padding: 20px; background: #FFF8E1; border-radius: 12px;">
+                    <h3>5. 末梢動脈疾患（PAD）</h3>
+                    
+                    <div style="margin: 20px 0; padding: 15px; background: white; border-radius: 8px;">
+                        <h4>薬剤選択</h4>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>単剤療法</strong>：
+                                <ul>
+                                    <li>アスピリン 81-100mg または</li>
+                                    <li>クロピドグレル 75mg（CAPRIE試験でアスピリンより有効）</li>
+                                </ul>
+                            </li>
+                            <li><strong>重症例（COMPASS試験）</strong>：
+                                <ul>
+                                    <li>リバーロキサバン 2.5mg×2 ＋ アスピリン 100mg</li>
+                                    <li>主要血管イベント24%減少</li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -501,6 +857,162 @@
                                 </ul>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 薬剤相互作用と臨床上の注意点 -->
+        <section class="feature-section">
+            <div class="section-container">
+                <h2 class="section-title">⚠️ 薬剤相互作用と臨床上の注意点</h2>
+                
+                <div style="margin-bottom: 30px; padding: 20px; background: #FCE4EC; border-radius: 12px;">
+                    <h3>処方監査で確認すべきポイント</h3>
+                    
+                    <div style="margin: 20px 0;">
+                        <h4>1. P-gp/CYP3A4阻害薬との相互作用</h4>
+                        
+                        <div style="padding: 15px; background: white; border-radius: 8px;">
+                            <p><strong style="color: red;">強力な阻害薬（DOAC禁忌または減量）</strong>：</p>
+                            <ul style="line-height: 1.8;">
+                                <li><strong>イトラコナゾール</strong>：全DOACで要注意</li>
+                                <li><strong>リトナビル</strong>：全DOACで要注意</li>
+                                <li><strong>クラリスロマイシン</strong>：リバーロキサバンは禁忌</li>
+                            </ul>
+                            
+                            <p style="margin-top: 15px;"><strong>中等度阻害薬（注意）</strong>：</p>
+                            <ul style="line-height: 1.8;">
+                                <li>ベラパミル：ダビガトラン減量考慮</li>
+                                <li>アミオダロン：DOAC血中濃度上昇</li>
+                                <li>ジルチアゼム：モニタリング強化</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <h4>2. 抗血小板薬の相互作用</h4>
+                        
+                        <div style="padding: 15px; background: white; border-radius: 8px;">
+                            <p><strong style="color: red;">クロピドグレル + PPIの問題</strong></p>
+                            <ul style="line-height: 1.8;">
+                                <li><strong>避けるべき組み合わせ</strong>：
+                                    <ul>
+                                        <li>クロピドグレル + オメプラゾール</li>
+                                        <li>クロピドグレル + エソメプラゾール</li>
+                                    </ul>
+                                </li>
+                                <li><strong>推奨される代替薬</strong>：
+                                    <ul>
+                                        <li>ランソプラゾール（CYP2C19阻害弱い）</li>
+                                        <li>ラベプラゾール（CYP代謝受けない）</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 30px; padding: 20px; background: #E8EAF6; border-radius: 12px;">
+                    <h3>周術期管理（実習必須）</h3>
+                    
+                    <div style="margin: 20px 0;">
+                        <h4>DOAC中止期間</h4>
+                        
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background: #F5F5F5;">
+                                    <th style="padding: 10px; border: 1px solid #ddd;">手術リスク</th>
+                                    <th style="padding: 10px; border: 1px solid #ddd;">CrCl≥50</th>
+                                    <th style="padding: 10px; border: 1px solid #ddd;">CrCl 30-49</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">低出血リスク</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">24時間前</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">48時間前</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">高出血リスク</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">48時間前</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">72時間前</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div style="margin: 20px 0; padding: 15px; background: white; border-radius: 8px;">
+                        <h4>抗血小板薬中止期間</h4>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>アスピリン</strong>：心血管リスク高ければ継続</li>
+                            <li><strong>クロピドグレル</strong>：5日前中止</li>
+                            <li><strong>プラスグレル</strong>：7日前中止</li>
+                            <li><strong>チカグレロル</strong>：3-5日前（可逆的結合のため短い）</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 30px; padding: 20px; background: #FFCDD2; border-radius: 12px;">
+                    <h3>出血時の対応（国試頻出）</h3>
+                    
+                    <div style="margin: 20px 0;">
+                        <h4>中和・拮抗薬</h4>
+                        
+                        <div style="padding: 15px; background: white; border-radius: 8px;">
+                            <p><strong>1. ダビガトラン</strong></p>
+                            <ul style="line-height: 1.8;">
+                                <li>特異的中和薬：<strong>イダルシズマブ（プリズバインド®）</strong></li>
+                                <li>用量：5g（2.5g×2バイアル）静注</li>
+                                <li>効果：投与後数分で中和</li>
+                            </ul>
+                            
+                            <p style="margin-top: 15px;"><strong>2. 第Xa阻害薬</strong></p>
+                            <ul style="line-height: 1.8;">
+                                <li>アンデキサネット アルファ（本邦未承認）</li>
+                                <li>代替：4因子含有プロトロンビン複合体製剤</li>
+                            </ul>
+                            
+                            <p style="margin-top: 15px;"><strong>3. ワルファリン</strong></p>
+                            <ul style="line-height: 1.8;">
+                                <li>ビタミンK 10mg 緩徐静注</li>
+                                <li>緊急時：新鮮凍結血漿（FFP）</li>
+                                <li>最緊急時：プロトロンビン複合体製剤</li>
+                            </ul>
+                            
+                            <p style="margin-top: 15px;"><strong>4. 抗血小板薬</strong></p>
+                            <ul style="line-height: 1.8;">
+                                <li>特異的中和薬なし</li>
+                                <li>重篤な出血時：血小板輸血考慮</li>
+                                <li>デスモプレシン（DDAVP）の使用も</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 30px; padding: 20px; background: #F1F8E9; border-radius: 12px;">
+                    <h3>国試・実習での頻出ポイント</h3>
+                    
+                    <div style="padding: 15px; background: white; border-radius: 8px;">
+                        <h4>覚えるべき数値</h4>
+                        <ul style="line-height: 1.8;">
+                            <li>アスピリン抗血小板用量：<strong>81-100mg</strong></li>
+                            <li>ワルファリンINR目標：非弁膜症性AF <strong>2.0-3.0</strong></li>
+                            <li>CYP2C19 PM頻度：日本人の約<strong>20%</strong></li>
+                            <li>ダビガトラン腎排泄率：<strong>80%</strong></li>
+                            <li>アピキサバン腎排泄率：<strong>27%</strong>（最も低い）</li>
+                            <li>リバーロキサバン食事の影響：空腹時BA <strong>66%</strong>に低下</li>
+                        </ul>
+                        
+                        <h4 style="margin-top: 15px;">実習でよくある質問への回答例</h4>
+                        <p><strong>Q：なぜ心房細動には抗凝固薬？</strong><br>
+                        A：心房内の血流うっ滞により静脈血栓型（赤色血栓）が形成されるため</p>
+                        
+                        <p style="margin-top: 10px;"><strong>Q：クロピドグレルが効かない人がいるのはなぜ？</strong><br>
+                        A：CYP2C19遺伝子多型によりプロドラッグの活性化が不十分なため</p>
+                        
+                        <p style="margin-top: 10px;"><strong>Q：リバーロキサバンはなぜ食後？</strong><br>
+                        A：15mg、20mg錠は空腹時投与でバイオアベイラビリティが66%に低下するため</p>
                     </div>
                 </div>
             </div>
