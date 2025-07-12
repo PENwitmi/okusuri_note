@@ -148,16 +148,16 @@
 
 .stat-link {
     text-decoration: none;
-    color: white;
-    transition: all var(--transition-base);
-    display: block;
-    padding: var(--spacing-sm);
-    border-radius: 12px;
+    color: inherit;
+    transition: transform var(--transition-base);
 }
 
 .stat-link:hover {
-    background: rgba(255,255,255,0.1);
-    transform: translateY(-2px);
+    transform: scale(1.05);
+}
+
+.stat-link:hover .stat-number {
+    text-shadow: 0 0 20px rgba(255,255,255,0.5);
 }
 
 .stat-number {
@@ -265,6 +265,10 @@
     .hero-stats {
         padding: var(--spacing-base) var(--spacing-lg);
         gap: var(--spacing-base);
+    }
+    
+    .stat-link:hover {
+        transform: scale(1.02);
     }
     
     .stat-number {
