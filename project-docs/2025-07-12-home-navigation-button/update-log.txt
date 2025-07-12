@@ -1,0 +1,128 @@
+[2025-07-12 23:55:09] === ホームボタン追加スクリプト実行開始 ===
+[2025-07-12 23:55:09] 
+=== drugs-v3/ディレクトリの処理 ===
+[2025-07-12 23:55:09] 処理開始: amlodipine-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/amlodipine-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   bottom-sheetにホームナビゲーション追加
+[2025-07-12 23:55:09]   完了: amlodipine-v3.html
+[2025-07-12 23:55:09] 処理開始: aspirin-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/aspirin-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   bottom-sheetにホームナビゲーション追加
+[2025-07-12 23:55:09]   完了: aspirin-v3.html
+[2025-07-12 23:55:09] 処理開始: atorvastatin-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/atorvastatin-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   bottom-sheetにホームナビゲーション追加
+[2025-07-12 23:55:09]   完了: atorvastatin-v3.html
+[2025-07-12 23:55:09] 処理開始: bisoprolol-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/bisoprolol-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   bottom-sheetにホームナビゲーション追加
+[2025-07-12 23:55:09]   完了: bisoprolol-v3.html
+[2025-07-12 23:55:09] 処理開始: carvedilol-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/carvedilol-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   警告: bottom-sheetパターンが見つかりません
+[2025-07-12 23:55:09]   完了: carvedilol-v3.html
+[2025-07-12 23:55:09] 処理開始: celecoxib-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/celecoxib-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   bottom-sheetにホームナビゲーション追加
+[2025-07-12 23:55:09]   完了: celecoxib-v3.html
+[2025-07-12 23:55:09] 処理開始: clopidogrel-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/clopidogrel-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   bottom-sheetにホームナビゲーション追加
+[2025-07-12 23:55:09]   完了: clopidogrel-v3.html
+[2025-07-12 23:55:09] 処理開始: dapagliflozin-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/dapagliflozin-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   bottom-sheetにホームナビゲーション追加
+[2025-07-12 23:55:09]   完了: dapagliflozin-v3.html
+[2025-07-12 23:55:09] 処理開始: domperidone-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/domperidone-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   警告: bottom-sheetパターンが見つかりません
+[2025-07-12 23:55:09]   完了: domperidone-v3.html
+[2025-07-12 23:55:09] 処理開始: dotinurad-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/dotinurad-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   bottom-sheetにホームナビゲーション追加
+[2025-07-12 23:55:09]   完了: dotinurad-v3.html
+[2025-07-12 23:55:09] 処理開始: empagliflozin-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/empagliflozin-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   bottom-sheetにホームナビゲーション追加
+[2025-07-12 23:55:09]   完了: empagliflozin-v3.html
+[2025-07-12 23:55:09] 処理開始: esomeprazole-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/esomeprazole-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   bottom-sheetにホームナビゲーション追加
+[2025-07-12 23:55:09]   完了: esomeprazole-v3.html
+[2025-07-12 23:55:09] 処理開始: furosemide-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/furosemide-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   bottom-sheetにホームナビゲーション追加
+[2025-07-12 23:55:09]   完了: furosemide-v3.html
+[2025-07-12 23:55:09] 処理開始: lansoprazole-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/lansoprazole-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   警告: bottom-sheetパターンが見つかりません
+[2025-07-12 23:55:09]   完了: lansoprazole-v3.html
+[2025-07-12 23:55:09] 処理開始: lemborexant-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/lemborexant-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   警告: bottom-sheetパターンが見つかりません
+[2025-07-12 23:55:09]   完了: lemborexant-v3.html
+[2025-07-12 23:55:09] 処理開始: metoclopramide-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/metoclopramide-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   警告: bottom-sheetパターンが見つかりません
+[2025-07-12 23:55:09]   完了: metoclopramide-v3.html
+[2025-07-12 23:55:09] 処理開始: perindopril-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/perindopril-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   警告: bottom-sheetパターンが見つかりません
+[2025-07-12 23:55:09]   完了: perindopril-v3.html
+[2025-07-12 23:55:09] 処理開始: prasugrel-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/prasugrel-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   bottom-sheetにホームナビゲーション追加
+[2025-07-12 23:55:09]   完了: prasugrel-v3.html
+[2025-07-12 23:55:09] 処理開始: rosuvastatin-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/rosuvastatin-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   bottom-sheetにホームナビゲーション追加
+[2025-07-12 23:55:09]   完了: rosuvastatin-v3.html
+[2025-07-12 23:55:09] 処理開始: sacubitril-valsartan-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/sacubitril-valsartan-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   bottom-sheetにホームナビゲーション追加
+[2025-07-12 23:55:09]   完了: sacubitril-valsartan-v3.html
+[2025-07-12 23:55:09] 処理開始: sitagliptin-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/sitagliptin-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   警告: bottom-sheetパターンが見つかりません
+[2025-07-12 23:55:09]   完了: sitagliptin-v3.html
+[2025-07-12 23:55:09] 処理開始: telmisartan-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/telmisartan-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   bottom-sheetにホームナビゲーション追加
+[2025-07-12 23:55:09]   完了: telmisartan-v3.html
+[2025-07-12 23:55:09] 処理開始: teneligliptin-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/teneligliptin-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   警告: bottom-sheetパターンが見つかりません
+[2025-07-12 23:55:09]   完了: teneligliptin-v3.html
+[2025-07-12 23:55:09] 処理開始: warfarin-v3.html
+[2025-07-12 23:55:09] バックアップ作成: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups/warfarin-v3.html.backup
+[2025-07-12 23:55:09]   サイドバーにホームナビゲーション追加
+[2025-07-12 23:55:09]   bottom-sheetにホームナビゲーション追加
+[2025-07-12 23:55:09]   完了: warfarin-v3.html
+[2025-07-12 23:55:09] 
+=== 処理完了 ===
+[2025-07-12 23:55:09] 更新されたファイル数: 24
+[2025-07-12 23:55:09] ログファイル: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/update-log.txt
+[2025-07-12 23:55:09] バックアップ: /Users/nishimototakashi/claude code/ai-team/code/okusuri_note/project-docs/2025-07-12-home-navigation-button/backups

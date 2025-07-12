@@ -27,17 +27,6 @@
                 </div>
             </div>
             
-            <!-- Home Navigation Section -->
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">🏠 ナビゲーション</h3>
-                <div class="sidebar-links">
-                    <a href="../index.html" class="sidebar-link">
-                        🏠 トップページへ戻る
-                        <span class="category-desc">薬剤一覧・特集ページ</span>
-                    </a>
-                </div>
-            </div>
-            
             <!-- Related Drugs Section -->
             <div class="sidebar-section">
                 <h3 class="sidebar-title">🔗 関連薬剤</h3>
@@ -136,7 +125,7 @@
             
             <div class="impact-item">
                 <h4>他の薬との違い</h4>
-                <p>SGLT2阻害薬で最も幅広い適応症。心不全では心血管死＋入院26%減少（DAPA-HF）、慢性腎臓病では腎複合エンドポイント39%減少（DAPA-CKD）。日本で最初にHFpEFへの適応を取得したSGLT2阻害薬。</p>
+                <p>SGLT2阻害薬で最も幅広い適応症。心不全では心血管死＋入院26%減少（DAPA-HF）、慢性腎臓病では腎複合エンドポイント39%減少（DAPA-CKD）。HFpEFにも有効性を証明した唯一のSGLT2阻害薬。</p>
             </div>
         </div>
         </div>
@@ -239,7 +228,7 @@
                 <dd>A: ナトリウム利尿（糖と一緒にナトリウムも排出される）による心臓への負担軽減、ケトン体による心筋エネルギー改善、糸球体内圧低下による腎保護など、複数のメカニズムが関与。当初は副次的効果と考えられていましたが、現在は主要な治療効果として認識されています。</dd>
                 
                 <dt>Q: SGLT2阻害薬の使い分けは？</dt>
-                <dd>A: ダパグリフロジン（幅広い適応）、エンパグリフロジン（心血管死減少最強）、カナグリフロジン（糖尿病性腎症のエビデンス）。ダパグリフロジンは最も適応が広く、HFpEFにも有効です。現在はエンパグリフロジンもHFpEFに適応があります。</dd>
+                <dd>A: ダパグリフロジン（幅広い適応）、エンパグリフロジン（心血管死減少最強）、カナグリフロジン（糖尿病性腎症のエビデンス）。ダパグリフロジンは最も適応が広く、HFpEFにも有効な唯一のSGLT2阻害薬です。</dd>
             </dl>
             
             <div class="faq-note">
@@ -383,7 +372,7 @@ Rp) フォシーガ錠 10mg
                 <tbody>
                     <tr>
                         <td><strong>ダパグリフロジン</strong><br>（フォシーガ）</td>
-                        <td>最も幅広い適応<br>日本初のHFpEF適応</td>
+                        <td>最も幅広い適応<br>HFpEF唯一の適応</td>
                         <td>2型糖尿病<br>心不全（HFrEF/HFpEF）<br>CKD</td>
                         <td>DAPA-HF<br>DAPA-CKD<br>DELIVER</td>
                     </tr>
@@ -409,7 +398,7 @@ Rp) フォシーガ錠 10mg
                 <div>
                     <h4>1. 心不全合併</h4>
                     <p><strong>HFrEF</strong>：ダパグリフロジン or エンパグリフロジン<br>
-                    <strong>HFpEF</strong>：ダパグリフロジン、エンパグリフロジン<br>
+                    <strong>HFpEF</strong>：ダパグリフロジン（唯一の適応）<br>
                     <strong>心筋梗塞後</strong>：エンパグリフロジン優先</p>
                 </div>
                 <div>
@@ -820,17 +809,6 @@ Rp) フォシーガ錠 10mg
                         <span>👨‍⚕️ 研修中</span>
                         <span class="arrow">→</span>
                     </button>
-                </div>
-            </div>
-            
-            <!-- Home Navigation Section -->
-            <div class="bottom-sheet-section">
-                <h3 class="bottom-sheet-title">🏠 ナビゲーション</h3>
-                <div class="bottom-sheet-buttons">
-                    <a href="../index.html" class="bottom-sheet-btn">
-                        <span>🏠 トップページへ戻る</span>
-                        <span class="arrow">→</span>
-                    </a>
                 </div>
             </div>
             

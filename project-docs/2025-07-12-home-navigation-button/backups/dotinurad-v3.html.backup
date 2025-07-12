@@ -26,17 +26,6 @@
                 </div>
             </div>
             
-            
-            <!-- Home Navigation Section -->
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">🏠 ナビゲーション</h3>
-                <div class="sidebar-links">
-                    <a href="../index.html" class="sidebar-link">
-                        🏠 トップページへ戻る
-                        <span class="category-desc">薬剤一覧・特集ページ</span>
-                    </a>
-                </div>
-            </div>
             <!-- Related Drugs Section -->
             <div class="sidebar-section">
                 <h3 class="sidebar-title">🔗 関連薬剤</h3>
@@ -692,17 +681,6 @@ Rp) ユリス錠 2mg
                 </div>
             </div>
             
-            
-            <!-- Home Navigation Section -->
-            <div class="bottom-sheet-section">
-                <h3 class="bottom-sheet-title">🏠 ナビゲーション</h3>
-                <div class="bottom-sheet-buttons">
-                    <a href="../index.html" class="bottom-sheet-btn">
-                        <span>🏠 トップページへ戻る</span>
-                        <span class="arrow">→</span>
-                    </a>
-                </div>
-            </div>
             <!-- Related Drugs Section -->
             <div class="bottom-sheet-section">
                 <h3 class="bottom-sheet-title">🔗 関連薬剤</h3>

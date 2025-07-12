@@ -26,17 +26,6 @@
                 </div>
             </div>
             
-            
-            <!-- Home Navigation Section -->
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">🏠 ナビゲーション</h3>
-                <div class="sidebar-links">
-                    <a href="../index.html" class="sidebar-link">
-                        🏠 トップページへ戻る
-                        <span class="category-desc">薬剤一覧・特集ページ</span>
-                    </a>
-                </div>
-            </div>
             <!-- Related Drugs Section -->
             <div class="sidebar-section">
                 <h3 class="sidebar-title">🔗 関連薬剤</h3>

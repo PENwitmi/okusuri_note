@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>メトホルミン - 薬剤詳細</title>
+    <title>プラスグレル - 薬剤詳細 | おくすりノート</title>
+    <meta name="description" content="プラスグレル（エフィエント）の詳細情報。第3世代チエノピリジン系抗血小板薬として急性冠症候群（ACS）の血栓予防に使用。作用機序、使い分け、開発ストーリーまで。">
+    <meta name="keywords" content="プラスグレル, prasugrel, エフィエント, P2Y12阻害薬, 抗血小板薬, 急性冠症候群">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/responsive-unified.css">
     <link rel="stylesheet" href="../assets/css/sidebar.css">
@@ -11,7 +13,8 @@
     <link rel="stylesheet" href="../assets/css/level-selector.css">
     <link rel="stylesheet" href="../assets/css/drug-page-v2.css">
 </head>
-<body class="drug-detail" data-category="endocrine">
+<body class="drug-detail" data-category="cardiovascular">
+<!-- カテゴリーID: cardiovascular, endocrine, gastrointestinal, psychotropic, others -->
     <div class="sidebar-layout">
         <aside class="sidebar">
             <!-- Level Selector Section -->
@@ -24,32 +27,29 @@
                 </div>
             </div>
             
-            <!-- Home Navigation Section -->
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">🏠 ナビゲーション</h3>
-                <div class="sidebar-links">
-                    <a href="../index.html" class="sidebar-link">
-                        🏠 トップページへ戻る
-                        <span class="category-desc">薬剤一覧・特集ページ</span>
-                    </a>
-                </div>
-            </div>
-            
             <!-- Related Drugs Section -->
             <div class="sidebar-section">
                 <h3 class="sidebar-title">🔗 関連薬剤</h3>
                 <div class="sidebar-links">
-                    <a href="dapagliflozin-refined.html" class="sidebar-link">
-                        📋 ダパグリフロジン
-                        <span class="drug-category">SGLT2阻害薬</span>
+                    <!-- 関連薬剤1：クロピドグレル（同じチエノピリジン系） -->
+                    <a href="clopidogrel-v3.html" class="sidebar-link">
+                        📋 クロピドグレル
+                        <span class="drug-category">第2世代P2Y12阻害薬</span>
                     </a>
-                    <a href="sitagliptin-refined.html" class="sidebar-link">
-                        📋 シタグリプチン
-                        <span class="drug-category">DPP-4阻害薬</span>
+                    <!-- 関連薬剤2：アスピリン（相互リンク必須） -->
+                    <a href="aspirin-v3.html" class="sidebar-link">
+                        📋 アスピリン
+                        <span class="drug-category">抗血小板薬</span>
                     </a>
-                    <a href="insulin-glargine-refined.html" class="sidebar-link">
-                        📋 インスリン グラルギン
-                        <span class="drug-category">持効型インスリン</span>
+                    <!-- 関連薬剤3：チカグレロル -->
+                    <a href="ticagrelor-v3.html" class="sidebar-link">
+                        📋 チカグレロル
+                        <span class="drug-category">可逆的P2Y12阻害薬</span>
+                    </a>
+                    <!-- 関連薬剤4：ワルファリン -->
+                    <a href="warfarin-v3.html" class="sidebar-link">
+                        📋 ワルファリン
+                        <span class="drug-category">抗凝固薬</span>
                     </a>
                 </div>
             </div>
@@ -58,13 +58,13 @@
             <div class="sidebar-section">
                 <h3 class="sidebar-title">🎯 薬効群</h3>
                 <div class="sidebar-links">
-                    <a href="../categories/endocrine.html" class="sidebar-link">
-                        🏥 内分泌系薬剤
-                        <span class="category-desc">糖尿病・甲状腺等</span>
+                    <a href="../categories/cardiovascular.html" class="sidebar-link">
+                        🏥 循環器系薬剤
+                        <span class="category-desc">心臓・血管疾患治療薬</span>
                     </a>
-                    <a href="../groups/antidiabetic.html" class="sidebar-link">
-                        💊 糖尿病治療薬
-                        <span class="category-desc">血糖管理薬一覧</span>
+                    <a href="../groups/antiplatelet-drugs.html" class="sidebar-link">
+                        💊 抗血小板薬一覧
+                        <span class="category-desc">血栓予防・治療薬</span>
                     </a>
                 </div>
             </div>
@@ -74,17 +74,16 @@
 
     <!-- 薬剤ヘッダー（全レベル共通表示） -->
     <div class="drug-header">
-        <h1 class="brand-name">メトグルコ®</h1>
-        <p class="generic-name">メトホルミン塩酸塩</p>
+        <h1 class="brand-name">エフィエント®</h1>
+        <p class="generic-name">プラスグレル塩酸塩</p>
     </div>
     
     <div class="drug-classification">
-        <span class="drug-class" data-category="endocrine">
+        <span class="drug-class" data-category="cardiovascular">
             <i>💊</i>
-            ビグアナイド系糖尿病薬
+            第3世代チエノピリジン系抗血小板薬（P2Y12阻害薬）
         </span>
-        <!-- 第一選択薬の場合のみ表示 -->
-        <span class="generation">第一選択薬</span>
+        <span class="generation">第一選択P2Y12阻害薬</span>
     </div>
 
     <!-- Task 1.2: レベル1基本情報カード（薬学生向けファーストビュー） -->
@@ -93,9 +92,9 @@
         <div class="indications">
             <h3>主な適応症</h3>
             <ul class="indications__list">
-                <li>2型糖尿病</li>
-                <li>食事療法・運動療法で効果不十分な場合</li>
-                <li>他の糖尿病薬との併用療法</li>
+                <li>急性冠症候群（ACS）の血栓予防（PCI施行予定患者）</li>
+                <li>不安定狭心症・非ST上昇型心筋梗塞（NSTEMI）</li>
+                <li>ST上昇型心筋梗塞（STEMI）の血栓予防</li>
             </ul>
         </div>
     </section>
@@ -103,30 +102,31 @@
     <!-- Task 1.3: 30秒サマリー（薬学生が30秒で理解できる構成） -->
     <section class="quick-summary level-1-content">
         <div class="container">
-            <h2>⚡ 30秒でわかるメトホルミン</h2>
+            <h2>⚡ 30秒でわかるプラスグレル</h2>
         
         <div class="impact-grid">
             <div class="impact-item">
                 <h4>開発の経緯</h4>
-                <p>1957年、植物由来成分から開発されたビグアナイド系薬剤</p>
-                <p>インスリン以外の経口薬が求められた時代に開発。同系統の他剤は副作用で撤退したが、メトホルミンだけが67年間生き残った。</p>
+                <p>2009年、クロピドグレル抵抗性を克服するため開発</p>
+                <p>第一三共とイーライリリーが共同開発。CYP2C19遺伝子多型による個人差を最小化し、日本人の20%で効果不十分だったクロピドグレルの問題を解決。</p>
             </div>
             
             <div class="impact-item">
                 <h4>作用機序</h4>
-                <p>主に肝臓での糖新生を抑制する薬</p>
-                <p>①肝糖新生抑制（主作用）②インスリン感受性改善 ③消化管からの糖吸収抑制。インスリン分泌に依存しないため低血糖リスクが低い。</p>
+                <p>血小板P2Y12受容体を不可逆的に阻害</p>
+                <p>肝臓で2段階代謝を受けて活性代謝物へ変換。CYP3A4・CYP2B6主体の代謝経路によりCYP2C19遺伝子多型の影響を受けにくい。クロピドグレルの約10倍の抗血小板効果。</p>
             </div>
             
             <div class="impact-item">
                 <h4>臨床での位置づけ</h4>
-                <p>2型糖尿病治療の第一選択薬として世界的に推奨</p>
-                <p>ADA/EASD国際ガイドライン、日本糖尿病学会ともに第一選択薬。世界で年間1億人以上、日本でも処方率70%超。特に肥満・過体重患者では最優先で使用される。</p>
+                <p>急性冠症候群（ACS）の第一選択P2Y12阻害薬</p>
+                <p>TRITON-TIMI 38試験でクロピドグレルに対して心血管イベント19%削減。日本人専用用量（3.75mg）で安全性を確保。特に糖尿病合併・既往心筋梗塞のハイリスク患者で推奨。</p>
             </div>
             
             <div class="impact-item">
-                <h4>他の薬との違い</h4>
-                <p>体重を増やさない唯一の古典的経口薬。低血糖リスクが極めて低く、心血管イベントを36%減少させる。月薬価約200円と経済的負担も最小。</p>
+                <h4>クロピドグレルとの違い</h4>
+                <p>個人差が少なく、より確実で強力な抗血小板効果</p>
+                <p>CYP2C19遺伝子多型の影響を受けにくい代謝経路。効果発現30分（クロピドグレル2-4時間）。ステント血栓症52%削減。ただし出血リスクが1.32倍で慎重な患者選択が必要。</p>
             </div>
         </div>
         </div>
@@ -139,23 +139,23 @@
             
             <div class="impact-grid">
                 <div class="impact-item">
-                    <h4>主作用：肝糖新生抑制</h4>
-                    <p>AMPキナーゼ（AMPK）を活性化し、肝臓での糖新生を抑制。空腹時血糖値を効果的に低下させる。</p>
+                    <h4>主作用：P2Y12受容体阻害</h4>
+                    <p>活性代謝物が血小板表面のP2Y12受容体のシステイン残基と不可逆的に結合。ADPを介した血小板凝集を完全に遮断。</p>
                 </div>
                 
                 <div class="impact-item">
-                    <h4>インスリン感受性改善</h4>
-                    <p>筋肉・脂肪組織でのインスリン感受性を改善。グルコースの取り込みを促進する。</p>
+                    <h4>代謝活性化の特徴</h4>
+                    <p>2段階代謝：①エステラーゼによる加水分解（95%効率）②CYP3A4/CYP2B6による酸化。クロピドグレルの活性化効率15%に対し゗95%。</p>
                 </div>
                 
                 <div class="impact-item">
-                    <h4>消化管での作用</h4>
-                    <p>小腸からの糖吸収を遅延させ、食後血糖上昇を抑制。GLP-1分泌促進作用もある。</p>
+                    <h4>効果発現時間</h4>
+                    <p>Loading dose後30分で血小板凝集抑制。緯急PCI時に迅速な効果発現が可能。</p>
                 </div>
                 
                 <div class="impact-item">
-                    <h4>低血糖を起こしにくい理由</h4>
-                    <p>インスリン分泌を直接刺激しないため、単独使用では低血糖リスクが極めて低い。</p>
+                    <h4>効果持続時間</h4>
+                    <p>不可逆的結合のため、血小板寿命（7-10日）まで効果が持続。手術前は7日間の休薬が必要。</p>
                 </div>
             </div>
         </div>
@@ -169,29 +169,32 @@
         
         <div class="prescribing-data">
             <div class="design-spec">
-Rp) メトグルコ錠 500mg  
-    1回1錠 1日2回 朝夕食後
-    ジャヌビア錠 50mg
+Rp) エフィエント錠 5mg  
+    1回0.75錠（3.75mg） 1日1回 朝食後
+    バイアスピリン錠 100mg
     1回1錠 1日1回 朝食後
-    各30日分</div>
-            <p>※ 最も多い併用パターン。DPP-4阻害薬との組み合わせで血糖管理強化。</p>
+    各12ヶ月分</div>
+            <p>※ 最も多いDAPT（二剤抗血小板療法）。ACS後PCI患者の標準的処方。</p>
         </div>
 
         <div class="prescribing-data">
             <div class="design-spec">
-Rp) メトグルコ錠 500mg  
-    1回1錠 1日2回 朝夕食後
-    フォシーガ錠 5mg
-    1回1錠 1日1回 朝食前
-    各30日分</div>
-            <p>※ SGLT2阻害薬との併用。体重減少効果も期待でき、心血管・腎保護作用あり。</p>
+Rp) エフィエント錠 5mg
+    Loading dose：4錠（20mg）をPCI前に単回投与
+    その後：1回0.75錠 1日1回 朝食後
+    バイアスピリン錠 100mg
+    1回1錠 1日1回 朝食後
+    各90日分</div>
+            <p>※ PCI施行時の投与開始パターン。日本人用量でLoading dose 20mg。</p>
         </div>
 
         <div class="prescribing-data">
             <div class="design-spec">
-Rp) メトグルコ錠 250mg  
-    1回2錠 1日2回 朝夕食後
-    アマリール錠 0.5mg
+Rp) エフィエント錠 5mg  
+    1回0.75錠 1日1回 朝食後
+    バイアスピリン錠 100mg
+    1回1錠 1日1回 朝食後
+    ランソプラゾールOD錠 15mg
     1回1錠 1日1回 朝食前
     各30日分</div>
             <p>※ SU薬との併用。低血糖リスクに注意し、SU薬は低用量から開始。</p>
@@ -208,39 +211,40 @@ Rp) メトグルコ錠 250mg
         </div>
     </section>
 
-    <!-- メトホルミン特殊対応：乳酸アシドーシスについて -->
+    <!-- プラスグレル特殊対応：出血リスク管理 -->
     <section class="level-1-content">
         <div class="container">
-            <h3>⚠️ メトホルミンの重要な副作用</h3>
+            <h3>⚠️ プラスグレルの重要な副作用</h3>
             
             <div class="quote-box">
-                <h4>乳酸アシドーシスについて理解しよう</h4>
-                <p><strong>乳酸アシドーシスとは</strong>：血中の乳酸が蓄積して血液が酸性に傾く状態です。</p>
-                <p><strong>発生頻度</strong>：1万人に0.03例（極めて稀）- フェンホルミンより1000倍以上安全</p>
+                <h4>出血リスクについて理解しよう</h4>
+                <p><strong>最も重要な副作用</strong>：強力な抗血小板効果による出血リスクの増加。</p>
+                <p><strong>TIMI大出血発現率</strong>：2.4%（クロピドグレル1.8%の1.32倍）</p>
             </div>
             
             <div class="impact-grid">
                 <div class="impact-item">
-                    <h4>なぜ起こるのか？</h4>
+                    <h4>出血高リスク患者</h4>
                     <ul>
-                        <li>メトホルミンが体内に蓄積</li>
-                        <li>主に腎機能低下時に発生</li>
-                        <li>脱水・造影剤使用時も注意</li>
+                        <li>75歳以上（原則推奨されない）</li>
+                        <li>体重60kg未満</li>
+                        <li>脳血管疾患既往（禁忌）</li>
+                        <li>腎機能障害（Cr≥1.5mg/dL）</li>
                     </ul>
                 </div>
                 <div class="impact-item">
-                    <h4>予防のポイント</h4>
+                    <h4>出血予防のポイント</h4>
                     <ul>
-                        <li>腎機能の定期的チェック</li>
-                        <li>体調不良時は服薬相談</li>
-                        <li>造影剤使用時の休薬</li>
-                        <li>適切な水分摂取</li>
+                        <li>患者選択の厳格化</li>
+                        <li>PPIの併用考慮</li>
+                        <li>定期的な血算チェック</li>
+                        <li>出血徴候の早期発見</li>
                     </ul>
                 </div>
             </div>
             
             <p class="faq-note">
-                <strong>薬学生へのメッセージ</strong>：適切に使用すれば安全な薬です。禁忌・注意事項を理解し、患者さんへの服薬指導に活かしましょう。
+                <strong>薬学生へのメッセージ</strong>：適切な患者選択でベネフィットがリスクを上回る薬です。リスク評価の重要性を理解し、安全な使用に貢献しましょう。
             </p>
         </div>
     </section>
@@ -298,34 +302,34 @@ Rp) メトグルコ錠 250mg
 
     <!-- ========== レベル2：実習中薬学生向けコンテンツ ========== -->
     
-    <!-- なぜ第一選択薬なのか（詳細版） -->
+    <!-- なぜACSの第一選択薬なのか（詳細版） -->
     <section class="card level-2-content">
-        <h2>なぜ25年間世界の第一選択薬なのか</h2>
+        <h2>なぜACSの第一選択P2Y12阻害薬なのか</h2>
         <div>
-            <p><strong>歴史的背景</strong>：1976年フェンホルミン事件でビグアナイド系全体が敬遠される中、1998年UKPDS試験でメトホルミンだけが死亡率を減少させることが判明。以来25年間、揺るぎない第一選択薬の地位を維持。</p>
+            <p><strong>歴史的背景</strong>：2000年代初頭、クロピドグレル「抵抗性」が明らかになり、CYP2C19遺伝子多型により日本人の20%で効果不十分と判明。プラスグレルはこの問題を克服するために開発された。</p>
             <div>
-                <h4>1. 安全性の圧倒的蓄積</h4>
-                <p>1957年の承認以来67年間の使用歴。特に1998年以降は世界中で爆発的に処方が増加し、累計数億人での安全性確認。乳酸アシドーシス発生率は1万人に0.03例と極めて稀。フェンホルミンと比較して1000倍以上安全。</p>
+                <h4>1. クロピドグレル抵抗性の克服</h4>
+                <p>CYP2C19依存度たった5%（クロピドグレル60%）。CYP3A4/CYP2B6主体の代謝経路により、遺伝子多型に関わらず安定した効果を発揮。個人差（CV%）25%でクロピドグレルの半分。</p>
             </div>
             <div>
-                <h4>2. 効果の確実性</h4>
-                <p>HbA1c 1.0-1.5%低下の安定した血糖改善。耐性現象がなく長期間効果維持。インスリン感受性改善により根本的治療に近い。</p>
+                <h4>2. 圧倒的な抗血小板効果</h4>
+                <p>活性代謝物生成量がクロピドグレルの10倍。ADP誘発血小板凝集阻害80-90%（クロピドグレル40-60%）。迅速な効果発現：30分で最大効果。</p>
             </div>
             <div>
-                <h4>3. 心血管保護（UKPDS試験）</h4>
-                <p>1998年UKPDS試験で革命的結果：全死亡36%減少、糖尿病関連死42%減少、心筋梗塞39%減少。「メトホルミンは命を救う薬」という認識転換。</p>
+                <h4>3. TRITON-TIMI 38試験の衝撃</h4>
+                <p>13,608例のACS患者で心血管イベント19%削減。心筋梗塞24%削減、ステント血栓症52%削減。特に糖尿病患者で30%のリスク削減。</p>
             </div>
             <div>
-                <h4>4. 体重中性</h4>
-                <p>他の多くの糖尿病薬と異なり体重増加しない。肥満糖尿病で特に重要。AMPK活性化による代謝改善効果。</p>
+                <h4>4. ハイリスク患者での優位性</h4>
+                <p>糖尿病、既往心筋梗塞、多枝病変などのハイリスク患者で特に有効。CYP2C19機能低下型患者でも一貫した効果。これらの患者群では出血リスクを上回るベネフィット。</p>
             </div>
             <div>
-                <h4>5. コストパフォーマンス</h4>
-                <p>1日数円という圧倒的経済性。開発途上国でも使用可能な民主的薬剤。日本でも医療費削減に貢献。</p>
+                <h4>5. 日本人用量の最適化</h4>
+                <p>PRASFIT-ACS試験で5年間の慎重な検討。日本人専用3.75mgで欧米用量と同等の有効性、かつ安全性を確保。アジア人特有の代謝特性に対応した成功例。</p>
             </div>
             <div>
-                <h4>6. 全薬剤との併用可能性</h4>
-                <p>作用機序の相補性により全ての糖尿病薬と併用可能。肝糖新生抑制は他剤と重複せず、67年間で重篤な薬物相互作用報告なし。効果の予測可能性が高く、併用時も安定した効果。</p>
+                <h4>6. 時代の要請に応えた薬剤</h4>
+                <p>個別化医療時代における「確実な効果」の重要性。遺伝子検査不要で全患者に一定の効果。緊急PCI時の迅速な効果発現。「失敗しない」抗血小板療法の実現。</p>
             </div>
             <div>
                 <h4>7. UKPDS試験後の確固たる地位</h4>
@@ -335,189 +339,106 @@ Rp) メトグルコ錠 250mg
     </section>
 
 
-    <!-- 日本の処方文化（要点） -->
+    <!-- 日本の導入経緯（要点） -->
     <section class="level-2-content">
-        <h2>🇯🇵 日本独特の処方文化</h2>
+        <h2>🇯🇵 日本獨自の導入経緯</h2>
         
         <div>
-            <h3>44年間の承認遅延が生んだ特殊事情</h3>
+            <h3>日本人専用用量設定の背景</h3>
             <div>
                 <div>
-                    <h4>1. SU薬中心主義の長期継続</h4>
+                    <h4>1. 体格差と出血リスク</h4>
                     <ul>
-                        <li>日本発のトルブタミド・グリベンクラミドの成功体験</li>
-                        <li>1957-2001年の44年間、SU薬が事実上の第一選択薬</li>
-                        <li>「血糖を下げる＝インスリン分泌促進」という固定観念</li>
+                        <li>欧米人平均体重80kg vs 日本人60kg</li>
+                        <li>アジア人の出血傾向が従来から知られていた</li>
+                        <li>日本人の頭蓋内出血リスクが欧米人より高い</li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4>2. フェンホルミン事件のトラウマ</h4>
+                    <h4>2. CYP2C19遺伝子多型の影響</h4>
                     <ul>
-                        <li>「ビグアナイド系は危険」という先入観が44年継続</li>
-                        <li>欧米で標準治療となっても日本は導入拒否</li>
-                        <li>厚生省の極めて慎重な姿勢</li>
+                        <li>日本人の20%がCYP2C19機能低下型</li>
+                        <li>クロピドグレルの効果不十分問題が明白</li>
+                        <li>プラスグレルの必要性が特に高い</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div>
-            <h3>2001年承認後の急速な普及</h3>
+            <h3>PRASFIT-ACS試験の意義</h3>
             <div>
                 <div>
-                    <h4>導入期（2001-2005年）</h4>
-                    <p>慎重な導入、限定的使用。医師の経験不足と患者の不安。学会主導での安全使用講習会。</p>
+                    <h4>承認前（2009-2013年）</h4>
+                    <p>5年間の慎重な臨床試験。日本人1,363例で安全性・有効性検証。3.75mgで欧米用量と同等の効果確認。</p>
                 </div>
                 <div>
-                    <h4>普及期（2006-2012年）</h4>
-                    <p>2007年ガイドラインで第一選択薬に格上げ。UKPDS追跡データの継続的発表。腎機能・造影剤制限の段階的緩和。</p>
+                    <h4>承認後（2014-2018年）</h4>
+                    <p>慎重な市場導入。適正使用推進委員会の設置。「75歳以上・60kg未満・脳血管疾患」の厳格な除外基準徹底。</p>
                 </div>
                 <div>
-                    <h4>確立期（2013年〜現在）</h4>
-                    <p>処方率70%超で名実ともに第一選択薬。SGLT2阻害薬等の登場でも地位不変。ジェネリック普及で経済的優位性拡大。</p>
+                    <h4>定着期（2019年〜現在）</h4>
+                    <p>ACS患者の約40%で使用。クロピドグレルとの適切な使い分け定着。日本人特有の安全用量として国際的に認知。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 他剤との相乗効果メカニズム（実習レベル） -->
+    <!-- 薬物相互作用と併用注意（実習レベル） -->
     <section class="level-2-content">
-        <h2>💊 他剤との相乗効果メカニズム</h2>
+        <h2>💊 薬物相互作用と併用注意</h2>
         
         <div>
-            <p>メトホルミンは全ての糖尿病薬と相性が良く、それぞれの組み合わせで独特の相乗効果を発揮します。ここでは各薬剤との併用で生まれる相乗効果のメカニズムを詳しく解説します。</p>
+            <p>プラスグレルは主にCYP3A4とCYP2B6で代謝されるため、これらの酵素を阻害・誘導する薬剤との相互作用に注意が必要です。また、強力な抗血小板効果による出血リスクも重要です。</p>
             
             <div>
                 <div class="combination-box">
-                    <h4>メトホルミン ＋ SGLT2阻害薬</h4>
+                    <h4>CYP3A4阻害薬との相互作用</h4>
                     <div>
-                        <p><strong>相乗効果のメカニズム</strong>：</p>
+                        <p><strong>活性代謝物濃度上昇のリスク</strong>：</p>
                         <ul>
-                            <li>肝糖新生抑制（メトホルミン）＋ 尿糖排泄（SGLT2）で二重の血糖低下</li>
-                            <li>AMPK活性化 ＋ ケトン体産生で心筋エネルギー代謝改善</li>
-                            <li>体重減少効果の相乗作用（1+1=3の効果）</li>
+                            <li>クラリスロマイシン、エリスロマイシン：約40%上昇</li>
+                            <li>イトラコナゾール、ボリコナゾール：30-50%上昇</li>
+                            <li>リトナビル、アタザナビル：注意必要</li>
                         </ul>
-                        <p><strong>臨床的利点</strong>：心不全入院30%減少、腎機能悪化25%抑制、体重3-5kg減少</p>
-                        <p><strong>推奨患者</strong>：心血管疾患既往、腎機能軽度低下、肥満</p>
+                        <p><strong>臨床的対応</strong>：短期併用は慎重観察、長期併用はプラスグレル減量考慮</p>
+                        <p><strong>出血リスク</strong>：出血傾向の早期発見、血小板機能検査</p>
                     </div>
                 </div>
                 
                 <div class="combination-box">
-                    <h4>メトホルミン ＋ DPP-4阻害薬</h4>
+                    <h4>PPIとの併用（重要な利点）</h4>
                     <div>
-                        <p><strong>相乗効果のメカニズム</strong>：</p>
+                        <p><strong>クロピドグレルとの重要な違い</strong>：</p>
                         <ul>
-                            <li>基礎血糖低下（メトホルミン）＋ 食後血糖抑制（DPP-4）で24時間安定</li>
-                            <li>インクレチン増強がメトホルミンの消化器症状を軽減</li>
-                            <li>両剤とも低血糖リスク最小で安全性の相乗効果</li>
+                            <li>プラスグレル：CYP2C19依存度低いためPPIによる効果減弱なし</li>
+                            <li>クロピドグレル：オメプラゾールで効果減弱</li>
+                            <li>消化管出血予防と抗血小板効果の両立が可能</li>
                         </ul>
-                        <p><strong>臨床的利点</strong>：血糖変動幅40%減少、低血糖なし、忍容性良好</p>
-                        <p><strong>推奨患者</strong>：高齢者、腎機能中等度低下、血糖変動大</p>
+                        <p><strong>臨床的意義</strong>：COGENT試験サブ解析で安全性確認</p>
+                        <p><strong>推奨併用</strong>：消化管出血リスク高い患者で積極的併用</p>
                     </div>
                 </div>
                 
                 <div class="combination-box">
-                    <h4>メトホルミン ＋ GLP-1受容体作動薬</h4>
+                    <h4>抗凝固薬との併用（Triple therapy）</h4>
                     <div>
-                        <p><strong>相乗効果のメカニズム</strong>：</p>
+                        <p><strong>出血リスクの著明な増加</strong>：</p>
                         <ul>
-                            <li>肝糖新生抑制 ＋ グルカゴン分泌抑制で肝臓への二重作用</li>
-                            <li>AMPK活性化 ＋ 食欲抑制で強力な体重減少（5-8kg）</li>
-                            <li>心血管保護効果の相乗作用（MACE 20-30%減少）</li>
+                            <li>DAPT＋抗凝固薬で出血リスク3-5倍</li>
+                            <li>プラスグレルの強力な効果がリスクをさらに増大</li>
+                            <li>心房細動合併ACS患者でのジレンマ</li>
                         </ul>
-                        <p><strong>臨床的利点</strong>：HbA1c 2.0-2.5%低下、体重5-8kg減少、心血管イベント減少</p>
-                        <p><strong>推奨患者</strong>：高度肥満、心血管リスク高、インスリン導入回避希望</p>
+                        <p><strong>リスク管理戦略</strong>：適応の厳格化、投与期間3-6ヶ月で中止検討</p>
+                        <p><strong>代替選択肢</strong>：DOAC＋P2Y12単剤も考慮</p>
                     </div>
                 </div>
                 
-                <div class="combination-box">
-                    <h4>メトホルミン ＋ SU薬</h4>
-                    <div>
-                        <p><strong>相乗効果のメカニズム</strong>：</p>
-                        <ul>
-                            <li>インスリン感受性改善 ＋ インスリン分泌促進で相補的作用</li>
-                            <li>メトホルミンがSU薬の体重増加（2-4kg）を相殺</li>
-                            <li>SU薬の用量を最小限に抑えることで低血糖リスク軽減</li>
-                        </ul>
-                        <p><strong>臨床的利点</strong>：即効性、安価、体重増加抑制</p>
-                        <p><strong>注意点</strong>：低血糖リスク管理、SU薬は低用量から開始</p>
-                    </div>
-                </div>
-                
-                <div class="combination-box">
-                    <h4>メトホルミン ＋ インスリン</h4>
-                    <div>
-                        <p><strong>相乗効果のメカニズム</strong>：</p>
-                        <ul>
-                            <li>インスリン感受性改善でインスリン必要量30-50%削減</li>
-                            <li>体重増加（3-6kg）を1-2kgに抑制</li>
-                            <li>インスリン用量減少により低血糖リスクも軽減</li>
-                        </ul>
-                        <p><strong>臨床的利点</strong>：インスリン単位数削減、体重管理改善、医療費削減</p>
-                        <p><strong>実践的アドバイス</strong>：インスリン開始時は必ずメトホルミン継続</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- 併用療法の実践的選択（実習レベル） -->
-    <section class="level-2-content">
-        <h2>🎯 併用療法の実践的選択</h2>
-        
-        <div>
-            <p>相乗効果のメカニズムを理解した上で、患者の背景に応じた最適な併用薬の選択と、段階的な治療強化の実践的アプローチを学びます。</p>
-            
-            <h3>患者背景別の併用選択指針</h3>
-            <div>
-                <ul>
-                    <li><strong>肥満患者</strong>：SGLT2阻害薬 or GLP-1受容体作動薬を優先</li>
-                    <li><strong>高齢者（75歳以上）</strong>：DPP-4阻害薬で安全性重視</li>
-                    <li><strong>心血管疾患既往</strong>：SGLT2阻害薬 or GLP-1受容体作動薬必須</li>
-                    <li><strong>腎機能低下（eGFR 30-60）</strong>：メトホルミン減量 ＋ DPP-4阻害薬</li>
-                    <li><strong>経済的制約</strong>：SU薬低用量併用でコスト最小化</li>
-                </ul>
-            </div>
-        </div>
-
-        <div>
-            <h3>現代的治療アルゴリズム</h3>
-            <div>
-                <div>
-                    <h4>段階1：メトホルミン単独療法</h4>
-                    <div>
-                        <p><strong>目標</strong>：HbA1c &lt;7.0%</p>
-                        <p><strong>期間</strong>：3-6ヶ月で評価</p>
-                        <p><strong>用量調整</strong>：500mg→1000mg→1500mg（最大2250mg、腎機能による制限あり）</p>
-                        <p><strong>効果判定</strong>：HbA1c 1.0-1.5%低下を期待</p>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4>段階2：2剤併用療法</h4>
-                    <div>
-                        <p><strong>メトホルミン + 以下から患者因子に応じて選択</strong>：</p>
-                        <div>
-                            <div>
-                                <h5>+ SGLT2阻害薬</h5>
-                                <p><strong>適応</strong>：心血管・腎保護重視</p>
-                                <p><strong>効果</strong>：HbA1c 0.5-0.8%低下、体重2-3kg減少</p>
-                                <p><strong>特徴</strong>：心不全・腎症に保護効果</p>
-                            </div>
-                            
-                            <div>
-                                <h5>+ DPP-4阻害薬</h5>
-                                <p><strong>適応</strong>：安全性重視、高齢者</p>
-                                <p><strong>効果</strong>：HbA1c 0.5-0.8%低下、体重中性</p>
-                                <p><strong>特徴</strong>：低血糖リスク最小</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ========== レベル3：研修中薬剤師・医療従事者向けコンテンツ ========== -->
     
@@ -880,192 +801,196 @@ Rp) メトグルコ錠 250mg
         </div>
     </section>
 
-    <!-- 作用機序の全段階（第1-5段階） -->
+    <!-- プラスグレル開発の歴史的背景 -->
     <section class="level-3-content">
-        <h2>🧬 作用機序の全貌：67年間の解明の歴史</h2>
+        <h2>🧬 プラスグレル開発物語：クロピドグレル抵抗性を克服せよ</h2>
         
         <div>
-            <p>メトホルミンは「機序より結果」で67年間医学界に君臨する稀有な薬剤。1957年の臨床応用開始から60年以上経った現在も、新しい作用メカニズムが発見され続けています。</p>
+            <p>2000年代初頭、クロピドグレルの使用拡大とともに「効果が期待できない患者群」の存在が明らかとなり、日本人の20%で十分な効果が得られないことが判明。第一三共は、この課題を解決する革新的P2Y12阻害薬の開発に挑戦しました。</p>
         </div>
 
-        <!-- 第1段階：謎の血糖降下薬時代 -->
+        <!-- 第1段階：クロピドグレル抵抗性の発見 -->
         <div>
-            <h3>第1段階（1957年〜1990年代）：謎の血糖降下薬時代</h3>
+            <h3>第1段階（2000-2004年）：クロピドグレル抵抗性の発見</h3>
             <div>
-                <h4>完全なブラックボックス状態</h4>
+                <h4>期待と現実のギャップ</h4>
                 <div>
                     <div>
-                        <h5>分かっていたこと</h5>
+                        <h5>問題の顕在化</h5>
                         <ul>
-                            <li>血糖値が下がることは明確</li>
-                            <li>インスリン分泌促進なし</li>
-                            <li>体重増加なし、低血糖リスク低</li>
-                            <li>特に食後血糖改善</li>
+                            <li>有効な血小板阻害が得られない患者：20-30%</li>
+                            <li>心血管イベント再発率：抵抗性群で2-3倍高い</li>
+                            <li>特にアジア人で高頻度（日本人の約20%）</li>
+                            <li>ステント血栓症のリスク増加</li>
                         </ul>
                     </div>
                     <div>
-                        <h5>分からなかったこと</h5>
+                        <h5>原因の解明</h5>
                         <ul>
-                            <li>機序：全く不明（「ブラックボックス」状態）</li>
-                            <li>標的：どこに作用するのか不明</li>
-                            <li>代謝経路：体内での変化不明</li>
-                            <li>分子基盤：科学的説明ができない</li>
+                            <li>CYP2C19遺伝子多型（*2、*3アレル）の影響</li>
+                            <li>活性代謝物生成能力が正常の10-30%に低下</li>
+                            <li>血小板凝集阻害率：正常群60-80% vs 多型群15-30%</li>
+                            <li>日本人・韓国人・中国人で特に問題となる</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 第2段階：肝糖新生抑制の発見 -->
+        <!-- 第2段階：第一三共の開発戦略 -->
         <div>
-            <h3>第2段階（1990年代）：肝糖新生抑制の発見</h3>
+            <h3>第2段階（2002-2005年）：革新的分子設計</h3>
             <div>
-                <h4>初めての科学的解明</h4>
-                <p><strong>発見者</strong>：Stumvoll らの研究グループ<br>
-                <strong>手法</strong>：安定同位体を用いた糖代謝追跡<br>
-                <strong>結果</strong>：肝糖新生が30-50%抑制される</p>
+                <h4>開発コンセプトの明確化</h4>
+                <p><strong>開発チーム</strong>：第一三共（当時：第一製薬）研究開発部門<br>
+                <strong>目標</strong>：CYP2C19遺伝子多型の影響を受けない薬剤<br>
+                <strong>戦略</strong>：チエノピリジン骨格の構造最適化</p>
                 
-                <h5>肝糖新生抑制の臨床的意義</h5>
+                <h5>分子設計の革新</h5>
                 <div>
-                    <p><strong>正常時の肝糖新生</strong>：</p>
+                    <p><strong>構造的改良点</strong>：</p>
                     <ul>
-                        <li>空腹時：血糖の60-70%を供給</li>
-                        <li>食後：糖新生は抑制されるべき</li>
-                        <li>2型糖尿病：糖新生抑制不全→高血糖</li>
+                        <li>シクロプロピル基の導入により活性化効率向上</li>
+                        <li>CYP3A4、CYP2B6による代謝経路の優位化</li>
+                        <li>CYP2C19への依存度を大幅削減</li>
+                        <li>より速やかな活性代謝物への変換</li>
                     </ul>
                     
-                    <p><strong>メトホルミンの効果</strong>：</p>
+                    <p><strong>前臨床試験結果</strong>：</p>
                     <ul>
-                        <li>肝糖新生を正常レベルまで抑制</li>
-                        <li>空腹時血糖の改善</li>
-                        <li>肝インスリン抵抗性の改善</li>
+                        <li>血小板凝集阻害：クロピドグレルの10-20倍</li>
+                        <li>効果発現時間：30分（クロピドグレル：2-4時間）</li>
+                        <li>個体間変動：50%削減</li>
+                        <li>全用量でクロピドグレルを上回る効果</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- 第3段階：AMPK活性化の発見 -->
+        <!-- 第3段階：TRITON-TIMI 38試験 -->
         <div>
-            <h3>第3段階（2001年）：AMPK活性化の発見</h3>
+            <h3>第3段階（2007-2008年）：歴史的なTRITON-TIMI 38試験</h3>
             <div>
-                <h4>エネルギーセンサーの発見</h4>
-                <p><strong>発見者</strong>：Ming-hui Zou、David Carling ら<br>
-                <strong>革命的発見</strong>：メトホルミンがAMPK（AMP活性化プロテインキナーゼ）を活性化<br>
-                <strong>AMPKの役割</strong>：細胞内エネルギーセンサー</p>
+                <h4>史上最大規模のP2Y12阻害薬比較試験</h4>
+                <p><strong>登録患者</strong>：13,608例（30ヶ国、707施設）<br>
+                <strong>対象</strong>：ACS患者（STEMI、NSTEMI、不安定狭心症）<br>
+                <strong>比較</strong>：プラスグレル vs クロピドグレル</p>
                 
-                <h5>AMPK活性化による多面的効果</h5>
+                <h5>衝撃的な結果</h5>
                 <div>
                     <div>
-                        <h6>代謝への影響</h6>
+                        <h6>有効性エンドポイント</h6>
                         <ul>
-                            <li>糖新生酵素遺伝子の発現抑制</li>
-                            <li>脂肪酸合成抑制</li>
-                            <li>脂肪酸酸化促進</li>
-                            <li>グルコース取り込み促進</li>
+                            <li>主要評価項目（心血管死・心筋梗塞・脳卒中）：19%削減</li>
+                            <li>心筋梗塞単独：24%削減</li>
+                            <li>ステント血栓症：52%削減</li>
+                            <li>緊急血行再建術：34%削減</li>
                         </ul>
                     </div>
                     
                     <div>
-                        <h6>細胞レベルの影響</h6>
+                        <h6>安全性の課題</h6>
                         <ul>
-                            <li>mTOR経路抑制（老化・がん抑制）</li>
-                            <li>オートファジー促進（細胞浄化）</li>
-                            <li>炎症性サイトカイン抑制</li>
-                            <li>ミトコンドリア生合成促進</li>
+                            <li>大出血（TIMI基準）：32%増加</li>
+                            <li>致命的出血：52%増加</li>
+                            <li>特に高齢者、低体重でリスク高い</li>
+                            <li>「ハイリスク・ハイベネフィット」の概念確立</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 第4段階：ミトコンドリア複合体I阻害 -->
+        <!-- 第4段階：日本人用量の開発 -->
         <div>
-            <h3>第4段階（2016年〜）：ミトコンドリア複合体I阻害の詳細解明</h3>
+            <h3>第4段階（2010-2014年）：日本人に最適化された用量開発</h3>
             <div>
                 <div>
-                    <h4>分子レベルでの精密メカニズム</h4>
+                    <h4>PRASFIT-ACS試験の意義</h4>
                     <div>
-                        <p><strong>発見者</strong>：Viollet, Rutter らのグループ</p>
-                        <p><strong>メカニズム</strong>：メトホルミンがミトコンドリア呼吸鎖複合体Iを軽度阻害</p>
-                        <p><strong>結果</strong>：ATP/AMP比の低下→AMPK活性化</p>
+                        <p><strong>背景</strong>：西洋人用量では日本人に出血リスク高い</p>
+                        <p><strong>目的</strong>：日本人に適した用量の検証</p>
+                        <p><strong>結果</strong>：3.75mg/日が最適用量と判明</p>
                     </div>
                     
                     <div>
-                        <h5>精密な分子経路</h5>
+                        <h5>日本人用量の特徴</h5>
                         <div>
-                            <p><strong>メトホルミンの分子標的</strong>：</p>
-                            <p>ミトコンドリア複合体I（NADH脱水素酵素）↓（軽度阻害）</p>
-                            <p>ATP産生軽度抑制 ↓</p>
-                            <p>AMP/ATP比上昇 ↓</p>
-                            <p>AMPK活性化 ↓</p>
-                            <p>代謝リプログラミング</p>
+                            <p><strong>用量設定</strong>：</p>
+                            <ul>
+                                <li>Loading dose: 20mg（西洋人60mgの1/3）</li>
+                                <li>維持量: 3.75mg/日（西洋人10mgの約1/3）</li>
+                                <li>体重50kg未満：2.5mg/日に減量</li>
+                                <li>高齢者（75歳以上）：慎重投与</li>
+                            </ul>
                         </div>
+                        
+                        <p><strong>日本人用量での成績</strong>：</p>
+                        <ul>
+                            <li>有効性：クロピドグレルより優れる</li>
+                            <li>大出血リスク：西洋人用量の1/3に抑制</li>
+                            <li>日本人の体格・代謝に最適化</li>
+                            <li>2014年日本で承認</li>
+                        </ul>
                     </div>
                     
                     <div>
-                        <p><strong>精密医療への道筋</strong>：分子レベルでの作用機序解明により、
-                        個別化医療や新薬開発の基盤が確立。60年越しで科学的基盤が完成。</p>
+                        <p><strong>世界のモデルとなった日本</strong>：民族差を考慮した用量設定の重要性を
+                        世界に示し、個別化医療の先駆けとなった。</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 第5段階：腸内細菌叢への影響 -->
+        <!-- 第5段階：現在と将来 -->
         <div>
-            <h3>第5段階（2016年〜現在）：腸内細菌叢への影響発見</h3>
+            <h3>第5段階（2014年〜現在）：臨床現場での位置づけと将来</h3>
             <div>
                 <div>
-                    <h4>腸内細菌叢研究の大転換</h4>
+                    <h4>現在の臨床位置づけ</h4>
                     <div>
-                        <p><strong>発見</strong>：メトホルミンが腸内細菌叢を劇的に変化させる</p>
-                        <p><strong>手法</strong>：メタゲノム解析による詳細な菌叢解析</p>
-                        <p><strong>衝撃</strong>：血糖改善効果の一部が腸内細菌由来</p>
+                        <p><strong>適応患者</strong>：</p>
+                        <ul>
+                            <li>PCI施行予定のACS患者（第一選択）</li>
+                            <li>クロピドグレル抵抗性が疑われる患者</li>
+                            <li>ハイリスク患者（糖尿病、ステント血栓症既往）</li>
+                            <li>CYP2C19機能低下型保有者</li>
+                        </ul>
                     </div>
                     
                     <div>
-                        <h5>メトホルミンによる腸内細菌叢変化</h5>
+                        <h5>現実世界での成績</h5>
                         <div>
-                            <div>
-                                <h6>善玉菌の増加</h6>
-                                <ul>
-                                    <li><strong>Akkermansia muciniphila</strong>：3-5倍増加</li>
-                                    <li><strong>Bifidobacterium</strong>：2-3倍増加</li>
-                                    <li><strong>Lactobacillus</strong>：1.5-2倍増加</li>
-                                </ul>
-                            </div>
-                            
-                            <div>
-                                <h6>悪玉菌の減少</h6>
-                                <ul>
-                                    <li><strong>Bacteroides fragilis</strong>：30-50%減少</li>
-                                    <li><strong>Clostridium</strong>：20-30%減少</li>
-                                </ul>
-                            </div>
-                            
-                            <div>
-                                <h6>産生物質の変化</h6>
-                                <ul>
-                                    <li><strong>短鎖脂肪酸</strong>（酪酸・プロピオン酸）増加</li>
-                                    <li><strong>LPS</strong>（エンドトキシン）減少</li>
-                                    <li><strong>GLP-1分泌促進物質</strong>増加</li>
-                                </ul>
-                            </div>
+                            <p><strong>日本の実臨床データ</strong>：</p>
+                            <ul>
+                                <li>ACS患者の約40%で使用</li>
+                                <li>ステント血栓症発生率：0.5%未満</li>
+                                <li>大出血率：日本人用量では2-3%</li>
+                                <li>アドヒアランス良好（1日1回投与）</li>
+                            </ul>
                         </div>
+                        
+                        <p><strong>ガイドライン推奨</strong>：</p>
+                        <ul>
+                            <li>2020年ESCガイドライン：Class I推奨</li>
+                            <li>2023年JCSガイドライン：ACSの第一選択</li>
+                            <li>特にハイリスクACSで推奨</li>
+                        </ul>
                     </div>
                     
                     <div>
-                        <h5>腸内細菌叢を介した血糖改善メカニズム</h5>
+                        <h5>将来展望</h5>
                         <ol>
-                            <li><strong>短鎖脂肪酸産生</strong>：腸管でのGLP-1分泌促進</li>
-                            <li><strong>腸管バリア機能強化</strong>：炎症性物質の侵入阻止</li>
-                            <li><strong>胆汁酸代謝変化</strong>：FXR/TGR5経路を介した代謝改善</li>
-                            <li><strong>腸肝軸の改善</strong>：肝臓での糖代謝正常化</li>
+                            <li><strong>個別化医療の進展</strong>：遺伝子検査に基づくP2Y12阻害薬選択</li>
+                            <li><strong>新たな適応拡大</strong>：安定冠動脈疾患への応用検討</li>
+                            <li><strong>併用療法の最適化</strong>：抗凝固薬との安全な併用プロトコル</li>
+                            <li><strong>アジア人向け用量の世界標準化</strong>：日本の経験を世界へ</li>
                         </ol>
                     </div>
                     
                     <div>
-                        <p><strong>現在進行中の研究</strong>：老化抑制・がん予防メカニズム、認知機能への影響、
-                        個別化医療への応用など、67年経った現在も新発見が続く「生きた薬剤」。</p>
+                        <p><strong>プラスグレルの遺産</strong>：「クロピドグレル抵抗性」という医学的課題を克服し、
+                        個別化医療時代の扉を開いた革新的薬剤として、今後も多くの患者を救い続ける。</p>
                     </div>
                 </div>
             </div>
@@ -1102,27 +1027,16 @@ Rp) メトグルコ錠 250mg
                 </div>
             </div>
             
-            <!-- Home Navigation Section -->
-            <div class="bottom-sheet-section">
-                <h3 class="bottom-sheet-title">🏠 ナビゲーション</h3>
-                <div class="bottom-sheet-buttons">
-                    <a href="../index.html" class="bottom-sheet-btn">
-                        <span>🏠 トップページへ戻る</span>
-                        <span class="arrow">→</span>
-                    </a>
-                </div>
-            </div>
-            
             <!-- Related Drugs Section -->
             <div class="bottom-sheet-section">
                 <h3 class="bottom-sheet-title">🔗 関連薬剤</h3>
                 <div class="bottom-sheet-buttons">
-                    <a href="dapagliflozin-refined.html" class="bottom-sheet-btn">
-                        <span>📋 ダパグリフロジン</span>
+                    <a href="clopidogrel-v3.html" class="bottom-sheet-btn">
+                        <span>📋 クロピドグレル</span>
                         <span class="arrow">→</span>
                     </a>
-                    <a href="sitagliptin-refined.html" class="bottom-sheet-btn">
-                        <span>📋 シタグリプチン</span>
+                    <a href="aspirin-v3.html" class="bottom-sheet-btn">
+                        <span>📋 アスピリン</span>
                         <span class="arrow">→</span>
                     </a>
                     <a href="insulin-glargine-refined.html" class="bottom-sheet-btn">
