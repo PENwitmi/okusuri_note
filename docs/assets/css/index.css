@@ -249,11 +249,12 @@
     
     .hero-benefits {
         gap: var(--spacing-base);
+        justify-content: space-between;
     }
     
     .benefit-item {
-        min-width: 140px;
-        flex: 1;
+        flex: 0 0 calc(33.333% - 8px);
+        min-width: 0;
     }
     
     .benefit-icon {
