@@ -248,7 +248,7 @@ function initTermTooltips() {
     
     Object.keys(terms).forEach(function(term) {
         const regex = new RegExp(`\\b${term}\\b`, 'g');
-        const content = document.querySelectorAll('p, li, .drug-description');
+        const content = document.querySelectorAll('p:not(.hero-description), li, .drug-description');
         
         content.forEach(function(element) {
             if (element.innerHTML.match(regex) && !element.innerHTML.includes(`data-tooltip="${terms[term]}"`)) {
