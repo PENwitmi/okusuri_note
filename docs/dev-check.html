@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="サクッとお薬ノート - 開発確認ページ">
+    <title>開発確認ページ | サクッとお薬ノート</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/responsive-unified.css">
+    <link rel="stylesheet" href="assets/css/interactive.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="index.html">サクッとお薬ノート</a></h1>
+                <p class="tagline">薬剤図鑑</p>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html#drugs" class="nav-link">薬剤一覧</a></li>
+                    <li><a href="index.html#features" class="nav-link">特集ページ</a></li>
+                </ul>
+            </nav>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="薬剤名を検索..." class="search-input">
+                <button class="search-btn" onclick="performSearch()">
+                    <span class="search-icon">🔍</span>
+                </button>
+            </div>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-container">
+                <h2 class="hero-title">開発確認ページ</h2>
+                <p class="hero-description">
+                    開発中のHTMLページの確認・検証用ページです。<br>
+                    ここから各開発中のページにアクセスできます。
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-container">
+                <h2 class="section-title">開発中のページ一覧</h2>
+                <p class="section-description">
+                    現在開発・検証中のページはまだありません。<br>
+                    今後、開発中のページへのリンクがここに追加されます。
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">サクッとお薬ノート</h3>
+                    <p class="footer-description">
+                        薬学生のための実践的学習プラットフォーム。<br>
+                        「なぜ似た薬が複数存在するのか」への明確な回答を提供します。
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">学習コンテンツ</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#drugs">14重要薬剤</a></li>
+                        <li><a href="index.html#features">特集ページ</a></li>
+                        <li><a href="index.html#differentiation">使い分けの極意</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">特集ページ</h4>
+                    <ul class="footer-links">
+                        <li><a href="features/antithrombotic-complete-guide.html">抗血栓薬完全マスター</a></li>
+                        <li><a href="features/inhaler-complete-guide.html">吸入薬完全マスター</a></li>
+                        <li><a href="features/mr-antagonist-complete-guide.html">MR拮抗薬ガイド</a></li>
+                        <li><a href="features/heart-failure-treatment-guide.html">心不全治療ガイド</a></li>
+                        <li><a href="features/prokinetics-complete-guide.html">消化管運動改善薬</a></li>
+                        <li><a href="features/kampo-cold-medicine-guide.html">風邪に効く漢方薬</a></li>
+                        <li><a href="features/kampo-digestive-guide.html">消化器系の漢方薬</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Phase 1情報</h4>
+                    <div class="footer-stats">
+                        <div class="footer-stat">
+                            <span class="stat-value">14</span>
+                            <span class="stat-label">薬剤</span>
+                        </div>
+                        <div class="footer-stat">
+                            <span class="stat-value">7</span>
+                            <span class="stat-label">特集ページ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; 2025 サクッとお薬ノート. Phase 1 ベータ版 - 薬学生応援プロジェクト
+                </p>
+                <p class="version">
+                    Version 1.0.0 | 最終更新: 2025年6月28日
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/mobile-nav.js"></script>
+    <script src="assets/js/responsive-elements.js"></script>
+</body>
+</html>
