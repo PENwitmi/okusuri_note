@@ -62,12 +62,78 @@
     margin-right: auto;
 }
 
+/* メインメッセージ */
+.hero-main-message {
+    margin-bottom: var(--spacing-xl);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-question {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    margin-bottom: var(--spacing-sm);
+    background: linear-gradient(45deg, #FFF 0%, rgba(255,255,255,0.9) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.hero-answer {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    opacity: 0.95;
+    animation: fadeIn 1.2s ease-out 0.3s both;
+}
+
+/* ベネフィット */
+.hero-benefits {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin: var(--spacing-2xl) 0;
+    flex-wrap: wrap;
+}
+
+.benefit-item {
+    text-align: center;
+    padding: var(--spacing-base);
+    background: rgba(255,255,255,0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-base);
+}
+
+.benefit-item:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-3px);
+}
+
+.benefit-icon {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.benefit-text {
+    display: block;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    line-height: 1.5;
+}
+
 /* ヒーロー統計 */
 .hero-stats {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-2xl);
+    align-items: center;
+    gap: var(--spacing-lg);
     margin-bottom: var(--spacing-2xl);
+    background: rgba(255,255,255,0.1);
+    padding: var(--spacing-lg) var(--spacing-2xl);
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+    display: inline-flex;
 }
 
 .stat-item {
@@ -76,39 +142,122 @@
 
 .stat-number {
     display: block;
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-3xl);
     font-weight: 900;
     line-height: 1;
     margin-bottom: var(--spacing-xs);
 }
 
 .stat-label {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
     opacity: 0.9;
-    font-weight: 500;
+    font-weight: 600;
+}
+
+.stat-divider {
+    font-size: var(--font-size-2xl);
+    font-weight: 300;
+    opacity: 0.5;
 }
 
 /* CTAボタン */
 .cta-button {
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background: white;
     color: var(--primary-color);
-    font-size: var(--font-size-lg);
-    font-weight: 700;
-    padding: var(--spacing-base) var(--spacing-2xl);
+    padding: var(--spacing-lg) var(--spacing-3xl);
     border-radius: 32px;
     text-decoration: none;
     transition: all var(--transition-base);
-    box-shadow: var(--shadow-medium);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.cta-main {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.cta-sub {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    opacity: 0.8;
 }
 
 .cta-button:hover {
     background: var(--bg-light);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-heavy);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.25);
     color: var(--primary-dark);
+}
+
+/* アニメーション */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .hero-question {
+        font-size: 2rem;
+    }
+    
+    .hero-answer {
+        font-size: var(--font-size-lg);
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .hero-benefits {
+        gap: var(--spacing-base);
+    }
+    
+    .benefit-item {
+        min-width: 140px;
+        flex: 1;
+    }
+    
+    .benefit-icon {
+        font-size: 2rem;
+    }
+    
+    .benefit-text {
+        font-size: var(--font-size-sm);
+    }
+    
+    .hero-stats {
+        padding: var(--spacing-base) var(--spacing-lg);
+        gap: var(--spacing-base);
+    }
+    
+    .stat-number {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .cta-button {
+        padding: var(--spacing-base) var(--spacing-xl);
+    }
+    
+    .cta-main {
+        font-size: var(--font-size-lg);
+    }
 }
 
 /* ========================================
