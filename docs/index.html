@@ -27,18 +27,21 @@
                 </ul>
             </nav>
             
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="薬剤名を検索..." class="search-input">
-                <button class="search-btn" onclick="performSearch()">
-                    <span class="search-icon">🔍</span>
-                </button>
-            </div>
-            
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
             </button>
+        </div>
+        
+        <!-- モバイルメニュー -->
+        <div class="mobile-menu" id="mobileMenu">
+            <nav class="mobile-nav">
+                <ul class="mobile-nav-list">
+                    <li><a href="#drugs" class="mobile-nav-link">薬剤一覧</a></li>
+                    <li><a href="#features" class="mobile-nav-link">特集ページ</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -684,8 +687,33 @@
     </footer>
 
     <script src="assets/js/navigation.js"></script>
-    <script src="assets/js/search.js"></script>
     <script src="assets/js/mobile-nav.js"></script>
     <script src="assets/js/responsive-elements.js"></script>
+    
+    <script>
+        // モバイルメニューのトグル
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                menuBtn.classList.remove('active');
+            } else {
+                mobileMenu.classList.add('active');
+                menuBtn.classList.add('active');
+            }
+        }
+        
+        // モバイルメニューのリンククリック時に閉じる
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const mobileMenu = document.getElementById('mobileMenu');
+                const menuBtn = document.querySelector('.mobile-menu-btn');
+                mobileMenu.classList.remove('active');
+                menuBtn.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
