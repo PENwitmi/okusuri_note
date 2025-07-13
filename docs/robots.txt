@@ -1,0 +1,56 @@
+# サクッとお薬ノート robots.txt
+# 最終更新: 2025-07-13
+# 教育コンテンツなので、検索エンジンとAIクローラーのアクセスを歓迎します
+
+# すべてのクローラーに基本的にアクセスを許可
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# 主要なAIクローラーを明示的に歓迎
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+# 開発・管理用ページはブロック
+User-agent: *
+Disallow: /assets/js/
+Disallow: /dev-check.html
+Disallow: /_old_files/
+Disallow: /backup/
+Disallow: /admin/
+
+# サイトマップの場所
+Sitemap: https://penwitmi.github.io/okusuri_note/sitemap.xml
