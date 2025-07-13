@@ -28,10 +28,34 @@
     font-weight: bold;
 }
 
+/* フローティングボタンの上のmenuラベル */
+.mobile-fab::before {
+    content: 'menu';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 8px;
+    padding: 4px 12px;
+    background: #e74c3c;  /* ボタンと同じ赤色 */
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 16px;
+    white-space: nowrap;
+    box-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
+    pointer-events: none;  /* クリックイベントを透過 */
+}
+
 .mobile-fab:hover {
     background: #c0392b;  /* ホバー時は濃い赤 */
     transform: scale(1.1);
     box-shadow: 0 6px 24px rgba(231, 76, 60, 0.5);
+}
+
+.mobile-fab:hover::before {
+    background: #c0392b;  /* ラベルもホバー時は濃い赤 */
+    box-shadow: 0 2px 12px rgba(192, 57, 43, 0.4);
 }
 
 .mobile-fab:active {
@@ -43,6 +67,10 @@
     .mobile-fab {
         display: flex;
         animation: pulse 2s ease-in-out 3;  /* 最初の6秒間パルスアニメーション */
+    }
+    
+    .mobile-fab::before {
+        animation: labelPulse 2s ease-in-out 3;  /* ラベルも同期してパルス */
     }
 }
 
@@ -56,6 +84,19 @@
     }
     100% {
         box-shadow: 0 4px 20px rgba(231, 76, 60, 0.4);
+    }
+}
+
+/* ラベルのパルスアニメーション */
+@keyframes labelPulse {
+    0% {
+        box-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
+    }
+    50% {
+        box-shadow: 0 2px 16px rgba(231, 76, 60, 0.5);
+    }
+    100% {
+        box-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
     }
 }
 
