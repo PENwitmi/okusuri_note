@@ -895,124 +895,72 @@ Rp) テネリア錠 20mg
         </div>
     </section>
 
-    </main>
-    </div>
-
     <!-- Mobile Controls -->
-    <button class="mobile-fab" onclick="toggleBottomSheet()">📋</button>
-    
-    <div class="bottom-sheet-overlay" onclick="toggleBottomSheet()"></div>
-    
-    <div class="bottom-sheet">
-        <div class="bottom-sheet-handle" onclick="toggleBottomSheet()"></div>
-        <div class="bottom-sheet-content">
-            <!-- Level Selection Section -->
-            <div class="bottom-sheet-section">
-                <h3 class="bottom-sheet-title">📚 学習レベル</h3>
-                <div class="bottom-sheet-buttons">
-                    <button class="bottom-sheet-btn active" data-level="1">
-                        <span>🎓 薬学生</span>
-                        <span class="arrow">→</span>
-                    </button>
-                    <button class="bottom-sheet-btn" data-level="2">
-                        <span>🏥 実習中</span>
-                        <span class="arrow">→</span>
-                    </button>
-                    <button class="bottom-sheet-btn" data-level="3">
-                        <span>👨‍⚕️ 研修中</span>
-                        <span class="arrow">→</span>
-                    </button>
-                </div>
+    <div class="mobile-controls">
+        <button class="mobile-control-btn" onclick="toggleMobileMenu()">
+            <svg viewBox="0 0 24 24">
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+            </svg>
+        </button>
+        
+        <div class="mobile-menu-sheet" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <h3>メニュー</h3>
+                <button class="close-btn" onclick="toggleMobileMenu()">×</button>
             </div>
             
-            <!-- Home Navigation Section -->
-            <div class="bottom-sheet-section">
-                <h3 class="bottom-sheet-title">🏠 ナビゲーション</h3>
-                <div class="bottom-sheet-buttons">
-                    <a href="../index.html" class="bottom-sheet-btn">
-                        <span>🏠 トップページへ戻る</span>
-                        <span class="arrow">→</span>
-                    </a>
+            <div class="mobile-menu-content">
+                <div class="mobile-section">
+                    <h4>📚 学習レベル</h4>
+                    <div class="level-selector__inner">
+                        <button class="level-btn active" data-level="1">薬学生</button>
+                        <button class="level-btn" data-level="2">実習中</button>
+                        <button class="level-btn" data-level="3">研修中</button>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Related Drugs Section -->
-            <div class="bottom-sheet-section">
-                <h3 class="bottom-sheet-title">🔗 関連薬剤</h3>
-                <div class="bottom-sheet-buttons">
-                    <a href="sitagliptin-v3.html" class="bottom-sheet-btn">
-                        <span>📋 シタグリプチン</span>
-                        <span class="arrow">→</span>
-                    </a>
-                    <a href="linagliptin-v3.html" class="bottom-sheet-btn">
-                        <span>📋 リナグリプチン</span>
-                        <span class="arrow">→</span>
-                    </a>
-                    <a href="alogliptin-v3.html" class="bottom-sheet-btn">
-                        <span>📋 アログリプチン</span>
-                        <span class="arrow">→</span>
-                    </a>
-                    <a href="metformin-v3.html" class="bottom-sheet-btn">
-                        <span>📋 メトホルミン</span>
-                        <span class="arrow">→</span>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Drug Category Section -->
-            <div class="bottom-sheet-section">
-                <h3 class="bottom-sheet-title">🎯 薬効群</h3>
-                <div class="bottom-sheet-buttons">
-                    <a href="../categories/endocrine.html" class="bottom-sheet-btn">
-                        <span>🏥 内分泌系薬剤</span>
-                        <span class="arrow">→</span>
-                    </a>
-                    <a href="../groups/dpp4-inhibitors.html" class="bottom-sheet-btn">
-                        <span>💊 DPP-4阻害薬</span>
-                        <span class="arrow">→</span>
-                    </a>
+                
+                <div class="mobile-section">
+                    <h4>🔗 関連薬剤</h4>
+                    <div class="mobile-links">
+                        <a href="sitagliptin-v3.html" class="mobile-link">
+                            📋 シタグリプチン
+                            <span class="drug-category">世界初のDPP-4阻害薬</span>
+                        </a>
+                        <a href="linagliptin-v3.html" class="mobile-link">
+                            📋 リナグリプチン
+                            <span class="drug-category">腎機能低下用DPP-4</span>
+                        </a>
+                        <a href="alogliptin-v3.html" class="mobile-link">
+                            📋 アログリプチン
+                            <span class="drug-category">日本発DPP-4阻害薬</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="../assets/js/main.js"></script>
+    </main>
+    </div>
+
     <script src="../assets/js/level-selector.js"></script>
-    
     <script>
-        // Bottom sheet toggle functionality
-        function toggleBottomSheet() {
-            const overlay = document.querySelector('.bottom-sheet-overlay');
-            const sheet = document.querySelector('.bottom-sheet');
-            
-            overlay.classList.toggle('active');
-            sheet.classList.toggle('active');
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
         }
         
-        // Level button functionality for bottom sheet
-        document.querySelectorAll('.bottom-sheet-btn[data-level]').forEach(btn => {
+        // モバイルメニュー内のレベルボタンも同期
+        document.querySelectorAll('.mobile-menu-sheet .level-btn').forEach(btn => {
             btn.addEventListener('click', function() {
-                const level = this.dataset.level;
+                const level = this.getAttribute('data-level');
+                setActiveLevel(level);
                 
-                // Remove active class from all level buttons
-                document.querySelectorAll('.bottom-sheet-btn[data-level]').forEach(b => {
+                // モバイルメニュー内のボタンの状態も更新
+                document.querySelectorAll('.mobile-menu-sheet .level-btn').forEach(b => {
                     b.classList.remove('active');
                 });
-                document.querySelectorAll('.level-btn').forEach(b => {
-                    b.classList.remove('active');
-                });
-                
-                // Add active class to clicked button and corresponding sidebar button
                 this.classList.add('active');
-                document.querySelector(`.level-btn[data-level="${level}"]`).classList.add('active');
-                
-                // Trigger level change (assuming level-selector.js handles this)
-                if (window.showLevel) {
-                    window.showLevel(level);
-                }
-                
-                // Close bottom sheet
-                toggleBottomSheet();
             });
         });
     </script>

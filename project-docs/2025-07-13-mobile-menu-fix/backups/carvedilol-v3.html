@@ -760,123 +760,27 @@ Rp) アーチスト錠 1.25mg
     </main>
     </div>
 
-    <!-- Mobile Controls -->
-    <button class="mobile-fab" onclick="toggleBottomSheet()">📋</button>
-    
-    <div class="bottom-sheet-overlay" onclick="toggleBottomSheet()"></div>
-    
-    <div class="bottom-sheet">
-        <div class="bottom-sheet-handle" onclick="toggleBottomSheet()"></div>
-        <div class="bottom-sheet-content">
-            <!-- Level Selection Section -->
-            <div class="bottom-sheet-section">
-                <h3 class="bottom-sheet-title">📚 学習レベル</h3>
-                <div class="bottom-sheet-buttons">
-                    <button class="bottom-sheet-btn active" data-level="1">
-                        <span>🎓 薬学生</span>
-                        <span class="arrow">→</span>
-                    </button>
-                    <button class="bottom-sheet-btn" data-level="2">
-                        <span>🏥 実習中</span>
-                        <span class="arrow">→</span>
-                    </button>
-                    <button class="bottom-sheet-btn" data-level="3">
-                        <span>👨‍⚕️ 研修中</span>
-                        <span class="arrow">→</span>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Home Navigation Section -->
-            <div class="bottom-sheet-section">
-                <h3 class="bottom-sheet-title">🏠 ナビゲーション</h3>
-                <div class="bottom-sheet-buttons">
-                    <a href="../index.html" class="bottom-sheet-btn">
-                        <span>🏠 トップページへ戻る</span>
-                        <span class="arrow">→</span>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Related Drugs Section -->
-            <div class="bottom-sheet-section">
-                <h3 class="bottom-sheet-title">🔗 関連薬剤</h3>
-                <div class="bottom-sheet-buttons">
-                    <a href="bisoprolol-v3.html" class="bottom-sheet-btn">
-                        <span>📋 ビソプロロール</span>
-                        <span class="arrow">→</span>
-                    </a>
-                    <a href="metoprolol-v3.html" class="bottom-sheet-btn">
-                        <span>📋 メトプロロール</span>
-                        <span class="arrow">→</span>
-                    </a>
-                    <a href="amlodipine-v3.html" class="bottom-sheet-btn">
-                        <span>📋 アムロジピン</span>
-                        <span class="arrow">→</span>
-                    </a>
-                    <a href="enalapril-v3.html" class="bottom-sheet-btn">
-                        <span>📋 エナラプリル</span>
-                        <span class="arrow">→</span>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Drug Category Section -->
-            <div class="bottom-sheet-section">
-                <h3 class="bottom-sheet-title">🎯 薬効群</h3>
-                <div class="bottom-sheet-buttons">
-                    <a href="../categories/cardiovascular.html" class="bottom-sheet-btn">
-                        <span>🏥 循環器系薬剤</span>
-                        <span class="arrow">→</span>
-                    </a>
-                    <a href="../groups/beta-blockers.html" class="bottom-sheet-btn">
-                        <span>💊 β遮断薬</span>
-                        <span class="arrow">→</span>
-                    </a>
-                </div>
-            </div>
+    <!-- Mobile Floating Button -->
+    <button class="mobile-menu-btn" aria-label="メニューを開く">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+    </button>
+
+    <!-- Mobile Bottom Sheet -->
+    <div class="mobile-bottom-sheet">
+        <div class="sheet-header">
+            <h3>学習レベル選択</h3>
+            <button class="sheet-close" aria-label="閉じる">×</button>
+        </div>
+        <div class="level-selector">
+            <button class="level-btn active" data-level="1">薬学生向け</button>
+            <button class="level-btn" data-level="2">実習中</button>
+            <button class="level-btn" data-level="3">研修中</button>
         </div>
     </div>
 
-    <script src="../assets/js/main.js"></script>
     <script src="../assets/js/level-selector.js"></script>
-    
-    <script>
-        // Bottom sheet toggle functionality
-        function toggleBottomSheet() {
-            const overlay = document.querySelector('.bottom-sheet-overlay');
-            const sheet = document.querySelector('.bottom-sheet');
-            
-            overlay.classList.toggle('active');
-            sheet.classList.toggle('active');
-        }
-        
-        // Level button functionality for bottom sheet
-        document.querySelectorAll('.bottom-sheet-btn[data-level]').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const level = this.dataset.level;
-                
-                // Remove active class from all level buttons
-                document.querySelectorAll('.bottom-sheet-btn[data-level]').forEach(b => {
-                    b.classList.remove('active');
-                });
-                document.querySelectorAll('.level-btn').forEach(b => {
-                    b.classList.remove('active');
-                });
-                
-                // Add active class to clicked button and corresponding sidebar button
-                this.classList.add('active');
-                document.querySelector(`.level-btn[data-level="${level}"]`).classList.add('active');
-                
-                // Trigger level change (assuming level-selector.js handles this)
-                if (window.showLevel) {
-                    window.showLevel(level);
-                }
-                
-                // Close bottom sheet
-                toggleBottomSheet();
-            });
-        });
-    </script>
+    <script src="../assets/js/mobile-controls.js"></script>
 </body>
 </html>

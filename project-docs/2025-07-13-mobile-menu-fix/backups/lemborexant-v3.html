@@ -1192,52 +1192,28 @@ Rp) デエビゴ錠 5mg
     </main>
     </div>
 
-    <!-- Mobile Controls -->
-    <button class="mobile-fab" onclick="toggleBottomSheet()">📋</button>
-    
-    <div class="bottom-sheet-overlay" onclick="toggleBottomSheet()"></div>
-    
-    <div class="bottom-sheet">
-        <div class="bottom-sheet-handle" onclick="toggleBottomSheet()"></div>
+    <!-- Mobile Bottom Sheet -->
+    <div class="mobile-bottom-sheet" id="mobileBottomSheet">
+        <div class="bottom-sheet-header">
+            <div class="drag-indicator"></div>
+        </div>
         <div class="bottom-sheet-content">
-            <!-- Level Selection Section -->
-            <div class="bottom-sheet-section">
-                <h3 class="bottom-sheet-title">📚 学習レベル</h3>
-                <div class="bottom-sheet-buttons">
-                    <button class="bottom-sheet-btn active" data-level="1">
-                        <span>🎓 薬学生</span>
-                        <span class="arrow">→</span>
-                    </button>
-                    <button class="bottom-sheet-btn" data-level="2">
-                        <span>🏥 実習中</span>
-                        <span class="arrow">→</span>
-                    </button>
-                    <button class="bottom-sheet-btn" data-level="3">
-                        <span>👨‍⚕️ 研修中</span>
-                        <span class="arrow">→</span>
-                    </button>
+            <div class="level-selector-mobile">
+                <h3>📚 学習レベル</h3>
+                <div class="level-buttons">
+                    <button class="level-btn active" data-level="1">薬学生</button>
+                    <button class="level-btn" data-level="2">実習中</button>
+                    <button class="level-btn" data-level="3">研修中</button>
                 </div>
             </div>
             
-            <!-- Home Navigation Section -->
-            <div class="bottom-sheet-section">
-                <h3 class="bottom-sheet-title">🏠 ナビゲーション</h3>
-                <div class="bottom-sheet-buttons">
-                    <a href="../index.html" class="bottom-sheet-btn">
-                        <span>🏠 トップページへ戻る</span>
-                        <span class="arrow">→</span>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Related Drugs Section -->
-            <div class="bottom-sheet-section">
-                <h3 class="bottom-sheet-title">🔗 関連薬剤</h3>
-                <div class="bottom-sheet-buttons">
+            <div class="related-drugs-mobile">
+                <h3>🔗 関連薬剤</h3>
+                <div class="related-links">
                     <!-- 睡眠薬関連薬剤は今後追加予定 -->
-                    <div style="padding: 15px; color: #666; font-size: 0.9em;">
+                    <div class="sidebar-note">
                         <p>関連睡眠薬のv3ページは準備中です</p>
-                        <ul style="margin: 10px 0;">
+                        <ul style="font-size: 0.9em; margin: 10px 0;">
                             <li>スボレキサント（予定）</li>
                             <li>ゾルピデム（予定）</li>
                             <li>エスゾピクロン（予定）</li>
@@ -1246,63 +1222,18 @@ Rp) デエビゴ錠 5mg
                     </div>
                 </div>
             </div>
-            
-            <!-- Drug Category Section -->
-            <div class="bottom-sheet-section">
-                <h3 class="bottom-sheet-title">🎯 薬効群</h3>
-                <div class="bottom-sheet-buttons">
-                    <!-- カテゴリページは準備中 -->
-                    <div style="padding: 15px; color: #666; font-size: 0.9em;">
-                        <p>薬効群ページは準備中です</p>
-                        <ul style="margin: 10px 0;">
-                            <li>精神神経系薬剤（予定）</li>
-                            <li>睡眠薬一覧（予定）</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
-    <script src="../assets/js/main.js"></script>
+    <!-- Mobile Floating Button -->
+    <button class="mobile-floating-btn" id="mobileMenuBtn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+    </button>
+
+    <!-- Scripts -->
     <script src="../assets/js/level-selector.js"></script>
-    
-    <script>
-        // Bottom sheet toggle functionality
-        function toggleBottomSheet() {
-            const overlay = document.querySelector('.bottom-sheet-overlay');
-            const sheet = document.querySelector('.bottom-sheet');
-            
-            overlay.classList.toggle('active');
-            sheet.classList.toggle('active');
-        }
-        
-        // Level button functionality for bottom sheet
-        document.querySelectorAll('.bottom-sheet-btn[data-level]').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const level = this.dataset.level;
-                
-                // Remove active class from all level buttons
-                document.querySelectorAll('.bottom-sheet-btn[data-level]').forEach(b => {
-                    b.classList.remove('active');
-                });
-                document.querySelectorAll('.level-btn').forEach(b => {
-                    b.classList.remove('active');
-                });
-                
-                // Add active class to clicked button and corresponding sidebar button
-                this.classList.add('active');
-                document.querySelector(`.level-btn[data-level="${level}"]`).classList.add('active');
-                
-                // Trigger level change (assuming level-selector.js handles this)
-                if (window.showLevel) {
-                    window.showLevel(level);
-                }
-                
-                // Close bottom sheet
-                toggleBottomSheet();
-            });
-        });
-    </script>
+    <script src="../assets/js/mobile-controls.js"></script>
 </body>
 </html>
