@@ -125,61 +125,69 @@
    モバイルナビゲーション機能スタイル
 ======================================== */
 
-/* モバイルメニューの基本状態 */
+/* デスクトップではモバイルメニュー非表示 */
 .mobile-menu {
-    position: fixed;
-    top: 60px; /* ヘッダーの高さ */
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 60px);
-    background: var(--bg-primary);
-    z-index: 999;
-    transform: translateX(-100%);
-    transition: transform var(--transition-base);
-    box-shadow: var(--shadow-heavy);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    overflow-y: auto;
+    display: none;
 }
 
-.mobile-menu.active {
-    transform: translateX(0);
-}
+/* モバイルでのみメニュー表示 */
+@media (max-width: 768px) {
+    .mobile-menu {
+        display: block;
+        position: fixed;
+        top: 60px; /* ヘッダーの高さ */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: var(--bg-primary);
+        z-index: 999;
+        transform: translateX(-100%);
+        transition: transform var(--transition-base);
+        box-shadow: var(--shadow-heavy);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        overflow-y: auto;
+    }
 
-.mobile-nav {
-    padding: var(--spacing-xl);
-}
+    .mobile-menu.active {
+        transform: translateX(0);
+    }
 
-.mobile-nav-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-}
+    .mobile-nav {
+        padding: var(--spacing-xl);
+    }
 
-.mobile-nav-link {
-    display: block;
-    font-size: var(--font-size-lg);
-    padding: var(--spacing-base) var(--spacing-xl);
-    border-radius: 32px;
-    background: var(--bg-secondary);
-    text-align: center;
-    transition: all var(--transition-base);
-    border: 2px solid transparent;
-    color: var(--text-primary);
-    text-decoration: none;
-    font-weight: 500;
-}
+    .mobile-nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
 
-.mobile-nav-link:hover,
-.mobile-nav-link.active {
-    background: var(--primary-color);
-    color: white;
-    transform: scale(1.02);
-    border-color: var(--primary-dark);
-    box-shadow: var(--shadow-medium);
+    .mobile-nav-link {
+        display: block;
+        font-size: var(--font-size-lg);
+        padding: var(--spacing-base) var(--spacing-xl);
+        border-radius: 32px;
+        background: var(--bg-secondary);
+        text-align: center;
+        transition: all var(--transition-base);
+        border: 2px solid transparent;
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
+        background: var(--primary-color);
+        color: white;
+        transform: scale(1.02);
+        border-color: var(--primary-dark);
+        box-shadow: var(--shadow-medium);
+    }
 }
 
 /* モバイルでのデスクトップナビゲーション非表示 */
