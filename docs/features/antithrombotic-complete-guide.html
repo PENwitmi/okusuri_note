@@ -193,7 +193,7 @@
         <!-- 詳しい病態生理（後半に配置） -->
         <section class="feature-section">
             <div class="section-container">
-                <h2 class="section-title">📚 もっと詳しく知りたい人へ：血栓形成のメカニズム</h2>
+                <h2 class="section-title">📚 もっと詳しく知りたい人へ：血栓形成のメカニズム <span style="font-size: 16px; font-weight: normal; color: #666;">（読み飛ばしてOK）</span></h2>
                 
                 <div class="intro-content">
                     <div class="pathophysiology-detail" style="margin: 30px 0; padding: 25px; background: #F5F5F5; border-radius: 12px;">
@@ -323,31 +323,32 @@ TF + 第Ⅶ因子 → TF-Ⅶa複合体
                 <div class="flow-section">
                     <h3 style="text-align: center; margin-bottom: 30px;">抗血栓薬の全体像</h3>
                     
-                    <div class="drug-flow" style="flex-direction: column; align-items: stretch;">
+                    <!-- モバイルファースト改善版 -->
+                    <div class="drug-categories-container" style="display: grid; grid-template-columns: 1fr; gap: 30px;">
                         <!-- 抗血小板薬 -->
-                        <div style="margin-bottom: 30px;">
-                            <h4 style="color: var(--antiplatelet-color); margin-bottom: 20px;">
-                                🟠 抗血小板薬（動脈血栓に対応）
+                        <div class="drug-category-box" style="padding: 25px; background: #FFF5F0; border-radius: 16px; border: 3px solid var(--antiplatelet-color);">
+                            <h4 style="color: var(--antiplatelet-color); margin-bottom: 20px; text-align: center;">
+                                🟠 抗血小板薬<br>
+                                <span style="font-size: 14px; font-weight: normal;">（動脈血栓に対応）</span>
                             </h4>
-                            <div class="drug-flow">
-                                <div class="drug-flow-item">
+                            <div class="drug-flow-mobile" style="display: grid; gap: 15px;">
+                                <div class="drug-flow-item" style="position: relative; margin-bottom: 10px;">
                                     <span class="drug-number" style="background: var(--antiplatelet-color);">1</span>
                                     <strong>アスピリン</strong>
                                     <span class="drug-type">COX阻害</span>
                                     <span class="drug-role">最も基本的</span>
+                                    <div class="flow-arrow-mobile" style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 20px; color: var(--antiplatelet-color);">▼</div>
                                 </div>
-                                <div class="flow-arrow">→</div>
-                                <div class="drug-flow-item">
+                                <div class="drug-flow-item" style="position: relative; margin-bottom: 10px;">
                                     <span class="drug-number" style="background: var(--antiplatelet-color);">2</span>
                                     <strong>クロピドグレル</strong>
                                     <span class="drug-type">P2Y12阻害</span>
                                     <span class="drug-role">DAPT基本薬</span>
+                                    <div class="flow-arrow-mobile" style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 20px; color: var(--antiplatelet-color);">▼</div>
                                 </div>
-                                <div class="flow-arrow">→</div>
                                 <div class="drug-flow-item">
                                     <span class="drug-number" style="background: var(--antiplatelet-color);">3</span>
-                                    <strong>プラスグレル</strong>
-                                    <strong>チカグレロル</strong>
+                                    <strong>プラスグレル<br>チカグレロル</strong>
                                     <span class="drug-type">新世代P2Y12</span>
                                     <span class="drug-role">より強力</span>
                                 </div>
@@ -355,18 +356,19 @@ TF + 第Ⅶ因子 → TF-Ⅶa複合体
                         </div>
                         
                         <!-- 抗凝固薬 -->
-                        <div>
-                            <h4 style="color: var(--anticoagulant-color); margin-bottom: 20px;">
-                                🔵 抗凝固薬（静脈血栓に対応）
+                        <div class="drug-category-box" style="padding: 25px; background: #E0F7F6; border-radius: 16px; border: 3px solid var(--anticoagulant-color);">
+                            <h4 style="color: var(--anticoagulant-color); margin-bottom: 20px; text-align: center;">
+                                🔵 抗凝固薬<br>
+                                <span style="font-size: 14px; font-weight: normal;">（静脈血栓に対応）</span>
                             </h4>
-                            <div class="drug-flow">
-                                <div class="drug-flow-item">
+                            <div class="drug-flow-mobile" style="display: grid; gap: 15px;">
+                                <div class="drug-flow-item" style="position: relative; margin-bottom: 10px;">
                                     <span class="drug-number" style="background: var(--anticoagulant-color);">1</span>
                                     <strong>ワルファリン</strong>
                                     <span class="drug-type">VK拮抗薬</span>
                                     <span class="drug-role">70年の歴史</span>
+                                    <div class="flow-arrow-mobile" style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 20px; color: var(--anticoagulant-color);">▼</div>
                                 </div>
-                                <div class="flow-arrow">→</div>
                                 <div class="drug-flow-item" style="border-color: var(--doac-color);">
                                     <span class="drug-number" style="background: var(--doac-color);">2</span>
                                     <strong>DOAC</strong>
@@ -382,6 +384,59 @@ TF + 第Ⅶ因子 → TF-Ⅶa複合体
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- レスポンシブスタイル -->
+                    <style>
+                        /* タブレット以上で横並び */
+                        @media screen and (min-width: 768px) {
+                            .drug-categories-container {
+                                grid-template-columns: 1fr 1fr !important;
+                            }
+                            
+                            .drug-flow-mobile {
+                                display: flex !important;
+                                align-items: center;
+                                justify-content: space-around;
+                                gap: 20px !important;
+                            }
+                            
+                            .drug-flow-item {
+                                margin-bottom: 0 !important;
+                            }
+                            
+                            .flow-arrow-mobile {
+                                bottom: auto !important;
+                                left: auto !important;
+                                right: -10px !important;
+                                top: 50% !important;
+                                transform: translateY(-50%) !important;
+                                font-size: 24px !important;
+                            }
+                            
+                            .flow-arrow-mobile::before {
+                                content: "→" !important;
+                            }
+                        }
+                        
+                        /* デスクトップで最適化 */
+                        @media screen and (min-width: 1024px) {
+                            .drug-flow-item {
+                                min-width: 180px;
+                            }
+                        }
+                        
+                        /* 矢印の内容を上書き */
+                        @media screen and (min-width: 768px) {
+                            .flow-arrow-mobile {
+                                font-size: 0 !important;
+                            }
+                            
+                            .flow-arrow-mobile::after {
+                                content: "→" !important;
+                                font-size: 24px !important;
+                            }
+                        }
+                    </style>
                 </div>
             </div>
         </section>
