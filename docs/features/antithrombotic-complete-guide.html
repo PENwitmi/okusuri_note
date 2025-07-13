@@ -369,26 +369,21 @@
 
                 <!-- ワルファリンとの比較 -->
                 <div style="margin-top: 40px; padding: 20px; background: #F5F5F5; border-radius: 12px;">
-                    <h4 style="margin-bottom: 15px;">💡 ワルファリン vs DOAC：どちらを選ぶ？</h4>
-                    <div class="info-grid">
-                        <div class="drug-info-card">
-                            <h5>ワルファリンを選ぶ場合</h5>
-                            <ul>
-                                <li><strong>機械弁</strong>（唯一の選択肢）</li>
-                                <li>重度腎不全（CrCl <15）</li>
-                                <li>経済的制約がある</li>
-                                <li>DOACで出血・血栓あり</li>
-                            </ul>
-                        </div>
-                        <div class="drug-info-card">
-                            <h5>DOACが優先される場合</h5>
-                            <ul>
-                                <li>非弁膜症性心房細動</li>
-                                <li>静脈血栓塞栓症</li>
-                                <li>INR管理困難</li>
-                                <li>食事制限を避けたい</li>
-                            </ul>
-                        </div>
+                    <h4 style="margin-bottom: 15px;">🚨 DOACじゃなくてワルファリンを使うしかないケース</h4>
+                    <div style="padding: 20px; background: #FFEBEE; border-radius: 12px;">
+                        <p style="font-size: 18px; margin-bottom: 15px;">
+                            <strong>原則：抗凝固薬はDOACファースト！</strong><br>
+                            でも、以下の場合だけはワルファリンしか使えません：
+                        </p>
+                        <ol style="line-height: 2;">
+                            <li><span style="color: red; font-weight: bold;">機械弁</span>（DOACは絶対禁忌！）</li>
+                            <li><strong>重度腎不全</strong>（CrCl &lt;15 mL/min）</li>
+                            <li><strong>妊娠の可能性</strong>（DOACは妊婦禁忌）</li>
+                            <li><strong>抗リン脂質抗体症候群</strong>（DOACで血栓リスク↑）</li>
+                        </ol>
+                        <p style="margin-top: 15px; font-size: 14px;">
+                            ※ 経済的理由だけでワルファリンを選ぶのは推奨されません（管理コストを考慮すると必ずしも安くない）
+                        </p>
                     </div>
                 </div>
             </div>
@@ -398,70 +393,176 @@
         <!-- 疾患別の薬剤選択（実践編） -->
         <section class="feature-section">
             <div class="section-container">
-                <h2 class="section-title">🏥 疾患別の薬剤選択（実践編）</h2>
+                <h2 class="section-title">🏥 現場で迷わない！シチュエーション別の薬剤選択</h2>
                 
-                <div style="margin-bottom: 30px; padding: 20px; background: #FFF9C4; border-radius: 12px;">
-                    <h3>1. 心房細動（静脈血栓型）</h3>
+                <div style="margin-bottom: 30px; padding: 20px; background: #E8F5E9; border-radius: 12px;">
+                    <h3>🚨 まず押さえる3つの鉄則</h3>
+                    <ol style="line-height: 2;">
+                        <li><strong>血栓の色で薬を選ぶ</strong>：白色（動脈）→抗血小板薬、赤色（静脈）→抗凝固薬</li>
+                        <li><strong>腎機能は必ずチェック</strong>：特にDOACは腎機能で用量が変わる</li>
+                        <li><strong>併用薬を確認</strong>：相互作用で効果増強・減弱のリスク</li>
+                    </ol>
+                </div>
+                
+                <!-- 急性冠症候群 -->
+                <div style="margin-bottom: 30px; padding: 20px; background: #FFEBEE; border-radius: 12px;">
+                    <h3>💔 急性冠症候群（ACS）- 迷ったらこの順番で考える</h3>
                     
                     <div style="margin: 20px 0;">
-                        <h4>リスク評価：CHA₂DS₂-VAScスコア（国試必須）</h4>
-                        <table style="width: 100%; border-collapse: collapse; margin: 10px 0;">
-                            <tr style="background: #F5F5F5;">
-                                <th style="padding: 10px; border: 1px solid #ddd;">項目</th>
-                                <th style="padding: 10px; border: 1px solid #ddd;">点数</th>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>C</strong>：うっ血性心不全</td>
-                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">1点</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>H</strong>：高血圧</td>
-                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">1点</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>A₂</strong>：年齢≥75歳</td>
-                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2点</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>D</strong>：糖尿病</td>
-                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">1点</td>
-                            </tr>
-                            <tr>
+                        <h4>🎯 基本戦略：DAPT（二剤併用）が鉄則</h4>
+                        
+                        <div style="padding: 15px; background: white; border-radius: 8px; margin-bottom: 15px;">
+                            <p style="font-weight: bold; font-size: 18px; color: #D32F2F;">緊急カテ室で：Loading dose を忘れるな！</p>
+                            <ul style="margin-top: 10px; line-height: 1.8;">
+                                <li>アスピリン 162-325mg（嚙み砕いて飲ませる）</li>
+                                <li>P2Y12阻害薬のローディング：
+                                    <ul style="margin-top: 5px; margin-left: 20px;">
+                                        <li>プラスグレル 20mg（最速・最強）</li>
+                                        <li>チカグレロル 180mg（可逆的結合）</li>
+                                        <li>クロピドグレル 600mg（CYP2C19要注意）</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div style="padding: 15px; background: #FFF3E0; border-radius: 8px;">
+                            <h5>⏱️ DAPT期間の決め方（これが実習で聞かれる！）</h5>
+                            <div style="display: grid; gap: 10px; margin-top: 10px;">
+                                <div style="padding: 10px; background: white; border-radius: 6px;">
+                                    <strong style="color: green;">標準リスク患者</strong>
+                                    <p>→ 12ヶ月継続（これが基本）</p>
+                                </div>
+                                <div style="padding: 10px; background: white; border-radius: 6px;">
+                                    <strong style="color: orange;">高出血リスク（HBR）</strong>
+                                    <p>→ 3-6ヶ月に短縮を検討</p>
+                                    <ul style="font-size: 14px; margin-top: 5px;">
+                                        <li>75歳以上</li>
+                                        <li>出血既往</li>
+                                        <li>抗凝固薬併用</li>
+                                    </ul>
+                                </div>
+                                <div style="padding: 10px; background: white; border-radius: 6px;">
+                                    <strong style="color: red;">超高血栓リスク</strong>
+                                    <p>→ 12ヶ月以上の延長考慮</p>
+                                    <ul style="font-size: 14px; margin-top: 5px;">
+                                        <li>ステント血栓症既往</li>
+                                        <li>糖尿病＋多枝病変</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 心房細動 -->
+                <div style="margin-bottom: 30px; padding: 20px; background: #E3F2FD; border-radius: 12px;">
+                    <h3>💙 心房細動 - CHA₂DS₂-VASc を実践で使う</h3>
+                    
+                    <div style="margin: 20px 0;">
+                        <h4>🎯 30秒で判断する方法</h4>
+                        
+                        <div style="padding: 15px; background: white; border-radius: 8px; margin-bottom: 15px;">
+                            <p style="font-weight: bold; font-size: 18px;">Step1: 年齢だけでまず判断</p>
+                            <div style="display: grid; gap: 10px; margin-top: 10px;">
+                                <div style="padding: 10px; background: #E8F5E9; border-radius: 6px;">
+                                    <strong>65歳未満の男性</strong> → 他にリスクなければ抗凝固不要
+                                </div>
+                                <div style="padding: 10px; background: #FFF3E0; border-radius: 6px;">
+                                    <strong>65-74歳</strong> → 1点。もう1つリスクあれば開始
+                                </div>
+                                <div style="padding: 10px; background: #FFEBEE; border-radius: 6px;">
+                                    <strong>75歳以上</strong> → 2点。即抗凝固薬開始！
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="padding: 15px; background: white; border-radius: 8px;">
+                            <p style="font-weight: bold; font-size: 18px;">Step2: DOACの選び方（実践的アプローチ）</p>
+                            <div style="margin-top: 10px;">
+                                <p><strong>🥇 第一選択を決める質問</strong></p>
+                                <ul style="line-height: 2;">
+                                    <li>腎機能は？ → CrCl 30未満ならアピキサバンかワルファリン</li>
+                                    <li>出血が心配？ → アピキサバン（大出血最少）</li>
+                                    <li>服薬アドヒアランス不安？ → リバーロキサバン（1日1回）</li>
+                                    <li>薬価が気になる？ → エドキサバン（最安値）</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PCI後のAF患者 -->
+                <div style="margin-bottom: 30px; padding: 20px; background: #F3E5F5; border-radius: 12px;">
+                    <h3>🔥 最難関：PCI後の心房細動患者</h3>
+                    
+                    <div style="padding: 15px; background: white; border-radius: 8px;">
+                        <h4 style="color: #6A1B9A;">Triple therapy は必要最小限に！</h4>
+                        
+                        <div style="margin-top: 15px; padding: 15px; background: #FCE4EC; border-radius: 8px;">
+                            <p style="font-weight: bold;">🚨 出血リスクが3倍になることを忘れるな</p>
+                        </div>
+                        
+                        <div style="margin-top: 15px;">
+                            <h5>実践的アプローチ（最新ガイドライン準拠）</h5>
+                            <ol style="line-height: 2;">
+                                <li><strong>PCI直後〜1ヶ月</strong>
+                                    <ul>
+                                        <li>Triple therapy（DOAC＋アスピリン＋クロピドグレル）</li>
+                                        <li>ただしHBRなら1週間で打ち切りも考慮</li>
+                                    </ul>
+                                </li>
+                                <li><strong>1ヶ月〜12ヶ月</strong>
+                                    <ul>
+                                        <li>Dual therapy（DOAC＋クロピドグレル）</li>
+                                        <li>アスピリンは中止！</li>
+                                    </ul>
+                                </li>
+                                <li><strong>12ヶ月以降</strong>
+                                    <ul>
+                                        <li>DOAC単独</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                            <tr style="background: #FFE0B2;">
                                 <td style="padding: 8px; border: 1px solid #ddd;"><strong>S₂</strong>：脳梗塞/TIA既往</td>
-                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2点</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center; font-weight: bold;">2点</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Stroke（既往は2点！）</td>
                             </tr>
                             <tr>
                                 <td style="padding: 8px; border: 1px solid #ddd;"><strong>V</strong>：血管疾患</td>
                                 <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">1点</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Vascular（心筋梗塞等）</td>
                             </tr>
                             <tr>
                                 <td style="padding: 8px; border: 1px solid #ddd;"><strong>A</strong>：年齢65-74歳</td>
                                 <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">1点</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Age（中年は1点）</td>
                             </tr>
                             <tr>
                                 <td style="padding: 8px; border: 1px solid #ddd;"><strong>Sc</strong>：女性</td>
                                 <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">1点</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Sex category</td>
                             </tr>
                         </table>
                     </div>
                     
-                    <div style="margin: 20px 0; padding: 15px; background: white; border-radius: 8px;">
-                        <h4>薬剤選択の実際</h4>
-                        <pre style="font-family: monospace; line-height: 1.8;">
-男性≥2点、女性≥3点 → 抗凝固薬推奨
-    ↓
-CrCl≥30 → DOAC第一選択
-  • アピキサバン 5mg×2 or 2.5mg×2（減量基準該当時）
-  • リバーロキサバン 15mg×1（食後）
-  • エドキサバン 60mg×1 or 30mg×1（体重≤60kg）
-  • ダビガトラン 150mg×2 or 110mg×2（高齢者）
-
-CrCl 15-29 → 選択肢限定
-  • アピキサバン 2.5mg×2
-  • ワルファリン（PT-INR 2.0-3.0）
-
-CrCl<15 → ワルファリンのみ
-                        </pre>
+                    <div style="margin: 20px 0; padding: 20px; background: #E8F5E9; border-radius: 8px;">
+                        <h4>実践的な処方の流れ</h4>
+                        <ol style="line-height: 2;">
+                            <li><strong>CHA₂DS₂-VASc スコア 2点以上</strong> → 抗凝固薬を開始</li>
+                            <li><strong>腎機能チェック</strong>（CrCl計算）</li>
+                            <li><strong>DOACを第一選択</strong>（機械弁等の禁忌がなければ）
+                                <ul style="margin-top: 10px;">
+                                    <li>CrCl ≥50：どのDOACでもOK</li>
+                                    <li>CrCl 30-49：用量調整を考慮</li>
+                                    <li>CrCl 15-29：アピキサバンかワルファリン</li>
+                                    <li>CrCl &lt;15：ワルファリンのみ</li>
+                                </ul>
+                            </li>
+                        </ol>
                     </div>
                 </div>
                 
@@ -623,154 +724,324 @@ PCI直後（1-4週間、最小限に）：
         <!-- 薬剤相互作用と臨床上の注意点 -->
         <section class="feature-section">
             <div class="section-container">
-                <h2 class="section-title">⚠️ 薬剤相互作用と臨床上の注意点</h2>
+                <h2 class="section-title">⚠️ 処方監査で見逃せない！相互作用チェックリスト</h2>
                 
-                <div style="margin-bottom: 30px; padding: 20px; background: #FCE4EC; border-radius: 12px;">
-                    <h3>処方監査で確認すべきポイント</h3>
+                <div style="margin-bottom: 30px; padding: 20px; background: #FFEBEE; border-radius: 12px;">
+                    <h3>🚨 処方箋を見たら5秒でチェックする項目</h3>
                     
                     <div style="margin: 20px 0;">
-                        <h4>1. P-gp/CYP3A4阻害薬との相互作用</h4>
+                        <h4>1. DOAC + 危険な併用薬 = 即疑義照会！</h4>
                         
                         <div style="padding: 15px; background: white; border-radius: 8px;">
-                            <p><strong style="color: red;">強力な阻害薬（DOAC禁忌または減量）</strong>：</p>
-                            <ul style="line-height: 1.8;">
-                                <li><strong>イトラコナゾール</strong>：全DOACで要注意</li>
-                                <li><strong>リトナビル</strong>：全DOACで要注意</li>
-                                <li><strong>クラリスロマイシン</strong>：リバーロキサバンは禁忌</li>
+                            <div style="padding: 10px; background: #FFCDD2; border-radius: 6px; margin-bottom: 10px;">
+                                <p style="font-weight: bold; font-size: 18px; margin: 0;">🔴 絶対NGの組み合わせ（禁忌レベル）</p>
+                            </div>
+                            <ul style="line-height: 2; font-weight: bold;">
+                                <li>リバーロキサバン + クラリスロマイシン → 血中濃度2倍！</li>
+                                <li>ダビガトラン + イトラコナゾール → 血中濃度2.4倍！</li>
+                                <li>全DOAC + リトナビル → 出血リスク激増</li>
                             </ul>
                             
-                            <p style="margin-top: 15px;"><strong>中等度阻害薬（注意）</strong>：</p>
-                            <ul style="line-height: 1.8;">
-                                <li>ベラパミル：ダビガトラン減量考慮</li>
-                                <li>アミオダロン：DOAC血中濃度上昇</li>
-                                <li>ジルチアゼム：モニタリング強化</li>
-                            </ul>
+                            <div style="margin-top: 20px; padding: 10px; background: #FFF3E0; border-radius: 6px;">
+                                <p style="font-weight: bold;">⚠️ 減量を提案すべき組み合わせ</p>
+                            </div>
+                            <div style="display: grid; gap: 10px; margin-top: 10px;">
+                                <div style="padding: 8px; background: #FFFDE7; border-radius: 4px;">
+                                    <strong>ダビガトラン + ベラパミル</strong>
+                                    <p style="font-size: 14px; margin: 5px 0 0 20px;">→ ダビガトラン110mg×2に減量提案</p>
+                                </div>
+                                <div style="padding: 8px; background: #FFFDE7; border-radius: 4px;">
+                                    <strong>アピキサバン + ジルチアゼム</strong>
+                                    <p style="font-size: 14px; margin: 5px 0 0 20px;">→ 腎機能低下があれば2.5mg×2を検討</p>
+                                </div>
+                                <div style="padding: 8px; background: #FFFDE7; border-radius: 4px;">
+                                    <strong>リバーロキサバン + アミオダロン</strong>
+                                    <p style="font-size: 14px; margin: 5px 0 0 20px;">→ 10mgへの減量を考慮</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
                     <div style="margin: 20px 0;">
-                        <h4>2. 抗血小板薬の相互作用</h4>
+                        <h4>2. 抗血小板薬の「効かない」組み合わせ</h4>
                         
                         <div style="padding: 15px; background: white; border-radius: 8px;">
-                            <p><strong style="color: red;">クロピドグレル + PPIの問題</strong></p>
-                            <ul style="line-height: 1.8;">
-                                <li><strong>避けるべき組み合わせ</strong>：
-                                    <ul>
-                                        <li>クロピドグレル + オメプラゾール</li>
-                                        <li>クロピドグレル + エソメプラゾール</li>
+                            <div style="padding: 15px; background: #FCE4EC; border-radius: 8px; margin-bottom: 15px;">
+                                <p style="font-weight: bold; font-size: 18px;">💊 クロピドグレル + PPI = 効果半減の危機！</p>
+                                <p style="margin-top: 10px;">CYP2C19を介した相互作用で活性代謝物が減少</p>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div style="padding: 15px; background: #FFEBEE; border-radius: 8px;">
+                                    <h5 style="color: #D32F2F;">❌ 避けるべきPPI</h5>
+                                    <ul style="line-height: 1.8;">
+                                        <li><strong>オメプラゾール</strong></li>
+                                        <li><strong>エソメプラゾール</strong></li>
                                     </ul>
-                                </li>
-                                <li><strong>推奨される代替薬</strong>：
-                                    <ul>
-                                        <li>ランソプラゾール（CYP2C19阻害弱い）</li>
-                                        <li>ラベプラゾール（CYP代謝受けない）</li>
+                                    <p style="margin-top: 10px; font-size: 14px;">→ 心血管イベントリスク45%増加</p>
+                                </div>
+                                <div style="padding: 15px; background: #E8F5E9; border-radius: 8px;">
+                                    <h5 style="color: #2E7D32;">✅ 安全なPPI</h5>
+                                    <ul style="line-height: 1.8;">
+                                        <li><strong>ランソプラゾール</strong></li>
+                                        <li><strong>ラベプラゾール</strong></li>
                                     </ul>
-                                </li>
-                            </ul>
+                                    <p style="margin-top: 10px; font-size: 14px;">→ 相互作用なし/最小限</p>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 15px; padding: 10px; background: #E3F2FD; border-radius: 6px;">
+                                <p style="font-weight: bold;">💡 処方提案の例文</p>
+                                <p style="font-style: italic; margin-top: 5px;">「クロピドグレルとオメプラゾールの相互作用により、抗血小板作用が減弱する可能性があります。ランソプラゾールへの変更を提案させていただけますでしょうか。」</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <div style="margin-bottom: 30px; padding: 20px; background: #E8EAF6; border-radius: 12px;">
-                    <h3>周術期管理（実習必須）</h3>
+                    <h3>🔪 周術期管理 - 外科医から「いつ止める？」と聞かれたら</h3>
                     
                     <div style="margin: 20px 0;">
-                        <h4>DOAC中止期間</h4>
+                        <h4>📅 DOAC中止タイミング早見表</h4>
+                        
+                        <div style="padding: 15px; background: white; border-radius: 8px; margin-bottom: 15px;">
+                            <p style="font-weight: bold; font-size: 18px; color: #1976D2;">💡 覚え方：「24の法則」</p>
+                            <ul style="margin-top: 10px; line-height: 1.8;">
+                                <li>基本は<strong>24時間前</strong>に中止</li>
+                                <li>リスクが上がるごとに<strong>+24時間</strong>追加</li>
+                            </ul>
+                        </div>
                         
                         <table style="width: 100%; border-collapse: collapse;">
                             <thead>
-                                <tr style="background: #F5F5F5;">
-                                    <th style="padding: 10px; border: 1px solid #ddd;">手術リスク</th>
-                                    <th style="padding: 10px; border: 1px solid #ddd;">CrCl≥50</th>
-                                    <th style="padding: 10px; border: 1px solid #ddd;">CrCl 30-49</th>
+                                <tr style="background: #3F51B5; color: white;">
+                                    <th style="padding: 12px; border: 1px solid #ddd;">状況</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd;">中止タイミング</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd;">具体例</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td style="padding: 8px; border: 1px solid #ddd;">低出血リスク</td>
-                                    <td style="padding: 8px; border: 1px solid #ddd;">24時間前</td>
-                                    <td style="padding: 8px; border: 1px solid #ddd;">48時間前</td>
+                                <tr style="background: #E8F5E9;">
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>低リスク手術 + 腎機能正常</strong></td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">24時間前</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">抜歯、白内障</td>
                                 </tr>
-                                <tr>
-                                    <td style="padding: 8px; border: 1px solid #ddd;">高出血リスク</td>
-                                    <td style="padding: 8px; border: 1px solid #ddd;">48時間前</td>
-                                    <td style="padding: 8px; border: 1px solid #ddd;">72時間前</td>
+                                <tr style="background: #FFF3E0;">
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>高リスク手術 or 腎機能低下</strong></td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">48時間前</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">腹部手術、整形外科</td>
+                                </tr>
+                                <tr style="background: #FFEBEE;">
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>高リスク + 腎機能低下</strong></td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">72時間前</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">脊椎手術、脳外科</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     
                     <div style="margin: 20px 0; padding: 15px; background: white; border-radius: 8px;">
-                        <h4>抗血小板薬中止期間</h4>
-                        <ul style="line-height: 1.8;">
-                            <li><strong>アスピリン</strong>：心血管リスク高ければ継続</li>
-                            <li><strong>クロピドグレル</strong>：5日前中止</li>
-                            <li><strong>プラスグレル</strong>：7日前中止</li>
-                            <li><strong>チカグレロル</strong>：3-5日前（可逆的結合のため短い）</li>
-                        </ul>
+                        <h4>💊 抗血小板薬の中止判断フロー</h4>
+                        
+                        <div style="padding: 15px; background: #E3F2FD; border-radius: 8px; margin-bottom: 15px;">
+                            <p style="font-weight: bold; font-size: 16px;">🤔 まず自問：「止めるリスク vs 続けるリスク」</p>
+                        </div>
+                        
+                        <div style="display: grid; gap: 15px;">
+                            <div style="padding: 15px; background: #E8F5E9; border-radius: 8px;">
+                                <h5 style="color: #2E7D32;">✅ アスピリン継続を考慮</h5>
+                                <ul>
+                                    <li>冠動脈ステント留置後1年以内</li>
+                                    <li>最近の心筋梗塞・脳梗塞（3ヶ月以内）</li>
+                                    <li>高リスク（糖尿病＋多枝病変など）</li>
+                                </ul>
+                                <p style="margin-top: 10px; font-style: italic;">「心臓を守るか、出血を防ぐか」の天秤</p>
+                            </div>
+                            
+                            <div style="padding: 15px; background: #FFF3E0; border-radius: 8px;">
+                                <h5 style="color: #F57C00;">⏰ 中止期間の覚え方</h5>
+                                <ul style="line-height: 2;">
+                                    <li><strong>アスピリン</strong>：7日（不可逆的阻害）</li>
+                                    <li><strong>クロピドグレル</strong>：5日（代謝物の半減期）</li>
+                                    <li><strong>プラスグレル</strong>：7日（より強力）</li>
+                                    <li><strong>チカグレロル</strong>：3日（可逆的で短い！）</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 15px; padding: 10px; background: #FCE4EC; border-radius: 6px;">
+                            <p style="font-weight: bold;">🚨 実習での頻出質問への模範解答</p>
+                            <p style="margin-top: 5px;">「DES留置後6ヶ月の患者さんですので、アスピリンは継続し、クロピドグレルのみ5日前に中止することを提案します。」</p>
+                        </div>
                     </div>
                 </div>
                 
                 <div style="margin-bottom: 30px; padding: 20px; background: #FFCDD2; border-radius: 12px;">
-                    <h3>出血時の対応（国試頻出）</h3>
+                    <h3>🚨 大出血！どうする？ - 3分以内の初期対応</h3>
                     
                     <div style="margin: 20px 0;">
-                        <h4>中和・拮抗薬</h4>
+                        <h4>⏱️ 時間との勝負！薬剤別対応フロー</h4>
                         
                         <div style="padding: 15px; background: white; border-radius: 8px;">
-                            <p><strong>1. ダビガトラン</strong></p>
-                            <ul style="line-height: 1.8;">
-                                <li>特異的中和薬：<strong>イダルシズマブ（プリズバインド®）</strong></li>
-                                <li>用量：5g（2.5g×2バイアル）静注</li>
-                                <li>効果：投与後数分で中和</li>
-                            </ul>
+                            <!-- ダビガトラン -->
+                            <div style="margin-bottom: 20px; padding: 15px; background: #E3F2FD; border-radius: 8px;">
+                                <h5 style="color: #1565C0; font-size: 20px;">💉 ダビガトラン → イダルシズマブ一択！</h5>
+                                <div style="display: grid; gap: 10px; margin-top: 10px;">
+                                    <div style="padding: 10px; background: white; border-radius: 6px;">
+                                        <strong>薬剤名</strong>：プリズバインド® 2.5g×2バイアル
+                                    </div>
+                                    <div style="padding: 10px; background: white; border-radius: 6px;">
+                                        <strong>投与法</strong>：5分以内に静注（各バイアル5-10分）
+                                    </div>
+                                    <div style="padding: 10px; background: #C5E1A5; border-radius: 6px;">
+                                        <strong>効果</strong>：投与後5分で88%、4時間で100%中和
+                                    </div>
+                                </div>
+                                <p style="margin-top: 10px; font-style: italic; color: #0D47A1;">💡 覚え方：「ダビ」には「イダル」で即中和！</p>
+                            </div>
                             
-                            <p style="margin-top: 15px;"><strong>2. 第Xa阻害薬</strong></p>
-                            <ul style="line-height: 1.8;">
-                                <li>アンデキサネット アルファ（本邦未承認）</li>
-                                <li>代替：4因子含有プロトロンビン複合体製剤</li>
-                            </ul>
+                            <!-- Xa阻害薬 -->
+                            <div style="margin-bottom: 20px; padding: 15px; background: #FFF3E0; border-radius: 8px;">
+                                <h5 style="color: #E65100; font-size: 20px;">⚡ Xa阻害薬（リバーロ、アピキサ、エドキサ）</h5>
+                                <div style="margin-top: 10px;">
+                                    <p style="font-weight: bold; color: #BF360C;">日本では特異的中和薬なし！代替手段で対応</p>
+                                    <ol style="margin-top: 10px; line-height: 2;">
+                                        <li><strong>第一選択</strong>：4因子PCC（ケイセントラ®）500-1000単位</li>
+                                        <li><strong>第二選択</strong>：活性型第VII因子（ノボセブン®）</li>
+                                        <li><strong>補助的</strong>：トラネキサム酸 1g静注</li>
+                                    </ol>
+                                </div>
+                                <p style="margin-top: 10px; padding: 10px; background: #FFCCBC; border-radius: 6px;">
+                                    ⚠️ アンデキサネット アルファは本邦未承認（欧米では使用可）
+                                </p>
+                            </div>
                             
-                            <p style="margin-top: 15px;"><strong>3. ワルファリン</strong></p>
-                            <ul style="line-height: 1.8;">
-                                <li>ビタミンK 10mg 緩徐静注</li>
-                                <li>緊急時：新鮮凍結血漿（FFP）</li>
-                                <li>最緊急時：プロトロンビン複合体製剤</li>
-                            </ul>
+                            <!-- ワルファリン -->
+                            <div style="margin-bottom: 20px; padding: 15px; background: #E8F5E9; border-radius: 8px;">
+                                <h5 style="color: #1B5E20; font-size: 20px;">🌿 ワルファリン → ビタミンK＋α</h5>
+                                <div style="display: grid; gap: 10px; margin-top: 10px;">
+                                    <div style="padding: 10px; background: white; border-radius: 6px;">
+                                        <strong>軽度出血（INR 4-10）</strong>
+                                        <p style="margin-top: 5px;">→ ビタミンK 2.5-5mg 経口</p>
+                                    </div>
+                                    <div style="padding: 10px; background: #FFF9C4; border-radius: 6px;">
+                                        <strong>中等度（INR >10）</strong>
+                                        <p style="margin-top: 5px;">→ ビタミンK 10mg 緩徐静注</p>
+                                    </div>
+                                    <div style="padding: 10px; background: #FFCCBC; border-radius: 6px;">
+                                        <strong>重篤出血</strong>
+                                        <p style="margin-top: 5px;">→ ビタミンK 10mg + PCC or FFP</p>
+                                    </div>
+                                </div>
+                                <p style="margin-top: 10px; color: #2E7D32;">⏰ ビタミンK効果発現：6-12時間（だからPCC併用）</p>
+                            </div>
                             
-                            <p style="margin-top: 15px;"><strong>4. 抗血小板薬</strong></p>
-                            <ul style="line-height: 1.8;">
-                                <li>特異的中和薬なし</li>
-                                <li>重篤な出血時：血小板輸血考慮</li>
-                                <li>デスモプレシン（DDAVP）の使用も</li>
-                            </ul>
+                            <!-- 抗血小板薬 -->
+                            <div style="padding: 15px; background: #FCE4EC; border-radius: 8px;">
+                                <h5 style="color: #C62828; font-size: 20px;">🩸 抗血小板薬 → 対症療法メイン</h5>
+                                <div style="margin-top: 10px;">
+                                    <p style="font-weight: bold;">特異的中和薬は存在しない！</p>
+                                    <div style="margin-top: 10px; padding: 10px; background: white; border-radius: 6px;">
+                                        <strong>対応策（効果は限定的）</strong>
+                                        <ul style="margin-top: 5px;">
+                                            <li>血小板輸血 10単位（アスピリン服用時は20単位）</li>
+                                            <li>デスモプレシン（DDAVP）0.3μg/kg</li>
+                                            <li>トラネキサム酸 1g静注</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <div style="margin-bottom: 30px; padding: 20px; background: #F1F8E9; border-radius: 12px;">
-                    <h3>国試・実習での頻出ポイント</h3>
+                    <h3>📚 国試・実習で絶対押さえる！暗記ポイント</h3>
                     
                     <div style="padding: 15px; background: white; border-radius: 8px;">
-                        <h4>覚えるべき数値</h4>
-                        <ul style="line-height: 1.8;">
-                            <li>アスピリン抗血小板用量：<strong>81-100mg</strong></li>
-                            <li>ワルファリンINR目標：非弁膜症性AF <strong>2.0-3.0</strong></li>
-                            <li>CYP2C19 PM頻度：日本人の約<strong>20%</strong></li>
-                            <li>ダビガトラン腎排泄率：<strong>80%</strong></li>
-                            <li>アピキサバン腎排泄率：<strong>27%</strong>（最も低い）</li>
-                            <li>リバーロキサバン食事の影響：空腹時BA <strong>66%</strong>に低下</li>
-                        </ul>
+                        <h4>🎯 これだけは覚えろ！頻出数値</h4>
                         
-                        <h4 style="margin-top: 15px;">実習でよくある質問への回答例</h4>
-                        <p><strong>Q：なぜ心房細動には抗凝固薬？</strong><br>
-                        A：心房内の血流うっ滞により静脈血栓型（赤色血栓）が形成されるため</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+                            <div style="padding: 12px; background: #E3F2FD; border-radius: 8px;">
+                                <strong style="color: #1565C0;">アスピリン</strong>
+                                <ul style="margin-top: 5px; list-style: none;">
+                                    <li>🔸 抗血小板：81-100mg</li>
+                                    <li>🔸 解熱鎮痛：330-500mg</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="padding: 12px; background: #E8F5E9; border-radius: 8px;">
+                                <strong style="color: #2E7D32;">ワルファリン</strong>
+                                <ul style="margin-top: 5px; list-style: none;">
+                                    <li>🔸 非弁膜症AF：INR 2.0-3.0</li>
+                                    <li>🔸 機械弁：INR 2.5-3.5</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="padding: 12px; background: #FFF3E0; border-radius: 8px;">
+                                <strong style="color: #F57C00;">腎排泄率（覚え方付き）</strong>
+                                <ul style="margin-top: 5px; list-style: none;">
+                                    <li>🔸 ダビガトラン：80%（ダ→ハチ）</li>
+                                    <li>🔸 エドキサバン：50%（エ→ゴー）</li>
+                                    <li>🔸 リバーロキサバン：35%（リ→サンゴ）</li>
+                                    <li>🔸 アピキサバン：27%（ア→ニーナ）</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="padding: 12px; background: #FCE4EC; border-radius: 8px;">
+                                <strong style="color: #C62828;">その他重要数値</strong>
+                                <ul style="margin-top: 5px; list-style: none;">
+                                    <li>🔸 CYP2C19 PM：日本人20%</li>
+                                    <li>🔸 リバーロ空腹時：BA 66%</li>
+                                    <li>🔸 DAPT標準期間：12ヶ月</li>
+                                </ul>
+                            </div>
+                        </div>
                         
-                        <p style="margin-top: 10px;"><strong>Q：クロピドグレルが効かない人がいるのはなぜ？</strong><br>
-                        A：CYP2C19遺伝子多型によりプロドラッグの活性化が不十分なため</p>
+                        <h4 style="margin-top: 25px;">💬 実習で教授に聞かれたらこう答える！</h4>
                         
-                        <p style="margin-top: 10px;"><strong>Q：リバーロキサバンはなぜ食後？</strong><br>
-                        A：15mg、20mg錠は空腹時投与でバイオアベイラビリティが66%に低下するため</p>
+                        <div style="margin-top: 15px;">
+                            <div style="padding: 15px; background: #E8EAF6; border-radius: 8px; margin-bottom: 10px;">
+                                <p style="font-weight: bold;">Q：「心房細動の患者さんになぜ抗血小板薬じゃダメなの？」</p>
+                                <p style="margin-top: 8px; padding-left: 20px;">
+                                    <strong style="color: #3F51B5;">模範解答：</strong><br>
+                                    「心房細動では心房内の血流がうっ滞し、<strong>フィブリン主体の赤色血栓</strong>が形成されます。
+                                    これは<strong>凝固カスケードが主役</strong>なので、血小板をターゲットとする抗血小板薬では予防できません。
+                                    したがって抗凝固薬が必要です。」
+                                </p>
+                            </div>
+                            
+                            <div style="padding: 15px; background: #FFF9C4; border-radius: 8px; margin-bottom: 10px;">
+                                <p style="font-weight: bold;">Q：「クロピドグレルが効かない患者さんがいるって本当？」</p>
+                                <p style="margin-top: 8px; padding-left: 20px;">
+                                    <strong style="color: #F57F17;">模範解答：</strong><br>
+                                    「はい、日本人の約20%は<strong>CYP2C19のpoor metabolizer</strong>です。
+                                    クロピドグレルはプロドラッグなので、この酵素で活性化されないと効果を発揮できません。
+                                    そのような患者さんには<strong>プラスグレルやチカグレロル</strong>への変更を検討します。」
+                                </p>
+                            </div>
+                            
+                            <div style="padding: 15px; background: #FFEBEE; border-radius: 8px;">
+                                <p style="font-weight: bold;">Q：「リバーロキサバンだけなぜ食後投与なの？」</p>
+                                <p style="margin-top: 8px; padding-left: 20px;">
+                                    <strong style="color: #D32F2F;">模範解答：</strong><br>
+                                    「リバーロキサバンの15mgと20mg錠は<strong>食事で吸収が改善</strong>されます。
+                                    空腹時投与では<strong>バイオアベイラビリティが66%に低下</strong>し、
+                                    効果不十分となる可能性があるため、必ず食後投与が必要です。
+                                    ただし10mg錠は食事の影響を受けません。」
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 20px; padding: 15px; background: #E1BEE7; border-radius: 8px;">
+                            <h5 style="color: #6A1B9A;">🎓 国試頻出の「ひっかけ」ポイント</h5>
+                            <ul style="margin-top: 10px; line-height: 2;">
+                                <li>❌ 機械弁にDOAC → <strong>禁忌！</strong>ワルファリンのみ</li>
+                                <li>❌ CrCl<15でDOAC → <strong>禁忌！</strong>ワルファリンに変更</li>
+                                <li>❌ アスピリン330mgで抗血小板 → <strong>違う！</strong>それは解熱用量</li>
+                                <li>❌ DAPT中のPPI不要 → <strong>必要！</strong>消化管出血予防</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
