@@ -693,23 +693,64 @@
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
             const menuBtn = document.querySelector('.mobile-menu-btn');
+            const body = document.body;
             
             if (mobileMenu.classList.contains('active')) {
                 mobileMenu.classList.remove('active');
                 menuBtn.classList.remove('active');
+                body.classList.remove('menu-open');
             } else {
                 mobileMenu.classList.add('active');
                 menuBtn.classList.add('active');
+                body.classList.add('menu-open');
             }
         }
         
-        // モバイルメニューのリンククリック時に閉じる
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', () => {
+        // ページ読み込み後にイベントリスナーを設定
+        document.addEventListener('DOMContentLoaded', function() {
+            // モバイルメニューのリンククリック時に閉じる
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // メニューを閉じる
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    const menuBtn = document.querySelector('.mobile-menu-btn');
+                    const body = document.body;
+                    
+                    mobileMenu.classList.remove('active');
+                    menuBtn.classList.remove('active');
+                    body.classList.remove('menu-open');
+                    
+                    // スムーズスクロールのための小さな遅延
+                    setTimeout(() => {
+                        const targetId = this.getAttribute('href');
+                        if (targetId && targetId.startsWith('#')) {
+                            const targetElement = document.querySelector(targetId);
+                            if (targetElement) {
+                                targetElement.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }
+                        }
+                    }, 100);
+                });
+            });
+            
+            // メニュー外クリックで閉じる機能
+            document.addEventListener('click', function(e) {
                 const mobileMenu = document.getElementById('mobileMenu');
                 const menuBtn = document.querySelector('.mobile-menu-btn');
-                mobileMenu.classList.remove('active');
-                menuBtn.classList.remove('active');
+                const body = document.body;
+                
+                // メニューが開いている時のみ実行
+                if (mobileMenu.classList.contains('active')) {
+                    // クリックがメニューボタンやメニュー内部でない場合
+                    if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                        mobileMenu.classList.remove('active');
+                        menuBtn.classList.remove('active');
+                        body.classList.remove('menu-open');
+                    }
+                }
             });
         });
     </script>
