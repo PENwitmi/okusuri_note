@@ -139,8 +139,8 @@
         left: 0;
         width: 100%;
         height: calc(100vh - 60px);
-        background: var(--bg-primary);
-        z-index: 999;
+        background: #ffffff; /* 明示的に白背景 */
+        z-index: 1100; /* ヘッダーより上に表示 */
         transform: translateX(-100%);
         transition: transform var(--transition-base);
         box-shadow: var(--shadow-heavy);
