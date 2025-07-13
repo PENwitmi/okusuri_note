@@ -190,125 +190,60 @@
             </div>
         </section>
 
-        <!-- 詳しい病態生理（後半に配置） -->
+        <!-- 薬剤の作用メカニズム -->
         <section class="feature-section">
             <div class="section-container">
-                <h2 class="section-title">📚 もっと詳しく知りたい人へ：血栓形成のメカニズム <span style="font-size: 16px; font-weight: normal; color: #666;">（読み飛ばしてOK）</span></h2>
+                <h2 class="section-title">🎯 薬剤はどこに効く？</h2>
                 
-                <div class="intro-content">
-                    <div class="pathophysiology-detail" style="margin: 30px 0; padding: 25px; background: #F5F5F5; border-radius: 12px;">
-                        <h3 style="margin-bottom: 20px;">動脈血栓（白色血栓）の詳しい形成過程</h3>
+                <!-- 抗血小板薬の作用点 -->
+                <div style="margin-bottom: 40px; padding: 25px; background: #FFF5F0; border-radius: 12px;">
+                    <h3 style="color: var(--antiplatelet-color); margin-bottom: 20px;">抗血小板薬の作用点</h3>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <p style="font-size: 18px; margin-bottom: 15px;">血小板が活性化する主な経路は2つ：</p>
                         
-                        <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 8px;">
-                            <h4>形成メカニズム：</h4>
-                            <ol style="line-height: 1.8;">
-                                <li>動脈硬化プラークの破綻により内皮下コラーゲンが露出</li>
-                                <li>血小板がGPⅠb-Ⅸ-Ⅴ複合体を介して粘着</li>
-                                <li>血小板が活性化し、TXA2、ADP、セロトニンを放出</li>
-                                <li>これらの物質が周囲の血小板をさらに活性化（正のフィードバック）</li>
-                                <li>GPⅡb/Ⅲa受容体活性化によりフィブリノゲンで血小板同士が架橋</li>
-                                <li>血小板血栓（白色血栓）が形成される</li>
-                            </ol>
-                            <p style="margin-top: 15px;"><strong>補足</strong>：動脈の高速血流下（高ずり応力）で形成されるため、血小板の粘着・凝集が主体となります。</p>
-                        </div>
-                        
-                        <div style="margin: 20px 0; padding: 20px; background: #FFF5F0; border-radius: 8px;">
-                            <h4>血小板活性化の3段階と薬剤の作用点</h4>
-                            
-                            <h5>1. 粘着（Adhesion）</h5>
-                            <p>血管内皮下のコラーゲン、vWFに血小板が結合<br>
-                            <strong>関与受容体</strong>：GPⅠb-Ⅸ-Ⅴ複合体、GPⅥ<br>
-                            <em>※この段階を阻害する薬剤は現在臨床使用されていない</em></p>
-                            
-                            <h5 style="margin-top: 20px;">2. 活性化（Activation）- 抗血小板薬の主要ターゲット</h5>
-                            
-                            <div style="margin: 15px 0; padding: 10px; background: #FFFBF0; border-left: 4px solid var(--antiplatelet-color);">
-                                <strong>アラキドン酸カスケード</strong>
-                                <pre style="font-family: monospace; line-height: 1.6; margin-top: 10px;">
-血小板膜リン脂質
-    ↓ ホスホリパーゼA2
-アラキドン酸
-    ↓ COX-1
-PGG2 → PGH2
-    ↓ トロンボキサン合成酵素
-TXA2（強力な血小板活性化物質）
-                                </pre>
-                                <p><strong style="color: var(--antiplatelet-color);">→ アスピリン</strong>はCOX-1のSer530をアセチル化し不可逆的に阻害</p>
+                        <div style="display: grid; gap: 20px;">
+                            <div style="padding: 15px; background: white; border-radius: 8px; border-left: 4px solid var(--antiplatelet-color);">
+                                <strong>1. TXA2経路</strong>
+                                <p style="margin-top: 10px;">血小板内でアラキドン酸からTXA2（トロンボキサンA2）が作られる</p>
+                                <p style="color: var(--antiplatelet-color); font-weight: bold;">→ アスピリンがこの生成をブロック</p>
                             </div>
                             
-                            <div style="margin: 15px 0; padding: 10px; background: #F0F8FF; border-left: 4px solid var(--antiplatelet-color);">
-                                <strong>ADP受容体経路</strong>
-                                <p style="margin-top: 10px;"><strong>P2Y1受容体</strong>：血小板の形態変化を誘導<br>
-                                <strong>P2Y12受容体</strong>：血小板凝集の増幅に重要（主要な治療ターゲット）</p>
-                                <p style="margin-top: 10px;"><strong style="color: var(--antiplatelet-color);">→ P2Y12阻害薬</strong>：クロピドグレル、プラスグレル、チカグレロル</p>
+                            <div style="padding: 15px; background: white; border-radius: 8px; border-left: 4px solid var(--antiplatelet-color);">
+                                <strong>2. ADP経路</strong>
+                                <p style="margin-top: 10px;">血小板が放出するADPがP2Y12受容体に結合</p>
+                                <p style="color: var(--antiplatelet-color); font-weight: bold;">→ クロピドグレル等がこの受容体をブロック</p>
                             </div>
-                            
-                            <h5 style="margin-top: 20px;">3. 凝集（Aggregation）</h5>
-                            <p>GPⅡb/Ⅲa受容体が活性化し、フィブリノゲンが架橋となり血小板凝集塊形成<br>
-                            <em>※GPⅡb/Ⅲa阻害薬は強力だが出血リスクが高く、急性期の静注薬のみ</em></p>
                         </div>
                     </div>
+                </div>
+                
+                <!-- 抗凝固薬の作用点 -->
+                <div style="padding: 25px; background: #E0F7F6; border-radius: 12px;">
+                    <h3 style="color: var(--anticoagulant-color); margin-bottom: 20px;">抗凝固薬の作用点</h3>
                     
-                    <div class="pathophysiology-detail" style="margin: 30px 0; padding: 25px; background: #FFEBEE; border-radius: 12px;">
-                        <h3 style="margin-bottom: 20px;">静脈血栓（赤色血栓）の詳しい形成過程</h3>
-                        
-                        <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 8px;">
-                            <h4>形成メカニズム：</h4>
-                            <ol style="line-height: 1.8;">
-                                <li>血流うっ滞により局所的な低酸素状態が発生</li>
-                                <li>内皮細胞が活性化し、組織因子を発現</li>
-                                <li>外因系凝固カスケードが活性化（第Ⅶ因子）</li>
-                                <li>内因系も活性化され、共通経路へ収束</li>
-                                <li>第Xa因子がプロトロンビンをトロンビンに変換</li>
-                                <li>トロンビンがフィブリノゲンをフィブリンに変換</li>
-                                <li>フィブリンが網状構造を形成し、赤血球・白血球を捕捉</li>
-                                <li><strong>この血栓が遊離すると脳や肺の血管を詰まらせ塞栓症を引き起こす</strong></li>
-                            </ol>
-                            <p style="margin-top: 15px;"><strong>補足</strong>：心房細動では左房内で血流が滞り、同様の機序で血栓が形成されます。</p>
+                    <p style="font-size: 18px; margin-bottom: 20px;">凝固カスケードの重要ポイントをブロック：</p>
+                    
+                    <div style="background: white; padding: 20px; border-radius: 8px; text-align: center;">
+                        <div style="font-family: monospace; line-height: 2.5;">
+                            <div>多くの凝固因子</div>
+                            <div>↓</div>
+                            <div style="background: #FFE0B2; padding: 10px; border-radius: 8px; display: inline-block;">
+                                <strong>第Xa因子</strong><br>
+                                <span style="color: var(--doac-color); font-size: 14px;">リバーロキサバン、アピキサバン、エドキサバンがブロック</span>
+                            </div>
+                            <div>↓</div>
+                            <div style="background: #E1BEE7; padding: 10px; border-radius: 8px; display: inline-block; margin-top: 10px;">
+                                <strong>トロンビン</strong><br>
+                                <span style="color: var(--doac-color); font-size: 14px;">ダビガトランがブロック</span>
+                            </div>
+                            <div>↓</div>
+                            <div style="margin-top: 10px;"><strong>フィブリン（血栓の網）</strong></div>
                         </div>
                         
-                        <div style="margin: 20px 0; padding: 20px; background: #FFEBEE; border-radius: 8px;">
-                            <h4>凝固カスケードの詳細</h4>
-                            
-                            <h5>外因系経路（組織因子経路）</h5>
-                            <pre style="font-family: monospace; line-height: 1.6;">
-組織損傷
-    ↓
-組織因子（TF）放出
-    ↓
-TF + 第Ⅶ因子 → TF-Ⅶa複合体
-    ↓
-第Ⅹ因子活性化
-                            </pre>
-                            
-                            <h5 style="margin-top: 20px;">内因系経路（接触経路）</h5>
-                            <pre style="font-family: monospace; line-height: 1.6;">
-第Ⅻ因子 → Ⅻa
-    ↓
-第Ⅺ因子 → Ⅺa
-    ↓
-第Ⅸ因子 → Ⅸa（＋第Ⅷ因子）
-    ↓
-第Ⅹ因子活性化
-                            </pre>
-                            
-                            <h5 style="margin-top: 20px;">共通経路</h5>
-                            <pre style="font-family: monospace; line-height: 1.6;">
-第Ⅹa因子（＋第Ⅴ因子）
-    ↓
-プロトロンビン → トロンビン（第Ⅱa因子）
-    ↓
-フィブリノゲン → フィブリン
-                            </pre>
-                            
-                            <div style="margin-top: 20px; padding: 15px; background: white; border-radius: 8px;">
-                                <h5>抗凝固薬の作用点</h5>
-                                <ul style="line-height: 1.8;">
-                                    <li><strong>ワルファリン</strong>：ビタミンK依存性凝固因子（Ⅱ、Ⅶ、Ⅸ、Ⅹ）の産生阻害</li>
-                                    <li><strong>ダビガトラン</strong>：トロンビン（第Ⅱa因子）の直接阻害</li>
-                                    <li><strong>リバーロキサバン、アピキサバン、エドキサバン</strong>：第Xa因子の直接阻害</li>
-                                </ul>
-                            </div>
+                        <div style="margin-top: 20px; padding: 15px; background: #F5F5F5; border-radius: 8px;">
+                            <p><strong>ワルファリン</strong>は少し違う働き方：</p>
+                            <p>ビタミンKを邪魔して、凝固因子の産生自体を減らす</p>
                         </div>
                     </div>
                 </div>
@@ -525,44 +460,34 @@ TF + 第Ⅶ因子 → TF-Ⅶa複合体
                             <tr>
                                 <th>薬剤名</th>
                                 <th>作用機序</th>
-                                <th>効果発現</th>
-                                <th>半減期</th>
-                                <th>特徴</th>
-                                <th>注意点</th>
+                                <th>効果期間</th>
+                                <th>メモ</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><strong>アスピリン</strong></td>
                                 <td>COX-1<br>不可逆的阻害</td>
-                                <td>30-40分</td>
-                                <td>15-20分<br>（効果は7-10日）</td>
-                                <td>• 最も安価<br>• 豊富なエビデンス<br>• 低用量で効果</td>
-                                <td>• 消化管障害<br>• アスピリン喘息<br>• 小児のReye症候群</td>
+                                <td>7-10日</td>
+                                <td>• 最も安価、豊富なエビデンス、低用量で効果<br>• 消化管障害、アスピリン喘息、小児のReye症候群に注意</td>
                             </tr>
                             <tr>
                                 <td><strong>クロピドグレル</strong><br>（プラビックス）</td>
                                 <td>P2Y12受容体<br>不可逆的阻害</td>
-                                <td>2-6時間</td>
-                                <td>6時間<br>（効果は5日）</td>
-                                <td>• プロドラッグ<br>• ジェネリック有<br>• 広く使用</td>
-                                <td>• CYP2C19多型<br>（日本人20%効果↓）<br>• PPIとの相互作用</td>
+                                <td>5日</td>
+                                <td>• プロドラッグ、ジェネリック有、広く使用<br>• CYP2C19多型（日本人20%効果↓）、PPIとの相互作用に注意</td>
                             </tr>
                             <tr>
                                 <td><strong>プラスグレル</strong><br>（エフィエント）</td>
                                 <td>P2Y12受容体<br>不可逆的阻害</td>
-                                <td>30分-4時間</td>
-                                <td>7時間<br>（効果は7日）</td>
-                                <td>• より強力<br>• 遺伝子多型の<br>影響少ない</td>
-                                <td>• 出血リスク高い<br>• 75歳以上減量<br>• 体重60kg以下減量</td>
+                                <td>7日</td>
+                                <td>• より強力、遺伝子多型の影響少ない<br>• 出血リスク高い、75歳以上・体重60kg以下は減量</td>
                             </tr>
                             <tr>
                                 <td><strong>チカグレロル</strong><br>（ブリリンタ）</td>
                                 <td>P2Y12受容体<br>可逆的阻害</td>
-                                <td>30分</td>
-                                <td>7-9時間</td>
-                                <td>• 可逆的結合<br>• 速効性<br>• 代謝不要</td>
-                                <td>• 1日2回投与<br>• 呼吸困難15%<br>• 中止後回復早い</td>
+                                <td>3-4日</td>
+                                <td>• 可逆的結合、速効性、代謝不要<br>• 1日2回投与、呼吸困難15%、中止後の回復早い</td>
                             </tr>
                         </tbody>
                     </table>
@@ -576,44 +501,29 @@ TF + 第Ⅶ因子 → TF-Ⅶa複合体
                             <tr>
                                 <th>薬剤名</th>
                                 <th>標的</th>
-                                <th>用法</th>
-                                <th>腎排泄率</th>
-                                <th>食事の影響</th>
-                                <th>特徴・選択のポイント</th>
+                                <th>特徴</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><strong>ダビガトラン</strong><br>（プラザキサ）</td>
                                 <td>トロンビン<br>（第Ⅱa因子）</td>
-                                <td>1日2回</td>
-                                <td>80%</td>
-                                <td>なし</td>
-                                <td>• 特異的中和薬あり<br>• 消化器症状多い<br>• カプセル（湿気注意）</td>
+                                <td>• <strong>1日2回投与</strong><br>• 腎排泄率80%（腎機能に注意）<br>• 食事の影響なし<br>• 特異的中和薬あり（イダルシズマブ）<br>• 消化器症状多い、カプセル剤（湿気注意）</td>
                             </tr>
                             <tr>
                                 <td><strong>リバーロキサバン</strong><br>（イグザレルト）</td>
                                 <td>第Xa因子</td>
-                                <td>1日1回</td>
-                                <td>35%</td>
-                                <td><strong>食後必須</strong></td>
-                                <td>• 服薬アドヒアランス良好<br>• CAD/PADにも適応<br>• CYP3A4基質</td>
+                                <td>• 1日1回投与（服薬アドヒアランス良好）<br>• 腎排泄率35%<br>• <strong>食後必須</strong>（特に15mg以上）<br>• CAD/PADにも適応拡大<br>• CYP3A4基質（薬物相互作用注意）</td>
                             </tr>
                             <tr>
                                 <td><strong>アピキサバン</strong><br>（エリキュース）</td>
                                 <td>第Xa因子</td>
-                                <td>1日2回</td>
-                                <td>27%</td>
-                                <td>なし</td>
-                                <td>• 腎機能低下例で有利<br>• 消化管出血少ない<br>• 高齢者で安全性高い</td>
+                                <td>• <strong>1日2回投与</strong><br>• 腎排泄率27%（腎機能低下例で有利）<br>• 食事の影響なし<br>• 消化管出血少ない<br>• 高齢者で安全性高い</td>
                             </tr>
                             <tr>
                                 <td><strong>エドキサバン</strong><br>（リクシアナ）</td>
                                 <td>第Xa因子</td>
-                                <td>1日1回</td>
-                                <td>50%</td>
-                                <td>なし</td>
-                                <td>• 日本発のDOAC<br>• 体重で用量調整<br>• がん患者のデータ豊富</td>
+                                <td>• 1日1回投与<br>• 腎排泄率50%<br>• 食事の影響なし<br>• 日本発のDOAC<br>• 体重で用量調整（60kg未満は減量）<br>• がん患者のデータ豊富</td>
                             </tr>
                         </tbody>
                     </table>
@@ -646,143 +556,6 @@ TF + 第Ⅶ因子 → TF-Ⅶa複合体
             </div>
         </section>
 
-        <!-- 凝固カスケードと抗凝固薬の作用点 -->
-        <section class="feature-section">
-            <div class="section-container">
-                <h2 class="section-title">🔬 凝固カスケードと抗凝固薬の作用点</h2>
-                
-                <div class="coagulation-content" style="padding: 25px; background: #FFF3E0; border-radius: 12px;">
-                    <h3>凝固カスケードの理解</h3>
-                    <p>静脈血栓形成の主役である凝固カスケードは、外因系・内因系・共通経路から構成されます。</p>
-                    
-                    <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 8px;">
-                        <h4>外因系経路（組織因子経路）</h4>
-                        <pre style="font-family: monospace; line-height: 1.6;">
-組織損傷
-    ↓
-組織因子（TF）放出
-    ↓
-TF + 第Ⅶ因子 → TF-Ⅶa複合体
-    ↓
-第Ⅹ因子活性化
-                        </pre>
-                    </div>
-                    
-                    <div style="margin: 20px 0; padding: 20px; background: white; border-radius: 8px;">
-                        <h4>内因系経路（接触経路）</h4>
-                        <pre style="font-family: monospace; line-height: 1.6;">
-第Ⅻ因子 → Ⅻa
-    ↓
-第Ⅺ因子 → Ⅺa
-    ↓
-第Ⅸ因子 → Ⅸa（＋第Ⅷ因子）
-    ↓
-第Ⅹ因子活性化
-                        </pre>
-                    </div>
-                    
-                    <div style="margin: 20px 0; padding: 20px; background: #E8F5E9; border-radius: 8px;">
-                        <h4>共通経路（最重要）</h4>
-                        <pre style="font-family: monospace; line-height: 1.6;">
-第Ⅹa因子（＋第Ⅴ因子）
-    ↓
-プロトロンビン → トロンビン（第Ⅱa因子）
-    ↓
-フィブリノゲン → フィブリン → 血栓形成
-                        </pre>
-                    </div>
-                </div>
-                
-                <div class="anticoagulant-mechanism" style="margin-top: 30px;">
-                    <h3>抗凝固薬の作用点と選択</h3>
-                    
-                    <div style="margin: 20px 0; padding: 20px; background: #FFEBEE; border-radius: 12px;">
-                        <h4>ワルファリン</h4>
-                        <p><strong>作用機序</strong>：<br>
-                        • ビタミンK還元酵素（VKORC1）を阻害<br>
-                        • ビタミンK依存性凝固因子（Ⅱ、Ⅶ、Ⅸ、Ⅹ）の産生を阻害<br>
-                        • 効果発現に3-5日必要（既存の凝固因子が消費されるまで）</p>
-                        
-                        <p style="margin-top: 15px;"><strong>モニタリング（国試必須）</strong>：<br>
-                        • PT-INR目標値：<br>
-                        　- 非弁膜症性AF：<strong>2.0-3.0</strong><br>
-                        　- 機械弁：<strong>2.5-3.5</strong></p>
-                        
-                        <p style="margin-top: 15px;"><strong>問題点</strong>：<br>
-                        • 食事制限（納豆、クロレラ、青汁など）<br>
-                        • 多数の薬物相互作用<br>
-                        • 頻回のモニタリング必要<br>
-                        • 効果発現・消失が遅い</p>
-                    </div>
-                    
-                    <div style="margin: 20px 0; padding: 20px; background: #E3F2FD; border-radius: 12px;">
-                        <h4>DOAC（直接経口抗凝固薬）の共通利点</h4>
-                        <ul style="line-height: 1.8;">
-                            <li>効果発現が速い（2-4時間）</li>
-                            <li>用量調整不要（腎機能による減量のみ）</li>
-                            <li>食事制限なし</li>
-                            <li>定期的なモニタリング不要</li>
-                            <li>薬物相互作用が少ない</li>
-                        </ul>
-                    </div>
-                    
-                    <div style="margin: 20px 0;">
-                        <h4>各DOACの特徴と使い分け</h4>
-                        
-                        <div style="margin: 15px 0; padding: 15px; background: #F5F5F5; border-radius: 8px;">
-                            <h5>ダビガトラン（プラザキサ®）- 直接トロンビン阻害薬</h5>
-                            <p>• トロンビン（第Ⅱa因子）を直接阻害<br>
-                            • 腎排泄率<strong>80%</strong>（腎機能低下で蓄積）<br>
-                            • 特異的中和薬：<strong>イダルシズマブ</strong>あり<br>
-                            • 消化器症状（10-20%）に注意<br>
-                            • カプセル剤（湿気に弱い）</p>
-                        </div>
-                        
-                        <div style="margin: 15px 0; padding: 15px; background: #E8F5E9; border-radius: 8px;">
-                            <h5>第Xa因子阻害薬</h5>
-                            
-                            <p><strong>リバーロキサバン（イグザレルト®）</strong><br>
-                            • 1日1回投与で服薬アドヒアランス良好<br>
-                            • <span style="color: red;">必ず食後投与</span>（15mg、20mg錠）- 空腹時はBA 66%に低下<br>
-                            • CAD/PADにも適応拡大（2.5mg×2）<br>
-                            • CYP3A4/P-gp基質</p>
-                            
-                            <p style="margin-top: 10px;"><strong>アピキサバン（エリキュース®）</strong><br>
-                            • 1日2回投与<br>
-                            • 腎排泄率<strong>27%</strong>（最も低い）- 腎機能低下例で安全<br>
-                            • 高齢者での安全性データ豊富<br>
-                            • 3つの減量基準（80歳以上、60kg以下、Cr≥1.5のうち2つ）</p>
-                            
-                            <p style="margin-top: 10px;"><strong>エドキサバン（リクシアナ®）</strong><br>
-                            • 1日1回投与<br>
-                            • 体重による用量調整（60kg以下で30mg）<br>
-                            • がん患者でのエビデンス豊富<br>
-                            • 日本発のDOAC</p>
-                        </div>
-                    </div>
-                    
-                    <div style="margin: 20px 0; padding: 20px; background: #F0F7FF; border-radius: 12px;">
-                        <h4>ワルファリン vs DOAC の選択（実践編）</h4>
-                        
-                        <p><strong>ワルファリンを選ぶ場合（限定的）</strong>：</p>
-                        <ul>
-                            <li><span style="color: red;">機械弁（DOACは禁忌）</span></li>
-                            <li>重度腎不全（CrCl <15）</li>
-                            <li>経済的制約</li>
-                            <li>DOACで血栓・出血イベントあり</li>
-                        </ul>
-                        
-                        <p style="margin-top: 15px;"><strong>DOACが優先される場合（ほとんどの症例）</strong>：</p>
-                        <ul>
-                            <li>非弁膜症性心房細動</li>
-                            <li>静脈血栓塞栓症</li>
-                            <li>INR管理困難例</li>
-                            <li>患者希望（食事制限回避）</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- 疾患別の薬剤選択（実践編） -->
         <section class="feature-section">
