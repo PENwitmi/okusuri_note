@@ -8,19 +8,24 @@
 
 ## 主要コンテンツ
 
-### 薬剤個別ページ（22薬剤）
+### 薬剤個別ページ（公開中：5薬剤）
 - [メトホルミン（ビグアナイド系）](/drugs/metformin.html) - 2型糖尿病の第一選択薬
 - [ダパグリフロジン（SGLT2阻害薬）](/drugs/dapagliflozin.html) - 心腎保護作用を持つ新世代薬
 - [テルミサルタン（ARB）](/drugs/telmisartan.html) - 最長半減期のARB
 - [ドチヌラド（SURI）](/drugs/dotinurad.html) - 新カテゴリーの尿酸排泄促進薬
-- [ロスバスタチン（スタチン）](/drugs/rosuvastatin.html) - 最強のLDL低下作用
+- [サクビトリルバルサルタン（ARNI）](/drugs/sacubitril-valsartan.html) - 心不全治療の新基準
 
-### 特集ページ（8種類）
-- [抗血栓薬完全マスター](/features/antithrombotic-complete-guide.html) - 白色血栓vs赤色血栓の理解
-- [吸入薬完全マスター](/features/inhaler-complete-guide.html) - デバイス特性と適応別選択
-- [MR拮抗薬ガイド](/features/mr-antagonist-complete-guide.html) - 4世代の進化と使い分け
-- [心不全治療ガイド](/features/heart-failure-treatment-guide.html) - 2025年最新ガイドライン対応
-- [消化管運動改善薬](/features/prokinetics-complete-guide.html) - 妊婦使用解禁の最新情報
+※ v3版22薬剤は監査待ち（/drugs-v3/に完成済み）
+
+### 特集ページ（7種類・監査待ち）
+監査通過後に以下のコンテンツを公開予定：
+- 抗血栓薬完全マスター - 白色血栓vs赤色血栓の理解
+- 吸入薬完全マスター - 薬理作用中心の解説
+- MR拮抗薬ガイド - 4世代の進化と使い分け
+- 心不全治療ガイド - 2025年最新ガイドライン対応
+- 消化管運動改善薬 - 妊婦使用解禁の最新情報
+- 風邪に効く漢方薬 - 8処方の使い分け
+- 消化器系の漢方薬 - 症状別フローチャート
 
 ## 学習方式
 
@@ -39,6 +44,6 @@
 - クロスリファレンス機能
 
 ## 更新情報
-最終更新: 2025年7月13日
-公開薬剤数: 22薬剤（v3版）
-特集ページ: 8種類
+最終更新: 2025年7月14日
+公開薬剤数: 5薬剤（公開中）、22薬剤（v3版監査待ち）
+特集ページ: 7種類（監査待ち）
