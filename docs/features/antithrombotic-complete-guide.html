@@ -250,198 +250,36 @@
             </div>
         </section>
 
-        <!-- 薬剤分類セクション -->
+        <!-- DAPT（2剤併用療法） -->
         <section class="feature-section">
             <div class="section-container">
-                <h2 class="section-title">💊 抗血栓薬の分類と代表薬</h2>
+                <h2 class="section-title">🎯 DAPT（2剤併用療法）とは？</h2>
                 
-                <div class="flow-section">
-                    <h3 style="text-align: center; margin-bottom: 30px;">抗血栓薬の全体像</h3>
-                    
-                    <!-- モバイルファースト改善版 -->
-                    <div class="drug-categories-container" style="display: grid; grid-template-columns: 1fr; gap: 30px;">
-                        <!-- 抗血小板薬 -->
-                        <div class="drug-category-box" style="padding: 25px; background: #FFF5F0; border-radius: 16px; border: 3px solid var(--antiplatelet-color);">
-                            <h4 style="color: var(--antiplatelet-color); margin-bottom: 20px; text-align: center;">
-                                🟠 抗血小板薬<br>
-                                <span style="font-size: 14px; font-weight: normal;">（動脈血栓に対応）</span>
-                            </h4>
-                            <div class="drug-flow-mobile" style="display: grid; gap: 15px;">
-                                <div class="drug-flow-item" style="position: relative; margin-bottom: 10px;">
-                                    <span class="drug-number" style="background: var(--antiplatelet-color);">1</span>
-                                    <strong>アスピリン</strong>
-                                    <span class="drug-type">COX阻害</span>
-                                    <span class="drug-role">最も基本的</span>
-                                    <div class="flow-arrow-mobile" style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 20px; color: var(--antiplatelet-color);">▼</div>
-                                </div>
-                                <div class="drug-flow-item" style="position: relative; margin-bottom: 10px;">
-                                    <span class="drug-number" style="background: var(--antiplatelet-color);">2</span>
-                                    <strong>クロピドグレル</strong>
-                                    <span class="drug-type">P2Y12阻害</span>
-                                    <span class="drug-role">DAPT基本薬</span>
-                                    <div class="flow-arrow-mobile" style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 20px; color: var(--antiplatelet-color);">▼</div>
-                                </div>
-                                <div class="drug-flow-item">
-                                    <span class="drug-number" style="background: var(--antiplatelet-color);">3</span>
-                                    <strong>プラスグレル<br>チカグレロル</strong>
-                                    <span class="drug-type">新世代P2Y12</span>
-                                    <span class="drug-role">より強力</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- 抗凝固薬 -->
-                        <div class="drug-category-box" style="padding: 25px; background: #E0F7F6; border-radius: 16px; border: 3px solid var(--anticoagulant-color);">
-                            <h4 style="color: var(--anticoagulant-color); margin-bottom: 20px; text-align: center;">
-                                🔵 抗凝固薬<br>
-                                <span style="font-size: 14px; font-weight: normal;">（静脈血栓に対応）</span>
-                            </h4>
-                            <div class="drug-flow-mobile" style="display: grid; gap: 15px;">
-                                <div class="drug-flow-item" style="position: relative; margin-bottom: 10px;">
-                                    <span class="drug-number" style="background: var(--anticoagulant-color);">1</span>
-                                    <strong>ワルファリン</strong>
-                                    <span class="drug-type">VK拮抗薬</span>
-                                    <span class="drug-role">70年の歴史</span>
-                                    <div class="flow-arrow-mobile" style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 20px; color: var(--anticoagulant-color);">▼</div>
-                                </div>
-                                <div class="drug-flow-item" style="border-color: var(--doac-color);">
-                                    <span class="drug-number" style="background: var(--doac-color);">2</span>
-                                    <strong>DOAC</strong>
-                                    <span class="drug-type">直接阻害薬</span>
-                                    <span class="drug-role">現在の主流</span>
-                                    <div style="margin-top: 10px; font-size: 14px; text-align: left;">
-                                        • ダビガトラン<br>
-                                        • リバーロキサバン<br>
-                                        • アピキサバン<br>
-                                        • エドキサバン
-                                    </div>
-                                </div>
-                            </div>
+                <div style="padding: 25px; background: #F0F7FF; border-radius: 12px;">
+                    <h3 style="text-align: center; margin-bottom: 20px;">
+                        <span style="font-size: 24px;">💊💊</span> DAPT（ダプト）= 抗血小板薬を2つ一緒に使う
+                    </h3>
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <div style="display: inline-block; padding: 15px 30px; background: white; border-radius: 8px; font-size: 18px;">
+                            アスピリン + クロピドグレル（または他のP2Y12阻害薬）
                         </div>
                     </div>
-                    
-                    <!-- レスポンシブスタイル -->
-                    <style>
-                        /* タブレット以上で横並び */
-                        @media screen and (min-width: 768px) {
-                            .drug-categories-container {
-                                grid-template-columns: 1fr 1fr !important;
-                            }
-                            
-                            .drug-flow-mobile {
-                                display: flex !important;
-                                align-items: center;
-                                justify-content: space-around;
-                                gap: 20px !important;
-                            }
-                            
-                            .drug-flow-item {
-                                margin-bottom: 0 !important;
-                            }
-                            
-                            .flow-arrow-mobile {
-                                bottom: auto !important;
-                                left: auto !important;
-                                right: -10px !important;
-                                top: 50% !important;
-                                transform: translateY(-50%) !important;
-                                font-size: 24px !important;
-                            }
-                            
-                            .flow-arrow-mobile::before {
-                                content: "→" !important;
-                            }
-                        }
-                        
-                        /* デスクトップで最適化 */
-                        @media screen and (min-width: 1024px) {
-                            .drug-flow-item {
-                                min-width: 180px;
-                            }
-                        }
-                        
-                        /* 矢印の内容を上書き */
-                        @media screen and (min-width: 768px) {
-                            .flow-arrow-mobile {
-                                font-size: 0 !important;
-                            }
-                            
-                            .flow-arrow-mobile::after {
-                                content: "→" !important;
-                                font-size: 24px !important;
-                            }
-                        }
-                    </style>
-                </div>
-            </div>
-        </section>
-
-        <!-- 抗血小板薬のわかりやすい説明 -->
-        <section class="feature-section">
-            <div class="section-container">
-                <h2 class="section-title">💊 血小板をブロックする薬（抗血小板薬）</h2>
-                
-                <div class="intro-content">
-                    <p style="font-size: 18px; margin-bottom: 30px;">
-                        血小板がくっつくのを防ぐ薬には、いくつかの種類があります。<br>
-                        それぞれ違う方法で血小板をブロックします！
-                    </p>
-                    
-                    <!-- ビジュアルな薬剤説明 -->
-                    <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; margin: 40px 0;">
-                        <div style="flex: 1; min-width: 280px; padding: 25px; background: #FFF5F0; border-radius: 12px; border: 2px solid var(--antiplatelet-color);">
-                            <h3 style="color: var(--antiplatelet-color); margin-bottom: 15px;">
-                                <span style="font-size: 32px;">💊</span> アスピリン
-                            </h3>
-                            <div style="padding: 15px; background: white; border-radius: 8px; margin-bottom: 15px;">
-                                <p><strong>どんな薬？</strong></p>
-                                <p>最も歴史が長い抗血小板薬（100年以上！）</p>
-                                <p style="margin-top: 10px;"><strong>どうやって効く？</strong></p>
-                                <p>血小板を活性化させる物質（TXA2）を作れなくする</p>
-                            </div>
-                            <div style="padding: 10px; background: var(--antiplatelet-color); color: white; border-radius: 8px; text-align: center;">
-                                <strong>用量：81-100mg（低用量）</strong>
-                            </div>
-                        </div>
-                        
-                        <div style="flex: 1; min-width: 280px; padding: 25px; background: #E3F2FD; border-radius: 12px; border: 2px solid var(--antiplatelet-color);">
-                            <h3 style="color: var(--antiplatelet-color); margin-bottom: 15px;">
-                                <span style="font-size: 32px;">💊</span> クロピドグレル
-                            </h3>
-                            <div style="padding: 15px; background: white; border-radius: 8px; margin-bottom: 15px;">
-                                <p><strong>どんな薬？</strong></p>
-                                <p>P2Y12受容体をブロックする薬</p>
-                                <p style="margin-top: 10px;"><strong>どうやって効く？</strong></p>
-                                <p>血小板同士がくっつくための「接着剤」（ADP）が働けなくする</p>
-                            </div>
-                            <div style="padding: 10px; background: #FF6B6B; color: white; border-radius: 8px; text-align: center;">
-                                <strong>注意：日本人の20%は効きにくい体質</strong>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- DAPT（2剤併用）の説明 -->
-                    <div style="margin-top: 40px; padding: 25px; background: #F0F7FF; border-radius: 12px;">
-                        <h3 style="text-align: center; margin-bottom: 20px;">
-                            <span style="font-size: 24px;">🎯</span> DAPT（ダプト）= 2つの薬を一緒に使う
-                        </h3>
-                        <div style="text-align: center; margin-bottom: 20px;">
-                            <div style="display: inline-block; padding: 15px 30px; background: white; border-radius: 8px; font-size: 18px;">
-                                アスピリン + クロピドグレル（または他のP2Y12阻害薬）
-                            </div>
-                        </div>
-                        <p style="text-align: center; font-size: 16px;">
-                            <strong>なぜ2つ使う？</strong><br>
-                            違う方法で血小板をブロックすることで、より強力に血栓を防ぐため！
+                    <div style="margin-bottom: 20px; padding: 15px; background: #FFF5F0; border-radius: 8px;">
+                        <p style="text-align: center; color: var(--antiplatelet-color); font-weight: bold;">
+                            ⚠️ 重要：DAPTは「抗血小板薬」の併用です（抗凝固薬ではありません）
                         </p>
-                        <div style="margin-top: 20px; padding: 15px; background: #FFE0B2; border-radius: 8px;">
-                            <p><strong>いつ使う？</strong></p>
-                            <ul style="line-height: 1.8;">
-                                <li>ステント（血管を広げる金属の筒）を入れた後</li>
-                                <li>心筋梗塞の後</li>
-                                <li>期間：通常3-12ヶ月（状態により異なる）</li>
-                            </ul>
-                        </div>
+                    </div>
+                    <p style="text-align: center; font-size: 16px;">
+                        <strong>なぜ2つ使う？</strong><br>
+                        違う経路（TXA2経路とADP経路）で血小板をブロックすることで、より強力に血栓を防ぐため！
+                    </p>
+                    <div style="margin-top: 20px; padding: 15px; background: #FFE0B2; border-radius: 8px;">
+                        <p><strong>いつ使う？</strong></p>
+                        <ul style="line-height: 1.8;">
+                            <li>ステント（血管を広げる金属の筒）を入れた後</li>
+                            <li>心筋梗塞の後</li>
+                            <li>期間：通常3-12ヶ月（状態により異なる）</li>
+                        </ul>
                     </div>
                 </div>
             </div>
