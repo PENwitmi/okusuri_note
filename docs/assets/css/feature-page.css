@@ -188,6 +188,30 @@
 /* 薬剤詳細セクション */
 .drug-details {
     background: var(--bg-light);
+    padding: 2rem 0;
+}
+
+/* 薬剤詳細の見出し */
+.drug-details > h3 {
+    background: #34495e;  /* ダークネイビー */
+    color: white;
+    padding: 0.8rem 1.5rem;
+    margin: 2rem 0 0 0;
+    border-radius: 8px 8px 0 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* 最初の薬剤見出しは上マージンなし */
+.drug-details > h3:first-child {
+    margin-top: 0;
+}
+
+/* 薬剤見出しの直後のカードは上部の角丸をなくして一体化 */
+.drug-details > h3 + .drug-info-card {
+    border-radius: 0 0 8px 8px;
+    margin-top: 0;
+    border-top: 2px solid #34495e;
 }
 
 .drug-article {
@@ -1155,14 +1179,7 @@
     border-radius: 4px;
     text-align: center;
     color: white;
-}
-
-.hfref-symptoms h4 {
-    background: #3498db;
-}
-
-.hfpef-symptoms h4 {
-    background: #e74c3c;
+    background: #6c757d;  /* デフォルトのグレー */
 }
 
 .symptom-box ul {
@@ -1183,14 +1200,7 @@
     position: absolute;
     left: 0;
     font-weight: bold;
-}
-
-.hfref-symptoms li:before {
-    color: #3498db;
-}
-
-.hfpef-symptoms li:before {
-    color: #e74c3c;
+    color: #6c757d;  /* デフォルトのグレー */
 }
 
 .symptom-box li strong {
