@@ -713,26 +713,34 @@
     -webkit-overflow-scrolling: touch;
 }
 
-.comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--bg-primary);
-    box-shadow: var(--shadow-medium);
+/* 比較表（汎用） - ダークネイビーヘッダー版 */
+.comparison-table { 
+    overflow-x: auto; 
+    margin-top: 2rem; 
 }
 
-.comparison-table th,
-.comparison-table td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
+.comparison-table table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    background: white; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
 }
 
-.comparison-table th {
-    background: var(--border-light);
-    font-weight: 600;
-    color: var(--text-emphasis);
-    position: sticky;
-    top: 0;
+.comparison-table th { 
+    background: #34495e;  /* ダークネイビー */
+    color: white; 
+    padding: 1rem; 
+    text-align: left; 
+}
+
+.comparison-table td { 
+    padding: 1rem; 
+    border-bottom: 1px solid #e0e0e0; 
+}
+
+.comparison-table .category { 
+    font-weight: bold; 
+    background: #f8f9fa; 
 }
 
 .comparison-table tbody tr:hover {
@@ -1004,4 +1012,36 @@
     .checklist-box {
         padding: 20px;
     }
+}
+
+/* ==============================================
+   汎用スタイル（各特集ページ共通）
+   ============================================== */
+
+/* 症状リスト（汎用） */
+.symptoms-list { 
+    margin-top: 1.5rem; 
+}
+.symptoms-list ul { 
+    margin-top: 1rem; 
+}
+.symptoms-list li { 
+    margin-bottom: 0.5rem; 
+}
+
+/* 分類説明の導入部（汎用） */
+.classification-intro { 
+    margin-bottom: 2rem; 
+}
+.lvef-explanation { 
+    margin-top: 1rem; 
+}
+
+/* 治療に関する注記（汎用） */
+.treatment-note { 
+    background: #d4edda; 
+    padding: 1rem; 
+    border-radius: 8px; 
+    margin-top: 2rem; 
+    text-align: center; 
 }
