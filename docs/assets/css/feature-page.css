@@ -719,6 +719,12 @@
     margin-top: 2rem; 
 }
 
+.comparison-table h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
 .comparison-table table { 
     width: 100%; 
     border-collapse: collapse; 
@@ -731,16 +737,44 @@
     color: white; 
     padding: 1rem; 
     text-align: left; 
+    font-weight: 600;
+}
+
+/* 特定のクラスが付いているthもデフォルトはダークネイビー */
+.comparison-table th:not(.hfref):not(.hfpef) {
+    background: #34495e;  /* ダークネイビー */
+}
+
+.comparison-table th small {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: normal;
+    margin-top: 0.2rem;
 }
 
 .comparison-table td { 
     padding: 1rem; 
     border-bottom: 1px solid #e0e0e0; 
+    vertical-align: top;
 }
 
 .comparison-table .category { 
     font-weight: bold; 
     background: #f8f9fa; 
+    white-space: nowrap;
+}
+
+/* テーブル内の強調表示 */
+.comparison-table td strong {
+    color: #1a202c;
+    font-weight: 600;
+}
+
+/* 第一列（項目列）のスタイル */
+.comparison-table td:first-child {
+    font-weight: 600;
+    background: #f8f9fa;
+    min-width: 120px;
 }
 
 .comparison-table tbody tr:hover {
@@ -1044,4 +1078,22 @@
     border-radius: 8px; 
     margin-top: 2rem; 
     text-align: center; 
+}
+
+/* 背景色付きセクション */
+.bg-light {
+    background-color: #f8f9fa;
+}
+
+/* セクションタイトル */
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+/* 未来予測セクションの余白 */
+.future-prediction {
+    margin-top: 4rem;
 }
