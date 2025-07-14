@@ -27,7 +27,7 @@
 
 /* ヒーローセクション */
 .feature-hero {
-    background: linear-gradient(135deg, var(--pharma-primary-subtle) 0%, var(--bg-accent) 100%);
+    background: #f8f9fa;  /* 薄いグレー背景 */
     padding: 60px 0 40px;
     margin-bottom: 40px;
 }
@@ -35,13 +35,32 @@
 .feature-hero-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 上部のアクセントライン */
+.feature-hero-container::before {
+    content: '';
+    display: block;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db 0%, #1e5c8a 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .feature-breadcrumb {
     font-size: 14px;
     color: var(--text-pharma-body);
     margin-bottom: 20px;
+    padding-top: 10px;  /* アクセントラインとの間隔 */
 }
 
 .feature-breadcrumb a {
