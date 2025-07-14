@@ -402,16 +402,18 @@
 
 /* 警告ボックス */
 .warning-box {
-    background: #fff3cd;
-    border: 2px solid var(--warning-color);
+    background: #fff9e6;  /* 薄い黄色背景 */
+    border: 2px solid #f0b429;  /* 濃い黄色のボーダー */
     border-radius: 8px;
     padding: 25px;
     margin-bottom: 30px;
 }
 
 .warning-box h4 {
-    color: var(--warning-color);
+    color: #7a5200;  /* ダークブラウン - 高コントラスト */
     margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 
 .warning-box ul {
@@ -421,17 +423,37 @@
 
 .warning-box li {
     padding: 8px 0;
-    color: var(--warning-color);
+    color: #4a3200;  /* より濃いブラウン - 通常テキスト */
+    position: relative;
+    padding-left: 20px;
+}
+
+.warning-box li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #f0b429;
+    font-weight: bold;
 }
 
 .warning-box li strong {
-    color: var(--warning-color);
+    color: #7a5200;  /* 見出しと同じダークブラウン */
+    font-weight: 600;
+}
+
+.warning-box p {
+    color: #4a3200;  /* 通常テキストと同じ色 */
+    line-height: 1.6;
 }
 
 .warning-note {
     margin-top: 15px;
     font-weight: 600;
-    color: var(--warning-color);
+    color: #7a5200;  /* ダークブラウン */
+    display: inline-block;
+    padding: 5px 10px;
+    background: #ffe5b4;  /* さらに薄い黄色 */
+    border-radius: 4px;
 }
 
 /* 患者プロファイル */
@@ -1096,4 +1118,93 @@
 /* 未来予測セクションの余白 */
 .future-prediction {
     margin-top: 4rem;
+}
+
+/* 症状比較セクション */
+.symptoms-comparison {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.symptoms-comparison h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+/* 症状ボックス */
+.symptom-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.symptom-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.symptom-box h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-align: center;
+    color: white;
+}
+
+.hfref-symptoms h4 {
+    background: #3498db;
+}
+
+.hfpef-symptoms h4 {
+    background: #e74c3c;
+}
+
+.symptom-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.symptom-box li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.symptom-box li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.hfref-symptoms li:before {
+    color: #3498db;
+}
+
+.hfpef-symptoms li:before {
+    color: #e74c3c;
+}
+
+.symptom-box li strong {
+    color: #1a202c;
+    font-weight: 600;
+}
+
+/* 診断の難しさセクション */
+.diagnostic-challenge {
+    margin-top: 2rem;
+}
+
+.diagnostic-challenge h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
 }
