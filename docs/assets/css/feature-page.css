@@ -1239,3 +1239,41 @@
     margin-bottom: 1.5rem;
     color: #2c3e50;
 }
+
+/* ==============================================
+   比較グリッド（デスクトップ2列、モバイル1列）
+   ============================================== */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.comparison-item {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* 2x2グリッド（デスクトップ2×2、モバイル1列） */
+.four-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* モバイル対応 */
+@media (max-width: 767px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .comparison-item {
+        padding: 15px;
+    }
+    
+    .four-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
