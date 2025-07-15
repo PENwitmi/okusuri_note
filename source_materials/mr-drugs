@@ -1,0 +1,388 @@
+       <!-- 薬剤別詳細解説 -->
+        <section class="feature-section drug-details">
+            <div class="section-container">
+                <h2 class="section-title">世代別詳細解説</h2>
+
+                <!-- スピロノラクトン -->
+                <article class="drug-article" id="spironolactone">
+                    <div class="drug-header">
+                        <h3 class="drug-name">
+                            <span class="drug-icon">💊</span>
+                            スピロノラクトン（アルダクトン）
+                        </h3>
+                        <span class="drug-category" style="background: var(--mr-gen1);">第1世代 - すべての始まり</span>
+                    </div>
+
+                    <div class="drug-content">
+                        <div class="drug-info-card">
+                            <h4>基本情報</h4>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="info-label">開発年</span>
+                                    <span class="info-value">1959年（日本：1978年）</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">構造</span>
+                                    <span class="info-value">ステロイド型</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">MR選択性</span>
+                                    <span class="info-value">低い（AR、PR、GRにも作用）</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">半減期</span>
+                                    <span class="info-value">1.5時間（活性代謝物20時間）</span>
+                                </div>
+                                <div class="info-item full-width">
+                                    <span class="info-label">主な適応症</span>
+                                    <span class="info-value">高血圧、心不全、原発性アルドステロン症、肝硬変腹水</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="drug-info-card">
+                            <h4>画期的臨床試験：RALES試験（1999年）</h4>
+                            <div class="indication-table">
+                                <table>
+                                    <tr>
+                                        <th>項目</th>
+                                        <th>内容</th>
+                                        <th>結果</th>
+                                    </tr>
+                                    <tr>
+                                        <td>対象</td>
+                                        <td>重症心不全（NYHA III-IV）1,663名</td>
+                                        <td>死亡率30%減少</td>
+                                    </tr>
+                                    <tr>
+                                        <td>用量</td>
+                                        <td>25mg/日（低用量）</td>
+                                        <td>心不全入院35%減少</td>
+                                    </tr>
+                                    <tr>
+                                        <td>インパクト</td>
+                                        <td>利尿薬から臓器保護薬へのパラダイムシフト</td>
+                                        <td>MR拮抗薬の真価を証明</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4>⚠️ 性ホルモン様副作用</h4>
+                            <ul>
+                                <li><strong>女性化乳房</strong>：9-15%（用量依存性）</li>
+                                <li><strong>月経異常</strong>：5-10%</li>
+                                <li><strong>性欲減退</strong>：2-5%</li>
+                            </ul>
+                            <p class="warning-note">これらの副作用が次世代開発の原動力となった</p>
+                        </div>
+
+                        <div class="patient-profile">
+                            <h4>現在でも第一選択となる場面</h4>
+                            <div class="profile-grid">
+                                <div class="profile-item">
+                                    <h5>経済性重視</h5>
+                                    <p>1日薬価約20円と圧倒的に安価</p>
+                                </div>
+                                <div class="profile-item">
+                                    <h5>肝硬変腹水</h5>
+                                    <p>唯一適応を持ち、豊富なエビデンス</p>
+                                </div>
+                                <div class="profile-item">
+                                    <h5>重症心不全</h5>
+                                    <p>RALES試験の強力なエビデンス</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- エプレレノン -->
+                <article class="drug-article" id="eplerenone">
+                    <div class="drug-header">
+                        <h3 class="drug-name">
+                            <span class="drug-icon">🔬</span>
+                            エプレレノン（セララ）
+                        </h3>
+                        <span class="drug-category" style="background: var(--mr-gen2);">第2世代 - 選択性の革新</span>
+                    </div>
+
+                    <div class="drug-content">
+                        <div class="drug-info-card">
+                            <h4>基本情報</h4>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="info-label">開発年</span>
+                                    <span class="info-value">2002年（日本：2007年）</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">構造</span>
+                                    <span class="info-value">ステロイド型（エポキシ基付加）</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">MR選択性</span>
+                                    <span class="info-value">高い（スピロノラクトンの100-1000倍）</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">半減期</span>
+                                    <span class="info-value">4-6時間</span>
+                                </div>
+                                <div class="info-item full-width">
+                                    <span class="info-label">主な適応症</span>
+                                    <span class="info-value">高血圧症、慢性心不全</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="adaptation-reason">
+                            <h4>革新の意義：選択的MR拮抗の実現</h4>
+                            <div class="reason-cards">
+                                <div class="reason-card">
+                                    <h5>構造的工夫</h5>
+                                    <ul>
+                                        <li>9α,11α-エポキシ基の導入</li>
+                                        <li>17α位のメチルエステル基</li>
+                                        <li>AR、PR、GRへの親和性を大幅低下</li>
+                                    </ul>
+                                </div>
+                                <div class="reason-card">
+                                    <h5>臨床的成果</h5>
+                                    <ul>
+                                        <li>女性化乳房：<1%（激減）</li>
+                                        <li>性ホルモン様副作用ほぼなし</li>
+                                        <li>QOL改善により継続率向上</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="drug-info-card">
+                            <h4>主要臨床試験</h4>
+                            <div class="comparison-table-wrapper">
+                                <table class="comparison-table">
+                                    <thead>
+                                        <tr>
+                                            <th>試験名</th>
+                                            <th>対象</th>
+                                            <th>結果</th>
+                                            <th>意義</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>EPHESUS</strong></td>
+                                            <td>急性心筋梗塞後の心不全</td>
+                                            <td>死亡率15%減少</td>
+                                            <td>急性期からの使用確立</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>EMPHASIS-HF</strong></td>
+                                            <td>軽症心不全（NYHA II）</td>
+                                            <td>死亡率24%減少</td>
+                                            <td>早期介入の重要性証明</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="patient-profile">
+                            <h4>エプレレノンが推奨される患者</h4>
+                            <ul>
+                                <li>男性患者（女性化乳房のリスク回避）</li>
+                                <li>若年患者（QOLへの配慮）</li>
+                                <li>スピロノラクトンで副作用既往のある患者</li>
+                                <li>軽症心不全（EMPHASIS-HFのエビデンス）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- エサキセレノン -->
+                <article class="drug-article" id="esaxerenone">
+                    <div class="drug-header">
+                        <h3 class="drug-name">
+                            <span class="drug-icon">🇯🇵</span>
+                            エサキセレノン（ミネブロ）
+                        </h3>
+                        <span class="drug-category" style="background: var(--mr-gen3);">第3世代 - 日本発の革新</span>
+                    </div>
+
+                    <div class="drug-content">
+                        <div class="drug-info-card">
+                            <h4>基本情報</h4>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="info-label">開発年</span>
+                                    <span class="info-value">2019年（世界初承認：日本）</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">構造</span>
+                                    <span class="info-value">非ステロイド型（世界初）</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">MR選択性</span>
+                                    <span class="info-value">極めて高い（スピロノラクトンの1000倍以上）</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">半減期</span>
+                                    <span class="info-value">18-23時間（長時間作用）</span>
+                                </div>
+                                <div class="info-item full-width">
+                                    <span class="info-label">主な適応症</span>
+                                    <span class="info-value">高血圧症（現時点では高血圧のみ）</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="smart-concept" style="background: #fff3cd; border: 2px solid #ffc107;">
+                            <h4 style="color: #856404;">非ステロイド構造の革新性</h4>
+                            <p class="smart-definition">
+                                第一三共が開発した<strong>ピロール-3-カルボン酸誘導体</strong>構造により、ステロイド骨格を完全に脱却。
+                                これにより、性ホルモン様副作用を構造的に回避し、極めて高いMR選択性を実現。
+                                日本発の創薬として世界が注目。
+                            </p>
+                        </div>
+
+                        <div class="drug-info-card">
+                            <h4>ESAX-HTN試験の成果</h4>
+                            <div class="device-features">
+                                <div class="feature-item">
+                                    <strong>強力な降圧効果</strong>
+                                    <p>収縮期血圧 -17.0mmHg（5mg群）</p>
+                                </div>
+                                <div class="feature-item">
+                                    <strong>24時間血圧管理</strong>
+                                    <p>夜間血圧も良好にコントロール</p>
+                                </div>
+                                <div class="feature-item">
+                                    <strong>即効性</strong>
+                                    <p>投与1週間で有意な降圧</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="patient-profile">
+                            <h4>エサキセレノンの位置づけ</h4>
+                            <div class="profile-grid">
+                                <div class="profile-item">
+                                    <h5>降圧効果重視</h5>
+                                    <p>MR拮抗薬中で最も強力な降圧効果</p>
+                                </div>
+                                <div class="profile-item">
+                                    <h5>アドヒアランス</h5>
+                                    <p>1日1回投与で確実な服薬</p>
+                                </div>
+                                <div class="profile-item">
+                                    <h5>今後の期待</h5>
+                                    <p>心不全・CKDへの適応拡大が期待</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- フィネレノン -->
+                <article class="drug-article" id="finerenone">
+                    <div class="drug-header">
+                        <h3 class="drug-name">
+                            <span class="drug-icon">🎯</span>
+                            フィネレノン（ケレンディア）
+                        </h3>
+                        <span class="drug-category" style="background: var(--mr-gen4);">第4世代 - 心腎連関への挑戦</span>
+                    </div>
+
+                    <div class="drug-content">
+                        <div class="drug-info-card">
+                            <h4>基本情報</h4>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="info-label">開発年</span>
+                                    <span class="info-value">2021年（日本：2022年）</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">構造</span>
+                                    <span class="info-value">非ステロイド型（ナフチリジン誘導体）</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">MR選択性</span>
+                                    <span class="info-value">高い（部分アゴニスト活性）</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">半減期</span>
+                                    <span class="info-value">2-3時間（短時間作用）</span>
+                                </div>
+                                <div class="info-item full-width">
+                                    <span class="info-label">適応症</span>
+                                    <span class="info-value">2型糖尿病を合併する慢性腎臓病（唯一のMR拮抗薬）</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="drug-info-card">
+                            <h4>画期的な臨床試験：FIDELIO-DKD & FIGARO-DKD</h4>
+                            <div class="comparison-table-wrapper">
+                                <table class="comparison-table">
+                                    <thead>
+                                        <tr>
+                                            <th>試験名</th>
+                                            <th>主要評価項目</th>
+                                            <th>結果</th>
+                                            <th>特記事項</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>FIDELIO-DKD</strong></td>
+                                            <td>腎複合エンドポイント</td>
+                                            <td>18%リスク減少</td>
+                                            <td>透析導入を有意に遅延</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>FIGARO-DKD</strong></td>
+                                            <td>心血管複合エンドポイント</td>
+                                            <td>13%リスク減少</td>
+                                            <td>心不全入院を特に抑制</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>FIDELITY</strong></td>
+                                            <td>統合解析（13,026名）</td>
+                                            <td>尿蛋白31%減少</td>
+                                            <td>心腎連関への効果証明</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="smart-reason">
+                            <h5>なぜフィネレノンだけがCKD適応を取得できたのか？</h5>
+                            <p class="highlight-text">
+                                <strong>部分アゴニスト活性</strong>による独特の作用機序により、腎臓での炎症・線維化を特異的に抑制。
+                                さらに、RAS阻害薬・SGLT2阻害薬との併用により、3剤による強力な腎保護効果を実現。
+                                これは他のMR拮抗薬にはない特徴である。
+                            </p>
+                        </div>
+
+                        <div class="patient-profile">
+                            <h4>フィネレノン適応患者</h4>
+                            <div class="smart-patients">
+                                <div class="patient-card">
+                                    <h5>基本条件</h5>
+                                    <p>2型糖尿病＋CKD（eGFR ≥25）</p>
+                                </div>
+                                <div class="patient-card">
+                                    <h5>必須併用薬</h5>
+                                    <p>ACE阻害薬またはARB（最大耐用量）</p>
+                                </div>
+                                <div class="patient-card">
+                                    <h5>推奨併用</h5>
+                                    <p>SGLT2阻害薬（相乗効果）</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
