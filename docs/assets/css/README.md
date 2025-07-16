@@ -20,7 +20,7 @@
 
 ### 🎯 実稼働CSSファイル役割分担
 
-#### **9つの実稼働CSSファイル - 責務別分類**
+#### **10個の実稼働CSSファイル - 責務別分類**
 
 | ファイル | 行数 | 主要責務 | 使用ページ |
 |----------|------|----------|-----------|
@@ -33,6 +33,7 @@
 | **sidebar.css** | 129行 | 汎用サイドバーシステム（PC用） | drugs-v2/*.html、将来的に他ページ |
 | **mobile-controls.css** | 203行 | モバイル用フローティング+ボトムシート | drugs-v2/*.html、将来的に他ページ |
 | **feature-page.css** | 1006行 | 特集ページ専用（ヒーローセクション・薬剤フロー・比較表） | features/*.htmlのみ（7ページ） |
+| **components.css** | 550行 | 汎用コンポーネントスタイル（ボックス・テーブル・セクション・グリッド） | drugs/*.html（薬剤詳細ページで使用） |
 
 #### **各ファイルの詳細機能**
 
@@ -99,6 +100,14 @@
 - 警告ボックス・キーポイント・チェックリスト
 - SMART療法・トリプル療法専用スタイル
 
+**components.css（550行）** - 汎用コンポーネントスタイル（2025-07-16追加）
+- ボックス系（5種類）：info-box、alert-box、highlight-box、key-point-box、quote-box
+- テーブル系（4種類）：comparison-table、data-table、clinical-table、summary-table
+- セクション系（4種類）：content-section、development-story、clinical-evidence、safety-comparison
+- グリッド系（3種類）：content-grid、feature-grid、data-grid
+- レスポンシブ対応・アクセシビリティ配慮
+- 薬剤ページの固有クラスを標準化し、視覚的一貫性を実現
+
 #### **ページ別CSS読み込みパターン**
 
 ```html
@@ -108,7 +117,16 @@
 <link rel="stylesheet" href="assets/css/index.css">
 <link rel="stylesheet" href="assets/css/interactive.css">
 
-<!-- drugs-v2/*.html（薬剤詳細ページ） -->
+<!-- drugs/*.html（薬剤詳細ページ - 新形式） -->
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/responsive-unified.css">
+<link rel="stylesheet" href="../assets/css/sidebar.css">
+<link rel="stylesheet" href="../assets/css/mobile-controls.css">
+<link rel="stylesheet" href="../assets/css/level-selector.css">
+<link rel="stylesheet" href="../assets/css/drug-page-v2.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+
+<!-- drugs-v2/*.html（薬剤詳細ページ - 旧形式） -->
 <link rel="stylesheet" href="../assets/css/style.css">
 <link rel="stylesheet" href="../assets/css/responsive-unified.css">
 <link rel="stylesheet" href="../assets/css/sidebar.css">
@@ -143,7 +161,8 @@ drugs-v2/*.html → level-selector.css（学習レベル機能）
 ```
 【実際に稼働中のページ】
 ├── index.html（メインページ）
-├── drugs-v2/*.html（22個の薬剤詳細ページ）
+├── drugs/*.html（6個の薬剤詳細ページ - 新形式）
+├── drugs-v2/*.html（22個の薬剤詳細ページ - 旧形式）
 ├── features/*.html（7個の特集ページ）
 └── 404.html（エラーページ）
 
@@ -153,9 +172,10 @@ drugs-v2/*.html → level-selector.css（学習レベル機能）
     ├── メインページ層: index.css (605行) + interactive.css (542行)
     ├── 薬剤ページ層: drug-page-v2.css (1006行) + level-selector.css (315行)
     │               + sidebar.css (129行) + mobile-controls.css (203行)
+    │               + components.css (550行) - 汎用コンポーネント
     └── 特集ページ層: feature-page.css (1006行)
 
-【総計】実稼働CSS: 4,935行（9ファイル）
+【総計】実稼働CSS: 5,485行（10ファイル）
 ```
 
 ---

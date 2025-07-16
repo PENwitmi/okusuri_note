@@ -1,39 +1,38 @@
 # OkusuriNote マスター進捗ダッシュボード
-**最新更新**: 2025-07-14 08:49 - index.html薬剤カード表示修正（公開許可5薬剤のみ表示）  
+**最新更新**: 2025-07-17 03:48 - Components CSS標準化プロジェクト開始  
 **更新頻度**: リアルタイム（変更発生時即座）  
 **目的**: すべてのタスクと文書の状態を一元管理  
 **ガバナンス**: CEOが最終編集責任、Managerに実務更新委任（2025-06-30 23:45策定）
 
-## 🎯 現在の状況（08:49時点）
+## 🎯 現在の状況（03:48時点）
 
 ### 📊 プロジェクト統計サマリー
-- **公開中薬剤**: 5薬剤（drugs/ディレクトリ）
-- **公開中特集**: 1ページ（抗血栓薬完全マスター）
-- **v3薬剤ページ完成**: 22薬剤（監査待ち）
-- **特集ページ完成**: 7ページ（1公開、6監査待ち）
+- **公開中薬剤**: 6薬剤（drugs/ディレクトリ）
+- **公開中特集**: 3ページ（抗血栓薬、心不全治療、吸入薬）
+- **v3薬剤ページ完成**: 22薬剤（完了・一部監査待ち）
+- **特集ページ完成**: 7ページ（3公開、4監査待ち）
 - **source_materials拡充**: 漢方薬21処方、消化管運動改善薬7ファイル、抗血小板薬3ファイル追加
 
 ## 🚀 現在進行中のプロジェクト
 
-### 薬剤ページv2→v3移行プロジェクト（2025-07-08 02:20開始）
-**ステータス**: 🚀 **Phase 2進行中**（循環器系薬剤移行中）  
-**目的**: source_materialsの豊富な情報を活用した高品質v3薬剤ページの作成  
-**方針**: metformin-refined.htmlをテンプレートとし、手作業で各薬剤の情報を統合  
+### Components CSS標準化プロジェクト（2025-07-17 03:15開始）
+**ステータス**: 🚀 **Phase 1実施中**（components.css適用段階）  
+**目的**: components.cssの全薬剤ページへの適用と固有クラスの標準化  
+**方針**: 新規クラスの作成は行わず、既存のcomponents.cssクラスのみを使用  
 
-#### 移行進捗（20薬剤完了）
-- ✅ rosuvastatin、telmisartan、dapagliflozin、dotinurad、lansoprazole
-- ✅ atorvastatin、amlodipine、empagliflozin、domperidone、metoclopramide
-- ✅ bisoprolol、celecoxib、metformin、sitagliptin、perindopril
-- ✅ furosemide、carvedilol、teneligliptin、esomeprazole、lemborexant（2025-07-10追加）
-- 🚀 **次の対象**: pravastatin、ezetimibe（循環器系薬剤）
+#### 実施進捗
+- ✅ CSS README.md更新（components.cssを実稼働リストに追加）
+- ✅ CLAUDE.md更新（CSS設計セクションに追加）
+- ✅ metformin.htmlへの適用完了
+- 🚀 **次の対象**: dotinurad.html（約30個の固有クラス置換）
 
-#### 移行フェーズ計画
-- Phase 1: 基盤整備（✅ 完了）
-- Phase 2: 第1バッチ・循環器系（🚀 進行中）
-- Phase 3: 第2バッチ・内分泌系/消化器系
-- Phase 4: 第3バッチ・精神神経系/その他
+#### 段階的実装計画
+- Phase 1: ドキュメント整備とmetformin.html適用（✅ 完了）
+- Phase 2: dotinurad.html適用（🚀 進行中）
+- Phase 3: 既存使用中4ファイルの未定義クラス確認
+- Phase 4: 新規薬剤ページテンプレートへの組み込み
 
-**詳細**: `project-docs/2025-07-08-drug-v3-migration/`
+**詳細**: `project-docs/2025-07-17-css-components-standardization/`
 
 ### 📋 HTML作成待機中の特集ページ（3件）
 
@@ -50,6 +49,13 @@
    - 詳細：`project-docs/2025-07-09-psychotropic-alternative-uses-feature/`
 
 ## ✅ 完了済みプロジェクト
+
+### 薬剤ページv2→v3移行プロジェクト（2025-07-08～07-11完了）
+**成果**: 22薬剤のv3版完成、metformin-refined.htmlテンプレート化成功  
+**詳細**: `project-docs/2025-07-08-drug-v3-migration/`
+- ✅ 全22薬剤の移行完了（rosuvastatin〜lemborexant）
+- ✅ 高品質基準達成（500行以上、感動的要素、3レベル学習システム）
+- ✅ lemborexant.htmlをdrugs/ディレクトリに正式実装（7/16）
 
 ### 特集ページ（HTML実装完了：7種類）
 1. **抗血栓薬完全マスター**（7/10）：`antithrombotic-complete-guide.html`
@@ -77,14 +83,32 @@
 
 ### 進行中プロジェクトドキュメント
 
-#### 薬剤ページv2→v3移行プロジェクト（2025-07-08〜）
+#### Components CSS標準化プロジェクト（2025-07-17〜）
+**場所**: project-docs/2025-07-17-css-components-standardization/
+- `01-COMPONENTS_CSS_STANDARDIZATION_PLAN.md` - 標準化計画書
+- `02-CURRENT_STATUS_REPORT.md` - 進捗状況レポート
+- `03-DOTINURAD_CLASS_ANALYSIS.md` - dotinurad.html固有クラス詳細分析
+- `04-PHASED_IMPLEMENTATION_PROPOSAL.md` - 段階的適用提案書
+
+### 完了プロジェクトドキュメント（主要なもの）
+
+#### 薬剤ページv2→v3移行プロジェクト（2025-07-08〜07-11）
 **場所**: project-docs/2025-07-08-drug-v3-migration/
 - PROJECT_OVERVIEW、V3_QUALITY_STANDARDS、MIGRATION_WORKFLOW
-- migration-logs/：各薬剤の移行記録（10薬剤完了）
+- migration-logs/：各薬剤の移行記録（22薬剤完了）
 
-### 完了プロジェクトドキュメント
-- **特集ページ関連**：各project-docs/2025-07-XX-feature/参照
-- **技術基盤関連**：各project-docs/参照（CSS改革、UI/UX最適化等）
+#### 特集ページ関連
+- `2025-07-09-antithrombotic-medications-guide/` - 抗血栓薬特集（9ファイル）
+- `2025-07-08-inhaler-feature/` - 吸入薬特集（3ファイル）
+- `2025-07-08-mr-antagonist-feature/` - MR拮抗薬特集（6ファイル）
+- `2025-07-09-heart-failure-feature/` - 心不全治療特集（7ファイル）
+- `2025-07-09-kampo-medicine-features/` - 漢方薬特集（21ファイル）
+- `2025-07-09-prokinetics-feature/` - 消化管運動改善薬特集（6ファイル）
+
+#### 技術基盤関連
+- `2025-07-05-ui-ux-viewport-optimization/` - UI/UX最適化（27ファイル）
+- `2025-07-04-level3-restoration-css-reform/` - CSS改革（18ファイル）
+- `2025-07-03-css-consolidation/` - CSS統合（6ファイル）
 
 ### プロジェクト管理（恒久的）
 **場所**: プロジェクトルート

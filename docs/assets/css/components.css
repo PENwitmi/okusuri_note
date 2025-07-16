@@ -1,0 +1,550 @@
+/*
+ * components.css - 汎用コンポーネントスタイル集
+ * Version: 1.0.0
+ * 作成日時: 2025-07-16
+ * 
+ * 薬剤ページ・特集ページ共通で使える汎用コンポーネント
+ * ボックス、テーブル、セクション、グリッドの統一スタイル
+ * 
+ * 【重要】コンポーネント使用方針
+ * ==========================================
+ * すべてのコンポーネントは、定義済みのものから選んで使用してください。
+ * 新しい用途が発生しても、新規作成せず既存のものを活用することが原則です。
+ * 
+ * ■ ボックス（5種類）
+ *   例：「処方のコツ」→ key-point-box、「エビデンス」→ info-box
+ * 
+ * ■ テーブル（4種類）
+ *   例：「薬価一覧」→ data-table、「相互作用」→ clinical-table
+ * 
+ * ■ セクション（4種類）
+ *   例：「薬剤の歴史」→ development-story、「副作用詳細」→ clinical-evidence
+ * 
+ * ■ グリッド（4種類）
+ *   例：「効能一覧」→ content-grid、「統計データ」→ data-grid
+ * 
+ * これにより、視覚的な一貫性を保ち、CSSの肥大化を防ぎます。
+ * 用途名にとらわれず、デザインや構造の類似性で選択してください。
+ * ==========================================
+ */
+
+/* ========================================
+   CSS変数の継承
+======================================== */
+/* style.cssの変数を前提として使用 */
+
+/* ========================================
+   ボックス系コンポーネント
+======================================== */
+
+/* カード要素（汎用） */
+.card {
+    background: var(--bg-card);
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid var(--border-light);
+    transition: all var(--transition-base);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-medium);
+}
+
+/* 基本ボックススタイル（共通） */
+.info-box,
+.alert-box,
+.highlight-box,
+.key-point-box,
+.quote-box {
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    border-radius: 8px;
+    position: relative;
+    line-height: 1.7;
+}
+
+/* 情報ボックス（青系） */
+.info-box {
+    background: #f0f7ff;
+    border: 1px solid #cce7ff;
+    border-left: 4px solid var(--pharma-primary);
+    color: var(--text-reading);
+}
+
+.info-box > * {
+    margin-left: 0;
+}
+
+.info-box h5 {
+    color: var(--pharma-primary);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-base);
+    font-weight: 600;
+}
+
+/* アラートボックス（黄色系） */
+.alert-box {
+    background: #fffbf0;
+    border: 1px solid #ffe0a0;
+    border-left: 4px solid #f39c12;
+    color: var(--text-reading);
+}
+
+.alert-box > * {
+    margin-left: 0;
+}
+
+/* ハイライトボックス（緑系） */
+.highlight-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid var(--pharma-nature);
+    color: var(--text-reading);
+}
+
+.highlight-box > * {
+    margin-left: 0;
+}
+
+/* キーポイントボックス（オレンジ系） */
+.key-point-box {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-left: 4px solid #ea580c;
+    color: var(--text-reading);
+}
+
+.key-point-box > * {
+    margin-left: 0;
+}
+
+/* 引用ボックス（グレー系） */
+.quote-box {
+    background: var(--bg-accent);
+    border-left: 3px solid var(--pharma-primary);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    border-radius: 4px;
+}
+
+.quote-box blockquote {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    color: var(--text-reading);
+    font-style: italic;
+    margin: 0;
+}
+
+.quote-box cite {
+    display: block;
+    text-align: right;
+    margin-top: var(--spacing-sm);
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+    font-style: normal;
+}
+
+/* ========================================
+   テーブル系コンポーネント
+======================================== */
+
+/* テーブルラッパー */
+.comparison-table-wrapper,
+.data-table-wrapper,
+.clinical-table-wrapper,
+.summary-table-wrapper {
+    margin-bottom: 40px;
+    overflow-x: auto;
+}
+
+/* 比較テーブル（ダークネイビーヘッダー） */
+.comparison-table { 
+    overflow-x: auto; 
+    margin-top: 2rem; 
+}
+
+.comparison-table h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.comparison-table table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    background: white; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+}
+
+.comparison-table th { 
+    background: #34495e;  /* ダークネイビー */
+    color: white; 
+    padding: 1rem; 
+    text-align: left; 
+    font-weight: 600;
+}
+
+.comparison-table th small {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: normal;
+    margin-top: 0.2rem;
+}
+
+.comparison-table td { 
+    padding: 1rem; 
+    border-bottom: 1px solid #e0e0e0; 
+    vertical-align: top;
+}
+
+.comparison-table .category { 
+    font-weight: bold; 
+    background: #f8f9fa; 
+    white-space: nowrap;
+}
+
+/* テーブル内の強調表示 */
+.comparison-table td strong {
+    color: #1a202c;
+    font-weight: 600;
+}
+
+/* 第一列（項目列）のスタイル */
+.comparison-table td:first-child {
+    font-weight: 600;
+    background: #f8f9fa;
+    min-width: 120px;
+}
+
+.comparison-table tbody tr:hover {
+    background: var(--bg-secondary);
+}
+
+/* データテーブル（基本） */
+.data-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.data-table th {
+    background: #f5f7fa;
+    color: var(--text-primary);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.data-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* 臨床テーブル（医療データ用） */
+.clinical-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border: 1px solid #e2e8f0;
+}
+
+.clinical-table th {
+    background: var(--pharma-primary);
+    color: white;
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.clinical-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.clinical-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+/* サマリーテーブル（要約用） */
+.summary-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f8fafc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.summary-table th {
+    background: #e2e8f0;
+    color: var(--text-primary);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.summary-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+}
+
+/* ========================================
+   セクション系コンポーネント
+======================================== */
+
+/* 基本コンテンツセクション */
+.content-section {
+    background: var(--bg-secondary);
+    padding: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.content-section h2 {
+    color: var(--pharma-primary);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-2xl);
+}
+
+.content-section h3 {
+    color: var(--pharma-primary-dark);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-base);
+    font-size: var(--font-size-xl);
+}
+
+/* 開発ストーリーセクション */
+.development-story {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+    padding: var(--spacing-2xl);
+    margin: var(--spacing-2xl) 0;
+    border-radius: 16px;
+    border: 1px solid #cce7ff;
+    position: relative;
+}
+
+.development-story::before {
+    content: "📖";
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 32px;
+    opacity: 0.5;
+}
+
+.development-story h2 {
+    color: var(--pharma-primary);
+    margin-bottom: var(--spacing-xl);
+    font-size: var(--font-size-3xl);
+}
+
+/* 臨床エビデンスセクション */
+.clinical-evidence {
+    background: white;
+    padding: var(--spacing-2xl);
+    margin: var(--spacing-2xl) 0;
+    border-radius: 16px;
+    border: 2px solid var(--pharma-primary-light);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.08);
+}
+
+.clinical-evidence h2 {
+    color: var(--pharma-primary);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    font-size: var(--font-size-3xl);
+}
+
+.clinical-evidence h3 {
+    color: var(--pharma-primary-dark);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--pharma-primary-light);
+}
+
+/* 安全性比較セクション */
+.safety-comparison {
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+    padding: var(--spacing-2xl);
+    margin: var(--spacing-2xl) 0;
+    border-radius: 16px;
+    border: 1px solid #bbf7d0;
+}
+
+.safety-comparison h2 {
+    color: var(--pharma-nature);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    font-size: var(--font-size-3xl);
+}
+
+/* ========================================
+   グリッド系コンポーネント
+======================================== */
+
+/* 汎用コンテンツグリッド */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.content-item {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid var(--border-light);
+    transition: all var(--transition-base);
+}
+
+.content-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.content-item h3,
+.content-item h4 {
+    color: var(--pharma-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* 特徴グリッド（アイコン付き） */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-base);
+    margin: var(--spacing-lg) 0;
+}
+
+.feature-grid .content-item {
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.feature-grid .content-item::before {
+    content: attr(data-icon);
+    display: block;
+    font-size: 48px;
+    margin-bottom: var(--spacing-base);
+}
+
+/* データグリッド（数値表示用） */
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-base);
+    margin: var(--spacing-lg) 0;
+}
+
+.data-grid .content-item {
+    background: var(--bg-accent);
+    text-align: center;
+    border: none;
+    box-shadow: none;
+}
+
+.data-grid .content-item:hover {
+    transform: none;
+    background: var(--bg-secondary);
+}
+
+.data-grid .content-item h4 {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+}
+
+.data-grid .content-item p {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--pharma-primary);
+    margin: 0;
+}
+
+/* ========================================
+   レスポンシブ対応
+======================================== */
+
+@media (max-width: 768px) {
+    /* グリッドをシングルカラムに */
+    .content-grid,
+    .feature-grid,
+    .data-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-base);
+    }
+    
+    /* セクションのパディング調整 */
+    .content-section,
+    .development-story,
+    .clinical-evidence,
+    .safety-comparison {
+        padding: var(--spacing-lg);
+        margin: var(--spacing-lg) 0;
+    }
+    
+    /* テーブルのフォントサイズ調整 */
+    .comparison-table,
+    .data-table,
+    .clinical-table,
+    .summary-table {
+        font-size: 14px;
+    }
+    
+    .comparison-table th,
+    .comparison-table td,
+    .data-table th,
+    .data-table td,
+    .clinical-table th,
+    .clinical-table td,
+    .summary-table th,
+    .summary-table td {
+        padding: 10px;
+    }
+    
+}
+
+/* ========================================
+   アクセシビリティ対応
+======================================== */
+
+/* ハイコントラストモード */
+@media (prefers-contrast: high) {
+    .content-item,
+    .info-box,
+    .alert-box,
+    .highlight-box,
+    .key-point-box {
+        border: 2px solid currentColor;
+    }
+    
+    .comparison-table th,
+    .clinical-table th {
+        outline: 2px solid currentColor;
+    }
+}
+
+/* モーション軽減 */
+@media (prefers-reduced-motion: reduce) {
+    .content-item {
+        transition: none;
+    }
+    
+    .content-item:hover {
+        transform: none;
+    }
+}
