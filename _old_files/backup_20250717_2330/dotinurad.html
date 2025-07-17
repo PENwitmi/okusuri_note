@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="../assets/css/mobile-controls.css">
     <link rel="stylesheet" href="../assets/css/level-selector.css">
     <link rel="stylesheet" href="../assets/css/drug-page-v2.css">
-    <link rel="stylesheet" href="../assets/css/components.css">
 </head>
 <body class="drug-detail" data-category="metabolic">
     <div class="sidebar-layout">
@@ -202,9 +201,8 @@ Rp) ユリス錠 2mg
     <!-- Task 1.4: 薬学生FAQ（Level 1の最後に配置） -->
     <section class="level-1-content">
         <div class="container">
-            <div class="content-section">
-                <h3>💡 薬学生のよくある疑問</h3>
-                <dl>
+            <h3>💡 薬学生のよくある疑問</h3>
+        <dl>
             <dt>Q: 「なぜドチヌラドは革命的なのですか？」</dt>
             <dd>A: 実は50年間、製薬業界は「尿酸を排出させる薬」の開発を諦めていました。<br>ベンズブロマロンの肝毒性問題（2000年）以降、製薬会社は「尿酸を作らせない薬」（フェブキソスタット等）ばかり開発していました。<br>ドチヌラドは肝臓への安全性を確保して、50年ぶりに「尿酸排泄」に成功した画期的な薬です。</dd>
             
@@ -213,8 +211,8 @@ Rp) ユリス錠 2mg
             
             <dt>Q: 「SURIという新しい分類がありますが、何が違うのですか？」</dt>
             <dd>A: 従来の尿酸排泄促進薬は様々なトランスポーターをブロックして副作用が多く見られました。<br>SURIは尿酸の入口（URAT1）だけをピンポイントでブロックします。<br>標的を絞っているため安全性が高いのです。<span class="level-hint">（詳しくは研修編で）</span></dd>
-                </dl>
-            </div>
+        </dl>
+        
         </div>
     </section>
 
@@ -229,11 +227,11 @@ Rp) ユリス錠 2mg
         <div class="container">
             <h2>🔬 作用機序の詳細理解</h2>
             
-            <div class="content-section">
+            <div class="mechanism-detail">
                 <h3>選択的阻害がなぜ重要なのか</h3>
                 
-                <div class="info-box">
-                    <h5>1. なぜ選択的阻害が重要なのか</h5>
+                <div class="mechanism-box">
+                    <h4>1. なぜ選択的阻害が重要なのか</h4>
                     <p>腎臓には尿酸を扱う複数のトランスポーターが存在します：</p>
                     <ul>
                         <li><strong>URAT1</strong>：尿酸を再吸収する（尿酸を体内に戻す）</li>
@@ -242,8 +240,8 @@ Rp) ユリス錠 2mg
                     <p>ドチヌラドはURAT1だけを阻害するため、OAT1/OAT3の薬物排泄機能は正常に保たれます。</p>
                 </div>
                 
-                <div class="info-box">
-                    <h5>2. ベンズブロマロンの非選択的阻害の問題点</h5>
+                <div class="mechanism-box">
+                    <h4>2. ベンズブロマロンの非選択的阻害の問題点</h4>
                     <p><strong>ベンズブロマロンがOAT1/OAT3も阻害すると何が起きるか：</strong></p>
                     <ul>
                         <li><strong>薬物排泄障害</strong>：OAT1/OAT3は多くの薬物（NSAIDs、利尿薬、抗生物質など）を排泄する。<br>これらが阻害されると併用薬の血中濃度が上昇し、副作用リスクが増大。</li>
@@ -266,24 +264,24 @@ Rp) ユリス錠 2mg
         <div class="container">
             <h2>⚠️ 薬物相互作用マネジメント</h2>
             
-            <div class="content-section">
+            <div class="interaction-detail">
                 <h3>併用注意薬</h3>
                 
-                <div class="content-grid">
-                    <div class="alert-box">
-                        <h5>⚠️ ワルファリン</h5>
+                <div class="interaction-cards">
+                    <div class="interaction-item important">
+                        <h4>⚠️ ワルファリン</h4>
                         <p><strong>機序：</strong>CYP2C9を弱く阻害</p>
                         <p><strong>リスク：</strong>INR上昇の可能性があるため、定期的なモニタリングが必要</p>
                     </div>
                     
-                    <div class="info-box">
-                        <h5>ピラジナミド（結核治療薬）</h4>
+                    <div class="interaction-item">
+                        <h4>ピラジナミド（結核治療薬）</h4>
                         <p><strong>機序：</strong>尿酸排泄を競合的に阻害</p>
                         <p><strong>リスク：</strong>ドチヌラドの効果が減弱する可能性</p>
                     </div>
                     
-                    <div class="info-box">
-                        <h5>高用量サリチル酸製剤</h4>
+                    <div class="interaction-item">
+                        <h4>高用量サリチル酸製剤</h4>
                         <p><strong>機序：</strong>尿酸排泄への影響</p>
                         <p><strong>リスク：</strong>効果減弱（※低用量アスピリンは問題なし）</p>
                     </div>
@@ -291,36 +289,24 @@ Rp) ユリス錠 2mg
                 
                 <div class="safety-comparison">
                     <h4>併用注意薬の数（安全性の指標）</h4>
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>薬剤名</th>
-                                <th>併用注意薬数</th>
-                                <th>安全性評価</th>
-                                <th>備考</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>フェブキソスタット</td>
-                                <td>2-3剤</td>
-                                <td>★★★★★</td>
-                                <td>最も相互作用が少ない</td>
-                            </tr>
-                            <tr>
-                                <td>ドチヌラド</td>
-                                <td>3-5剤</td>
-                                <td>★★★★☆</td>
-                                <td>選択的阻害により安全</td>
-                            </tr>
-                            <tr>
-                                <td>ベンズブロマロン</td>
-                                <td>20剤以上</td>
-                                <td>★☆☆☆☆</td>
-                                <td>CYP2C9強力阻害による</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="drug-safety-scale">
+                        <div class="safety-item best">
+                            <span class="drug-name">フェブキソスタット</span>
+                            <span class="caution-count">2-3剤</span>
+                            <span class="safety-bar">■■</span>
+                        </div>
+                        <div class="safety-item good">
+                            <span class="drug-name">ドチヌラド</span>
+                            <span class="caution-count">3-5剤</span>
+                            <span class="safety-bar">■■■</span>
+                        </div>
+                        <div class="safety-item poor">
+                            <span class="drug-name">ベンズブロマロン</span>
+                            <span class="caution-count">20剤以上</span>
+                            <span class="safety-bar">■■■■■■■■■■■■■■■■■■■■</span>
+                            <span class="reason">（CYP2C9強力阻害による）</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -331,11 +317,11 @@ Rp) ユリス錠 2mg
         <div class="container">
             <h2>🏥 臨床での尿酸降下薬の使い分け</h2>
             
-            <div class="content-grid">
-                <div class="highlight-box">
+            <div class="drug-comparison-cards">
+                <div class="drug-card highlight">
                     <h4>ドチヌラド（ユリス®）</h4>
-                    <p><strong>選択的尿酸再吸収阻害薬（SURI）</strong></p>
-                    <ul>
+                    <p class="drug-type">選択的尿酸再吸収阻害薬（SURI）</p>
+                    <ul class="drug-features">
                         <li>✅ 肝毒性リスク最小</li>
                         <li>✅ 薬物相互作用少ない（3-5剤）</li>
                         <li>✅ OAT1/3への影響なし</li>
@@ -343,10 +329,10 @@ Rp) ユリス錠 2mg
                     </ul>
                 </div>
                 
-                <div class="content-item">
+                <div class="drug-card">
                     <h4>フェブキソスタット（フェブリク®）</h4>
-                    <p><strong>キサンチンオキシダーゼ阻害薬</strong></p>
-                    <ul>
+                    <p class="drug-type">キサンチンオキシダーゼ阻害薬</p>
+                    <ul class="drug-features">
                         <li>✅ 強力な尿酸産生抑制</li>
                         <li>✅ 腎機能低下例でも用量調整不要</li>
                         <li>⚠️ 心血管リスクの議論あり</li>
@@ -354,10 +340,10 @@ Rp) ユリス錠 2mg
                     </ul>
                 </div>
                 
-                <div class="content-item">
+                <div class="drug-card">
                     <h4>ベンズブロマロン（ユリノーム®）</h4>
-                    <p><strong>非選択的尿酸排泄促進薬</strong></p>
-                    <ul>
+                    <p class="drug-type">非選択的尿酸排泄促進薬</p>
+                    <ul class="drug-features">
                         <li>✅ 安価で効果確実</li>
                         <li>❌ 肝毒性リスク（イエローレター）</li>
                         <li>❌ CYP2C9強力阻害（併用注意20剤以上）</li>
@@ -365,10 +351,10 @@ Rp) ユリス錠 2mg
                     </ul>
                 </div>
                 
-                <div class="content-item">
+                <div class="drug-card">
                     <h4>アロプリノール（ザイロリック®）</h4>
-                    <p><strong>キサンチンオキシダーゼ阻害薬</strong></p>
-                    <ul>
+                    <p class="drug-type">キサンチンオキシダーゼ阻害薬</p>
+                    <ul class="drug-features">
                         <li>✅ 最も安価、60年の実績</li>
                         <li>✅ 尿酸産生過剰型に有効</li>
                         <li>❌ HLA-B*5801陽性者は重篤な皮膚障害</li>
@@ -391,7 +377,7 @@ Rp) ユリス錠 2mg
             <div class="development-story">
                 <h3>なぜ新たな尿酸降下薬が必要だったのか</h3>
                 
-                <div>
+                <div class="story-section">
                     <h4>1970年代〜2000年代：ベンズブロマロンの功罪</h4>
                     <p>ベンズブロマロンは1970年代から日本で広く使用される尿酸排泄促進薬でした。効果は確実でしたが、以下の問題を抱えていました：</p>
                     <ul>
@@ -399,10 +385,10 @@ Rp) ユリス錠 2mg
                         <li><strong>CYP2C9強力阻害</strong>による多数の薬物相互作用（ワルファリンとの併用は特に危険）</li>
                         <li>ミトコンドリア呼吸鎖への毒性による肝細胞障害</li>
                     </ul>
-                    <div class="alert-box">
-                        <h5>⚠️ イエローレター（2000年）</h5>
-                        <p>ベンズブロマロンには2000年に厚生労働省からイエローレター（緊急安全性情報）が発出されています：</p>
-                        <ul>
+                    <div class="warning-box" style="background-color: #fff3cd; border: 2px solid #ffc107; padding: 15px; margin: 15px 0; border-radius: 5px;">
+                        <h5 style="color: #856404; margin-top: 0;">⚠️ イエローレター（2000年）</h5>
+                        <p style="color: #856404; margin: 10px 0;">ベンズブロマロンには2000年に厚生労働省からイエローレター（緊急安全性情報）が発出されています：</p>
+                        <ul style="color: #856404;">
                             <li><strong>劇症肝炎による死亡例</strong>が複数報告</li>
                             <li>投与開始6ヶ月以内は月1回の肝機能検査が必須</li>
                             <li>肝疾患のある患者には原則禁忌</li>
@@ -411,11 +397,11 @@ Rp) ユリス錠 2mg
                     <p>2000年にはヨーロッパで市場撤退、日本でも使用が慎重になりました。</p>
                 </div>
                 
-                <div>
+                <div class="story-section">
                     <h4>2000年代：URAT1の発見と新薬開発への道</h4>
                     <p><strong>2002年</strong>、遺伝性低尿酸血症の研究から、尿酸再吸収の主要トランスポーターURAT1（SLC22A12）が同定されました。<br>これが新薬開発の突破口となりました。</p>
                     
-                    <div class="info-box">
+                    <div class="discovery-detail">
                         <h5>URAT1発見の科学的意義</h5>
                         <ul>
                             <li>近位尿細管での尿酸再吸収の50%を担う主要トランスポーター</li>
@@ -426,11 +412,11 @@ Rp) ユリス錠 2mg
                     </div>
                 </div>
                 
-                <div>
+                <div class="story-section">
                     <h4>2010年代：富士薬品によるドチヌラド開発</h4>
                     <p><strong>富士薬品</strong>は、URAT1選択的阻害を目指した新規化合物の探索を開始。<br>数千の候補化合物から、以下の特性を持つドチヌラドを見出しました：</p>
                     
-                    <div class="info-box">
+                    <div class="development-milestone">
                         <h5>ドチヌラドの革新的特性</h5>
                         <table>
                             <tr>
@@ -473,16 +459,16 @@ Rp) ユリス錠 2mg
             <div class="clinical-evidence">
                 <h3>📊 主要臨床試験データと臨床的意義</h3>
                 
-                <div class="content-section">
+                <div class="trial-summary">
                     <h4>国内第III相試験（2019年承認根拠）の要点</h4>
-                    <ul>
+                    <ul class="trial-highlights">
                         <li><strong>用量設定試験</strong>：2mgで約70%が治療目標達成、4mgでも追加効果は限定的（+17%）。痛風発作リスクは用量依存的に増加。</li>
                         <li><strong>ベンズブロマロン対照試験</strong>：同等の尿酸低下効果（-45.9% vs -43.8%）を肝毒性リスクなしに実現。併用注意薬も大幅に少ない（3-5剤 vs 20剤以上）。</li>
                         <li><strong>長期投与試験</strong>：1年以上でも91.4%が治療目標を維持、腎機能改善傾向も確認。</li>
                     </ul>
                 </div>
                 
-                <div class="highlight-box">
+                <div class="clinical-conclusion">
                     <h4>💊 臨床的結論</h4>
                     <p><strong>ドチヌラドは「50年ぶりに登場した、安心して長期投与できる尿酸排泄促進薬」として、以下の患者に特に推奨されます：</strong></p>
                     <ol>
@@ -491,7 +477,7 @@ Rp) ユリス錠 2mg
                         <li><strong>腎機能低下患者</strong> - 腎保護作用の可能性あり</li>
                         <li><strong>長期治療が必要な患者</strong> - 1年以上の安全性確立</li>
                     </ol>
-                    <p>💡 <strong>処方のポイント</strong>：開始用量0.5mg、2週間後に1mg、維持量2mgという段階的増量により、痛風発作を予防しながら確実に治療目標を達成できます。「効果も安全性も両立できる」新時代の高尿酸血症治療薬と言えるでしょう。</p>
+                    <p class="clinical-insight">💡 <strong>処方のポイント</strong>：開始用量0.5mg、2週間後に1mg、維持量2mgという段階的増量により、痛風発作を予防しながら確実に治療目標を達成できます。「効果も安全性も両立できる」新時代の高尿酸血症治療薬と言えるでしょう。</p>
                 </div>
             </div>
         </div>
@@ -502,15 +488,15 @@ Rp) ユリス錠 2mg
         <div class="container">
             <h2>🌍 グローバル展開と最新エビデンス（2024年）</h2>
             
-            <div class="content-section">
+            <div class="global-expansion">
                 <h3>2024年の画期的な進展</h3>
                 
-                <div class="info-box">
-                    <h5>EULAR 2024：中国第3相試験の衝撃的結果</h5>
+                <div class="milestone-box">
+                    <h4>EULAR 2024：中国第3相試験の衝撃的結果</h4>
                     <p><strong>発表日</strong>：2024年6月12-15日（ウィーン）</p>
                     <p><strong>試験デザイン</strong>：451例の中国人痛風患者を対象とした頭対頭比較試験</p>
                     
-                    <table class="comparison-table">
+                    <table class="trial-comparison">
                         <thead>
                             <tr>
                                 <th>薬剤・用量</th>
@@ -519,7 +505,7 @@ Rp) ユリス錠 2mg
                             </tr>
                         </thead>
                         <tbody>
-                            <tr style="background-color: #d4edda;">
+                            <tr class="highlight-success">
                                 <td><strong>ドチヌラド 4mg</strong></td>
                                 <td><strong>73.6%</strong></td>
                                 <td>優越性証明（p<0.001）</td>
@@ -537,21 +523,19 @@ Rp) ユリス錠 2mg
                         </tbody>
                     </table>
                     
-                    <div class="key-point-box">
-                        <p>💡 <strong>臨床的意義</strong>：フェブキソスタットは米国でブラックボックス警告（心血管死亡リスク増加）があり、ドチヌラドは安全で効果的な代替薬として期待される。</p>
-                    </div>
+                    <p class="clinical-impact">💡 <strong>臨床的意義</strong>：フェブキソスタットは米国でブラックボックス警告（心血管死亡リスク増加）があり、ドチヌラドは安全で効果的な代替薬として期待される。</p>
                 </div>
                 
-                <div class="info-box">
-                    <h5>アジア市場での薬事承認</h5>
-                    <ul>
+                <div class="milestone-box">
+                    <h4>アジア市場での薬事承認</h4>
+                    <ul class="approval-timeline">
                         <li>🇹🇭 <strong>2024年9月</strong>：タイで初の海外承認取得（商品名：URECE® Tablets）</li>
                         <li>🇨🇳 <strong>2024年12月</strong>：中国で承認取得（痛風患者約1,800万人の巨大市場）</li>
                     </ul>
                 </div>
                 
-                <div class="info-box">
-                    <h5>米国開発の進展</h5>
+                <div class="milestone-box">
+                    <h4>米国開発の進展</h4>
                     <p><strong>Phase 1試験結果</strong>：</p>
                     <ul>
                         <li>投与開始<strong>4日以内</strong>に最大<strong>90%</strong>の血清尿酸値低下</li>
@@ -568,10 +552,10 @@ Rp) ユリス錠 2mg
         <div class="container">
             <h2>🔮 将来展望と研究開発の方向性</h2>
             
-            <div class="content-section">
+            <div class="future-perspectives">
                 <h3>短期的展望（2024-2025年）</h3>
-                <div class="content-grid">
-                    <div class="content-item">
+                <div class="perspective-grid">
+                    <div class="perspective-item">
                         <h4>1. 米国市場参入戦略</h4>
                         <ul>
                             <li>Pivotal試験の迅速な実施</li>
@@ -580,7 +564,7 @@ Rp) ユリス錠 2mg
                             <li>推定市場規模：10億ドル以上</li>
                         </ul>
                     </div>
-                    <div class="content-item">
+                    <div class="perspective-item">
                         <h4>2. アジア市場浸透</h4>
                         <ul>
                             <li>インドネシア、マレーシア、フィリピンでの承認申請</li>
@@ -592,8 +576,8 @@ Rp) ユリス錠 2mg
                 </div>
                 
                 <h3>中長期的展望（2025年以降）</h3>
-                <div class="content-grid">
-                    <div class="content-item">
+                <div class="perspective-grid">
+                    <div class="perspective-item">
                         <h4>3. 適応拡大の可能性</h4>
                         <ul>
                             <li><strong>慢性腎臓病（CKD）</strong>：腎保護作用の検証</li>
@@ -602,7 +586,7 @@ Rp) ユリス錠 2mg
                             <li><strong>無症候性高尿酸血症</strong>：予防的使用の検討</li>
                         </ul>
                     </div>
-                    <div class="content-item">
+                    <div class="perspective-item">
                         <h4>4. 個別化医療への応用</h4>
                         <ul>
                             <li>URAT1遺伝子多型による効果予測</li>
@@ -613,7 +597,7 @@ Rp) ユリス錠 2mg
                     </div>
                 </div>
                 
-                <div class="content-section">
+                <div class="research-direction">
                     <h4>研究開発の新たな方向性</h4>
                     <p>ドチヌラドは単なる尿酸降下薬から、多面的な作用を持つ「多臓器保護薬」へと進化する可能性を秘めています：</p>
                     <ul>
@@ -628,7 +612,7 @@ Rp) ユリス錠 2mg
     </section>
     
     <!-- ========== フッター ========== -->
-    <footer>
+    <footer class="drug-footer">
         <div class="container">
         </div>
     </footer>
