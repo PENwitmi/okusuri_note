@@ -1098,6 +1098,7 @@ table.comparison-table strong {
     
     /* 比較テーブルの横スクロール対応（モバイル専用） */
     .comparison-table-wrapper {
+        position: relative;  /* sticky要素の基準点を明確化 */
         overflow-x: auto !important;
         -webkit-overflow-scrolling: touch;  /* iOSスムーズスクロール */
         margin-left: -15px;  /* section-containerのパディングを相殺 */
@@ -1123,7 +1124,7 @@ table.comparison-table strong {
     table.comparison-table td:first-child,
     table.comparison-table th:first-child {
         position: sticky;
-        left: 15px;  /* wrapper の padding-left に合わせて調整 */
+        left: 0;  /* wrapperのpadding開始位置に配置 */
         z-index: 2;
         background: #f8f9fa !important;  /* 既存の背景色を維持（!important追加） */
         min-width: unset !important;  /* 既存の120px制限を解除 */
