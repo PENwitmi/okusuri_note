@@ -544,7 +544,7 @@
     .comparison-table td:first-child {
         background: #f8f9fa;  /* .categoryと同じ背景色 */
         min-width: unset;     /* 既存の120px制限を解除 */
-        width: 100px;         /* 固定幅に変更 */
+        width: auto;          /* 内容に応じて伸縮 */
     }
     
     /* ヘッダーのsticky列 */
