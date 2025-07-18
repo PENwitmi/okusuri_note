@@ -1096,15 +1096,21 @@ table.comparison-table strong {
         padding: 10px;
     }
     
+    /* モバイル時はfeature-sectionのパディングを削除 */
+    .feature-section .section-container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
     /* 比較テーブルの横スクロール対応（モバイル専用） */
     .comparison-table-wrapper {
         position: relative;  /* sticky要素の基準点を明確化 */
         overflow-x: auto !important;
         -webkit-overflow-scrolling: touch;  /* iOSスムーズスクロール */
-        margin-left: -15px;  /* section-containerのパディングを相殺 */
-        margin-right: -15px;
-        padding-left: 15px;
-        padding-right: 15px;
+        margin-left: 0;  /* 負のマージン不要 */
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
     
     /* comparison-table自体のoverflowを無効化 */
