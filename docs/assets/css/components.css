@@ -545,12 +545,16 @@
         background: #f8f9fa;  /* .categoryと同じ背景色 */
         min-width: unset;     /* 既存の120px制限を解除 */
         width: auto;          /* 内容に応じて伸縮 */
+        max-width: 40vw;      /* 画面幅の40%を上限に（残り60%をコンテンツに確保） */
+        word-wrap: break-word; /* 長い単語も折り返し */
+        overflow-wrap: break-word; /* 互換性のため両方指定 */
     }
     
     /* ヘッダーのsticky列 */
     .comparison-table th:first-child {
         z-index: 3;           /* tdより前面に */
         background: #34495e;  /* ヘッダーの既存背景色を維持 */
+        max-width: 40vw;      /* 画面幅の40%を上限に（tdと同じ制限） */
     }
     
     /* sticky列の右端に影を追加（視認性向上） */
