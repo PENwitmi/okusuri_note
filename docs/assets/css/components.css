@@ -528,7 +528,7 @@
     
     .comparison-table table,
     table.comparison-table {
-        min-width: 600px;  /* テーブル最小幅を確保 */
+        min-width: unset;  /* モバイルでは600pxの最小幅を解除 */
         width: auto;       /* モバイルでは自由な横幅に（100%を上書き） */
     }
     
