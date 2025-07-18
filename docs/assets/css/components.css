@@ -526,8 +526,10 @@
         padding-right: 8px;
     }
     
-    .comparison-table table {
+    .comparison-table table,
+    table.comparison-table {
         min-width: 600px;  /* テーブル最小幅を確保 */
+        width: auto;       /* モバイルでは自由な横幅に（100%を上書き） */
     }
     
     /* 項目列（最初の列）をsticky固定 */
