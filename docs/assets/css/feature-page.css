@@ -1123,7 +1123,7 @@ table.comparison-table strong {
     table.comparison-table td:first-child,
     table.comparison-table th:first-child {
         position: sticky;
-        left: 0;
+        left: 15px;  /* wrapper の padding-left に合わせて調整 */
         z-index: 2;
         background: #f8f9fa !important;  /* 既存の背景色を維持（!important追加） */
         min-width: unset !important;  /* 既存の120px制限を解除 */
