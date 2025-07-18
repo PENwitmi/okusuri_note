@@ -651,7 +651,6 @@
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-base);
 }
 
 /* 薬剤個別ページのメインセクション区切り */
@@ -765,7 +764,7 @@
     }
     
     .container {
-        padding: 0 var(--spacing-base);
+        /* padding削除 - 必要な場所は個別対応 */
     }
     
     /* モバイル用フォントサイズ調整 */

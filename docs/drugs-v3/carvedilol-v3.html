@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../assets/css/mobile-controls.css">
     <link rel="stylesheet" href="../assets/css/level-selector.css">
     <link rel="stylesheet" href="../assets/css/drug-page-v2.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
 </head>
 <body class="drug-detail" data-category="cardiovascular">
     <div class="sidebar-layout">
@@ -273,6 +274,7 @@
         <div class="container">
             <h3>よく見る処方パターン</h3>
         
+        <div class="content-section">
         <div class="prescribing-data">
             <div class="design-spec">
 Rp) アーチスト錠 10mg  
@@ -305,6 +307,7 @@ Rp) アーチスト錠 1.25mg
     （開始用量）
     各14日分</div>
             <p>※ 心不全導入期の処方。1.25mgからスタートし、2週間後に2.5mgへ増量予定。忍容性確認が重要。</p>
+        </div>
         </div>
         
         </div>
@@ -353,7 +356,8 @@ Rp) アーチスト錠 1.25mg
         <div class="container">
             <h3>🔍 なぜ特定のβ遮断薬だけが心不全に有効なのか</h3>
             
-            <div class="key-points">
+            <div class="content-section">
+            <div class="info-box">
                 <h4>心不全に有効なβ遮断薬は3剤のみ</h4>
                 <p>心不全の死亡率を減少させるエビデンスがあるのは以下の3剤だけです：</p>
                 <ul>
@@ -364,45 +368,44 @@ Rp) アーチスト錠 1.25mg
                 <p class="warning">⚠️ プロプラノロール、アテノロール、カルテオロールなどの他のβ遮断薬は心不全に使用すべきではありません。</p>
             </div>
             
-            <div class="mechanism-box">
-                <h4>なぜこの3剤だけが有効なのか？</h4>
-                <div class="reason-list">
-                    <div class="reason-item">
-                        <h5>1. ISA（内因性交感神経刺激作用）がない</h5>
-                        <p><strong>ISAとは何か？</strong> ISA（Intrinsic Sympathomimetic Activity）は「部分アゴニスト作用」のことです。通常、β遮断薬はβ受容体を完全にブロックしますが、ISAを持つ薬（ピンドロール、カルテオロール、アセブトロールなど）は、β受容体を遮断しながら同時に<span class="highlight">わずかにβ受容体を刺激する</span>という矛盾した作用を持ちます。</p>
-                        <p><strong>なぜISAが心不全に良くないのか？</strong></p>
-                        <ul>
-                            <li>安静時も心拍数が70-80回/分から下がらない（本来は60回/分以下が理想）</li>
-                            <li>心筋の酸素消費量が十分に減らない</li>
-                            <li>心臓を「完全に休ませる」ことができない</li>
-                            <li>交感神経の過剰な刺激から心筋を守れない</li>
-                        </ul>
-                        <p class="alert">💡 部分アゴニストは「ブレーキを踏みながらアクセルも少し踏んでいる」状態。心不全では完全なブレーキ（純粋なβ遮断）が必要です。</p>
-                    </div>
-                    
-                    <div class="reason-item">
-                        <h5>2. 適切な薬物動態</h5>
-                        <p>半減期が長く、1日1-2回投与で24時間安定した効果が得られます。短時間作用型では血中濃度の変動が大きく、心保護効果が不安定になります。</p>
-                    </div>
-                    
-                    <div class="reason-item">
-                        <h5>3. 追加の心保護作用</h5>
-                        <p>カルベジロールには強力な抗酸化作用とα1遮断作用があり、単なるβ遮断以上の効果があります。ビソプロロールは高いβ1選択性により副作用が少なく、忍容性が高いです。</p>
-                    </div>
-                    
-                    <div class="reason-item">
-                        <h5>4. 大規模臨床試験での実証</h5>
-                        <p>COPERNICUS試験（カルベジロール）、CIBIS-II試験（ビソプロロール）、MERIT-HF試験（メトプロロール）で死亡率減少が証明されています。他のβ遮断薬にはこのようなエビデンスがありません。</p>
-                    </div>
+            <div class="clinical-evidence">
+                <h4>なぜこの3剤だけが有効なのか？4つの理由</h4>
+                
+                <div class="info-box">
+                    <h5>1. ISA（内因性交感神経刺激作用）がない</h5>
+                    <p><strong>ISAとは何か？</strong> ISA（Intrinsic Sympathomimetic Activity）は「部分アゴニスト作用」のことです。通常、β遮断薬はβ受容体を完全にブロックしますが、ISAを持つ薬（ピンドロール、カルテオロール、アセブトロールなど）は、β受容体を遮断しながら同時に<span class="highlight">わずかにβ受容体を刺激する</span>という矛盾した作用を持ちます。</p>
+                    <p><strong>なぜISAが心不全に良くないのか？</strong></p>
+                    <ul>
+                        <li>安静時も心拍数が70-80回/分から下がらない（本来は60回/分以下が理想）</li>
+                        <li>心筋の酸素消費量が十分に減らない</li>
+                        <li>心臓を「完全に休ませる」ことができない</li>
+                        <li>交感神経の過剰な刺激から心筋を守れない</li>
+                    </ul>
+                    <p class="alert">💡 部分アゴニストは「ブレーキを踏みながらアクセルも少し踏んでいる」状態。心不全では完全なブレーキ（純粋なβ遮断）が必要です。</p>
+                </div>
+                
+                <div class="info-box">
+                    <h5>2. 適切な薬物動態</h5>
+                    <p>半減期が長く、1日1-2回投与で24時間安定した効果が得られます。短時間作用型では血中濃度の変動が大きく、心保護効果が不安定になります。</p>
+                </div>
+                
+                <div class="info-box">
+                    <h5>3. 追加の心保護作用</h5>
+                    <p>カルベジロールには強力な抗酸化作用とα1遮断作用があり、単なるβ遮断以上の効果があります。ビソプロロールは高いβ1選択性により副作用が少なく、忍容性が高いです。</p>
+                </div>
+                
+                <div class="info-box">
+                    <h5>4. 大規模臨床試験での実証</h5>
+                    <p>COPERNICUS試験（カルベジロール）、CIBIS-II試験（ビソプロロール）、MERIT-HF試験（メトプロロール）で死亡率減少が証明されています。他のβ遮断薬にはこのようなエビデンスがありません。</p>
                 </div>
             </div>
             
-            <div class="clinical-pearl">
+            <div class="key-point-box">
                 <h4>💡 臨床での重要ポイント</h4>
                 <p>「β遮断薬なら何でも良い」という考えは危険です。心不全治療では必ずエビデンスのあるカルベジロールまたはビソプロロールを選択してください。薬剤特異的効果であることを理解し、適切な薬剤選択が患者の予後を左右することを忘れないでください。</p>
             </div>
             
-            <div class="warning-box">
+            <div class="alert-box">
                 <h4>⚠️ 重要な警告：α遮断薬単独は心不全に有害</h4>
                 <p><strong>カルベジロールにα1遮断作用があるからといって、α遮断薬単独が心不全に有効というわけではありません。</strong></p>
                 <ul>
@@ -418,6 +421,7 @@ Rp) アーチスト錠 1.25mg
                 </ul>
                 <p class="alert">🚨 プラゾシン、ドキサゾシン、テラゾシンなどのα遮断薬単独は心不全患者に使用してはいけません。</p>
             </div>
+            </div>
         </div>
     </section>
 
@@ -426,19 +430,18 @@ Rp) アーチスト錠 1.25mg
         <div class="container">
             <h3>🩺 β遮断薬と糖尿病の注意点</h3>
             
-            <div class="clinical-management">
-                <div class="warning-box">
-                    <h4>⚠️ β遮断薬と糖尿病の相性が悪い2つの理由</h4>
-                    <p>従来のβ遮断薬は糖尿病患者にとって以下の2つの大きな問題があります：</p>
-                    <ol>
-                        <li><strong>低血糖症状のマスク</strong>：動悸・振戦などの警告症状を隠してしまう</li>
-                        <li><strong>糖代謝の悪化</strong>：血糖値を上昇させ、インスリン抵抗性を増悪させる</li>
-                    </ol>
-                    <p>これらの機序を理解することで、なぜカルベジロールが糖尿病患者に適しているかが明確になります。</p>
-                </div>
-                
+            <div class="alert-box">
+                <h4>⚠️ β遮断薬と糖尿病の相性が悪い2つの理由</h4>
+                <p>従来のβ遮断薬は糖尿病患者にとって以下の2つの大きな問題があります：</p>
+                <ol>
+                    <li><strong>低血糖症状のマスク</strong>：動悸・振戦などの警告症状を隠してしまう</li>
+                    <li><strong>糖代謝の悪化</strong>：血糖値を上昇させ、インスリン抵抗性を増悪させる</li>
+                </ol>
+                <p>これらの機序を理解することで、なぜカルベジロールが糖尿病患者に適しているかが明確になります。</p>
+            </div>
+            
+            <div class="info-box">
                 <h4>1. 低血糖症状マスクのメカニズム</h4>
-                <div class="mechanism-box">
                     <p><strong>正常な低血糖反応：</strong></p>
                     <ol>
                         <li>血糖値低下（通常70mg/dL以下）</li>
@@ -466,8 +469,8 @@ Rp) アーチスト錠 1.25mg
                     </ul>
                 </div>
                 
-                <h4>2. 従来のβ遮断薬が糖代謝を悪化させる機序</h4>
-                <div class="negative-mechanisms">
+                <div class="info-box">
+                    <h4>2. 従来のβ遮断薬が糖代謝を悪化させる機序</h4>
                     <p><strong>① β2受容体遮断による直接的な糖代謝悪化</strong></p>
                     <ul>
                         <li><strong>インスリン分泌の抑制</strong>：膵β細胞にはβ2受容体が存在し、これを遮断するとインスリン分泌が低下</li>
@@ -490,8 +493,6 @@ Rp) アーチスト錠 1.25mg
                     </ul>
                     
                     <p class="alert">💡 これらの機序により、従来のβ遮断薬は平均でHbA1cを0.1-0.3%上昇させ、新規糖尿病発症リスクを20-30%増加させる</p>
-                </div>
-
             </div>
         </div>
     </section>
@@ -499,114 +500,106 @@ Rp) アーチスト錠 1.25mg
     <!-- 糖尿病合併症例でのカルベジロールの優位性 -->
     <section class="level-2-content">
         <div class="container">
-            <h3>💉 糖尿病合併症例でのカルベジロールの優位性</h3>
+            <h3>💉 それでもカルベジロールが糖尿病に使いやすいわけ</h3>
             
-            <div class="diabetes-advantages">
-                <div class="highlight-box">
-                    <p>前セクションで説明したβ遮断薬の2つの問題点（低血糖マスク・糖代謝悪化）を、カルベジロールは独自の薬理作用により回避または軽減できます。その理由を詳しく解説します。</p>
+            <div class="highlight-box">
+                <p>前セクションで説明したβ遮断薬の2つの問題点（低血糖マスク・糖代謝悪化）を、カルベジロールは独自の薬理作用により回避または軽減できます。その理由を詳しく解説します。</p>
+            </div>
+            
+            <div class="info-box">
+                <h4>1. カルベジロールが糖代謝悪化を回避できる理由</h4>
+                    <p><strong>α1遮断作用による糖代謝改善</strong></p>
+                    <ul>
+                        <li><strong>末梢血管拡張</strong>：α1遮断により血管が拡張し、筋肉血流が増加</li>
+                        <li><strong>インスリン感受性改善</strong>：筋肉へのインスリン・糖の到達が改善</li>
+                        <li><strong>GLUT4発現増加</strong>：血流改善により筋肉でのGLUT4発現が上昇</li>
+                    </ul>
+                    
+                    <p><strong>部分的β2遮断の軽減効果</strong></p>
+                    <ul>
+                        <li>非選択的でもα1遮断による血流改善がβ2遮断の悪影響を相殺</li>
+                        <li>末梢でのインスリン作用が保たれる</li>
+                    </ul>
+                    
+                    <p><strong>抗酸化作用による追加的利点</strong></p>
+                    <ul>
+                        <li>酸化ストレスの軽減によりインスリンシグナル伝達が改善</li>
+                        <li>膵β細胞の保護効果</li>
+                    </ul>
                 </div>
                 
-                <h4>なぜカルベジロールは糖尿病患者に適しているのか？</h4>
+                <div class="info-box">
+                    <h4>2. 低血糖マスクが比較的弱い理由</h4>
+                    <p><strong>α1遮断作用による利点</strong></p>
+                    <ul>
+                        <li>血管拡張→顔面紅潮は残存する可能性</li>
+                        <li>皮膚血流増加→温感の変化を感じやすい</li>
+                        <li>純粋なβ遮断薬より低血糖を認識しやすい</li>
+                    </ul>
+                    
+                    <p class="alert">⚠️ ただし、発汗（冷汗）を主な指標とする指導は必須。α1遮断による症状に頼りすぎてはいけない。</p>
+                </div>
                 
-                <div class="mechanism-box">
-                    <h5>1. カルベジロールが糖代謝悪化を回避できる理由</h5>
-                    <div class="positive-mechanisms">
-                        <p><strong>α1遮断作用による糖代謝改善</strong></p>
-                        <ul>
-                            <li><strong>末梢血管拡張</strong>：α1遮断により血管が拡張し、筋肉血流が増加</li>
-                            <li><strong>インスリン感受性改善</strong>：筋肉へのインスリン・糖の到達が改善</li>
-                            <li><strong>GLUT4発現増加</strong>：血流改善により筋肉でのGLUT4発現が上昇</li>
-                        </ul>
-                        
-                        <p><strong>部分的β2遮断の軽減効果</strong></p>
-                        <ul>
-                            <li>非選択的でもα1遮断による血流改善がβ2遮断の悪影響を相殺</li>
-                            <li>末梢でのインスリン作用が保たれる</li>
-                        </ul>
-                        
-                        <p><strong>抗酸化作用による追加的利点</strong></p>
-                        <ul>
-                            <li>酸化ストレスの軽減によりインスリンシグナル伝達が改善</li>
-                            <li>膵β細胞の保護効果</li>
-                        </ul>
+                <div class="info-box">
+                    <h4>3. 従来のβ遮断薬との決定的な違い</h4>
+                    <div class="comparison-table-wrapper">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>項目</th>
+                                    <th>従来のβ遮断薬</th>
+                                    <th>カルベジロール</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>血糖値への影響</td>
+                                    <td class="negative">上昇（肝糖新生↑、インスリン分泌↓）</td>
+                                    <td class="positive">変化なし～改善（血流改善効果）</td>
+                                </tr>
+                                <tr>
+                                    <td>HbA1c</td>
+                                    <td class="negative">0.1-0.3%悪化</td>
+                                    <td class="positive">0.15%改善</td>
+                                </tr>
+                                <tr>
+                                    <td>インスリン抵抗性</td>
+                                    <td class="negative">増悪（末梢血流↓）</td>
+                                    <td class="positive">13%改善（血流↑）</td>
+                                </tr>
+                                <tr>
+                                    <td>新規糖尿病発症</td>
+                                    <td class="negative">20-30%増加</td>
+                                    <td class="positive">リスク増加なし</td>
+                                </tr>
+                                <tr>
+                                    <td>低血糖症状マスク</td>
+                                    <td class="negative">強い（β2完全遮断）</td>
+                                    <td class="positive">比較的弱い（α1遮断効果）</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 
-                <div class="mechanism-box">
-                    <h5>2. GEMINI試験で実証された糖代謝への好影響</h5>
-                    <div class="clinical-evidence">
-                        <p><strong>HbA1cの改善（機序の裏付け）</strong></p>
-                        <ul>
-                            <li>カルベジロール群：<span class="highlight">HbA1c 0.15%低下</span></li>
-                            <li>メトプロロール群：HbA1c 0.02%上昇</li>
-                            <li>群間差：0.17%（p=0.004）- これは上記機序の差を反映</li>
-                        </ul>
-                        
-                        <p><strong>インスリン抵抗性の改善（血流改善の証拠）</strong></p>
-                        <ul>
-                            <li>HOMA-IR（インスリン抵抗性指標）：<span class="highlight">13%改善</span></li>
-                            <li>空腹時血糖値：有意な上昇なし（肝糖新生が抑制されない証拠）</li>
-                            <li>体重増加：メトプロロールより少ない（脂質代謝への悪影響が少ない）</li>
-                        </ul>
-                    </div>
+                <div class="info-box">
+                    <h4>4. GEMINI試験で実証された糖代謝への好影響</h4>
+                    <p><strong>HbA1cの改善（機序の裏付け）</strong></p>
+                    <ul>
+                        <li><strong>カルベジロール群</strong>：HbA1c 0.15%低下</li>
+                        <li><strong>メトプロロール群</strong>：HbA1c 0.02%上昇</li>
+                        <li><strong>群間差</strong>：0.17%（p=0.004）- これは上記機序の差を反映</li>
+                    </ul>
+                    
+                    <p><strong>インスリン抵抗性の改善（血流改善の証拠）</strong></p>
+                    <ul>
+                        <li><strong>HOMA-IR（インスリン抵抗性指標）</strong>：13%改善</li>
+                        <li><strong>空腹時血糖値</strong>：有意な上昇なし（肝糖新生が抑制されない証拠）</li>
+                        <li><strong>体重増加</strong>：メトプロロールより少ない（脂質代謝への悪影響が少ない）</li>
+                    </ul>
                 </div>
                 
-                
-                <div class="mechanism-box">
-                    <h5>3. 従来のβ遮断薬との決定的な違い</h5>
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>項目</th>
-                                <th>従来のβ遮断薬</th>
-                                <th>カルベジロール</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>血糖値への影響</td>
-                                <td class="negative">上昇（肝糖新生↑、インスリン分泌↓）</td>
-                                <td class="positive">変化なし～改善（血流改善効果）</td>
-                            </tr>
-                            <tr>
-                                <td>HbA1c</td>
-                                <td class="negative">0.1-0.3%悪化</td>
-                                <td class="positive">0.15%改善</td>
-                            </tr>
-                            <tr>
-                                <td>インスリン抵抗性</td>
-                                <td class="negative">増悪（末梢血流↓）</td>
-                                <td class="positive">13%改善（血流↑）</td>
-                            </tr>
-                            <tr>
-                                <td>新規糖尿病発症</td>
-                                <td class="negative">20-30%増加</td>
-                                <td class="positive">リスク増加なし</td>
-                            </tr>
-                            <tr>
-                                <td>低血糖症状マスク</td>
-                                <td class="negative">強い（β2完全遮断）</td>
-                                <td class="positive">比較的弱い（α1遮断効果）</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <div class="mechanism-box">
-                    <h5>4. 低血糖マスクが比較的弱い理由</h5>
-                    <div class="hypoglycemia-advantages">
-                        <p><strong>α1遮断作用による利点</strong></p>
-                        <ul>
-                            <li>血管拡張→顔面紅潮は残存する可能性</li>
-                            <li>皮膚血流増加→温感の変化を感じやすい</li>
-                            <li>純粋なβ遮断薬より低血糖を認識しやすい</li>
-                        </ul>
-                        
-                        <p class="alert">⚠️ ただし、発汗（冷汗）を主な指標とする指導は必須。α1遮断による症状に頼りすぎてはいけない。</p>
-                    </div>
-                </div>
-                
-                <div class="clinical-pearl">
+                <div class="key-point-box">
                     <h4>💡 実臨床での使い分けポイント</h4>
                     <ul>
                         <li><strong>糖尿病＋心不全</strong>：カルベジロール第一選択</li>
@@ -616,7 +609,7 @@ Rp) アーチスト錠 1.25mg
                     </ul>
                 </div>
                 
-                <div class="warning-box">
+                <div class="alert-box">
                     <h4>⚠️ それでも注意すべき点</h4>
                     <ul>
                         <li>低血糖症状は完全にはマスクされないが、軽減はされる</li>
@@ -624,7 +617,6 @@ Rp) アーチスト錠 1.25mg
                         <li>α1遮断による起立性低血圧は糖尿病性神経障害で増強される可能性</li>
                         <li>腎機能低下例では用量調整が必要</li>
                     </ul>
-                </div>
             </div>
         </div>
     </section>
@@ -637,20 +629,20 @@ Rp) アーチスト錠 1.25mg
         <div class="container">
             <h3>📖 開発の歴史：常識への挑戦</h3>
             
-            <div class="development-history">
-                <div class="history-section">
+            <div class="development-story">
+                <div class="content-section">
                     <h4>1980年代：革新的コンセプトの誕生</h4>
                     <p>「β遮断薬＋血管拡張作用」という当時としては異端のコンセプトが生まれる。従来「心不全にβ遮断薬は禁忌」が医学界の常識であり、心収縮力を低下させるβ遮断薬を心不全に使用することは考えられなかった。</p>
                     <p>しかし、1970年代後半から慢性心不全の病態理解が進化。過剰な交感神経刺激は短期的には心機能を支えるが、長期的には心拍数増加による酸素消費増大、心筋細胞死の促進、病的な心筋肥大（リモデリング）を引き起こすことが判明。「心臓を鞭打ち続けることで、かえって心臓を疲弊させている」という新たな理解が生まれた。そこでβ遮断薬で心臓を「休ませる」一方、α1遮断で血管を広げて心臓への負担を軽減する革新的アプローチが考案された。</p>
                 </div>
                 
-                <div class="history-section">
+                <div class="content-section">
                     <h4>1995年：日本でアーチスト®として承認</h4>
                     <p>第一三共（当時の第一製薬）が「アーチスト®」の商品名で上市。当初は高血圧・狭心症の適応のみで、心不全適応は将来への布石だった。</p>
                     <p>医師の反応は二分された。革新的な薬理作用に期待する医師と、「心不全にβ遮断薬など危険」と考える保守的な医師。処方は限定的だった。</p>
                 </div>
                 
-                <div class="history-section">
+                <div class="content-section">
                     <h4>2001年：COPERNICUS試験の衝撃</h4>
                     <p>重症心不全患者2,289例を対象とした大規模試験で、誰もが予想しなかった結果が発表される。</p>
                     <div class="highlight-box">
@@ -664,13 +656,13 @@ Rp) アーチスト錠 1.25mg
                     <p>この結果は医学界に衝撃を与えた。「心不全にβ遮断薬禁忌」という数十年来の常識が一夜にして覆された瞬間だった。</p>
                 </div>
                 
-                <div class="history-section">
+                <div class="content-section">
                     <h4>2002年：心不全治療のパラダイムシフト</h4>
                     <p>各国のガイドラインが相次いで改訂され、カルベジロールは心不全治療の第一選択薬に位置づけられた。日本循環器学会も推奨度Aとして採用。</p>
                     <p>ビソプロロール（CIBIS-II試験）、メトプロロール（MERIT-HF試験）と並んで、「心不全治療の三本柱」として確立。<strong>重要なのは、死亡率減少のエビデンスがあるのはこの3剤のみという事実</strong>。プロプラノロール、アテノロール、カルテオロールなど他のβ遮断薬では効果が証明されておらず、むしろ心不全を悪化させる報告もある。これは「薬剤特異的効果」であり、すべてのβ遮断薬が心不全に有効というわけではない。</p>
                 </div>
                 
-                <div class="history-section">
+                <div class="content-section">
                     <h4>2025年：最新ガイドラインでの確固たる地位</h4>
                     <p>2025年3月発表の心不全診療ガイドラインでも、HFrEFに対して推奨クラスI、エビデンスレベルAを維持。心不全治療の"四本柱"（β遮断薬、ACE阻害薬/ARB/ARNI、MRA、SGLT2阻害薬）の一角として不可欠な存在。</p>
                     <p>新たな心不全分類において：</p>
@@ -690,24 +682,24 @@ Rp) アーチスト錠 1.25mg
         <div class="container">
             <h3>🧬 β遮断薬進化におけるカルベジロールの位置づけ</h3>
             
-            <div class="evolution-timeline">
+            <div class="content-section">
                 <h4>β遮断薬の世代別進化</h4>
                 
-                <div class="generation-card">
+                <div class="info-box">
                     <h5>第1世代（1960年代）：非選択的β遮断薬</h5>
                     <p><strong>代表薬：</strong>プロプラノロール（インデラル®）</p>
                     <p><strong>特徴：</strong>β1・β2を非選択的に遮断。気管支喘息で禁忌。</p>
                     <p><strong>課題：</strong>気管支攣縮、糖代謝悪化、中枢移行による悪夢</p>
                 </div>
                 
-                <div class="generation-card">
+                <div class="info-box">
                     <h5>第2世代（1970-80年代）：β1選択的遮断薬</h5>
                     <p><strong>代表薬：</strong>アテノロール、メトプロロール、ビソプロロール</p>
                     <p><strong>改良点：</strong>β1選択性により呼吸器・代謝への影響軽減</p>
                     <p><strong>限界：</strong>血管拡張作用なし、糖尿病での使用制限</p>
                 </div>
                 
-                <div class="generation-card highlight">
+                <div class="info-box highlight">
                     <h5>第3世代（1990年代）：付加価値型β遮断薬</h5>
                     <p><strong>カルベジロール：</strong>非選択的β遮断＋α1遮断＋抗酸化作用</p>
                     <p><strong>革新性：</strong></p>
@@ -728,9 +720,9 @@ Rp) アーチスト錠 1.25mg
         <div class="container">
             <h3>🔬 分子レベルでの独特な作用機序</h3>
             
-            <div class="molecular-mechanism">
+            <div class="content-section">
                 <h4>1. 受容体レベルでの作用</h4>
-                <div class="mechanism-detail">
+                <div class="info-box">
                     <h5>β1受容体遮断</h5>
                     <ul>
                         <li>Gsタンパク質活性化阻害 → adenylyl cyclase活性低下</li>
@@ -749,7 +741,7 @@ Rp) アーチスト錠 1.25mg
                 </div>
                 
                 <h4>2. 抗酸化作用の分子基盤</h4>
-                <div class="mechanism-detail">
+                <div class="info-box">
                     <p>カルベジロールは化学構造中のカルバゾール環により、直接的な抗酸化作用を発揮：</p>
                     <ul>
                         <li>スーパーオキサイドアニオン（O₂⁻）の除去</li>
@@ -760,7 +752,7 @@ Rp) アーチスト錠 1.25mg
                 </div>
                 
                 <h4>3. 心筋リモデリング抑制機序</h4>
-                <div class="mechanism-detail">
+                <div class="info-box">
                     <ul>
                         <li>MMPs（マトリックスメタロプロテアーゼ）活性抑制</li>
                         <li>TGF-β1発現抑制による線維化阻止</li>
@@ -777,8 +769,8 @@ Rp) アーチスト錠 1.25mg
         <div class="container">
             <h3>📊 主要臨床試験のエビデンス</h3>
             
-            <div class="clinical-trials">
-                <div class="trial-card">
+            <div class="content-section">
+                <div class="clinical-evidence">
                     <h4>COPERNICUS試験（2001年）</h4>
                     <p><strong>対象：</strong>重症心不全患者 2,289例（EF<25%）</p>
                     <p><strong>結果：</strong></p>
@@ -790,14 +782,14 @@ Rp) アーチスト錠 1.25mg
                     <p><strong>インパクト：</strong>「心不全にβ遮断薬禁忌」の常識を覆した歴史的試験</p>
                 </div>
                 
-                <div class="trial-card">
+                <div class="clinical-evidence">
                     <h4>CAPRICORN試験（2001年）</h4>
                     <p><strong>対象：</strong>心筋梗塞後左室機能低下患者 1,959例</p>
                     <p><strong>結果：</strong>全死亡23%減少、再梗塞41%減少</p>
                     <p><strong>意義：</strong>心筋梗塞後の予後改善効果を実証</p>
                 </div>
                 
-                <div class="trial-card">
+                <div class="clinical-evidence">
                     <h4>GEMINI試験（2007年）- 糖尿病への影響</h4>
                     <p><strong>対象：</strong>2型糖尿病＋高血圧患者 1,235例</p>
                     <p><strong>比較：</strong>カルベジロール vs メトプロロール</p>
@@ -818,9 +810,9 @@ Rp) アーチスト錠 1.25mg
         <div class="container">
             <h3>🔮 最新の研究動向と将来展望</h3>
             
-            <div class="future-research">
+            <div class="content-section">
                 <h4>1. HFpEF（収縮能保持型心不全）での位置づけ</h4>
-                <div class="research-card">
+                <div class="info-box">
                     <p>2025年ガイドラインでは、HFpEFに対する明確な推奨クラス・エビデンスレベルは設定されていない：</p>
                     <ul>
                         <li>J-DHF試験では全体的な予後改善効果は示されなかった</li>
@@ -831,7 +823,7 @@ Rp) アーチスト錠 1.25mg
                 </div>
                 
                 <h4>2. HFmrEF（軽度低下心不全）での位置づけ</h4>
-                <div class="research-card">
+                <div class="info-box">
                     <p>2025年ガイドラインでは、HFmrEF（LVEF 41-49%）に対して：</p>
                     <ul>
                         <li><strong>推奨クラス</strong>：IIb（考慮してもよい）</li>
@@ -842,7 +834,7 @@ Rp) アーチスト錠 1.25mg
                 </div>
                 
                 <h4>3. 心房細動での新たなエビデンス</h4>
-                <div class="research-card">
+                <div class="info-box">
                     <p>CAFÉ-II試験（2023年）での知見：</p>
                     <ul>
                         <li>レート調節と予後改善の両立</li>
@@ -852,7 +844,7 @@ Rp) アーチスト錠 1.25mg
                 </div>
                 
                 <h4>3. 心臓以外の臓器保護作用</h4>
-                <div class="research-card">
+                <div class="info-box">
                     <p>多面的な臓器保護効果が明らかに：</p>
                     <ul>
                         <li><strong>腎保護：</strong>糖尿病性腎症進展抑制</li>
@@ -862,7 +854,7 @@ Rp) アーチスト錠 1.25mg
                 </div>
                 
                 <h4>4. 個別化医療への展開</h4>
-                <div class="research-card">
+                <div class="info-box">
                     <ul>
                         <li>CYP2D6遺伝子多型に基づく用量設定</li>
                         <li>バイオマーカーによる治療反応性予測</li>
@@ -878,9 +870,9 @@ Rp) アーチスト錠 1.25mg
         <div class="container">
             <h3>🎓 カルベジロールから学ぶ薬学的洞察</h3>
             
-            <div class="educational-insights">
+            <div class="content-section">
                 <h4>1. 複数受容体標的の薬物設計</h4>
-                <div class="insight-card">
+                <div class="key-point-box">
                     <p>単一標的では限界がある病態に対し、複数の受容体を同時に制御する戦略の有効性を実証。これは現代の創薬における重要なコンセプト：</p>
                     <ul>
                         <li>心保護（β遮断）＋血管保護（α遮断）の相乗効果</li>
@@ -890,7 +882,7 @@ Rp) アーチスト錠 1.25mg
                 </div>
                 
                 <h4>2. エビデンスが常識を覆す瞬間</h4>
-                <div class="insight-card">
+                <div class="key-point-box">
                     <p>COPERNICUS試験は医学の歴史に残る「パラダイムシフト」の実例：</p>
                     <ul>
                         <li>理論と実際の乖離（禁忌→標準治療へ）</li>
@@ -900,7 +892,7 @@ Rp) アーチスト錠 1.25mg
                 </div>
                 
                 <h4>3. 個別化医療の実践</h4>
-                <div class="insight-card">
+                <div class="key-point-box">
                     <p>患者背景に応じた薬剤選択の重要性：</p>
                     <ul>
                         <li>糖尿病合併 → カルベジロール有利</li>

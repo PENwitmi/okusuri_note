@@ -219,7 +219,6 @@ button {
 .container {
     max-width: var(--breakpoint-xl);
     margin: 0 auto;
-    padding: 0 var(--spacing-base);
 }
 
 .section-container {

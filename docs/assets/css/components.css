@@ -493,7 +493,7 @@
     .development-story,
     .clinical-evidence,
     .safety-comparison {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-base) var(--spacing-sm);  /* モバイルでは左右padding最小限に (上下16px, 左右8px) */
         margin: var(--spacing-lg) 0;
     }
     
@@ -514,6 +514,54 @@
     .summary-table th,
     .summary-table td {
         padding: 10px;
+    }
+    
+    /* 比較テーブルの横スクロール + sticky対応（モバイル専用） */
+    .comparison-table {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;  /* iOSスムーズスクロール */
+        margin-left: -8px;  /* content-sectionのパディングを相殺 */
+        margin-right: -8px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    
+    .comparison-table table {
+        min-width: 600px;  /* テーブル最小幅を確保 */
+    }
+    
+    /* 項目列（最初の列）をsticky固定 */
+    .comparison-table td:first-child,
+    .comparison-table th:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 2;
+    }
+    
+    /* sticky列の背景色（既存スタイルを維持） */
+    .comparison-table td:first-child {
+        background: #f8f9fa;  /* .categoryと同じ背景色 */
+        min-width: unset;     /* 既存の120px制限を解除 */
+        width: 100px;         /* 固定幅に変更 */
+    }
+    
+    /* ヘッダーのsticky列 */
+    .comparison-table th:first-child {
+        z-index: 3;           /* tdより前面に */
+        background: #34495e;  /* ヘッダーの既存背景色を維持 */
+    }
+    
+    /* sticky列の右端に影を追加（視認性向上） */
+    .comparison-table td:first-child::after,
+    .comparison-table th:first-child::after {
+        content: '';
+        position: absolute;
+        right: -4px;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(to right, rgba(0,0,0,0.08), transparent);
+        pointer-events: none;  /* クリック透過 */
     }
     
 }

@@ -247,8 +247,7 @@ button {
 @media (min-width: 768px) {
     /* コンテナ幅調整 */
     .container {
-        padding-left: var(--spacing-lg);
-        padding-right: var(--spacing-lg);
+        /* padding削除 - 必要な場所は個別対応 */
     }
     
     /* グリッドレイアウト（2カラム） */
