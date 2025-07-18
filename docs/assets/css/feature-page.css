@@ -1112,6 +1112,7 @@ table.comparison-table strong {
     }
     
     /* テーブル本体の幅設定を確実に上書き */
+    .comparison-table-wrapper table,
     table.comparison-table {
         min-width: unset !important;  /* 最小幅制限を解除 */
         width: max-content !important;  /* コンテンツに応じた幅（100%を確実に上書き） */
