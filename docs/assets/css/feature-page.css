@@ -1095,6 +1095,64 @@
     .comparison-table td {
         padding: 10px;
     }
+    
+    /* 比較テーブルの横スクロール対応（モバイル専用） */
+    .comparison-table-wrapper {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;  /* iOSスムーズスクロール */
+        margin-left: -15px;  /* section-containerのパディングを相殺 */
+        margin-right: -15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* comparison-table自体のoverflowを無効化 */
+    .comparison-table {
+        overflow-x: visible !important;
+    }
+    
+    /* テーブル本体の幅設定を確実に上書き */
+    .comparison-table-wrapper table,
+    .comparison-table table,
+    table.comparison-table {
+        min-width: unset !important;  /* 最小幅制限を解除 */
+        width: max-content !important;  /* コンテンツに応じた幅（100%を確実に上書き） */
+        max-width: none !important;  /* 最大幅制限も解除 */
+    }
+    
+    /* 項目列（最初の列）の設定 */
+    .comparison-table td:first-child,
+    .comparison-table th:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 2;
+        background: #f8f9fa;  /* 既存の背景色を維持 */
+        min-width: unset !important;  /* 既存の120px制限を解除 */
+        width: auto;  /* 内容に応じて伸縮 */
+        max-width: 40vw;  /* 画面幅の40%を上限に */
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    /* ヘッダーのsticky列 */
+    .comparison-table th:first-child {
+        z-index: 3;  /* tdより前面に */
+        background: #34495e !important;  /* ヘッダーの既存背景色を維持 */
+        max-width: 40vw;
+    }
+    
+    /* sticky列の右端に影を追加（視認性向上） */
+    .comparison-table td:first-child::after,
+    .comparison-table th:first-child::after {
+        content: '';
+        position: absolute;
+        right: -4px;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(to right, rgba(0,0,0,0.08), transparent);
+        pointer-events: none;
+    }
 }
 
 @media (max-width: 480px) {
