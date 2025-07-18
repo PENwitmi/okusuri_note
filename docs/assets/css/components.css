@@ -517,19 +517,31 @@
     }
     
     /* 比較テーブルの横スクロール + sticky対応（モバイル専用） */
-    .comparison-table {
-        overflow-x: auto;
+    .comparison-table-wrapper {
+        overflow-x: auto !important;
         -webkit-overflow-scrolling: touch;  /* iOSスムーズスクロール */
-        margin-left: -8px;  /* content-sectionのパディングを相殺 */
-        margin-right: -8px;
-        padding-left: 8px;
-        padding-right: 8px;
+        margin-left: calc(-1 * var(--spacing-sm));  /* content-sectionのパディングを相殺 */
+        margin-right: calc(-1 * var(--spacing-sm));
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
     }
     
+    /* comparison-table自体のoverflowを無効化 */
+    .comparison-table {
+        overflow-x: visible !important;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    /* テーブル本体の幅設定を確実に上書き */
+    .comparison-table-wrapper table,
     .comparison-table table,
     table.comparison-table {
-        min-width: unset;  /* モバイルでは600pxの最小幅を解除 */
-        width: auto !important;  /* モバイルでは自由な横幅に（100%を確実に上書き） */
+        min-width: unset !important;  /* モバイルでは600pxの最小幅を解除 */
+        width: max-content !important;  /* コンテンツに応じた幅（autoではなくmax-content） */
+        max-width: none !important;  /* 最大幅制限も解除 */
     }
     
     /* 項目列（最初の列）をsticky固定 */
