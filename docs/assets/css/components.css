@@ -529,7 +529,7 @@
     .comparison-table table,
     table.comparison-table {
         min-width: unset;  /* モバイルでは600pxの最小幅を解除 */
-        width: auto;       /* モバイルでは自由な横幅に（100%を上書き） */
+        width: auto !important;  /* モバイルでは自由な横幅に（100%を確実に上書き） */
     }
     
     /* 項目列（最初の列）をsticky固定 */
