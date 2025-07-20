@@ -87,7 +87,7 @@
                 <!-- 統計情報 -->
                 <div class="hero-stats">
                     <a href="#drugs" class="stat-item stat-link">
-                        <span class="stat-number">7</span>
+                        <span class="stat-number">8</span>
                         <span class="stat-label">薬剤公開中</span>
                     </a>
                     <div class="stat-divider">＋</div>
@@ -103,13 +103,105 @@
         <!-- 重要薬剤一覧 -->
         <section id="drugs" class="drugs-section">
             <div class="section-container">
-                <h2 class="section-title">重要薬剤（公開中：6薬剤）</h2>
+                <h2 class="section-title">重要薬剤（公開中：8薬剤）</h2>
                 <p class="section-description">
                     薬の『なぜ？』がスッと理解できる！<br>作用機序から臨床応用まで深く理解して脱・丸暗記！<br>今ホットな薬を中心に、実習でも使える実践的知識を解説。
                 </p>
                 
                 <div class="drugs-grid" id="drugsGrid">
-                <!-- 糖尿病・代謝系（最新の治療薬群） -->
+                <!-- 薬剤カード表示順：SGLT2、メトホルミン、ARNI、β遮断、ARB、SURI、COX2、睡眠薬 -->
+                
+                <!-- 1. SGLT2阻害薬 -->
+                <div class="drug-card" data-category="SGLT2阻害薬" data-search="ダパグリフロジン">
+                    <div class="drug-category">SGLT2阻害薬</div>
+                    <h3 class="drug-name">ダパグリフロジン</h3>
+                    <div class="drug-key-feature">
+                        <span class="feature-icon">🥇</span>
+                        <span class="feature-text">世界初SGLT2阻害</span>
+                    </div>
+                    <a href="drugs/dapagliflozin.html" class="drug-link">詳細を見る</a>
+                </div>
+            
+                <!-- 2. メトホルミン -->
+                <div class="drug-card" data-category="その他" data-search="メトホルミン">
+                    <div class="drug-category">その他</div>
+                    <h3 class="drug-name">メトホルミン</h3>
+                    <div class="drug-key-feature">
+                        <span class="feature-icon">⚖️</span>
+                        <span class="feature-text">体重中性・第一選択</span>
+                    </div>
+                    <a href="drugs/metformin.html" class="drug-link">詳細を見る</a>
+                </div>
+            
+                <!-- 3. ARNI -->
+                <div class="drug-card" data-category="ARNI" data-search="サクビトリルバルサルタン">
+                    <div class="drug-category">ARNI</div>
+                    <h3 class="drug-name">サクビトリルバルサルタン</h3>
+                    <div class="drug-key-feature">
+                        <span class="feature-icon">💗</span>
+                        <span class="feature-text">心不全Fantastic Four</span>
+                    </div>
+                    <a href="drugs/sacubitril-valsartan.html" class="drug-link">詳細を見る</a>
+                </div>
+            
+                <!-- 4. β遮断薬 -->
+                <div class="drug-card" data-category="β遮断薬" data-search="カルベジロール">
+                    <div class="drug-category">β遮断薬</div>
+                    <h3 class="drug-name">カルベジロール</h3>
+                    <div class="drug-key-feature">
+                        <span class="feature-icon">❤️</span>
+                        <span class="feature-text">心不全・α1遮断</span>
+                    </div>
+                    <a href="drugs/carvedilol.html" class="drug-link">詳細を見る</a>
+                </div>
+            
+                <!-- 5. ARB -->
+                <div class="drug-card" data-category="ARB" data-search="テルミサルタン">
+                    <div class="drug-category">ARB</div>
+                    <h3 class="drug-name">テルミサルタン</h3>
+                    <div class="drug-key-feature">
+                        <span class="feature-icon">🕐</span>
+                        <span class="feature-text">長時間作用・糖尿病</span>
+                    </div>
+                    <a href="drugs/telmisartan.html" class="drug-link">詳細を見る</a>
+                </div>
+            
+                <!-- 6. SURI（尿酸排泄薬） -->
+                <div class="drug-card" data-category="尿酸排泄薬" data-search="ドチヌラド">
+                    <div class="drug-category">尿酸排泄薬</div>
+                    <h3 class="drug-name">ドチヌラド</h3>
+                    <div class="drug-key-feature">
+                        <span class="feature-icon">🆕</span>
+                        <span class="feature-text">SURI新カテゴリー</span>
+                    </div>
+                    <a href="drugs/dotinurad.html" class="drug-link">詳細を見る</a>
+                </div>
+            
+                <!-- 7. COX-2阻害薬 -->
+                <div class="drug-card" data-category="COX-2阻害薬" data-search="セレコキシブ">
+                    <div class="drug-category">COX-2阻害薬</div>
+                    <h3 class="drug-name">セレコキシブ</h3>
+                    <div class="drug-key-feature">
+                        <span class="feature-icon">🛡️</span>
+                        <span class="feature-text">選択的COX-2阻害</span>
+                    </div>
+                    <a href="drugs/celecoxib.html" class="drug-link">詳細を見る</a>
+                </div>
+            
+                <!-- 8. 睡眠薬 -->
+                <div class="drug-card" data-category="睡眠薬" data-search="レンボレキサント">
+                    <div class="drug-category">睡眠薬</div>
+                    <h3 class="drug-name">レンボレキサント</h3>
+                    <div class="drug-key-feature">
+                        <span class="feature-icon">💤</span>
+                        <span class="feature-text">速効性・依存性少ない</span>
+                    </div>
+                    <a href="drugs/lemborexant.html" class="drug-link">詳細を見る</a>
+                </div>
+                
+                <!-- ========== 以下、非表示の薬剤カード（開発中） ========== -->
+                
+                <!-- 糖尿病系（非表示） -->
                 <!-- SGLT2阻害薬 -->
                 <div class="drug-card" data-category="SGLT2阻害薬" data-search="エンパグリフロジン" style="display:none">
                     <div class="drug-category">SGLT2阻害薬</div>
@@ -119,16 +211,6 @@
                         <span class="feature-text">心血管死38%減</span>
                     </div>
                     <a href="drugs-v3/empagliflozin-v3.html" class="drug-link">詳細を見る</a>
-                </div>
-            
-                <div class="drug-card" data-category="SGLT2阻害薬" data-search="ダパグリフロジン">
-                    <div class="drug-category">SGLT2阻害薬</div>
-                    <h3 class="drug-name">ダパグリフロジン</h3>
-                    <div class="drug-key-feature">
-                        <span class="feature-icon">🥇</span>
-                        <span class="feature-text">世界初SGLT2阻害</span>
-                    </div>
-                    <a href="drugs/dapagliflozin.html" class="drug-link">詳細を見る</a>
                 </div>
             
                 <!-- DPP-4阻害薬 -->
@@ -152,50 +234,8 @@
                     <a href="drugs-v3/teneligliptin-v3.html" class="drug-link">詳細を見る</a>
                 </div>
             
-                <div class="drug-card" data-category="その他" data-search="メトホルミン">
-                    <div class="drug-category">その他</div>
-                    <h3 class="drug-name">メトホルミン</h3>
-                    <div class="drug-key-feature">
-                        <span class="feature-icon">⚖️</span>
-                        <span class="feature-text">体重中性・第一選択</span>
-                    </div>
-                    <a href="drugs/metformin.html" class="drug-link">詳細を見る</a>
-                </div>
-            
-                <!-- 最新承認薬・革新的薬剤 -->
-                <div class="drug-card" data-category="尿酸排泄薬" data-search="ドチヌラド">
-                    <div class="drug-category">尿酸排泄薬</div>
-                    <h3 class="drug-name">ドチヌラド</h3>
-                    <div class="drug-key-feature">
-                        <span class="feature-icon">🆕</span>
-                        <span class="feature-text">SURI新カテゴリー</span>
-                    </div>
-                    <a href="drugs/dotinurad.html" class="drug-link">詳細を見る</a>
-                </div>
-            
-                <!-- 循環器系（革新的な薬剤から） -->
-                <!-- ARB -->
-                <div class="drug-card" data-category="ARB" data-search="テルミサルタン">
-                    <div class="drug-category">ARB</div>
-                    <h3 class="drug-name">テルミサルタン</h3>
-                    <div class="drug-key-feature">
-                        <span class="feature-icon">🕐</span>
-                        <span class="feature-text">長時間作用・糖尿病</span>
-                    </div>
-                    <a href="drugs/telmisartan.html" class="drug-link">詳細を見る</a>
-                </div>
-            
+                <!-- 循環器系（非表示） -->
                 <!-- β遮断薬 -->
-                <div class="drug-card" data-category="β遮断薬" data-search="カルベジロール">
-                    <div class="drug-category">β遮断薬</div>
-                    <h3 class="drug-name">カルベジロール</h3>
-                    <div class="drug-key-feature">
-                        <span class="feature-icon">❤️</span>
-                        <span class="feature-text">心不全・α1遮断</span>
-                    </div>
-                    <a href="drugs/carvedilol.html" class="drug-link">詳細を見る</a>
-                </div>
-            
                 <div class="drug-card" data-category="β遮断薬" data-search="ビソプロロール" style="display:none">
                     <div class="drug-category">β遮断薬</div>
                     <h3 class="drug-name">ビソプロロール</h3>
@@ -293,29 +333,6 @@
                     <a href="drugs-v3/metoclopramide-v3.html" class="drug-link">詳細を見る</a>
                 </div>
             
-                <!-- その他の革新的薬剤 -->
-                <!-- 睡眠薬 -->
-                <div class="drug-card" data-category="睡眠薬" data-search="レンボレキサント">
-                    <div class="drug-category">睡眠薬</div>
-                    <h3 class="drug-name">レンボレキサント</h3>
-                    <div class="drug-key-feature">
-                        <span class="feature-icon">💤</span>
-                        <span class="feature-text">速効性・依存性少ない</span>
-                    </div>
-                    <a href="drugs/lemborexant.html" class="drug-link">詳細を見る</a>
-                </div>
-            
-                <!-- COX-2阻害薬 -->
-                <div class="drug-card" data-category="COX-2阻害薬" data-search="セレコキシブ">
-                    <div class="drug-category">COX-2阻害薬</div>
-                    <h3 class="drug-name">セレコキシブ</h3>
-                    <div class="drug-key-feature">
-                        <span class="feature-icon">🛡️</span>
-                        <span class="feature-text">選択的COX-2阻害</span>
-                    </div>
-                    <a href="drugs/celecoxib.html" class="drug-link">詳細を見る</a>
-                </div>
-            
                 <!-- 利尿薬 -->
                 <div class="drug-card" data-category="利尿薬" data-search="フロセミド" style="display:none">
                     <div class="drug-category">利尿薬</div>
@@ -325,17 +342,6 @@
                         <span class="feature-text">急性心不全・浮腫</span>
                     </div>
                     <a href="drugs-v3/furosemide-v3.html" class="drug-link">詳細を見る</a>
-                </div>
-            
-                <!-- ARNI（アンジオテンシン受容体ネプリライシン阻害薬） -->
-                <div class="drug-card" data-category="ARNI" data-search="サクビトリルバルサルタン">
-                    <div class="drug-category">ARNI</div>
-                    <h3 class="drug-name">サクビトリルバルサルタン</h3>
-                    <div class="drug-key-feature">
-                        <span class="feature-icon">💗</span>
-                        <span class="feature-text">心不全Fantastic Four</span>
-                    </div>
-                    <a href="drugs/sacubitril-valsartan.html" class="drug-link">詳細を見る</a>
                 </div>
             
                 <!-- ========== コメントアウトされている薬剤（開発中） ========== -->
@@ -609,7 +615,7 @@
                     <h4 class="footer-subtitle">公開状況</h4>
                     <div class="footer-stats">
                         <div class="footer-stat">
-                            <span class="stat-value">7</span>
+                            <span class="stat-value">8</span>
                             <span class="stat-label">薬剤公開中</span>
                         </div>
                         <div class="footer-stat">
