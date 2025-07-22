@@ -1,26 +1,27 @@
 # CLAUDE.md - OkusuriNote プロジェクト
 
-**最終更新**: 2025-07-18 18:31  
+**最終更新**: 2025-07-22 15:01  
 **プロジェクト状態**: ✅ 公開薬剤Components CSS標準化完了、containerパディング削除完了、モバイルCSS最適化完了  
-　　　　　　　　　　✅ 公開中薬剤：6薬剤（drugs/ディレクトリ）  
-　　　　　　　　　　✅ Components CSS反映済み：全6薬剤完了！  
+　　　　　　　　　　✅ 公開中薬剤：7薬剤（drugs/ディレクトリ）  
+　　　　　　　　　　✅ Components CSS反映済み：全7薬剤完了！  
 **現在フェーズ**: 公開薬剤CSS適用完了・次フェーズ検討中  
-**進捗状況**: 薬剤ページ6種類公開中（全てCSS適用済み）、特集ページ7種類完成
+**進捗状況**: 薬剤ページ7種類公開中（全てCSS適用済み）、特集ページ7種類完成
 
 ## 🚨 現在の最重要状況
 
 ### 🔧 Components CSS反映状況
 **現状**: 
-- `docs/drugs/` - 6薬剤公開中、全薬剤Components CSS適用完了！ 🎉
+- `docs/drugs/` - 7薬剤公開中、全薬剤Components CSS適用完了！ 🎉
   - ✅ lemborexant.html（正しくcomponents.css反映済み）
   - ✅ metformin.html（Level 3セクションCSS適用完了 - 2025-07-18）
   - ✅ dapagliflozin.html（Level 3セクションCSS適用完了 - 2025-07-18）
   - ✅ telmisartan.html（Level 3セクションCSS適用完了 - 2025-07-18）  
   - ✅ dotinurad.html（components.css適用済み）
   - ✅ sacubitril-valsartan.html（Level 3セクションCSS適用完了 - 2025-07-18）
+  - ✅ domperidone.html（Level 3セクションCSS改善完了 - 2025-07-22）
 
 **達成**: 
-- ✅ 公開中の全6薬剤ページへのcomponents.css適用完了（2025-07-18）
+- ✅ 公開中の全7薬剤ページへのcomponents.css適用完了（2025-07-18・07-22）
 - ✅ HTML構造を既存のcomponents.cssクラスに適合
 - ✅ 新規クラスの作成なし、既存クラスの活用を徹底
 
@@ -364,6 +365,11 @@ okusuri_note/
   - **詳細**: `project-docs/development-guides/LINE_BREAK_GUIDELINES.md`
 
 ## 更新履歴
+
+- **2025-07-22**: domperidone.html追加とLevel 3セクション改善
+  - domperidone.html（ドンペリドン）を7番目の公開薬剤として追加
+  - Level 3セクションのh3要素を個別のcontent-sectionで囲む改善実施
+  - 各トピックの視覚的区切りを明確化、読みやすさを向上
 
 - **2025-07-18**: Components CSS標準化プロジェクト完了（公開薬剤全6種）
   - 04:40 公開中の全6薬剤ページへのcomponents.css適用完了
