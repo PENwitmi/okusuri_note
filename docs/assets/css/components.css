@@ -396,8 +396,7 @@
 /* 汎用コンテンツグリッド */
 .content-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(280px, 45%), 1fr));
-    max-width: 100%;
+    grid-template-columns: repeat(2, 1fr);  /* 確実に2列固定 */
     gap: var(--spacing-lg);
     margin: var(--spacing-lg) 0;
 }
