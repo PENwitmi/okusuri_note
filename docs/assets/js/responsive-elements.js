@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
  * 薬学教育特化の可読性向上機能
  */
 function initReadabilityEnhancements() {
-    // 読了時間計算
-    calculateReadingTime();
+    // 読了時間計算（無効化）
+    // calculateReadingTime();
     
     // スクロール進度表示
     initScrollProgress();
