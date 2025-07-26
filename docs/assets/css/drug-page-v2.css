@@ -120,12 +120,14 @@
 
 /* 30秒サマリー */
 .quick-summary {
-    background: var(--bg-study);
+    /* 背景は白にして、左ボーダーでアクセント */
+    background: white;
     padding: var(--spacing-xl);
     margin: var(--spacing-xl) 0;
     border-radius: 8px;
-    box-shadow: var(--shadow-light);
-    border: 1px solid var(--pharma-primary-light);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--pharma-primary);  /* 左にアクセントボーダー */
 }
 
 .quick-summary h2 {
@@ -171,9 +173,10 @@
 
 /* レベル1（薬学生向け） */
 .level-1-content {
-    background: var(--bg-study);
+    /* 背景は白にして、左ボーダーでレベルを表現 */
+    background: white;
     color: var(--text-reading);
-    border-left: 3px solid var(--pharma-primary-light);
+    border-left: 4px solid var(--pharma-primary-light);
     font-size: var(--font-size-base);
     line-height: 1.7;
     font-weight: 400;
@@ -181,6 +184,7 @@
     margin: var(--spacing-lg) auto;
     border-radius: 6px;
     max-width: 1000px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 /* レベル1見出し */
@@ -203,14 +207,17 @@
 
 /* レベル2（実習中薬学生向け） */
 .level-2-content {
+    /* 背景は白にして、左ボーダーでレベルを表現 */
+    background: white;
     color: var(--text-pharma-body);
-    background: var(--bg-secondary);
-    border: none;
+    border-left: 4px solid var(--pharma-nature);  /* 緑でレベル2を表現 */
     font-weight: 500;
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-2xl);
     margin: var(--spacing-xl) auto;
     position: relative;
     max-width: 1000px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .level-2-content:before {
@@ -224,10 +231,12 @@
 
 /* レベル3（研修中・臨床向け） */
 .level-3-content {
-    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-reference) 100%);
+    /* 背景は白にして、上部ボーダーでレベルを表現 */
+    background: white;
     color: var(--text-pharma-primary);
-    border: 2px solid var(--border-color);
-    border-top: 5px solid var(--text-pharma-primary);
+    border: 1px solid var(--border-light);
+    border-top: 5px solid var(--text-pharma-primary);  /* 上部に太いボーダー */
+    border-left: 4px solid #ea580c;  /* オレンジでレベル3を表現 */
     font-weight: 400;
     padding: var(--spacing-2xl);
     margin: var(--spacing-xl) auto;

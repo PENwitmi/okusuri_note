@@ -11,8 +11,10 @@
  * すべてのコンポーネントは、定義済みのものから選んで使用してください。
  * 新しい用途が発生しても、新規作成せず既存のものを活用することが原則です。
  * 
- * ■ ボックス（5種類）
- *   例：「処方のコツ」→ key-point-box、「エビデンス」→ info-box
+ * ■ ボックス（7種類）
+ *   色付き背景：info-box（青）、alert-box（黄）、highlight-box（緑）、key-point-box（橙）、quote-box（灰）
+ *   白背景：simple-box（薄い枠+影）、plain-box（枠のみ）
+ *   例：「処方のコツ」→ key-point-box、「エビデンス」→ info-box、「補足説明」→ simple-box
  * 
  * ■ テーブル（4種類）
  *   例：「薬価一覧」→ data-table、「相互作用」→ clinical-table
@@ -127,6 +129,25 @@
     padding: var(--spacing-lg);
     margin: var(--spacing-lg) 0;
     border-radius: 4px;
+}
+
+/* シンプルボックス（白背景・最小装飾） */
+.simple-box {
+    background: white;
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+/* プレーンボックス（白背景・枠線のみ） */
+.plain-box {
+    background: white;
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
 }
 
 .quote-box blockquote {
