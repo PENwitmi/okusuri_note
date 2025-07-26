@@ -303,11 +303,12 @@
 
 /* 基本コンテンツセクション */
 .content-section {
-    background: var(--bg-secondary);
+    /* 背景は白（デフォルト）にして視覚的な余白を確保 */
     padding: var(--spacing-xl);
     margin: var(--spacing-xl) 0;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border: 1px solid var(--border-light);  /* 境界を明確にするため薄いボーダーを追加 */
 }
 
 .content-section h2 {
@@ -325,12 +326,14 @@
 
 /* 開発ストーリーセクション */
 .development-story {
-    background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+    /* 背景は白にして、ボーダーで特別感を演出 */
+    background: white;
     padding: var(--spacing-2xl);
     margin: var(--spacing-2xl) 0;
     border-radius: 16px;
-    border: 1px solid #cce7ff;
+    border: 2px solid #cce7ff;  /* ボーダーを少し太くして存在感を */
     position: relative;
+    box-shadow: 0 2px 12px rgba(52, 152, 219, 0.06);  /* 薄い青の影を追加 */
 }
 
 .development-story::before {
@@ -375,11 +378,13 @@
 
 /* 安全性比較セクション */
 .safety-comparison {
-    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+    /* 背景は白にして、緑のボーダーで自然な印象を */
+    background: white;
     padding: var(--spacing-2xl);
     margin: var(--spacing-2xl) 0;
     border-radius: 16px;
-    border: 1px solid #bbf7d0;
+    border: 2px solid #bbf7d0;  /* ボーダーを少し太くして存在感を */
+    box-shadow: 0 2px 12px rgba(34, 197, 94, 0.06);  /* 薄い緑の影を追加 */
 }
 
 .safety-comparison h2 {
