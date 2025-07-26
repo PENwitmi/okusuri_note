@@ -208,10 +208,9 @@ okusuri_note/
 - 1つのエージェント/開発者での集中開発を推奨
 - **Manager注意**: Worktree自動作成機能は使用禁止
 
-### 作業場所の厳守
-- すべての作業は `/Users/nishimototakashi/claude code/ai-team/code/okusuri_note/` 内で実施
-- AI-Team外での作業は厳禁
-- **異なる場所での作業は「虚偽報告」の主原因**
+### 作業場所
+- プロジェクトは `/Users/nishimototakashi/claude code/okusuri_note/` に配置
+- **2025-07-26**: AI-Team管轄から独立（上位ディレクトリに移動）
 
 ### 🚨 重要な教訓
 

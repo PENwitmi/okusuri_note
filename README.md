@@ -105,7 +105,7 @@ okusuri_note/
 
 ```bash
 # プロジェクトディレクトリに移動
-cd /Users/nishimototakashi/claude\ code/ai-team/code/okusuri_note
+cd /Users/nishimototakashi/claude\ code/okusuri_note
 
 # 高品質HTMLテンプレートから開始（templates/に配置されている場合）
 cp templates/drug-detail-premium.html docs/drugs/NEW_drug.html
