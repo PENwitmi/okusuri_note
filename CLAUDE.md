@@ -1,27 +1,29 @@
 # CLAUDE.md - OkusuriNote プロジェクト
 
-**最終更新**: 2025-07-22 15:01  
+**最終更新**: 2025-07-26 02:00  
 **プロジェクト状態**: ✅ 公開薬剤Components CSS標準化完了、containerパディング削除完了、モバイルCSS最適化完了  
-　　　　　　　　　　✅ 公開中薬剤：7薬剤（drugs/ディレクトリ）  
-　　　　　　　　　　✅ Components CSS反映済み：全7薬剤完了！  
+　　　　　　　　　　✅ 公開中薬剤：9薬剤（drugs/ディレクトリ）  
+　　　　　　　　　　✅ Components CSS反映済み：全9薬剤完了！  
 **現在フェーズ**: 公開薬剤CSS適用完了・次フェーズ検討中  
-**進捗状況**: 薬剤ページ7種類公開中（全てCSS適用済み）、特集ページ7種類完成
+**進捗状況**: 薬剤ページ9種類公開中（全てCSS適用済み）、特集ページ3種類公開中（MR拮抗薬、心不全治療、抗血栓薬）
 
 ## 🚨 現在の最重要状況
 
 ### 🔧 Components CSS反映状況
 **現状**: 
-- `docs/drugs/` - 7薬剤公開中、全薬剤Components CSS適用完了！ 🎉
+- `docs/drugs/` - 9薬剤公開中、全薬剤Components CSS適用完了！ 🎉
+  - ✅ carvedilol.html（components.css適用済み）
+  - ✅ celecoxib.html（components.css適用済み）
+  - ✅ dapagliflozin.html（Level 3セクションCSS適用完了 - 2025-07-18）
+  - ✅ domperidone.html（Level 3セクションCSS改善完了 - 2025-07-22）
+  - ✅ dotinurad.html（components.css適用済み）
   - ✅ lemborexant.html（正しくcomponents.css反映済み）
   - ✅ metformin.html（Level 3セクションCSS適用完了 - 2025-07-18）
-  - ✅ dapagliflozin.html（Level 3セクションCSS適用完了 - 2025-07-18）
-  - ✅ telmisartan.html（Level 3セクションCSS適用完了 - 2025-07-18）  
-  - ✅ dotinurad.html（components.css適用済み）
   - ✅ sacubitril-valsartan.html（Level 3セクションCSS適用完了 - 2025-07-18）
-  - ✅ domperidone.html（Level 3セクションCSS改善完了 - 2025-07-22）
+  - ✅ telmisartan.html（Level 3セクションCSS適用完了 - 2025-07-18）
 
 **達成**: 
-- ✅ 公開中の全7薬剤ページへのcomponents.css適用完了（2025-07-18・07-22）
+- ✅ 公開中の全9薬剤ページへのcomponents.css適用完了（2025-07-18・07-22）
 - ✅ HTML構造を既存のcomponents.cssクラスに適合
 - ✅ 新規クラスの作成なし、既存クラスの活用を徹底
 
@@ -366,13 +368,18 @@ okusuri_note/
 
 ## 更新履歴
 
+- **2025-07-26**: 公開状況を実態に合わせて更新
+  - 公開薬剤数を7→9に修正（carvedilol、celecoxibを追加）
+  - 特集ページ数を7→3に修正（実際に公開中のページのみ）
+  - サイトマップを更新（pemafibrate削除、未公開特集4ページ削除）
+
 - **2025-07-22**: domperidone.html追加とLevel 3セクション改善
-  - domperidone.html（ドンペリドン）を7番目の公開薬剤として追加
+  - domperidone.html（ドンペリドン）を公開薬剤として追加
   - Level 3セクションのh3要素を個別のcontent-sectionで囲む改善実施
   - 各トピックの視覚的区切りを明確化、読みやすさを向上
 
-- **2025-07-18**: Components CSS標準化プロジェクト完了（公開薬剤全6種）
-  - 04:40 公開中の全6薬剤ページへのcomponents.css適用完了
+- **2025-07-18**: Components CSS標準化プロジェクト完了
+  - 04:40 公開中の薬剤ページへのcomponents.css適用完了
   - metformin.html、dapagliflozin.html、telmisartan.html、sacubitril-valsartan.htmlのLevel 3セクションにCSS適用
   - dotinurad.htmlは既に適用済みであることを確認
   - 新規クラスの作成なし、既存components.cssクラスの活用徹底
