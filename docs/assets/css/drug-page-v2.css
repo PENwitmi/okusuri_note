@@ -231,12 +231,11 @@
 
 /* レベル3（研修中・臨床向け） */
 .level-3-content {
-    /* 背景は白にして、上部ボーダーでレベルを表現 */
+    /* 背景は白にして、左ボーダーでレベルを表現 */
     background: white;
     color: var(--text-pharma-primary);
     border: 1px solid var(--border-light);
-    border-top: 5px solid var(--text-pharma-primary);  /* 上部に太いボーダー */
-    border-left: 4px solid #ea580c;  /* オレンジでレベル3を表現 */
+    border-left: 4px solid #6c757d;  /* グレーでレベル3を表現 */
     font-weight: 400;
     padding: var(--spacing-2xl);
     margin: var(--spacing-xl) auto;
