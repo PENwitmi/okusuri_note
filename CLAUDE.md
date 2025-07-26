@@ -335,6 +335,65 @@ okusuri_note/
 - **技術品質**: レスポンシブ、アクセシビリティ、SEO
 - **統合品質**: HTML直接編集による品質管理
 
+### 📱 SEO最適化テンプレート構造（2025-07-26確立）
+
+#### テンプレート必須要素
+すべてのHTMLファイルは以下の構造を含む：
+
+1. **基本メタタグ**
+   ```html
+   <meta name="description" content="ページの説明（120-150文字）">
+   <meta name="keywords" content="関連キーワード（カンマ区切り）">
+   <meta name="author" content="現職薬局薬剤師（6年制薬学部卒、薬剤師国家資格保有）">
+   ```
+
+2. **OGP（Open Graph Protocol）**
+   ```html
+   <meta property="og:type" content="website|article">
+   <meta property="og:url" content="https://pharm.nishimoto-learning.jp/okusuri_note/...">
+   <meta property="og:title" content="タイトル">
+   <meta property="og:description" content="説明文">
+   <meta property="og:image" content="https://pharm.nishimoto-learning.jp/okusuri_note/assets/images/hero.png">
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:image:alt" content="画像の説明">
+   <meta property="og:site_name" content="サクッとお薬ノート">
+   <meta property="og:locale" content="ja_JP">
+   ```
+
+3. **Twitter Card**
+   ```html
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:url" content="URL">
+   <meta name="twitter:title" content="タイトル">
+   <meta name="twitter:description" content="説明文">
+   <meta name="twitter:image" content="画像URL">
+   <meta name="twitter:image:alt" content="画像の説明">
+   ```
+
+4. **Canonical URL**
+   ```html
+   <link rel="canonical" href="https://pharm.nishimoto-learning.jp/okusuri_note/...">
+   ```
+
+5. **構造化データ（JSON-LD）**
+   - index.html: `WebSite`タイプ
+   - 薬剤ページ: `MedicalWebPage` + `Drug` + `BreadcrumbList`
+   - 特集ページ: `MedicalWebPage` + `BreadcrumbList`
+
+6. **CSS/JSパス**
+   - 絶対パス使用: `/okusuri_note/assets/css/...`
+   - base hrefは使用しない（Vercel設定との整合性）
+
+#### ページタイプ別の実装
+- **トップページ**: WebSiteスキーマ、og:type="website"
+- **薬剤個別ページ**: MedicalWebPage + Drugスキーマ、og:type="article"
+- **特集ページ**: MedicalWebPageスキーマ、og:type="article"
+
+#### 注意事項
+- URLは末尾スラッシュなし（Vercel設定: trailingSlash: false）
+- 外部リンクには`rel="noopener noreferrer"`を付与
+
 ## 🤝 AI-Team協働プロセス（決定事項）
 
 ### エージェント階層
@@ -367,7 +426,10 @@ okusuri_note/
 
 ## 更新履歴
 
-- **2025-07-26**: 公開状況を実態に合わせて更新
+- **2025-07-26**: SEO最適化とプロジェクト独立
+  - SEO最適化テンプレート構造をドキュメント化
+  - OGP、Twitter Card、構造化データ（JSON-LD）の必須要素を明文化
+  - プロジェクトをAI-Team管轄から独立（/claude code/okusuri_noteに移動）
   - 公開薬剤数を7→9に修正（carvedilol、celecoxibを追加）
   - 特集ページ数を7→3に修正（実際に公開中のページのみ）
   - サイトマップを更新（pemafibrate削除、未公開特集4ページ削除）

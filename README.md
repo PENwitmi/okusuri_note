@@ -136,6 +136,14 @@ python -m http.server 8000
    - `docs/generated/drugs/` に配置
    - GitHub Pages自動デプロイ
 
+4. **SEO最適化テンプレート適用**（2025-07-26標準化）
+   - OGPメタタグ（Open Graph Protocol）
+   - Twitter Cardメタタグ
+   - 構造化データ（JSON-LD）：WebSite/MedicalWebPage/Drug/BreadcrumbList
+   - Canonical URL設定
+   - CSS/JSは絶対パス使用（base href不使用）
+   - **詳細**: `CLAUDE.md` の「SEO最適化テンプレート構造」セクション参照
+
 **詳細ガイド**: `project-docs/2025-06-30-html-first-architecture/HTML_DIRECT_EDITING_WORKFLOW.md` 参照
 
 ## 🚀 特徴的な価値
