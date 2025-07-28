@@ -1,0 +1,114 @@
+CSS Class Name,Category,MR拮抗薬,心不全,抗血栓薬,ドーパミン,Total Usage,Usage Rate
+feature-hero,Hero Section,✓,✓,✓,✓,4/4,100%
+feature-hero-container,Hero Section,✓,✓,✓,✓,4/4,100%
+feature-breadcrumb,Hero Section,✓,✓,✓,✓,4/4,100%
+feature-title,Hero Section,✓,✓,✓,✓,4/4,100%
+feature-subtitle,Hero Section,✓,✓,✓,✓,4/4,100%
+feature-lead,Hero Section,✓,✓,✓,✓,4/4,100%
+feature-section,Section Structure,✓,✓,✓,✓,4/4,100%
+section-container,Section Structure,✓,✓,✓,✓,4/4,100%
+section-title,Section Structure,✓,✓,✓,✓,4/4,100%
+bg-light,Section Structure,✓,✓,-,✓,3/4,75%
+intro-content,Content,✓,✓,✓,✓,4/4,100%
+intro-highlights,Content,✓,✓,✓,✓,4/4,100%
+drug-overview,Content,✓,-,-,-,1/4,25%
+drug-flow,Flow,-,-,-,-,0/4,0%
+drug-flow-item,Flow,-,-,-,-,0/4,0%
+drug-number,Flow,-,-,-,-,0/4,0%
+drug-type,Flow,-,-,-,-,0/4,0%
+drug-role,Flow,-,-,-,-,0/4,0%
+flow-arrow,Flow,-,-,-,-,0/4,0%
+drug-details,Drug Details,-,-,-,-,0/4,0%
+drug-article,Drug Details,-,✓,-,-,1/4,25%
+drug-header,Drug Details,-,✓,-,-,1/4,25%
+drug-name,Drug Details,-,✓,-,-,1/4,25%
+drug-icon,Drug Details,-,-,-,-,0/4,0%
+drug-category,Drug Details,-,✓,-,-,1/4,25%
+drug-content,Drug Details,-,✓,-,-,1/4,25%
+drug-info-card,Info Display,✓,✓,-,✓,3/4,75%
+info-grid,Info Display,✓,✓,-,-,2/4,50%
+info-item,Info Display,✓,✓,-,-,2/4,50%
+info-label,Info Display,✓,✓,-,-,2/4,50%
+info-value,Info Display,✓,✓,-,-,2/4,50%
+comparison-table-wrapper,Table,✓,✓,✓,✓,4/4,100%
+comparison-table,Table,✓,✓,✓,✓,4/4,100%
+table-responsive,Table,-,-,-,-,0/4,0%
+indication-table,Table,-,-,-,-,0/4,0%
+dosing-table,Table,-,-,-,-,0/4,0%
+warning-box,Box,✓,✓,-,-,2/4,50%
+risk-box,Box,-,-,-,-,0/4,0%
+benefit-box,Box,-,-,-,-,0/4,0%
+patient-profile,Patient,-,-,-,-,0/4,0%
+profile-grid,Patient,-,-,-,-,0/4,0%
+profile-item,Patient,-,-,-,-,0/4,0%
+patient-card,Patient,-,-,-,-,0/4,0%
+smart-therapy,Therapy,-,-,-,-,0/4,0%
+triple-therapy,Therapy,-,-,-,-,0/4,0%
+device-cards,Device,-,-,-,-,0/4,0%
+device-card,Device,-,-,-,-,0/4,0%
+device-features,Device,-,-,-,-,0/4,0%
+feature-item,Device,-,-,-,-,0/4,0%
+checklist-box,Checklist,-,-,-,-,0/4,0%
+checklist,Checklist,-,-,-,-,0/4,0%
+checklist-item,Checklist,-,-,-,-,0/4,0%
+key-points,Summary,-,-,-,-,0/4,0%
+point-cards,Summary,-,-,-,✓,1/4,25%
+point-card,Summary,-,✓,-,✓,2/4,50%
+principles,Summary,-,-,-,-,0/4,0%
+principle-list,Summary,-,-,-,-,0/4,0%
+symptoms-list,Symptom,-,✓,-,-,1/4,25%
+symptoms-comparison,Symptom,-,-,-,-,0/4,0%
+symptom-boxes,Symptom,-,✓,-,-,1/4,25%
+symptom-box,Symptom,-,✓,-,-,1/4,25%
+diagnostic-challenge,Symptom,-,-,-,-,0/4,0%
+comparison-grid,Grid,✓,-,-,-,1/4,25%
+comparison-item,Grid,✓,-,-,-,1/4,25%
+four-grid,Grid,-,-,-,-,0/4,0%
+reason-cards,Reason,-,✓,-,-,1/4,25%
+reason-card,Reason,-,✓,-,-,1/4,25%
+reason-box,Reason,-,-,-,-,0/4,0%
+adaptation-reason,Reason,-,-,-,-,0/4,0%
+component,Component Tag,-,-,-,-,0/4,0%
+component.saba,Component Tag,-,-,-,-,0/4,0%
+component.ics,Component Tag,-,-,-,-,0/4,0%
+component.laba,Component Tag,-,-,-,-,0/4,0%
+component.lama,Component Tag,-,-,-,-,0/4,0%
+summary-section,Summary,-,-,-,-,0/4,0%
+classification-intro,Classification,-,-,-,-,0/4,0%
+lvef-explanation,Classification,-,-,-,-,0/4,0%
+treatment-note,Treatment,-,-,-,-,0/4,0%
+future-prediction,Prediction,-,-,-,-,0/4,0%
+hero-content,Hero,-,-,-,✓,1/4,25%
+hero-category,Hero,-,-,-,✓,1/4,25%
+hero-meta,Hero,-,-,-,✓,1/4,25%
+hero-date,Hero,-,-,-,✓,1/4,25%
+hero-reading-time,Hero,-,-,-,✓,1/4,25%
+feature-intro,Intro,-,-,-,✓,1/4,25%
+intro-lead,Intro,-,-,-,✓,1/4,25%
+full-width,Layout,✓,-,-,-,1/4,25%
+note-box,Box,-,✓,-,-,1/4,25%
+quote-box,Box,-,-,-,✓,1/4,25%
+comparison-section,Section,-,-,-,-,0/4,0%
+smart-concept,SMART Therapy,-,-,-,-,0/4,0%
+smart-definition,SMART Therapy,-,-,-,-,0/4,0%
+smart-patients,SMART Therapy,-,-,-,-,0/4,0%
+smart-reason,SMART Therapy,-,-,-,-,0/4,0%
+triple-patients,Triple Therapy,-,-,-,-,0/4,0%
+triple-reasons,Triple Therapy,-,-,-,-,0/4,0%
+emphasis,Typography,-,-,-,-,0/4,0%
+highlight-text,Typography,-,-,-,-,0/4,0%
+warning-note,Box,-,-,-,-,0/4,0%
+indication-comparison,Table,-,-,-,-,0/4,0%
+indication-item,Table,-,-,-,-,0/4,0%
+patient-type,Patient,-,-,-,-,0/4,0%
+reason,Typography,-,-,-,-,0/4,0%
+restriction-explanation,Content,-,-,-,-,0/4,0%
+drug-category.saba,Drug Category,-,-,-,-,0/4,0%
+drug-category.ics-laba,Drug Category,-,-,-,-,0/4,0%
+drug-category.ics-laba.smart,Drug Category,-,-,-,-,0/4,0%
+drug-category.triple,Drug Category,-,-,-,-,0/4,0%
+drug-flow.vertical,Flow Variant,-,-,-,-,0/4,0%
+info-item.full-width,Layout Variant,-,-,-,-,0/4,0%
+TOTAL UNIQUE CLASSES USED,,22,31,13,21,,
+INLINE STYLES COUNT,,199,89,23,21,,
+CSS UTILIZATION RATE,,16.9%,23.8%,10%,16.2%,,40.5%

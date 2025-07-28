@@ -25,6 +25,7 @@
     
 <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/feature-page.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
     <link rel="stylesheet" href="../assets/css/responsive-unified.css">
 
     <!-- BreadcrumbList構造化データ -->
@@ -128,13 +129,13 @@
                         つまり、複数の症状が組み合わさった状態を指します。原因となる心臓病は様々です。</p>
                     </div>
 
-                    <div class="symptoms-list">
+                    <div class="mt-24">
                         <h3>心不全の主な症状</h3>
-                        <ul>
-                            <li><strong>息切れ・呼吸困難</strong> - 労作時から始まり、重症化すると安静時にも</li>
-                            <li><strong>疲労感・倦怠感</strong> - 全身への血流不足による</li>
-                            <li><strong>下肢浮腫</strong> - 体液貯留による足のむくみ</li>
-                            <li><strong>夜間発作性呼吸困難</strong> - 横になると息苦しくなる</li>
+                        <ul class="mt-16">
+                            <li class="mb-8"><strong>息切れ・呼吸困難</strong> - 労作時から始まり、重症化すると安静時にも</li>
+                            <li class="mb-8"><strong>疲労感・倦怠感</strong> - 全身への血流不足による</li>
+                            <li class="mb-8"><strong>下肢浮腫</strong> - 体液貯留による足のむくみ</li>
+                            <li class="mb-8"><strong>夜間発作性呼吸困難</strong> - 横になると息苦しくなる</li>
                         </ul>
                     </div>
                 </div>
@@ -192,19 +193,19 @@
             <div class="section-container">
                 <h2 class="section-title">📝 このページで扱う心不全について</h2>
                 
-                <div style="background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; margin-top: 20px;">
+                <div class="simple-box mt-20">
                     <p>心不全は大きく分けて<strong>4つのパターン</strong>があります：</p>
-                    <ul style="margin: 15px 0;">
+                    <ul class="mt-15">
                         <li>左心不全のHFrEF（収縮不全）</li>
                         <li>左心不全のHFpEF（拡張不全）</li>
                         <li>右心不全</li>
                         <li>両心不全（左心不全＋右心不全）</li>
                     </ul>
                     
-                    <p style="margin-bottom: 0;">実際の臨床ではこれらが複雑に組み合わさることも多いですが、<strong>このページでは最も頻度が高い「左心不全」に焦点を当てて解説します。</strong></p>
+                    <p class="mb-0">実際の臨床ではこれらが複雑に組み合わさることも多いですが、<strong>このページでは最も頻度が高い「左心不全」に焦点を当てて解説します。</strong></p>
                 </div>
                 
-                <div class="note-box" style="margin-top: 15px;">
+                <div class="info-box mt-15">
                     <p>※ 以下の解説は、特に断りがない限り<strong>「左心不全」</strong>についての内容です。</p>
                 </div>
             </div>
@@ -218,7 +219,7 @@
                 <div class="classification-intro">
                     <p>心不全は<strong>左室駆出率（LVEF）</strong>によって大きく2つに分類されます。</p>
                     <div class="lvef-explanation">
-                        <div class="drug-info-card">
+                        <div class="detail-card">
                             <h4>左室駆出率（LVEF）とは？</h4>
                             <p>Left Ventricular Ejection Fractionの略。心臓が1回の収縮で送り出す血液の割合。正常値は50〜70%。</p>
                         </div>
@@ -260,7 +261,7 @@
                     </table>
                 </div>
 
-                <div class="note-box">
+                <div class="info-box">
                     <p><strong>※ HFmrEF（駆出率40-49%）</strong>という中間型も最近分類されました。</p>
                 </div>
             </div>
@@ -272,9 +273,9 @@
                 <h2 class="section-title">🔬 病態生理をイメージで理解しよう</h2>
                 
                 <div class="info-grid">
-                    <div class="drug-info-card hfref-card">
+                    <div class="detail-card hfref-card">
                         <h4>HFrEF（収縮不全）</h4>
-                        <div style="text-align: center; margin: 1rem 0;">
+                        <div class="text-center mt-16">
                             <span style="font-size: 3rem;">💔</span>
                             <p><strong>「ポンプが弱い」</strong></p>
                         </div>
@@ -287,9 +288,9 @@
                         </ul>
                     </div>
 
-                    <div class="drug-info-card hfpef-card">
+                    <div class="detail-card hfpef-card">
                         <h4>HFpEF（拡張不全）</h4>
-                        <div style="text-align: center; margin: 1rem 0;">
+                        <div class="text-center mt-16">
                             <span style="font-size: 3rem;">🫀</span>
                             <p><strong>「部屋が狭い」</strong></p>
                         </div>
@@ -310,21 +311,21 @@
             <div class="section-container">
                 <h2 class="section-title">👥 誰がなりやすい？性差・年齢差の理由</h2>
                 
-                <div class="reason-cards">
-                    <div class="reason-card hfref-epi">
+                <div class="comparison-cards">
+                    <div class="comparison-card hfref-epi">
                         <h5>HFrEF</h5>
-                        <div style="text-align: center; margin: 1rem 0;">
+                        <div class="text-center mt-16">
                             <span style="font-size: 3rem;">👨</span>
                             <p><strong>男性・比較的若年者に多い</strong></p>
                         </div>
-                        <h5>主な原因疾患</h5>
+                        <p class="info-label mt-24">主な原因疾患</p>
                         <ul>
                             <li>虚血性心疾患（心筋梗塞）</li>
                             <li>拡張型心筋症</li>
                             <li>弁膜症</li>
                             <li>心筋炎</li>
                         </ul>
-                        <h5>なぜ男性・若年者？</h5>
+                        <p class="info-label mt-24">なぜ男性・若年者？</p>
                         <ul>
                             <li>男性は女性より10-15年早く冠動脈疾患を発症</li>
                             <li>テストステロンが動脈硬化を促進</li>
@@ -333,20 +334,20 @@
                         </ul>
                     </div>
 
-                    <div class="reason-card hfpef-epi">
+                    <div class="comparison-card hfpef-epi">
                         <h5>HFpEF</h5>
-                        <div style="text-align: center; margin: 1rem 0;">
+                        <div class="text-center mt-16">
                             <span style="font-size: 3rem;">👵</span>
                             <p><strong>女性・高齢者に多い</strong></p>
                         </div>
-                        <h5>主な原因疾患</h5>
+                        <p class="info-label mt-24">主な原因疾患</p>
                         <ul>
                             <li>高血圧性心疾患</li>
                             <li>糖尿病</li>
                             <li>肥満</li>
                             <li>加齢</li>
                         </ul>
-                        <h5>なぜ女性・高齢者？</h5>
+                        <p class="info-label mt-24">なぜ女性・高齢者？</p>
                         <ul>
                             <li>閉経後のエストロゲン低下</li>
                             <li>女性は圧負荷に肥厚で反応しやすい</li>
@@ -356,7 +357,7 @@
                     </div>
                 </div>
 
-                <div class="future-prediction" style="margin-top: 2rem;">
+                <div class="simple-box mt-24">
                     <h3>📈 今後の予測</h3>
                     <p>高齢化社会の進行により、<strong>HFpEFは今後さらに増加</strong>すると予想されています。<br>
                     現在すでに心不全の約半数がHFpEFであり、その病態解明と治療法開発が重要な課題です。</p>
@@ -371,8 +372,8 @@
                 
                 <div class="symptoms-comparison">
                     <h3>症状の特徴的な違い</h3>
-                    <div class="symptom-boxes">
-                        <div class="symptom-box hfref-symptoms">
+                    <div class="comparison-cards">
+                        <div class="comparison-card hfref-symptoms">
                             <h4>HFrEF</h4>
                             <ul>
                                 <li><strong>より重篤な症状</strong>が出やすい</li>
@@ -381,7 +382,7 @@
                                 <li>起坐呼吸（座らないと呼吸困難）</li>
                             </ul>
                         </div>
-                        <div class="symptom-box hfpef-symptoms">
+                        <div class="comparison-card hfpef-symptoms">
                             <h4>HFpEF</h4>
                             <ul>
                                 <li><strong>労作時の症状が主体</strong></li>
@@ -397,17 +398,17 @@
                     <h3>❓ HFpEF診断はなぜ難しい？</h3>
                     
                     <div class="info-grid">
-                        <div class="warning-box">
+                        <div class="alert-box">
                             <h4>1. 特有的な自覚症状がない</h4>
                             <p>「なんとなく調子が悪い」「疲れやすい」など非特異的な症状ばかりで、診断の決め手になりません。</p>
                         </div>
 
-                        <div class="warning-box">
+                        <div class="alert-box">
                             <h4>2. 他疾患との鑑別が困難</h4>
                             <p>COPD、貧血、甲状腺疾患など似た症状を示す疾患が多く、特に高齢者では「年のせい」として見過ごされがちです。</p>
                         </div>
 
-                        <div class="warning-box" style="background: #fff9e6; border-color: #ffc107;">
+                        <div class="alert-box" style="background: #fff9e6; border-color: #ffc107;">
                             <h4>3. 検査所見も非特異的</h4>
                             <p>駆出率は正常（50%以上）、BNP上昇も軽度。心エコーでの詳細な拡張能評価など、総合的な判断が必要です。</p>
                         </div>
@@ -428,21 +429,17 @@
                         <strong>HFrEFには「死亡率を改善する」明確なエビデンスを持つ薬剤が複数存在</strong>するのに対し、
                         <strong>HFpEFは長年「効く薬がない」と言われてきました</strong>。
                     </p>
-                    <p style="margin-top: 10px;">
+                    <p class="mt-10">
                         しかし、2021年以降、SGLT2阻害薬を中心に状況は大きく変わりつつあります。<br>
                         それぞれの現在の治療戦略を見ていきましょう。
                     </p>
                 </div>
 
                 <div class="info-grid">
-                    <div class="drug-article">
-                        <div class="drug-header">
-                            <h3 class="drug-name">HFrEF治療</h3>
-                            <div class="drug-category" style="background: var(--learning-correct);">✅ エビデンスが豊富</div>
-                        </div>
-                        <div class="drug-content">
-                            <div class="drug-info-card">
-                                <h4>Fantastic Four（4本柱治療）</h4>
+                    <div class="section-with-header">
+                        <h3>HFrEF治療<span class="feature-badge bg-success" style="float: right;">✅ エビデンスが豊富</span></h3>
+                        <div class="detail-card">
+                            <h4>Fantastic Four（4本柱治療）</h4>
                                 <ol>
                                     <li><strong>ACE阻害薬/ARB/ARNI</strong><br>
                                         <small>レニン・アンジオテンシン系阻害</small></li>
@@ -453,9 +450,9 @@
                                     <li><strong>SGLT2阻害薬</strong><br>
                                         <small>心腎保護作用</small></li>
                                 </ol>
-                                <p style="color: var(--learning-correct); font-weight: bold; margin-top: 1rem;">→ 死亡率を大幅に減少</p>
+                                <p class="text-success fw-bold mt-16">→ 死亡率を大幅に減少</p>
                             </div>
-                            <div class="drug-info-card" style="margin-top: 1rem;">
+                            <div class="detail-card" class="mt-16">
                                 <h4>その他の治療</h4>
                                 <ul>
                                     <li>利尿薬（症状緩和）</li>
@@ -466,14 +463,10 @@
                         </div>
                     </div>
 
-                    <div class="drug-article">
-                        <div class="drug-header">
-                            <h3 class="drug-name">HFpEF治療</h3>
-                            <div class="drug-category" style="background: var(--warning-color);">⚡ 治療選択肢が限定的だったが、最近進歩</div>
-                        </div>
-                        <div class="drug-content">
-                            <div class="drug-info-card">
-                                <h4>エビデンスのある治療薬</h4>
+                    <div class="section-with-header">
+                        <h3>HFpEF治療<span class="feature-badge bg-warning" style="float: right;">⚡ 治療選択肢が限定的だったが、最近進歩</span></h3>
+                        <div class="detail-card">
+                            <h4>エビデンスのある治療薬</h4>
                                 <ol>
                                     <li><strong>SGLT2阻害薬</strong><br>
                                         <small>最も強いエビデンス（2021年〜）</small></li>
@@ -483,7 +476,7 @@
                                         <small>症状緩和（うっ血改善）</small></li>
                                 </ol>
                             </div>
-                            <div class="drug-info-card" style="margin-top: 1rem;">
+                            <div class="detail-card" class="mt-16">
                                 <h4>原疾患の治療が重要</h4>
                                 <ul>
                                     <li>高血圧の管理</li>
@@ -496,7 +489,7 @@
                     </div>
                 </div>
 
-                <div class="treatment-note">
+                <div class="highlight-box">
                     <p>💡 <strong>注目</strong>：SGLT2阻害薬は両方の心不全で有効！これは画期的な発見でした。</p>
                 </div>
             </div>
@@ -507,16 +500,16 @@
             <div class="section-container">
                 <h2 class="section-title">📚 心不全治療薬の詳細（薬学生向け）</h2>
                 
-                <div class="drug-details">
+                <div class="section-with-header">
                     <h3>1. SGLT2阻害薬</h3>
-                    <div class="drug-info-card">
+                    <div class="detail-card">
                         <h4>代表薬</h4>
                         <ul>
                             <li>エンパグリフロジン（ジャディアンス®）</li>
                             <li><a href="../drugs/dapagliflozin">ダパグリフロジン（フォシーガ®）</a></li>
                         </ul>
                         
-                        <h4 style="margin-top: 1.5rem;">なぜ心不全に効く？</h4>
+                        <h4 class="mt-24">なぜ心不全に効く？</h4>
                         <ul>
                             <li>利尿作用による前負荷軽減</li>
                             <li>心筋エネルギー代謝の改善</li>
@@ -527,20 +520,20 @@
                     </div>
 
                     <h3>2. ARNI（アンジオテンシン受容体ネプリライシン阻害薬）</h3>
-                    <div class="drug-info-card">
+                    <div class="detail-card">
                         <h4>代表薬</h4>
                         <ul>
                             <li><a href="../drugs/sacubitril-valsartan">サクビトリルバルサルタン（エンレスト®）</a></li>
                         </ul>
                         
-                        <h4 style="margin-top: 1.5rem;">作用機序</h4>
+                        <h4 class="mt-24">作用機序</h4>
                         <ul>
                             <li>ARBとネプリライシン阻害の合剤</li>
                             <li>ナトリウム利尿ペプチドの分解を阻害</li>
                             <li>血管拡張・利尿・抗線維化作用</li>
                         </ul>
                         
-                        <div class="warning-box">
+                        <div class="alert-box">
                             <h4>注意点</h4>
                             <p>ACE阻害薬からの切り替えは<strong>36時間以上</strong>の休薬期間が必要<br>
                             （血管浮腫のリスク）</p>
@@ -548,7 +541,7 @@
                     </div>
 
                     <h3>3. MR拮抗薬の新展開</h3>
-                    <div class="drug-info-card">
+                    <div class="detail-card">
                         <h4>新規MR拮抗薬</h4>
                         <p><strong>フィネレノン（ケレンディア®）</strong></p>
                         <p>2025年ガイドラインでHFpEFに対してClass IIaで推奨。非ステロイド型MR拮抗薬として心血管イベント減少効果が期待される。</p>
@@ -562,11 +555,11 @@
             <div class="section-container">
                 <h2 class="section-title">🏥 実臨床での課題：高齢女性でのSGLT2阻害薬使用（管理人の個人的な見解）</h2>
                 
-                <div class="clinical-challenge">
+                <div class="simple-box">
                     <p>HFpEFに対してSGLT2阻害薬は有効ですが、主な患者層である<strong>高齢女性での使用には課題</strong>があります。</p>
                 </div>
 
-                <div class="drug-info-card">
+                <div class="detail-card">
                     <h4>📊 実臨床データが示す現実</h4>
                     <div class="info-grid">
                         <div class="info-item">
@@ -584,10 +577,10 @@
                     </div>
                 </div>
 
-                <div class="discontinuation-reasons">
+                <div class="content-section">
                     <h3>中止理由と対策</h3>
-                    <div class="reason-cards">
-                        <div class="reason-card">
+                    <div class="comparison-cards">
+                        <div class="comparison-card">
                             <h4>尿路感染症・性器感染症</h4>
                             <p><strong>頻度</strong>：女性で11-17%</p>
                             <p><strong>対策</strong>：</p>
@@ -597,7 +590,7 @@
                                 <li>早期発見・早期治療</li>
                             </ul>
                         </div>
-                        <div class="reason-card">
+                        <div class="comparison-card">
                             <h4>体重減少・サルコペニア</h4>
                             <p><strong>問題</strong>：高齢者で平均4.7kg減少</p>
                             <p><strong>対策</strong>：</p>
@@ -607,7 +600,7 @@
                                 <li>筋力トレーニング推奨</li>
                             </ul>
                         </div>
-                        <div class="reason-card">
+                        <div class="comparison-card">
                             <h4>脱水・起立性低血圧</h4>
                             <p><strong>リスク</strong>：高齢者は症状を自覚しにくい</p>
                             <p><strong>対策</strong>：</p>
@@ -620,80 +613,6 @@
                     </div>
                 </div>
 
-            </div>
-        </section>
-
-        <!-- 症例で学ぶ -->
-        <section class="feature-section">
-            <div class="section-container">
-                <h2 class="section-title">📝 症例で学ぶ心不全治療</h2>
-                
-                <div class="info-grid">
-                    <div class="drug-article">
-                        <div class="drug-header">
-                            <h3 class="drug-name">症例1：HFrEF患者</h3>
-                        </div>
-                        <div class="drug-content">
-                            <div class="drug-info-card">
-                                <h4>患者背景</h4>
-                                <p><strong>患者</strong>：62歳男性、心筋梗塞後<br>
-                                <strong>LVEF</strong>：32%<br>
-                                <strong>症状</strong>：労作時息切れ（NYHA II）</p>
-                            </div>
-                            <div class="drug-info-card" style="margin-top: 1rem;">
-                                <h4>治療方針</h4>
-                                <p>Fantastic Fourの早期導入</p>
-                                <ol>
-                                    <li>エナラプリル 5mg → エンレスト® 100mgへ変更</li>
-                                    <li>ビソプロロール 2.5mg開始 → 漸増</li>
-                                    <li>スピロノラクトン 25mg追加</li>
-                                    <li>フォシーガ® 10mg追加</li>
-                                </ol>
-                            </div>
-                            <div class="drug-info-card" style="margin-top: 1rem;">
-                                <h4>モニタリング項目</h4>
-                                <ul>
-                                    <li>血圧、心拍数</li>
-                                    <li>腎機能（Cr、eGFR）</li>
-                                    <li>電解質（特にK）</li>
-                                    <li>BNP値の推移</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="drug-article">
-                        <div class="drug-header">
-                            <h3 class="drug-name">症例2：HFpEF患者</h3>
-                        </div>
-                        <div class="drug-content">
-                            <div class="drug-info-card">
-                                <h4>患者背景</h4>
-                                <p><strong>患者</strong>：78歳女性、高血圧・糖尿病あり<br>
-                                <strong>LVEF</strong>：62%<br>
-                                <strong>症状</strong>：労作時息切れ、下腿浮腫</p>
-                            </div>
-                            <div class="drug-info-card" style="margin-top: 1rem;">
-                                <h4>治療方針</h4>
-                                <p>原疾患管理 + SGLT2阻害薬</p>
-                                <ol>
-                                    <li>血圧管理：アムロジピン継続</li>
-                                    <li>利尿薬：フロセミド 20mg（症状時）</li>
-                                    <li>ジャディアンス® 10mg追加</li>
-                                    <li>体重管理・塩分制限指導</li>
-                                </ol>
-                            </div>
-                            <div class="warning-box">
-                                <h4>⚠️ 注意点</h4>
-                                <ul>
-                                    <li>高齢女性 → 尿路感染症リスク</li>
-                                    <li>やせ型 → 体重減少に注意</li>
-                                    <li>水分摂取量の確認</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -748,18 +667,18 @@
             <div class="section-container">
                 <h2 class="section-title">📚 参考資料</h2>
                 
-                <div class="reference-links">
+                <div class="content-section">
                     <div class="intro-highlights">
                         <h3>最新ガイドライン</h3>
                         <p>このページの内容は、以下の最新ガイドラインに基づいています：</p>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-top: 1rem;">
+                        <ul >
+                            <li class="mt-16">
                                 <a href="https://www.j-circ.or.jp/cms/wp-content/uploads/2025/03/JCS2025_Kato.pdf" 
                                    target="_blank" 
                                    rel="noopener noreferrer"
                                    style="display: block; font-size: 1.1rem; font-weight: 600; color: var(--pharma-primary); text-decoration: none; padding: 0.5rem 0;">
                                     2025年改訂版 心不全診療ガイドライン
-                                    <span style="font-size: 0.9rem; color: var(--text-pharma-secondary);">(JCS/JHFS 2025)</span>
+                                    <span class="text-secondary">(JCS/JHFS 2025)</span>
                                 </a>
                             </li>
                         </ul>
@@ -771,12 +690,12 @@
                     <div class="intro-highlights" style="margin-top: 2rem;">
                         <h3>関連する特集ページ</h3>
                         <p>以下の特集ページもあわせてご覧ください：</p>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-top: 1rem;">
+                        <ul >
+                            <li class="mt-16">
                                 <a href="./mr-antagonist-complete-guide" 
                                    style="display: block; font-size: 1.1rem; font-weight: 600; color: var(--pharma-primary); text-decoration: none; padding: 0.5rem 0;">
                                     なぜK保持性利尿薬は名前が変わったのか
-                                    <span style="font-size: 0.9rem; color: var(--text-pharma-secondary);">MR拮抗薬への60年の進化と心不全治療における重要性</span>
+                                    <span class="text-secondary">MR拮抗薬への60年の進化と心不全治療における重要性</span>
                                 </a>
                             </li>
                         </ul>
@@ -786,7 +705,7 @@
         </section>
     
     <!-- 監修者情報 -->
-    <div style="text-align: center; margin-top: 3rem; padding: 1rem 0; color: #666; font-size: 0.9rem;">
+    <div class="text-center mt-24 p-10 text-muted">
         現職薬局薬剤師監修
     </div>
 
@@ -801,24 +720,5 @@
         </div>
     </footer>
 
-    <style>
-    /* 心不全ページ特有のカスタムCSS */
-    
-    /* HFrEF/HFpEF特有のカラー定義 */
-    .hfref { background: #3498db !important; }
-    .hfpef { background: #e74c3c !important; }
-    .hfref-data { background: #ebf5fb; }
-    .hfpef-data { background: #fdedec; }
-    .hfref-card { border-top: 4px solid #3498db; }
-    .hfpef-card { border-top: 4px solid #e74c3c; }
-    .hfref-epi { border-left: 4px solid #3498db; }
-    .hfpef-epi { border-left: 4px solid #e74c3c; }
-    
-    /* 症状ボックスのHFrEF/HFpEF色分け */
-    .hfref-symptoms h4 { background: #3498db; }
-    .hfpef-symptoms h4 { background: #e74c3c; }
-    .hfref-symptoms li:before { color: #3498db; }
-    .hfpef-symptoms li:before { color: #e74c3c; }
-    </style>
 </body>
 </html>

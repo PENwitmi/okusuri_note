@@ -326,10 +326,15 @@
 .content-section {
     /* 背景は白（デフォルト）にして視覚的な余白を確保 */
     padding: var(--spacing-xl);
-    margin: var(--spacing-xl) 0;
+    margin: var(--spacing-lg) 0;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     border: 1px solid var(--border-light);  /* 境界を明確にするため薄いボーダーを追加 */
+}
+
+/* 隣接するcontent-section間の間隔調整 */
+.content-section + .content-section {
+    margin-top: var(--spacing-xl);  /* 隣接時は32pxで十分 */
 }
 
 .content-section h2 {
@@ -501,6 +506,28 @@
     margin: 0;
 }
 
+/* 固定列数グリッド（汎用） */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
 /* ========================================
    レスポンシブ対応
 ======================================== */
@@ -512,6 +539,15 @@
     .data-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-base);
+    }
+    
+    /* 固定列数グリッドのレスポンシブ対応 */
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);  /* タブレットでは2列 */
+    }
+    
+    .grid-3 {
+        grid-template-columns: 1fr;  /* タブレットでは1列 */
     }
     
     /* セクションのパディング調整 */
@@ -608,6 +644,16 @@
         pointer-events: none;  /* クリック透過 */
     }
     
+}
+
+/* モバイル対応 (480px以下) */
+@media (max-width: 480px) {
+    /* 固定列数グリッドをすべて1列に */
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ========================================
