@@ -475,6 +475,28 @@ table.comparison-table strong {
     margin: 0;
 }
 
+/* point-card内のリストスタイル調整 */
+.point-card ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+}
+
+.point-card li {
+    padding-left: 1rem;
+    position: relative;
+    font-size: 14px;
+    color: var(--text-pharma-body);
+    line-height: 1.6;
+}
+
+.point-card li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--text-pharma-body);
+}
+
 /* ========================================
    レスポンシブ対応
 ======================================== */
