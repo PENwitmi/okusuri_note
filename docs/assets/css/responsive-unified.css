@@ -105,6 +105,12 @@ button {
         padding-right: var(--spacing-base);
     }
     
+    /* 重要薬剤一覧のパディング削除 */
+    .drugs-section .section-container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
     /* モバイル用グリッド */
     .drugs-grid {
         display: grid;
