@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特集ページ CSS コンポーネントカタログ - サクッとお薬ノート開発用</title>
+    <meta name="description" content="特集ページ開発用のCSSクラス一覧とサンプル">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- CSS files for feature pages -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/feature-page.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/responsive-unified.css">
+    
+    <style>
+        /* サンプルページ専用スタイル */
+        .catalog-section {
+            margin: 40px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .catalog-section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .example-item {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .code-snippet {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        .class-name {
+            color: #4fc3f7;
+            font-weight: bold;
+        }
+        
+        .description {
+            color: #666;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* CSS変数表示用 */
+        .css-var-table {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .css-var-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .css-var-table th,
+        .css-var-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .css-var-table th {
+            background: #f5f5f5;
+            font-weight: 600;
+        }
+        
+        .css-var-table code {
+            background: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
+        .color-box {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            vertical-align: middle;
+            margin-right: 8px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>特集ページ用 CSS コンポーネントカタログ</h1>
+            <p class="description">特集ページ（features/ディレクトリ）開発で使用可能なCSSクラスの一覧とサンプルです。</p>
+            <div class="alert-box">
+                <p><strong>開発者向け情報</strong>: このページは特集ページ開発専用のリファレンスです。本番環境では公開しないでください。</p>
+            </div>
+        </header>
+
+        <!-- CSS変数セクション -->
+        <section class="catalog-section">
+            <h2>CSS変数（特集ページ専用）</h2>
+            
+            <div class="css-var-table">
+                <h3>吸入薬カテゴリ色</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>変数名</th>
+                            <th>色</th>
+                            <th>用途</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>--inhaler-saba</code></td>
+                            <td><span class="color-box" style="background: #FF6B6B;"></span>#FF6B6B</td>
+                            <td>短時間作用型（緊急性）</td>
+                        </tr>
+                        <tr>
+                            <td><code>--inhaler-ics-laba</code></td>
+                            <td><span class="color-box" style="background: #4ECDC4;"></span>#4ECDC4</td>
+                            <td>ICS/LABA配合剤</td>
+                        </tr>
+                        <tr>
+                            <td><code>--inhaler-smart</code></td>
+                            <td><span class="color-box" style="background: #FFD93D;"></span>#FFD93D</td>
+                            <td>SMART療法</td>
+                        </tr>
+                        <tr>
+                            <td><code>--inhaler-triple</code></td>
+                            <td><span class="color-box" style="background: #6C5CE7;"></span>#6C5CE7</td>
+                            <td>トリプル療法</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3 style="margin-top: 20px;">MR拮抗薬世代別色</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>変数名</th>
+                            <th>色</th>
+                            <th>用途</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>--mr-gen1</code></td>
+                            <td><span class="color-box" style="background: #3498db;"></span>#3498db</td>
+                            <td>第1世代（スピロノラクトン）</td>
+                        </tr>
+                        <tr>
+                            <td><code>--mr-gen2</code></td>
+                            <td><span class="color-box" style="background: #27ae60;"></span>#27ae60</td>
+                            <td>第2世代（エプレレノン）</td>
+                        </tr>
+                        <tr>
+                            <td><code>--mr-gen3</code></td>
+                            <td><span class="color-box" style="background: #e74c3c;"></span>#e74c3c</td>
+                            <td>第3世代（エサキセレノン）</td>
+                        </tr>
+                        <tr>
+                            <td><code>--mr-gen4</code></td>
+                            <td><span class="color-box" style="background: #9b59b6;"></span>#9b59b6</td>
+                            <td>第4世代（フィネレノン）</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ヒーローセクション -->
+        <section class="catalog-section">
+            <h2>1. ヒーローセクション</h2>
+            
+            <div class="example-item">
+                <h3>feature-hero（特集ページトップ）</h3>
+                <p class="description">特集ページの最上部に配置する導入セクション</p>
+                
+                <div class="feature-hero">
+                    <div class="feature-hero-container">
+                        <nav class="feature-breadcrumb">
+                            <a href="#">サクッとお薬ノート</a> &gt; 
+                            <a href="#">特集ページ</a> &gt; 
+                            <span>MR拮抗薬完全ガイド</span>
+                        </nav>
+                        <h1 class="feature-title">MR拮抗薬完全ガイド</h1>
+                        <p class="feature-subtitle">ミネラルコルチコイド受容体拮抗薬の進化と使い分け</p>
+                        <p class="feature-lead">
+                            スピロノラクトンから始まったMR拮抗薬は、世代を重ねるごとに選択性と安全性が向上。
+                            各世代の特徴と臨床での使い分けを、最新のエビデンスとともに解説します。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">feature-hero</span>"&gt;
+    &lt;div class="<span class="class-name">feature-hero-container</span>"&gt;
+        &lt;nav class="<span class="class-name">feature-breadcrumb</span>"&gt;...&lt;/nav&gt;
+        &lt;h1 class="<span class="class-name">feature-title</span>"&gt;タイトル&lt;/h1&gt;
+        &lt;p class="<span class="class-name">feature-subtitle</span>"&gt;サブタイトル&lt;/p&gt;
+        &lt;p class="<span class="class-name">feature-lead</span>"&gt;リード文&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+            </div>
+        </section>
+
+        <!-- セクションヘッダー付きカード -->
+        <section class="catalog-section">
+            <h2>2. セクションヘッダー付きカード</h2>
+            
+            <div class="example-item">
+                <h3>section-with-header + detail-card</h3>
+                <p class="description">ダークネイビーの見出しと白いカードが一体化したセクション</p>
+                
+                <div class="section-with-header">
+                    <h3>第1世代：スピロノラクトン</h3>
+                    <div class="detail-card">
+                        <h4>基本情報</h4>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="info-label">商品名</span>
+                                <span class="info-value">アルダクトンA</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">開発年</span>
+                                <span class="info-value">1959年</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">選択性</span>
+                                <span class="info-value">非選択的</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">section-with-header</span>"&gt;
+    &lt;h3&gt;セクションタイトル&lt;/h3&gt;
+    &lt;div class="<span class="class-name">detail-card</span>"&gt;
+        &lt;h4&gt;カードタイトル&lt;/h4&gt;
+        &lt;div class="<span class="class-name">info-grid</span>"&gt;
+            &lt;div class="<span class="class-name">info-item</span>"&gt;
+                &lt;span class="<span class="class-name">info-label</span>"&gt;ラベル&lt;/span&gt;
+                &lt;span class="<span class="class-name">info-value</span>"&gt;値&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+            </div>
+        </section>
+
+        <!-- 比較カード -->
+        <section class="catalog-section">
+            <h2>3. 比較カード</h2>
+            
+            <div class="example-item">
+                <h3>comparison-cards（汎用）</h3>
+                <p class="description">複数項目を並列比較するためのカード。グレーヘッダーがデフォルト</p>
+                
+                <div class="comparison-cards">
+                    <div class="comparison-card">
+                        <h4>第1世代</h4>
+                        <ul>
+                            <li><strong>薬剤名</strong>: スピロノラクトン</li>
+                            <li><strong>選択性</strong>: 非選択的</li>
+                            <li><strong>副作用</strong>: 女性化乳房、月経異常</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card">
+                        <h4>第2世代</h4>
+                        <ul>
+                            <li><strong>薬剤名</strong>: エプレレノン</li>
+                            <li><strong>選択性</strong>: 選択的</li>
+                            <li><strong>副作用</strong>: 性ホルモン関連副作用なし</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">comparison-cards</span>"&gt;
+    &lt;div class="<span class="class-name">comparison-card</span>"&gt;
+        &lt;h4&gt;タイトル&lt;/h4&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;strong&gt;項目&lt;/strong&gt;: 内容&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+            </div>
+
+            <div class="example-item">
+                <h3>comparison-cards（心不全用カラーバリエーション）</h3>
+                <p class="description">HFrEF（青）とHFpEF（赤）の比較に使用</p>
+                
+                <div class="comparison-cards">
+                    <div class="comparison-card hfref-epi">
+                        <h4>HFrEF（収縮不全）</h4>
+                        <ul>
+                            <li><strong>定義</strong>: LVEF ≤40%</li>
+                            <li><strong>頻度</strong>: 心不全の約50%</li>
+                            <li><strong>予後</strong>: 治療により改善</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card hfpef-epi">
+                        <h4>HFpEF（拡張不全）</h4>
+                        <ul>
+                            <li><strong>定義</strong>: LVEF ≥50%</li>
+                            <li><strong>頻度</strong>: 心不全の約50%</li>
+                            <li><strong>予後</strong>: 治療法限定的</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">comparison-cards</span>"&gt;
+    &lt;div class="<span class="class-name">comparison-card hfref-epi</span>"&gt;...&lt;/div&gt;
+    &lt;div class="<span class="class-name">comparison-card hfpef-epi</span>"&gt;...&lt;/div&gt;
+&lt;/div&gt;</div>
+            </div>
+
+            <div class="example-item">
+                <h3>comparison-cards（吸入薬用カラーバリエーション）</h3>
+                <p class="description">喘息（青緑）とCOPD（黄色）の比較に使用</p>
+                
+                <div class="comparison-cards">
+                    <div class="comparison-card asthma">
+                        <h4>喘息</h4>
+                        <ul>
+                            <li><strong>病態</strong>: 可逆性の気道狭窄</li>
+                            <li><strong>炎症</strong>: 好酸球性</li>
+                            <li><strong>第一選択</strong>: ICS/LABA</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card copd">
+                        <h4>COPD</h4>
+                        <ul>
+                            <li><strong>病態</strong>: 不可逆性の気流制限</li>
+                            <li><strong>炎症</strong>: 好中球性</li>
+                            <li><strong>第一選択</strong>: LAMA/LABA</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 比較テーブル -->
+        <section class="catalog-section">
+            <h2>4. 比較テーブル</h2>
+            
+            <div class="example-item">
+                <h3>comparison-table（ダークネイビーヘッダー）</h3>
+                <p class="description">薬剤の詳細比較に使用。モバイルでは横スクロール＋固定列対応</p>
+                
+                <div class="comparison-table-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>項目</th>
+                                <th>スピロノラクトン<br><small>アルダクトンA®</small></th>
+                                <th>エプレレノン<br><small>セララ®</small></th>
+                                <th>エサキセレノン<br><small>ミネブロ®</small></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>開発年</td>
+                                <td>1959年</td>
+                                <td>2002年</td>
+                                <td>2019年</td>
+                            </tr>
+                            <tr>
+                                <td>選択性</td>
+                                <td>非選択的</td>
+                                <td>選択的（100倍）</td>
+                                <td>高選択的（1000倍）</td>
+                            </tr>
+                            <tr>
+                                <td>半減期</td>
+                                <td>1.6時間</td>
+                                <td>4-6時間</td>
+                                <td>19時間</td>
+                            </tr>
+                            <tr>
+                                <td>性ホルモン関連副作用</td>
+                                <td><strong>あり</strong></td>
+                                <td>なし</td>
+                                <td>なし</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">comparison-table-wrapper</span>"&gt;
+    &lt;table class="<span class="class-name">comparison-table</span>"&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;項目&lt;/th&gt;
+                &lt;th&gt;薬剤A&lt;br&gt;&lt;small&gt;商品名&lt;/small&gt;&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;...&lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</div>
+            </div>
+        </section>
+
+        <!-- ポイントカード -->
+        <section class="catalog-section">
+            <h2>5. ポイントカード</h2>
+            
+            <div class="example-item">
+                <h3>point-cards（吸入薬カラー）</h3>
+                <p class="description">要点を視覚的に表示。ボーダーの色が自動で変わる</p>
+                
+                <div class="point-cards">
+                    <div class="point-card">
+                        <h4>SABA</h4>
+                        <p>短時間作用型β2刺激薬</p>
+                        <ul>
+                            <li>発作時の頓用</li>
+                            <li>即効性（5分）</li>
+                            <li>作用時間4-6時間</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h4>ICS/LABA</h4>
+                        <p>吸入ステロイド/長時間作用型β2刺激薬</p>
+                        <ul>
+                            <li>喘息の第一選択</li>
+                            <li>1日1-2回定期吸入</li>
+                            <li>抗炎症＋気管支拡張</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h4>SMART療法</h4>
+                        <p>維持＋頓用療法</p>
+                        <ul>
+                            <li>シムビコートのみ</li>
+                            <li>定期＋発作時使用</li>
+                            <li>コンプライアンス向上</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <h4>トリプル療法</h4>
+                        <p>ICS/LABA/LAMA配合剤</p>
+                        <ul>
+                            <li>重症喘息/COPD</li>
+                            <li>3成分配合</li>
+                            <li>1日1回吸入</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">point-cards</span>"&gt;
+    &lt;div class="<span class="class-name">point-card</span>"&gt;
+        &lt;h4&gt;タイトル&lt;/h4&gt;
+        &lt;p&gt;説明&lt;/p&gt;
+        &lt;ul&gt;...&lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+            </div>
+
+            <div class="example-item">
+                <h3>point-cards（MR拮抗薬カラー）</h3>
+                <p class="description">MR拮抗薬特集ページ用のカラーバリエーション</p>
+                
+                <div class="point-cards mr-antagonist-feature">
+                    <div class="point-card">
+                        <h4>第1世代</h4>
+                        <p>スピロノラクトン</p>
+                    </div>
+                    <div class="point-card">
+                        <h4>第2世代</h4>
+                        <p>エプレレノン</p>
+                    </div>
+                    <div class="point-card">
+                        <h4>第3世代</h4>
+                        <p>エサキセレノン</p>
+                    </div>
+                    <div class="point-card">
+                        <h4>第4世代</h4>
+                        <p>フィネレノン</p>
+                    </div>
+                </div>
+                
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">point-cards mr-antagonist-feature</span>"&gt;
+    &lt;div class="<span class="class-name">point-card</span>"&gt;...&lt;/div&gt;
+&lt;/div&gt;</div>
+            </div>
+        </section>
+
+        <!-- components.cssから利用可能なボックス -->
+        <section class="catalog-section">
+            <h2>6. 汎用ボックス（components.cssから）</h2>
+            
+            <div class="example-item">
+                <h3>特集ページでも使える汎用ボックス</h3>
+                <p class="description">薬剤ページと共通のボックススタイル</p>
+                
+                <div class="info-box">
+                    <h5>エビデンス</h5>
+                    <p>RALES試験では、スピロノラクトンが重症心不全患者の死亡率を30%減少させました。</p>
+                </div>
+                
+                <div class="alert-box" style="margin-top: 20px;">
+                    <p><strong>注意</strong>: 腎機能低下患者では高カリウム血症のリスクが高まります。</p>
+                </div>
+                
+                <div class="highlight-box" style="margin-top: 20px;">
+                    <p><strong>ポイント</strong>: エサキセレノンは非ステロイド骨格を持つ初のMR拮抗薬です。</p>
+                </div>
+                
+                <div class="key-point-box" style="margin-top: 20px;">
+                    <h5>使い分けのコツ</h5>
+                    <ul>
+                        <li>女性・若年者：エプレレノン、エサキセレノン</li>
+                        <li>コスト重視：スピロノラクトン</li>
+                        <li>腎機能低下：フィネレノン</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- その他の要素 -->
+        <section class="catalog-section">
+            <h2>7. その他の要素</h2>
+            
+            <div class="example-item">
+                <h3>セクションタイトル</h3>
+                <p class="description">特集ページ内の大見出し</p>
+                
+                <h2 class="section-title">薬剤選択のポイント</h2>
+                
+                <div class="code-snippet">
+&lt;h2 class="<span class="class-name">section-title</span>"&gt;セクションタイトル&lt;/h2&gt;</div>
+            </div>
+
+            <div class="example-item">
+                <h3>フィーチャーバッジ</h3>
+                <p class="description">カテゴリやステータスの表示に使用</p>
+                
+                <span class="feature-badge">新薬</span>
+                <span class="feature-badge" style="background: #e74c3c; margin-left: 10px;">重要</span>
+                <span class="feature-badge" style="background: #27ae60; margin-left: 10px;">推奨</span>
+                
+                <div class="code-snippet" style="margin-top: 20px;">
+&lt;span class="<span class="class-name">feature-badge</span>"&gt;ラベル&lt;/span&gt;</div>
+            </div>
+        </section>
+
+        <!-- レスポンシブ対応について -->
+        <section class="catalog-section">
+            <h2>8. レスポンシブ対応について</h2>
+            
+            <div class="info-box">
+                <h5>自動的なレスポンシブ対応</h5>
+                <p>すべてのコンポーネントは以下のブレークポイントで自動的に最適化されます：</p>
+                <ul>
+                    <li><strong>768px以下（タブレット）</strong>: 
+                        <ul>
+                            <li>comparison-cardsが1列表示に</li>
+                            <li>比較テーブルが横スクロール可能に（項目列固定）</li>
+                            <li>point-cardsのグリッドが調整</li>
+                        </ul>
+                    </li>
+                    <li><strong>480px以下（モバイル）</strong>: 
+                        <ul>
+                            <li>フォントサイズの最適化</li>
+                            <li>パディングの調整</li>
+                            <li>ヒーローセクションのコンパクト化</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 使用上の注意 -->
+        <section class="catalog-section">
+            <h2>9. 使用上の注意</h2>
+            
+            <div class="key-point-box">
+                <h5>特集ページ作成のベストプラクティス</h5>
+                <ol>
+                    <li><strong>構造を明確に</strong>: feature-heroから始め、セクションごとに情報を整理</li>
+                    <li><strong>比較を活用</strong>: comparison-card、comparison-table、point-cardで視覚的に比較</li>
+                    <li><strong>色の使い分け</strong>: CSS変数を活用してカテゴリごとに色分け</li>
+                    <li><strong>モバイルファースト</strong>: レスポンシブ対応は自動だが、コンテンツ量に注意</li>
+                    <li><strong>共通コンポーネント活用</strong>: components.cssのボックスも併用可能</li>
+                </ol>
+            </div>
+
+            <div class="alert-box">
+                <p><strong>注意事項</strong>:</p>
+                <ul>
+                    <li>comparison-tableは必ずcomparison-table-wrapperで囲む</li>
+                    <li>point-cardsは4つまでが推奨（それ以上は2段になる）</li>
+                    <li>特集ページ専用のCSS変数は他のページでは使用不可</li>
+                    <li>section-with-headerのh3直後は必ずdetail-card</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer style="margin-top: 60px; padding: 20px; text-align: center; color: #666;">
+            <p>このページは開発者向けのリファレンスです。</p>
+            <p><a href="../">メインページに戻る</a></p>
+        </footer>
+    </div>
+</body>
+</html>

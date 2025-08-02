@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>薬剤個別ページ CSS コンポーネントカタログ - サクッとお薬ノート開発用</title>
+    <meta name="description" content="薬剤個別ページ開発用のCSSクラス一覧とサンプル">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- CSS files for drug pages -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive-unified.css">
+    <link rel="stylesheet" href="../assets/css/sidebar.css">
+    <link rel="stylesheet" href="../assets/css/mobile-controls.css">
+    <link rel="stylesheet" href="../assets/css/level-selector.css">
+    <link rel="stylesheet" href="../assets/css/drug-page-v2.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    
+    <style>
+        /* サンプルページ専用スタイル */
+        .catalog-section {
+            margin: 40px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .catalog-section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .example-item {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .code-snippet {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        .class-name {
+            color: #4fc3f7;
+            font-weight: bold;
+        }
+        
+        .description {
+            color: #666;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>薬剤個別ページ用 CSS コンポーネントカタログ</h1>
+            <p class="description">薬剤個別ページ（drugs/ディレクトリ）開発で使用可能なCSSクラスの一覧とサンプルです。</p>
+            <div class="alert-box">
+                <p><strong>開発者向け情報</strong>: このページは薬剤ページ開発専用のリファレンスです。本番環境では公開しないでください。</p>
+            </div>
+        </header>
+
+        <!-- ボックス系コンポーネント -->
+        <section class="catalog-section">
+            <h2>1. ボックス系コンポーネント（7種類）</h2>
+            
+            <div class="example-item">
+                <h3>info-box（情報ボックス・青系）</h3>
+                <p class="description">エビデンス、補足情報、研究データなどに使用</p>
+                <div class="info-box">
+                    <h5>臨床試験のエビデンス</h5>
+                    <p>PROMINENT試験では、ペマフィブラートがトリグリセリドを平均26.2%低下させることが示されました。</p>
+                    <p>10,497例を対象とした大規模試験で、安全性も確認されています。</p>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">info-box</span>"&gt;
+    &lt;h5&gt;臨床試験のエビデンス&lt;/h5&gt;
+    &lt;p&gt;内容...&lt;/p&gt;
+&lt;/div&gt;</div>
+            </div>
+
+            <div class="example-item">
+                <h3>alert-box（注意ボックス・黄系）</h3>
+                <p class="description">警告、注意事項、副作用情報などに使用</p>
+                <div class="alert-box">
+                    <p><strong>注意</strong>: 腎機能が低下している患者では用量調整が必要です。</p>
+                    <p>eGFR 30mL/min/1.73m²未満では慎重投与となります。</p>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">alert-box</span>"&gt;
+    &lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;: 内容...&lt;/p&gt;
+&lt;/div&gt;</div>
+            </div>
+
+            <div class="example-item">
+                <h3>highlight-box（ハイライトボックス・緑系）</h3>
+                <p class="description">重要ポイント、利点、成功事例などに使用</p>
+                <div class="highlight-box">
+                    <p><strong>ポイント</strong>: ペマフィブラートは肝選択性が高く、筋肉への影響が少ないため、横紋筋融解症のリスクが低い。</p>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">highlight-box</span>"&gt;
+    &lt;p&gt;&lt;strong&gt;ポイント&lt;/strong&gt;: 内容...&lt;/p&gt;
+&lt;/div&gt;</div>
+            </div>
+
+            <div class="example-item">
+                <h3>key-point-box（キーポイントボックス・オレンジ系）</h3>
+                <p class="description">処方のコツ、実践的アドバイス、覚えておくべき要点に使用</p>
+                <div class="key-point-box">
+                    <h5>処方のコツ</h5>
+                    <ul>
+                        <li>食後投与で消化器症状を軽減できる</li>
+                        <li>スタチンとの併用で相乗効果が期待できる</li>
+                        <li>定期的な肝機能検査を忘れずに</li>
+                    </ul>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">key-point-box</span>"&gt;
+    &lt;h5&gt;処方のコツ&lt;/h5&gt;
+    &lt;ul&gt;...&lt;/ul&gt;
+&lt;/div&gt;</div>
+            </div>
+
+            <div class="example-item">
+                <h3>quote-box（引用ボックス・グレー系）</h3>
+                <p class="description">ガイドラインからの引用、専門家の意見などに使用</p>
+                <div class="quote-box">
+                    <blockquote>
+                        「高トリグリセリド血症の治療において、ペマフィブラートは第一選択薬の一つとして推奨される」
+                    </blockquote>
+                    <cite>動脈硬化性疾患予防ガイドライン2022年版</cite>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">quote-box</span>"&gt;
+    &lt;blockquote&gt;引用文...&lt;/blockquote&gt;
+    &lt;cite&gt;出典&lt;/cite&gt;
+&lt;/div&gt;</div>
+            </div>
+
+            <div class="example-item">
+                <h3>simple-box（シンプルボックス・白背景）</h3>
+                <p class="description">構造化された情報、フローチャート、リストなどに使用</p>
+                <div class="simple-box">
+                    <h4>投与方法</h4>
+                    <ol>
+                        <li>1日2回、朝夕食後に投与</li>
+                        <li>1回0.1mg（1錠）から開始</li>
+                        <li>効果不十分な場合は0.2mg（2錠）まで増量可能</li>
+                    </ol>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">simple-box</span>"&gt;
+    &lt;h4&gt;タイトル&lt;/h4&gt;
+    &lt;ol&gt;...&lt;/ol&gt;
+&lt;/div&gt;</div>
+            </div>
+
+            <div class="example-item">
+                <h3>plain-box（プレーンボックス・枠線のみ）</h3>
+                <p class="description">シンプルなグループ化、軽い強調に使用</p>
+                <div class="plain-box">
+                    <p>標準的な投与量：0.1mg×2回/日（朝夕食後）</p>
+                    <p>最大投与量：0.2mg×2回/日</p>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">plain-box</span>"&gt;
+    &lt;p&gt;内容...&lt;/p&gt;
+&lt;/div&gt;</div>
+            </div>
+        </section>
+
+        <!-- テーブル系コンポーネント -->
+        <section class="catalog-section">
+            <h2>2. テーブル系コンポーネント（4種類）</h2>
+            
+            <div class="example-item">
+                <h3>comparison-table（比較テーブル）</h3>
+                <p class="description">薬剤比較、効果比較などに使用。ダークネイビーのヘッダーが特徴</p>
+                <div class="comparison-table-wrapper">
+                    <div class="comparison-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>項目</th>
+                                    <th>ペマフィブラート<br><small>パルモディア®</small></th>
+                                    <th>フェノフィブラート<br><small>リピディル®</small></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>作用機序</td>
+                                    <td>選択的PPARαモジュレーター</td>
+                                    <td>PPARα活性化薬</td>
+                                </tr>
+                                <tr>
+                                    <td>TG低下率</td>
+                                    <td>-30～-50%</td>
+                                    <td>-20～-40%</td>
+                                </tr>
+                                <tr>
+                                    <td>肝選択性</td>
+                                    <td><strong>高い</strong></td>
+                                    <td>中程度</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">comparison-table-wrapper</span>"&gt;
+    &lt;div class="<span class="class-name">comparison-table</span>"&gt;
+        &lt;table&gt;...&lt;/table&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+            </div>
+
+            <div class="example-item">
+                <h3>data-table（データテーブル）</h3>
+                <p class="description">薬価、用量、検査値などの数値データに使用</p>
+                <div class="data-table-wrapper">
+                    <div class="data-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>規格</th>
+                                    <th>薬価</th>
+                                    <th>1日薬価</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0.1mg錠</td>
+                                    <td>32.90円</td>
+                                    <td>65.80円</td>
+                                </tr>
+                                <tr>
+                                    <td>0.2mg錠</td>
+                                    <td>該当なし</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">data-table</span>"&gt;
+    &lt;table&gt;...&lt;/table&gt;
+&lt;/div&gt;</div>
+            </div>
+
+            <div class="example-item">
+                <h3>clinical-table（臨床テーブル）</h3>
+                <p class="description">臨床データ、副作用頻度、検査値推移などに使用。青いヘッダーが特徴</p>
+                <div class="clinical-table-wrapper">
+                    <div class="clinical-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>副作用</th>
+                                    <th>発現頻度</th>
+                                    <th>対処法</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>肝機能異常</td>
+                                    <td>1-5%</td>
+                                    <td>定期的な肝機能検査</td>
+                                </tr>
+                                <tr>
+                                    <td>筋肉痛</td>
+                                    <td>&lt;1%</td>
+                                    <td>CK値モニタリング</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">clinical-table</span>"&gt;
+    &lt;table&gt;...&lt;/table&gt;
+&lt;/div&gt;</div>
+            </div>
+
+            <div class="example-item">
+                <h3>summary-table（サマリーテーブル）</h3>
+                <p class="description">要約情報、簡潔なまとめに使用。コンパクトな表示</p>
+                <div class="summary-table-wrapper">
+                    <div class="summary-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>分類</th>
+                                    <th>内容</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>適応症</td>
+                                    <td>高脂血症（トリグリセリド高値）</td>
+                                </tr>
+                                <tr>
+                                    <td>用法用量</td>
+                                    <td>1回0.1mg、1日2回</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">summary-table</span>"&gt;
+    &lt;table&gt;...&lt;/table&gt;
+&lt;/div&gt;</div>
+            </div>
+        </section>
+
+        <!-- セクション系コンポーネント -->
+        <section class="catalog-section">
+            <h2>3. セクション系コンポーネント（4種類）</h2>
+            
+            <div class="example-item">
+                <h3>content-section（基本コンテンツセクション）</h3>
+                <p class="description">通常のコンテンツエリア。Level 3などの詳細情報に使用</p>
+                <div class="content-section">
+                    <h2>作用機序の詳細</h2>
+                    <p>ペマフィブラートは選択的PPARαモジュレーター（SPPARMα）として、従来のフィブラート系薬剤とは異なる作用を示します。</p>
+                    <h3>SPPARMαの特徴</h3>
+                    <p>PPARαの特定領域に選択的に結合し、有益な遺伝子のみを活性化します。</p>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">content-section</span>"&gt;
+    &lt;h2&gt;タイトル&lt;/h2&gt;
+    &lt;p&gt;内容...&lt;/p&gt;
+&lt;/div&gt;</div>
+            </div>
+
+            <div class="example-item">
+                <h3>development-story（開発ストーリーセクション）</h3>
+                <p class="description">薬剤の開発経緯、歴史的背景などに使用。アイコン付き</p>
+                <div class="development-story">
+                    <h2>ペマフィブラート開発物語</h2>
+                    <p>2017年、日本の製薬企業が世界初のSPPARMαとして開発に成功。従来のフィブラート系薬剤の課題を克服し、より安全で効果的な治療薬として誕生しました。</p>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">development-story</span>"&gt;
+    &lt;h2&gt;開発物語&lt;/h2&gt;
+    &lt;p&gt;内容...&lt;/p&gt;
+&lt;/div&gt;</div>
+            </div>
+
+            <div class="example-item">
+                <h3>clinical-evidence（臨床エビデンスセクション）</h3>
+                <p class="description">臨床試験結果、エビデンスの詳細などに使用</p>
+                <div class="clinical-evidence">
+                    <h2>主要臨床試験</h2>
+                    <h3>PROMINENT試験</h3>
+                    <p>10,497例を対象とした国際共同第III相試験。心血管イベント抑制効果は示されなかったが、安全性と脂質改善効果が確認されました。</p>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">clinical-evidence</span>"&gt;
+    &lt;h2&gt;臨床試験&lt;/h2&gt;
+    &lt;h3&gt;試験名&lt;/h3&gt;
+    &lt;p&gt;結果...&lt;/p&gt;
+&lt;/div&gt;</div>
+            </div>
+
+            <div class="example-item">
+                <h3>safety-comparison（安全性比較セクション）</h3>
+                <p class="description">副作用、安全性プロファイルの比較などに使用</p>
+                <div class="safety-comparison">
+                    <h2>安全性プロファイル</h2>
+                    <p>ペマフィブラートは肝選択性が高く、筋肉への分布が少ないため、横紋筋融解症のリスクが従来のフィブラート系薬剤より低いことが特徴です。</p>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">safety-comparison</span>"&gt;
+    &lt;h2&gt;安全性&lt;/h2&gt;
+    &lt;p&gt;内容...&lt;/p&gt;
+&lt;/div&gt;</div>
+            </div>
+        </section>
+
+        <!-- グリッド系コンポーネント -->
+        <section class="catalog-section">
+            <h2>4. グリッド系コンポーネント（4種類）</h2>
+            
+            <div class="example-item">
+                <h3>content-grid（コンテンツグリッド・2列固定）</h3>
+                <p class="description">効能一覧、特徴リストなどに使用。PC表示で2列固定</p>
+                <div class="content-grid">
+                    <div class="content-item">
+                        <h4>脂質改善効果</h4>
+                        <p>TGを30-50%低下、HDL-Cを10-20%上昇</p>
+                    </div>
+                    <div class="content-item">
+                        <h4>抗炎症作用</h4>
+                        <p>CRPやフィブリノゲンを低下</p>
+                    </div>
+                    <div class="content-item">
+                        <h4>血管保護作用</h4>
+                        <p>動脈硬化の進展を抑制</p>
+                    </div>
+                    <div class="content-item">
+                        <h4>肝機能改善</h4>
+                        <p>NAFLDの改善効果も期待</p>
+                    </div>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">content-grid</span>"&gt;
+    &lt;div class="<span class="class-name">content-item</span>"&gt;
+        &lt;h4&gt;タイトル&lt;/h4&gt;
+        &lt;p&gt;内容&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="<span class="class-name">content-item</span>"&gt;...&lt;/div&gt;
+&lt;/div&gt;</div>
+            </div>
+
+
+            <div class="example-item">
+                <h3>data-grid（データグリッド・数値表示用）</h3>
+                <p class="description">統計データ、数値の強調表示に使用</p>
+                <div class="data-grid">
+                    <div class="content-item">
+                        <h4>TG低下率</h4>
+                        <p>-45%</p>
+                    </div>
+                    <div class="content-item">
+                        <h4>HDL-C上昇率</h4>
+                        <p>+15%</p>
+                    </div>
+                    <div class="content-item">
+                        <h4>LDL-C変化</h4>
+                        <p>±0%</p>
+                    </div>
+                    <div class="content-item">
+                        <h4>CRP低下</h4>
+                        <p>-20%</p>
+                    </div>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">data-grid</span>"&gt;
+    &lt;div class="<span class="class-name">content-item</span>"&gt;
+        &lt;h4&gt;指標&lt;/h4&gt;
+        &lt;p&gt;数値&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+            </div>
+
+            <div class="example-item">
+                <h3>固定列数グリッド（grid-2, grid-3, grid-4）</h3>
+                <p class="description">固定列数でレイアウトしたい場合に使用</p>
+                <div class="grid-3">
+                    <div class="plain-box">
+                        <h4>朝食後</h4>
+                        <p>0.1mg 1錠</p>
+                    </div>
+                    <div class="plain-box">
+                        <h4>昼食後</h4>
+                        <p>投与なし</p>
+                    </div>
+                    <div class="plain-box">
+                        <h4>夕食後</h4>
+                        <p>0.1mg 1錠</p>
+                    </div>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">grid-3</span>"&gt;
+    &lt;div class="plain-box"&gt;...&lt;/div&gt;
+    &lt;div class="plain-box"&gt;...&lt;/div&gt;
+    &lt;div class="plain-box"&gt;...&lt;/div&gt;
+&lt;/div&gt;</div>
+            </div>
+        </section>
+
+        <!-- その他の重要なクラス -->
+        <section class="catalog-section">
+            <h2>5. その他の重要なクラス</h2>
+            
+            <div class="example-item">
+                <h3>カード要素</h3>
+                <p class="description">汎用的なカード表示に使用</p>
+                <div class="card">
+                    <h3>薬剤情報カード</h3>
+                    <p>このようにカード形式で情報をグループ化できます。</p>
+                    <p>ホバー時にシャドウが強調されます。</p>
+                </div>
+                <div class="code-snippet">
+&lt;div class="<span class="class-name">card</span>"&gt;
+    &lt;h3&gt;タイトル&lt;/h3&gt;
+    &lt;p&gt;内容...&lt;/p&gt;
+&lt;/div&gt;</div>
+            </div>
+        </section>
+
+        <!-- レスポンシブ対応について -->
+        <section class="catalog-section">
+            <h2>6. レスポンシブ対応について</h2>
+            
+            <div class="info-box">
+                <h5>自動的なレスポンシブ対応</h5>
+                <p>すべてのコンポーネントは以下のブレークポイントで自動的に最適化されます：</p>
+                <ul>
+                    <li><strong>768px以下（タブレット）</strong>: グリッドが1列に、テーブルが横スクロール可能に</li>
+                    <li><strong>480px以下（モバイル）</strong>: すべてのグリッドが1列に、パディング調整</li>
+                </ul>
+                <p>特に比較テーブルは、モバイルで項目列（最初の列）が固定表示されます。</p>
+            </div>
+        </section>
+
+        <!-- 使用上の注意 -->
+        <section class="catalog-section">
+            <h2>7. 使用上の注意とベストプラクティス</h2>
+            
+            <div class="key-point-box">
+                <h5>コンポーネント選択の原則</h5>
+                <ol>
+                    <li><strong>新規作成より既存活用</strong>: 新しいクラスを作るのではなく、既存のものから選択</li>
+                    <li><strong>用途より見た目で選択</strong>: 「処方のコツ」でもinfo-boxが適切な場合もある</li>
+                    <li><strong>入れ子を避ける</strong>: 色付きボックスの中に色付きボックスは避ける</li>
+                    <li><strong>白背景を基本に</strong>: 大きな領域は白背景（content-section）を使用</li>
+                </ol>
+            </div>
+
+            <div class="alert-box">
+                <p><strong>避けるべきパターン</strong>:</p>
+                <ul>
+                    <li>インラインスタイルの多用（style="..."）</li>
+                    <li>独自クラスの作成</li>
+                    <li>過度な入れ子構造</li>
+                    <li>テーブルの中にボックスを入れる</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer style="margin-top: 60px; padding: 20px; text-align: center; color: #666;">
+            <p>このページは開発者向けのリファレンスです。</p>
+            <p><a href="../">メインページに戻る</a></p>
+        </footer>
+    </div>
+</body>
+</html>
