@@ -19,10 +19,23 @@
 @import "style.css";
 
 /* ========================================
-   薬剤ページ専用設定
-   注: CSS変数は style.css のグローバル定義を使用
-   必要に応じて個別のクラスで調整
+   薬剤ページ専用のコンパクトな変数オーバーライド
 ======================================== */
+.drug-detail {
+    /* よりコンパクトなスペーシング（医療情報サイト向け） */
+    --spacing-base: 0.75rem;   /* 12px - 通常16px */
+    --spacing-lg: 1rem;        /* 16px - 通常24px */
+    --spacing-xl: 1.5rem;      /* 24px - 通常32px */
+    --spacing-2xl: 2rem;       /* 32px - 通常48px */
+    --spacing-3xl: 2.5rem;     /* 40px - 通常64px */
+    
+    /* より適切なフォントサイズ（情報密度重視） */
+    --font-size-base: 0.9375rem;  /* 15px - 通常16px */
+    --font-size-lg: 1rem;         /* 16px - 通常18px */
+    --font-size-xl: 1.125rem;     /* 18px - 通常20px */
+    --font-size-2xl: 1.375rem;    /* 22px - 通常24px */
+    --font-size-3xl: 1.625rem;    /* 26px - 通常30px */
+}
 
 /* ========================================
    レベル表示の初期設定
@@ -178,15 +191,9 @@
 .level-1-content h2 {
     font-size: var(--font-size-2xl);
     font-weight: 700;
-    color: var(--pharma-nature);           /* 青→緑に変更 */
+    color: var(--pharma-primary);
     margin-bottom: var(--spacing-lg);
     margin-top: var(--spacing-xl);
-    
-    /* 新規追加：上下のボーダー */
-    border-top: 3px solid var(--pharma-nature);
-    border-bottom: 3px solid var(--pharma-nature);
-    padding-top: var(--spacing-base);      /* 16px */
-    padding-bottom: var(--spacing-base);    /* 16px */
 }
 
 /* サブ見出し */
@@ -800,32 +807,6 @@
         font-size: 40px;
         top: -5px;
         left: 10px;
-    }
-    
-    /* ========================================
-       レベルコンテンツのモバイル最適化
-       2025-08-03: 装飾を削除しコンテンツに集中
-    ======================================== */
-    .level-1-content,
-    .level-2-content,
-    .level-3-content {
-        /* 装飾を完全に削除 */
-        border: none !important;
-        box-shadow: none !important;
-        background: transparent !important;
-        
-        /* パディングを下側のみ設定 */
-        padding: 0 0 var(--spacing-lg) 0 !important;
-        
-        /* マージンは上下両方維持 */
-        margin-top: var(--spacing-lg);
-        margin-bottom: var(--spacing-lg);
-    }
-    
-    /* 装飾アイコンも非表示 */
-    .level-2-content:before,
-    .level-3-content:before {
-        display: none;
     }
 }
 
