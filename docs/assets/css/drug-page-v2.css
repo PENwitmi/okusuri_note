@@ -821,11 +821,11 @@
         box-shadow: none !important;
         background: transparent !important;
         
-        /* パディングを削除 */
-        padding: 0 !important;
+        /* パディングを下側のみ設定 */
+        padding: 0 0 var(--spacing-lg) 0 !important;
         
-        /* マージンは維持（セクション間隔） */
-        margin-top: var(--spacing-lg);
+        /* マージンは下側のみ維持 */
+        margin-top: 0;
         margin-bottom: var(--spacing-lg);
     }
     

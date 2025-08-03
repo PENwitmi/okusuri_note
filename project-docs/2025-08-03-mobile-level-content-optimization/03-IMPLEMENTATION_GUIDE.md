@@ -31,11 +31,11 @@ drug-page-v2.cssの`@media (max-width: 768px)`セクションに以下を追加�
     box-shadow: none !important;
     background: transparent !important;
     
-    /* パディングを削除 */
-    padding: 0 !important;
+    /* パディングを下側のみ設定 */
+    padding: 0 0 var(--spacing-lg) 0 !important;
     
-    /* マージンは維持（セクション間隔） */
-    margin-top: var(--spacing-lg);
+    /* マージンは下側のみ維持 */
+    margin-top: 0;
     margin-bottom: var(--spacing-lg);
 }
 
@@ -81,9 +81,10 @@ git push
 - 視覚的な区切りを最小化
 - ダークモード対応も考慮
 
-### 2.3 パディング0の影響
+### 2.3 下側パディングの効果
+- セクション間の視覚的な区切りを確保
 - コンテンツ内の個別要素（info-box等）が独自のパディングを持つ
-- 見出しや段落の基本マージンで適切な間隔を維持
+- 上側のマージンを削除することで無駄なスペースを排除
 
 ## 3. トラブルシューティング
 
