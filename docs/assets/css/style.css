@@ -193,13 +193,20 @@ h6 { font-size: var(--font-size-base); }
 
 /* 段落 */
 p {
-    margin-bottom: var(--spacing-base);
+    margin-bottom: var(--spacing-lg);  /* 24px */
+    line-height: 1.8;
 }
 
 /* リスト */
 ul, ol {
-    margin-bottom: var(--spacing-base);
-    padding-left: var(--spacing-lg);
+    margin-top: var(--spacing-xl);    /* 32px */
+    margin-bottom: var(--spacing-xl);  /* 32px */
+    padding-left: var(--spacing-lg);   /* 24px */
+}
+
+li {
+    margin-bottom: var(--spacing-base);  /* 16px */
+    line-height: 1.8;
 }
 
 /* ボタン */

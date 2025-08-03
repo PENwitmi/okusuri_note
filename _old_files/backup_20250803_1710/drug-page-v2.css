@@ -164,8 +164,8 @@
     background: white;
     color: var(--text-reading);
     border-left: 4px solid var(--pharma-primary-light);
-    font-size: var(--font-size-base);  /* 16px に戻す */
-    line-height: 1.8;  /* 統一 */
+    font-size: calc(var(--font-size-base) * 1.0625);  /* 17px */
+    line-height: 1.9;
     font-weight: 400;
     padding: var(--spacing-xl);  /* 32px */
     margin: var(--spacing-lg) auto;
@@ -198,6 +198,16 @@
     font-weight: 600;
 }
 
+/* 段落のスペーシング */
+.level-1-content p {
+    margin-bottom: var(--spacing-lg);  /* 24px */
+}
+
+/* リスト項目のスペーシング */
+.level-1-content li {
+    margin-bottom: var(--spacing-base);  /* 16px */
+    line-height: 1.8;
+}
 
 /* レベル2（実習中薬学生向け） */
 .level-2-content {
@@ -625,6 +635,24 @@
     font-weight: 700;
 }
 
+.level-2-content p,
+.level-3-content p {
+    margin-bottom: var(--spacing-base);
+    line-height: 1.8;
+}
+
+/* レベル2・3のリスト要素 */
+.level-2-content ul,
+.level-3-content ul {
+    padding-left: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+}
+
+.level-2-content li,
+.level-3-content li {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.7;
+}
 
 /* レベル3特有の数値表示スタイル */
 .level-3-content span {
@@ -668,6 +696,10 @@
     margin-bottom: var(--spacing-base);
 }
 
+.drug-detail p {
+    margin-bottom: var(--spacing-base);
+    line-height: 1.65;
+}
 
 /* ========================================
    カテゴリ別テーマ（data属性ベース）
