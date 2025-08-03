@@ -808,6 +808,32 @@
         top: -5px;
         left: 10px;
     }
+    
+    /* ========================================
+       レベルコンテンツのモバイル最適化
+       2025-08-03: 装飾を削除しコンテンツに集中
+    ======================================== */
+    .level-1-content,
+    .level-2-content,
+    .level-3-content {
+        /* 装飾を完全に削除 */
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        
+        /* パディングを削除 */
+        padding: 0 !important;
+        
+        /* マージンは維持（セクション間隔） */
+        margin-top: var(--spacing-lg);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    /* 装飾アイコンも非表示 */
+    .level-2-content:before,
+    .level-3-content:before {
+        display: none;
+    }
 }
 
 /* ========================================
