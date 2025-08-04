@@ -190,13 +190,6 @@
 }
 
 /* サブ見出し */
-.level-1-content h3 {
-    font-size: var(--font-size-xl);
-    color: var(--text-pharma-primary);
-    margin-top: calc(var(--spacing-xl) + var(--spacing-sm));  /* 40px */
-    margin-bottom: var(--spacing-lg);  /* 24px */
-    font-weight: 600;
-}
 
 
 /* レベル2（実習中薬学生向け） */
@@ -497,17 +490,18 @@
 
 /* h3 - サブセクションタイトル */
 .level-1-content h3,
+.level-2-content h3,
 .level-3-content h3 {
     color: var(--pharma-primary-dark);
-    font-size: var(--font-size-2xl);
-    margin-bottom: var(--spacing-lg);
-    margin-top: var(--spacing-xl);
+    margin-top: calc(var(--spacing-xl) + var(--spacing-sm));  /* 40px */
     position: relative;
     padding-bottom: var(--spacing-sm);
-    font-weight: 600;
+    /* font-weight: 700はstyle.cssから継承 */
 }
 
+/* 装飾線 */
 .level-1-content h3::after,
+.level-2-content h3::after,
 .level-3-content h3::after {
     content: "";
     position: absolute;
@@ -519,17 +513,6 @@
     border-radius: 2px;
 }
 
-/* レベル2専用のh3スタイル（セクションタイトル） */
-.level-2-content h3 {
-    color: var(--pharma-nature);
-    font-size: var(--font-size-3xl);
-    margin-bottom: var(--spacing-xl);
-    margin-top: 0;
-    padding-bottom: var(--spacing-lg);
-    border-bottom: 2px solid var(--pharma-nature-light);
-    font-weight: 700;
-    text-align: center;
-}
 
 /* h4 - 小見出し */
 .level-2-content h4 {
@@ -661,11 +644,6 @@
 .drug-detail h2 {
     margin-top: var(--spacing-xl);
     margin-bottom: var(--spacing-lg);
-}
-
-.drug-detail h3 {
-    margin-top: var(--spacing-lg);
-    margin-bottom: var(--spacing-base);
 }
 
 
