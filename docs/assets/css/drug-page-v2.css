@@ -516,8 +516,9 @@
     border-radius: 2px;
 }
 
-/* simple-box内の最初のh3要素のmargin-topを削除 */
-.simple-box > h3:first-child {
+/* simple-box内の最初のh3/h4要素のmargin-topを削除 */
+.simple-box > h3:first-child,
+.simple-box > h4:first-child {
     margin-top: 0;
 }
 
