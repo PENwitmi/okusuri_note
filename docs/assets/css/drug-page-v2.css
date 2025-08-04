@@ -174,20 +174,6 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-/* レベル1見出し */
-.level-1-content h2 {
-    font-size: var(--font-size-2xl);
-    font-weight: 700;
-    color: var(--pharma-nature);           /* 青→緑に変更 */
-    margin-bottom: var(--spacing-lg);
-    margin-top: var(--spacing-xl);
-    
-    /* 新規追加：上下のボーダー */
-    border-top: 3px solid var(--pharma-nature);
-    border-bottom: 3px solid var(--pharma-nature);
-    padding-top: var(--spacing-base);      /* 16px */
-    padding-bottom: var(--spacing-base);    /* 16px */
-}
 
 /* サブ見出し */
 
@@ -463,6 +449,23 @@
 /* セクションタイトルの統一的改善 */
 
 /* h2 - メインセクションタイトル */
+
+/* レベル1見出し */
+.level-1-content h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--pharma-nature);           /* 青→緑に変更 */
+    margin-bottom: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+    
+    /* 新規追加：上下のボーダー */
+    border-top: 3px solid var(--pharma-nature);
+    border-bottom: 3px solid var(--pharma-nature);
+    padding-top: var(--spacing-base);      /* 16px */
+    padding-bottom: var(--spacing-base);    /* 16px */
+}
+
+/* レベル2・3見出し */
 .level-2-content h2,
 .level-3-content h2 {
     color: var(--pharma-primary);
