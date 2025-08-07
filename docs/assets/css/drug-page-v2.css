@@ -556,45 +556,6 @@
     font-style: italic;
 }
 
-/* レベル3特有のスタイル */
-
-/* 医師・患者の証言（blockquote） */
-.level-3-content blockquote {
-    background: var(--bg-accent);
-    border-left: 5px solid var(--pharma-primary);
-    padding: var(--spacing-lg);
-    margin: var(--spacing-lg) 0;
-    font-style: italic;
-    font-size: var(--font-size-lg);
-    line-height: 1.8;
-    color: var(--text-pharma-secondary);
-    border-radius: 8px;
-    box-shadow: var(--shadow-light);
-    position: relative;
-}
-
-.level-3-content blockquote::before {
-    content: """;
-    position: absolute;
-    top: -10px;
-    left: 20px;
-    font-size: 60px;
-    color: var(--pharma-primary-light);
-    opacity: 0.3;
-    font-family: Georgia, serif;
-}
-
-/* 引用元（cite） */
-.level-3-content cite {
-    display: block;
-    text-align: right;
-    margin-top: var(--spacing-base);
-    font-style: normal;
-    font-weight: 600;
-    color: var(--pharma-primary);
-    font-size: var(--font-size-sm);
-}
-
 /* レベル3内のdiv構造の改善 */
 .level-3-content > div {
     margin-bottom: var(--spacing-xl);
@@ -722,10 +683,6 @@
     .specialist-perspective {
         border-radius: 0;
         padding: var(--spacing-xl) var(--spacing-base);
-    }
-    
-    .container {
-        /* padding削除 - 必要な場所は個別対応 */
     }
     
     /* モバイル用フォントサイズ調整 */
