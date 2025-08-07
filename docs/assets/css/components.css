@@ -686,3 +686,14 @@
         transform: none;
     }
 }
+
+/* ========================================
+   監修者情報
+======================================== */
+.supervisor-info {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
