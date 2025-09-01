@@ -81,8 +81,8 @@
     <link rel="stylesheet" href="../assets/css/sidebar.css">
     <link rel="stylesheet" href="../assets/css/mobile-controls.css">
     <link rel="stylesheet" href="../assets/css/level-selector.css">
-    <link rel="stylesheet" href="../assets/css/drug-page-v2.css">
     <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/drug-page-v2.css">
 </head>
 <body class="drug-detail" data-category="others">
 <!-- カテゴリーID: cardiovascular, endocrine, gastrointestinal, psychotropic, others -->
@@ -132,81 +132,106 @@
     
     <!-- Task 1.2: レベル1基本情報カード（薬学生向けファーストビュー） -->
     <section class="level-1-content">
-        <div class="indications">
-            <h3>主な適応症</h3>
-            <ul class="indications__list">
-                <li>関節リウマチ（RA）</li>
-                <li>変形性関節症（OA）・腰痛症</li>
-                <li>急性疼痛（手術後・外傷後・抜歯後）</li>
-            </ul>
-        </div>
+        <h2>主な適応症</h2>
+        <ul class="indications__list">
+            <li>関節リウマチ（RA）</li>
+            <li>変形性関節症（OA）・腰痛症</li>
+            <li>急性疼痛（手術後・外傷後・抜歯後）</li>
+        </ul>
     </section>
 
     <!-- Task 1.3: 30秒サマリー（薬学生が30秒で理解できる構成） -->
     <section class="quick-summary level-1-content">
-        <div class="container">
             <h2>⚡ 30秒でわかるセレコキシブ</h2>
         
         <div class="impact-grid">
             <div class="impact-item">
-                <h4>開発の経緯</h4>
+                <h3>開発の経緯</h3>
                 <p>1998年、世界初のCOX-2選択的阻害薬として承認</p>
                 <p>NSAIDsの消化管障害を克服するために開発。同系統の他剤（ロフェコキシブ、バルデコキシブ）が心血管リスクで撤退する中、唯一生き残った。</p>
             </div>
             
             <div class="impact-item">
-                <h4>作用機序</h4>
+                <h3>作用機序</h3>
                 <p>COX-2を選択的に阻害し、炎症を抑える痛み止め</p>
                 <p>①COX-2選択的阻害（炎症性PG産生抑制）<br>②COX-1温存（胃粘膜保護PG維持）</p>
             </div>
             
             <div class="impact-item">
-                <h4>臨床での位置づけ</h4>
+                <h3>臨床での位置づけ</h3>
                 <p>消化管リスクの高い患者のNSAIDs第一選択</p>
                 <p>日本で唯一のCOX-2選択的阻害薬。高齢者、潰瘍既往、ステロイド併用で優先的に選択。</p>
             </div>
             
             <div class="impact-item">
-                <h4>他の薬との違い</h4>
+                <h3>他の薬との違い</h3>
                 <p>従来NSAIDsより消化管障害が80%減少。下部消化管も保護。ただし心血管リスクは完全には否定できず、長期使用では慎重投与。</p>
             </div>
         </div>
-        </div>
     </section>
     
-    <!-- Task 1.6: 薬理学の基本（作用機序詳細） -->
+    <!-- 薬理学の基本（作用機序詳細） -->
     <section class="level-1-content">
-        <div class="container">
-            <h3>作用機序の詳細（薬理学基礎）</h3>
-            
-            <div class="impact-grid">
-                <div class="impact-item">
-                    <h4>主作用：COX-2選択的阻害</h4>
-                    <p>COX-2酵素の活性部位に選択的に結合し、炎症性プロスタグランジン産生を抑制。COX-1は温存されるため、胃粘膜保護作用が維持される。</p>
-                </div>
-                
-                <div class="impact-item">
-                    <h4>COX選択性の意味</h4>
-                    <p>COX-2/COX-1選択性は100-200倍。ロキソプロフェンなど非選択的NSAIDsと比較して、消化管障害リスクが大幅に低下。</p>
-                </div>
-                
-                <div class="impact-item">
-                    <h4>心血管系への影響（パラドックス）</h4>
-                    <p>血管内皮のCOX-2を阻害→PGI2（血管保護）↓、血小板はCOX-1のみ→TXA2（血栓形成）維持。結果、血栓傾向に傾くリスクあり。</p>
-                </div>
-                
-                <div class="impact-item">
-                    <h4>腎機能への影響（なぜ注意が必要か）</h4>
-                    <p>腎臓の血流維持にもCOX-2由来のPGが関与。COX-2阻害→腎血流↓→腎機能低下リスク。特に高齢者、脱水、ACE阻害薬併用時は要注意。</p>
-                </div>
-            </div>
+        <h2>セレコキシブの作用機序とCOX-2選択性</h2>
+        
+        <h3>1. COX-2選択的阻害とは</h3>
+        <p>
+            セレコキシブは<strong>COX-2を選択的に阻害する</strong>ことで、炎症・痛みの原因となるプロスタグランジン（PG）産生を抑制します。
+        </p>
+        <p>
+            シクロオキシゲナーゼ（COX）には2つのアイソフォームが存在します：
+        </p>
+        
+        <ul>
+            <li><strong>COX-1</strong>：全身の恒常性維持（胃粘膜保護、血小板機能、腎血流維持）に必要</li>
+            <li><strong>COX-2</strong>：炎症時に誘導され、痛み・炎症の原因物質を産生</li>
+        </ul>
+        
+        <p>
+            従来のNSAIDsは両方を阻害するため消化管障害が多発しましたが、セレコキシブはCOX-2を<strong>100-200倍選択的に阻害</strong>することで、胃粘膜保護作用を温存しながら抗炎症効果を発揮します。
+        </p>
+        
+        <div class="info-box">
+            <h4>💡 なぜ選択的阻害が重要なのか</h4>
+            <p>胃粘膜のPG産生はCOX-1に依存しています。COX-1を温存することで、NSAIDsの最大の問題である消化管潰瘍リスクを80%減少させることができました。</p>
         </div>
+        
+        <h3>2. プロスタグランジン（PG）産生の仕組み</h3>
+        <p>
+            細胞膜のリン脂質から遊離したアラキドン酸は、COX酵素によってプロスタグランジンに変換されます。
+        </p>
+        <p>
+            COX-2阻害により以下のPG産生が抑制されます：
+        </p>
+        
+        <ul>
+            <li><strong>PGE2</strong>：発熱、痛覚過敏、炎症反応の主役</li>
+            <li><strong>PGI2（プロスタサイクリン）</strong>：血管拡張、血小板凝集抑制</li>
+        </ul>
+        
+        <p>
+            一方、血小板はCOX-1のみを持つため、<strong>TXA2（トロンボキサン）産生は維持</strong>されます。これが後述するCOX-2選択性パラドックスの原因となります。
+        </p>
+        
+        <h3>3. 腎臓への影響</h3>
+        <p>
+            腎臓の血流維持にはCOX-2由来のPGも重要な役割を果たしています。
+        </p>
+        <p>
+            セレコキシブによるCOX-2阻害は腎血流を低下させ、特に以下の患者では腎機能悪化のリスクが高まります：
+        </p>
+        
+        <ul>
+            <li>高齢者（腎予備能低下）</li>
+            <li>脱水状態</li>
+            <li>ACE阻害薬・ARB併用</li>
+            <li>利尿薬併用（Triple Whammyのリスク）</li>
+        </ul>
     </section>
 
     <!-- 薬学生向けFAQ -->
     <section class="level-1-content">
-        <div class="container">
-            <h3>❓ 薬学生からよくある質問</h3>
+            <h2>❓ 薬学生からよくある質問</h2>
             
             <div class="simple-box">
                 <h4>Q: せっかく選択的阻害になったのに、劇薬になったのは何故？</h4>
@@ -228,131 +253,112 @@
                 COX-2は炎症時に誘導され、痛み・炎症の原因物質を産生。<br>
                 従来のNSAIDsは両方を阻害するため胃腸障害が多く、COX-2選択的阻害薬が開発されました。</p>
             </div>
-        </div>
     </section>
 
     <!-- ========== レベル2：実習中薬学生向けコンテンツ ========== -->
     <div class="level-indicator level-2-indicator">🏥 レベル2：実習中薬学生向け実践情報</div>
 
-    <!-- COX-2選択性パラドックス（統合版） -->
+    <!-- COX-2選択性パラドックス -->
     <section class="level-2-content">
-        <div class="container">
-            <h3>⚠️ COX-2選択性パラドックス - 成功の裏の落とし穴</h3>
-            
-            <div class="quote-box">
-                <h4>胃にやさしいが、心臓には注意が必要</h4>
-                <p><strong>COX-2選択性パラドックスとは</strong>：消化管を保護するために高めた選択性が、まさにその選択性ゆえに心血管リスクを生んだ。</p>
-            </div>
-            
-            <!-- ステップ1：正常な血管内皮と血小板のバランス -->
-            <div class="content-section">
-                <h4>① 正常な血管内皮と血小板のバランス</h4>
-                <p>健康な血管では、2つの物質が絶妙なバランスを保っています：</p>
-                    
-                    <div class="impact-grid">
-                        <div class="impact-item">
-                            <h5>血管内皮から：PGI2（プロスタサイクリン）</h5>
-                            <ul>
-                                <li>血管を拡張させる</li>
-                                <li>血小板の凝集を抑える</li>
-                                <li>血栓形成を防ぐ「守護神」</li>
-                            </ul>
-                        </div>
-                        <div class="impact-item">
-                            <h5>血小板から：TXA2（トロンボキサン）</h5>
-                            <ul>
-                                <li>血管を収縮させる</li>
-                                <li>血小板を凝集させる</li>
-                                <li>出血を止める「止血係」</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p class="content-note">🔴 この2つのバランスが血管の健康を保っています</p>
-            </div>
-            
-            <!-- ステップ2：COX-2選択的阻害で起こること -->
-            <div class="content-section">
-                <h4>② COX-2選択的阻害で何が起こるか</h4>
-                
-                <!-- 通常の状態 -->
-                <div class="simple-box">
-                    <h5>通常の状態（重要な事実）</h5>
-                    <ul>
-                        <li><strong>血管内皮</strong>：PGI2を作るのにCOX-2を使う</li>
-                        <li><strong>血小板</strong>：TXA2を作るのにCOX-1だけを使う（COX-2を持たない）</li>
-                    </ul>
-                </div>
-                
-                <!-- COX-2阻害時 -->
-                <div class="simple-box">
-                    <h5>COX-2選択的阻害薬を飲むと...</h5>
-                    <p>✖️ 血管内皮のPGI2産生 → <strong>減少</strong>（COX-2が阻害されるため）</p>
-                    <p>✓ 血小板のTXA2産生 → <strong>維持</strong>（COX-1は阻害されないため）</p>
-                    <p>結果：血栓形成に傾くバランスの崩壊 ⚠️</p>
-                </div>
-            </div>
-            
-            <!-- ステップ3：選択性の高さとリスクの関係 -->
-            <div class="content-section">
-                <h4>③ 選択性の高さとリスクの関係</h4>
-                
-                <!-- 選択性とリスクの関係 -->
-                <div class="simple-box">
-                    <h5>皮肉な真実：選択性が高いほど危険</h5>
-                    
-                    <table class="clinical-table">
-                            <thead>
-                                <tr>
-                                    <th>薬剤</th>
-                                    <th>COX-2選択性</th>
-                                    <th>心血管リスク</th>
-                                    <th>結果</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="table-danger">
-                                    <td>ロフェコキシブ</td>
-                                    <td>300倍以上</td>
-                                    <td>2倍</td>
-                                    <td>市場撤退</td>
-                                </tr>
-                                <tr class="table-warning">
-                                    <td>セレコキシブ</td>
-                                    <td>100-200倍</td>
-                                    <td>1.2-1.4倍</td>
-                                    <td>生存</td>
-                                </tr>
-                                <tr class="table-success">
-                                    <td>従来NSAIDs</td>
-                                    <td>非選択的</td>
-                                    <td>低い</td>
-                                    <td>継続使用</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                </div>
-                
-                <!-- 従来NSAIDsが安全な理由 -->
-                <div class="simple-box">
-                    <h5>なぜ従来NSAIDsの方が心血管リスクが低いのか？</h5>
-                    <p>COX-1も阻害 → 血小板のTXA2も減少 → PGI2/TXA2のバランスが保たれる</p>
-                    <p>「不完全」な選択性が、結果的に最も安全でした</p>
-                </div>
-            </div>
+        <h2>⚠️ COX-2選択性パラドックス - 成功の裏の落とし穴</h2>
+        
+        <div class="quote-box">
+            <h4>胃にやさしいが、心臓には注意が必要</h4>
+            <p><strong>COX-2選択性パラドックスとは</strong>：消化管を保護するために高めた選択性が、まさにその選択性ゆえに心血管リスクを生みました。</p>
+        </div>
+        
+        <h3>1. 正常な血管内皮と血小板のバランス</h3>
+        <p>
+            健康な血管では、2つの物質が絶妙なバランスを保っています：
+        </p>
+        
+        <p><strong>血管内皮から：PGI2（プロスタサイクリン）</strong></p>
+        <ul>
+            <li>血管を拡張させる</li>
+            <li>血小板の凝集を抑える</li>
+            <li>血栓形成を防ぐ「守護神」</li>
+        </ul>
+        
+        <p><strong>血小板から：TXA2（トロンボキサン）</strong></p>
+        <ul>
+            <li>血管を収縮させる</li>
+            <li>血小板を凝集させる</li>
+            <li>出血を止める「止血係」</li>
+        </ul>
+        
+        <p class="content-note">🔴 この2つのバランスが血管の健康を保っています</p>
+        
+        <h3>2. COX-2選択的阻害で何が起こるか</h3>
+        <p>
+            <strong>通常の状態（重要な事実）</strong>
+        </p>
+        <ul>
+            <li><strong>血管内皮</strong>：PGI2を作るのにCOX-2を使う</li>
+            <li><strong>血小板</strong>：TXA2を作るのにCOX-1だけを使う（COX-2を持たない）</li>
+        </ul>
+        
+        <p>
+            <strong>COX-2選択的阻害薬を飲むと...</strong>
+        </p>
+        <p>✖️ 血管内皮のPGI2産生 → <strong>減少</strong>（COX-2が阻害されるため）</p>
+        <p>✓ 血小板のTXA2産生 → <strong>維持</strong>（COX-1は阻害されないため）</p>
+        <p>結果：血栓形成に傾くバランスの崩壊 ⚠️</p>
+        
+        <h3>3. 選択性の高さとリスクの関係</h3>
+        <p>
+            <strong>皮肉な真実：選択性が高いほど危険</strong>
+        </p>
+        
+        <table class="clinical-table">
+            <thead>
+                <tr>
+                    <th>薬剤</th>
+                    <th>COX-2選択性</th>
+                    <th>心血管リスク</th>
+                    <th>結果</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-danger">
+                    <td>ロフェコキシブ</td>
+                    <td>300倍以上</td>
+                    <td>2倍</td>
+                    <td>市場撤退</td>
+                </tr>
+                <tr class="table-warning">
+                    <td>セレコキシブ</td>
+                    <td>100-200倍</td>
+                    <td>1.2-1.4倍</td>
+                    <td>生存</td>
+                </tr>
+                <tr class="table-success">
+                    <td>従来NSAIDs</td>
+                    <td>非選択的</td>
+                    <td>低い</td>
+                    <td>継続使用</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p>
+            <strong>なぜ従来NSAIDsの方が心血管リスクが低いのか？</strong>
+        </p>
+        <p>COX-1も阻害 → 血小板のTXA2も減少 → PGI2/TXA2のバランスが保たれる</p>
+        <p>「不完全」な選択性が、結果的に最も安全でした</p>
+        
+        <div class="info-box">
+            <h4>📝 セレコキシブが生き残った理由</h4>
+            <p>セレコキシブの「中程度」の選択性（100-200倍）は、消化管保護効果を十分に得つつ、心血管リスクを許容範囲内に抑える「絶妙なバランス」でした。</p>
         </div>
     </section>
-    
+
     <!-- NSAIDsの使い分けと他剤との相乗効果メカニズム -->
     <section class="level-2-content">
         <h2>💊 他剤との相乗効果メカニズム</h2>
         
-        <div>
-            <p>セレコキシブは様々な薬剤と併用され、それぞれの組み合わせで独特の相乗効果や相互作用を示します。ここでは各薬剤との併用で生まれる効果のメカニズムを詳しく解説します。</p>
-            
-            <div>
-                <div class="combination-box">
-                    <h4>✅ セレコキシブ ＋ PPI（プロトンポンプ阻害薬）</h4>
-                    <div>
+        <p>セレコキシブは様々な薬剤と併用され、それぞれの組み合わせで独特の相乗効果や相互作用を示します。ここでは各薬剤との併用で生まれる効果のメカニズムを詳しく解説します。</p>
+        <div class="combination-box">
+            <h3>✅ セレコキシブ ＋ PPI（プロトンポンプ阻害薬）</h3>
                         <p><strong>何が起こるか：消化管出血リスクが90%以上減少（良い効果）</strong></p>
                         <p><strong>なぜそうなるか（メカニズム）</strong>：</p>
                         <ul>
@@ -360,13 +366,11 @@
                             <li>PPI：胃酸分泌を抑制してさらに保護</li>
                             <li>結果：上部消化管は二重に保護、下部消化管はセレコキシブが保護</li>
                         </ul>
-                        <p><strong>推奨患者</strong>：潰瘍既往複数回、抗凝固薬併用、80歳以上の超ハイリスク患者</p>
-                    </div>
-                </div>
-                
-                <div class="combination-box">
-                    <h4>⚠️ セレコキシブ ＋ 抗凝固薬（ワルファリン、DOAC）</h4>
-                    <div>
+                <p><strong>推奨患者</strong>：潰瘍既往複数回、抗凝固薬併用、80歳以上の超ハイリスク患者</p>
+        </div>
+        
+        <div class="combination-box">
+            <h3>⚠️ セレコキシブ ＋ 抗凝固薬（ワルファリン、DOAC）</h3>
                         <p><strong>何が起こるか：出血リスクが増加（注意すべき相互作用）</strong></p>
                         <p><strong>なぜそうなるか（メカニズム）</strong>：</p>
                         <ul>
@@ -374,200 +378,158 @@
                             <li>ワルファリンの血中濃度上昇 → INR上昇</li>
                             <li>結果：出血リスク（特に消化管出血）が増加</li>
                         </ul>
-                        <p><strong>必要な対応</strong>：INR頻回モニタリング、PPI併用推奨、最小有効量使用</p>
-                    </div>
-                </div>
-                
-                <div class="combination-box">
-                    <h4>⚠️ セレコキシブ ＋ ACE阻害薬/ARB</h4>
-                    <div>
+                <p><strong>必要な対応</strong>：INR頻回モニタリング、PPI併用推奨、最小有効量使用</p>
+        </div>
+        
+        <div class="combination-box">
+            <h3>⚠️ セレコキシブ ＋ ACE阻害薬/ARB</h3>
                         <p><strong>何が起こるか：腎機能低下・降圧効果減弱・高K血症（3つのリスク）</strong></p>
                         <p><strong>なぜそうなるか（メカニズム）</strong>：</p>
                         <ul>
-                            <li>セレコキシブが腎臓のPG産生を抑制 → 腎血流低下</li>
-                            <li>ACE-I/ARBも腎血流に影響 → 相乗的に腎機能悪化</li>
-                            <li>結果：①腎機能低下 ②降圧薬の効果↓ ③K排泄低下→高K血症</li>
+                            <li><strong>まずARB単独でも</strong>：アルドステロン分泌↓ → K排泄低下 → 高K血症リスク</li>
+                            <li><strong>さらにセレコキシブ追加で</strong>：腎臓のPG産生抑制 → 腎血流低下 → K排泄さらに低下</li>
+                            <li><strong>相乗的な悪化</strong>：
+                                <ul>
+                                    <li>①腎機能低下（両剤が腎血流に影響）</li>
+                                    <li>②降圧効果減弱（PG阻害で降圧薬の効果↓）</li>
+                                    <li>③高K血症の危険性増大（単独でも危険 → 併用でさらに危険）</li>
+                                </ul>
+                            </li>
                         </ul>
-                        <p><strong>特に注意</strong>：高齢者、腎機能低下（eGFR < 60）、脱水時</p>
-                    </div>
-                </div>
-            </div>
+                <p><strong>特に注意</strong>：高齢者、腎機能低下（eGFR < 60）、脱水時、K保持性利尿薬併用時</p>
+                <p><strong>臨床的意義</strong>：血清K値5.5mEq/L以上で不整脈リスク、6.0以上で致死的不整脈の可能性</p>
         </div>
     </section>
 
     <!-- NSAIDs腎症の解説 -->
     <section class="level-2-content">
-        <div class="container">
-            <h3>🚨 NSAIDs腎症とは</h3>
+            <h2>🚨 NSAIDs腎症とは</h2>
             <p class="alert-box">※ 以下の内容は<strong>セレコキシブを含むすべてのNSAIDs</strong>に共通する重要事項です</p>
             
-            <div class="clinical-evidence">
-                <!-- ステップ1：正常な腎臓の働き -->
-                <div class="content-section">
-                    <h4>① 正常な腎臓でのプロスタグランジン（PG）の役割</h4>
-                        <p>腎臓は血流量の調節が生命維持に不可欠な臓器です：</p>
-                        <ul>
-                            <li><strong>プロスタグランジン（PG）の役割</strong>：腎血管を拡張させて血流を維持</li>
-                            <li><strong>特に重要な場面</strong>：脱水、心不全、高齢など腎血流が低下しやすい状況</li>
-                            <li><strong>PGの産生源</strong>：主にCOX-2（腎臓の髄質）とCOX-1（糸球体）</li>
-                        </ul>
-                        <p><strong>💡 PGは腎臓の「血流維持装置」として働いています</strong></p>
-                </div>
-                
-                <!-- ステップ2：NSAIDsによる影響 -->
-                <div class="content-section">
-                    <h4>② NSAIDsを服用すると何が起こるか</h4>
-                        <p><strong>COX阻害 → PG産生低下 → 腎血流低下</strong></p>
-                        <div class="plain-box">
-                            <p>NSAIDs投与</p>
-                            <p>↓</p>
-                            <p>COX-1/COX-2阻害</p>
-                            <p>↓</p>
-                            <p>腎臓のPG産生↓</p>
-                            <p>↓</p>
-                            <p>腎血管収縮</p>
-                            <p>↓</p>
-                            <p>腎血流量低下（20-30%）</p>
-                            <p>↓</p>
-                            <p>GFR（糸球体濾過量）低下 = 腎機能低下</p>
-                        </div>
-                </div>
-                
-                <!-- ステップ3：NSAIDs腎症の病態 -->
-                <div class="content-section">
-                    <h4>③ NSAIDs腎症の3つのパターン</h4>
-                        <div class="simple-box">
-                            <h5>1. 急性腎障害（最も多い）</h5>
-                            <ul>
-                                <li>服用後数日〜2週間で発症</li>
-                                <li>血清Cr上昇、尿量減少</li>
-                                <li>中止により多くは回復</li>
-                            </ul>
-                        </div>
-                        <div class="simple-box">
-                            <h5>2. 高カリウム血症</h5>
-                            <ul>
-                                <li>アルドステロン分泌低下</li>
-                                <li>K排泄低下 → 血清K上昇</li>
-                                <li>不整脈リスク</li>
-                            </ul>
-                        </div>
-                        <div class="simple-box">
-                            <h5>3. 間質性腎炎（まれ）</h5>
-                            <ul>
-                                <li>アレルギー性機序</li>
-                                <li>発熱、好酸球増多</li>
-                                <li>ステロイド治療が必要</li>
-                            </ul>
-                        </div>
-                </div>
-                
-                <!-- ステップ4：RAA系阻害薬との併用リスク -->
-                <div class="content-section">
-                    <h4>④ なぜACE阻害薬/ARBとの併用が特に危険なのか</h4>
-                    <div class="alert-box alert-danger">
-                        <h5>「Triple Whammy（トリプルワーミー）」と呼ばれる危険な組み合わせ</h5>
-                        <p><strong>NSAIDs（セレコキシブ含む全て）+ ACE阻害薬/ARB + 利尿薬 = 腎機能急速悪化</strong></p>
-                        <ul>
-                            <li><strong>NSAIDs</strong>：輸入細動脈を収縮（PG阻害）</li>
-                            <li><strong>ACE-I/ARB</strong>：輸出細動脈を拡張（アンジオテンシンII阻害）</li>
-                            <li><strong>利尿薬</strong>：体液量減少</li>
-                        </ul>
-                        <p>→ 糸球体内圧が極端に低下 → GFR急激低下 → 急性腎不全</p>
-                    </div>
-                </div>
-                
-                <!-- ハイリスク患者 -->
-                <div class="alert-box alert-danger">
-                    <h4>⚠️ 特に注意が必要な患者</h4>
-                    <ul>
-                        <li><strong>高齢者（70歳以上）</strong>：腎予備能低下</li>
-                        <li><strong>腎機能低下（eGFR < 60）</strong>：既に腎血流低下</li>
-                        <li><strong>脱水・体液量減少</strong>：下痢、嘔吐、利尿薬使用</li>
-                        <li><strong>心不全</strong>：腎血流がPG依存性</li>
-                        <li><strong>肝硬変</strong>：有効循環血液量低下</li>
-                        <li><strong>糖尿病</strong>：糖尿病性腎症のリスク</li>
-                    </ul>
-                </div>
+            <!-- ステップ1：正常な腎臓の働き -->
+            <h3>① 正常な腎臓でのプロスタグランジン（PG）の役割</h3>
+            <p><strong>腎臓は血流量の調節が生命維持に不可欠な臓器です</strong></p>
+            <ul>
+                <li><strong>プロスタグランジン（PG）の役割</strong>：腎血管を拡張させて血流を維持</li>
+                <li><strong>特に重要な場面</strong>：脱水、心不全、高齢など腎血流が低下しやすい状況</li>
+                <li><strong>PGの産生源</strong>：主にCOX-2（腎臓の髄質）とCOX-1（糸球体）</li>
+            </ul>
+            <p><strong>💡 PGは腎臓の「血流維持装置」として働いています</strong></p>
+            
+            <!-- ステップ2：NSAIDsによる影響 -->
+            <h3>② NSAIDsを服用すると何が起こるか</h3>
+            <p><strong>COX阻害 → PG産生低下 → 腎血流低下</strong></p>
+            <p>NSAIDsの服用により以下の連鎖反応が起こります：</p>
+            <p>
+                NSAIDs投与<br>
+                　→ COX-1/COX-2阻害<br>
+                　→ 腎臓のPG産生↓<br>
+                　→ 腎血管収縮<br>
+                　→ 腎血流量低下（20-30%）<br>
+                　→ GFR（糸球体濾過量）低下 = 腎機能低下
+            </p>
+            
+            <!-- ステップ3：NSAIDs腎症の病態 -->
+            <h3>③ NSAIDs腎症の3つのパターン</h3>
+            <p>
+                NSAIDs腎症は主に3つのパターンで現れます。
+            </p>
+            <p>
+                <strong>最も多いのは急性腎障害</strong>で、服用後数日〜2週間で血清Cr上昇や尿量減少として発症します。幸い、薬剤中止により多くの症例で腎機能は回復します。
+            </p>
+            <p>
+                <strong>2つ目は高カリウム血症</strong>です。NSAIDsによるアルドステロン分泌低下でK排泄が低下し、血清K値が上昇します。これは不整脈リスクに直結する危険な副作用です。
+            </p>
+            <p>
+                <strong>3つ目の間質性腎炎はまれですが重篤</strong>で、アレルギー性機序により発熱や好酸球増多を伴い、ステロイド治療が必要になることがあります。
+            </p>
+            
+            <!-- ステップ4：RAA系阻害薬との併用リスク -->
+            <h3>④ なぜACE阻害薬/ARBとの併用が特に危険なのか</h3>
+            <div class="alert-box alert-danger">
+                <h4>「Triple Whammy（トリプルワーミー）」と呼ばれる危険な組み合わせ</h4>
+                <p><strong>NSAIDs（セレコキシブ含む全て）+ ACE阻害薬/ARB + 利尿薬 = 腎機能急速悪化</strong></p>
+                <ul>
+                    <li><strong>NSAIDs</strong>：輸入細動脈を収縮（PG阻害）</li>
+                    <li><strong>ACE-I/ARB</strong>：輸出細動脈を拡張（アンジオテンシンII阻害）</li>
+                    <li><strong>利尿薬</strong>：体液量減少</li>
+                </ul>
+                <p>→ 糸球体内圧が極端に低下 → GFR急激低下 → 急性腎不全</p>
             </div>
-        </div>
+            
+            <!-- ハイリスク患者 -->
+            <div class="alert-box alert-danger">
+                <h4>⚠️ 特に注意が必要な患者</h4>
+                <ul>
+                    <li><strong>高齢者（70歳以上）</strong>：腎予備能低下</li>
+                    <li><strong>腎機能低下（eGFR < 60）</strong>：既に腎血流低下</li>
+                    <li><strong>脱水・体液量減少</strong>：下痢、嘔吐、利尿薬使用</li>
+                    <li><strong>心不全</strong>：腎血流がPG依存性</li>
+                    <li><strong>肝硬変</strong>：有効循環血液量低下</li>
+                    <li><strong>糖尿病</strong>：糖尿病性腎症のリスク</li>
+                </ul>
+            </div>
     </section>
 
     <!-- アスピリン喘息の解説 -->
     <section class="level-2-content">
-        <div class="container">
-            <h3>⚠️ アスピリン喘息（NSAIDs不耐症）とは</h3>
+            <h2>⚠️ アスピリン喘息（NSAIDs不耐症）とは</h2>
             <p class="alert-box">※ 以下の内容は<strong>セレコキシブを含むすべてのNSAIDs</strong>に共通する重要事項です</p>
             
-            <!-- 1. アスピリン喘息とは -->
-            <div class="simple-box">
-                <h4>① アスピリン喘息とは</h4>
-                <p><strong>NSAIDs服用後30分〜2時間で激しい喘息発作を起こす病態</strong></p>
-                <p>成人喘息の約10%に存在し、重篤な呼吸困難で死亡例もある。</p>
-            </div>
+            <h3>① アスピリン喘息とは</h3>
+            <p><strong>NSAIDs服用後30分〜2時間で激しい喘息発作を起こす病態</strong></p>
+            <p>成人喘息の約10%に存在し、重篤な呼吸困難で死亡例もあります。</p>
             
-            <!-- 2. アスピリン喘息の特徴 -->
-            <div class="simple-box">
-                <h4>② アスピリン喘息の特徴</h4>
-                <ul>
-                    <li><strong>3主徴</strong>：①成人発症喘息 ②慢性鼻副鼻腔炎（鼻ポリープ） ③NSAIDs過敏症</li>
-                    <li><strong>発症時間</strong>：服用後30分〜2時間（即時型反応）</li>
-                    <li><strong>症状</strong>：激しい喘息発作、鼻閉、顔面紅潮、意識障害</li>
-                    <li><strong>重症度</strong>：通常の喘息発作より重篤、挿管が必要な場合も</li>
-                </ul>
-            </div>
+            <h3>② アスピリン喘息の特徴</h3>
+            <ul>
+                <li><strong>3主徴</strong>：①成人発症喘息 ②慢性鼻副鼻腔炎（鼻ポリープ） ③NSAIDs過敏症</li>
+                <li><strong>発症時間</strong>：服用後30分〜2時間（即時型反応）</li>
+                <li><strong>症状</strong>：激しい喘息発作、鼻閉、顔面紅潮、意識障害</li>
+                <li><strong>重症度</strong>：通常の喘息発作より重篤、挿管が必要な場合も</li>
+            </ul>
             
-            <!-- 3. アラキドン酸カスケードとNSAIDs -->
-            <div class="simple-box">
-                <h4>③ なぜNSAIDsで喘息発作が起こるのか - アラキドン酸カスケード</h4>
-                <p><strong>正常な状態</strong>：</p>
-                <div class="simple-box">
-                    <p>アラキドン酸</p>
-                    <p>　├─ COX経路 → プロスタグランジン（PG）</p>
-                    <p>　└─ リポキシゲナーゼ経路 → ロイコトリエン（LT）</p>
-                    <p>両経路がバランスを保っている</p>
-                </div>
-                
-                <p><strong>NSAIDs投与時（アスピリン喘息患者）</strong>：</p>
-                <div class="simple-box">
-                    <p>アラキドン酸</p>
-                    <p>　├─ COX経路 ✖️（NSAIDsで阻害）</p>
-                    <p>　└─ リポキシゲナーゼ経路 ⬆️⬆️（過剰に活性化）</p>
-                    <p>→ ロイコトリエン大量産生 → 気管支収縮 → 喘息発作</p>
-                </div>
-            </div>
+            <h3>③ なぜNSAIDsで喘息発作が起こるのか - アラキドン酸カスケード</h3>
+            <p>
+                <strong>正常な状態</strong>：<br>
+                アラキドン酸<br>
+                　├─ COX経路 → プロスタグランジン（PG）<br>
+                　└─ リポキシゲナーゼ経路 → ロイコトリエン（LT）<br>
+                両経路がバランスを保っています
+            </p>
             
-            <!-- 4. COX-2選択的阻害薬でもダメ -->
+            <p>
+                <strong>NSAIDs投与時（アスピリン喘息患者）</strong>：<br>
+                アラキドン酸<br>
+                　├─ COX経路 ✖️（NSAIDsで阻害）<br>
+                　└─ リポキシゲナーゼ経路 ⬆️⬆️（過剰に活性化）<br>
+                → ロイコトリエン大量産生 → 気管支収縮 → 喘息発作
+            </p>
+            
+            <h3>④ COX-2選択的阻害薬でも安心できない理由</h3>
             <div class="alert-box">
-                <h4>④ COX-2選択的阻害薬でも安心できない理由</h4>
                 <p><strong>セレコキシブも禁忌です！</strong></p>
                 <p>理由：</p>
                 <ul>
                     <li>COX-2「選択的」であって「特異的」ではない</li>
-                    <li>高用量ではCOX-1も阻害する</li>
+                    <li>高用量ではCOX-1も阻害します</li>
                     <li>個人差により少量でも発作を誘発する可能性</li>
                     <li>実際にセレコキシブでの発作報告あり</li>
                 </ul>
                 <p>→ アスピリン喘息の既往がある患者には、COX-2選択性に関わらず<strong>すべてのNSAIDsが禁忌</strong></p>
             </div>
             
-            <!-- 5. 使用可能な鎮痛薬 -->
-            <div class="simple-box">
-                <h4>⑤ 使用可能な鎮痛薬</h4>
-                <p>アスピリン喘息患者でも安全に使用できる薬剤：</p>
-                <ul>
-                    <li><strong>アセトアミノフェン</strong>（ただし1回1000mg以下）</li>
-                    <li><strong>選択的COX-2阻害薬の坐剤</strong>（一部のみ）</li>
-                    <li><strong>麻薬性鎮痛薬</strong>（重度の疼痛時）</li>
-                </ul>
-            </div>
-        </div>
+            <h3>⑤ 使用可能な鎮痛薬</h3>
+            <p>アスピリン喘息患者でも安全に使用できる薬剤：</p>
+            <ul>
+                <li><strong>アセトアミノフェン</strong>（ただし1回1000mg以下）</li>
+                <li><strong>選択的COX-2阻害薬の坐剤</strong>（一部のみ）</li>
+                <li><strong>麻薬性鎮痛薬</strong>（重度の疼痛時）</li>
+            </ul>
     </section>
 
     <!-- NSAIDs詳細比較表 -->
     <section class="level-2-content">
-        <div class="container">
-            <h3>📊 NSAIDs詳細比較マトリックス</h3>
+            <h2>📊 NSAIDs詳細比較マトリックス</h2>
             
             <div class="comparison-table-wrapper">
                 <table class="comparison-table">
@@ -575,8 +537,6 @@
                         <tr>
                             <th>薬剤名</th>
                             <th>COX選択性</th>
-                            <th>半減期</th>
-                            <th>用法</th>
                             <th>消化管リスク</th>
                             <th>心血管リスク</th>
                             <th>腎機能への影響</th>
@@ -587,58 +547,30 @@
                         <tr>
                             <td>セレコキシブ</td>
                             <td>COX-2選択的<br>(100-200倍)</td>
-                            <td>8-12時間</td>
-                            <td>1日2回</td>
                             <td>低い⭐⭐⭐⭐</td>
                             <td>中等度⭐⭐</td>
                             <td>中等度⭐⭐</td>
                             <td>長期使用・高齢者</td>
                         </tr>
                         <tr>
-                            <td>ロキソプロフェン</td>
-                            <td>非選択的</td>
-                            <td>1.5時間</td>
-                            <td>1日3回</td>
-                            <td>中等度⭐⭐</td>
-                            <td>低い⭐⭐⭐</td>
-                            <td>中等度⭐⭐</td>
-                            <td>短期・急性疼痛</td>
-                        </tr>
-                        <tr>
                             <td>ジクロフェナク</td>
                             <td>弱いCOX-2選択性</td>
-                            <td>1-2時間</td>
-                            <td>1日3回</td>
                             <td>高い⭐</td>
                             <td>高い⭐</td>
                             <td>高い⭐</td>
                             <td>強力な効果必要時</td>
                         </tr>
                         <tr>
-                            <td>イブプロフェン</td>
+                            <td>ロキソプロフェン</td>
                             <td>非選択的</td>
-                            <td>2-4時間</td>
-                            <td>1日3回</td>
-                            <td>中等度⭐⭐</td>
                             <td>中等度⭐⭐</td>
                             <td>低い⭐⭐⭐</td>
-                            <td>軽〜中等度疼痛</td>
-                        </tr>
-                        <tr>
-                            <td>メロキシカム</td>
-                            <td>COX-2優先的<br>(3-5倍)</td>
-                            <td>20時間</td>
-                            <td>1日1回</td>
-                            <td>低〜中⭐⭐⭐</td>
-                            <td>低い⭐⭐⭐</td>
                             <td>中等度⭐⭐</td>
-                            <td>服薬コンプライアンス重視</td>
+                            <td>短期・急性疼痛</td>
                         </tr>
                         <tr>
                             <td>アセトアミノフェン</td>
                             <td>COX阻害なし</td>
-                            <td>2-3時間</td>
-                            <td>1日3-4回</td>
                             <td>なし⭐⭐⭐⭐⭐</td>
                             <td>なし⭐⭐⭐⭐⭐</td>
                             <td>なし⭐⭐⭐⭐⭐</td>
@@ -648,7 +580,6 @@
                 </table>
                 <p>⭐が多いほど安全性が高い</p>
             </div>
-        </div>
     </section>
     
     <!-- ========== レベル3：研修中薬学生向けコンテンツ ========== -->
@@ -657,132 +588,99 @@
     
     <!-- 開発経緯 -->
     <section class="level-3-content">
-        <div class="container">
-            <h3>📖 開発の歴史と経緯</h3>
+            <h2>📖 開発の歴史と経緯</h2>
             
-            <div class="content-section">
+            <div class="simple-box">
                 <h4>1990年代：COX-2発見と選択的阻害の構想</h4>
                 <p>1991年、COXには2つのアイソフォームが存在することが発見されました。COX-1は生理的機能維持、COX-2は炎症反応に関与。これにより「炎症だけを止めて胃を守る」という理想的なNSAIDs開発が可能になりました。</p>
             </div>
             
-            <div class="content-section">
+            <div class="simple-box">
                 <h4>1998年：セレコキシブ承認 - 革命の始まり</h4>
                 <p>セレコキシブ（セレブレックス）が世界初のCOX-2選択的阻害薬としてFDA承認。同年、ロフェコキシブ（バイオックス）も承認。NSAIDsの最大の副作用である消化管障害を克服した「スーパーNSAIDs」として期待されました。</p>
             </div>
             
-            <div class="content-section">
+            <div class="simple-box">
                 <h4>2004-2005年：衝撃の撤退ラッシュ</h4>
                 <p>2004年9月、ロフェコキシブが心筋梗塞・脳卒中リスク増加（約2倍）により自主回収。2005年4月、バルデコキシブも同様の理由で市場撤退。COX-2選択的阻害薬は「危険な薬」というレッテルを貼られました。</p>
             </div>
             
-            <div class="content-section">
+            <div class="simple-box">
                 <h4>2005年以降：唯一の生存者として</h4>
                 <p>セレコキシブだけが生き残りました。中等度のCOX-2選択性（100-200倍）が、消化管保護と心血管リスクのバランスを保ったからです。2016年PRECISION試験で安全性が再確認され、現在も消化管リスクの高い患者の第一選択薬として使用されています。</p>
             </div>
-        </div>
     </section>
     
     <!-- Vioxx事件の詳細 -->
     <section class="level-3-content">
-        <div class="container">
-            <h3>📜 Vioxx事件：医薬品史上最悪のスキャンダル</h3>
+            <h2>📜 Vioxx事件：医薬品史上最悪のスキャンダル</h2>
             
-            <div class="development-story">
-                <h4>2004年9月30日：衝撃の自主回収</h4>
-                <div class="timeline">
-                    <p><strong>06:00 EST</strong>：メルク社CEDが緊急記者会見を発表</p>
-                    <p><strong>09:00 EST</strong>：「ロフェコキシブ（Vioxx）を全世界で即座に販売中止」</p>
-                    <p><strong>理由</strong>：APPROVe試験で心筋梗塞・脳卒中リスクが2倍に上昇</p>
-                </div>
-                
-                <div class="stats-box">
-                    <h5>被害の規模</h5>
-                    <ul>
-                        <li><strong>使用患者</strong>：全世界で8000万人以上</li>
-                        <li><strong>推定心筋梗塞</strong>：8万8千～13万9千件</li>
-                        <li><strong>推定死亡者</strong>：2万7千～5万5千人</li>
-                        <li><strong>株価暴落</strong>：1日で270億ドル喪失</li>
-                        <li><strong>訴訟</strong>：5万件以上、和解金48.5億ドル</li>
-                    </ul>
-                </div>
-                
-                <div class="content-section">
-                    <h5>医学界への衝撃</h5>
-                    <p>「夢の薬」が一夜にして「殺人薬」に。COX-2選択性への信頼が完全に崩壊し、すべてのCOX-2阻害薬に疑いの目が向けられました。</p>
-                    
-                    <h5>連鎖反応</h5>
-                    <ul>
-                        <li>2005年4月：バルデコキシブ（Bextra）も市場撤退</li>
-                        <li>セレコキシブ：ブラックボックス警告表示義務</li>
-                        <li>FDA：薬事審査体制の大幅見直し</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+            <p>
+                ロフェコキシブ（商品名：Vioxx）は、メルク社が開発したCOX-2選択的阻害薬として1999年に承認され、「胃にやさしい夢の鎮痛薬」として世界中で処方されました。しかし、2004年に心血管リスクが明らかになり、医薬品史上最悪のスキャンダルへと発展しました。
+            </p>
+            
+            <h3>2004年9月30日：衝撃の自主回収</h3>
+            <p>
+                <strong>06:00 EST</strong>：メルク社CEOが緊急記者会見を発表<br>
+                <strong>09:00 EST</strong>：「ロフェコキシブ（Vioxx）を全世界で即座に販売中止」<br>
+                <strong>理由</strong>：APPROVe試験で心筋梗塞・脳卒中リスクが2倍に上昇
+            </p>
+            
+            <h3>被害の規模</h3>
+            <p>
+                この薬剤の撤退は、医薬品業界に前例のない衝撃を与えました。<strong>全世界で8000万人以上</strong>が使用し、<strong>推定8万8千～13万9千件の心筋梗塞</strong>が発生、<strong>2万7千～5万5千人が死亡</strong>したと推計されています。
+            </p>
+            <p>
+                メルク社の株価は1日で<strong>270億ドル喪失</strong>し、その後<strong>5万件以上の訴訟</strong>が起こされ、<strong>和解金は48.5億ドル</strong>に達しました。
+            </p>
+            
+            <h3>医学界への衝撃と連鎖反応</h3>
+            <p>
+                「夢の薬」が一夜にして「殺人薬」に。COX-2選択性への信頼が完全に崩壊し、すべてのCOX-2阻害薬に疑いの目が向けられました。
+            </p>
+            <p>
+                この事件は次々と連鎖反応を引き起こしました。2005年4月にはバルデコキシブ（Bextra）も市場撤退、セレコキシブにはブラックボックス警告の表示が義務付けられ、FDAは薬事審査体制の大幅な見直しを迫られました。
+            </p>
     </section>
     
     <!-- なぜセレコキシブは生き残ったのか -->
     <section class="level-3-content">
-        <div class="container">
-            <h3>🏆 なぜセレコキシブだけが生き残ったのか</h3>
+            <h2>🏆 なぜセレコキシブだけが生き残ったのか</h2>
             
-            <div class="simple-box">
-                <h4>「不完全な選択性」が幸いした</h4>
-                
-                <div class="highlight-box">
-                    <h5>1. 中程度の選択性（100-200倍）</h5>
-                    <p>ロフェコキシブの300倍以上という極端な選択性に比べ、セレコキシブは「ほどほど」の選択性でした。これにより：</p>
-                    <ul>
-                        <li>消化管保護効果は十分（80%減少）</li>
-                        <li>心血管リスクは許容範囲（1.2-1.4倍）</li>
-                        <li>PGI2/TXA2バランスの崩壊が軽度</li>
-                    </ul>
-                </div>
-                
-                <div class="highlight-box">
-                    <h5>2. 半減期が短い（8-12時間）</h5>
-                    <p>ロフェコキシブの17時間に比べて短い半減期は：</p>
-                    <ul>
-                        <li>体内からの消失が早い</li>
-                        <li>COX-2阻害の持続時間が短い</li>
-                        <li>必要時の休薬が容易</li>
-                    </ul>
-                </div>
-                
-                <div class="highlight-box">
-                    <h5>3. 薬物動態学的特性</h5>
-                    <p>CYP2C9で代謝されるため：</p>
-                    <ul>
-                        <li>遺伝子多型による個人差がある</li>
-                        <li>一部の患者では代謝が早く、効果が弱い</li>
-                        <li>結果的に心血管リスクが低下</li>
-                    </ul>
-                </div>
-                
-                <div class="highlight-box">
-                    <h5>4. FDAの戦略的判断</h5>
-                    <p>2005年4月のFDA諮問委員会での投票結果：</p>
-                    <ul>
-                        <li>販売継続賛成：17票</li>
-                        <li>販売中止反対：15票</li>
-                        <li>僅差2票で市場に残った</li>
-                    </ul>
-                    <p><strong>理由</strong>：「消化管リスクの高い患者にとって必要不可欠」</p>
-                </div>
-                
-            </div>
+            <h3>「不完全な選択性」が幸いした</h3>
+            <p>
+                同じCOX-2選択的阻害薬でありながら、なぜセレコキシブだけが生き残ったのか。その答えは皮肉にも「不完全な選択性」にありました。
+            </p>
             
-            <div class="info-box">
-                <h4>歴史の教訓</h4>
-                <p>セレコキシブの生存は、「完璧を求めすぎることの危険性」を教えてくれます。適度な選択性、適度な効果、そして適切な使用が、最も安全な医療を提供します。</p>
-            </div>
-        </div>
+            <h3>1. 中程度の選択性（100-200倍）</h3>
+            <p>
+                ロフェコキシブの300倍以上という極端な選択性に比べ、セレコキシブは「ほどほど」の選択性でした。この中程度の選択性により、<strong>消化管保護効果は十分（80%減少）</strong>でありながら、<strong>心血管リスクは許容範囲（1.2-1.4倍）</strong>に留まり、PGI2/TXA2バランスの崩壊も軽度で済みました。
+            </p>
+            
+            <h3>2. 半減期が短い（8-12時間）</h3>
+            <p>
+                ロフェコキシブの17時間に比べて短い半減期は、<strong>体内からの消失が早く</strong>、COX-2阻害の持続時間も短いため、必要時の休薬が容易でした。この薬物動態の特性が、長期的な心血管リスクの蓄積を防いだと考えられています。
+            </p>
+            
+            <h3>3. 薬物動態学的特性</h3>
+            <p>
+                セレコキシブはCYP2C9で代謝されるため、遺伝子多型による個人差があります。一部の患者では代謝が早く効果が弱くなりますが、これが結果的に心血管リスクの低下につながった可能性があります。
+            </p>
+            
+            <h3>4. FDAの戦略的判断</h3>
+            <p>
+                2005年4月のFDA諮問委員会での投票は劇的でした。<strong>販売継続賛成17票、反対15票</strong>という僅差2票で市場に残ることが決まりました。その理由は「消化管リスクの高い患者にとって必要不可欠」という判断でした。
+            </p>
+            
+            <h3>歴史の教訓</h3>
+            <p>
+                セレコキシブの生存は、「完璧を求めすぎることの危険性」を教えてくれます。適度な選択性、適度な効果、そして適切な使用が、最も安全な医療を提供します。ロフェコキシブが「完璧な選択性」を追求した結果の悲劇を踏まえ、セレコキシブの「不完全さ」こそが、多くの患者に恩恵をもたらし続けている理由なのです。
+            </p>
     </section>
     
     <!-- PRECISION試験の詳細（Level 3に移動） -->
     <section class="level-3-content">
-        <div class="container">
-            <h3>📊 PRECISION試験（2016年）- セレコキシブの名誉回復</h3>
+            <h2>📊 PRECISION試験（2016年）- セレコキシブの名誉回復</h2>
             
             <div class="quote-box">
                 <h4>10年越しの約束が果たされた日</h4>
@@ -811,168 +709,48 @@
             </div>
             
             <p><strong>意義</strong>：「COX-2阻害薬＝危険」という偏見を科学的に否定。適切に使用すれば、従来NSAIDsと同等の心血管安全性で、より優れた消化管安全性を持つことが証明されました。</p>
-        </div>
     </section>
     
     <!-- 日本での使用状況 -->
     <section class="level-3-content">
-        <div class="container">
-            <h3>🇯🇵 日本におけるセレコキシブの位置づけ</h3>
+            <h2>🇯🇵 日本におけるセレコキシブの位置づけ</h2>
             
-            <div class="content-section">
-                <h4>2007年承認から現在まで</h4>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h5>2007年1月26日：日本承認</h5>
-                        <p>Vioxx事件後の慎重な審査を経て、セレコックス錠として承認。当初は関節リウマチと変形性関節症のみ。</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h5>2011年：適応拡大</h5>
-                        <p>腰痛症、肩関節周囲炎、頸肩腕症候群、腱・腱鞨炎の適応追加。使用可能な疾患が幅広くなる。</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h5>2020年：ヴィアトリス製薬へ移管</h5>
-                        <p>アステラス製薬からヴィアトリス製薬へ製造販売承認が移管。安定供給継続。</p>
-                    </div>
+            <h3>2007年承認から現在まで</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>2007年1月26日：日本承認</h4>
+                    <p>Vioxx事件後の慎重な審査を経て、セレコックス錠として承認。当初は関節リウマチと変形性関節症のみ。</p>
                 </div>
-                
-                <h4>日本の使用実態</h4>
-                <div class="stats-box">
-                    <ul>
-                        <li><strong>処方シェア</strong>：NSAIDs全体の約5%（増加傾向）</li>
-                        <li><strong>主な使用対象</strong>：高齢者、潰瘍既往者、抗凝固薬併用患者</li>
-                        <li><strong>平均投与期間</strong>：3-6ヶ月（関節リウマチでは長期）</li>
-                        <li><strong>主な処方科</strong>：整形外科、リウマチ科、内科</li>
-                    </ul>
+                <div class="timeline-item">
+                    <h4>2011年：適応拡大</h4>
+                    <p>腰痛症、肩関節周囲炎、頸肩腕症候群、腱・腱鞨炎の適応追加。使用可能な疾患が幅広くなる。</p>
                 </div>
-                
-                <h4>日本の特殊事情</h4>
-                <div class="content-section">
-                    <p><strong>高齢化社会</strong>：消化管リスクの高い高齢者が多く、セレコキシブの需要が高い</p>
-                    <p><strong>慎重な処方文化</strong>：心血管リスクを懸念し、最小有効量・最短期間使用が徹底</p>
-                    <p><strong>価格</strong>：後発品でも他のNSAIDsより高価（100mg 1日薬価約100円）</p>
-                    <p><strong>代替薬選択</strong>：依然としてロキソプロフェンが第一選択のことが多い</p>
+                <div class="timeline-item">
+                    <h4>2020年：ヴィアトリス製薬へ移管</h4>
+                    <p>アステラス製薬からヴィアトリス製薬へ製造販売承認が移管。安定供給継続。</p>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- 主要臨床試験の詳細 -->
-    <section class="level-3-content">
-        <div class="container">
-            <h3>📊 主要臨床試験エビデンスの詳細解説</h3>
             
-            <div class="clinical-evidence">
-                <h4>CLASS試験の衝撃（2000年）</h4>
-                <div class="simple-box">
-                    <h5>試験デザイン</h5>
-                    <ul>
-                        <li><strong>対象</strong>：関節リウマチ（2,785例）および変形性関節症（5,274例）</li>
-                        <li><strong>比較</strong>：セレコキシブ400mg×2回 vs イブプロフェン800mg×3回 vs ジクロフェナク75mg×2回</li>
-                        <li><strong>期間</strong>：6ヶ月（エクステンション12ヶ月）</li>
-                    </ul>
-                    
-                    <h5>画期的な結果</h5>
-                    <div class="highlight-box">
-                        <p><strong>上部消化管潰瘍・合併症</strong></p>
-                        <ul>
-                            <li>セレコキシブ：0.44%</li>
-                            <li>従来NSAIDs：1.27%</li>
-                            <li><strong>相対リスク減少：65%（p<0.001）</strong></li>
-                        </ul>
-                        <p>「ついに胃に優しい痛み止めが実現した」—医学界の反応</p>
-                    </div>
-                </div>
-                
-                <h4>CONDOR試験：PPI併用でも勝った（2010年）</h4>
-                <div class="simple-box">
-                    <h5>革新的な比較</h5>
-                    <p>「最強の胃薬（PPI）を併用した従来NSAIDs」vs「セレコキシブ単独」</p>
-                    
-                    <h5>結果の衝撃</h5>
-                    <ul>
-                        <li><strong>全消化管イベント</strong>
-                            <ul>
-                                <li>セレコキシブ単独：0.9%</li>
-                                <li>ジクロフェナク＋オメプラゾール：3.8%</li>
-                                <li><strong>4倍の差！（p<0.001）</strong></li>
-                            </ul>
-                        </li>
-                        <li><strong>下部消化管の保護</strong>：PPIでは守れない小腸・大腸もセレコキシブなら安全</li>
-                    </ul>
-                </div>
-                
-                <h4>PRECISION試験：10年越しの名誉回復（2016年）</h4>
-                <div class="simple-box">
-                    <h5>史上最大規模のNSAIDs安全性試験</h5>
-                    <ul>
-                        <li><strong>規模</strong>：24,081例（心血管リスク保有者）</li>
-                        <li><strong>期間</strong>：平均34ヶ月（最長43ヶ月）</li>
-                        <li><strong>比較</strong>：セレコキシブ vs ナプロキセン vs イブプロフェン</li>
-                    </ul>
-                    
-                    <h5>完全勝利の結果</h5>
-                    <div class="highlight-box">
-                        <p><strong>心血管イベント（MACE）</strong></p>
-                        <ul>
-                            <li>セレコキシブ：2.3%</li>
-                            <li>ナプロキセン：2.5%</li>
-                            <li>イブプロフェン：2.7%</li>
-                        </ul>
-                        <p><strong>非劣性証明：HR 0.93（95%CI 0.76-1.13）</strong></p>
-                        
-                        <p><strong>さらに優れていた点</strong></p>
-                        <ul>
-                            <li>消化管安全性：有意に優れる（p<0.001）</li>
-                            <li>腎安全性：有意に優れる（p=0.004）</li>
-                            <li>全死亡率：差なし</li>
-                        </ul>
-                        
-                        <p>「セレコキシブは冤罪だった」—論文著者の言葉</p>
-                    </div>
-                </div>
+            <h3>日本の使用実態</h3>
+            <div class="stats-box">
+                <ul>
+                    <li><strong>処方シェア</strong>：NSAIDs全体の約5%（増加傾向）</li>
+                    <li><strong>主な使用対象</strong>：高齢者、潰瘍既往者、抗凝固薬併用患者</li>
+                    <li><strong>平均投与期間</strong>：3-6ヶ月（関節リウマチでは長期）</li>
+                    <li><strong>主な処方科</strong>：整形外科、リウマチ科、内科</li>
+                </ul>
             </div>
-        </div>
-    </section>
-
-    <!-- 最後のメッセージ -->
-    <section class="level-3-content">
-        <div class="container">
-            <h3>📚 学習のまとめ：セレコキシブから学ぶ創薬の教訓</h3>
             
-            <div class="content-section">
-                <h4>「完璧」の追求がもたらした悲劇と、「不完全」が生んだ成功</h4>
-                
-                <div class="content-section">
-                    <p>セレコキシブの物語は、現代創薬における最も重要な教訓の一つです。</p>
-                    
-                    <div class="highlight-box">
-                        <h5>1. 選択性パラドックス</h5>
-                        <p>「消化管を守るため」に高めたCOX-2選択性が、予期せぬ心血管リスクを生みました。ロフェコキシブの「完璧な」選択性（300倍以上）は致命的でしたが、セレコキシブの「不完全な」選択性（100-200倍）は許容可能でした。</p>
-                        
-                        <h5>2. バランスの重要性</h5>
-                        <p>生体は精巧なバランスで成り立っています。PGI2とTXA2のバランスを完全に崩すことなく、適度に調節することが安全な薬物治療の鍵でした。</p>
-                        
-                        <h5>3. 長期安全性評価の必要性</h5>
-                        <p>短期的な有効性だけでなく、長期使用時の安全性評価が不可欠です。PRECISION試験は10年越しにセレコキシブの安全性を証明しました。</p>
-                        
-                        <h5>4. 透明性と科学的検証</h5>
-                        <p>リスクを隠さず、継続的に検証し、情報を開示することで、信頼は回復できます。セレコキシブは「疑惑の薬」から「信頼できる選択肢」へと変わりました。</p>
-                    </div>
-                </div>
-                
-                <div class="content-section">
-                    <h4>未来の薬剤師へ</h4>
-                    <p>セレコキシブの歴史を知ることは、単に一つの薬を理解することではありません。創薬の光と影、リスクとベネフィットのバランス、そして患者さんに最適な薬物治療を提供する責任の重さを学ぶことです。</p>
-                    <p>「唯一の生存者」セレコキシブは、適切に使用すれば、多くの患者さんのQOL向上に貢献できる貴重な選択肢です。その歴史と特性を深く理解し、責任を持って使用していきましょう。</p>
-                </div>
-            </div>
-        </div>
+            <h3>日本の特殊事情</h3>
+            <p><strong>高齢化社会</strong>：消化管リスクの高い高齢者が多く、セレコキシブの需要が高い</p>
+            <p><strong>慎重な処方文化</strong>：心血管リスクを懸念し、最小有効量・最短期間使用が徹底</p>
+            <p><strong>価格</strong>：後発品でも他のNSAIDsより高価（100mg 1日薬価約100円）</p>
+            <p><strong>代替薬選択</strong>：依然としてロキソプロフェンが第一選択のことが多い</p>
     </section>
 
         
     <!-- 監修者情報 -->
-    <div style="text-align: center; margin-top: 3rem; padding: 1rem 0; color: #666; font-size: 0.9rem;">
+    <div class="supervisor-info">
         現職薬局薬剤師監修
     </div>
 
